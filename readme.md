@@ -23,7 +23,7 @@
     - [Checking Data types](#checking-data-types)
     - [Python File](#python-file)
   - [Exercises - Day 1](#exercises---day-1)
-- [Day - 2](#day---2)
+- [Day 2](#day-2)
   - [Variables](#variables)
 
 # Day 1
@@ -67,7 +67,7 @@ python
 ```
 ![Python Scripting Shell](images/opening_python_shell.png)
 
-The python interactive shell is opened and it is waiting for you to write python code. You will write you python script next >>> and then click Enter.
+The python interactive shell is opened and it is waiting for you to write python code. You will write your python script next to this symbol >>> and then click Enter.
 Lets write our very first script on the python scripting shell.
 
 ![Python script on python shell](images/adding_on_python_shell.png)
@@ -105,7 +105,7 @@ In python we have the following additional operations:
 - 3 % 2 = 1  => which means finding the remainder
 - 3 // 2 = 1 => which means removing the remainder
 
-Lets change all what we write to code. The python shell has opened and lets write a comment at the very beginning.
+Lets change all what we wrote to code. The python shell has opened and lets write a comment at the very beginning of the shell.
 Python does not run the comment part. So we can leave some text in our code to make our code more readable 
 This is a how you write comment in python
 ```shell
@@ -233,7 +233,7 @@ The python interactive shell was printing with using **print** but on visual stu
  1. Create python file day_1.py and repeat question 1, 2 and 3. Then run the file.
 
 
-# Day - 2
+# Day 2
 ## Variables
 
 
