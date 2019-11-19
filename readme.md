@@ -230,7 +230,16 @@ The python interactive shell was printing with using **print** but on visual stu
      - Your family name
      - Your country
      - I am enjoying 30 days of python
- 1. Create python file day_1.py and repeat question 1, 2 and 3. Then run the file.
+ 1. Check the data types of the following data:
+    - 10
+    - 9.8
+    - 3.14
+    - 4 - 4j
+    - ['Asabeneh', 'Python', 'Finland']
+    - Your name
+    - Your family name
+    - Your country
+ 1. Create python file day_1.py and repeat question 1, 2, and 4. Remember to use print when you are working on a python file. Then run the file.
 
 
 # Day 2
