@@ -35,7 +35,7 @@ Python is a high-level programming language. It is an open source. This 30 days 
 This challenge is designed for beginners and professionals who want to learn python programming language.
 ## Why Python ?
 It is a programming language which is very close to human language and because of that it is easy to learn and easy to use. 
-Python used in varies industries including Google. It has been used to develop web applications, desktop applications, system adminstration, and machine learning libraries. Python is highly embraced language in the data science and machine learning community. I hope this is enough to convenience you to start learning python. Python is eating the world and you are killing it before it eats you.
+Python used in varies industries including Google. It has been used to develop web applications, desktop applications, system adminstration, and machine learning libraries. Python is highly embraced language in the data science and machine learning community. I hope this is enough to convince you to start learning python. Python is eating the world and you are killing it before it eats you.
 
 ## Environment Setup
 
@@ -115,11 +115,11 @@ This is a how you write comment in python
 
 ![Maths on python shell](./images/maths_on_python_shell.png)
 
-Before we move on to the next section, lets practice more on the python interactive shell. Close the opened shell by writing **exit()** on the shell and open it again and lets practice how to writ text on the python shell.
+Before we move on to the next section, lets practice more on the python interactive shell. Close the opened shell by writing **exit()** on the shell and open it again and lets practice how to write text on the python shell.
 ![Writing String on python shell](images/writing_string_on_shell.png)
 
 ### Installing Visual Studio Code
-The python interactive shell is good to try and test small script codes but it won't be for a big  project. In real work environment, developers use different coding editors to write code. In this 30 days python programming challenge we will use visual studio code. Visual studio code is a very popular open source text editor. I am a fun of vscode and I would recommend to [download](https://code.visualstudio.com/) visual studio code, but if you are in favor of other editors, feel free to follow with what you have.
+The python interactive shell is good to try and test small script codes but it won't be for a big  project. In real work environment, developers use different coding editors to write code. In this 30 days python programming challenge we will use visual studio code. Visual studio code is a very popular open source text editor. I am a fn of vscode and I would recommend to [download](https://code.visualstudio.com/) visual studio code, but if you are in favor of other editors, feel free to follow with what you have.
 
 [![Visual Studio Code](./images/vscode.png)](https://code.visualstudio.com/)
 If you installed visual studio code, lets see how to use it.
@@ -132,10 +132,10 @@ Create a folder name 30DaysOfPython on your desktop. Then open it using visual s
 ![Opening Project on Visual studio](./images/how_to_open_project_on_vscode.png)
 ![Opening a project](./images/opening_project.png)
 
-After you opened you can create file and folder inside the your project directory which is 30DaysOfPython. As you can see bello, I have created the very first file, helloworld.py. You can do the same.
+After you opened you can create file and folder inside the your project directory which is 30DaysOfPython. As you can see bellow, I have created the very first file, helloworld.py. You can do the same.
 ![Creating a python file](./images/helloworld.png)
 
-After long day of coding, this is you will close the project.
+After a long day of coding, this is it, you will close the project.
 ![Closing project](./images/closing_opened_project.png)
 Congratulations, you have finished setting up the development environment. Let's start coding.
 
@@ -150,7 +150,7 @@ Example
     # Python is eating the world
 ```
 ### Data types
-In python there are sever types of data types. We will get started with the most common ones.
+In python there are several types of data types. We will get started with the most common ones.
 #### Number
     - Integer: Integer(negative, zero and positive) numbers
         Example:
