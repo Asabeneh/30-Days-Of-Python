@@ -11,6 +11,8 @@
     - [Installing Visual Studio Code](#installing-visual-studio-code)
       - [How to visual studio code](#how-to-visual-studio-code)
   - [Basic Python](#basic-python)
+    - [Python Syntax](#python-syntax)
+    - [Python Indentation](#python-indentation)
     - [Comment](#comment)
     - [Data types](#data-types)
       - [Number](#number)
@@ -24,7 +26,12 @@
     - [Python File](#python-file)
   - [Exercises - Day 1](#exercises---day-1)
 - [Day 2](#day-2)
+  - [Built in functions](#built-in-functions)
   - [Variables](#variables)
+  - [Data Types](#data-types)
+    - [Number](#number-1)
+    - [String](#string-1)
+    - [Boolean](#boolean)
 
 # Day 1
 ## Welcome
@@ -149,16 +156,32 @@ After a long day of coding, you want to close your code editor, right ?. This is
 
 Congratulations, you have finished setting up the development environment. Let's start coding.
 
-## Basic Python 
+## Basic Python
+### Python Syntax
+A python script can be written on python interactive shell or on code editor. A python file has an extension .py. 
+### Python Indentation
+Indentation in many languages used to increase code readability, however python uses indentation to create block of codes. In other programming languages curly bracket used instead of indentation. One of the common bug when you write a python code will be wrong indentation.
+
+![Indentation Error](images/indentation.png)
 ### Comment
 Comment is very important to make code more readable and to leave to remark in our code. Python doesn't run comment part of our code.
 Any text starts with hash(#) in python is a comment.
 
- **Example:**
+ **Example: Single Line Comment**
 ```shell
     # This is the first comment
     # This is the second comment
     # Python is eating the world
+```
+ **Example: Multiline Comment**
+
+ Triple quote can be use for multiline comment if it is not assigned to a variable
+
+```shell
+    """This is multiline comment
+    multiline comment take multiple lines.
+    python is eating the world
+    """
 ```
 ### Data types
 In python there are several types of data types. We will get started with the most common ones.
@@ -283,7 +306,228 @@ helloworld.py
  3. Create a folder name day_1 inside 30DaysOfPython folder. Inside day_1 folder, create a file python file helloword.py and repeat question 1, 2, 3 and 4. Remember to use *print()* when you are working on a python file. Navigate to the directory where you saved your file, and run it.
 
 # Day 2
+## Built in functions
+In python we have lots of built in functions. Built-in functions are globally available for your use. Some of the built in functions used frequently in python such as: *print()*, *len()*, *type()*, *int()*, *float()*, *str()*, *input()*, *list()*, *dict()*, *min()*, *max()*, *sum()*,*sorted*, *open*,*file*, *help()*, *dir*. In the following table you will see an exhaustive list of python built in functions taken from [python documentation](https://docs.python.org/2/library/functions.html).
+
+![Built in Functions](images/builtin-functions.png)
+Let's open the python shell and start using the some of the most common built in functions. 
+![Built in functions](images/builtin-functions_practice.png)
+
+Let's practice more by using different built-in functions
+
+![Help and Dir Built in Functions](/images/help_and_dir_builtin.png)
+
+As you can see from the above terminal, python has reserved words. We do not use reserved words to declare variables or functions. We will cover variables in the next section.
+
+I believe, by now you are familiar with built-in functions. Let's do one more practice of built-in functions and we will move on to the next section
+![Min Max Sum](images/builtin-functional-final.png)
+
+
 ## Variables
+Variables are store data in a computer memory. Mnemonic variables recommend to use in many programming languages. A variable refers to an address in which a data is stored.
+Number at the beginning, special character, hyphen are not allowed. A variable can have a short name (like x,y,z) or a more descriptive name (firstname, lastname, age, country).
+
+ Python Variable Name Rules
+   - A variable name must start with a letter or the underscore character
+   - A variable name cannot start with a number
+   - A variable name can only contain alpha-numeric characters and underscores (A-z, 0-9, and _ )
+   - Variable names are case-sensitive (firstname, Firstname, FirstName and FIRSTNAME are different variables) 
+
+Valid variable names
+```shell
+firstname
+lastname
+age
+country
+city
+first_name
+last_name
+capital_city
+_if # if we want to use reservered word as a variable
+first_name
+year_2019
+year2019
+current_year_2019
+num1
+num2
+```
+Invalid varaible names
+```shell
+first-name
+num-1
+1num
+```
+ We will use standard python variable naming style which has been adopted by many python developers. The example below is an example of standard naming of variables, underscore when the variable name is long.
+
+ When we assign a certain data type to a variable is called variable declaration. For instance in the example below the my first name is assigned to a variable first_name. The equal sign is an assignment operator.Assigning means storing data in the variable.
+ ```py
+ # Variables in Python
+
+first_name = 'Asabeneh'
+last_name = 'Yetayeh'
+country = 'Finland'
+city = 'Helsinki'
+age = 250
+is_married = True
+skills = ['HTML', 'CSS', 'JS', 'React', 'Python']
+person_info = {
+    'firstname':'Asabeneh', 
+    'lastname':'Yetayeh', 
+    'country':'Finland',
+    'city':'Helsinki'
+    }
+
+ ``` 
+ Let's use *print()* and *len()* built in functions. Print function will take multiple arguments. An argument is a value which we pass or put inside the function parenthesis, see the example below.
+ Example
+ ```py
+ print('Hello, World!')
+ print('Hello',',', 'World','!') # it can take multiple arguments
+ print(len('Hello, World!')) # it takes only on argument
+ ```
+
+ Let's print and also find  the length of the variables declared at the top:
+ ```py
+# Printing the values stored in the variables
+print('First name:', first_name)
+print('First name length:', len(first_name))
+print('Last name: ', last_name)
+print('Last name length: ', len(last_name))
+print('Country: ', country)
+print('City: ', city)
+print('Age: ', age)
+print('Married: ', is_married)
+print('Skills: ', skills)
+print('Person information: ', person_info)
+ ```
+ Variable can also be declared in one line:
+ ```py
+ first_name, last_name, country, age, is_married = 'Asabeneh', 'Yetayeh', 'Helsink', 250, True
+print(first_name, last_name, country, age, is_married)
+print('First name:', first_name)
+print('Last name: ', last_name)
+print('Country: ', country)
+print('Age: ', age)
+print('Married: ', is_married)
+ ```
+ Getting user input using the *input()* built-in function. Let's assign the data we get from a user into first_name and age variables.
+ ```py
+ first_name = input('What is your name: ')
+ age = input('How old are you? ')
+ print(first_name)
+ print(age)
+ ```
+
+ ## Data Types
+ Different data types in python. There are different data type in python programming. To identify the data tpe we use the type method. In this section, we will see data types in detail.
+ ```py
+ # Different python data types
+# Let's declare different data types
+
+first_name = 'Asabeneh' # String
+last_name = 'Yetayeh' # String
+country = 'Finland' # String
+city= 'Helsinki'
+age = 250 # Number, it is not my real age, don't worry about it
+
+print(type('Asabeneh'))
+print(type(first_name))
+print(type(10))
+print(type(3.14))
+print(type(1 + 1j))
+print(type(True))
+print(type([1, 2,3,4]))
+print(type({"name":"Asabeneh","age":250, "is_married":250}))
+print(type((1,2)))
+print(type(zip([1,2],[3,4])))
+ ``` 
+ ### Number
+  1. Integers
+  2. Floating Numbers
+  3. Complex Numbers
+
+ Numbers are python data types. Arithmetic Operators: +, -, *, /
+ ```py
+ # Arithmetic Operations in Python
+# Integers
+
+print('Addition: ', 1 + 2)
+print('Subtraction: ', 2 - 1)
+print('Multiplication: ', 2 * 3)
+print ('Division: ', 4 / 2) # Division in python gives floating number
+print('Division: ', 6 / 2)
+print('Division: ', 7 / 2)
+print('Division without the remainder: ', 7 // 2) # gives without the floating number or without the remaining
+print('Modulus: ', 3 % 2)
+print ('Division without the remainder: ',7 // 3)
+print('Exponential: ', 3 ** 2)
+# Floating numbers
+print('Floating Number', 3.14)
+# Complex numbers
+print('Complex number: ', 1+1j)
+print('Multiplying complex number: ',(1+1j) * (1-1j))
+
+
+print('== Addition, Subtraction, Multiplication, Division, Modules ==')
+
+num_one = 3
+num_two = 4
+
+total = num_one + num_two
+diff = num_two - num_one
+product = num_one * num_two
+div = num_two / num_two
+remainder = num_two % num_one
+
+
+print('sum: ', total)
+print('difference: ', diff)
+print('product: ', product)
+print('division: ', div)
+print('remainder: ', remainder)
+
+mass = 75
+gravity = 9.81
+# Calculate the weight of the object on planet earth
+weight = mass * gravity
+
+print(weight, 'N')
+ ```
+
+ ### String
+ ### Boolean
+
+1. Create a folder called day_2. Inside this folder create a file name called variables.py
+2. Writ a python comment saying 'Day 2: 30 Days of python programming'
+3. Declare a first name variable and assign a value to it
+4. Declare a last name variable and assign a value to it
+5. Declare a full name variable and assign a value to it
+6. Declare a country variable and assign a value to it
+7. Declare a city variable and assign a value to it
+8. Declare an age variable and assign a value to it
+9. Declare a year variable and assign a value to it
+10. Declare a variable is_married and assign a value to it
+11. Declare a variable is_true and assign a value to it
+12. Declare a variable is_light_on and assign a value to it
+13. Declare multiple variable on one line
+14. Check the data type of all your variables using type() built in function
+15. Using the *len()* built-in function find the length of your first name
+16. Compare the length of your first name and your last name
+17. Declare 5 as num_one and 4 as num_two
+    1.  Add num_one and num_two and assign the value to a variable *add*
+    2.  Subtract num_two from num_one and assign the value to a variable *dif*
+    3.  Multiply num_two and num_one and assign the value to a variable *mul*
+    4.  Divide num_one by num_two and assign the value to a variable *div*
+    5.  Use modulus division to find num_two divided by  num_one and assign the value to a variable *remainder*
+    6.  Calculate num_one the  power of num_two and assign the value to a variable *exp*
+    7.  Find floor division of num_one by num_two and assign the value to a variable *floor_div*
+18. The radius of a circle is 30 meters.
+    1.  Calculate the area of a circle and assign the value to a variable *area_of_circle*
+    2.  Calculate the circumference of a circle and assign the value to a variable *circum_of_circle*
+    3.  Take radius as user input and calculate the area. 
+19. Use the built-in input function to get first name, last name, country and age from a user and store the value to their corresponding variable names
+20. Run help('keywords') on python shell or in your file check the reserved words
+
 
 
 
