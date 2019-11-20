@@ -30,12 +30,13 @@
   - [Variables](#variables)
   - [Data Types](#data-types)
     - [Number](#number-1)
-    - [String](#string-1)
-    - [Boolean](#boolean)
+  - [String](#string-1)
+  - [Boolean](#boolean)
+  - [Exercises - Day 1](#exercises---day-1-1)
 
 # Day 1
 ## Welcome
-**Congratulations** for deciding to participate in a ***30 days of Python*** programming challenge . In this challenge you will learn everything you need to be a python programmer and the whole concepts of programming. In the end of the challenge you will get a ***30DaysOfPython*** programming challenge certificate.
+**Congratulations** for deciding to participate in a ***30 days of Python*** programming challenge . In this challenge you will learn everything you need to be a python programmer and the whole concepts of programming. In the end of the challenge you will get a ***30DaysOfPython*** programming challenge certificate. [Join the telegram channel](https://t.me/ThirtyDaysOfPython)
 ## Introduction
 Python is a high-level programming language. It is an open source. This 30 days python challenge will help you learn the latest version of Python, Python 3 step by step. The topics are broken down into 30 days, where each days contains several topics with easy-to-understand explanations, real-world examples and many hands on exercises.
 
@@ -479,7 +480,6 @@ product = num_one * num_two
 div = num_two / num_two
 remainder = num_two % num_one
 
-
 print('sum: ', total)
 print('difference: ', diff)
 print('product: ', product)
@@ -494,9 +494,10 @@ weight = mass * gravity
 print(weight, 'N')
  ```
 
- ### String
- ### Boolean
+## String
+## Boolean
 
+## Exercises - Day 1
 1. Create a folder called day_2. Inside this folder create a file name called variables.py
 2. Writ a python comment saying 'Day 2: 30 Days of python programming'
 3. Declare a first name variable and assign a value to it
