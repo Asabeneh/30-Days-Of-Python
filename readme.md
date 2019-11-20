@@ -280,7 +280,7 @@ helloworld.py
     - Your name
     - Your family name
     - Your country
- 3. Create a folder name day_1 inside 30DaysOfPython folder. Inside day_1 folder, create a file python file helloword.py and repeat question 1, 2, 3 and 4. Remember to use *print()* when you are working on a python file. Then run the file.
+ 3. Create a folder name day_1 inside 30DaysOfPython folder. Inside day_1 folder, create a file python file helloword.py and repeat question 1, 2, 3 and 4. Remember to use *print()* when you are working on a python file. Navigate to the directory where you saved your file, and run it.
 
 # Day 2
 ## Variables
