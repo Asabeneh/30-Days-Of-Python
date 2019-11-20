@@ -308,7 +308,7 @@ helloworld.py
 
 # Day 2
 ## Built in functions
-In python we have lots of built in functions. Built-in functions are globally available for your use. Some of the built in functions used frequently in python such as: *print()*, *len()*, *type()*, *int()*, *float()*, *str()*, *input()*, *list()*, *dict()*, *min()*, *max()*, *sum()*,*sorted*, *open*,*file*, *help()*, *dir*. In the following table you will see an exhaustive list of python built in functions taken from [python documentation](https://docs.python.org/2/library/functions.html).
+In python we have lots of built in functions. Built-in functions are globally available for your use. Some  of the most frequently python built-in functions are the following: *print()*, *len()*, *type()*, *int()*, *float()*, *str()*, *input()*, *list()*, *dict()*, *min()*, *max()*, *sum()*,*sorted()*, *open()*,*file()*, *help()*, *dir*. In the following table you will see an exhaustive list of python built in functions taken from [python documentation](https://docs.python.org/2/library/functions.html).
 
 ![Built in Functions](images/builtin-functions.png)
 
@@ -363,7 +363,10 @@ num-1
 ```
  We will use standard python variable naming style which has been adopted by many python developers. The example below is an example of standard naming of variables, underscore when the variable name is long.
 
- When we assign a certain data type to a variable is called variable declaration. For instance in the example below the my first name is assigned to a variable first_name. The equal sign is an assignment operator.Assigning means storing data in the variable.
+ When we assign a certain data type to a variable is called variable declaration. For instance in the example below the my first name is assigned to a variable first_name. The equal sign is an assignment operator. Assigning means storing data in the variable.
+
+ *Example:*
+
  ```py
  # Variables in Python
 
@@ -383,7 +386,8 @@ person_info = {
 
  ``` 
  Let's use *print()* and *len()* built in functions. Print function will take multiple arguments. An argument is a value which we pass or put inside the function parenthesis, see the example below.
- Example
+
+ *Example:*
  ```py
  print('Hello, World!')
  print('Hello',',', 'World','!') # it can take multiple arguments
@@ -391,6 +395,8 @@ person_info = {
  ```
 
  Let's print and also find  the length of the variables declared at the top:
+
+ *Example:*
  ```py
 # Printing the values stored in the variables
 print('First name:', first_name)
@@ -405,6 +411,8 @@ print('Skills: ', skills)
 print('Person information: ', person_info)
  ```
  Variable can also be declared in one line:
+
+ *Example:*
  ```py
  first_name, last_name, country, age, is_married = 'Asabeneh', 'Yetayeh', 'Helsink', 250, True
 print(first_name, last_name, country, age, is_married)
@@ -415,6 +423,7 @@ print('Age: ', age)
 print('Married: ', is_married)
  ```
  Getting user input using the *input()* built-in function. Let's assign the data we get from a user into first_name and age variables.
+ *Example:*
  ```py
  first_name = input('What is your name: ')
  age = input('How old are you? ')
@@ -424,6 +433,8 @@ print('Married: ', is_married)
 
  ## Data Types
  Different data types in python. There are different data type in python programming. To identify the data tpe we use the type method. In this section, we will see data types in detail.
+
+ *Example: *
  ```py
  # Different python data types
 # Let's declare different data types
@@ -450,7 +461,8 @@ print(type(zip([1,2],[3,4])))
   2. Floating Numbers
   3. Complex Numbers
 
- Numbers are python data types. Arithmetic Operators: +, -, *, /
+ Numbers are python data types. 
+ Arithmetic Operators: +, -, *, /
  ```py
  # Arithmetic Operations in Python
 # Integers
