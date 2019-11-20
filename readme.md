@@ -32,7 +32,7 @@
     - [Number](#number-1)
   - [String](#string-1)
   - [Boolean](#boolean)
-  - [Exercises - Day 1](#exercises---day-1-1)
+  - [Exercises - Day 2](#exercises---day-2)
 
 # Day 1
 ## Welcome
@@ -497,7 +497,7 @@ print(weight, 'N')
 ## String
 ## Boolean
 
-## Exercises - Day 1
+## Exercises - Day 2
 1. Create a folder called day_2. Inside this folder create a file name called variables.py
 2. Writ a python comment saying 'Day 2: 30 Days of python programming'
 3. Declare a first name variable and assign a value to it
