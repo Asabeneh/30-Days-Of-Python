@@ -247,7 +247,7 @@ helloworld.py
     - Your name
     - Your family name
     - Your country
- 1. Create python file day_1.py and repeat question 1, 2, and 4. Remember to use print when you are working on a python file. Then run the file.
+ 1. Create python file day_1.py and repeat question 1, 2, 3 and 4. Remember to use print when you are working on a python file. Then run the file.
 
 
 # Day 2
