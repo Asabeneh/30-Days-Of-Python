@@ -55,6 +55,7 @@ python --version
 ```
 ![Pyhton Version](./images/python_versio.png)
 
+
 As you can see from the terminal, I am using *python 3.7.5* version at the moment. If you mange to see the python version, well done. Python has been installed on your machine. Continue to the next section.  
 
 ### Python Shell
@@ -65,7 +66,9 @@ Open your terminal or cmd and write:
 ```shell
 python
 ```
+
 ![Python Scripting Shell](images/opening_python_shell.png)
+
 
 The python interactive shell is opened and it is waiting for you to write python code. You will write your python script next to this symbol >>> and then click Enter.
 Lets write our very first script on the python scripting shell.
@@ -76,6 +79,7 @@ Well done, you wrote your first python script on python interactive shell. How d
 To close the shell, next to this symbol >> write **exit()** command and press Enter.
 
 ![Exit from python shell](images/exit_from_shell.png)
+
 Now, you knew how to open the python interactive shell and how to exit from it. 
 
 Python can give you result if you write scripts what python understands if not it returns errors. Let's make a deliberate mistake and see what python will return.
@@ -115,13 +119,15 @@ This is a how you write comment in python
 
 ![Maths on python shell](./images/maths_on_python_shell.png)
 
-Before we move on to the next section, lets practice more on the python interactive shell. Close the opened shell by writing **exit()** on the shell and open it again and lets practice how to write text on the python shell.
+Before we move on to the next section, lets practice more on the python interactive shell. Close the opened shell by writing *exit()* on the shell and open it again and lets practice how to write text on the python shell.
+
 ![Writing String on python shell](images/writing_string_on_shell.png)
 
 ### Installing Visual Studio Code
 The python interactive shell is good to try and test small script codes but it won't be for a big  project. In real work environment, developers use different code editors to write codes. In this 30 days python programming challenge we will use visual studio code. Visual studio code is a very popular open source text editor. I am a fun of vscode and I would recommend to [download](https://code.visualstudio.com/) visual studio code, but if you are in favor of other editors, feel free to follow with what you have.
 
 [![Visual Studio Code](./images/vscode.png)](https://code.visualstudio.com/)
+
 If you installed visual studio code, let's see how to use it.
 #### How to visual studio code
 Open the visual studio code by double clicking the visual studio icon. When you open it you will get this kind of interface. Try to interact with the labelled icons.
@@ -130,13 +136,17 @@ Open the visual studio code by double clicking the visual studio icon. When you 
 Create a folder name 30DaysOfPython on your desktop. Then open it using visual studio code.
 
 ![Opening Project on Visual studio](./images/how_to_open_project_on_vscode.png)
+
 ![Opening a project](./images/opening_project.png)
 
 After you opened you can create file and folder inside the your project directory which is 30DaysOfPython. As you can see below, I have created the very first file, helloworld.py. You can do the same.
+
 ![Creating a python file](./images/helloworld.png)
 
 After a long day of coding, you want to close your code editor, right ?. This is how you will close the opened project.
+
 ![Closing project](./images/closing_opened_project.png)
+
 Congratulations, you have finished setting up the development environment. Let's start coding.
 
 ## Basic Python 
@@ -217,6 +227,7 @@ In later sections, we will go in detail in each and every python data types.
 To check the data type of a certain data type we use the **type** function. In the following terminal you will see the different python data types:
 
 ![Checking Data types](./images/checking_data_types.png)
+
 ### Python File
 First open your project folder, 30DaysOfPython. If you don't have this folder,create a folder name called 30DaysOfPython. Inside this folder, create a file called helloworld.py. Now, let's do what we did on python interactive shell using visual studio code.
 The python interactive shell was printing without using **print** but on visual studio code to see our result we should use a built in function **print(some data to print)**.
@@ -241,6 +252,7 @@ helloworld.py
     print(type({'name':'Asabeneh'})) #Dictionary
     print(type({9.8, 3.14, 2.7}))    #Tuple
 ```
+
 ![Running python script](./images/running_python_script.png)
 
 
