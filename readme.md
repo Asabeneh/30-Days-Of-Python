@@ -311,7 +311,9 @@ helloworld.py
 In python we have lots of built in functions. Built-in functions are globally available for your use. Some of the built in functions used frequently in python such as: *print()*, *len()*, *type()*, *int()*, *float()*, *str()*, *input()*, *list()*, *dict()*, *min()*, *max()*, *sum()*,*sorted*, *open*,*file*, *help()*, *dir*. In the following table you will see an exhaustive list of python built in functions taken from [python documentation](https://docs.python.org/2/library/functions.html).
 
 ![Built in Functions](images/builtin-functions.png)
+
 Let's open the python shell and start using the some of the most common built in functions. 
+
 ![Built in functions](images/builtin-functions_practice.png)
 
 Let's practice more by using different built-in functions
@@ -321,6 +323,7 @@ Let's practice more by using different built-in functions
 As you can see from the above terminal, python has reserved words. We do not use reserved words to declare variables or functions. We will cover variables in the next section.
 
 I believe, by now you are familiar with built-in functions. Let's do one more practice of built-in functions and we will move on to the next section
+
 ![Min Max Sum](images/builtin-functional-final.png)
 
 
@@ -459,9 +462,9 @@ print ('Division: ', 4 / 2) # Division in python gives floating number
 print('Division: ', 6 / 2)
 print('Division: ', 7 / 2)
 print('Division without the remainder: ', 7 // 2) # gives without the floating number or without the remaining
-print('Modulus: ', 3 % 2)
+print('Modulus: ', 3 % 2) # Gives the remainder
 print ('Division without the remainder: ',7 // 3)
-print('Exponential: ', 3 ** 2)
+print('Exponential: ', 3 ** 2) # it means 3 * 3
 # Floating numbers
 print('Floating Number', 3.14)
 # Complex numbers
@@ -515,13 +518,13 @@ print(weight, 'N')
 15. Using the *len()* built-in function find the length of your first name
 16. Compare the length of your first name and your last name
 17. Declare 5 as num_one and 4 as num_two
-    1.  Add num_one and num_two and assign the value to a variable *add*
-    2.  Subtract num_two from num_one and assign the value to a variable *dif*
-    3.  Multiply num_two and num_one and assign the value to a variable *mul*
-    4.  Divide num_one by num_two and assign the value to a variable *div*
+    1.  Add num_one and num_two and assign the value to a variable *total*
+    2.  Subtract num_two from num_one and assign the value to a variable *diff*
+    3.  Multiply num_two and num_one and assign the value to a variable *product*
+    4.  Divide num_one by num_two and assign the value to a variable *division*
     5.  Use modulus division to find num_two divided by  num_one and assign the value to a variable *remainder*
     6.  Calculate num_one the  power of num_two and assign the value to a variable *exp*
-    7.  Find floor division of num_one by num_two and assign the value to a variable *floor_div*
+    7.  Find floor division of num_one by num_two and assign the value to a variable *floor_division*
 18. The radius of a circle is 30 meters.
     1.  Calculate the area of a circle and assign the value to a variable *area_of_circle*
     2.  Calculate the circumference of a circle and assign the value to a variable *circum_of_circle*
