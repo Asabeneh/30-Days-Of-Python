@@ -1,6 +1,7 @@
 
 
 ![30DaysOfPython](./images/30DaysOfPython_banner3@2x.png)
+## Table of Content
 - [Day 1](#day-1)
   - [Welcome](#welcome)
   - [Introduction](#introduction)
@@ -139,6 +140,7 @@ The python interactive shell is good to try and test small script codes but it w
 If you installed visual studio code, let's see how to use it.
 #### How to visual studio code
 Open the visual studio code by double clicking the visual studio icon. When you open it you will get this kind of interface. Try to interact with the labelled icons.
+
 ![Visual studio Code](images/vscode_ui.png)
 
 Create a folder name 30DaysOfPython on your desktop. Then open it using visual studio code.
@@ -203,9 +205,9 @@ In python there are several types of data types. We will get started with the mo
 ```py
 'Asabeneh'
 'Finland'
-"Python"
-"I love teaching"
-"I hope you are enjoying the first day"
+'Python'
+'I love teaching'
+'I hope you are enjoying the first day'
 ```
 #### Booleans
 A boolean data type is either True or False value.
@@ -229,7 +231,7 @@ A python  dictionary object is an unordered collection of data in a key:value pa
 
  **Example:**
 ```py
-{"name":"Asabeneh", "country":"Finland", age:250, "is_married":True}
+{'name':'Asabeneh', 'country':'Finland', age:250, 'is_married':True}
 ```
 #### Tuple
 A tuple is an ordered collection of different data types like list but tuples can not be modified once they are created. They are immutable.
@@ -276,9 +278,7 @@ helloworld.py
     print(type({'name':'Asabeneh'})) #Dictionary
     print(type({9.8, 3.14, 2.7}))    #Tuple
 ```
-
 ![Running python script](./images/running_python_script.png)
-
 
 ## Exercises - Day 1
   1. Check the python version you are using
@@ -387,7 +387,7 @@ person_info = {
  ``` 
  Let's use *print()* and *len()* built in functions. Print function will take multiple arguments. An argument is a value which we pass or put inside the function parenthesis, see the example below.
 
- *Example:*
+ **Example:**
  ```py
  print('Hello, World!')
  print('Hello',',', 'World','!') # it can take multiple arguments
@@ -396,7 +396,7 @@ person_info = {
 
  Let's print and also find  the length of the variables declared at the top:
 
- *Example:*
+ **Example:**
  ```py
 # Printing the values stored in the variables
 print('First name:', first_name)
@@ -412,7 +412,7 @@ print('Person information: ', person_info)
  ```
  Variable can also be declared in one line:
 
- *Example:*
+ **Example:**
  ```py
  first_name, last_name, country, age, is_married = 'Asabeneh', 'Yetayeh', 'Helsink', 250, True
 print(first_name, last_name, country, age, is_married)
@@ -434,7 +434,7 @@ print('Married: ', is_married)
  ## Data Types
  Different data types in python. There are different data type in python programming. To identify the data tpe we use the type method. In this section, we will see data types in detail.
 
- *Example: *
+ **Example:**
  ```py
  # Different python data types
 # Let's declare different data types
@@ -452,7 +452,7 @@ print(type(3.14))
 print(type(1 + 1j))
 print(type(True))
 print(type([1, 2,3,4]))
-print(type({"name":"Asabeneh","age":250, "is_married":250}))
+print(type({'name':'Asabeneh','age':250, 'is_married':250}))
 print(type((1,2)))
 print(type(zip([1,2],[3,4])))
  ``` 
@@ -513,7 +513,7 @@ print(weight, 'N')
 ## Boolean
 
 ## Exercises - Day 2
-1. Create a folder called day_2. Inside this folder create a file name called variables.py
+1. Inside 30DaysOfPython create a folder called day_2. Inside this folder create a file name called variables.py
 2. Writ a python comment saying 'Day 2: 30 Days of python programming'
 3. Declare a first name variable and assign a value to it
 4. Declare a last name variable and assign a value to it
