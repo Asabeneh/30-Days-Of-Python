@@ -767,6 +767,7 @@ print(not not False)   # False
 17. There is no 'on' in both  dragon and python
 18. Find the length of the text *python* and convert the value to float and convert it to string
 19. Even numbers are divisible by 2 and the remainder is zero. How do you check if a number is even or not using python?
+20. The  floor divison of 7 by 3 is equal to the int converted value of 2.7.
 
 
 
