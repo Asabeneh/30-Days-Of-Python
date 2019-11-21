@@ -308,7 +308,7 @@ helloworld.py
 
 # Day 2
 ## Built in functions
-In python we have lots of built in functions. Built-in functions are globally available for your use. Some  of the most frequently python built-in functions are the following: *print()*, *len()*, *type()*, *int()*, *float()*, *str()*, *input()*, *list()*, *dict()*, *min()*, *max()*, *sum()*,*sorted()*, *open()*,*file()*, *help()*, *dir*. In the following table you will see an exhaustive list of python built in functions taken from [python documentation](https://docs.python.org/2/library/functions.html).
+In python we have lots of built in functions. Built-in functions are globally available for your use. Some  of the most commonly used python built-in functions are the following: *print()*, *len()*, *type()*, *int()*, *float()*, *str()*, *input()*, *list()*, *dict()*, *min()*, *max()*, *sum()*, *sorted()*, *open()*, *file()*, *help()*, *dir*. In the following table you will see an exhaustive list of python built in functions taken from [python documentation](https://docs.python.org/2/library/functions.html).
 
 ![Built in Functions](images/builtin-functions.png)
 
@@ -396,6 +396,7 @@ person_info = {
 
  Let's print and also find  the length of the variables declared at the top:
 
+
  **Example:**
  ```py
 # Printing the values stored in the variables
@@ -414,7 +415,7 @@ print('Person information: ', person_info)
 
  **Example:**
  ```py
- first_name, last_name, country, age, is_married = 'Asabeneh', 'Yetayeh', 'Helsink', 250, True
+first_name, last_name, country, age, is_married = 'Asabeneh', 'Yetayeh', 'Helsink', 250, True
 print(first_name, last_name, country, age, is_married)
 print('First name:', first_name)
 print('Last name: ', last_name)
@@ -423,7 +424,7 @@ print('Age: ', age)
 print('Married: ', is_married)
  ```
  Getting user input using the *input()* built-in function. Let's assign the data we get from a user into first_name and age variables.
- *Example:*
+ **Example:**
  ```py
  first_name = input('What is your name: ')
  age = input('How old are you? ')
@@ -457,9 +458,20 @@ print(type((1,2)))
 print(type(zip([1,2],[3,4])))
  ``` 
  ### Number
-  1. Integers
-  2. Floating Numbers
+  1. Integers: Integer(negative, zero and positive) numbers
+
+    Example:
+        ... -3, -2, -1, 0, 1, 2, 3 ...
+  2. Floating Numbers(Decimal numbers)
+
+    Example:
+        ... -3.5, -2.25, -1.0, 0.0, 1.1, 2.2, 3.5 ...
   3. Complex Numbers
+
+    Example:
+        1 + j, 2 + 4j, 1 - 1j
+
+
 
  Numbers are python data types. 
  Arithmetic Operators: +, -, *, /
