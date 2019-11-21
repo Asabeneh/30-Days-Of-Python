@@ -432,7 +432,7 @@ print('Married: ', is_married)
  ```
 
  ## Data Types
- Different data types in python. There are different data type in python programming. To identify the data tpe we use the type method. In this section, we will see data types in detail.
+ Different data types in python. There are different data type in python programming. To identify the data type we use the type method. In this section, we will see data types in detail.
 
  *Example: *
  ```py
@@ -514,7 +514,7 @@ print(weight, 'N')
 
 ## Exercises - Day 2
 1. Create a folder called day_2. Inside this folder create a file name called variables.py
-2. Writ a python comment saying 'Day 2: 30 Days of python programming'
+2. Write a python comment saying 'Day 2: 30 Days of python programming'
 3. Declare a first name variable and assign a value to it
 4. Declare a last name variable and assign a value to it
 5. Declare a full name variable and assign a value to it
