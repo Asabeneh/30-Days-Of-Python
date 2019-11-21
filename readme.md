@@ -363,7 +363,7 @@ num-1
 ```
  We will use standard python variable naming style which has been adopted by many python developers. The example below is an example of standard naming of variables, underscore when the variable name is long.
 
- When we assign a certain data type to a variable is called variable declaration. For instance in the example below the my first name is assigned to a variable first_name. The equal sign is an assignment operator. Assigning means storing data in the variable.
+ When we assign a certain data type to a variable is called variable declaration. For instance in the example below my first name is assigned to a variable first_name. The equal sign is an assignment operator. Assigning means storing data in the variable.
 
  *Example:*
 
@@ -391,7 +391,7 @@ person_info = {
  ```py
  print('Hello, World!')
  print('Hello',',', 'World','!') # it can take multiple arguments
- print(len('Hello, World!')) # it takes only on argument
+ print(len('Hello, World!')) # it takes only one argument
  ```
 
  Let's print and also find  the length of the variables declared at the top:
@@ -432,7 +432,7 @@ print('Married: ', is_married)
  ```
 
  ## Data Types
- Different data types in python. There are different data type in python programming. To identify the data tpe we use the type method. In this section, we will see data types in detail.
+ Different data types in python. There are different data type in python programming. To identify the data type we use the type method. In this section, we will see data types in detail.
 
  **Example:**
  ```py
