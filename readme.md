@@ -145,7 +145,7 @@ The python interactive shell is good to try and test small script codes but it w
 [![Visual Studio Code](./images/vscode.png)](https://code.visualstudio.com/)
 
 If you installed visual studio code, let's see how to use it.
-#### How to visual studio code
+#### How to use visual studio code
 Open the visual studio code by double clicking the visual studio icon. When you open it you will get this kind of interface. Try to interact with the labelled icons.
 
 ![Visual studio Code](images/vscode_ui.png)
@@ -206,7 +206,7 @@ In python there are several types of data types. We will get started with the mo
         Example
         1 + j, 2 + 4j
 #### String
- A collection of one or more characters under in single or double quote. If a string is more than one sentence we use triple quote.
+ A collection of one or more characters under a single or double quote. If a string is more than one sentence we use triple quote.
 
  **Example:**
 ```py
@@ -217,7 +217,7 @@ In python there are several types of data types. We will get started with the mo
 'I hope you are enjoying the first day'
 ```
 #### Booleans
-A boolean data type is either True or False value.
+A boolean data type is either a True or False value.
 
  **Example:**
 ```python
@@ -229,8 +229,8 @@ Python list is an ordered collection which allows to store of different data typ
 
  **Example:**
 ```py
-        ['Banana', 'Orange', 'Mango', 'Avocado'] # all the same data type in the list
-        ['Banana', 10, False, 9.81] # different data types in the list
+   ['Banana', 'Orange', 'Mango', 'Avocado'] # all the same data type in the list
+   ['Banana', 10, False, 9.81] # different data types in the list
 ```
 
 #### Dictionary
@@ -335,8 +335,8 @@ I believe, by now you are familiar with built-in functions. Let's do one more pr
 
 
 ## Variables
-Variables are store data in a computer memory. Mnemonic variables recommend to use in many programming languages. A variable refers to an address in which a data is stored.
-Number at the beginning, special character, hyphen are not allowed. A variable can have a short name (like x,y,z) or a more descriptive name (firstname, lastname, age, country).
+Variables store data in a computer memory. Mnemonic variables are recommend to use in many programming languages. A variable refers to an a memory address in which a data is stored.
+Number at the beginning, special character, hyphen are not allowed. A variable can have a short name (like x,y,z) but a more descriptive name (firstname, lastname, age, country) is highly recommended .
 
  Python Variable Name Rules
    - A variable name must start with a letter or the underscore character
