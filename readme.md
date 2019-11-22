@@ -41,8 +41,6 @@
     - [Comparison Operators](#comparison-operators)
     - [Logical Operators](#logical-operators)
   - [Exercises - Day 3](#exercises---day-3)
-    - [Part 1](#part-1)
-    - [Part 2](#part-2)
 
 # Day 1
 ## Welcome
@@ -751,7 +749,6 @@ print(not not False)   # False
 ```
 
 ## Exercises - Day 3
-### Part 1 
 1. Declare your age as integer variable
 2. Declare your height as a float variable
 3. Declare a complex number variable
@@ -772,24 +769,18 @@ print(not not False)   # False
 18. Find the length of the text *python* and convert the value to float and convert it to string
 19. Even numbers are divisible by 2 and the remainder is zero. How do you check if a number is even or not using python?
 20. The  floor division of 7 by 3 is equal to the int converted value of 2.7.
-    
-### Part 2
 21. Check if type of '10' is equal to 10
 22. Check if int('9.8') is equal to 10
 23. Writ a script that prompt a user to enters hours and rate per hour. Calculate pay of the person? 
 ```py
 Enter hours: 40
 Enter rate per hour: 28
-
 Your weekly earning is 1120
-
 ```
 24. Write a script that prompt the user to enter number of years.  Calculate the number of seconds a person can live. Assume some one lives just hundred years
 ```py
     Enter number of yours you live: 100
     You lived 3153600000 seconds.
-    
-
 ```
 25. Write a python script that display the following table
 ```py
