@@ -561,7 +561,7 @@ print(True)
 print(False)
 ```
 ## Operators:
-Python language supports several types of  operators. In this section, we will focus on few them.
+Python language supports several types of  operators. In this section, we will focus on few of them.
 ### Arithmetic Operators:
 * Addition(+): a + b 
 * Subtraction(-): a -b 
@@ -619,7 +619,7 @@ remainder = a % b
 floor_division = a // b
 exponential = a ** b
 
-# I should have used sum instead of total but sum is a built-in function try to avoid over ridding builtin functions
+# I should have used sum instead of total but sum is a built-in function try to avoid overriding builtin functions
 print(total) # if you don't label your print with some string, you never know from where is  the result is coming
 print('a + b = ', total)
 print('a - b = ', diff)
@@ -691,11 +691,11 @@ print(3 == 2)                           # False, because 3 is not equal to 2
 print(3 != 2)                           # True, because 3 is not equal to 2
 print(len('mango') == len('avocado'))   # False
 print(len('mango') != len('avocado'))   # True
-print(len('mango') < len('avocado'))    # False
+print(len('mango') < len('avocado'))    # True
 print(len('milk') != len('meat'))       # False
-print(len('milk') == len('meat'))       # False
+print(len('milk') == len('meat'))       # True
 print(len('tomato') == len('potato'))   # True
-print(len('python') > len('dragon'))
+print(len('python') > len('dragon'))    # False
 
 
 # Comparing something give either a True or False
@@ -717,7 +717,7 @@ In addition to the above comparison operator python uses:
 print('1 is 1', 1 is 1)                     # True - because the data values are the same
 print('1 is not 2', 1 is not 2)             # True - because 1 is not 2
 print('A in Asabeneh', 'A' in 'Asabeneh')   # True - A found in the string
-print('B in Asabeneh', 'B' in 'Asabeneh')   # False -there is lowercase be in the string but not uppercase B
+print('B in Asabeneh', 'B' in 'Asabeneh')   # False -there is lowercase b in the string but not uppercase B
 print('coding' in 'coding for all')         # True - because the coding for all has the word coding
 print('a in an:', 'a' in 'an')              # True
 print('4 is 2 ** 2:', 4 is 2 **2)           # True
@@ -751,7 +751,7 @@ print(not not False)   # False
 3. Declare a complex number variable
 4. Calculate an area of a triangle (area = 0.5 x b x h)
 5. Calculate the perimeter of triangle (perimeter = a + b + c)
-6. Calculate an of area rectangle (area = length x width)
+6. Calculate an area of rectangle (area = length x width)
 7. Calculate the perimeter of rectangle (perimeter = 2 x (length + width))
 8. Calculate the area of a circle (area = 3.14 x r x r)
 9. Calculate the circumference of a circle(c = 2 x pi x r) where pi = 3.14.
@@ -760,7 +760,7 @@ print(not not False)   # False
 12. Calculate the value of y (y = x2 + 6x + 9). Try to use different x value and figure out at what x value y is 0.
 13. Compare the slope of q10 and 11
 14. Find the length of python and jargon and make a falsy comparison statment.
-15. Use and operator to check if 'on' is found in both python and jargon
+15. Use *and* operator to check if 'on' is found in both python and jargon
 16. *I hope this course is not full of jargon*. Use *in* operator to check if *jargon* is in the sentence.
 17. There is no 'on' in both  dragon and python
 18. Find the length of the text *python* and convert the value to float and convert it to string
