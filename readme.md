@@ -10,7 +10,7 @@
     - [Installing Python](#installing-python)
     - [Python Shell](#python-shell)
     - [Installing Visual Studio Code](#installing-visual-studio-code)
-      - [How to visual studio code](#how-to-visual-studio-code)
+      - [How to use visual studio code](#how-to-use-visual-studio-code)
   - [Basic Python](#basic-python)
     - [Python Syntax](#python-syntax)
     - [Python Indentation](#python-indentation)
@@ -36,11 +36,13 @@
 - [Day 3](#day-3)
   - [Boolean](#boolean)
   - [Operators:](#operators)
+    - [Assignment Operators:](#assignment-operators)
     - [Arithmetic Operators:](#arithmetic-operators)
     - [Comparison Operators](#comparison-operators)
     - [Logical Operators](#logical-operators)
   - [Exercises - Day 3](#exercises---day-3)
     - [Part 1](#part-1)
+    - [Part 2](#part-2)
 
 # Day 1
 ## Welcome
@@ -69,7 +71,7 @@ To check if python is installed write the following command on your device termi
 ```shell
 python --version
 ```
-![Pyhton Version](./images/python_versio.png)
+![Python Version](./images/python_versio.png)
 
 
 As you can see from the terminal, I am using *python 3.7.5* version at the moment. If you mange to see the python version, well done. Python has been installed on your machine. Continue to the next section.  
@@ -354,7 +356,7 @@ city
 first_name
 last_name
 capital_city
-_if # if we want to use reservered word as a variable
+_if # if we want to use reserved word as a variable
 first_name
 year_2019
 year2019
@@ -362,7 +364,7 @@ current_year_2019
 num1
 num2
 ```
-Invalid varaible names
+Invalid variables names
 ```shell
 first-name
 num-1
@@ -549,7 +551,7 @@ print(first_name_to_list)               # ['A', 's', 'a', 'b', 'e', 'n', 'e', 'h
     3.  Take radius as user input and calculate the area. 
 19. Use the built-in input function to get first name, last name, country and age from a user and store the value to their corresponding variable names
 20. Run help('keywords') on python shell or in your file check the reserved words
-    
+
 
 # Day 3
 ## Boolean
@@ -562,6 +564,11 @@ print(False)
 ```
 ## Operators:
 Python language supports several types of  operators. In this section, we will focus on few of them.
+### Assignment Operators:
+Assignment operators are used to assign values to variables. Let's take = as an example. Equal sign in mathematics shows that two values are equal, however in python it means we are storing a value in a certain variable and we call it assignment or a assigning value to a variable.  The table below shows the different types of python assignment operators, taken from [w3school](https://www.w3schools.com/python/python_operators.asp).
+
+![Assignment Operators](images/assignment_operators.png)
+
 ### Arithmetic Operators:
 * Addition(+): a + b 
 * Subtraction(-): a -b 
@@ -705,7 +712,6 @@ print('False == False:', False == False)
 print('True and True: ', True and True)
 print('True or False:', True or False)
 
-
 ```
 In addition to the above comparison operator python uses:
 * *is*: Returns true if both variables are the same object(x is y)
@@ -759,13 +765,40 @@ print(not not False)   # False
 11. Slope is (m = y2-y1/x2-x1). Find the slope between point (2, 2) and point(6,10)
 12. Calculate the value of y (y = x2 + 6x + 9). Try to use different x value and figure out at what x value y is 0.
 13. Compare the slope of q10 and 11
-14. Find the length of python and jargon and make a falsy comparison statment.
+14. Find the length of python and jargon and make a falsy comparison statement.
 15. Use *and* operator to check if 'on' is found in both python and jargon
 16. *I hope this course is not full of jargon*. Use *in* operator to check if *jargon* is in the sentence.
 17. There is no 'on' in both  dragon and python
 18. Find the length of the text *python* and convert the value to float and convert it to string
 19. Even numbers are divisible by 2 and the remainder is zero. How do you check if a number is even or not using python?
-20. The  floor divison of 7 by 3 is equal to the int converted value of 2.7.
+20. The  floor division of 7 by 3 is equal to the int converted value of 2.7.
+    
+### Part 2
+21. Check if type of '10' is equal to 10
+22. Check if int('9.8') is equal to 10
+23. Writ a script that prompt a user to enters hours and rate per hour. Calculate pay of the person? 
+```py
+Enter hours: 40
+Enter rate per hour: 28
+
+Your weekly earning is 1120
+
+```
+24. Write a script that prompt the user to enter number of years.  Calculate the number of seconds a person can live. Assume some one lives just hundred years
+```py
+    Enter number of yours you live: 100
+    You lived 3153600000 seconds.
+    
+
+```
+25. Write a python script that display the following table
+```py
+1 1 1 1 1
+2 1 2 4 8
+3 1 3 9 27
+4 1 4 16 64
+5 1 5 25 125
+```
 
 
 
