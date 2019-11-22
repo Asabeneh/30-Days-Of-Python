@@ -490,7 +490,7 @@ print(num_str)                          # '10'
 # str to int
 num_str = '10.6'
 print('num_int', int(num_str))          # 10
-print('num_float', float(num_str))      # 11
+print('num_float', float(num_str))      # 10.6
 
 # str to list
 first = 'Asabeneh'
@@ -696,8 +696,6 @@ print(len('milk') != len('meat'))       # False
 print(len('milk') == len('meat'))       # False
 print(len('tomato') == len('potato'))   # True
 print(len('python') > len('dragon'))
-
-
 
 
 # Comparing something give either a True or False
