@@ -43,14 +43,23 @@
   - [String](#string-1)
     - [Creating a string](#creating-a-string)
     - [String Concatenation](#string-concatenation)
+    - [Escape Sequences in string](#escape-sequences-in-string)
+    - [String formating](#string-formating)
+      - [“Old Style” String Formatting (% Operator)](#old-style-string-formatting--operator)
+      - [“New Style” String Formatting (str.format)](#new-style-string-formatting-strformat)
+- [Strings only](#strings-only)
+      - [String Interpolation / f-Strings (Python 3.6+)](#string-interpolation--f-strings-python-36)
     - [Python strings as sequences of characters](#python-strings-as-sequences-of-characters)
       - [Unpacking characters](#unpacking-characters)
       - [Accessing characters in strings by index](#accessing-characters-in-strings-by-index)
       - [Slicing Python Strings](#slicing-python-strings)
+      - [Reversing a string](#reversing-a-string)
       - [Skipping characters while slicing](#skipping-characters-while-slicing)
-    - [Escape Sequences in string](#escape-sequences-in-string)
     - [String Methods](#string-methods)
   - [Exercises - Day 4](#exercises---day-4)
+- [Day 5](#day-5)
+  - [Conditionals](#conditionals)
+    - [If](#if)
 
 # Day 1
 ## Welcome
@@ -846,6 +855,114 @@ print(len(last_name))   # 7
 print(len(first_name) > len(last_name)) # True
 print(len(full_name)) # 15
 ```
+### Escape Sequences in string
+In python and other programming language \ followed by a character. Let's see the most common escape characters:
+* \n: new line
+* \t: Tab means(8 spaces)
+* \\\\: Back slash
+* \\': Single quote (')
+* \\":Double quote (")
+```py
+print('I hope every one enjoying the python challenge.\nDo you ?') # line break
+print('Days\tTopics\tExercises')
+print('Day 1\t3\t5')
+print('Day 2\t3\t5')
+print('Day 3\t3\t5')
+print('Day 4\t3\t5')
+print('This is a back slash  symbol (\\)') # To write a back slash
+print('In every programming language it starts with \"Hello, World!\"') 
+
+# output
+I hope every one enjoying the python challenge.
+Do you ?
+Days	Topics	Exercises
+Day 1	5	    5
+Day 2	6	    20
+Day 3	5	    23
+Day 4	1	    35
+This is a back slash  symbol (\)
+In every programming language it starts with "Hello, World!"
+
+```
+### String formating
+#### “Old Style” String Formatting (% Operator)
+In python there many ways of formating string. In this section we will cover some of them.
+The "%" operator is used to format a set of variables enclosed in a "tuple" (a fixed size list), together with a format string, which contains normal text together with "argument specifiers", special symbols like "%s",  "%d", "%f", "%.<number of digits>f". 
+* %s - String (or any object with a string representation, like numbers)
+* %d - Integers
+* %f - Floating point numbers
+* %.<number of digits>f - Floating point numbers with a fixed amount of digits to the right of the dot.
+
+```py
+# Strings only
+first_name = 'Asabeneh'
+last_name = 'Yetayeh'
+language = 'Python'
+formatted_string = 'I am %s %s. I teach %s' %(first_name, last_name, language)
+print(formatted)
+
+# Strings  and numbers
+radius = 10
+pi = 3.14
+area = pi * radius ** 2
+formatted_string = 'The area of radius %d is %.2f.' %(radius, area) # 2 refers the 2 significant digits after the point
+
+python_libraries = ['Django', 'Flask', 'Numpy', 'Pandas']
+formatted_string = 'The following are python libraries:' % python_libraries
+print(formatted_string) # "The following are python libraries:['Django', 'Flask', 'Numpy', 'Pandas']"
+```
+#### “New Style” String Formatting (str.format)
+This is formating is introduced in python version 3. 
+# Strings only
+```py
+first_name = 'Asabeneh'
+last_name = 'Yetayeh'
+language = 'Python'
+formatted_string = 'I am {} {}. I teach {}'.format(first_name, last_name, language)
+print(formatted)
+a = 4
+b = 3
+
+print('{} + {} = {}'.format(a, b, a + b))
+print('{} - {} = {}'.format(a, b, a - b))
+print('{} * {} = {}'.format(a, b, a * b))
+print('{} / {} = {:.2f}'.format(a, b, a / b)) # limits it to two digits after decimal
+print('{} % {} = {}'.format(a, b, a % b))
+print('{} // {} = {}'.format(a, b, a // b))
+print('{} ** {} = {}'.format(a, b, a ** b))
+
+# output
+4 + 3 = 7
+4 - 3 = 1
+4 * 3 = 12
+4 / 3 = 1.33
+4 % 3 = 1
+4 // 3 = 1
+4 ** 3 = 64
+
+# Strings  and numbers
+radius = 10
+pi = 3.14
+area = pi * radius ** 2
+formatted_string = 'The area of radius {} is {:.2f}.'.format(radius, area) # 2 digits after decimal
+print(formatted_string)
+
+
+```
+####  String Interpolation / f-Strings (Python 3.6+)
+Another new string formatting is string interpolation, f-strings. String started with f and we can inject the data in their corresponding positions.
+```py
+a = 4
+b = 3
+print(f'{a} + {b} = {a +b}')
+print(f'{a} - {b} = {a - b}')
+print(f'{a} * {b} = {a * b}')
+print(f'{a} / {b} = {a / b:.2f}') 
+print(f'{a} % {b} = {a % b}')
+print(f'{a} // {b} = {a // b}')
+print(f'{a} ** {b} = {a ** b}')
+```
+
 ### Python strings as sequences of characters
 Python strings are sequences of  characters, and share their basic methods of access with those other Python sequences – lists and tuples. The simplest way of extracting single characters from strings (and individual members from any sequence) is to unpack them into corresponding variables.
 #### Unpacking characters 
@@ -892,6 +1009,13 @@ print(last_three)   # hon
 last_three = language[3:]
 print(last_three)   # hon
 ```
+#### Reversing a string
+We can easily reverse string in python.
+```py
+greeting = 'Hello, World!'
+print(greeting[::-1]) # !dlroW ,olleH
+```
+
 #### Skipping characters while slicing
 It is possible to skip characters while slicing by passing step argument to slice method.
 ```py
@@ -899,35 +1023,7 @@ language = 'Python'
 pto = language[0,6:2] # 
 print(pto) # pto
 ```
-### Escape Sequences in string
-In python and other programming language \ followed by a character. Let's see the most common escape characters:
-* \n: new line
-* \t: Tab means(8 spaces)
-* \\\\: Back slash
-* \\': Single quote (')
-* \\":Double quote (")
-```py
-print('I hope every one enjoying the python challenge.\nDo you ?') # line break
-print('Days\tTopics\tExercises')
-print('Day 1\t3\t5')
-print('Day 2\t3\t5')
-print('Day 3\t3\t5')
-print('Day 4\t3\t5')
-print('This is a back slash  symbol (\\)') # To write a back slash
-print('In every programming language it starts with \"Hello, World!\"') 
 
-# output
-I hope every one enjoying the python challenge.
-Do you ?
-Days	Topics	Exercises
-Day 1	5	    5
-Day 2	6	    20
-Day 3	5	    23
-Day 4	1	    35
-This is a back slash  symbol (\)
-In every programming language it starts with "Hello, World!"
-
-```
 ### String Methods
 There are many string methods which allow us to format strings. See some of the string methods in the following example:
 
@@ -1099,56 +1195,73 @@ print(challenge.startswith('thirty')) # False
 
 ## Exercises - Day 4
 1. Concatenate the string 'Thirty', 'Days', 'Of', 'Python' to a single string, 'Thirty Days Of Python'
-1. Concatenate the string 'Coding', 'For' , 'All' to a single string, 'Coding For All'
-1. Declare a variable name company and assign it to an initial value "Coding For All1.
-1. Print company using *print()*
-1. Print the length of the company string using *len()* method and *print()*
-1. Change all the characters to capital letters using *upper()* method
-1. Change all the characters to lowercase letters using *lower()* method
-1.  Use capitalize(), title(), swapcase() methods to format the value the string *Coding For All*.
-1.  Cut(slice) out the first word of *Coding For All* string
-1. Check if *Coding For All* string contains a word Coding using the method index, find or other methods.
-1. Replace the word coding in the string 'Coding For All' to Python.
-1. Change Python for Everyone to Python for All using the replace method or other methods
-1. Split the string 'Coding For All' at the space using split() method
-1. "Facebook, Google, Microsoft, Apple, IBM, Oracle, Amazon" split the string at the comma
-1. What is character at index 0 in the string *Coding For All*.
-1. What is the last index of the string *Coding For All*
-1. What character is at index 10 in "Coding For All" string.
-1. Create an acronym or an abbreviation for the name 'Python For Everyone'
-1. Create an acronym or an abbreviation for the name 'Coding For All'
-1. Use index to determine the position of the first occurrence of C in Coding For All.
-1. Use index to determine the position of the first occurrence of F in Coding For All
-1. Use rfind to determine the position of the last occurrence of l in Coding For All People.
-1. Use index or find to find the position of the first occurrence of the word because in the following sentence:'You cannot end a sentence with because because because is a conjunction'
-1. Use rindex to find the position of the last occurrence of the word because in the following sentence:'You cannot end a sentence with because because because is a conjunction'
-1. Slice out the phrase because because because in the following sentence:'You cannot end a sentence with because because because is a conjunction'
-1. Find the position of the first occurrence of the word because in the following sentence:'You cannot end a sentence with because because because is a conjunction'
-1. Slice out the phase because because because in the following sentence:'You cannot end a sentence with because because because is a conjunction'
-1. Does Coding For All starts with a substring *Coding*?
-1. Does Coding For All ends with a substring *coding*?
-1. '&nbsp;&nbsp; Coding For All &nbsp;&nbsp;&nbsp; &nbsp;' &nbsp;,    remove the left and right trailing spaces in the given string.
-1. Which one of the following variable return True when we use the method isidentifier()
+2. Concatenate the string 'Coding', 'For' , 'All' to a single string, 'Coding For All'
+3. Declare a variable name company and assign it to an initial value "Coding For All1.
+4. Print company using *print()*
+5. Print the length of the company string using *len()* method and *print()*
+6. Change all the characters to capital letters using *upper()* method
+7. Change all the characters to lowercase letters using *lower()* method
+8.  Use capitalize(), title(), swapcase() methods to format the value the string *Coding For All*.
+9.  Cut(slice) out the first word of *Coding For All* string
+10. Check if *Coding For All* string contains a word Coding using the method index, find or other methods.
+11. Replace the word coding in the string 'Coding For All' to Python.
+12. Change Python for Everyone to Python for All using the replace method or other methods
+13. Split the string 'Coding For All' at the space using split() method
+14. "Facebook, Google, Microsoft, Apple, IBM, Oracle, Amazon" split the string at the comma
+15. What is character at index 0 in the string *Coding For All*.
+16. What is the last index of the string *Coding For All*
+17. What character is at index 10 in "Coding For All" string.
+18. Create an acronym or an abbreviation for the name 'Python For Everyone'
+19. Create an acronym or an abbreviation for the name 'Coding For All'
+20. Use index to determine the position of the first occurrence of C in Coding For All.
+21. Use index to determine the position of the first occurrence of F in Coding For All
+22. Use rfind to determine the position of the last occurrence of l in Coding For All People.
+23. Use index or find to find the position of the first occurrence of the word because in the following sentence:'You cannot end a sentence with because because because is a conjunction'
+24. Use rindex to find the position of the last occurrence of the word because in the following sentence:'You cannot end a sentence with because because because is a conjunction'
+25. Slice out the phrase because because because in the following sentence:'You cannot end a sentence with because because because is a conjunction'
+26. Find the position of the first occurrence of the word because in the following sentence:'You cannot end a sentence with because because because is a conjunction'
+27. Slice out the phase because because because in the following sentence:'You cannot end a sentence with because because because is a conjunction'
+28. Does Coding For All starts with a substring *Coding*?
+29. Does Coding For All ends with a substring *coding*?
+30. '&nbsp;&nbsp; Coding For All &nbsp;&nbsp;&nbsp; &nbsp;' &nbsp;,    remove the left and right trailing spaces in the given string.
+31. Which one of the following variable return True when we use the method isidentifier()
     * 30DaysOfPython
     * thirty_days_of_python
-1. The following are some of python libraries list, ['Django', 'Flask', 'Bottle', 'Pyramid', 'Falcon']. Join the list with a hash with space string. 
-1. Use new line escape sequence to writ the following sentence.
+32. The following are some of python libraries list: ['Django', 'Flask', 'Bottle', 'Pyramid', 'Falcon']. Join the list with a hash with space string. 
+33. Use new line escape sequence to writ the following sentence.
     ```py
     I am enjoying this challenge.
     I just wonder what is next.
     ```
-1. Use a tab escape sequence to writ the following sentence.
+34. Use a tab escape sequence to writ the following sentence.
     ```py
     Name      Age     Country
     Asabeneh  250     Finland
     ```
-1. Use string formatting method to display the following:
+35. Use string formatting method to display the following:
 ```sh
 radius = 10
 area = 3.14 * radius ** 2
 The area of radius 10 is 314 meters squares. 
-
 ```
+36. Make the following using string formatting methods:
+```sh
+8 + 6 = 14
+8 - 6 = 2
+8 * 6 = 48
+8 / 6 = 1.33
+8 % 6 = 2
+8 // 6 = 1
+8 ** 6 = 262144
+```
+# Day 5
+## Conditionals
+We use conditional statement in python perform different computations or actions depending on whether a specific boolean constraint evaluates to true or false. Conditional statements are handled by IF statements in Python.
+### If 
+If condition will be evaluated only if the condition is true. See the example below:
+```py
+
+``
 
 
 
