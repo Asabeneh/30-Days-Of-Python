@@ -922,10 +922,10 @@ print('In every programming language it starts with \"Hello, World!\"')
 I hope every one enjoying the python challenge.
 Do you ?
 Days	Topics	Exercises
-Day 1	3	    5
-Day 2	3	    5
-Day 3	3	    5
-Day 4	3	    5
+Day 1	5	    5
+Day 2	6	    20
+Day 3	5	    23
+Day 4	1	    35
 This is a back slash  symbol (\)
 In every programming language it starts with "Hello, World!"
 
