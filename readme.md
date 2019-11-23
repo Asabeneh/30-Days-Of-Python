@@ -1,5 +1,3 @@
-
-
 ![30DaysOfPython](./images/30DaysOfPython_banner3@2x.png)
 ## Table of Contents
 - [Day 1](#day-1)
@@ -46,15 +44,21 @@
     - [Creating a string](#creating-a-string)
     - [String Concatenation](#string-concatenation)
     - [Python strings as sequences of characters](#python-strings-as-sequences-of-characters)
-    - [Skipping character while splitting Python strings](#skipping-character-while-splitting-python-strings)
+      - [Unpacking characters](#unpacking-characters)
+      - [Accessing characters in strings by index](#accessing-characters-in-strings-by-index)
+      - [Slicing Python Strings](#slicing-python-strings)
+      - [Skipping character while splitting Python strings](#skipping-character-while-splitting-python-strings)
+    - [Escape Sequences in string](#escape-sequences-in-string)
     - [String Methods](#string-methods)
   - [Exercises - Day 4](#exercises---day-4)
+- [Day 5](#day-5)
+  - [Exercises - Day 5](#exercises---day-5)
 
 # Day 1
 ## Welcome
 **Congratulations** for deciding to participate in a ***30 days of Python*** programming challenge . In this challenge you will learn everything you need to be a python programmer and the whole concepts of programming. In the end of the challenge you will get a ***30DaysOfPython*** programming challenge certificate. [Join the telegram channel](https://t.me/ThirtyDaysOfPython)
 ## Introduction
-Python is a high-level programming language. It is an open source. This 30 days python challenge will help you learn the latest version of Python, Python 3 step by step. The topics are broken down into 30 days, where each days contains several topics with easy-to-understand explanations, real-world examples and many hands on exercises.
+Python is a high-level programming language for general-purpose programming. It is an open source. This 30 days python challenge will help you learn the latest version of Python, Python 3 step by step. The topics are broken down into 30 days, where each days contains several topics with easy-to-understand explanations, real-world examples and many hands on exercises.
 
 This challenge is designed for beginners and professionals who want to learn python programming language.
 ## Why Python ?
@@ -83,7 +87,7 @@ python --version
 As you can see from the terminal, I am using *python 3.7.5* version at the moment. If you mange to see the python version, well done. Python has been installed on your machine. Continue to the next section.  
 
 ### Python Shell
-Python is an interpreter scripting language. It means it executes the code line by line. Python comes with  a *Python Shell (Python Interactive Shell)*. It is used to execute a single python command and get the result.
+Python is an interpreted scripting language,o it doesn't need to be compiled. It means it executes the code line by line. Python comes with  a *Python Shell (Python Interactive Shell)*. It is used to execute a single python command and get the result.
 
 Python Shell waits for the python code from the user. When you enter the code, it interprets the code and shows the result in the next line.
 Open your terminal or cmd and write:
@@ -196,10 +200,10 @@ Any text starts with hash(#) in python is a comment.
  Triple quote can be use for multiline comment if it is not assigned to a variable
 
 ```shell
-    """This is multiline comment
-    multiline comment take multiple lines.
-    python is eating the world
-    """
+"""This is multiline comment
+multiline comment take multiple lines.
+python is eating the world
+"""
 ```
 ### Data types
 In python there are several types of data types. We will get started with the most common ones.
@@ -237,8 +241,8 @@ Python list is an ordered collection which allows to store of different data typ
 
  **Example:**
 ```py
-   ['Banana', 'Orange', 'Mango', 'Avocado'] # all the same data type in the list
-   ['Banana', 10, False, 9.81] # different data types in the list
+['Banana', 'Orange', 'Mango', 'Avocado'] # all the same data type in the list
+['Banana', 10, False, 9.81] # different data types in the list
 ```
 
 #### Dictionary
@@ -253,7 +257,7 @@ A tuple is an ordered collection of different data types like list but tuples ca
 
  **Example**
 ```py
-    ('Asabeneh', 'Brook', 'Abraham', 'Lidiya')
+('Asabeneh', 'Brook', 'Abraham', 'Lidiya')
 ```
 #### Set
 A set is a collection data types similar to list and tuple. Unlike list and tuple, set is not an ordered collection of items. Like in mathematics, set in python store only unique elements.
@@ -262,7 +266,7 @@ In later sections, we will go in detail in each and every python data types.
 
 **Example:**
 ```py
-    {3.14, 9.81, 2.7} # order is not important in set
+{3.14, 9.81, 2.7} # order is not important in set
 ```
 ### Checking Data types
 To check the data type of a certain data type we use the **type** function. In the following terminal you will see the different python data types:
@@ -276,22 +280,22 @@ The python interactive shell was printing without using **print** but on visual 
 **Example:**
 helloworld.py
 ```py
-    # Day 1 - 30DaysOfPython Challenge
-    print(2 + 3)                     # addition(+)
-    print(3 - 1)                     # subtraction(-)
-    print(2 * 3)                     # multiplication(*)
-    print(3 / 2)                     # division(/)
-    print(3 ** 2)                    # exponential(**)
-    print(3 % 2)                     # modulus(%)
-    print(3 // 2)                    # Floor division operator(//)
-    # Checking data types
-    print(type(10))                  # Int 
-    print(type(3.14))                # Float 
-    print(type(1 + 3j))              # Complex number
-    print(type('Asabeneh'))          # String 
-    print(type([1, 2, 3]))           # List 
-    print(type({'name':'Asabeneh'})) # Dictionary
-    print(type({9.8, 3.14, 2.7}))    # Tuple
+# Day 1 - 30DaysOfPython Challenge
+print(2 + 3)             # addition(+)
+print(3 - 1)             # subtraction(-)
+print(2 * 3)             # multiplication(*)
+print(3 / 2)             # division(/)
+print(3 ** 2)            # exponential(**)
+print(3 % 2)             # modulus(%)
+print(3 // 2)            # Floor division operator(//)
+# Checking data types
+print(type(10))          # Int 
+print(type(3.14))        # Float 
+print(type(1 + 3j))      # Complex number
+print(type('Asabeneh'))  # String 
+print(type([1, 2, 3]))   # List 
+print(type({'name':'Asabeneh'})) # Dictionary
+print(type({9.8, 3.14, 2.7}))    # Tuple
 ```
 ![Running python script](./images/running_python_script.png)
 
@@ -398,7 +402,6 @@ person_info = {
     'country':'Finland',
     'city':'Helsinki'
     }
-
  ``` 
  Let's use *print()* and *len()* built in functions. Print function will take multiple arguments. An argument is a value which we pass or put inside the function parenthesis, see the example below.
 
@@ -507,7 +510,6 @@ print(first_name)
 print(first_name)                    # 'Asabeneh'
 first_name_to_list = list(first_name) 
 print(first_name_to_list)            # ['A', 's', 'a', 'b', 'e', 'n', 'e', 'h']
-
 ```
 
 
@@ -693,20 +695,20 @@ In programming we compare values, we use comparison operators to compare two val
 ![Comparison Operators](./images/comparison_operators.png)
 **Example: Comparison Operators**
 ```py
-print(3 > 2)                            # True, because 3 is greater than 2
-print(3 >= 2)                           # True, because 3 is greater than 2
-print(3 < 2)                            # False,  because 3 is greater than 2
-print(2 < 3)                            # True, because 2 is less than 3
-print(2 <= 3)                           # True, because 2 is less than 3
-print(3 == 2)                           # False, because 3 is not equal to 2
-print(3 != 2)                           # True, because 3 is not equal to 2
-print(len('mango') == len('avocado'))   # False
-print(len('mango') != len('avocado'))   # True
-print(len('mango') < len('avocado'))    # True
-print(len('milk') != len('meat'))       # False
-print(len('milk') == len('meat'))       # True
-print(len('tomato') == len('potato'))   # True
-print(len('python') > len('dragon'))    # False
+print(3 > 2)     # True, because 3 is greater than 2
+print(3 >= 2)    # True, because 3 is greater than 2
+print(3 < 2)     # False,  because 3 is greater than 2
+print(2 < 3)     # True, because 2 is less than 3
+print(2 <= 3)    # True, because 2 is less than 3
+print(3 == 2)    # False, because 3 is not equal to 2
+print(3 != 2)    # True, because 3 is not equal to 2
+print(len('mango') == len('avocado'))  # False
+print(len('mango') != len('avocado'))  # True
+print(len('mango') < len('avocado'))   # True
+print(len('milk') != len('meat'))      # False
+print(len('milk') == len('meat'))      # True
+print(len('tomato') == len('potato'))  # True
+print(len('python') > len('dragon'))   # False
 
 
 # Comparing something give either a True or False
@@ -728,12 +730,10 @@ In addition to the above comparison operator python uses:
 print('1 is 1', 1 is 1)                   # True - because the data values are the same
 print('1 is not 2', 1 is not 2)           # True - because 1 is not 2
 print('A in Asabeneh', 'A' in 'Asabeneh') # True - A found in the string
-print('B in Asabeneh', 'B' in 'Asabeneh') # False -there is lowercase b in the string but not uppercase B
-print('coding' in 'coding for all')   # True - because the coding for all has the word coding
-print('a in an:', 'a' in 'an')        # True
-print('4 is 2 ** 2:', 4 is 2 **2)     # True
-
-
+print('B in Asabeneh', 'B' in 'Asabeneh') # False -there is no uppercase B
+print('coding' in 'coding for all') # True - because coding for all has the word coding
+print('a in an:', 'a' in 'an')      # True
+print('4 is 2 ** 2:', 4 is 2 **2)   # True
 ```
 ### Logical Operators
 Unlike other programming languages python uses the key word *and*, *or* and *not* for logical operator. Logical operators are used to combine conditional statements:
@@ -747,12 +747,11 @@ print(3 < 2 and 4 < 3) # False - because both statements are false
 print(3 > 2 or 4 > 3)  # True - because both statements are true
 print(3 > 2 or 4 < 3)  # True - because one of the statement is true
 print(3 < 2 or 4 < 3)  # False - because both statements are false
-print(not 3 > 2)       # False - because 3 > 2 is true, then not True gives False
-print(not True)        # False - Negation, the not operator turns true to false
-print(not False)       # True
-print(not not True)    # True
-print(not not False)   # False
-
+print(not 3 > 2)     # False - because 3 > 2 is true, then not True gives False
+print(not True)      # False - Negation, the not operator turns true to false
+print(not False)     # True
+print(not not True)  # True
+print(not not False) # False
 ```
 
 ## Exercises - Day 3
@@ -761,11 +760,11 @@ print(not not False)   # False
 3. Declare a complex number variable
 4.  Write a script that prompt the user to enter base and height of the triangle and calculate an area of a triangle (area = 0.5 x b x h).
 ```py
-Enter base: 20
-Enter height: 10
-The area of the triangle is 50
+    Enter base: 20
+    Enter height: 10
+    The area of the triangle is 50
 ```
-1. Write a script that prompt the user to enter side a, side b, and side c of the triangle and and calculate the perimeter of triangle (perimeter = a + b + c)
+5. Write a script that prompt the user to enter side a, side b, and side c of the triangle and and calculate the perimeter of triangle (perimeter = a + b + c)
 ```py
 Enter side a: 5
 Enter side b: 4
@@ -773,33 +772,32 @@ Enter side c: 3
 The perimeter of the triangle is 12
 ```
 6. Get length and width using prompt and calculate an area of rectangle (area = length x width  and the perimeter of rectangle (perimeter = 2 x (length + width))
-1. Calculate the area of a circle (area = 3.14 x r x r)
-2. Calculate the circumference of a circle(c = 2 x pi x r) where pi = 3.14.
-3.  Calculate the slope, x-intercept and y-intercept of y = 2x -2
-4.  Slope is (m = y2-y1/x2-x1). Find the slope between point (2, 2) and point(6,10)
-5.  Compare the slope of q10 and 11
-6.  Calculate the value of y (y = x^2 + 6x + 9). Try to use different x values and figure out at what x value y is 0.
-7.  Find the length of python and jargon and make a falsy comparison statement.
-8.  Use *and* operator to check if 'on' is found in both python and jargon
-9.  *I hope this course is not full of jargon*. Use *in* operator to check if *jargon* is in the sentence.
-10. There is no 'on' in both  dragon and python
-11. Find the length of the text *python* and convert the value to float and convert it to string
-12. Even numbers are divisible by 2 and the remainder is zero. How do you check if a number is even or not using python?
-13. The  floor division of 7 by 3 is equal to the int converted value of 2.7.
-14. Check if type of '10' is equal to 10
-15. Check if int('9.8') is equal to 10
-16. Writ a script that prompt a user to enters hours and rate per hour. Calculate pay of the person? 
+7. Get radius using prompt and calculate the area of a circle (area = pi x r x r) and circumference of a circle(c = 2 x pi x r) where pi = 3.14.
+8.  Calculate the slope, x-intercept and y-intercept of y = 2x -2
+9.  Slope is (m = y2-y1/x2-x1). Find the slope between point (2, 2) and point(6,10)
+10. Compare the slope of q10 and 11
+11. Calculate the value of y (y = x^2 + 6x + 9). Try to use different x values and figure out at what x value y is 0.
+12. Find the length of python and jargon and make a falsy comparison statement.
+13. Use *and* operator to check if 'on' is found in both python and jargon
+14. *I hope this course is not full of jargon*. Use *in* operator to check if *jargon* is in the sentence.
+15. There is no 'on' in both  dragon and python
+16. Find the length of the text *python* and convert the value to float and convert it to string
+17. Even numbers are divisible by 2 and the remainder is zero. How do you check if a number is even or not using python?
+18. The  floor division of 7 by 3 is equal to the int converted value of 2.7.
+19. Check if type of '10' is equal to 10
+20. Check if int('9.8') is equal to 10
+21. Writ a script that prompt a user to enters hours and rate per hour. Calculate pay of the person? 
 ```py
 Enter hours: 40
 Enter rate per hour: 28
 Your weekly earning is 1120
 ```
-24. Write a script that prompt the user to enter number of years.  Calculate the number of seconds a person can live. Assume some one lives just hundred years
+22. Write a script that prompt the user to enter number of years.  Calculate the number of seconds a person can live. Assume some one lives just hundred years
 ```py
-    Enter number of yours you live: 100
-    You lived 3153600000 seconds.
+Enter number of yours you live: 100
+You lived 3153600000 seconds.
 ```
-25. Write a python script that display the following table
+23. Write a python script that display the following table
 ```py
 1 1 1 1 1
 2 1 2 4 8
@@ -817,13 +815,11 @@ Text is a string data type. Any data type written as text is a string. Any data 
 letter = 'P'                # A string could be a single character or a bunch of texts
 print(letter)               # P
 print(len(letter))          # 1
-greeting = 'Hello, World!'  # String could be in a single quote or double quote,"Hello, World!"
+greeting = 'Hello, World!'  # String could be  a single or double quote,"Hello, World!"
 print(greeting)             # Hello, World!
 print(len(greeting))        # 13
 sentence = "I hope you are enjoying 30 days of python challenge"
 print(sentence)
-
-
 
 ```
 Multiline string is created by using triple ''' or  quotes.See the example below.
@@ -854,10 +850,10 @@ print(len(full_name)) # 15
 ```
 ### Python strings as sequences of characters
 Python strings are sequences of  characters, and share their basic methods of access with those other Python sequences – lists and tuples. The simplest way of extracting single characters from strings (and individual members from any sequence) is to unpack them into corresponding variables.
-* Unpacking
+#### Unpacking characters 
 ```
 language = 'Python'
-a,b,c,d,e,f = lang # unpacking sequence characters into variables
+a,b,c,d,e,f = language # unpacking sequence characters into variables
 print(a) # P
 print(b) # y
 print(c) # t 
@@ -865,86 +861,107 @@ print(d) # h
 print(e) # o
 print(f) # n
 ```
-* Accessing characters in strings by index
+#### Accessing characters in strings by index
   In programming counting starts from zero. Therefore the first letter of a string is at zero index and the last letter of a string is the length of a string minus one.
 ```py
-  language = 'Python'
-  first_letter = language[0]
-  print(first_letter) # P
-  second_letter = language[1]
-  print(second_letter) # y
-  last_index = len(language) - 1
-  last_letter = language[last_index]
-  print(last_letter) # n
-
+language = 'Python'
+first_letter = language[0]
+print(first_letter) # P
+second_letter = language[1]
+print(second_letter) # y
+last_index = len(language) - 1
+last_letter = language[last_index]
+print(last_letter) # n
 ```
 If we want to start from right end we can use negative indexing. -1 is the last index.
 ```py
-  language = 'Python'
-  last_letter = language[-1]
-  print(last_letter) # n
-  second_last = language[-2]
-  print(second_last) # o
-
+language = 'Python'
+last_letter = language[-1]
+print(last_letter) # n
+second_last = language[-2]
+print(second_last) # o
   ```
-* Slicing Python Strings
+#### Slicing Python Strings
     In python we can slice substrings from a string.
-    ```py
-    language = 'Python'
-    first_three = language[0,3] # starts at zero index and up to 3 but not include 3
-    last_three = language[3:6]
-    print(last_three) # hon
-    # Another way
-    last_three = language[-3:]
-    print(last_three)   # hon
-    last_three = language[3:]
-     print(last_three)   # hon
-
-    ```
-### Skipping character while splitting Python strings
+```py
+language = 'Python'
+first_three = language[0,3] # starts at zero index and up to 3 but not include 3
+last_three = language[3:6]
+print(last_three) # hon
+# Another way
+last_three = language[-3:]
+print(last_three)   # hon
+last_three = language[3:]
+print(last_three)   # hon
+```
+#### Skipping character while splitting Python strings
 It is possible to skip characters while slicing by passing step argument to slice method.
 ```py
 language = 'Python'
 pto = language[0,6:2] # 
 print(pto) # pto
+```
+### Escape Sequences in string
+In python and other programming language \ followed by a character. Let's see the most common escape characters:
+\n: new line
+\t: Tab means(8 spaces)
+\\: Back slash
+\': Single quote (')
+\":Double quote (")
+```py
+print('I hope every one enjoying the python challenge.\nDo you ?') # line break
+print('Days\tTopics\tExercises')
+print('Day 1\t3\t5')
+print('Day 2\t3\t5')
+print('Day 3\t3\t5')
+print('Day 4\t3\t5')
+print('This is a back slash  symbol (\\)') # To write a back slash
+print('In every programming language it starts with \"Hello, World!\"') 
+
+# output
+I hope every one enjoying the python challenge.
+Do you ?
+Days	Topics	Exercises
+Day 1	3	    5
+Day 2	3	    5
+Day 3	3	    5
+Day 4	3	    5
+This is a back slash  symbol (\)
+In every programming language it starts with "Hello, World!"
 
 ```
-
-
 ### String Methods
 There are many string methods which allow us to format strings. See some of the string methods in the following example:
 
 * capitalize(): Converts the first character the string to Capital Letter
 ```py
-    challenge = 'thirty days of python'
-    print(challenge.capitalize()) # 'Thirty days of python'
+challenge = 'thirty days of python'
+print(challenge.capitalize()) # 'Thirty days of python'
 ```
 * count(): returns occurrences of substring in string, count(substring, start=.., end=..)
 ```py
-    challenge = 'thirty days of python'
-    print(challenge.count('y')) # 3
-    print(challenge.count('y', 7, 14)) # 1
-    print(challenge.count('th')) # 2
+challenge = 'thirty days of python'
+print(challenge.count('y')) # 3
+print(challenge.count('y', 7, 14)) # 1
+print(challenge.count('th')) # 2`
 ```
 * endswith(): Checks if a string ends with a specified ending
 ```py
-    challenge = 'thirty days of python'
-    print(challenge.endswith('on')) # True
-    print(challenge.endswith('tion')) # False
+challenge = 'thirty days of python'
+print(challenge.endswith('on'))   # True
+print(challenge.endswith('tion')) # False
 ```
 * expandtabs(): Replaces tab character with spaces, default tab size is 8. It takes tab size argument
 ```py
-    challenge = 'thirty\tdays\tof\tpython'
-    print(challenge.expandtabs()) # 'thirty  days    of      python'
-    print(challenge.expandtabs(10)) # 'thirty    days      of        python'
-
+challenge = 'thirty\tdays\tof\tpython'
+print(challenge.expandtabs())   # 'thirty  days    of      python'
+print(challenge.expandtabs(10)) # 'thirty    days      of        python'
 ```
-
 * find(): Returns the index of first occurrence of substring
 ```py
-    challenge = 'thirty days of python'
-    print(challenge.find('y')) # 5
-    print(challenge.find('th')) # 0
+challenge = 'thirty days of python'
+print(challenge.find('y'))  # 5
+print(challenge.find('th')) # 0
 ```
 * format()	formats string into nicer output    
     More about string formating check this [link](https://www.programiz.com/python-programming/methods/string/format)
@@ -964,162 +981,178 @@ print(result) # The area of circle with 10 is 314.0
 ```
 * index(): Returns the index of substring
 ```py
-    challenge = 'thirty days of python'
-    print(challenge.find('y')) # 5
-    print(challenge.find('th')) # 0
+challenge = 'thirty days of python'
+print(challenge.find('y'))  # 5
+print(challenge.find('th')) # 0
 ```
 * isalnum(): Checks alphanumeric character
 ```py
-    challenge = 'ThirtyDaysPython'
-    print(challenge.isalnum()) # True
+challenge = 'ThirtyDaysPython'
+print(challenge.isalnum()) # True
 
-    challenge = '30DaysPython'
-    print(challenge.isalnum()) # True
+challenge = '30DaysPython'
+print(challenge.isalnum()) # True
 
-    challenge = 'thirty days of python'
-    print(challenge.isalnum()) # False
+challenge = 'thirty days of python'
+print(challenge.isalnum()) # False
 
-    challenge = 'thirty days of python 2019'
-    print(challenge.isalnum()) # False
+challenge = 'thirty days of python 2019'
+print(challenge.isalnum()) # False
 ```
 * isalpha(): Checks if all characters are alphabets
 ```py
-    challenge = 'thirty days of python'
-    print(challenge.isalpha()) # True
-    num = '123'
-    print(num.isalpha()) # False
+challenge = 'thirty days of python'
+print(challenge.isalpha()) # True
+num = '123'
+print(num.isalpha())      # False
 ```
 * isdecimal(): Checks Decimal Characters
 ```py
-    challenge = 'thirty days of python'
-    print(challenge.find('y')) # 5
-    print(challenge.find('th')) # 0
+challenge = 'thirty days of python'
+print(challenge.find('y'))  # 5
+print(challenge.find('th')) # 0
 ```
 * isdigit(): Checks Digit Characters
 ```py
-    challenge = 'Thirty'
-    print(challenge.isdigit()) # False
-    challenge = '30'
-    print(challenge.digit()) # True
+challenge = 'Thirty'
+print(challenge.isdigit()) # False
+challenge = '30'
+print(challenge.digit())   # True
 ```
 * isdecimal():Checks decimal characters
 ```py
-    num = '10'
-    print(num.isdecimal()) # True
-    num = '10.5'
-    print(num.isdecimal()) # False
+num = '10'
+print(num.isdecimal()) # True
+num = '10.5'
+print(num.isdecimal()) # False
 ```
 
 * isidentifier():Checks for valid identifier means it check if a string is a valid variable name
 ```py
-    challenge = '30DaysOfPython'
-    print(challenge.isidentifier()) # False, because it starts with a number
-    challenge = 'thirty_days_of_python'
-    print(challenge.isidentifier()) # True
+challenge = '30DaysOfPython'
+print(challenge.isidentifier()) # False, because it starts with a number
+challenge = 'thirty_days_of_python'
+print(challenge.isidentifier()) # True
 ```
 
 * islower():Checks if all alphabets in a string are lowercase
 ```py
-    challenge = 'thirty days of python'
-    print(challenge.islower()) # True
-    challenge = 'Thirty days of python'
-    print(challenge.islower()) # False
+challenge = 'thirty days of python'
+print(challenge.islower()) # True
+challenge = 'Thirty days of python'
+print(challenge.islower()) # False
 ```
 * isupper(): returns if all characters are uppercase characters
 ```py
-    challenge = 'thirty days of python'
-    print(challenge.isupper()) #  False
-    challenge = 'THIRTY DAYS OF PYTHON'
-    print(challenge.isupper()) # True
+challenge = 'thirty days of python'
+print(challenge.isupper()) #  False
+challenge = 'THIRTY DAYS OF PYTHON'
+print(challenge.isupper()) # True
 ```
 
 * isnumeric():Checks numeric characters
 ```py
-    num = '10'
-    print(num.isnumeric())      # True
-    print('ten'.isnumeric())    # False
+num = '10'
+print(num.isnumeric())      # True
+print('ten'.isnumeric())    # False
 ```
 * join(): Returns a concatenated string
 ```py
-    web_tech = ['HTML', 'CSS', 'JavaScript', 'React']
-    result = '#, '.join(web_tech)
-    print(result) # 'HTML# CSS# JavaScript# React'
-
+web_tech = ['HTML', 'CSS', 'JavaScript', 'React']
+result = '#, '.join(web_tech)
+print(result) # 'HTML# CSS# JavaScript# React'
 ```
 * strip(): Removes both leading and trailing characters
 ```py
-    challenge = ' thirty days of python '
-    print(challenge.strip('y')) # 5
+challenge = ' thirty days of python '
+print(challenge.strip('y')) # 5
 ```
 * replace(): Replaces substring inside
 ```py
-    challenge = 'thirty days of python'
-    print(challenge.replace('python', 'coding')) # 'thirty days of coding'
-
+challenge = 'thirty days of python'
+print(challenge.replace('python', 'coding')) # 'thirty days of coding'
 ```
 * split():Splits String from Left
 ```py
-    challenge = 'thirty days of python'
-    print(challenge.split()) # ['thirty', 'days', 'of', 'python']
+challenge = 'thirty days of python'
+print(challenge.split()) # ['thirty', 'days', 'of', 'python']
 ```
 * title(): Returns a Title Cased String
 ```py
-    challenge = 'thirty days of python'
-    print(challenge.title()) # Thirty Days Of Python
-
+challenge = 'thirty days of python'
+print(challenge.title()) # Thirty Days Of Python
 ```
 * swapcase(): Checks if String Starts with the Specified String
   The string swapcase() method converts all uppercase characters to lowercase and all lowercase characters to uppercase characters of the given string, and returns it.
 ```py
-    challenge = 'thirty days of python'
-    print(challenge.swapcase())   # THIRTY DAYS OF PYTHON
-    challenge = 'Thirty Days Of Python'
-    print(challenge.swapcase())  # tHIRTY dAYS oF pYTHON
+challenge = 'thirty days of python'
+print(challenge.swapcase())   # THIRTY DAYS OF PYTHON
+challenge = 'Thirty Days Of Python'
+print(challenge.swapcase())  # tHIRTY dAYS oF pYTHON
 ```
 * startswith(): Checks if String Starts with the Specified String
 ```py
-    challenge = 'thirty days of python'
-    print(challenge.startswith('thirty)) # True
+challenge = 'thirty days of python'
+print(challenge.startswith('thirty')) # True
 
-    challenge = '30 days of python'
-    print(challenge.startswith('thirty)) # False
+challenge = '30 days of python'
+print(challenge.startswith('thirty')) # False
 ```
-
 
 ## Exercises - Day 4
 1. Concatenate the string 'Thirty', 'Days', 'Of', 'Python' to a single string, 'Thirty Days Of Python'
-2. Concatenate the string 'Coding', 'For' , 'All' to a single string, 'Coding For All'
-3. Declare a variable name company and assign it to an initial value "Coding For All".
-4. Print company using *print()*
-5. Print the length of the company string using *len()* method and *print()*
-6. Change all the characters to capital letters using *upper()* method
-7. Change all the characters to lowercase letters using *lower()* method
-8.  Use capitalize(), title(), swapcase() methods to format the value the string *Coding For All*.
-9.  Cut(slice) out the first word of *Coding For All* string
-10. Check if *Coding For All* string contains a word Coding using the method index, find or other methods.
-11. Replace the word coding in the string 'Coding For All' to Python.
-12. Change Python for Everyone to Python for All using the replace method or other methods
-13. Split the string 'Coding For All' at the space using split() method
-14. "Facebook, Google, Microsoft, Apple, IBM, Oracle, Amazon" split the string at the comma
-15. What character is at index 10 in "Coding For All" string.
-16. Create an acronym or an abbreviation for the name 'Python For Everyone'
-17. Create an acronym or an abbreviation for the name 'Coding For All'
-18. Use index to determine the position of the first occurrence of C in Coding For All.
-19. Use index to determine the position of the first occurrence of F in Coding For All
-20. Use rfind to determine the position of the last occurrence of l in Coding For All People.
-21. Use index or find to find the position of the first occurrence of the word because in the following sentence:'You cannot end a sentence with because because because is a conjunction'
-22. Use rindex to find the position of the last occurrence of the word because in the following sentence:'You cannot end a sentence with because because because is a conjunction'
-23. Slice out the phrase because because because in the following sentence:'You cannot end a sentence with because because because is a conjunction'
-24. Find the position of the first occurrence of the word because in the following sentence:'You cannot end a sentence with because because because is a conjunction'
-25. Slice out the phase because because because in the following sentence:'You cannot end a sentence with because because because is a conjunction'
-26. Does Coding For All starts with a substring *Coding*?
-27. Does Coding For All ends with a substring *coding*?
-28. '   Coding For All   ' remove the left and right trailing spaces in the given string.
-29. Which one of the following variable return True when we use the method isidentifier()
+1. Concatenate the string 'Coding', 'For' , 'All' to a single string, 'Coding For All'
+1. Declare a variable name company and assign it to an initial value "Coding For All1.
+1. Print company using *print()*
+1. Print the length of the company string using *len()* method and *print()*
+1. Change all the characters to capital letters using *upper()* method
+1. Change all the characters to lowercase letters using *lower()* method
+1.  Use capitalize(), title(), swapcase() methods to format the value the string *Coding For All*.
+1.  Cut(slice) out the first word of *Coding For All* string
+1. Check if *Coding For All* string contains a word Coding using the method index, find or other methods.
+1. Replace the word coding in the string 'Coding For All' to Python.
+1. Change Python for Everyone to Python for All using the replace method or other methods
+1. Split the string 'Coding For All' at the space using split() method
+1. "Facebook, Google, Microsoft, Apple, IBM, Oracle, Amazon" split the string at the comma
+1. What is character at index 0 in the string *Coding For All*.
+1. What is the last index of the string *Coding For All*
+1. What character is at index 10 in "Coding For All" string.
+1. Create an acronym or an abbreviation for the name 'Python For Everyone'
+1. Create an acronym or an abbreviation for the name 'Coding For All'
+1. Use index to determine the position of the first occurrence of C in Coding For All.
+1. Use index to determine the position of the first occurrence of F in Coding For All
+1. Use rfind to determine the position of the last occurrence of l in Coding For All People.
+1. Use index or find to find the position of the first occurrence of the word because in the following sentence:'You cannot end a sentence with because because because is a conjunction'
+1. Use rindex to find the position of the last occurrence of the word because in the following sentence:'You cannot end a sentence with because because because is a conjunction'
+1. Slice out the phrase because because because in the following sentence:'You cannot end a sentence with because because because is a conjunction'
+1. Find the position of the first occurrence of the word because in the following sentence:'You cannot end a sentence with because because because is a conjunction'
+1. Slice out the phase because because because in the following sentence:'You cannot end a sentence with because because because is a conjunction'
+1. Does Coding For All starts with a substring *Coding*?
+1. Does Coding For All ends with a substring *coding*?
+1. '&nbsp;&nbsp; Coding For All &nbsp;&nbsp;&nbsp; &nbsp;' &nbsp;,    remove the left and right trailing spaces in the given string.
+1. Which one of the following variable return True when we use the method isidentifier()
     * 30DaysOfPython
     * thirty_days_of_python
-30. The following are some of python libraries list, ['Django', 'Flask', 'Bottle', 'Pyramid', 'Falcon']. Join the list with a hash with space string. 
+1. The following are some of python libraries list, ['Django', 'Flask', 'Bottle', 'Pyramid', 'Falcon']. Join the list with a hash with space string. 
+1. Use new line escape sequence to writ the following sentence.
+    ```py
+    I am enjoying this challenge.
+    I just wonder what is next.
+    ```
+1. Use a tab escape sequence to writ the following sentence.
+    ```py
+    Name      Age     Country
+    Asabeneh  250     Finland
+    ```
+1. Use string formatting method to display the following:
+```sh
+radius = 10
+area = 3.14 * radius ** 2
+The area of radius 10 is 314 meters squares. 
 
+```
+# Day 5
+## Exercises - Day 5
 
  
 
