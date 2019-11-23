@@ -47,7 +47,6 @@
     - [String formating](#string-formating)
       - [“Old Style” String Formatting (% Operator)](#old-style-string-formatting--operator)
       - [“New Style” String Formatting (str.format)](#new-style-string-formatting-strformat)
-- [Strings only](#strings-only)
       - [String Interpolation / f-Strings (Python 3.6+)](#string-interpolation--f-strings-python-36)
     - [Python strings as sequences of characters](#python-strings-as-sequences-of-characters)
       - [Unpacking characters](#unpacking-characters)
@@ -913,8 +912,9 @@ print(formatted_string) # "The following are python libraries:['Django', 'Flask'
 ```
 #### “New Style” String Formatting (str.format)
 This is formating is introduced in python version 3. 
-# Strings only
+
 ```py
+
 first_name = 'Asabeneh'
 last_name = 'Yetayeh'
 language = 'Python'
