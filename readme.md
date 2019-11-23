@@ -47,12 +47,10 @@
       - [Unpacking characters](#unpacking-characters)
       - [Accessing characters in strings by index](#accessing-characters-in-strings-by-index)
       - [Slicing Python Strings](#slicing-python-strings)
-      - [Skipping character while splitting Python strings](#skipping-character-while-splitting-python-strings)
+      - [Skipping characters while slicing](#skipping-characters-while-slicing)
     - [Escape Sequences in string](#escape-sequences-in-string)
     - [String Methods](#string-methods)
   - [Exercises - Day 4](#exercises---day-4)
-- [Day 5](#day-5)
-  - [Exercises - Day 5](#exercises---day-5)
 
 # Day 1
 ## Welcome
@@ -894,7 +892,7 @@ print(last_three)   # hon
 last_three = language[3:]
 print(last_three)   # hon
 ```
-#### Skipping character while splitting Python strings
+#### Skipping characters while slicing
 It is possible to skip characters while slicing by passing step argument to slice method.
 ```py
 language = 'Python'
@@ -903,11 +901,11 @@ print(pto) # pto
 ```
 ### Escape Sequences in string
 In python and other programming language \ followed by a character. Let's see the most common escape characters:
-\n: new line
-\t: Tab means(8 spaces)
-\\: Back slash
-\': Single quote (')
-\":Double quote (")
+* \n: new line
+* \t: Tab means(8 spaces)
+* \\\\: Back slash
+* \\': Single quote (')
+* \\":Double quote (")
 ```py
 print('I hope every one enjoying the python challenge.\nDo you ?') # line break
 print('Days\tTopics\tExercises')
@@ -1151,8 +1149,8 @@ area = 3.14 * radius ** 2
 The area of radius 10 is 314 meters squares. 
 
 ```
-# Day 5
-## Exercises - Day 5
+
+
 
  
 
