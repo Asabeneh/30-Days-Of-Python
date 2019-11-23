@@ -1096,8 +1096,8 @@ print(result) # The area of circle with 10 is 314.0
 23. Slice out the phrase because because because in the following sentence:'You cannot end a sentence with because because because is a conjunction'
 24. Find the position of the first occurrence of the word because in the following sentence:'You cannot end a sentence with because because because is a conjunction'
 25. Slice out the phase because because because in the following sentence:'You cannot end a sentence with because because because is a conjunction'
-26. Does Coding For All with a substring Coding?
-27. Does Coding For All with a substring coding?
+26. Does Coding For All starts with a substring *Coding*?
+27. Does Coding For All ends with a substring *coding*?
 28. '   Coding For All   ' remove the left and right trailing spaces in the given string.
 29. Which one of the following variable return True when we use the method isidentifier()
     * 30DaysOfPython
