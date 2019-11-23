@@ -178,7 +178,7 @@ Congratulations, you have finished setting up the development environment. Let's
 ### Python Syntax
 A python script can be written on python interactive shell or on code editor. A python file has an extension .py. 
 ### Python Indentation
-Indentation in many languages used to increase code readability, however python uses indentation to create block of codes. In other programming languages curly bracket used instead of indentation. One of the common bug when you write a python code will be wrong indentation.
+An indentation is a white space in a text. Indentation in many languages used to increase code readability, however python uses indentation to create block of codes. In other programming languages curly bracket used to create block of codes instead of indentation. One of the common bug when you write a python code will be wrong indentation.
 
 ![Indentation Error](images/indentation.png)
 ### Comment
@@ -295,6 +295,7 @@ helloworld.py
 ```
 ![Running python script](./images/running_python_script.png)
 
+
 ## Exercises - Day 1
   1. Check the python version you are using
   2. Open the python interactive shell and do  the following operations. The operands are 3 and 4. Check the example above
@@ -303,8 +304,8 @@ helloworld.py
      - multiplication(*)
      - modulus(%)
      - division(/)
-     - exponential
-     - floor division operator(//).
+     - exponential(**)
+     - floor division operator(//)
  1. Write strings on the python interactive shell. The strings are the following:
      - Your name 
      - Your family name
@@ -323,7 +324,7 @@ helloworld.py
 
 # Day 2
 ## Built in functions
-In python we have lots of built in functions. Built-in functions are globally available for your use. Some  of the most commonly used python built-in functions are the following: *print()*, *len()*, *type()*, *int()*, *float()*, *str()*, *input()*, *list()*, *dict()*, *min()*, *max()*, *sum()*, *sorted()*, *open()*, *file()*, *help()*, *dir*. In the following table you will see an exhaustive list of python built in functions taken from [python documentation](https://docs.python.org/2/library/functions.html).
+In python we have lots of built in functions. Built-in functions are globally available for your use. Some  of the most commonly used python built-in functions are the following: *print()*,  *len()*,  *type()*,  *int()*,  *float()*,  *str()*,  *input()*,  *list()*,  *dict()*,  *min()*,  *max()*,  *sum()*,  *sorted()*,  *open()*,  *file()*,  *help()*, and *dir()*.  In the following table you will see an exhaustive list of python built in functions taken from [python documentation](https://docs.python.org/2/library/functions.html).
 
 ![Built in Functions](images/builtin-functions.png)
 
@@ -337,14 +338,14 @@ Let's practice more by using different built-in functions
 
 As you can see from the above terminal, python has reserved words. We do not use reserved words to declare variables or functions. We will cover variables in the next section.
 
-I believe, by now you are familiar with built-in functions. Let's do one more practice of built-in functions and we will move on to the next section
+I believe,  by now you are familiar with built-in functions.  Let's do one more practice of built-in functions and we will move on to the next section
 
 ![Min Max Sum](images/builtin-functional-final.png)
 
 
 ## Variables
-Variables store data in a computer memory. Mnemonic variables are recommend to use in many programming languages. A variable refers to an a memory address in which a data is stored.
-Number at the beginning, special character, hyphen are not allowed. A variable can have a short name (like x,y,z) but a more descriptive name (firstname, lastname, age, country) is highly recommended .
+Variables store data in a computer memory.  Mnemonic variables are recommend to use in many programming languages.  A variable refers to an a memory address in which a data is stored.
+Number at the beginning,  special character,  hyphen are not allowed.  A variable can have a short name (like x,y,z) but a more descriptive name (firstname,  lastname,  age,  country) is highly recommended .
 
  Python Variable Name Rules
    - A variable name must start with a letter or the underscore character
@@ -363,7 +364,6 @@ first_name
 last_name
 capital_city
 _if # if we want to use reserved word as a variable
-first_name
 year_2019
 year2019
 current_year_2019
@@ -414,6 +414,7 @@ person_info = {
  **Example:**
  ```py
 # Printing the values stored in the variables
+
 print('First name:', first_name)
 print('First name length:', len(first_name))
 print('Last name: ', last_name)
@@ -621,7 +622,7 @@ Let's declare a variable and assign a number data type. I am going to use single
 a = 3 # a is a variable name and 3 is an integer data type
 b = 2 # b is a variable name and 3 is an integer data type
 
-# Arithmetic operations and assigning the result to a avariable
+# Arithmetic operations and assigning the result to a variable
 total = a + b
 diff = a - b
 product = a * b
@@ -709,6 +710,7 @@ print(len('python') > len('dragon'))    # False
 
 
 # Comparing something give either a True or False
+
 print('True == True: ', True == True)
 print('True == False: ', True == False)
 print('False == False:', False == False)
@@ -723,13 +725,13 @@ In addition to the above comparison operator python uses:
 * *not in*: Returns True if a list doesn't have  the a certain element(x in y)
 
 ```py
-print('1 is 1', 1 is 1)                     # True - because the data values are the same
-print('1 is not 2', 1 is not 2)             # True - because 1 is not 2
-print('A in Asabeneh', 'A' in 'Asabeneh')   # True - A found in the string
-print('B in Asabeneh', 'B' in 'Asabeneh')   # False -there is lowercase b in the string but not uppercase B
-print('coding' in 'coding for all')         # True - because the coding for all has the word coding
-print('a in an:', 'a' in 'an')              # True
-print('4 is 2 ** 2:', 4 is 2 **2)           # True
+print('1 is 1', 1 is 1)                   # True - because the data values are the same
+print('1 is not 2', 1 is not 2)           # True - because 1 is not 2
+print('A in Asabeneh', 'A' in 'Asabeneh') # True - A found in the string
+print('B in Asabeneh', 'B' in 'Asabeneh') # False -there is lowercase b in the string but not uppercase B
+print('coding' in 'coding for all')   # True - because the coding for all has the word coding
+print('a in an:', 'a' in 'an')        # True
+print('4 is 2 ** 2:', 4 is 2 **2)     # True
 
 
 ```
@@ -757,26 +759,36 @@ print(not not False)   # False
 1. Declare your age as integer variable
 2. Declare your height as a float variable
 3. Declare a complex number variable
-4. Calculate an area of a triangle (area = 0.5 x b x h)
-5. Calculate the perimeter of triangle (perimeter = a + b + c)
-6. Calculate an area of rectangle (area = length x width)
-7. Calculate the perimeter of rectangle (perimeter = 2 x (length + width))
-8. Calculate the area of a circle (area = 3.14 x r x r)
-9. Calculate the circumference of a circle(c = 2 x pi x r) where pi = 3.14.
-10. Calculate the slope, x-intercept and y-intercept of y = 2x -2
-11. Slope is (m = y2-y1/x2-x1). Find the slope between point (2, 2) and point(6,10)
-12. Calculate the value of y (y = x2 + 6x + 9). Try to use different x value and figure out at what x value y is 0.
-13. Compare the slope of q10 and 11
-14. Find the length of python and jargon and make a falsy comparison statement.
-15. Use *and* operator to check if 'on' is found in both python and jargon
-16. *I hope this course is not full of jargon*. Use *in* operator to check if *jargon* is in the sentence.
-17. There is no 'on' in both  dragon and python
-18. Find the length of the text *python* and convert the value to float and convert it to string
-19. Even numbers are divisible by 2 and the remainder is zero. How do you check if a number is even or not using python?
-20. The  floor division of 7 by 3 is equal to the int converted value of 2.7.
-21. Check if type of '10' is equal to 10
-22. Check if int('9.8') is equal to 10
-23. Writ a script that prompt a user to enters hours and rate per hour. Calculate pay of the person? 
+4.  Write a script that prompt the user to enter base and height of the triangle and calculate an area of a triangle (area = 0.5 x b x h).
+```py
+Enter base: 20
+Enter height: 10
+The area of the triangle is 50
+```
+1. Write a script that prompt the user to enter side a, side b, and side c of the triangle and and calculate the perimeter of triangle (perimeter = a + b + c)
+```py
+Enter side a: 5
+Enter side b: 4
+Enter side c: 3
+The perimeter of the triangle is 12
+```
+6. Get length and width using prompt and calculate an area of rectangle (area = length x width  and the perimeter of rectangle (perimeter = 2 x (length + width))
+1. Calculate the area of a circle (area = 3.14 x r x r)
+2. Calculate the circumference of a circle(c = 2 x pi x r) where pi = 3.14.
+3.  Calculate the slope, x-intercept and y-intercept of y = 2x -2
+4.  Slope is (m = y2-y1/x2-x1). Find the slope between point (2, 2) and point(6,10)
+5.  Compare the slope of q10 and 11
+6.  Calculate the value of y (y = x^2 + 6x + 9). Try to use different x values and figure out at what x value y is 0.
+7.  Find the length of python and jargon and make a falsy comparison statement.
+8.  Use *and* operator to check if 'on' is found in both python and jargon
+9.  *I hope this course is not full of jargon*. Use *in* operator to check if *jargon* is in the sentence.
+10. There is no 'on' in both  dragon and python
+11. Find the length of the text *python* and convert the value to float and convert it to string
+12. Even numbers are divisible by 2 and the remainder is zero. How do you check if a number is even or not using python?
+13. The  floor division of 7 by 3 is equal to the int converted value of 2.7.
+14. Check if type of '10' is equal to 10
+15. Check if int('9.8') is equal to 10
+16. Writ a script that prompt a user to enters hours and rate per hour. Calculate pay of the person? 
 ```py
 Enter hours: 40
 Enter rate per hour: 28
@@ -802,13 +814,17 @@ Text is a string data type. Any data type written as text is a string. Any data 
 
 ### Creating a string
 ```py
-lang ="Python"
-task ="scraping"
-greeting = "Hello Python ninjas"
+letter = 'P'                # A string could be a single character or a bunch of texts
+print(letter)               # P
+print(len(letter))          # 1
+greeting = 'Hello, World!'  # String could be in a single quote or double quote,"Hello, World!"
+print(greeting)             # Hello, World!
+print(len(greeting))        # 13
+sentence = "I hope you are enjoying 30 days of python challenge"
+print(sentence)
 
-print(lang)
-print(task)
-print(greeting)
+
+
 ```
 Multiline string is created by using triple ''' or  quotes.See the example below.
 ```py
@@ -1101,7 +1117,8 @@ print(result) # The area of circle with 10 is 314.0
 28. '   Coding For All   ' remove the left and right trailing spaces in the given string.
 29. Which one of the following variable return True when we use the method isidentifier()
     * 30DaysOfPython
-    * thirty_days_of_pythn
+    * thirty_days_of_python
+30. The following are some of python libraries list, ['Django', 'Flask', 'Bottle', 'Pyramid', 'Falcon']. Join the list with a hash with space string. 
 
 
  
