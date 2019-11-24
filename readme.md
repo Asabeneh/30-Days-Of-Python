@@ -1283,6 +1283,7 @@ A list is collection of different data types which is ordered and modifiable(mut
 In python we can create list in two ways:
 * Using list builtin function
 ```py
+# syntax
 lst = list()
 ```
 ```py
@@ -1291,6 +1292,7 @@ print(len(empty_list)) # 0
 ```
 * Using square brackets, []
 ```py
+# syntax
 lst = []
 ```
 ```py
@@ -1397,6 +1399,7 @@ print(does_exist)  # False
 ### Adding item in a list
 To add item to the end of an existing list we use the method
 ```py
+# syntax
 lst = list()
 lst.append(item)
 ```
@@ -1410,6 +1413,7 @@ print(fruits)
 ### Inserting item in to a list
 Use insert() method to insert a single item at a specified index in a list. Note that other items are shifted to the right.
 ```py
+# syntax
 lst = ['item1', 'item2']
 lst.insert(index, item)
 ```
@@ -1423,6 +1427,7 @@ print(fruits)
 ### Removing item from list
 The remove method remove a specified item from a list
 ```py
+# syntax
 lst = ['item1', 'item2']
 lst.remove(item)
 ```
@@ -1436,13 +1441,14 @@ print(fruits)  # ['orange', 'mango']
 ### Removing item using pop
 The pop() method removes the specified index, (or the last item if index is not specified):
 ```py
+# syntax
 lst = ['item1', 'item2']
 lst.pop()       # last item
 lst.pop(index)
 ```
 ```py
 fruits = ['banana', 'orange', 'mango', 'lemon']
-fruits.remove()     
+fruits.pop()     
 print(fruits)       # ['banana', 'orange', 'mango']
 
 fruits.remove(0)     
@@ -1452,7 +1458,7 @@ print(fruits)       # ['orange', 'mango']
 The del keyword removes the specified index and it can be also use to delete the list completely
 
 ```py
-
+# syntax
 lst = ['item1', 'item2']
 del lst[index] # only a single item
 del lst        # to delete the list completely
@@ -1470,18 +1476,19 @@ print(fruits)       # This should give: NameError: name 'fruits' is not defined
 ### Clearing list items
 The clear() method empties the list:
 ```py
+# syntax
 lst = ['item1', 'item2']
 lst.clear()
 ```
 ```py
 fruits = ['banana', 'orange', 'mango', 'lemon']
 fruits.clear()     
-print(fruits)       # []
-    
+print(fruits)       # []   
 ```
 ### Copying  a list
 It is possible to copy a list by reassigning to a new variable in the  following way list2 = list1. Now, list2 is a reference of list1, any changes we make in list2 will also modify the original, list2. But there are lots of case in which we do not like to modify the original instead we like to have a different copy. One of way avoid the above problem is using *copy()*.
 ```py
+# syntax
 lst = ['item1', 'item2']
 lst_copy = lst.copy()
 ```
@@ -1495,6 +1502,7 @@ There are several ways to join, or concatenate, two or more lists in Python.
 
 * Plus Operator (+)
 ```py
+# syntax
 list3 = list1 +list2
 ```
 ```py
@@ -1517,7 +1525,10 @@ print(fruits_and_vegetables )
   * Joining using extend() method
 
 ```py
-list3 = list1.extend(list2)
+# syntax
+lst1 = ['item1', 'item2']
+lst2 = ['item3', 'item4','item5']
+list1.extend(list2)
 ```
 ```py
 num1 = [0, 1, 2, 3]
@@ -1546,6 +1557,7 @@ Fruits and vegetables: ['banana', 'orange', 'mango', 'lemon', 'Tomato', 'Potato'
 ### Counting Items in a list
 The count() method returns the number of times an item appears in a list:
 ```py
+# syntax
 lst = ['item1', 'item2']
 lst.count(item) 
 ```
@@ -1558,6 +1570,7 @@ print(ages.count(24))           # 3
 ### Finding index of an item
 The count() method returns the index of an item in the list:
 ```py
+# syntax
 lst = ['item1', 'item2']
 lst.index(item) 
 ```
@@ -1570,6 +1583,7 @@ print(ages.index(24))           # 2, the first occurrence
 ### Reversing a list
 The reverse() method reverse the order of a list.
 ```py
+# syntax
 lst = ['item1', 'item2']
 lst.reverse() 
 
@@ -1589,9 +1603,10 @@ print(ages.reverse())
 ### Sorting list items
 The sort() method reorder the list items in ascending order. If a reverse is equal to true it arrange in descending order.
 ```py
+# syntax
 lst = ['item1', 'item2']
-lst.sort() 
-lst.sort(reverse=True)
+lst.sort()                # ascending
+lst.sort(reverse=True)    # descending
 ```
 ```py
 fruits = ['banana', 'orange', 'mango', 'lemon']
@@ -1641,16 +1656,16 @@ print(ages)
 26. Join the following lists:
     ```py
     front_end = ['HTML', 'CSS', 'JS', 'React', 'Redux']
-    back-end = ['Node','Express', 'MongoDB']
+    back_end = ['Node','Express', 'MongoDB']
     ```
-27. After joining the lists in question 25. Copy the joined list and assigned it to a variable full_stack. Then insert, Python and SQL after Redux.
+27. After joining the lists in question 26. Copy the joined list and assigned it to a variable full_stack. Then insert, Python and SQL after Redux.
 28. The following is a list of 10 students ages:
 ```sh
 ages = [19, 22, 19, 24, 20, 25, 26, 24, 25, 24]
 ```
   * Sort the list and find the min and max age
   * Add the min age and the max age
-  * Find the median age(two middle items divided by two)
+  * Find the median age(one middle item or two middle items divided by two)
   * Find the average age(all items divided by number of items)
   * Find the range of the ages(max minus min)
   * Compare the value of (min - average) and (max - average), use *abs()* method
