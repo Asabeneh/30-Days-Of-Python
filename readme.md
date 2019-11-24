@@ -1355,10 +1355,14 @@ last_fruit = fruits[last_index]
 ```
 ### Accessing list items using negative indexing
 Negative indexing means beginning from the end, -1 refers to the last item, -2 refers to the second last item.
+
+![List negative indexing](./images/list_negative_indexing.png)
 ```py
-fruits = ['banana', 'orange', 'mango', 'lemon'] 
+fruits = ['banana', 'orange', 'mango', 'lemon']
+first_fruit = fruits[-4]
 last_fruit = fruits[-1]
 second_last = fruits[-2]
+print(first_fruit)      # banana
 print(last_fruit)       # lemon
 print(second_last)      # mango
 ```
@@ -1676,7 +1680,7 @@ ages = [19, 22, 19, 24, 20, 25, 26, 24, 25, 24]
 29. Find the middle country(ies) in the [countries list](https://github.com/Asabeneh/30-Days-Of-Python/tree/master/data/countries.py)
 30. Divide the countries list into two equal lists if it is even if not one more country for the first half.
 
-['banana', 'orange', 'mango', 'lemon']
+
 
 
 
