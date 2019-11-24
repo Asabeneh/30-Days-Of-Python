@@ -60,7 +60,6 @@
     - [How to create a list](#how-to-create-a-list)
     - [Accessing list items using positive indexing](#accessing-list-items-using-positive-indexing)
     - [Accessing list items using negative indexing](#accessing-list-items-using-negative-indexing)
-    - [Unpacking list items](#unpacking-list-items)
     - [Slicing items from list](#slicing-items-from-list)
     - [Modifying list](#modifying-list)
     - [Check items in a list](#check-items-in-a-list)
@@ -77,17 +76,6 @@
     - [Reversing a list](#reversing-a-list)
     - [Sorting list items](#sorting-list-items)
   - [Exercises: Day 5](#exercises-day-5)
-- [Day 6:](#day-6)
-  - [Tuple](#tuple-1)
-    - [Creating Tuple](#creating-tuple)
-    - [Tuple length](#tuple-length)
-    - [Accessing tuple items](#accessing-tuple-items)
-    - [Slicing tuples](#slicing-tuples)
-    - [Changing tuples to list](#changing-tuples-to-list)
-    - [Checking an item in a list](#checking-an-item-in-a-list)
-    - [Joining tuples](#joining-tuples)
-    - [Deleting tuple](#deleting-tuple)
-  - [Exercises: Day 6](#exercises-day-6)
 
 # Day 1
 ## Welcome
@@ -486,8 +474,7 @@ print('Married: ', is_married)
  ```
 
  ## Data Types
- There are different data type in python programming.To identify the data type we use the *type* builtin function. I like you to focus understanding different data types very well. When it comes to programming it is all about data types. I introduced data types at the very beginning and it comes again, because every topic is related to data types. We will cover data types in more detail in their respective sections.
- In this section, we will see data types in detail.
+ There are several data types in python. To identify the data type we use the *type* builtin function. I like you to focus understanding different data types very well. When it comes to programming it is all about data types. I introduced data types at the very beginning and it comes again, because every topic is related to data types. We will cover data types in more detail in their respective sections.
 ## Checking Data types and Casting
 * Check Data types: To check the data type of a certain data type we use the *type*
     **Example:**
@@ -565,26 +552,23 @@ print(first_name_to_list)            # ['A', 's', 'a', 'b', 'e', 'n', 'e', 'h']
         1 + j, 2 + 4j, 1 - 1j
 
 ## Exercises - Day 2
-
-1. Create a folder called day_2. Inside this folder create a file name called variables.py
-1. Write a python comment saying 'Day 2: 30 Days of python programming'
-1. Inside 30DaysOfPython folder create a folder called day_2. Inside this folder create a file name called variables.py
-2. Write a python comment saying 'Day 2: 30 Days of python programming'
-1. Declare a first name variable and assign a value to it
-1. Declare a last name variable and assign a value to it
-1. Declare a full name variable and assign a value to it
-1. Declare a country variable and assign a value to it
+1. Inside 30DaysOfPython create a folder called day_2. Inside this folder create a file name called variables.py
+2. Writ a python comment saying 'Day 2: 30 Days of python programming'
+3. Declare a first name variable and assign a value to it
+4. Declare a last name variable and assign a value to it
+5. Declare a full name variable and assign a value to it
+6. Declare a country variable and assign a value to it
 7. Declare a city variable and assign a value to it
-1. Declare an age variable and assign a value to it
-1. Declare a year variable and assign a value to it
-1. Declare a variable is_married and assign a value to it
-1. Declare a variable is_true and assign a value to it
-1. Declare a variable is_light_on and assign a value to it
-1. Declare multiple variable on one line
-1. Check the data type of all your variables using type() built in function
-1. Using the *len()* built-in function find the length of your first name
-1. Compare the length of your first name and your last name
-1. Declare 5 as num_one and 4 as num_two
+8. Declare an age variable and assign a value to it
+9. Declare a year variable and assign a value to it
+10. Declare a variable is_married and assign a value to it
+11. Declare a variable is_true and assign a value to it
+12. Declare a variable is_light_on and assign a value to it
+13. Declare multiple variable on one line
+14. Check the data type of all your variables using type() built in function
+15. Using the *len()* built-in function find the length of your first name
+16. Compare the length of your first name and your last name
+17. Declare 5 as num_one and 4 as num_two
     1.  Add num_one and num_two and assign the value to a variable *total*
     2.  Subtract num_two from num_one and assign the value to a variable *diff*
     3.  Multiply num_two and num_one and assign the value to a variable *product*
@@ -592,12 +576,12 @@ print(first_name_to_list)            # ['A', 's', 'a', 'b', 'e', 'n', 'e', 'h']
     5.  Use modulus division to find num_two divided by  num_one and assign the value to a variable *remainder*
     6.  Calculate num_one the  power of num_two and assign the value to a variable *exp*
     7.  Find floor division of num_one by num_two and assign the value to a variable *floor_division*
-1. The radius of a circle is 30 meters.
+18. The radius of a circle is 30 meters.
     1.  Calculate the area of a circle and assign the value to a variable *area_of_circle*
     2.  Calculate the circumference of a circle and assign the value to a variable *circum_of_circle*
     3.  Take radius as user input and calculate the area. 
-1. Use the built-in input function to get first name, last name, country and age from a user and store the value to their corresponding variable names
-1. Run help('keywords') on python shell or in your file check the reserved words
+19. Use the built-in input function to get first name, last name, country and age from a user and store the value to their corresponding variable names
+20. Run help('keywords') on python shell or in your file check the reserved words
 
 # Day 3
 ## Boolean
@@ -775,7 +759,7 @@ print('a in an:', 'a' in 'an')      # True
 print('4 is 2 ** 2:', 4 is 2 **2)   # True
 ```
 ### Logical Operators
-Unlike other programming languages python uses the key word *and*, *or* and *not* for logical operator. Logical operators are used to combine conditional statements:
+Unlike other programming languages python uses the key word * and *, * or * and  * not * for logical operator. Logical operators are used to combine conditional statements:
 
 ![Logical Operators](./images/logical_operators.png)
 
@@ -801,9 +785,9 @@ print(not not False) # False
 ```py
     Enter base: 20
     Enter height: 10
-    The area of the triangle is 50
+    The area of the triangle 100
 ```
-5. Write a script that prompt the user to enter side a, side b, and side c of the triangle and and calculate the perimeter of triangle (perimeter = a + b + c)
+5. Write a script that prompt the user to enter side a, side b, and side c of the triangle and calculate the perimeter of triangle (perimeter = a + b + c)
 ```py
 Enter side a: 5
 Enter side b: 4
@@ -1336,7 +1320,6 @@ print('Animal products:',animal_products)
 print('Number of animal products:', len(animal_products))
 print('Web technologies:', web_techs)
 print('Number of web technologies:', len(web_techs))
-print('Countries:', countries)
 print('Number of countries:', len(countries))
 ```
 ```sh
@@ -1349,7 +1332,6 @@ Animal products: ['milk', 'meat', 'butter', 'yoghurt']
 Number of animal products: 4
 Web technologies: ['HTML', 'CSS', 'JS', 'React', 'Redux', 'Node', 'MongDB']
 Number of web technologies: 7
-Countries: ['Finland', 'Estonia', 'Denmark', 'Sweden', 'Norway']
 Number of countries: 5
 ```
 * List can have items of different data types
@@ -1383,41 +1365,6 @@ second_last = fruits[-2]
 print(first_fruit)      # banana
 print(last_fruit)       # lemon
 print(second_last)      # mango
-```
-### Unpacking list items
-```py
-lst = ['item','item2','item3', 'item4', 'item5']
-first_item, second_item, third_item, *rest = lst
-print(first_item)     # item1
-print(second_item)    # item1
-print(third_item)     # item2
-print(rest)           # ['item4', 'item5']
-
-```
-```py
-# First Example
-fruits = ['banana', 'orange', 'mango', 'lemon','lime','apple']
-first_fruit, second_fruit, third_fruit, *rest = lst
-print(first_fruit)     # banana
-print(second_fruit)    # orange
-print(third_fruit)     # mango
-print(rest)           # ['lemon','lime','apple']
-# Second Example about unpacking list
-first, second, third,*rest, tenth = [1,2,3,4,5,6,7,8,9,10]
-print(first)
-print(second)
-print(third)
-print(rest)
-print(tenth)
-# Third Example about unpacking list
-countries = ['Germany', 'France','Belgium','Sweden','Denmark','Finland','Norway','Iceland','Estonia']
-gr, fr, bg, sw, *scandic, es = countries
-print(gr)
-print(fr)
-print(bg)
-print(sw)
-print(scandic)
-print(es)
 ```
 ### Slicing  items from list
 * Positive Indexing: We can specify a range of positive indexes by specifying the starting  and the ending, the return value will be a new list.
@@ -1468,7 +1415,7 @@ lst.append(item)
 fruits = ['banana', 'orange', 'mango', 'lemon']
 fruits.append('apple')
 print(fruits)           # ['banana', 'orange', 'mango', 'lemon', 'apple']
-fruits.append('lime')   # ['banana', 'orange', 'mango', 'lemon', 'apple', 'lime']
+fruits.append('lime')   # ['banana', 'orange', 'mango', 'lemon', 'apple', 'lime]
 print(fruits)
 ```
 ### Inserting item in to a list
@@ -1482,7 +1429,7 @@ lst.insert(index, item)
 fruits = ['banana', 'orange', 'mango', 'lemon']
 fruits.insert(2, 'apple') # insert apple between orange and mango
 print(fruits)           # ['banana', 'orange', 'apple', 'mango', 'lemon']
-fruits.insert(3, 'lime')   # ['banana', 'orange', 'apple', 'mango', 'lime','lemon']
+fruits.list(3, 'lime')   # ['banana', 'orange', 'apple', 'mango', 'lime','lemon',]
 print(fruits)
 ```
 ### Removing item from list
@@ -1732,179 +1679,7 @@ ages = [19, 22, 19, 24, 20, 25, 26, 24, 25, 24]
   * Compare the value of (min - average) and (max - average), use *abs()* method
 29. Find the middle country(ies) in the [countries list](https://github.com/Asabeneh/30-Days-Of-Python/tree/master/data/countries.py)
 30. Divide the countries list into two equal lists if it is even if not one more country for the first half.
-31. ['China', 'Russia', 'USA', 'Finland', 'Sweden', 'Norway', 'Denmark']. Unpack the first three countries and the rest as scandic countries.
 
-# Day 6:
-## Tuple
-A tuple is a collection of different data types which is ordered and unchangeable(immutable). Tuples are written with round brackets,(). Once a tuple is created, we can not change its values. We can not add, insert, remove a tuple because it is not modifiable (mutable). Unlike list, tuple has few methods. Methods related to tuple:
-* tuple(): to create an empty tuple
-* count(): to count the number of a specified item in a tuple
-* index(): to find the index of a specified item in a tuple
-* + operator: to join two or more tuples and to create new tuple
-### Creating Tuple
-
-* Empty tuple: Creating an empty tuple
-```py
-# syntax
-empty_tuple = () 
-# or using the tuple constructor
-empty_tuple = tuple()
-```
-* Tuple with initial values
-```py
-# syntax
-tpl = ('item1', 'item2','item3')
-```
-* 
-```py
-fruits = ('banana', 'orange', 'mango', 'lemon')
-```
-### Tuple length
-We use the *len()* method to get the length of a tuple.
-```py
-# syntax
-tpl = ('item1', 'item2', 'item3')
-len(tpl)
-```
-### Accessing tuple items
-* Positive Indexing
-Similar to the list data type we use positive or negative indexing to access tuple items.
-![Accessing tuple items](images/tuples_index.png)
-
-```py
-# Syntax
-tpl = ('item1', 'item2', 'item3')
-first_item = tpl[0]
-second_item = tpl[1]
-```
-```py
-fruits = ('banana', 'orange', 'mango', 'lemon')
-first_fruit = fruits[0]
-second_fruit = fruits[1]
-last_index =len(fruits) - 1
-last_fruit = fruits[las_index]
-```
-* Negative indexing
-Negative indexing means beginning from the end, -1 refers to the last item, -2 refers to the second last and the negative of the list length refers to the first item.
-![Tuple Negative indexing](images/tuple_negative_indexing.png)
-```py
-# Syntax
-tpl = ('item1', 'item2', 'item3','item4')
-first_item = tpl[-4]
-second_item = tpl[-3]
-```
-```py
-fruits = ('banana', 'orange', 'mango', 'lemon')
-first_fruit = fruits[-4]
-second_fruit = fruits[-3]
-last_fruit = fruits[-1]
-```
-### Slicing tuples
-We can slice out a sub tuple by  specifying a range of indexes where to start and where to end in the tuple, the return value will be a new tuple with the specified items.
-
-* Range of Positive Indexes
-
-```py
-# Syntax
-tpl = ('item1', 'item2', 'item3','item4')
-all_items = tpl[0:4]         # all items
-all_items = tpl[0:]         # all items
-middle_two_items = tpl[1:3]  # does not include item at index 3
-```
-```py
-fruits = ('banana', 'orange', 'mango', 'lemon')
-all_fruits = fruits[0:4]    # all items
-all_fruits= fruits[0:]      # all items
-orange_mango = fruits[1:3]  # doesn't include item at index 3
-orange_to_the_rest = fruits[1:]
-```
-
-* Range of Negative Indexes
-
-```py
-# Syntax
-tpl = ('item1', 'item2', 'item3','item4')
-all_items = tpl[-4:]         # all items
-middle_two_items = tpl[-3:-1]  # does not include item at index 3
-```
-```py
-fruits = ('banana', 'orange', 'mango', 'lemon')
-all_fruits = fruits[-4:]    # all items
-orange_mango = fruits[-3:-1]  # doesn't include item at index 3
-orange_to_the_rest = fruits[-3:]
-```
-### Changing tuples to list
-We can change tuples to list and list to tuple. Tuple is immutable if we want to modify a tuple we should change to a list.
-```py
-# Syntax
-tpl = ('item1', 'item2', 'item3','item4')
-lst = list(tpl)
-```
-```py
-fruits = ('banana', 'orange', 'mango', 'lemon')
-fruits = list(fruits)
-fruits[0] = 'apple'
-print(fruits)     # ['apple', 'orange', 'mango', 'lemon']
-fruits = tuple(fruits)
-print(fruits)     # ('apple', 'orange', 'mango', 'lemon')
-```
-### Checking an item in a list
-We can check an item if it exists in a list or not using *in*, it returns boolean.
-```py
-# Syntax
-tpl = ('item1', 'item2', 'item3','item4')
-'item2' in tpl # True
-```
-```py
-fruits = ('banana', 'orange', 'mango', 'lemon')
-'orange' in fruits # True
-'apple' in fruits # False
-fruits[0] = 'apple'
-```
-### Joining tuples
-We can join two or more tuples using + operator
-```py
-# syntax
-tpl1 = ('item1', 'item2', 'item3')
-tpl2 = ('item4', 'item5','item6')
-tpl3 = tpl1 + tpl2
-```
-```py
-fruits = ('banana', 'orange', 'mango', 'lemon')                    
-vegetables = ('Tomato', 'Potato', 'Cabbage','Onion', 'Carrot')
-fruits_and_vegetables = fruits + vegetables 
-```
-### Deleting tuple
-It is not possible to remove a single item in a tuple but it is possible to delete the tuple itself using *del*.
-```py
-# syntax
-tpl1 = ('item1', 'item2', 'item3')
-del tpl1
-
-```
-```py
-fruits = ('banana', 'orange', 'mango', 'lemon') 
-del fruits                  
-```
-
-
-## Exercises: Day 6
-1. Create an empty tuple
-2. Create a tuple containing name of your sisters and your brothers
-3. Join brothers and sisters tuples and assign it to siblings
-4. How many siblings do you have ?
-5. Modify the siblings tuple and add the name of your father and mother and assign it to family_members
-6. Unpack siblings and parents from family_members
-7. Create a fruits, vegetables and animal products tuples. Join the three tuples and assign it to a variable called food_stuff. 
-8. Slice out the middle item or items from the food_staff list
-9. Slice out the first three items and the last three items from food_staff list
-10. Delete the food_staff list completely
-11. Check if an item exist in a tuple:
-* Check if 'Estonia' is a nordic country
-* Check if 'Iceland' is a nordic country
-  ```py
-  nordic_countries = ('Denmark', 'Finland','Iceland', 'Norway', 'Sweden')
-  ```
 
 
 
