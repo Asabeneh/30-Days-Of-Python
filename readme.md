@@ -994,6 +994,9 @@ print(f) # n
 ```
 #### Accessing characters in strings by index
   In programming counting starts from zero. Therefore the first letter of a string is at zero index and the last letter of a string is the length of a string minus one.
+
+  ![String index](./images/string_index.png)
+  
 ```py
 language = 'Python'
 first_letter = language[0]
@@ -1336,7 +1339,8 @@ Number of countries: 5
  lst = ['Asabeneh', 250, True, {'country':'Finland', 'city':'Helsinki'}] # list containing different data types
 ```
 ### Accessing list items using positive indexing
-We access each item in a list using their index. A list index start from 0.
+We access each item in a list using their index. A list index start from 0. The picture below show clearly where the index starts
+![List index](./images/list_index.png)
 ```py
 fruits = ['banana', 'orange', 'mango', 'lemon'] 
 first_fruit = fruits[0] # we are accessing the first item using its index
@@ -1671,6 +1675,8 @@ ages = [19, 22, 19, 24, 20, 25, 26, 24, 25, 24]
   * Compare the value of (min - average) and (max - average), use *abs()* method
 29. Find the middle country(ies) in the [countries list](https://github.com/Asabeneh/30-Days-Of-Python/tree/master/data/countries.py)
 30. Divide the countries list into two equal lists if it is even if not one more country for the first half.
+
+['banana', 'orange', 'mango', 'lemon']
 
 
 
