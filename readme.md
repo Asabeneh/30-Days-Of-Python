@@ -60,6 +60,7 @@
     - [How to create a list](#how-to-create-a-list)
     - [Accessing list items using positive indexing](#accessing-list-items-using-positive-indexing)
     - [Accessing list items using negative indexing](#accessing-list-items-using-negative-indexing)
+    - [Unpacking list items](#unpacking-list-items)
     - [Slicing items from list](#slicing-items-from-list)
     - [Modifying list](#modifying-list)
     - [Check items in a list](#check-items-in-a-list)
@@ -76,6 +77,17 @@
     - [Reversing a list](#reversing-a-list)
     - [Sorting list items](#sorting-list-items)
   - [Exercises: Day 5](#exercises-day-5)
+- [Day 6:](#day-6)
+  - [Tuple](#tuple-1)
+    - [Creating Tuple](#creating-tuple)
+    - [Tuple length](#tuple-length)
+    - [Accessing tuple items](#accessing-tuple-items)
+    - [Slicing tuples](#slicing-tuples)
+    - [Changing tuples to list](#changing-tuples-to-list)
+    - [Checking an item in a list](#checking-an-item-in-a-list)
+    - [Joining tuples](#joining-tuples)
+    - [Deleting tuple](#deleting-tuple)
+  - [Exercises: Day 6](#exercises-day-6)
 
 # Day 1
 ## Welcome
@@ -1320,6 +1332,7 @@ print('Animal products:',animal_products)
 print('Number of animal products:', len(animal_products))
 print('Web technologies:', web_techs)
 print('Number of web technologies:', len(web_techs))
+print('Countries:', countries)
 print('Number of countries:', len(countries))
 ```
 ```sh
@@ -1332,6 +1345,7 @@ Animal products: ['milk', 'meat', 'butter', 'yoghurt']
 Number of animal products: 4
 Web technologies: ['HTML', 'CSS', 'JS', 'React', 'Redux', 'Node', 'MongDB']
 Number of web technologies: 7
+Countries: ['Finland', 'Estonia', 'Denmark', 'Sweden', 'Norway']
 Number of countries: 5
 ```
 * List can have items of different data types
@@ -1365,6 +1379,41 @@ second_last = fruits[-2]
 print(first_fruit)      # banana
 print(last_fruit)       # lemon
 print(second_last)      # mango
+```
+### Unpacking list items
+```py
+lst = ['item','item2','item3', 'item4', 'item5']
+first_item, second_item, third_item, *rest = lst
+print(first_item)     # item1
+print(second_item)    # item1
+print(third_item)     # item2
+print(rest)           # ['item4', 'item5']
+
+```
+```py
+# First Example
+fruits = ['banana', 'orange', 'mango', 'lemon','lime','apple']
+first_fruit, second_fruit, third_fruit, *rest = lst
+print(first_fruit)     # banana
+print(second_fruit)    # orange
+print(third_fruit)     # mango
+print(rest)           # ['lemon','lime','apple']
+# Second Example about unpacking list
+first, second, third,*rest, tenth = [1,2,3,4,5,6,7,8,9,10]
+print(first)
+print(second)
+print(third)
+print(rest)
+print(tenth)
+# Third Example about unpacking list
+countries = ['Germany', 'France','Belgium','Sweden','Denmark','Finland','Norway','Iceland','Estonia']
+gr, fr, bg, sw, *scandic, es = countries
+print(gr)
+print(fr)
+print(bg)
+print(sw)
+print(scandic)
+print(es)
 ```
 ### Slicing  items from list
 * Positive Indexing: We can specify a range of positive indexes by specifying the starting  and the ending, the return value will be a new list.
@@ -1415,7 +1464,7 @@ lst.append(item)
 fruits = ['banana', 'orange', 'mango', 'lemon']
 fruits.append('apple')
 print(fruits)           # ['banana', 'orange', 'mango', 'lemon', 'apple']
-fruits.append('lime')   # ['banana', 'orange', 'mango', 'lemon', 'apple', 'lime]
+fruits.append('lime')   # ['banana', 'orange', 'mango', 'lemon', 'apple', 'lime']
 print(fruits)
 ```
 ### Inserting item in to a list
@@ -1429,7 +1478,7 @@ lst.insert(index, item)
 fruits = ['banana', 'orange', 'mango', 'lemon']
 fruits.insert(2, 'apple') # insert apple between orange and mango
 print(fruits)           # ['banana', 'orange', 'apple', 'mango', 'lemon']
-fruits.list(3, 'lime')   # ['banana', 'orange', 'apple', 'mango', 'lime','lemon',]
+fruits.insert(3, 'lime')   # ['banana', 'orange', 'apple', 'mango', 'lime','lemon']
 print(fruits)
 ```
 ### Removing item from list
@@ -1679,7 +1728,179 @@ ages = [19, 22, 19, 24, 20, 25, 26, 24, 25, 24]
   * Compare the value of (min - average) and (max - average), use *abs()* method
 29. Find the middle country(ies) in the [countries list](https://github.com/Asabeneh/30-Days-Of-Python/tree/master/data/countries.py)
 30. Divide the countries list into two equal lists if it is even if not one more country for the first half.
+31. ['China', 'Russia', 'USA', 'Finland', 'Sweden', 'Norway', 'Denmark']. Unpack the first three countries and the rest as scandic countries.
 
+# Day 6:
+## Tuple
+A tuple is a collection of different data types which is ordered and unchangeable(immutable). Tuples are written with round brackets,(). Once a tuple is created, we can not change its values. We can not add, insert, remove a tuple because it is not modifiable (mutable). Unlike list, tuple has few methods. Methods related to tuple:
+* tuple(): to create an empty tuple
+* count(): to count the number of a specified item in a tuple
+* index(): to find the index of a specified item in a tuple
+* + operator: to join two or more tuples and to create new tuple
+### Creating Tuple
+
+* Empty tuple: Creating an empty tuple
+```py
+# syntax
+empty_tuple = () 
+# or using the tuple constructor
+empty_tuple = tuple()
+```
+* Tuple with initial values
+```py
+# syntax
+tpl = ('item1', 'item2','item3')
+```
+* 
+```py
+fruits = ('banana', 'orange', 'mango', 'lemon')
+```
+### Tuple length
+We use the *len()* method to get the length of a tuple.
+```py
+# syntax
+tpl = ('item1', 'item2', 'item3')
+len(tpl)
+```
+### Accessing tuple items
+* Positive Indexing
+Similar to the list data type we use positive or negative indexing to access tuple items.
+![Accessing tuple items](images/tuples_index.png)
+
+```py
+# Syntax
+tpl = ('item1', 'item2', 'item3')
+first_item = tpl[0]
+second_item = tpl[1]
+```
+```py
+fruits = ('banana', 'orange', 'mango', 'lemon')
+first_fruit = fruits[0]
+second_fruit = fruits[1]
+last_index =len(fruits) - 1
+last_fruit = fruits[las_index]
+```
+* Negative indexing
+Negative indexing means beginning from the end, -1 refers to the last item, -2 refers to the second last and the negative of the list length refers to the first item.
+![Tuple Negative indexing](images/tuple_negative_indexing.png)
+```py
+# Syntax
+tpl = ('item1', 'item2', 'item3','item4')
+first_item = tpl[-4]
+second_item = tpl[-3]
+```
+```py
+fruits = ('banana', 'orange', 'mango', 'lemon')
+first_fruit = fruits[-4]
+second_fruit = fruits[-3]
+last_fruit = fruits[-1]
+```
+### Slicing tuples
+We can slice out a sub tuple by  specifying a range of indexes where to start and where to end in the tuple, the return value will be a new tuple with the specified items.
+
+* Range of Positive Indexes
+
+```py
+# Syntax
+tpl = ('item1', 'item2', 'item3','item4')
+all_items = tpl[0:4]         # all items
+all_items = tpl[0:]         # all items
+middle_two_items = tpl[1:3]  # does not include item at index 3
+```
+```py
+fruits = ('banana', 'orange', 'mango', 'lemon')
+all_fruits = fruits[0:4]    # all items
+all_fruits= fruits[0:]      # all items
+orange_mango = fruits[1:3]  # doesn't include item at index 3
+orange_to_the_rest = fruits[1:]
+```
+
+* Range of Negative Indexes
+
+```py
+# Syntax
+tpl = ('item1', 'item2', 'item3','item4')
+all_items = tpl[-4:]         # all items
+middle_two_items = tpl[-3:-1]  # does not include item at index 3
+```
+```py
+fruits = ('banana', 'orange', 'mango', 'lemon')
+all_fruits = fruits[-4:]    # all items
+orange_mango = fruits[-3:-1]  # doesn't include item at index 3
+orange_to_the_rest = fruits[-3:]
+```
+### Changing tuples to list
+We can change tuples to list and list to tuple. Tuple is immutable if we want to modify a tuple we should change to a list.
+```py
+# Syntax
+tpl = ('item1', 'item2', 'item3','item4')
+lst = list(tpl)
+```
+```py
+fruits = ('banana', 'orange', 'mango', 'lemon')
+fruits = list(fruits)
+fruits[0] = 'apple'
+print(fruits)     # ['apple', 'orange', 'mango', 'lemon']
+fruits = tuple(fruits)
+print(fruits)     # ('apple', 'orange', 'mango', 'lemon')
+```
+### Checking an item in a list
+We can check an item if it exists in a list or not using *in*, it returns boolean.
+```py
+# Syntax
+tpl = ('item1', 'item2', 'item3','item4')
+'item2' in tpl # True
+```
+```py
+fruits = ('banana', 'orange', 'mango', 'lemon')
+'orange' in fruits # True
+'apple' in fruits # False
+fruits[0] = 'apple'
+```
+### Joining tuples
+We can join two or more tuples using + operator
+```py
+# syntax
+tpl1 = ('item1', 'item2', 'item3')
+tpl2 = ('item4', 'item5','item6')
+tpl3 = tpl1 + tpl2
+```
+```py
+fruits = ('banana', 'orange', 'mango', 'lemon')                    
+vegetables = ('Tomato', 'Potato', 'Cabbage','Onion', 'Carrot')
+fruits_and_vegetables = fruits + vegetables 
+```
+### Deleting tuple
+It is not possible to remove a single item in a tuple but it is possible to delete the tuple itself using *del*.
+```py
+# syntax
+tpl1 = ('item1', 'item2', 'item3')
+del tpl1
+
+```
+```py
+fruits = ('banana', 'orange', 'mango', 'lemon') 
+del fruits                  
+```
+
+
+## Exercises: Day 6
+1. Create an empty tuple
+2. Create a tuple containing name of your sisters and your brothers
+3. Join brothers and sisters tuples and assign it to siblings
+4. How many siblings do you have ?
+5. Modify the siblings tuple and add the name of your father and mother and assign it to family_members
+6. Unpack siblings and parents from family_members
+7. Create a fruits, vegetables and animal products tuples. Join the three tuples and assign it to a variable called food_stuff. 
+8. Slice out the middle item or items from the food_staff list
+9. Slice out the first three items and the last three items from food_staff list
+10. Delete the food_staff list completely
+11. Check if an item exist in a tuple:
+* Check if 'Estonia' is a nordic country
+* Check if 'Iceland' is a nordic country
+  ```py
+  nordic_countries = ('Denmark', 'Finland','Iceland', 'Norway', 'Sweden')
+  ```
 
 
 
