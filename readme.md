@@ -1,5 +1,4 @@
 ![30DaysOfPython](./images/30DaysOfPython_banner3@2x.png)
-## Table of Contents
 - [Day 1](#day-1)
   - [Welcome](#welcome)
   - [Introduction](#introduction)
@@ -45,8 +44,8 @@
     - [String Concatenation](#string-concatenation)
     - [Escape Sequences in string](#escape-sequences-in-string)
     - [String formating](#string-formating)
-      - [“Old Style” String Formatting (% Operator)](#old-style-string-formatting--operator)
-      - [“New Style” String Formatting (str.format)](#new-style-string-formatting-strformat)
+      - [Old Style String Formatting (% Operator)](#old-style-string-formatting--operator)
+      - [New Style String Formatting (str.format)](#new-style-string-formatting-strformat)
       - [String Interpolation / f-Strings (Python 3.6+)](#string-interpolation--f-strings-python-36)
     - [Python strings as sequences of characters](#python-strings-as-sequences-of-characters)
       - [Unpacking characters](#unpacking-characters)
@@ -57,8 +56,26 @@
     - [String Methods](#string-methods)
   - [Exercises - Day 4](#exercises---day-4)
 - [Day 5](#day-5)
-  - [Conditionals](#conditionals)
-    - [If](#if)
+  - [Lists](#lists)
+    - [How to create a list](#how-to-create-a-list)
+    - [Accessing list items using positive indexing](#accessing-list-items-using-positive-indexing)
+    - [Accessing list items using negative indexing](#accessing-list-items-using-negative-indexing)
+    - [Slicing items from list](#slicing-items-from-list)
+    - [Modifying list](#modifying-list)
+    - [Check items in a list](#check-items-in-a-list)
+    - [Adding item in a list](#adding-item-in-a-list)
+    - [Inserting item in to a list](#inserting-item-in-to-a-list)
+    - [Removing item from list](#removing-item-from-list)
+    - [Removing item using pop](#removing-item-using-pop)
+    - [Removing item using del](#removing-item-using-del)
+    - [Clearing list items](#clearing-list-items)
+    - [Copying a list](#copying-a-list)
+    - [Joining lists](#joining-lists)
+    - [Counting Items in a list](#counting-items-in-a-list)
+    - [Finding index of an item](#finding-index-of-an-item)
+    - [Reversing a list](#reversing-a-list)
+    - [Sorting list items](#sorting-list-items)
+  - [Exercises: Day 5](#exercises-day-5)
 
 # Day 1
 ## Welcome
@@ -266,7 +283,7 @@ A tuple is an ordered collection of different data types like list but tuples ca
 ('Asabeneh', 'Brook', 'Abraham', 'Lidiya')
 ```
 #### Set
-A set is a collection data types similar to list and tuple. Unlike list and tuple, set is not an ordered collection of items. Like in mathematics, set in python store only unique elements.
+A set is a collection data types similar to list and tuple. Unlike list and tuple, set is not an ordered collection of items. Like in mathematics, set in python store only unique items.
 
 In later sections, we will go in detail in each and every python data types.
 
@@ -614,7 +631,9 @@ print('Exponential: ', 3 ** 2)                      # it means 3 * 3
 # Floating numbers
 print('Floating Number,PI', 3.14)
 print('Floating Number, gravity', 9.81)
-
+```
+**Example:Complex numbers**
+```py
 # Complex numbers
 print('Complex number: ', 1+1j)
 print('Multiplying complex number: ',(1+1j) * (1-1j))
@@ -622,9 +641,7 @@ print('Multiplying complex number: ',(1+1j) * (1-1j))
 Let's declare a variable and assign a number data type. I am going to use single character variable but remember do not develop a habit of declaring such types of variable. Variable names should be all the time mnemonic. 
 
 **Example:**
-
 ```python
-
 # Declaring the variable at the top first
 
 a = 3 # a is a variable name and 3 is an integer data type
@@ -729,8 +746,8 @@ print('True or False:', True or False)
 In addition to the above comparison operator python uses:
 * *is*: Returns true if both variables are the same object(x is y)
 * *is not*: Returns true if both variables are not the same object(x is not y)
-* *in*: Returns True if a list with the a certain element(x in y)
-* *not in*: Returns True if a list doesn't have  the a certain element(x in y)
+* *in*: Returns True if a list with the a certain item(x in y)
+* *not in*: Returns True if a list doesn't have  the a certain item(x in y)
 
 ```py
 print('1 is 1', 1 is 1)                   # True - because the data values are the same
@@ -884,7 +901,7 @@ In every programming language it starts with "Hello, World!"
 
 ```
 ### String formating
-#### “Old Style” String Formatting (% Operator)
+#### Old Style String Formatting (% Operator)
 In python there many ways of formating string. In this section we will cover some of them.
 The "%" operator is used to format a set of variables enclosed in a "tuple" (a fixed size list), together with a format string, which contains normal text together with "argument specifiers", special symbols like "%s",  "%d", "%f", "%.<number of digits>f". 
 * %s - String (or any object with a string representation, like numbers)
@@ -910,7 +927,7 @@ python_libraries = ['Django', 'Flask', 'Numpy', 'Pandas']
 formatted_string = 'The following are python libraries:' % python_libraries
 print(formatted_string) # "The following are python libraries:['Django', 'Flask', 'Numpy', 'Pandas']"
 ```
-#### “New Style” String Formatting (str.format)
+#### New Style String Formatting (str.format)
 This is formating is introduced in python version 3. 
 
 ```py
@@ -946,7 +963,6 @@ pi = 3.14
 area = pi * radius ** 2
 formatted_string = 'The area of radius {} is {:.2f}.'.format(radius, area) # 2 digits after decimal
 print(formatted_string)
-
 
 ```
 ####  String Interpolation / f-Strings (Python 3.6+)
@@ -1196,12 +1212,12 @@ print(challenge.startswith('thirty')) # False
 ## Exercises - Day 4
 1. Concatenate the string 'Thirty', 'Days', 'Of', 'Python' to a single string, 'Thirty Days Of Python'
 2. Concatenate the string 'Coding', 'For' , 'All' to a single string, 'Coding For All'
-3. Declare a variable name company and assign it to an initial value "Coding For All1.
+3. Declare a variable name company and assign it to an initial value "Coding For All.
 4. Print company using *print()*
 5. Print the length of the company string using *len()* method and *print()*
 6. Change all the characters to capital letters using *upper()* method
 7. Change all the characters to lowercase letters using *lower()* method
-8.  Use capitalize(), title(), swapcase() methods to format the value the string *Coding For All*.
+8. Use capitalize(), title(), swapcase() methods to format the value the string *Coding For All*.
 9.  Cut(slice) out the first word of *Coding For All* string
 10. Check if *Coding For All* string contains a word Coding using the method index, find or other methods.
 11. Replace the word coding in the string 'Coding For All' to Python.
@@ -1255,13 +1271,377 @@ The area of radius 10 is 314 meters squares.
 8 ** 6 = 262144
 ```
 # Day 5
-## Conditionals
-We use conditional statement in python perform different computations or actions depending on whether a specific boolean constraint evaluates to true or false. Conditional statements are handled by IF statements in Python.
-### If 
-If condition will be evaluated only if the condition is true. See the example below:
+## Lists
+The are four collection data types in python :
+* List:  is a collection which is ordered and changeable(modifiable). Allows duplicate members.
+* Tuple:  is a collection which is ordered and unchangeable or unmodifiable(immutable). Allows duplicate members.
+* Set:  is a collection which is unordered and unindexed. No duplicate members.
+* Dictionary: is a collection which is unordered, changeable(modifiable) and indexed. No duplicate members.
+
+A list is collection of different data types which is ordered and modifiable(mutable). A list can be empty or it may have different data type items or items
+### How to create a list
+In python we can create list in two ways:
+* Using list builtin function
+```py
+lst = list()
+```
+```py
+empty_list = list() # this is an empty list, no item in the list
+print(len(empty_list)) # 0
+```
+* Using square brackets, []
+```py
+lst = []
+```
+```py
+empty_list = [] # this is an empty list, no item in the list
+print(len(empty_list)) # 0
+```
+
+List with initial values. We use *len()* to find the length of a list.
+```py
+fruits = ['banana', 'orange', 'mango', 'lemon']                     # list of fruits
+vegetables = ['Tomato', 'Potato', 'Cabbage','Onion', 'Carrot']      # list of vegetables
+animal_products = ['milk', 'meat', 'butter', 'yoghurt']             # list of animal products
+web_techs = ['HTML', 'CSS', 'JS', 'React','Redux', 'Node', 'MongDB'] # list of web technologies
+countries = ['Finland', 'Estonia', 'Denmark', 'Sweden', 'Norway']
+
+# Print the lists and it length
+print('Fruits:', fruits)
+print('Number of fruits:', len(fruits))
+print('Vegetables:', vegetables)
+print('Number of vegetables:', len(vegetables))
+print('Animal products:',animal_products)
+print('Number of animal products:', len(animal_products))
+print('Web technologies:', web_techs)
+print('Number of web technologies:', len(web_techs))
+print('Number of countries:', len(countries))
+```
+```sh
+output
+Fruits: ['banana', 'orange', 'mango', 'lemon']
+Number of fruits: 4
+Vegetables: ['Tomato', 'Potato', 'Cabbage', 'Onion', 'Carrot']
+Number of vegetables: 5
+Animal products: ['milk', 'meat', 'butter', 'yoghurt']
+Number of animal products: 4
+Web technologies: ['HTML', 'CSS', 'JS', 'React', 'Redux', 'Node', 'MongDB']
+Number of web technologies: 7
+Number of countries: 5
+```
+* List can have items of different data types
+```py
+ lst = ['Asabeneh', 250, True, {'country':'Finland', 'city':'Helsinki'}] # list containing different data types
+```
+### Accessing list items using positive indexing
+We access each item in a list using their index. A list index start from 0.
+```py
+fruits = ['banana', 'orange', 'mango', 'lemon'] 
+first_fruit = fruits[0] # we are accessing the first item using its index
+print(first_fruit)      # banana
+second_fruit = fruits[1]
+print(second_fruit)     # orange
+last_fruit = fruits[3]
+print(last_fruit) # lemon
+# Last index
+last_index = len(fruits) - 1
+last_fruit = fruits[last_index]
+```
+### Accessing list items using negative indexing
+Negative indexing means beginning from the end, -1 refers to the last item, -2 refers to the second last item.
+```py
+fruits = ['banana', 'orange', 'mango', 'lemon'] 
+last_fruit = fruits[-1]
+second_last = fruits[-2]
+print(last_fruit)       # lemon
+print(second_last)      # mango
+```
+### Slicing  items from list
+* Positive Indexing: We can specify a range of positive indexes by specifying the starting  and the ending, the return value will be a new list.
+```py
+fruits = ['banana', 'orange', 'mango', 'lemon'] 
+all_fruits = fruits[0:4] # it returns all the fruits
+# this is also give the same result as the above
+all_fruits = fruits[0:] # if we don't set where to stop it takes all the rest
+orange_and_mango = fruits[1:3] # it does not include the end index
+orange_mango_lemon = fruits[1:]
+```
+* Negative Indexing:  We can specify a range of negative indexes by specifying the starting  and the ending, the return value will be a new list.
+```py
+fruits = ['banana', 'orange', 'mango', 'lemon'] 
+all_fruits = fruits[-4:] # it returns all the fruits
+# this is also give the same result as the above
+orange_and_mango = fruits[-3:-1] # it does not include the end index
+orange_mango_lemon = fruits[-3:]
+```
+### Modifying list
+List is a mutable or modifiable ordered collection of items or items. Lets modify the fruit list.
+```py
+fruits = ['banana', 'orange', 'mango', 'lemon'] 
+fruits[0] = 'Avocado' 
+print(fruits)       #  ['avocado', 'orange', 'mango', 'lemon']
+fruits[1] = 'apple'
+print(fruits)       #  ['avocado', 'apple', 'mango', 'lemon']
+last_index = len(fruits)
+fruits[last_index] = 'lime'
+print(fruits)        #  ['avocado', 'apple', 'mango', 'lime']
+```
+### Check items in a list
+```py
+fruits = ['banana', 'orange', 'mango', 'lemon']
+does_exist = 'banana' in fruits
+print(does_exist)  # True
+does_exist = 'lime' in fruits
+print(does_exist)  # False
+```
+### Adding item in a list
+To add item to the end of an existing list we use the method
+```py
+lst = list()
+lst.append(item)
+```
+```py
+fruits = ['banana', 'orange', 'mango', 'lemon']
+fruits.append('apple')
+print(fruits)           # ['banana', 'orange', 'mango', 'lemon', 'apple']
+fruits.append('lime')   # ['banana', 'orange', 'mango', 'lemon', 'apple', 'lime]
+print(fruits)
+```
+### Inserting item in to a list
+Use insert() method to insert a single item at a specified index in a list. Note that other items are shifted to the right.
+```py
+lst = ['item1', 'item2']
+lst.insert(index, item)
+```
+```py
+fruits = ['banana', 'orange', 'mango', 'lemon']
+fruits.insert(2, 'apple') # insert apple between orange and mango
+print(fruits)           # ['banana', 'orange', 'apple', 'mango', 'lemon']
+fruits.list(3, 'lime')   # ['banana', 'orange', 'apple', 'mango', 'lime','lemon',]
+print(fruits)
+```
+### Removing item from list
+The remove method remove a specified item from a list
+```py
+lst = ['item1', 'item2']
+lst.remove(item)
+```
+```py
+fruits = ['banana', 'orange', 'mango', 'lemon']
+fruits.remove('banana')
+print(fruits)  # ['orange', 'mango', 'lemon']
+fruits.remove('lemon')
+print(fruits)  # ['orange', 'mango']
+```
+### Removing item using pop
+The pop() method removes the specified index, (or the last item if index is not specified):
+```py
+lst = ['item1', 'item2']
+lst.pop()       # last item
+lst.pop(index)
+```
+```py
+fruits = ['banana', 'orange', 'mango', 'lemon']
+fruits.remove()     
+print(fruits)       # ['banana', 'orange', 'mango']
+
+fruits.remove(0)     
+print(fruits)       # ['orange', 'mango']    
+```
+### Removing item using del
+The del keyword removes the specified index and it can be also use to delete the list completely
+
 ```py
 
-``
+lst = ['item1', 'item2']
+del lst[index] # only a single item
+del lst        # to delete the list completely
+```
+```py
+fruits = ['banana', 'orange', 'mango', 'lemon']
+del fruits[0]     
+print(fruits)       # ['orange', 'mango', 'lemon']
+
+del fruits[1]     
+print(fruits)       # ['orange', 'lemon']
+del fruits
+print(fruits)       # This should give: NameError: name 'fruits' is not defined
+```
+### Clearing list items
+The clear() method empties the list:
+```py
+lst = ['item1', 'item2']
+lst.clear()
+```
+```py
+fruits = ['banana', 'orange', 'mango', 'lemon']
+fruits.clear()     
+print(fruits)       # []
+    
+```
+### Copying  a list
+It is possible to copy a list by reassigning to a new variable in the  following way list2 = list1. Now, list2 is a reference of list1, any changes we make in list2 will also modify the original, list2. But there are lots of case in which we do not like to modify the original instead we like to have a different copy. One of way avoid the above problem is using *copy()*.
+```py
+lst = ['item1', 'item2']
+lst_copy = lst.copy()
+```
+```py
+fruits = ['banana', 'orange', 'mango', 'lemon']
+fruits_copy = fruits.copy()     
+print(fruits_copy)       # ['banana', 'orange', 'mango', 'lemon']
+```
+### Joining lists
+There are several ways to join, or concatenate, two or more lists in Python. 
+
+* Plus Operator (+)
+```py
+list3 = list1 +list2
+```
+```py
+positive_numbers = [1, 2, 3,4,5]
+zero = [0]
+negative_numbers = [-5,-4,-3,-2,-1]
+integers = negative_numbers + zero + positive_numbers
+print(integers)
+fruits = ['banana', 'orange', 'mango', 'lemon']
+vegetables = ['Tomato', 'Potato', 'Cabbage','Onion', 'Carrot'] 
+fruits_and_vegetables = fruits + vegetables
+print(fruits_and_vegetables )
+
+```
+```py
+# output
+[-5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5]
+['banana', 'orange', 'mango', 'lemon', 'Tomato', 'Potato', 'Cabbage', 'Onion', 'Carrot']
+```
+  * Joining using extend() method
+
+```py
+list3 = list1.extend(list2)
+```
+```py
+num1 = [0, 1, 2, 3]
+num2= [4, 5,6]
+num1.extend(num2)
+print('Numbers:', num1)
+negative_numbers = [-5,-4,-3,-2,-1]
+positive_numbers = [1, 2, 3,4,5]
+zero = [0]
+
+negative_numbers.extend(zero)
+negative_numbers.extend(positive_numbers)
+print('Integers:', negative_numbers)
+fruits = ['banana', 'orange', 'mango', 'lemon']
+vegetables = ['Tomato', 'Potato', 'Cabbage','Onion', 'Carrot'] 
+fruits.extend(vegetables)
+print('Fruits and vegetables:', fruits )
+
+```
+```py
+Numbers: [0, 1, 2, 3, 4, 5, 6]
+Integers: [-5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5]
+Fruits and vegetables: ['banana', 'orange', 'mango', 'lemon', 'Tomato', 'Potato', 'Cabbage', 'Onion', 'Carrot']
+```
+
+### Counting Items in a list
+The count() method returns the number of times an item appears in a list:
+```py
+lst = ['item1', 'item2']
+lst.count(item) 
+```
+```py
+fruits = ['banana', 'orange', 'mango', 'lemon']
+print(fruits.count('orange'))   # 1
+ages = [22, 19, 24, 25, 26, 24, 25, 24]
+print(ages.count(24))           # 3
+```
+### Finding index of an item
+The count() method returns the index of an item in the list:
+```py
+lst = ['item1', 'item2']
+lst.index(item) 
+```
+```py
+fruits = ['banana', 'orange', 'mango', 'lemon']
+print(fruits.index('orange'))   # 1
+ages = [22, 19, 24, 25, 26, 24, 25, 24]
+print(ages.index(24))           # 2, the first occurrence
+```
+### Reversing a list
+The reverse() method reverse the order of a list.
+```py
+lst = ['item1', 'item2']
+lst.reverse() 
+
+```
+```py
+fruits = ['banana', 'orange', 'mango', 'lemon']
+fruits.reverse()
+print(fruits.reverse())  
+ages = [22, 19, 24, 25, 26, 24, 25, 24]
+ages.reverse()
+print(ages.reverse())         
+```
+```py
+['lemon', 'mango', 'orange', 'banana']
+[24, 25, 24, 26, 25, 24, 19, 22]
+```
+### Sorting list items
+The sort() method reorder the list items in ascending order. If a reverse is equal to true it arrange in descending order.
+```py
+lst = ['item1', 'item2']
+lst.sort() 
+lst.sort(reverse=True)
+```
+```py
+fruits = ['banana', 'orange', 'mango', 'lemon']
+fruits.sort()
+print(fruits) 
+fruits.sort(reverse=True)
+print(fruits)
+ages = [22, 19, 24, 25, 26, 24, 25, 24]
+ages.sort()
+print(ages) 
+ages.sort(reverse=True)
+print(ages)           
+```
+```sh
+['banana', 'lemon', 'mango', 'orange']
+['orange', 'mango', 'lemon', 'banana']
+[19, 22, 24, 24, 24, 25, 25, 26]
+[26, 25, 25, 24, 24, 24, 22, 19]
+```
+  
+## Exercises: Day 5
+1. Declare an empty list
+2. Declare a list with more than 5 number of items
+3. Find the length of your list
+4. Get the first item, the middle item and the last item of the list
+5. Declare a list called mixed_data_types,put your(name, age, height, marital status, address)
+6. Declare a list variable name it_companies and assign initial values Facebook, Google, Microsoft, Apple, IBM, Oracle and Amazon.
+7. Print the list using print()
+8. Print the number of companies in the list
+9. Print the first, middle and last company
+10. Print modify any of the companies
+11. Add an IT company to it_companies
+12. Change on of the it_companies item to uppercase
+13. Join the it_companies with a string '# '
+14. Check if a certain company exists in the it_companies list. 
+15. Sort the list using sort() method
+16. Reverse the list in descending order using reverse() method
+17. Slice out the first 3 companies from the list
+18. Slice out the last 3 companies from the list
+19. Slice out the middle IT company or companies from the list
+20. Remove the first IT company from the list
+21. Remove the middle IT company or companies from the list
+22. Remove the last IT company from the list
+23. Remove all IT companies
+24. Join the following lists:
+    ```py
+    front_end = ['HTML', 'CSS', 'JS', 'React', 'Redux']
+    back-end = ['Node','Express', 'MongoDB']
+    ```
+
 
 
 
