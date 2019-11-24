@@ -915,7 +915,7 @@ first_name = 'Asabeneh'
 last_name = 'Yetayeh'
 language = 'Python'
 formatted_string = 'I am %s %s. I teach %s' %(first_name, last_name, language)
-print(formatted)
+print(formatted_string)
 
 # Strings  and numbers
 radius = 10
@@ -936,7 +936,7 @@ first_name = 'Asabeneh'
 last_name = 'Yetayeh'
 language = 'Python'
 formatted_string = 'I am {} {}. I teach {}'.format(first_name, last_name, language)
-print(formatted)
+print(formatted_string)
 a = 4
 b = 3
 
