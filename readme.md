@@ -1040,7 +1040,7 @@ It is possible to skip characters while slicing by passing step argument to slic
 ```py
 language = 'Python'
 pto = language[0,6:2] # 
-print(pto) # pto
+print(pto) # Pto
 ```
 
 ### String Methods
@@ -1173,7 +1173,7 @@ print('ten'.isnumeric())    # False
 ```py
 web_tech = ['HTML', 'CSS', 'JavaScript', 'React']
 result = '#, '.join(web_tech)
-print(result) # 'HTML# CSS# JavaScript# React'
+print(result) # 'HTML#, CSS#, JavaScript#, React'
 ```
 * strip(): Removes both leading and trailing characters
 ```py
