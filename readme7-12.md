@@ -332,3 +332,6 @@ age = [22, 19, 24, 25, 26, 24, 25, 24]
 12. Delete the sets completely
 13. Convert the ages to set and compare the length of the list and the set
 14. Explain the difference among the following data types: string, list, tuple and set
+
+
+[<< Part 1 ](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/readme.md)| [Part 3 >>](#)
