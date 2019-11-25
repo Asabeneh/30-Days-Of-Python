@@ -1,3 +1,5 @@
+[Part 1](https://github.com/Asabeneh/30-Days-Of-Python) | [Part 2](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/readme7-12.md)| [Part 3](#)| [Part 4](#)| [Part 5](#)
+
 ![30DaysOfPython](./images/30DaysOfPython_banner3@2x.png)
 - [Day 1](#day-1)
   - [Welcome](#welcome)
@@ -1052,7 +1054,7 @@ It is possible to skip characters while slicing by passing step argument to slic
 ```py
 language = 'Python'
 pto = language[0,6:2] # 
-print(pto) # pto
+print(pto) # Pto
 ```
 
 ### String Methods
@@ -1902,7 +1904,7 @@ del fruits
   nordic_countries = ('Denmark', 'Finland','Iceland', 'Norway', 'Sweden')
   ```
 
-
+[Part 2 >>](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/readme7-12.md)
 
 
 
