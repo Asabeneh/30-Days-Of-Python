@@ -1,6 +1,7 @@
 [Part 1](https://github.com/Asabeneh/30-Days-Of-Python) | [Part 2](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/readme7-12.md)| [Part 3](#)| [Part 4](#)| [Part 5](#)
 ![30DaysOfPython](./images/30DaysOfPython_banner3@2x.png)
 - [Day 7](#day-7)
+  - [Set](#set)
     - [Creating a set](#creating-a-set)
     - [Getting set length](#getting-set-length)
     - [Accessing Items in set](#accessing-items-in-set)
@@ -20,7 +21,8 @@
   - [Exercises: Day 7](#exercises-day-7)
 
 # Day 7
-Let me take you back to your elementary or high school Mathematics lesson. The Mathematics definition of set can be applied also in python. Se is a collection of unordered and unindexed distinct elements. In python set use to store unique items, and it is possible find union, intersection, difference, symmetric difference, subset, superset and disjoint set.
+## Set
+Let me take you back to your elementary or high school Mathematics lesson. The Mathematics definition of set can be applied also in python. Se is a collection of unordered and unindexed distinct elements. In python set use to store unique items, and it is possible find union, intersection, difference, symmetric difference, subset, super set and disjoint set.
 ### Creating a set
 We use {}  to create a set.
 * Creating an empty set
