@@ -322,11 +322,13 @@ age = [22, 19, 24, 25, 26, 24, 25, 24]
 2. Add 'Twitter' to it companies
 3. Insert multiple it companies at once to the set, it_companies
 4. Remove one of the companies from the set, it_companies
-5. Join A and B
-6. Fin A intersection B
-7. Is A subset of B
-8. Are A and B disjoint sets
-9. Join A with B and B with A
-10. What is the symmetric difference between A and B
-11. Delete the sets completely
-12. Convert the ages to set and compare the length of the list and the set
+5.  What is the difference between remove and discard
+6. Join A and B
+7. Fin A intersection B
+8. Is A subset of B
+9. Are A and B disjoint sets
+10. Join A with B and B with A
+11. What is the symmetric difference between A and B
+12. Delete the sets completely
+13. Convert the ages to set and compare the length of the list and the set
+14. Explain the difference among the following data types: string, list, tuple and set
