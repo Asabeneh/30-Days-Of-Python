@@ -28,7 +28,7 @@
     - [Checking a key in a dictionary](#checking-a-key-in-a-dictionary)
     - [Removing key items from dictionary](#removing-key-items-from-dictionary)
     - [Changing dictionary to list items](#changing-dictionary-to-list-items)
-    - [Changing dictionary to list items](#changing-dictionary-to-list-items-1)
+    - [Clearing dictionary list items](#clearing-dictionary-list-items)
     - [Deleting dictionary](#deleting-dictionary)
     - [Copy a dictionary](#copy-a-dictionary)
     - [Getting dictionary keys as list](#getting-dictionary-keys-as-list)
@@ -527,7 +527,7 @@ del person['is_married']        # Remove the is married
 
 ### Changing dictionary to list items
 
-The \*items() method change a dictionary to list of tuples.
+The *items()* method change a dictionary to list of tuples.
 
 ```py
 # syntax
@@ -535,7 +535,7 @@ dct = {'key1':'item1', 'key2':'item2', 'key3':'item3', 'key4':'item4'}
 print(dct.items()) # dict_items([('key1', 'item1'), ('key2', 'item2'), ('key3', 'item3'), ('key4', 'item4')])
 ```
 
-### Changing dictionary to list items
+### Clearing dictionary list items
 
 If we don't want the items in a dictionary we can clear them using _clear()_ methods
 
@@ -600,5 +600,5 @@ print(values)     # dict_values(['item1', 'item2', 'item3', 'item4'])
 10. Delete one of the item in the dictionary
 11. Delete the dictionary completely
 
-[<< Part 1 ](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/readme.md)| [Part 3 >>](#)
+[<< Part 1 ](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/readme.md) | [Part 3 >>](#)
 ***

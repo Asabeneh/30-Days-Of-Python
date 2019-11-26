@@ -1113,4 +1113,4 @@ del fruits
   nordic_countries = ('Denmark', 'Finland','Iceland', 'Norway', 'Sweden')
   ```
 
-[<< Part 2](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/readme4-6.md)[Part 3 >>](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/readme7-12.md)
+[<< Part 2](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/readme4-6.md) | [Part 3 >>](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/readme7-12.md)
