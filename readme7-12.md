@@ -22,7 +22,7 @@
 
 # Day 7
 ## Set
-Let me take you back to your elementary or high school Mathematics lesson. The Mathematics definition of set can be applied also in python. Se is a collection of unordered and unindexed distinct elements. In python set use to store unique items, and it is possible find union, intersection, difference, symmetric difference, subset, super set and disjoint set.
+Let me take you back to your elementary or high school Mathematics lesson. The Mathematics definition of set can be applied also in python. Set is a collection of unordered and unindexed distinct elements. In python set use to store unique items, and it is possible to find union, intersection, difference, symmetric difference, subset, super set and disjoint set.
 ### Creating a set
 We use {}  to create a set.
 * Creating an empty set
