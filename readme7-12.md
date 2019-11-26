@@ -14,7 +14,6 @@
     - [Converting list to set](#converting-list-to-set)
     - [Joining sets](#joining-sets)
     - [Finding intersection items](#finding-intersection-items)
-    - [Finding intersection items](#finding-intersection-items-1)
     - [Checking subset and super set](#checking-subset-and-super-set)
     - [Checking difference between two sets](#checking-difference-between-two-sets)
     - [Finding Symmetric difference between two sets](#finding-symmetric-difference-between-two-sets)
@@ -69,7 +68,6 @@ st = {'item1', 'item2', 'item3', 'item4'}
 **Example:**
 
 ```py
-
 fruits = {'banana', 'orange', 'mango', 'lemon'}
 'mango' in fruits
 ```
@@ -141,7 +139,6 @@ We can convert list to set and set to list back. Converting list to set removes 
 # syntax
 lst = ['item1', 'item2', 'item3', 'item4', 'item1']
 lst = set(lst)  # {'item2', 'item4', 'item1', 'item3'}
-
 ```
 
 **Example:**
@@ -174,7 +171,6 @@ This method insert an other set
 st1 = {'item1', 'item2', 'item3', 'item4'}
 st2 = {'item5', 'item6', 'item7', 'item8'}
 st1.update(st2)
-
 ```
 **Example:**
 ```py
@@ -189,7 +185,6 @@ Intersection returns a set of items which are in both the sets. See the example
 st1 = {'item1', 'item2', 'item3', 'item4'}
 st2 = {'item3', 'item2'}
 st1.intersection(st2) # {'item3', 'item2'}
-
 ```
 **Example:**
 ```py
@@ -200,27 +195,6 @@ whole_numbers.intersection(even_numbers) # {0, 2, 4, 6, 8, 10}
 python = {'p', 'y', 't', 'o','n'}
 dragon = {'d', 'r', 'a', 'g', 'o','n'}
 python.intersection(dragon)     # {'o', 'n'}
-
-```### Finding intersection items
-Intersection returns a set of items which are in both the sets. See the example
-
-```py
-# syntax
-st1 = {'item1', 'item2', 'item3', 'item4'}
-st2 = {'item3', 'item2'}
-st1.intersection(st2) # {'item3', 'item2'}
-
-```
-**Example:**
-```py
-whole_numbers = {0, 1, 2, 3, 4, 5, 6, 7, 8, 10}
-even_numbers = {0, 2, 4, 6, 8, 10}
-whole_numbers.intersection(even_numbers) # {0, 2, 4, 6, 8, 10}
-
-python = {'p', 'y', 't', 'o','n'}
-dragon = {'d', 'r', 'a', 'g', 'o','n'}
-python.intersection(dragon)     # {'o', 'n'}
-
 ```
 
 ### Checking subset and super set 
@@ -255,7 +229,6 @@ It return the difference between the two sets.
 st1 = {'item1', 'item2', 'item3', 'item4'}
 st2 = {'item2', 'item3'}
 st2.difference(st1) # {'item1', 'item4'} => st1\st2
-
 ```
 **Example:**
 ```py
@@ -309,7 +282,6 @@ even_numbers.isdisjoint(odd_numbers) # True, because no common item
 python = {'p', 'y', 't', 'o','n'}
 dragon = {'d', 'r', 'a', 'g', 'o','n'}
 python.disjoint(dragon)  # False, there is common items {'o', 'n'}
-
 ```
 
 ## Exercises: Day 7
@@ -335,7 +307,6 @@ age = [22, 19, 24, 25, 26, 24, 25, 24]
 13. Convert the ages to set and compare the length of the list and the set, which is larger ? 
 14. Explain the difference among the following data types: string, list, tuple and set
 15. *I am a teacher and I love to inspire and teach people.* How many unique words have been used in the sentence.
-
 
 [<< Part 1 ](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/readme.md)| [Part 3 >>](#)
 ***
