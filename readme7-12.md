@@ -1,4 +1,5 @@
 [Part 1](https://github.com/Asabeneh/30-Days-Of-Python) | [Part 2](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/readme7-12.md)| [Part 3](#)| [Part 4](#)| [Part 5](#)
+***
 ![30DaysOfPython](./images/30DaysOfPython_banner3@2x.png)
 - [Day 7](#day-7)
   - [Set](#set)
@@ -17,14 +18,14 @@
     - [Checking subset and super set](#checking-subset-and-super-set)
     - [Checking difference between two sets](#checking-difference-between-two-sets)
     - [Finding Symmetric difference between two sets](#finding-symmetric-difference-between-two-sets)
-    - [Joing set](#joing-set)
+    - [Joining set](#joining-set)
   - [Exercises: Day 7](#exercises-day-7)
 
 # Day 7
 ## Set
-Let me take you back to your elementary or high school Mathematics lesson. The Mathematics definition of set can be applied also in python. Set is a collection of unordered and unindexed distinct elements. In python set use to store unique items, and it is possible to find union, intersection, difference, symmetric difference, subset, super set and disjoint set.
+Let me take you back to your elementary or high school Mathematics lesson. The Mathematics definition of set can be applied also in python. Set is a collection of unordered and unindexed distinct elements. In python set uses to store unique items, and it is possible to find the *union*, *intersection*, *difference*, *symmetric difference*, *subset*, *super set* and *disjoint set* among sets.
 ### Creating a set
-We use {}  to create a set.
+We use curly bracket, {}  to create a set.
 * Creating an empty set
 ```py
 # syntax
@@ -53,7 +54,6 @@ len(set)
 **Example:**
 
 ```py
-
 fruits = {'banana', 'orange', 'mango', 'lemon'}
 len(fruits)
 ```
@@ -291,7 +291,7 @@ dragon = {'d', 'r', 'a', 'g', 'o','n'}
 python.symmetric_difference(dragon)  # {'r', 't', 'p', 'y', 'g', 'a', 'd'}
 
 ```
-### Joing set
+### Joining set
 If two set do not have common item or items we call it disjoint set. We can check if two sets are joint or disjoint using *isdisjoint()* method.
 
 ```py
@@ -312,9 +312,9 @@ python.disjoint(dragon)  # False, there is common items {'o', 'n'}
 
 ```
 
-
 ## Exercises: Day 7
 ```py
+# sets
 it_companies = {'Facebook', 'Google', 'Microsoft', 'Apple', 'IBM', 'Oracle'  'Amazon''}
 A = {19, 22, 24, 20, 25, 26}
 B = {19, 22, 20, 25, 26, 24, 28, 27}
@@ -324,17 +324,18 @@ age = [22, 19, 24, 25, 26, 24, 25, 24]
 2. Add 'Twitter' to it companies
 3. Insert multiple it companies at once to the set, it_companies
 4. Remove one of the companies from the set, it_companies
-5.  What is the difference between remove and discard
+5. What is the difference between remove and discard
 6. Join A and B
-7. Fin A intersection B
+7. Find A intersection B
 8. Is A subset of B
 9. Are A and B disjoint sets
 10. Join A with B and B with A
 11. What is the symmetric difference between A and B
 12. Delete the sets completely
-13. Convert the ages to set and compare the length of the list and the set
+13. Convert the ages to set and compare the length of the list and the set, which is larger ? 
 14. Explain the difference among the following data types: string, list, tuple and set
 15. *I am a teacher and I love to inspire and teach people.* How many unique words have been used in the sentence.
 
 
 [<< Part 1 ](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/readme.md)| [Part 3 >>](#)
+***
