@@ -21,8 +21,8 @@
 - [Day 8](#day-8)
   - [Dictionary](#dictionary)
     - [Creating a dictionary](#creating-a-dictionary)
-    - [Accessing a dictionary items](#accessing-a-dictionary-items)
     - [Dictionary Length](#dictionary-length)
+    - [Accessing a dictionary items](#accessing-a-dictionary-items)
     - [Adding Item to a dictionary](#adding-item-to-a-dictionary)
     - [Modifying Item in a dictionary](#modifying-item-in-a-dictionary)
     - [Checking a key in a dictionary](#checking-a-key-in-a-dictionary)
@@ -302,7 +302,7 @@ python.disjoint(dragon)  # False, there is common items {'o', 'n'}
 ## Exercises: Day 7
 ```py
 # sets
-it_companies = {'Facebook', 'Google', 'Microsoft', 'Apple', 'IBM', 'Oracle'  'Amazon''}
+it_companies = {'Facebook', 'Google', 'Microsoft', 'Apple', 'IBM', 'Oracle', 'Amazon'}
 A = {19, 22, 24, 20, 25, 26}
 B = {19, 22, 20, 25, 26, 24, 28, 27}
 age = [22, 19, 24, 25, 26, 24, 25, 24]
@@ -352,6 +352,31 @@ person = {
 
 The dictionary above shows that a value could be any different data type:string, boolean, list, tuple, set or a dictionary.
 
+### Dictionary Length
+It checks the number of key value pairs in the dictionary.
+```py
+# syntax
+dct = {'key1':'item1', 'key2':'item2', 'key3':'item3', 'key4':'item4'}
+print(len(dct)) # 4
+```
+**Example:**
+```py
+person = {
+    'first_name':'Asabeneh',
+    'last_name':'Yetayeh',
+    'age':250,
+    'country':'Finland',
+    'is_marred':True,
+    'skills':['JavaScript', 'React', 'Node', 'MongoDB', 'Python'],
+    'address':{
+        'street':'Space street',
+        'zipcode':02210
+    }
+    }
+print(len(person)) # 7
+
+```
+
 ### Accessing a dictionary items
 We can access a dictionary items by referring to its key name.
 ```py
@@ -398,30 +423,6 @@ print(person.get('first_name')) # Asabeneh
 print(person.get('country'))    # Finland
 print(person.get('skills')) #['HTML','CSS','JavaScript', 'React', 'Node', 'MongoDB', 'Python']
 print(person.get('city'))   # None
-```
-### Dictionary Length
-It checks the number of key value pairs in the dictionary.
-```py
-# syntax
-dct = {'key1':'item1', 'key2':'item2', 'key3':'item3', 'key4':'item4'}
-print(len(dct)) # 4
-```
-**Example:**
-```py
-person = {
-    'first_name':'Asabeneh',
-    'last_name':'Yetayeh',
-    'age':250,
-    'country':'Finland',
-    'is_marred':True,
-    'skills':['JavaScript', 'React', 'Node', 'MongoDB', 'Python'],
-    'address':{
-        'street':'Space street',
-        'zipcode':02210
-    }
-    }
-print(len(person)) # 7
-
 ```
 
 ### Adding Item to a dictionary
@@ -600,5 +601,5 @@ print(values)     # dict_values(['item1', 'item2', 'item3', 'item4'])
 10. Delete one of the item in the dictionary
 11. Delete the dictionary completely
 
-[<< Part 1 ](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/readme.md) | [Part 3 >>](#)
+[<< Part 2 ](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/readme4-6.md) | [Part 4 >>](#)
 ***
