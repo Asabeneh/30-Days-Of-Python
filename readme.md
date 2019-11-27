@@ -795,7 +795,7 @@ You lived 3153600000 seconds.
 
 
 
-[Part 2 >>](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/readme7-12.md)
+[Part 2 >>](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/readme4-6.md)
 
 
 
