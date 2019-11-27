@@ -146,7 +146,7 @@ fruits = {'banana', 'orange', 'mango', 'lemon'}
 fruits.clear()
 ```
 ### Deleting a set
-If we want to the set itself we use *del* operator.
+If we want to delete the set itself we use *del* operator.
 ```py
 # syntax
 st = {'item1', 'item2', 'item3', 'item4'}
@@ -163,13 +163,13 @@ We can convert list to set and set to list back. Converting list to set removes 
 ```py
 # syntax
 lst = ['item1', 'item2', 'item3', 'item4', 'item1']
-lst = set(lst)  # {'item2', 'item4', 'item1', 'item3'}
+st = set(lst)  # {'item2', 'item4', 'item1', 'item3'}
 ```
 
 **Example:**
 ```py
-fruits = {'banana', 'orange', 'mango', 'lemon'}
-del fruits
+fruits = ['banana', 'orange', 'mango', 'lemon','orange', 'banana']
+fruits = set(fruits) # {'mango', 'lemon', 'banana', 'orange'}
 ```
 
 ### Joining sets
@@ -187,6 +187,7 @@ st3 = st1.union(st2)
 ```py
 fruits = {'banana', 'orange', 'mango', 'lemon'}
 vegetables = {'Tomato', 'Potato', 'Cabbage','Onion', 'Carrot'}
+fruits.union(vegetables) # {'lemon', 'Carrot', 'Tomato', 'banana', 'mango', 'orange', 'Cabbage', 'Potato', 'Onion'}
 ```
 * Update
 This method insert an other set
@@ -201,6 +202,8 @@ st1.update(st2)
 ```py
 fruits = {'banana', 'orange', 'mango', 'lemon'}
 vegetables = {'Tomato', 'Potato', 'Cabbage','Onion', 'Carrot'}
+fruits.update(vegetables)
+print(fruits) # {'lemon', 'Carrot', 'Tomato', 'banana', 'mango', 'orange', 'Cabbage', 'Potato', 'Onion'}
 ```
 ### Finding intersection items
 Intersection returns a set of items which are in both the sets. See the example
@@ -355,7 +358,7 @@ person = {
     'skills':['JavaScript', 'React', 'Node', 'MongoDB', 'Python']
     'address':{
         'street':'Space street',
-        'zipcode':02210
+        'zipcode':'02210'
     }
     }
 ```
@@ -380,7 +383,7 @@ person = {
     'skills':['JavaScript', 'React', 'Node', 'MongoDB', 'Python'],
     'address':{
         'street':'Space street',
-        'zipcode':02210
+        'zipcode':'02210'
     }
     }
 print(len(person)) # 7
@@ -406,7 +409,7 @@ person = {
     'skills':['JavaScript', 'React', 'Node', 'MongoDB', 'Python'],
     'address':{
         'street':'Space street',
-        'zipcode':02210
+        'zipcode':'02210'
     }
     }
 print(person['first_name']) # Asabeneh
@@ -426,7 +429,7 @@ person = {
     'skills':['JavaScript', 'React', 'Node', 'MongoDB', 'Python'],
     'address':{
         'street':'Space street',
-        'zipcode':02210
+        'zipcode':'02210'
     }
     }
 print(person.get('first_name')) # Asabeneh
@@ -437,13 +440,12 @@ print(person.get('city'))   # None
 
 ### Adding Item to a dictionary
 
-We can add new key and value pain to a dictionary
+We can add new key and value pair to a dictionary
 
 ```py
 # syntax
 dct = {'key1':'item1', 'key2':'item2', 'key3':'item3', 'key4':'item4'}
 dct['key5'] = 'item5'
-
 ```
 **Example:**
 
@@ -491,9 +493,7 @@ person['age']
 ```
 
 ### Checking a key in a dictionary
-
 We use the _in_ operator to check if a key exist in a dictionary
-
 ```py
 # syntax
 dct = {'key1':'item1', 'key2':'item2', 'key3':'item3', 'key4':'item4'}
@@ -532,72 +532,54 @@ person = {
     }
     }
 person.pop('first_name')        # Remove the firstname item
-person.popitem()     # Remove the lastname item
-del person['is_married']        # Remove the is married
+person.popitem()                # Remove the lastname item
+del person['is_married']        # Remove the is_married item
 ```
 
 ### Changing dictionary to list items
-
 The *items()* method change a dictionary to list of tuples.
-
 ```py
 # syntax
 dct = {'key1':'item1', 'key2':'item2', 'key3':'item3', 'key4':'item4'}
 print(dct.items()) # dict_items([('key1', 'item1'), ('key2', 'item2'), ('key3', 'item3'), ('key4', 'item4')])
 ```
-
 ### Clearing dictionary list items
-
 If we don't want the items in a dictionary we can clear them using _clear()_ methods
-
 ```py
 # syntax
 dct = {'key1':'item1', 'key2':'item2', 'key3':'item3', 'key4':'item4'}
 print(dct.clear()) # {}
 ```
-
 ### Deleting dictionary
-
 If we do not use the dictionary we can delete it completely
-
 ```py
 # syntax
 dct = {'key1':'item1', 'key2':'item2', 'key3':'item3', 'key4':'item4'}
 del dct
 ```
-
 ### Copy a dictionary
-
 We copy a dictionary using a _copy()_ method. Using copy we can avoid mutation of the original dictionary.
-
 ```py
 # syntax
 dct = {'key1':'item1', 'key2':'item2', 'key3':'item3', 'key4':'item4'}
 dct_copy = dct.copy() # {'key1':'item1', 'key2':'item2', 'key3':'item3', 'key4':'item4'}
 ```
-
 ### Getting dictionary keys as list
-
 The _keys()_ method gives us all the keys of a a dictionary as a list.
-
 ```py
 # syntax
 dct = {'key1':'item1', 'key2':'item2', 'key3':'item3', 'key4':'item4'}
 keys = dct.keys()
 print(keys)     # dict_keys(['key1', 'key2', 'key3', 'key4'])
 ```
-
 ### Getting dictionary values as list
-
 The _values_ method gives us all the values of a a dictionary as a list.
-
 ```py
 # syntax
 dct = {'key1':'item1', 'key2':'item2', 'key3':'item3', 'key4':'item4'}
 values = dct.values()
 print(values)     # dict_values(['item1', 'item2', 'item3', 'item4'])
 ```
-
 ## Exercises: Day 8
 1. Create a an empty dictionary called dog
 2. Add name, color, breed, legs, age to the dog, dictionary
@@ -806,7 +788,6 @@ June, July or August, the season is Summer
     ```py
     Asabeneh Yetayeh lives in Finland. He is married.
     ```
-
 
 [<< Part 2 ](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/readme4-6.md) | [Part 4 >>](#)
 ***
