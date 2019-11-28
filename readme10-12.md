@@ -1,3 +1,18 @@
+[Part 1](https://github.com/Asabeneh/30-Days-Of-Python) | [Part 2](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/readme4-6.md)| [Part 3](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/readme7-9.md)| [Part 4](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/readme10-12.md)| [Part 5](#)
+
+![30DaysOfPython](./images/30DaysOfPython_banner3@2x.png)
+
+- [Day 10](#day-10)
+  - [Loops](#loops)
+    - [While Loop](#while-loop)
+    - [Break and continue](#break-and-continue)
+    - [For Loop](#for-loop)
+    - [Break and Continue](#break-and-continue)
+    - [The range function](#the-range-function)
+    - [Nested for loop](#nested-for-loop)
+    - [For Else](#for-else)
+    - [Pass](#pass)
+  - [Exercises: Day 10](#exercises-day-10)
 # Day 10
 ## Loops
 Life is full of routines. In programming also we do lots of repetitive tasks. In order to handle repetitive task programming languages provide loops. Python programming language also provides the following types of two loops to handle looping. 
@@ -179,7 +194,7 @@ A *for* key word used to make a for loop like in other programming language but 
         if conditon:
           break
   ```
-      **Example:**
+  **Example:**
 
   ```py
     numbers = (0, 1,2,3,4,5)
@@ -198,7 +213,7 @@ A *for* key word used to make a for loop like in other programming language but 
         if conditon:
           continue
   ```
-      **Example:**
+   **Example:**
 
   ```py
     numbers = (0, 1,2,3,4,5)
@@ -227,7 +242,7 @@ Creating sequence using range
       # syntax
       for iterator in range(start, end, increment):
   ```
-      **Example:**
+  **Example:**
 
   ```py
   for number in range(11):
@@ -284,8 +299,8 @@ If we want to execute some message when the loop ends, we use else.
     pirnt('The loop stops at', number)
   
   ```
-  ### Pass
-  In python after semicolon, it requires some code to run but we don't like to execute any code after if or for loop we can write the word *pass* to avoid error.
+### Pass
+In python after semicolon, it requires some code to run but we don't like to execute any code after if or for loop we can write the word *pass* to avoid error.
 
 ## Exercises: Day 10
 1. Iterate 0 to 10 using for loop, do the same using while and do while loop.
@@ -338,16 +353,7 @@ If we want to execute some message when the loop ends, we use else.
       The sum of all evens is 2550. And the sum of all odds is 2500.
     ```
 1. Go to the data folder and use the countries.py file. Loop throught the countries and extract all the contries containing the word *land*.
+1. This is the fruit list, ['banana', 'orange', 'mango', 'lemon'] reverse the order using loop.
 
 [<< Part 3 ](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/readme7-9.md) | [Part 5 >>](#)
 ***
-Part 1: Day 1 - 3
-Part 2: Day 4 - 6
-part 3: Day 7 - 9
-part 4: Day 10 - 12
-Part 5: Day 13 - 15
-Part 6: Day 16 - 18
-Part 7: Day 19 - 21
-Part 8: Day 22 - 24
-Part 9: Day 25 - 27
-Part 10: Day 28 -30
