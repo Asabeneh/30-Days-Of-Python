@@ -791,3 +791,13 @@ June, July or August, the season is Summer
 
 [<< Part 2 ](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/readme4-6.md) | [Part 4 >>](#)
 ***
+Part 1: Day 1 - 3
+Part 2: Day 4 - 6
+part 3: Day 7 - 9
+part 4: Day 10 - 12
+Part 5: Day 13 - 15
+Part 6: Day 16 - 18
+Part 7: Day 19 - 21
+Part 8: Day 22 - 24
+Part 9: Day 25 - 27
+Part 10: Day 28 -30
