@@ -181,22 +181,22 @@ A *for* key word used to make a for loop like in other programming language but 
     ```
 ### Break and Continue
 *Break*: We use break when we like to stop our loop before the loop is completed.
-    ```py
+  ```py
         # syntax
         for iterator in sequecne:
           code goes here
           if conditon:
             break
-    ```
+  ```
   **Example:**
 
-    ```py
+  ```py
       numbers = (0, 1,2,3,4,5)
       for number in numbers:
         print(number)
         if number == 3:
           break
-    ```
+  ```
   In the above example, the loop stops when it reaches 3.
   Continue: We use continue when we like to skip some of the step in the iteration of the loop.
 
@@ -208,14 +208,14 @@ A *for* key word used to make a for loop like in other programming language but 
             continue
     ```
     **Example:**
-
-    ```py
+    
+  ```py
       numbers = (0, 1,2,3,4,5)
       for number in numbers:
         print(number)
         if number == 3:
           continue
-    ```
+  ```
  In the above example, if number is 3 the skip step and continues to the next.
 ### The range function
 The range() function uses to loop through a set of code a certain number of times. The *range(start,end, step)* takes three parameters:starting, ending and increment.By default it starts from 0 and the increment is 1. The range sequence doesn't include the end.
