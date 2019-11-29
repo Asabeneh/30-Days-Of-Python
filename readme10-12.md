@@ -220,7 +220,7 @@ A *for* key word used to make a for loop like in other programming language but 
 ### The range function
 The range() function uses to loop through a set of code a certain number of times. The *range(start,end, step)* takes three parameters:starting, ending and increment.By default it starts from 0 and the increment is 1. The range sequence doesn't include the end.
 Creating sequence using range
-    ```py
+  ```py
       lst = list(rang(11)) 
       print(lst) # [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
       st = set(range(11))
@@ -231,11 +231,11 @@ Creating sequence using range
       print(lst) # [0, 2, 4, 6, 8, 10]
       st = set(range(0,11,2))
       print(st) #  {0, 2, 4, 6, 8, 10}
-    ```
-    ```py
+  ```
+  ```py
         # syntax
         for iterator in range(start, end, increment):
-    ```
+  ```
   **Example:**
 
     ```py
@@ -248,12 +248,12 @@ Creating sequence using range
     ```
 ###  Nested for loop
 We can write loop inside another loop.
-    ```py
+  ```py
     # syntax
     for x in y:
       for t in s:
         print(t)
-    ```
+  ```
   **Example:**
   
     ```py
