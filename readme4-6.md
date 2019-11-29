@@ -14,42 +14,43 @@
     - [Python strings as sequences of characters](#python-strings-as-sequences-of-characters)
       - [Unpacking characters](#unpacking-characters)
       - [Accessing characters in strings by index](#accessing-characters-in-strings-by-index)
-- [Another way](#another-way)
-- [syntax](#syntax)
-- [syntax](#syntax-1)
-- [Print the lists and it length](#print-the-lists-and-it-length)
-- [Last index](#last-index)
-- [First Example](#first-example)
-- [Second Example about unpacking list](#second-example-about-unpacking-list)
-- [Third Example about unpacking list](#third-example-about-unpacking-list)
-- [this is also give the same result as the above](#this-is-also-give-the-same-result-as-the-above)
-- [this is also give the same result as the above](#this-is-also-give-the-same-result-as-the-above-1)
-- [syntax](#syntax-2)
-- [syntax](#syntax-3)
-- [syntax](#syntax-4)
-- [syntax](#syntax-5)
-- [syntax](#syntax-6)
-- [syntax](#syntax-7)
-- [syntax](#syntax-8)
-- [syntax](#syntax-9)
-- [output](#output)
-- [syntax](#syntax-10)
-- [syntax](#syntax-11)
-- [syntax](#syntax-12)
-- [syntax](#syntax-13)
-- [syntax](#syntax-14)
-- [syntax](#syntax-15)
-- [or using the tuple constructor](#or-using-the-tuple-constructor)
-- [syntax](#syntax-16)
-- [syntax](#syntax-17)
-- [Syntax](#syntax)
-- [Syntax](#syntax-1)
-- [Syntax](#syntax-2)
-- [Syntax](#syntax-3)
-- [Syntax](#syntax-4)
-- [Syntax](#syntax-5)
-- [syntax](#syntax-18)
-- [syntax](#syntax-19)
+      - [Slicing Python Strings](#slicing-python-strings)
+      - [Reversing a string](#reversing-a-string)
+      - [Skipping characters while slicing](#skipping-characters-while-slicing)
+    - [String Methods](#string-methods)
+  - [Exercises - Day 4](#exercises---day-4)
+- [Day 5](#day-5)
+  - [Lists](#lists)
+    - [How to create a list](#how-to-create-a-list)
+    - [Accessing list items using positive indexing](#accessing-list-items-using-positive-indexing)
+    - [Accessing list items using negative indexing](#accessing-list-items-using-negative-indexing)
+    - [Unpacking list items](#unpacking-list-items)
+    - [Slicing items from list](#slicing-items-from-list)
+    - [Modifying list](#modifying-list)
+    - [Check items in a list](#check-items-in-a-list)
+    - [Adding item in a list](#adding-item-in-a-list)
+    - [Inserting item in to a list](#inserting-item-in-to-a-list)
+    - [Removing item from list](#removing-item-from-list)
+    - [Removing item using pop](#removing-item-using-pop)
+    - [Removing item using del](#removing-item-using-del)
+    - [Clearing list items](#clearing-list-items)
+    - [Copying a list](#copying-a-list)
+    - [Joining lists](#joining-lists)
+    - [Counting Items in a list](#counting-items-in-a-list)
+    - [Finding index of an item](#finding-index-of-an-item)
+    - [Reversing a list](#reversing-a-list)
+    - [Sorting list items](#sorting-list-items)
+  - [Exercises: Day 5](#exercises-day-5)
+- [Day 6:](#day-6)
+  - [Tuple](#tuple)
+    - [Creating Tuple](#creating-tuple)
+    - [Tuple length](#tuple-length)
+    - [Accessing tuple items](#accessing-tuple-items)
+    - [Slicing tuples](#slicing-tuples)
+    - [Changing tuples to list](#changing-tuples-to-list)
+    - [Checking an item in a list](#checking-an-item-in-a-list)
+    - [Joining tuples](#joining-tuples)
+    - [Deleting tuple](#deleting-tuple)
   - [Exercises: Day 6](#exercises-day-6)
 # Day 4
 ## String
@@ -81,18 +82,18 @@ print(multiline_string)
 ```
 ### String Concatenation
 We can connect to strings together. Merging or connecting to strings together is called concatenation.See the example below
-```py
-first_name = 'Asabeneh'
-last_name = 'Yetayeh'
-space = ' '
-full_name = first_name  +  space + last_name
-print(full_name) # Asabeneh Yetayeh
-# Checking length of a string using len() builtin function
-print(len(first_name))  # 8
-print(len(last_name))   # 7
-print(len(first_name) > len(last_name)) # True
-print(len(full_name)) # 15
-```
+  ```py
+  first_name = 'Asabeneh'
+  last_name = 'Yetayeh'
+  space = ' '
+  full_name = first_name  +  space + last_name
+  print(full_name) # Asabeneh Yetayeh
+  # Checking length of a string using len() builtin function
+  print(len(first_name))  # 8
+  print(len(last_name))   # 7
+  print(len(first_name) > len(last_name)) # True
+  print(len(full_name)) # 15
+  ```
 ### Escape Sequences in string
 In python and other programming language \ followed by a character. Let's see the most common escape characters:
 * \n: new line
@@ -120,7 +121,6 @@ Day 3	5	    23
 Day 4	1	    35
 This is a back slash  symbol (\)
 In every programming language it starts with "Hello, World!"
-
 ```
 ### String formating
 #### Old Style String Formatting (% Operator)
@@ -823,76 +823,76 @@ Fruits and vegetables: ['banana', 'orange', 'mango', 'lemon', 'Tomato', 'Potato'
 
 ### Counting Items in a list
 The count() method returns the number of times an item appears in a list:
-```py
-# syntax
-lst = ['item1', 'item2']
-lst.count(item) 
-```
-```py
-fruits = ['banana', 'orange', 'mango', 'lemon']
-print(fruits.count('orange'))   # 1
-ages = [22, 19, 24, 25, 26, 24, 25, 24]
-print(ages.count(24))           # 3
-```
+  ```py
+  # syntax
+  lst = ['item1', 'item2']
+  lst.count(item) 
+  ```
+  ```py
+  fruits = ['banana', 'orange', 'mango', 'lemon']
+  print(fruits.count('orange'))   # 1
+  ages = [22, 19, 24, 25, 26, 24, 25, 24]
+  print(ages.count(24))           # 3
+  ```
 ### Finding index of an item
 The count() method returns the index of an item in the list:
-```py
-# syntax
-lst = ['item1', 'item2']
-lst.index(item) 
-```
-```py
-fruits = ['banana', 'orange', 'mango', 'lemon']
-print(fruits.index('orange'))   # 1
-ages = [22, 19, 24, 25, 26, 24, 25, 24]
-print(ages.index(24))           # 2, the first occurrence
-```
+  ```py
+  # syntax
+  lst = ['item1', 'item2']
+  lst.index(item) 
+  ```
+  ```py
+  fruits = ['banana', 'orange', 'mango', 'lemon']
+  print(fruits.index('orange'))   # 1
+  ages = [22, 19, 24, 25, 26, 24, 25, 24]
+  print(ages.index(24))           # 2, the first occurrence
+  ```
 ### Reversing a list
 The reverse() method reverse the order of a list.
-```py
-# syntax
-lst = ['item1', 'item2']
-lst.reverse() 
+  ```py
+  # syntax
+  lst = ['item1', 'item2']
+  lst.reverse() 
 
-```
-```py
-fruits = ['banana', 'orange', 'mango', 'lemon']
-fruits.reverse()
-print(fruits.reverse())  
-ages = [22, 19, 24, 25, 26, 24, 25, 24]
-ages.reverse()
-print(ages.reverse())         
-```
-```py
-['lemon', 'mango', 'orange', 'banana']
-[24, 25, 24, 26, 25, 24, 19, 22]
-```
+  ```
+  ```py
+  fruits = ['banana', 'orange', 'mango', 'lemon']
+  fruits.reverse()
+  print(fruits.reverse())  
+  ages = [22, 19, 24, 25, 26, 24, 25, 24]
+  ages.reverse()
+  print(ages.reverse())         
+  ```
+  ```py
+  ['lemon', 'mango', 'orange', 'banana']
+  [24, 25, 24, 26, 25, 24, 19, 22]
+  ```
 ### Sorting list items
 The sort() method reorder the list items in ascending order. If a reverse is equal to true it arrange in descending order.
-```py
-# syntax
-lst = ['item1', 'item2']
-lst.sort()                # ascending
-lst.sort(reverse=True)    # descending
-```
-```py
-fruits = ['banana', 'orange', 'mango', 'lemon']
-fruits.sort()
-print(fruits) 
-fruits.sort(reverse=True)
-print(fruits)
-ages = [22, 19, 24, 25, 26, 24, 25, 24]
-ages.sort()
-print(ages) 
-ages.sort(reverse=True)
-print(ages)           
-```
-```sh
-['banana', 'lemon', 'mango', 'orange']
-['orange', 'mango', 'lemon', 'banana']
-[19, 22, 24, 24, 24, 25, 25, 26]
-[26, 25, 25, 24, 24, 24, 22, 19]
-```
+  ```py
+  # syntax
+  lst = ['item1', 'item2']
+  lst.sort()                # ascending
+  lst.sort(reverse=True)    # descending
+  ```
+  ```py
+  fruits = ['banana', 'orange', 'mango', 'lemon']
+  fruits.sort()
+  print(fruits) 
+  fruits.sort(reverse=True)
+  print(fruits)
+  ages = [22, 19, 24, 25, 26, 24, 25, 24]
+  ages.sort()
+  print(ages) 
+  ages.sort(reverse=True)
+  print(ages)           
+  ```
+  ```sh
+  ['banana', 'lemon', 'mango', 'orange']
+  ['orange', 'mango', 'lemon', 'banana']
+  [19, 22, 24, 24, 24, 25, 25, 26]
+  [26, 25, 25, 24, 24, 24, 22, 19]
+  ```
   
 ## Exercises: Day 5
 1. Declare an empty list
@@ -950,148 +950,148 @@ A tuple is a collection of different data types which is ordered and unchangeabl
 ### Creating Tuple
 
 * Empty tuple: Creating an empty tuple
-```py
-# syntax
-empty_tuple = () 
-# or using the tuple constructor
-empty_tuple = tuple()
-```
+  ```py
+  # syntax
+  empty_tuple = () 
+  # or using the tuple constructor
+  empty_tuple = tuple()
+  ```
 * Tuple with initial values
-```py
-# syntax
-tpl = ('item1', 'item2','item3')
-```
-* 
-```py
-fruits = ('banana', 'orange', 'mango', 'lemon')
-```
+  ```py
+  # syntax
+  tpl = ('item1', 'item2','item3')
+  ```
+  * 
+  ```py
+  fruits = ('banana', 'orange', 'mango', 'lemon')
+  ```
 ### Tuple length
 We use the *len()* method to get the length of a tuple.
-```py
-# syntax
-tpl = ('item1', 'item2', 'item3')
-len(tpl)
-```
+  ```py
+  # syntax
+  tpl = ('item1', 'item2', 'item3')
+  len(tpl)
+  ```
 ### Accessing tuple items
 * Positive Indexing
 Similar to the list data type we use positive or negative indexing to access tuple items.
 ![Accessing tuple items](images/tuples_index.png)
 
-```py
-# Syntax
-tpl = ('item1', 'item2', 'item3')
-first_item = tpl[0]
-second_item = tpl[1]
-```
-```py
-fruits = ('banana', 'orange', 'mango', 'lemon')
-first_fruit = fruits[0]
-second_fruit = fruits[1]
-last_index =len(fruits) - 1
-last_fruit = fruits[las_index]
-```
+  ```py
+  # Syntax
+  tpl = ('item1', 'item2', 'item3')
+  first_item = tpl[0]
+  second_item = tpl[1]
+  ```
+  ```py
+  fruits = ('banana', 'orange', 'mango', 'lemon')
+  first_fruit = fruits[0]
+  second_fruit = fruits[1]
+  last_index =len(fruits) - 1
+  last_fruit = fruits[las_index]
+  ```
 * Negative indexing
 Negative indexing means beginning from the end, -1 refers to the last item, -2 refers to the second last and the negative of the list length refers to the first item.
 ![Tuple Negative indexing](images/tuple_negative_indexing.png)
-```py
-# Syntax
-tpl = ('item1', 'item2', 'item3','item4')
-first_item = tpl[-4]
-second_item = tpl[-3]
-```
-```py
-fruits = ('banana', 'orange', 'mango', 'lemon')
-first_fruit = fruits[-4]
-second_fruit = fruits[-3]
-last_fruit = fruits[-1]
-```
+  ```py
+  # Syntax
+  tpl = ('item1', 'item2', 'item3','item4')
+  first_item = tpl[-4]
+  second_item = tpl[-3]
+  ```
+  ```py
+  fruits = ('banana', 'orange', 'mango', 'lemon')
+  first_fruit = fruits[-4]
+  second_fruit = fruits[-3]
+  last_fruit = fruits[-1]
+  ```
 ### Slicing tuples
 We can slice out a sub tuple by  specifying a range of indexes where to start and where to end in the tuple, the return value will be a new tuple with the specified items.
 
 * Range of Positive Indexes
 
-```py
-# Syntax
-tpl = ('item1', 'item2', 'item3','item4')
-all_items = tpl[0:4]         # all items
-all_items = tpl[0:]         # all items
-middle_two_items = tpl[1:3]  # does not include item at index 3
-```
-```py
-fruits = ('banana', 'orange', 'mango', 'lemon')
-all_fruits = fruits[0:4]    # all items
-all_fruits= fruits[0:]      # all items
-orange_mango = fruits[1:3]  # doesn't include item at index 3
-orange_to_the_rest = fruits[1:]
-```
+  ```py
+  # Syntax
+  tpl = ('item1', 'item2', 'item3','item4')
+  all_items = tpl[0:4]         # all items
+  all_items = tpl[0:]         # all items
+  middle_two_items = tpl[1:3]  # does not include item at index 3
+  ```
+  ```py
+  fruits = ('banana', 'orange', 'mango', 'lemon')
+  all_fruits = fruits[0:4]    # all items
+  all_fruits= fruits[0:]      # all items
+  orange_mango = fruits[1:3]  # doesn't include item at index 3
+  orange_to_the_rest = fruits[1:]
+  ```
 
 * Range of Negative Indexes
 
-```py
-# Syntax
-tpl = ('item1', 'item2', 'item3','item4')
-all_items = tpl[-4:]         # all items
-middle_two_items = tpl[-3:-1]  # does not include item at index 3
-```
-```py
-fruits = ('banana', 'orange', 'mango', 'lemon')
-all_fruits = fruits[-4:]    # all items
-orange_mango = fruits[-3:-1]  # doesn't include item at index 3
-orange_to_the_rest = fruits[-3:]
-```
+  ```py
+  # Syntax
+  tpl = ('item1', 'item2', 'item3','item4')
+  all_items = tpl[-4:]         # all items
+  middle_two_items = tpl[-3:-1]  # does not include item at index 3
+  ```
+  ```py
+  fruits = ('banana', 'orange', 'mango', 'lemon')
+  all_fruits = fruits[-4:]    # all items
+  orange_mango = fruits[-3:-1]  # doesn't include item at index 3
+  orange_to_the_rest = fruits[-3:]
+  ```
 ### Changing tuples to list
 We can change tuples to list and list to tuple. Tuple is immutable if we want to modify a tuple we should change to a list.
-```py
-# Syntax
-tpl = ('item1', 'item2', 'item3','item4')
-lst = list(tpl)
-```
-```py
-fruits = ('banana', 'orange', 'mango', 'lemon')
-fruits = list(fruits)
-fruits[0] = 'apple'
-print(fruits)     # ['apple', 'orange', 'mango', 'lemon']
-fruits = tuple(fruits)
-print(fruits)     # ('apple', 'orange', 'mango', 'lemon')
-```
+  ```py
+  # Syntax
+  tpl = ('item1', 'item2', 'item3','item4')
+  lst = list(tpl)
+  ```
+  ```py
+  fruits = ('banana', 'orange', 'mango', 'lemon')
+  fruits = list(fruits)
+  fruits[0] = 'apple'
+  print(fruits)     # ['apple', 'orange', 'mango', 'lemon']
+  fruits = tuple(fruits)
+  print(fruits)     # ('apple', 'orange', 'mango', 'lemon')
+  ```
 ### Checking an item in a list
 We can check an item if it exists in a list or not using *in*, it returns boolean.
-```py
-# Syntax
-tpl = ('item1', 'item2', 'item3','item4')
-'item2' in tpl # True
-```
-```py
-fruits = ('banana', 'orange', 'mango', 'lemon')
-'orange' in fruits # True
-'apple' in fruits # False
-fruits[0] = 'apple'
-```
+  ```py
+  # Syntax
+  tpl = ('item1', 'item2', 'item3','item4')
+  'item2' in tpl # True
+  ```
+  ```py
+  fruits = ('banana', 'orange', 'mango', 'lemon')
+  'orange' in fruits # True
+  'apple' in fruits # False
+  fruits[0] = 'apple'
+  ```
 ### Joining tuples
 We can join two or more tuples using + operator
-```py
-# syntax
-tpl1 = ('item1', 'item2', 'item3')
-tpl2 = ('item4', 'item5','item6')
-tpl3 = tpl1 + tpl2
-```
-```py
-fruits = ('banana', 'orange', 'mango', 'lemon')                    
-vegetables = ('Tomato', 'Potato', 'Cabbage','Onion', 'Carrot')
-fruits_and_vegetables = fruits + vegetables 
-```
+  ```py
+  # syntax
+  tpl1 = ('item1', 'item2', 'item3')
+  tpl2 = ('item4', 'item5','item6')
+  tpl3 = tpl1 + tpl2
+  ```
+  ```py
+  fruits = ('banana', 'orange', 'mango', 'lemon')                    
+  vegetables = ('Tomato', 'Potato', 'Cabbage','Onion', 'Carrot')
+  fruits_and_vegetables = fruits + vegetables 
+  ```
 ### Deleting tuple
 It is not possible to remove a single item in a tuple but it is possible to delete the tuple itself using *del*.
-```py
-# syntax
-tpl1 = ('item1', 'item2', 'item3')
-del tpl1
+  ```py
+  # syntax
+  tpl1 = ('item1', 'item2', 'item3')
+  del tpl1
 
-```
-```py
-fruits = ('banana', 'orange', 'mango', 'lemon') 
-del fruits                  
-```
+  ```
+  ```py
+  fruits = ('banana', 'orange', 'mango', 'lemon') 
+  del fruits                  
+  ```
 
 
 ## Exercises: Day 6
