@@ -8,34 +8,24 @@
     - [While Loop](#while-loop)
     - [Break and continue](#break-and-continue)
     - [For Loop](#for-loop)
-- [syntax](#syntax)
-- [syntax](#syntax-1)
-- [Declaring a function](#declaring-a-function)
-- [Calling function](#calling-function)
-- [Function can also return values, if a function doen't return values the value of the function is None](#function-can-also-return-values-if-a-function-doent-return-values-the-value-of-the-function-is-none)
-- [Lets rewrite the above functions using return](#lets-rewrite-the-above-functions-using-return)
-- [From now on, we return value to a function instead of priting it](#from-now-on-we-return-value-to-a-function-instead-of-priting-it)
-- [syntax](#syntax-2)
-- [Declaring a function](#declaring-a-function-1)
-- [Calling function](#calling-function-1)
-- [syntax](#syntax-3)
-- [Declaring a function](#declaring-a-function-2)
-- [Calling function](#calling-function-2)
-- [syntax](#syntax-4)
-- [Declaring a function](#declaring-a-function-3)
-- [Calling function](#calling-function-3)
-- [syntax](#syntax-5)
-- [syntax](#syntax-6)
-- [syntax](#syntax-7)
-- [syntax](#syntax-8)
-- [syntax](#syntax-9)
-- [syntax](#syntax-10)
-- [Declaring a function](#declaring-a-function-4)
-- [Calling function](#calling-function-4)
-- [syntax](#syntax-11)
-- [Declaring a function](#declaring-a-function-5)
-- [Calling function](#calling-function-5)
+    - [For Else](#for-else)
+    - [Pass](#pass)
   - [Exercises: Day 10](#exercises-day-10)
+- [Day 11](#day-11)
+  - [Import module in Python](#import-module-in-python)
+  - [Functions](#functions)
+    - [Defining a Function](#defining-a-function)
+    - [Declaring and calling a function](#declaring-and-calling-a-function)
+    - [Function without parameters](#function-without-parameters)
+    - [Function returning value](#function-returning-value)
+    - [Function with parameters](#function-with-parameters)
+    - [Passing arguments with key and value](#passing-arguments-with-key-and-value)
+    - [Returning a value from a function](#returning-a-value-from-a-function)
+    - [Function with default parameters](#function-with-default-parameters)
+    - [Arbitrary number of arguments](#arbitrary-number-of-arguments)
+    - [Function with default parameter and arbitrary number of parameters](#function-with-default-parameter-and-arbitrary-number-of-parameters)
+    - [Function as parameter of other function](#function-as-parameter-of-other-function)
+  - [Exercises: Day 10](#exercises-day-10-1)
 # Day 10
 ## Loops
 Life is full of routines. In programming also we do lots of repetitive tasks. In order to handle repetitive task programming languages provide loops. Python programming language also provides the following types of two loops to handle looping. 
@@ -43,136 +33,119 @@ Life is full of routines. In programming also we do lots of repetitive tasks. In
 2. for loop
 ### While Loop
 We use the reserved word *while* to make a while loop. While loop is used to execute a block of statements repeatedly until a given condition is satisfied. When the condition becomes false, the line immediately after the loop will be executed.
-```py
-# syntax
-while condition:
-    code goes here
-```
+  ```py
+  # syntax
+  while condition:
+      code goes here
+  ```
 **Example:**
- 
-```py
-count = 0
-while count < 5:
-    print(count)
-    count = count + 1
-```
+  ```py
+  count = 0
+  while count < 5:
+      print(count)
+      count = count + 1
+  ```
 In the above while loop, the condition become false when count is 5, then the loop stops.
 If we are interested to run block of code once the condition is no longer true, we can use *else*.
-```py
-# syntax
-while condition:
-    code goes here
-else:
-    code goes here
-```
+  ```py
+  # syntax
+  while condition:
+      code goes here
+  else:
+      code goes here
+  ```
 **Example:**
- 
-```py
-count = 0
-while count < 5:
-    print(count)
-    count = count + 1
-else:
- print(count)
-```
+  ```py
+  count = 0
+  while count < 5:
+      print(count)
+      count = count + 1
+  else:
+  print(count)
+  ```
 The above loop condition will be false when count is 5 and the loop stops, and execution starts the else statement and 5 prints in the else statement.
 ### Break and continue
 * Break: We use break when we like to get out or stop the loop.
- 
-```py
-# syntax
-while condition:
-    code goes here
-    if another_conditon:
-        break 
-```
+  ```py
+  # syntax
+  while condition:
+      code goes here
+      if another_condition:
+          break 
+  ```
 **Example:**
  
-```py
-count = 0
-while count < 5:
-    print(count)
-    count = count + 1
-    if count == 3:
-        break
-```
+  ```py
+  count = 0
+  while count < 5:
+      print(count)
+      count = count + 1
+      if count == 3:
+          break
+  ```
 The above while loop only prints 0, 1, 2, but when it reaches 3 it stops.
 * Continue: With the continue statement we can stop the current iteration, and continue with the next:
- 
-```py
-# syntax
-while condition:
-    code goes here
-    if another_conditon:
-        continue
- 
-```
+  ```py
+  # syntax
+  while condition:
+      code goes here
+      if another_condition:
+          continue
+  ```
 **Example:**
- 
-```py
-count = 0
-while count < 5:
-    print(count)
-    count = count + 1
-    if count == 3:
-        continue
-```
+  ```py
+  count = 0
+  while count < 5:
+      print(count)
+      count = count + 1
+      if count == 3:
+          continue
+  ```
 The above while loop only prints 0, 1, 2,4 but skips 3.
 ### For Loop 
 A *for* key word used to make a for loop like in other programming language but with some syntax difference.  Loop is used for iterating over a sequence (that is either a list, a tuple, a dictionary, a set, or a string).
-
 * For loop with list
-  ```py
-  # syntax
-  for iterator in sequecne:
-    code goes here
-  
-  ```
+    ```py
+    # syntax
+    for iterator in sequence:
+      code goes here
+    ```
   **Example:**
-  
-  ```py
-  numbers = [0, 1, 2, 3, 4, 5]
-  for number in numbers:
-    print(number)
-  ```
-
+    ```py
+    numbers = [0, 1, 2, 3, 4, 5]
+    for number in numbers:
+      print(number)
+    ```
 * For loop with string
-  ```py
-  # syntax
-  for iterator in sequecne:
-    code goes here
-  
-  ```
+    ```py
+    # syntax
+    for iterator in sequence:
+      code goes here
+    ```
   **Example:**
-  
-  ```py
-  language = 'Python'
-  for letter in language:
-    prin(letter)
-  ```
+    ```py
+    language = 'Python'
+    for letter in language:
+      print(letter)
+    ```
 * For loop with tuple
-  ```py
-  # syntax
-  for iterator in sequecne:
-    code goes here
-  
-  ```
+    ```py
+    # syntax
+    for iterator in sequence:
+      code goes here
+    ```
   **Example:**
-  
-  ```py
-  numbers = (0, 1,2,3,4,5)
-  for number in numbers:
-    print(number)
-  ```
-
-
+    ```py
+    numbers = (0, 1,2,3,4,5)
+    for number in numbers:
+      print(number)
+    ```
 * For loop with dictionary
   Looping through a dictionary gives you the key of the dictionary.
     ```py
     # syntax
     for iterator in sequecne:
       code goes here
-    
     ```
     **Example:**
     
@@ -198,111 +171,109 @@ A *for* key word used to make a for loop like in other programming language but 
     # syntax
     for iterator in sequecne:
       code goes here
-    
     ```
     **Example:**
     
     ```py
-      
     it_companies = {'Facebook', 'Google', 'Microsoft', 'Apple', 'IBM', 'Oracle', 'Amazon'}
     for company in it_companies:
       print(company)
     ```
 ### Break and Continue
 *Break*: We use break when we like to stop our loop before the loop is completed.
-  ```py
-      # syntax
-      for iterator in sequecne:
-        code goes here
-        if conditon:
-          break
-  ```
+    ```py
+        # syntax
+        for iterator in sequecne:
+          code goes here
+          if conditon:
+            break
+    ```
   **Example:**
 
-  ```py
-    numbers = (0, 1,2,3,4,5)
-    for number in numbers:
-      print(number)
-      if number == 3:
-        break
-  ```
+    ```py
+      numbers = (0, 1,2,3,4,5)
+      for number in numbers:
+        print(number)
+        if number == 3:
+          break
+    ```
   In the above example, the loop stops when it reaches 3.
   Continue: We use continue when we like to skip some of the step in the iteration of the loop.
 
-   ```py
-      # syntax
-      for iterator in sequecne:
-        code goes here
-        if conditon:
-          continue
-  ```
-   **Example:**
+    ```py
+        # syntax
+        for iterator in sequecne:
+          code goes here
+          if conditon:
+            continue
+    ```
+    **Example:**
 
-  ```py
-    numbers = (0, 1,2,3,4,5)
-    for number in numbers:
-      print(number)
-      if number == 3:
-        continue
-  ```
+    ```py
+      numbers = (0, 1,2,3,4,5)
+      for number in numbers:
+        print(number)
+        if number == 3:
+          continue
+    ```
  In the above example, if number is 3 the skip step and continues to the next.
 ### The range function
 The range() function uses to loop through a set of code a certain number of times. The *range(start,end, step)* takes three parameters:starting, ending and increment.By default it starts from 0 and the increment is 1. The range sequence doesn't include the end.
 Creating sequence using range
-  ```py
-    lst = list(rang(11)) 
-    print(lst) # [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-    st = set(range(11))
-    print(st) # {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10}
-  
-   
-    lst = list(rang(0,11,2)) 
-    print(lst) # [0, 2, 4, 6, 8, 10]
-    st = set(range(0,11,2))
-    print(st) #  {0, 2, 4, 6, 8, 10}
-  ```
-  ```py
-      # syntax
-      for iterator in range(start, end, increment):
-  ```
+    ```py
+      lst = list(rang(11)) 
+      print(lst) # [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+      st = set(range(11))
+      print(st) # {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10}
+    
+    
+      lst = list(rang(0,11,2)) 
+      print(lst) # [0, 2, 4, 6, 8, 10]
+      st = set(range(0,11,2))
+      print(st) #  {0, 2, 4, 6, 8, 10}
+    ```
+    ```py
+        # syntax
+        for iterator in range(start, end, increment):
+    ```
   **Example:**
 
-  ```py
-  for number in range(11):
-    print(number)   # prints 0 to 10, not including 11
-  
-  fruits = ['banana', 'orange', 'mango', 'lemon']
-  for fruit in fruits:
-    print(fruit)
-  ```
+    ```py
+    for number in range(11):
+      print(number)   # prints 0 to 10, not including 11
+    
+    fruits = ['banana', 'orange', 'mango', 'lemon']
+    for fruit in fruits:
+      print(fruit)
+    ```
 ###  Nested for loop
 We can write loop inside another loop.
-```py
-# syntax
-for x in y:
-  for t in s:
-    print(t)
-```
+    ```py
+    # syntax
+    for x in y:
+      for t in s:
+        print(t)
+    ```
   **Example:**
   
-  ```py
- person = {
-    'first_name': 'Asabeneh',
-    'last_name': 'Yetayeh',
-    'age': 250,
-    'country': 'Finland',
-    'is_marred': True,
-    'skills': ['JavaScript', 'React', 'Node', 'MongoDB', 'Python'],
-    'address': {
-        'street': 'Space street',
-        'zipcode': '02210'
-    }
-}
-for key in person:
-    if key == 'skills':
-      for skill in person['skills']:
-        print(skill)
-```
+    ```py
+  person = {
+      'first_name': 'Asabeneh',
+      'last_name': 'Yetayeh',
+      'age': 250,
+      'country': 'Finland',
+      'is_marred': True,
+      'skills': ['JavaScript', 'React', 'Node', 'MongoDB', 'Python'],
+      'address': {
+          'street': 'Space street',
+          'zipcode': '02210'
+      }
+  }
+  for key in person:
+      if key == 'skills':
+        for skill in person['skills']:
+          print(skill)
+  ```
 
 ### For Else
 If we want to execute some message when the loop ends, we use else.
@@ -380,46 +351,46 @@ In python after semicolon, it requires some code to run but we don't like to exe
 # Day 11
 ## Import module in Python
 Like other programming languages we can also import modules from by importing the file/function using the key word *import*. Lets import the common module we will use most of the time.
-```py
-import math
-print(math.pi)
-```
+  ```py
+  import math
+  print(math.pi)
+  ```
 Now, we have imported the math module which contains lots of function which can help us to mathematical calculations.To check what functions the module has you can use *help(math)*, or dir(math) and this will display the available functions in the module. If we want to import only a specific function from a module we import as follow:
-```py
-from math import pi
-print(pi)
-```
+  ```py
+  from math import pi
+  print(pi)
+  ```
 It is also possible to import multiple functions at once
-```py
-from math import pi, sqrt, pow, abs, floor, ceiling
-from math import pi, sqrt, pow, floor, ceil
-print(pi)           # 3.141592653589793
-print(sqrt(2))      # 1.4142135623730951
-print(pow(2, 3))    # 8.0
-print(floor(9.81))  # 9
-print(ceil(9.81))   # 10
+  ```py
+  from math import pi, sqrt, pow, abs, floor, ceiling
+  from math import pi, sqrt, pow, floor, ceil
+  print(pi)           # 3.141592653589793
+  print(sqrt(2))      # 1.4142135623730951
+  print(pow(2, 3))    # 8.0
+  print(floor(9.81))  # 9
+  print(ceil(9.81))   # 10
 
-```
+  ```
 But if we want to import all the function in math module we can use * . 
-```py
-from math import *
-print(pi)           # 3.141592653589793
-print(sqrt(2))      # 1.4142135623730951
-print(pow(2, 3))    # 8.0
-print(floor(9.81))  # 9
-print(ceil(9.81))   # 10
-```
+  ```py
+  from math import *
+  print(pi)           # 3.141592653589793
+  print(sqrt(2))      # 1.4142135623730951
+  print(pow(2, 3))    # 8.0
+  print(floor(9.81))  # 9
+  print(ceil(9.81))   # 10
+  ```
 When we import we can also rename the name of the function. 
-```py
-from math import pi as  PI
-print(PI) # 3.141592653589793
-```
+  ```py
+  from math import pi as  PI
+  print(PI) # 3.141592653589793
+  ```
 By now you are familiar with importing modules. Lets do another more import to be very familiar with importing. Let's import *random* module which can gives random number between 0 and 0.9999.... The *random* module has lots of functions but in this section we will only see *random* and *randin*.
-```py
-from random import random, randint
-print(random())   # it doesn't take argument and return 0 to 0.9999
-print(randint(5, 20)) # it returns a random number between 5 and 20
-```
+  ```py
+  from random import random, randint
+  print(random())   # it doesn't take argument and return 0 to 0.9999
+  print(randint(5, 20)) # it returns a random number between 5 and 20
+  ```
 
 ## Functions
 So far we have seen many builtin python functions. In this section, we will focus on custom functions. What is a function? Before we start making functions, lets understand what function is and why we need function?
@@ -427,40 +398,38 @@ So far we have seen many builtin python functions. In this section, we will focu
 A function is a reusable block of code or programming statements designed to perform a certain task. To define a function, Python provides the *def* keyword. The following is the syntax of defining a function. The function block of code only executed only if we call the function.
 ### Declaring and calling a function
 When we make a function we call it declaring a function. When we start using the function we call it calling or invoking a function. Function can be declared with or without a parameter.
-```py
-# syntax
-# Declaring a function
-def function_name():
-  codes
-  codes
-# Calling function
-function_name()
-```
-
+  ```py
+  # syntax
+  # Declaring a function
+  def function_name():
+    codes
+    codes
+  # Calling function
+  function_name()
+  ```
 ### Function without parameters
 Function can be declared without a parameter.
 **Example:**
+  ```py
+  def generate_full_name ():
+      first_name = 'Asabeneh'
+      last_name = 'Yetayeh'
+      space = ' '
+      full_name = first_name + space + last_name
+      print(full_name)
+  generate_full_name () # calling a function
+
+  def add_two_numbers ():
+      num_one = 2
+      num_two = 3
+      total = num_one + num_two
+      print(total)
+  add_two_numbers() 
+  ```
+### Function returning value
+Function can also return values, if a function does not return values the value of the function is None. Lets rewrite the above functions using return. From now on, we return value to a function instead of printing it.
+
 ```py
-def generate_full_name ():
-    first_name = 'Asabeneh'
-    last_name = 'Yetayeh'
-    space = ' '
-    full_name = first_name + space + last_name
-    print(full_name)
-
-generate_full_name () # calling a function
-
-def add_two_numbers ():
-    num_one = 2
-    num_two = 3
-    total = num_one + num_two
-    print(total)
-add_two_numbers() # call the functionK
-
-# Function can also return values, if a function doen't return values the value of the function is None
-# Lets rewrite the above functions using return
-# From now on, we return value to a function instead of priting it
-
 def generate_full_name ():
     first_name = 'Asabeneh'
     last_name = 'Yetayeh'
@@ -476,7 +445,6 @@ def add_two_numbers ():
     return total
 print(add_two_numbers())
 ```
-
 ### Function with parameters
 In a function we can pass different data types(number, string, boolean, list, tuple, dictionary or set) as a parameter
 * Single Parameter: If our function takes a parameter we should call our function with an argument
@@ -724,22 +692,22 @@ print(do_something(square_number, 3))
 
 ## Exercises: Day 10
 1. Declare a function *add_two_numbers* and it takes two two parameters and it returns sum.
-1. Area of a circle is calculated as follows: area = π x r x r. Write a function which calculates *area_of_circle*.
-1. Write a function called add_all_nums which take arbitrary number of arguments and sum all the arguments.  Check if all the list items are number types. If not give return reasonable feedback.
-1. Temperature in oC can be converted to oF using this formula: oF = (oC x 9/5) + 32. Write a function which converts oC to oF, *convert_celcius_to-fahrenheit*.
-1. Write a function called check-season, it takes a month parameter and returns the season:Autumn, Winter, Spring or Summer.
-1. Write a function called calculate_slope which return the slop of a linear equation
-1. Quadratic equation is calculated as follows: ax2 + bx + c = 0. Write a function which calculates solution set of a quadratic equation, *solve_quadratic_eqn*.
-1. Declare a function name _print_list. It takes list as a parameter and it prints out each element of the list.
-1. Declare a function name _reverse_list. It takes array as a parameter and it returns the reverse of the array (dont’ use method).
+2. Area of a circle is calculated as follows: area = π x r x r. Write a function which calculates *area_of_circle*.
+3. Write a function called add_all_nums which take arbitrary number of arguments and sum all the arguments.  Check if all the list items are number types. If not give return reasonable feedback.
+4. Temperature in oC can be converted to oF using this formula: oF = (oC x 9/5) + 32. Write a function which converts oC to oF, *convert_celcius_to-fahrenheit*.
+5. Write a function called check-season, it takes a month parameter and returns the season:Autumn, Winter, Spring or Summer.
+6. Write a function called calculate_slope which return the slop of a linear equation
+7. Quadratic equation is calculated as follows: ax2 + bx + c = 0. Write a function which calculates solution set of a quadratic equation, *solve_quadratic_eqn*.
+8. Declare a function name _print_list. It takes list as a parameter and it prints out each element of the list.
+9. Declare a function name _reverse_list. It takes array as a parameter and it returns the reverse of the array (dont’ use method).
     ```py
         print(reverse_list([1, 2, 3, 4, 5]))
         # [5, 4, 3, 2, 1]
         print(reverse_list1.(["A", "B", "C"]))
         # ["C", "B", "A"]
     ```
-1. Declare a function name _capitalize_list_items. It takes list as a parameter and it returns the capitalized list of the elements
-1. Declare a function name _add_item. It takes an item parameter and it returns a list after adding the element
+10. Declare a function name _capitalize_list_items. It takes list as a parameter and it returns the capitalized list of the elements
+11. Declare a function name _add_item. It takes an item parameter and it returns a list after adding the element
 Declare a function name remove_item. It takes an index parameter and it returns a list after removing an element
 1. Declare a function name _sum_of_numbers. It takes a number parameter and it adds all the numbers in that range.
 1. Declare a function name _sum_of_odds. It takes a number parameter and it adds all the odd numbers in that - range.

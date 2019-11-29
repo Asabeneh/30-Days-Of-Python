@@ -29,16 +29,15 @@
 - [Day 2](#day-2)
   - [Built in functions](#built-in-functions)
   - [Variables](#variables)
-- [Printing the values stored in the variables](#printing-the-values-stored-in-the-variables)
+  - [Data Types](#data-types)
   - [Checking Data types and Casting](#checking-data-types-and-casting)
-- [Different python data types](#different-python-data-types)
-- [Let's declare different data types](#lets-declare-different-data-types)
-- [Printing out types](#printing-out-types)
-- [int to float](#int-to-float)
-- [float to int](#float-to-int)
-- [int to str](#int-to-str)
-- [str to int](#str-to-int)
-- [str to list](#str-to-list)
+  - [Number](#number-1)
+  - [Exercises - Day 2](#exercises---day-2)
+- [Day 3](#day-3)
+  - [Boolean](#boolean)
+  - [Operators:](#operators)
+    - [Assignment Operators:](#assignment-operators)
+    - [Arithmetic Operators:](#arithmetic-operators)
     - [Comparison Operators](#comparison-operators)
     - [Logical Operators](#logical-operators)
   - [Exercises - Day 3](#exercises---day-3)
@@ -339,7 +338,6 @@ I believe,  by now you are familiar with built-in functions.  Let's do one more 
 ## Variables
 Variables store data in a computer memory.  Mnemonic variables are recommend to use in many programming languages.  A variable refers to an a memory address in which a data is stored.
 Number at the beginning,  special character,  hyphen are not allowed.  A variable can have a short name (like x,y,z) but a more descriptive name (firstname,  lastname,  age,  country) is highly recommended .
-
  Python Variable Name Rules
    - A variable name must start with a letter or the underscore character
    - A variable name cannot start with a number
