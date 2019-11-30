@@ -447,7 +447,7 @@ def sum_of_numbers(n):
 sum_of_numbers(10) # 55
 sum_of_numbers(100) # 5050
 ```
-* Two Parameter: If our function takes parameters we should call our function with arguments
+* Two Parameter: A function may or may not have a parameter or parameters. A function may have two or more parameters. If our function takes parameters we should call our function with arguments. Let's see function with two parameters:
 ```py
   # syntax
   # Declaring a function
@@ -543,6 +543,7 @@ If we do not return a value from a function, then our function is returning *Non
           return True
       return False
   print(is_even(10)) # True
+  print(is_even(7)) # False
 ```
 * Returning List:
 **Example:**
@@ -649,22 +650,22 @@ generate_groups('Team-1','Asabeneh','Brook','David','Eyob')
 10. Declare a function name capitalize_list_items. It takes list as a parameter and it returns the capitalized list of the elements
 11. Declare a function name add_item. It takes an item parameter and it returns a list after adding the element
 Declare a function name remove_item. It takes an index parameter and it returns a list after removing an element
-1. Declare a function name sum_of_numbers. It takes a number parameter and it adds all the numbers in that range.
-1. Declare a function name sum_of_odds. It takes a number parameter and it adds all the odd numbers in that range.
-1. Declare a function name sum_of_even. It takes a number parameter and it adds all the even numbers in that - range.
+12. Declare a function name sum_of_numbers. It takes a number parameter and it adds all the numbers in that range.
+13. Declare a function name sum_of_odds. It takes a number parameter and it adds all the odd numbers in that range.
+14. Declare a function name sum_of_even. It takes a number parameter and it adds all the even numbers in that - range.
 Declare a function name evens_and_odds . It takes a positive integer as parameter and it counts number of evens and odds in the number.
   ```py
       print(evens_and_odds(100))
       # The number of odds are 50.
       # The number of evens are 51.
   ```
-1. Call your function factorial, it takes a whole number as a parameter and it return a factorial of the number
+15. Call your function factorial, it takes a whole number as a parameter and it return a factorial of the number
 Call your function *is_empty*, it takes a parameter and it checks if it is empty or not
-1. Write different functions which take lists and it calculate_mean, calculate_median, calculate_mode, calculate_range, calculate_variance, calculate_std. 
-1. Write a function called is_prime, which checks if a number is prime number.
-1. Write a functions which checks if all items are unique in the list.
-1. Write a function which checks if all the items of the list are the same data type.
-1. Write a function which check if variable if valid python variable 
+16. Write different functions which take lists and it calculate_mean, calculate_median, calculate_mode, calculate_range, calculate_variance, calculate_std. 
+17. Write a function called is_prime, which checks if a number is prime number.
+18. Write a functions which checks if all items are unique in the list.
+19. Write a function which checks if all the items of the list are the same data type.
+20. Write a function which check if variable if valid python variable 
 
 # Day 12
 ## Import module in Python
