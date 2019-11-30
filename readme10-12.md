@@ -678,7 +678,7 @@ Like other programming languages we can also import modules from by importing th
   print(math.ceil(9.81))   # 10, rounding to the highest
   print(math.log10(100))   # 2 
   ```
-Now, we have imported the math module which contains lots of function which can help us to mathematical calculations.To check what functions the module has you can use *help(math)*, or dir(math) and this will display the available functions in the module. If we want to import only a specific function from a module we import as follow:
+Now, we have imported the math module which contains lots of function which can help us to perform mathematical calculations.To check what functions the module has, you can use *help(math)*, or dir(math) and this will display the available functions in the module. If we want to import only a specific function from a module we import as follow:
   ```py
   from math import pi
   print(pi)
