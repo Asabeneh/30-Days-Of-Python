@@ -29,7 +29,18 @@
     - [Function as parameter of other function](#function-as-parameter-of-other-function)
   - [Exercises: Day 11](#exercises-day-11)
 - [Day 12](#day-12)
-  - [Import module in Python](#import-module-in-python)
+  - [Module](#module)
+    - [What is a module](#what-is-a-module)
+    - [Creating a module](#creating-a-module)
+    - [Importing a module](#importing-a-module)
+    - [Import functions from a module](#import-functions-from-a-module)
+    - [Import functions from a module and renaming](#import-functions-from-a-module-and-renaming)
+  - [Import Builtin Modules](#import-builtin-modules)
+    - [OS Module](#os-module)
+    - [Sys Module](#sys-module)
+    - [Statistics Module](#statistics-module)
+    - [Math Module](#math-module)
+    - [Random Module](#random-module)
   - [Exercises: Day 12](#exercises-day-12)
 # Day 10
 ## Loops
@@ -666,10 +677,100 @@ Call your function *is_empty*, it takes a parameter and it checks if it is empty
 18. Write a functions which checks if all items are unique in the list.
 19. Write a function which checks if all the items of the list are the same data type.
 20. Write a function which check if variable if valid python variable 
+21. Go the data folder and access the countries-data.py file. 
+* Create a function called the most_spoken_languages the world and it returns the 10 or 20 most spoken countries in the world in descending order
+* Create a function called the most_populated_countries and it return 10 or 20 most populated countries in descending order.
 
 # Day 12
-## Import module in Python
-Like other programming languages we can also import modules from by importing the file/function using the key word *import*. Lets import the common module we will use most of the time.
+## Module
+### What is a module
+A module is a file containing set of codes or a set of function which can be included to an application. A module could be a file containing a single variable, or function, a big code base.  
+### Creating  a module
+To create a module we write our codes in a python script and we save it as .py file. Create a file named mymodule.py inside your project folder. Let write code on this file.
+```py
+# mymodule.py file
+def generate_full_name(firstname, lastname):
+      space = ' '
+      fullname = firstname + space + lastname
+      return fullname
+```
+Create main.py file in your project directory and import the mymodule.py file.
+### Importing a module
+To import the file we use the *import* keyword and the name of the file only.
+```py
+# main.py file
+import mymodule
+print(mymodule.generate_full_name('Asabeneh', 'Yetayeh'))
+```
+### Import functions from a module
+We can have many functions in a file and we can import all the functions differently.
+```py
+# main.py file
+from mymodule import generate_full_name, sum_two_nums, person, gravity
+print(generate_full_name('Asabneh','Yetay'))
+print(sum_two_nums(1,9))
+mass = 100;
+weight = mass * gravity
+print(weight)
+print(person['firstname'])
+```
+### Import functions from a module and renaming
+During importing we can rename the name of the module.
+```py
+# main.py file
+from mymodule import generate_full_name as fullname, sum_two_nums as total, person as p, gravity as g
+print(fullname('Asabneh','Yetayeh'))
+print(total(1,9))
+mass = 100;
+weight = mass * g
+print(weight)
+print(p)
+print(p['firstname'])
+```
+## Import Builtin Modules
+Like other programming languages we can also import modules  by importing the file/function using the key word *import*. Lets import the common module we will use most of the time. Some of the common builtin modules *math*, *datetime*, *os*,*sys*, *random*, *statistics*, *collections*, *json*,*re*
+### OS Module
+Using python *os* module it is possible to automatically perform many operating system tasks.The OS module in Python provides functions for creating, changing current working directory,  and removing a directory (folder), fetching its contents, changing and identifying the current directory.
+```py
+# import the module
+import os
+# Creating a directory
+os.mkdir('directory_name')
+# Changing the current directory
+os.chdir('path')
+# Getting current working directory
+os.getcwd()
+# Removing directory
+os.rmdir()
+```
+### Sys Module
+The sys module provides functions and variables used to manipulate different parts of the Python runtime environment. sys.argv returns a list of command line arguments passed to a Python script. The item at index 0 in this list is always the name of the script, at index 1 is argument passed from the command line.
+```py
+import sys
+print(sys.argv[0], argv[1],sys.argv[2])
+print('Welcome {}. Enjoy  {} challenge!'.format(sys.argv[1], sys.argv[2]))
+output
+Welcome Asabeneh. Enjoy  30DayOfPython challenge!
+
+# to exist syst
+sys.exit()
+# To know the largest integer variable it takes
+sys.maxsize
+# To know environment path
+syst.path
+# To know the version of python you are using
+sys.version
+```
+### Statistics Module
+The statistics module provides functions to mathematical statistics of numeric data. The  popular statistical functions which are defined in this module *mean*, *median*, *mode*, *stdev* etc.
+```py
+from statistics import * # importing all the statistics module
+print(mean(ages))       # 22.4
+print(median(ages))     # 23
+print(mode(ages))       # 20
+print(stdev(ages))      # 2.3
+```
+### Math Module
   ```py
   import math
   print(math.pi)           # 3.141592653589793, pi constant
@@ -711,6 +812,7 @@ When we import we can also rename the name of the function.
   from math import pi as  PI
   print(PI) # 3.141592653589793
   ```
+### Random Module
 By now you are familiar with importing modules. Lets do another more import to be very familiar with importing. Let's import *random* module which can gives random number between 0 and 0.9999.... The *random* module has lots of functions but in this section we will only see *random* and *randint*.
   ```py
   from random import random, randint
