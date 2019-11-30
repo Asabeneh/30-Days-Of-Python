@@ -8,6 +8,9 @@
     - [While Loop](#while-loop)
     - [Break and continue](#break-and-continue)
     - [For Loop](#for-loop)
+    - [Break and Continue](#break-and-continue)
+    - [The range function](#the-range-function)
+    - [Nested for loop](#nested-for-loop)
     - [For Else](#for-else)
     - [Pass](#pass)
   - [Exercises: Day 10](#exercises-day-10)
@@ -22,7 +25,7 @@
     - [Returning a value from a function](#returning-a-value-from-a-function)
     - [Function with default parameters](#function-with-default-parameters)
     - [Arbitrary number of arguments](#arbitrary-number-of-arguments)
-    - [Function with default parameter and arbitrary number of parameters](#function-with-default-parameter-and-arbitrary-number-of-parameters)
+    - [Default and arbitrary number of parameters in function](#default-and-arbitrary-number-of-parameters-in-function)
     - [Function as parameter of other function](#function-as-parameter-of-other-function)
   - [Exercises: Day 11](#exercises-day-11)
 - [Day 12](#day-12)
@@ -35,229 +38,226 @@ Life is full of routines. In programming also we do lots of repetitive tasks. In
 2. for loop
 ### While Loop
 We use the reserved word *while* to make a while loop. While loop is used to execute a block of statements repeatedly until a given condition is satisfied. When the condition becomes false, the line immediately after the loop will be executed.
-  ```py
+```py
   # syntax
   while condition:
       code goes here
-  ```
+```
 **Example:**
-  ```py
+```py
   count = 0
   while count < 5:
       print(count)
       count = count + 1
-  ```
+```
 In the above while loop, the condition become false when count is 5, then the loop stops.
 If we are interested to run block of code once the condition is no longer true, we can use *else*.
-  ```py
+```py
   # syntax
   while condition:
       code goes here
   else:
       code goes here
-  ```
+```
 **Example:**
-  ```py
-count = 0
-while count < 5:
+```py
+  count = 0
+  while count < 5:
+        print(count)
+        count = count + 1
+  else:
       print(count)
-      count = count + 1
-else:
-    print(count)
-  ```
+```
 The above loop condition will be false when count is 5 and the loop stops, and execution starts the else statement and 5 prints in the else statement.
 ### Break and continue
 * Break: We use break when we like to get out or stop the loop.
-  ```py
+```py
   # syntax
   while condition:
       code goes here
       if another_condition:
           break 
-  ```
+```
 **Example:**
- 
-  ```py
+```py
   count = 0
   while count < 5:
       print(count)
       count = count + 1
       if count == 3:
           break
-  ```
+```
 The above while loop only prints 0, 1, 2, but when it reaches 3 it stops.
 * Continue: With the continue statement we can stop the current iteration, and continue with the next:
-  ```py
+```py
   # syntax
   while condition:
       code goes here
       if another_condition:
           continue
-  ```
+```
 **Example:**
-  ```py
+```py
 count = 0
 while count < 5:
     if count == 3:
         continue
     print(count)
     count = count + 1
-  ```
+```
 The above while loop only prints 0, 1, 2,4 but skips 3.
 ### For Loop 
 A *for* key word used to make a for loop like in other programming language but with some syntax difference.  Loop is used for iterating over a sequence (that is either a list, a tuple, a dictionary, a set, or a string).
-* For loop with list
-    ```py
-    # syntax
-    for iterator in sequence:
-      code goes here
-    ```
+* For loop with list 
+```py
+  # syntax
+  for iterator in lst:
+    code goes here
+```
   **Example:**
-    ```py
+
+```py
   numbers = [0, 1, 2, 3, 4, 5]
   for number in numbers:
       print(number)
-    ```
+```
 * For loop with string
-    ```py
-    # syntax
-    for iterator in sequence:
-      code goes here
-    ```
+```py
+  # syntax
+  for iterator in string:
+    code goes here
+```
   **Example:**
-    ```py
-    language = 'Python'
-    for letter in language:
-      print(letter)
-    ```
+
+```py
+  language = 'Python'
+  for letter in language:
+    print(letter)
+```
 * For loop with tuple
-    ```py
-    # syntax
-    for iterator in sequence:
-      code goes here
-    ```
+```py
+  # syntax
+  for iterator in tpl:
+    code goes here
+```
   **Example:**
-    ```py
-    numbers = (0, 1,2,3,4,5)
-    for number in numbers:
-      print(number)
-    ```
+```py
+  numbers = (0, 1,2,3,4,5)
+  for number in numbers:
+    print(number)
+```
 * For loop with dictionary
   Looping through a dictionary gives you the key of the dictionary.
-    ```py
-    # syntax
-    for iterator in sequence:
-      code goes here
-    ```
-    **Example:**
-    
-    ```py
-    person = {
-        'first_name':'Asabeneh',
-        'last_name':'Yetayeh',
-        'age':250,
-        'country':'Finland',
-        'is_marred':True,
-        'skills':['JavaScript', 'React', 'Node', 'MongoDB', 'Python'],
-        'address':{
-            'street':'Space street',
-            'zipcode':'02210'
-        }
-        }
-    for key in person:
-      print(key)
-  ```
-  * Loops in set
-
-    ```py
-    # syntax
-    for iterator in sequence:
-      code goes here
-    ```
-    **Example:**
-    
-    ```py
-    it_companies = {'Facebook', 'Google', 'Microsoft', 'Apple', 'IBM', 'Oracle', 'Amazon'}
-    for company in it_companies:
-      print(company)
-    ```
+```py
+  # syntax
+  for iterator in dct:
+    code goes here
+```
+  **Example:**
+```py
+  person = {
+      'first_name':'Asabeneh',
+      'last_name':'Yetayeh',
+      'age':250,
+      'country':'Finland',
+      'is_marred':True,
+      'skills':['JavaScript', 'React', 'Node', 'MongoDB', 'Python'],
+      'address':{
+          'street':'Space street',
+          'zipcode':'02210'
+      }
+      }
+  for key in person:
+    print(key)
+```
+* Loops in set
+```py
+  # syntax
+  for iterator in st:
+    code goes here
+```
+  **Example:**
+```py
+  it_companies = {'Facebook', 'Google', 'Microsoft', 'Apple', 'IBM', 'Oracle', 'Amazon'}
+  for company in it_companies:
+    print(company)
+```
 ### Break and Continue
 *Break*: We use break when we like to stop our loop before the loop is completed.
-  ```py
-        # syntax
-        for iterator in sequence:
-          code goes here
-          if condition:
-            break
-  ```
+```py
+  # syntax
+  for iterator in sequence:
+    code goes here
+    if condition:
+      break
+```
   **Example:**
 
-  ```py
-      numbers = (0, 1,2,3,4,5)
-      for number in numbers:
-        print(number)
-        if number == 3:
-          break
-  ```
+```py
+  numbers = (0, 1,2,3,4,5)
+  for number in numbers:
+    print(number)
+    if number == 3:
+      break
+```
   In the above example, the loop stops when it reaches 3.
   Continue: We use continue when we like to skip some of the step in the iteration of the loop.
 
-    ```py
-        # syntax
-        for iterator in sequence:
-          code goes here
-          if condition:
-            continue
-    ```
+```py
+  # syntax
+  for iterator in sequence:
+    code goes here
+    if condition:
+      continue
+```
     **Example:**
     
-  ```py
-      numbers = (0, 1,2,3,4,5)
-      for number in numbers:
-        print(number)
-        if number == 3:
-          continue
-  ```
+```py
+  numbers = (0, 1,2,3,4,5)
+  for number in numbers:
+    print(number)
+    if number == 3:
+      continue
+```
  In the above example, if number is 3 the skip step and continues to the next.
 ### The range function
 The range() function uses to loop through a set of code a certain number of times. The *range(start,end, step)* takes three parameters:starting, ending and increment.By default it starts from 0 and the increment is 1. The range sequence doesn't include the end.
 Creating sequence using range
-  ```py
-      lst = list(rang(11)) 
-      print(lst) # [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-      st = set(range(11))
-      print(st) # {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10}
-    
-    
-      lst = list(rang(0,11,2)) 
-      print(lst) # [0, 2, 4, 6, 8, 10]
-      st = set(range(0,11,2))
-      print(st) #  {0, 2, 4, 6, 8, 10}
-  ```
-  ```py
-        # syntax
-        for iterator in range(start, end, increment):
-  ```
+
+```py
+  lst = list(rang(11)) 
+  print(lst) # [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+  st = set(range(11))
+  print(st) # {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10}
+
+  lst = list(rang(0,11,2)) 
+  print(lst) # [0, 2, 4, 6, 8, 10]
+  st = set(range(0,11,2))
+  print(st) #  {0, 2, 4, 6, 8, 10}
+```
+```py
+  # syntax
+  for iterator in range(start, end, increment):
+```
   **Example:**
   
-    ```py
-    for number in range(11):
-      print(number)   # prints 0 to 10, not including 11
-    fruits = ['banana', 'orange', 'mango', 'lemon']
-    for fruit in fruits:
-      print(fruit)
-    ```
+```py
+  for number in range(11):
+    print(number)   # prints 0 to 10, not including 11
+  fruits = ['banana', 'orange', 'mango', 'lemon']
+  for fruit in fruits:
+    print(fruit)
+```
 ###  Nested for loop
 We can write loop inside another loop.
-  ```py
-    # syntax
-    for x in y:
-      for t in s:
-        print(t)
-  ```
+```py
+  # syntax
+  for x in y:
+    for t in s:
+      print(t)
+```
   **Example:**
-  
-    ```py
+```py
   person = {
       'first_name': 'Asabeneh',
       'last_name': 'Yetayeh',
@@ -274,30 +274,30 @@ We can write loop inside another loop.
       if key == 'skills':
         for skill in person['skills']:
           print(skill)
-  ```
+```
 ### For Else
 If we want to execute some message when the loop ends, we use else.
-  ```py
+```py
       # syntax
       for iterator in range(start, end, increment):
         do something
       else:
         print('The loop is ended')
-  ```
+```
   **Example:**
-  ```py
+```py
   for number in range(11):
     print(number)   # prints 0 to 10, not including 11
   else:
     print('The loop stops at', number)
-  ```
+```
 ### Pass
 In python after semicolon, it requires some code to run but we don't like to execute any code after if or for loop we can write the word *pass* to avoid error.
 
 ## Exercises: Day 10
 1. Iterate 0 to 10 using for loop, do the same using while and do while loop.
-1. Iterate 10 to 0 using for loop, do the same using while and do while loop.
-1. Write a loop that makes seven calls to print() output the following triangle:
+2. Iterate 10 to 0 using for loop, do the same using while and do while loop.
+3. Write a loop that makes seven calls to print() output the following triangle:
     ```py
       #
       ##
@@ -307,7 +307,7 @@ In python after semicolon, it requires some code to run but we don't like to exe
       ######
       #######
     ```
-1. Use nested loops to create the following:
+4. Use nested loops to create the following:
     ```sh
     # # # # # # # # 
     # # # # # # # # 
@@ -318,7 +318,7 @@ In python after semicolon, it requires some code to run but we don't like to exe
     # # # # # # # # 
     # # # # # # # #
     ```
-1. Print the following pattern:
+5. Print the following pattern:
     ```sh
     0 x 0 = 0
     1 x 1 = 1
@@ -332,19 +332,19 @@ In python after semicolon, it requires some code to run but we don't like to exe
     9 x 9 = 81
     10 x 10 = 100
     ```
-1. Iterate through the list, ['Python', 'Numpy','Pandas','Django', 'Flask'] using a for loop and print out the items.
-1. Use for loop to iterate from 0 to 100 and print only even numbers
-1. Use for loop to iterate from 0 to 100 and print only odd numbers
-1. Use for loop to iterate from 0 to 100 and print the sum of all numbers.
+6. Iterate through the list, ['Python', 'Numpy','Pandas','Django', 'Flask'] using a for loop and print out the items.
+7. Use for loop to iterate from 0 to 100 and print only even numbers
+8. Use for loop to iterate from 0 to 100 and print only odd numbers
+9. Use for loop to iterate from 0 to 100 and print the sum of all numbers.
     ```sh
     The sum of all numbers is 5050.
     ```
-1. Use for loop to iterate from 0 to 100 and print the sum of all evens and the sum of all odds.
+10. Use for loop to iterate from 0 to 100 and print the sum of all evens and the sum of all odds.
     ```sh
       The sum of all evens is 2550. And the sum of all odds is 2500.
     ```
-1. Go to the data folder and use the countries.py file. Loop through the countries and extract all the countries containing the word *land*.
-1. This is the fruit list, ['banana', 'orange', 'mango', 'lemon'] reverse the order using loop.
+11. Go to the data folder and use the countries.py file. Loop through the countries and extract all the countries containing the word *land*.
+12. This is the fruit list, ['banana', 'orange', 'mango', 'lemon'] reverse the order using loop.
 
 # Day 11
 ## Functions
@@ -353,7 +353,7 @@ So far we have seen many builtin python functions. In this section, we will focu
 A function is a reusable block of code or programming statements designed to perform a certain task. To define a function, Python provides the *def* keyword. The following is the syntax of defining a function. The function block of code only executed only if we call the function.
 ### Declaring and calling a function
 When we make a function we call it declaring a function. When we start using the function we call it calling or invoking a function. Function can be declared with or without a parameter.
-  ```py
+```py
   # syntax
   # Declaring a function
   def function_name():
@@ -361,11 +361,11 @@ When we make a function we call it declaring a function. When we start using the
     codes
   # Calling function
   function_name()
-  ```
+```
 ### Function without parameters
 Function can be declared without a parameter.
 **Example:**
-  ```py
+```py
   def generate_full_name ():
       first_name = 'Asabeneh'
       last_name = 'Yetayeh'
@@ -380,7 +380,7 @@ Function can be declared without a parameter.
       total = num_one + num_two
       print(total)
   add_two_numbers() 
-  ```
+```
 ### Function returning value
 Function can also return values, if a function does not return values the value of the function is None. Lets rewrite the above functions using return. From now on, we return value to a function instead of printing it.
 
@@ -404,13 +404,13 @@ print(add_two_numbers())
 In a function we can pass different data types(number, string, boolean, list, tuple, dictionary or set) as a parameter
 * Single Parameter: If our function takes a parameter we should call our function with an argument
 ```py
-# syntax
-# Declaring a function
-def function_name(parameter):
-  codes
-  codes
-# Calling function
-function_name(parameter)
+  # syntax
+  # Declaring a function
+  def function_name(parameter):
+    codes
+    codes
+  # Calling function
+  function_name(parameter)
 ````
 **Example:**
 ```py
@@ -449,13 +449,13 @@ sum_of_numbers(100) # 5050
 ```
 * Two Parameter: If our function takes parameters we should call our function with arguments
 ```py
-# syntax
-# Declaring a function
-def function_name(para1, para2):
-  codes
-  codes
-# Calling function
-function_name(arg1, arg2)
+  # syntax
+  # Declaring a function
+  def function_name(para1, para2):
+    codes
+    codes
+  # Calling function
+  function_name(arg1, arg2)
 ````
 **Example:**
 ```py
@@ -485,17 +485,16 @@ print('Weight of an object in Newton: ', weight_of_object(100, 9.81))
 ### Passing arguments with key and value
 If we pass the arguments with key and value, the order of the arguments does not matter.
 ```py
-# syntax
-# Declaring a function
-def function_name(para1, para2):
-  codes
-  codes
-# Calling function
-function_name(para1='John', para2='Doe') # the order of argument now does not matter
+  # syntax
+  # Declaring a function
+  def function_name(para1, para2):
+    codes
+    codes
+  # Calling function
+  function_name(para1='John', para2='Doe') # the order of argument now does not matter
 ````
 **Example:**
 ```py
-# syntax
 def print_fullname(firstname, lastname):
       space = ' '
       full_name = firstname  + space + lastname
@@ -511,25 +510,22 @@ add_two_numbers(num2=3, num1=2) # Order does not matter
 ### Returning a value from a function
 If we do not return a value from a function, then our function is returning *None* by default. To return a value from a function we use the key word *return* followed by the data type we are returning. We can return any kind of data types from a function.
 * Returning string:
-
 **Example:**
 ```py
-# syntax
-def print_name(firstname):
-      return firstname
-print_name('Asabeneh') # Asabeneh
+  def print_name(firstname):
+        return firstname
+  print_name('Asabeneh') # Asabeneh
 
-def print_full_name(firstname, lastname):
-      space = ' '
-      full_name = firstname  + space + lastname
-      return full_name
-print_full_name(firstname='Asabeneh', lastname='Yetayeh')
+  def print_full_name(firstname, lastname):
+        space = ' '
+        full_name = firstname  + space + lastname
+        return full_name
+  print_full_name(firstname='Asabeneh', lastname='Yetayeh')
 ```
 * Returning Number:
 
 **Example:**
 ```py
-# syntax
 def add_two_numbers (num1, num2):
         total = num1 + num2
         return total
@@ -538,13 +534,11 @@ print(add_two_numbers(2, 3))
 def calculate_age (current_year, birth_year):
     age = current_year - birth_year
     return age;
-
 print('Age: ', calculate_age(2019, 1819))
 ```
 * Returning Boolean:
 **Example:**
 ```py
-# syntax
 def is_even (n):
     if n % 2 == 0:
         print('even')
@@ -555,7 +549,6 @@ print(is_even(10)) # True
 * Returning List:
 **Example:**
 ```py
-# syntax
 def find_even_numbers(n):
     evens = []
     for i in range(n+1):
@@ -623,7 +616,7 @@ def sum_all_nums(*nums):
 print(sum_all_nums(2, 3, 5))
 
 ```
-### Function with default parameter and arbitrary number of parameters
+### Default and arbitrary number of parameters in function
 ```py
 def generate_groups (team,*args):
     print(team)
