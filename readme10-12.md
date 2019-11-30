@@ -12,7 +12,6 @@
     - [Pass](#pass)
   - [Exercises: Day 10](#exercises-day-10)
 - [Day 11](#day-11)
-  - [Import module in Python](#import-module-in-python)
   - [Functions](#functions)
     - [Defining a Function](#defining-a-function)
     - [Declaring and calling a function](#declaring-and-calling-a-function)
@@ -25,7 +24,10 @@
     - [Arbitrary number of arguments](#arbitrary-number-of-arguments)
     - [Function with default parameter and arbitrary number of parameters](#function-with-default-parameter-and-arbitrary-number-of-parameters)
     - [Function as parameter of other function](#function-as-parameter-of-other-function)
-  - [Exercises: Day 10](#exercises-day-10-1)
+  - [Exercises: Day 11](#exercises-day-11)
+- [Day 12](#day-12)
+  - [Import module in Python](#import-module-in-python)
+  - [Exercises: Day 12](#exercises-day-12)
 # Day 10
 ## Loops
 Life is full of routines. In programming also we do lots of repetitive tasks. In order to handle repetitive task programming languages provide loops. Python programming language also provides the following types of two loops to handle looping. 
@@ -56,12 +58,12 @@ If we are interested to run block of code once the condition is no longer true, 
   ```
 **Example:**
   ```py
-  count = 0
-  while count < 5:
+count = 0
+while count < 5:
       print(count)
       count = count + 1
-  else:
-  print(count)
+else:
+    print(count)
   ```
 The above loop condition will be false when count is 5 and the loop stops, and execution starts the else statement and 5 prints in the else statement.
 ### Break and continue
@@ -94,12 +96,12 @@ The above while loop only prints 0, 1, 2, but when it reaches 3 it stops.
   ```
 **Example:**
   ```py
-  count = 0
-  while count < 5:
-      print(count)
-      count = count + 1
-      if count == 3:
-          continue
+count = 0
+while count < 5:
+    if count == 3:
+        continue
+    print(count)
+    count = count + 1
   ```
 The above while loop only prints 0, 1, 2,4 but skips 3.
 ### For Loop 
@@ -112,8 +114,8 @@ A *for* key word used to make a for loop like in other programming language but 
     ```
   **Example:**
     ```py
-    numbers = [0, 1, 2, 3, 4, 5]
-    for number in numbers:
+  numbers = [0, 1, 2, 3, 4, 5]
+  for number in numbers:
       print(number)
     ```
 * For loop with string
@@ -144,7 +146,7 @@ A *for* key word used to make a for loop like in other programming language but 
   Looping through a dictionary gives you the key of the dictionary.
     ```py
     # syntax
-    for iterator in sequecne:
+    for iterator in sequence:
       code goes here
     ```
     **Example:**
@@ -169,7 +171,7 @@ A *for* key word used to make a for loop like in other programming language but 
 
     ```py
     # syntax
-    for iterator in sequecne:
+    for iterator in sequence:
       code goes here
     ```
     **Example:**
@@ -183,9 +185,9 @@ A *for* key word used to make a for loop like in other programming language but 
 *Break*: We use break when we like to stop our loop before the loop is completed.
   ```py
         # syntax
-        for iterator in sequecne:
+        for iterator in sequence:
           code goes here
-          if conditon:
+          if condition:
             break
   ```
   **Example:**
@@ -202,9 +204,9 @@ A *for* key word used to make a for loop like in other programming language but 
 
     ```py
         # syntax
-        for iterator in sequecne:
+        for iterator in sequence:
           code goes here
-          if conditon:
+          if condition:
             continue
     ```
     **Example:**
@@ -237,11 +239,10 @@ Creating sequence using range
         for iterator in range(start, end, increment):
   ```
   **Example:**
-
+  
     ```py
     for number in range(11):
       print(number)   # prints 0 to 10, not including 11
-    
     fruits = ['banana', 'orange', 'mango', 'lemon']
     for fruit in fruits:
       print(fruit)
@@ -274,7 +275,6 @@ We can write loop inside another loop.
         for skill in person['skills']:
           print(skill)
   ```
-
 ### For Else
 If we want to execute some message when the loop ends, we use else.
   ```py
@@ -285,13 +285,11 @@ If we want to execute some message when the loop ends, we use else.
         print('The loop is ended')
   ```
   **Example:**
-
   ```py
   for number in range(11):
     print(number)   # prints 0 to 10, not including 11
   else:
-    pirnt('The loop stops at', number)
-  
+    print('The loop stops at', number)
   ```
 ### Pass
 In python after semicolon, it requires some code to run but we don't like to execute any code after if or for loop we can write the word *pass* to avoid error.
@@ -299,7 +297,6 @@ In python after semicolon, it requires some code to run but we don't like to exe
 ## Exercises: Day 10
 1. Iterate 0 to 10 using for loop, do the same using while and do while loop.
 1. Iterate 10 to 0 using for loop, do the same using while and do while loop.
-
 1. Write a loop that makes seven calls to print() output the following triangle:
     ```py
       #
@@ -346,52 +343,10 @@ In python after semicolon, it requires some code to run but we don't like to exe
     ```sh
       The sum of all evens is 2550. And the sum of all odds is 2500.
     ```
-1. Go to the data folder and use the countries.py file. Loop throught the countries and extract all the contries containing the word *land*.
+1. Go to the data folder and use the countries.py file. Loop through the countries and extract all the countries containing the word *land*.
 1. This is the fruit list, ['banana', 'orange', 'mango', 'lemon'] reverse the order using loop.
+
 # Day 11
-## Import module in Python
-Like other programming languages we can also import modules from by importing the file/function using the key word *import*. Lets import the common module we will use most of the time.
-  ```py
-  import math
-  print(math.pi)
-  ```
-Now, we have imported the math module which contains lots of function which can help us to mathematical calculations.To check what functions the module has you can use *help(math)*, or dir(math) and this will display the available functions in the module. If we want to import only a specific function from a module we import as follow:
-  ```py
-  from math import pi
-  print(pi)
-  ```
-It is also possible to import multiple functions at once
-  ```py
-  from math import pi, sqrt, pow, abs, floor, ceiling
-  from math import pi, sqrt, pow, floor, ceil
-  print(pi)           # 3.141592653589793
-  print(sqrt(2))      # 1.4142135623730951
-  print(pow(2, 3))    # 8.0
-  print(floor(9.81))  # 9
-  print(ceil(9.81))   # 10
-
-  ```
-But if we want to import all the function in math module we can use * . 
-  ```py
-  from math import *
-  print(pi)           # 3.141592653589793
-  print(sqrt(2))      # 1.4142135623730951
-  print(pow(2, 3))    # 8.0
-  print(floor(9.81))  # 9
-  print(ceil(9.81))   # 10
-  ```
-When we import we can also rename the name of the function. 
-  ```py
-  from math import pi as  PI
-  print(PI) # 3.141592653589793
-  ```
-By now you are familiar with importing modules. Lets do another more import to be very familiar with importing. Let's import *random* module which can gives random number between 0 and 0.9999.... The *random* module has lots of functions but in this section we will only see *random* and *randin*.
-  ```py
-  from random import random, randint
-  print(random())   # it doesn't take argument and return 0 to 0.9999
-  print(randint(5, 20)) # it returns a random number between 5 and 20
-  ```
-
 ## Functions
 So far we have seen many builtin python functions. In this section, we will focus on custom functions. What is a function? Before we start making functions, lets understand what function is and why we need function?
 ### Defining a Function
@@ -625,7 +580,6 @@ function_name(arg)
 ```py
     message = name + ', welcome to Python for Everyone!'
     return message
-
 print(greetings())
 print(greetings('Asabeneh'))
 
@@ -633,7 +587,6 @@ def generate_full_name (first_name = 'Asabeneh', last_name = 'Yetayeh'):
     space = ' '
     full_name = first_name + space + last_name
     return full_name
-
 
 print(generate_full_name())
 print(generate_full_name('David','Smith'))
@@ -685,12 +638,9 @@ def square_number (n):
     return n * n
 def do_something(f, x):
     return f(x)
-
 print(do_something(square_number, 3))
 ```
-
-
-## Exercises: Day 10
+## Exercises: Day 11
 1. Declare a function *add_two_numbers* and it takes two two parameters and it returns sum.
 2. Area of a circle is calculated as follows: area = π x r x r. Write a function which calculates *area_of_circle*.
 3. Write a function called add_all_nums which take arbitrary number of arguments and sum all the arguments.  Check if all the list items are number types. If not give return reasonable feedback.
@@ -698,32 +648,93 @@ print(do_something(square_number, 3))
 5. Write a function called check-season, it takes a month parameter and returns the season:Autumn, Winter, Spring or Summer.
 6. Write a function called calculate_slope which return the slop of a linear equation
 7. Quadratic equation is calculated as follows: ax2 + bx + c = 0. Write a function which calculates solution set of a quadratic equation, *solve_quadratic_eqn*.
-8. Declare a function name _print_list. It takes list as a parameter and it prints out each element of the list.
-9. Declare a function name _reverse_list. It takes array as a parameter and it returns the reverse of the array (dont’ use method).
+8. Declare a function name print_list. It takes list as a parameter and it prints out each element of the list.
+9. Declare a function name reverse_list. It takes array as a parameter and it returns the reverse of the array (dont’ use method).
     ```py
         print(reverse_list([1, 2, 3, 4, 5]))
         # [5, 4, 3, 2, 1]
         print(reverse_list1.(["A", "B", "C"]))
         # ["C", "B", "A"]
     ```
-10. Declare a function name _capitalize_list_items. It takes list as a parameter and it returns the capitalized list of the elements
-11. Declare a function name _add_item. It takes an item parameter and it returns a list after adding the element
+10. Declare a function name capitalize_list_items. It takes list as a parameter and it returns the capitalized list of the elements
+11. Declare a function name add_item. It takes an item parameter and it returns a list after adding the element
 Declare a function name remove_item. It takes an index parameter and it returns a list after removing an element
-1. Declare a function name _sum_of_numbers. It takes a number parameter and it adds all the numbers in that range.
-1. Declare a function name _sum_of_odds. It takes a number parameter and it adds all the odd numbers in that - range.
-1. Declare a function name _sum_of_even. It takes a number parameter and it adds all the even numbers in that - range.
+1. Declare a function name sum_of_numbers. It takes a number parameter and it adds all the numbers in that range.
+1. Declare a function name sum_of_odds. It takes a number parameter and it adds all the odd numbers in that range.
+1. Declare a function name sum_of_even. It takes a number parameter and it adds all the even numbers in that - range.
 Declare a function name evens_and_odds . It takes a positive integer as parameter and it counts number of evens and odds in the number.
     ```py
         print(evens_and_odds(100))
         # The number of odds are 50.
         # The number of evens are 51.
     ```
+
+
+1. Call your function factorial, it takes a whole number as a parameter and it return a factorial of the number
+Call your function *isempty*, it takes a parameter and it checks if it is empty or not
+1. Write different functions which take lists and it calculate_mean, calculate_median, calculate_mode, calculate_range, calculate_variance, calculate_std. 
+1. Write a function called is_prime, which checks if a number is prime number.
+1. Write a functions which checks if all items are unique in the list.
+1. Write a function which checks if all the items of the list are the same data type.
+1. Write a function which check if variable if valid python variable 
+
+# Day 12
+## Import module in Python
+Like other programming languages we can also import modules from by importing the file/function using the key word *import*. Lets import the common module we will use most of the time.
+  ```py
+  import math
+  print(math.pi)           # 3.141592653589793, pi constant
+  print(math.sqrt(2))      # 1.4142135623730951, square root
+  print(math.pow(2, 3))    # 8.0, exponential
+  print(math.floor(9.81))  # 9, rounding to the lowest
+  print(math.ceil(9.81))   # 10, rounding to the highest
+  print(math.log10(100))   # 2 
+  ```
+Now, we have imported the math module which contains lots of function which can help us to mathematical calculations.To check what functions the module has you can use *help(math)*, or dir(math) and this will display the available functions in the module. If we want to import only a specific function from a module we import as follow:
+  ```py
+  from math import pi
+  print(pi)
+  ```
+It is also possible to import multiple functions at once
+  ```py
+
+  from math import pi, sqrt, pow, floor, ceil,log10
+  print(pi)                 # 3.141592653589793
+  print(sqrt(2))            # 1.4142135623730951
+  print(pow(2, 3))          # 8.0
+  print(floor(9.81))        # 9
+  print(ceil(9.81))         # 10
+  print(math.log10(100))    # 2 
+
+  ```
+But if we want to import all the function in math module we can use * . 
+  ```py
+  from math import *
+  print(pi)                  # 3.141592653589793, pi constant
+  print(sqrt(2))             # 1.4142135623730951, square root
+  print(pow(2, 3))           # 8.0, exponential
+  print(floor(9.81))         # 9, rounding to the lowest
+  print(ceil(9.81))          # 10, rounding to the highest
+  print(math.log10(100))     # 2 
+  ```
+When we import we can also rename the name of the function. 
+  ```py
+  from math import pi as  PI
+  print(PI) # 3.141592653589793
+  ```
+By now you are familiar with importing modules. Lets do another more import to be very familiar with importing. Let's import *random* module which can gives random number between 0 and 0.9999.... The *random* module has lots of functions but in this section we will only see *random* and *randint*.
+  ```py
+  from random import random, randint
+  print(random())   # it doesn't take argument and return 0 to 0.9999
+  print(randint(5, 20)) # it returns a random number between 5 and 20
+  ```
+## Exercises: Day 12
 1. Writ a function which generates a six digit random_user_id.
     ```py
       print(random_user_id());
       '1ee33d'
     ```
-1. Modify question number above . Declare a function name _user_id_gen_by_user. It doesn’t take any parameter but it takes two inputs using input(). One of the input is the number of characters and the second input is the number of ids which are supposed to be generated.
+2. Modify question number above . Declare a function name user_id_gen_by_user. It doesn’t take any parameter but it takes two inputs using input(). One of the input is the number of characters and the second input is the number of ids which are supposed to be generated.
     ```py
     user_id_gen_by_user()
     "kcsy2
@@ -740,13 +751,13 @@ Declare a function name evens_and_odds . It takes a positive integer as paramete
     dIV0SSUTgAdKwStr
     "
     ```
-1. Write a function name _rgb_color_gen and it generates rgb colors.
+3. Write a function name rgb_color_gen and it generates rgb colors.
     ```py
           print(rgb_color_gen())
         # rgb(125,244,255)
     ```
-1. Write a function list_of_hexa_colors which return any number of hexadecimal colors in an array.
-1. Write a function list_of_rgb_colors which return any number of RGB colors in an array.
+4. Write a function list_of_hexa_colors which return any number of hexadecimal colors in an array.
+5. Write a function list_of_rgb_colors which return any number of RGB colors in an array.
 Write a function generate_colors which can generate any number of hexa or rgb colors.
     ```py
           generate_colors('hexa', 3)
@@ -758,14 +769,7 @@ Write a function generate_colors which can generate any number of hexa or rgb co
           generate_colors('rgb', 1)
           # 'rgb(33,79, 176)'
     ```
-1. Call your function _shuffle_list, it takes a list as a parameter and it returns a shuffled list
-1. Call your function factorial, it takes a whole number as a parameter and it return a factorial of the number
-Call your function _isempty, it takes a parameter and it checks if it is empty or not
-1. Write different functions which take lists and it calculate_mean, calculate_median, calculate_mode, calculate_range, calculate_variance, calculate_std. 
-1. Write a function called is_prime, which checks if a number is prime number.
-1. Write a functions which checks if all items are unique in the list.
-1. Write a function which checks if all the items of the list are the same data type.
-1. Write a function which check if variable if valid python variable 
+1. Call your function shuffle_list, it takes a list as a parameter and it returns a shuffled list
 1. Write a function which returns array of seven random numbers in a range of 0-9. All the numbers must be unique.
 
 [<< Part 3 ](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/readme7-9.md) | [Part 5 >>](#)
