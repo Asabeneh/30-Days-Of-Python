@@ -1,4 +1,4 @@
-[Part 1](https://github.com/Asabeneh/30-Days-Of-Python) | [Part 2](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/readme4-6.md)| [Part 3](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/readme7-9.md)| [Part 4](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/readme10-12.md)| [Part 5](#https://github.com/Asabeneh/30-Days-Of-Python/blob/master/readme13-15.md)
+[Part 1](https://github.com/Asabeneh/30-Days-Of-Python) | [Part 2](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/readme4-6.md)| [Part 3](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/readme7-9.md)| [Part 4](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/readme10-12.md)| [Part 5](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/readme13-15.md)
 ***
 
 ![30DaysOfPython](./images/30DaysOfPython_banner3@2x.png)
@@ -863,5 +863,5 @@ Write a function generate_colors which can generate any number of hexa or rgb co
 1. Call your function shuffle_list, it takes a list as a parameter and it returns a shuffled list
 1. Write a function which returns array of seven random numbers in a range of 0-9. All the numbers must be unique.
 
-[<< Part 3 ](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/readme7-9.md) | [Part 5 >>](#)
+[<< Part 3 ](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/readme7-9.md) | [Part 5 >>](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/readme13-15.md)
 ***
