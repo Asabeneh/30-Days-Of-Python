@@ -133,6 +133,7 @@ two_power_of_five = power(2)(5) # 32
 ```
 
 ## Built-in Higher Order Functions
+not ready yet 
 
 ## Exercises: Day 13
 
