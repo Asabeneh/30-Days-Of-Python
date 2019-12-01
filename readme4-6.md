@@ -868,13 +868,16 @@ The reverse() method reverse the order of a list.
   [24, 25, 24, 26, 25, 24, 19, 22]
   ```
 ### Sorting list items
-The sort() method reorder the list items in ascending order. If a reverse is equal to true it arrange in descending order.
+To sort list we can use *sort() method or *sorted()* builtin function. The sort() method reorder the list items in ascending order and modify the original list. If a reverse is equal to true it arrange in descending order.
+* sort():
   ```py
   # syntax
   lst = ['item1', 'item2']
   lst.sort()                # ascending
   lst.sort(reverse=True)    # descending
   ```
+  **Example:**
+
   ```py
   fruits = ['banana', 'orange', 'mango', 'lemon']
   fruits.sort()
@@ -892,6 +895,17 @@ The sort() method reorder the list items in ascending order. If a reverse is equ
   ['orange', 'mango', 'lemon', 'banana']
   [19, 22, 24, 24, 24, 25, 25, 26]
   [26, 25, 25, 24, 24, 24, 22, 19]
+  ```
+  sorted(): returns the ordered list without modifying the original
+  **Example:**
+   ```py
+  fruits = ['banana', 'orange', 'mango', 'lemon']
+  fruits = sorted(fruits)
+  print(fruits)     # ['banana', 'lemon', 'mango', 'orange']
+  # Reverse order
+  fruits = ['banana', 'orange', 'mango', 'lemon']
+  fruits = sorted(fruits,reverse=True)
+  print(fruits)     # ['orange', 'mango', 'lemon', 'banana']          
   ```
   
 ## Exercises: Day 5

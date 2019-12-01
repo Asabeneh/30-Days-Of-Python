@@ -5,3 +5,4 @@ readme25-30.md
 playground.py
 backup.md
 .DS_Store
+__pycache__
