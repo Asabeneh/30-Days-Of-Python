@@ -145,7 +145,7 @@ two_power_of_five = power(2)(5) # 32
 1. Flatten the following list of lists of lists to a one dimensional list :
 
    ```py
-   matrix=[[[1, 2, 3]], [[4, 5, 6]], [[7, 8, 9]]]
+   list_of_lists =[[[1, 2, 3]], [[4, 5, 6]], [[7, 8, 9]]]
 
    output
    [1, 2, 3, 4, 5, 6, 7, 8, 9]
@@ -180,7 +180,13 @@ two_power_of_five = power(2)(5) # 32
    {'country': 'SWEDEN', 'city': 'STOCKHOLM'},
    {'country': 'NORWAY', 'city': 'OSLO'}]
    ```
-4. Write a lambda function which can solve slope or y-intercept. 
+4. Change the following list of lists to flat list:
+   ```py
+   names = [[('Asabeneh', 'Yetaeyeh')], [('David', 'Smith')], [('Donald', 'Trump')], [('Bill', 'Gates')]]
+   output
+   ['Asabeneh Yetaeyeh', 'David Smith', 'Donald Trump', 'Bill Gates']
+   ```
+5. Write a lambda function which can solve slope or y-intercept. 
 
 [<< Part 4 ](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/readme10-12.md) | [Part 6 >>](<[#](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/readme16-18.md)>)
 
