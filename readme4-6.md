@@ -1136,4 +1136,4 @@ It is not possible to remove a single item in a tuple but it is possible to dele
   nordic_countries = ('Denmark', 'Finland','Iceland', 'Norway', 'Sweden')
   ```
 
-[<< Part 1](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/readme.md) | [Part 2 >>](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/readme7-9.md)
+[<< Part 1](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/readme.md) | [Part 3>>](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/readme7-9.md)
