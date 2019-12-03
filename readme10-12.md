@@ -1,16 +1,16 @@
 
 ![30DaysOfPython](./images/30DaysOfPython_banner3@2x.png)
 
-[Part 1: Day 1 - 3](https://github.com/Asabeneh/30-Days-Of-Python)  
-[Part 2: Day 4 - 6](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/readme4-6.md)  
-[Part 3: Day 7 - 9](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/readme7-9.md)  
-[Part 4: Day 10 - 12](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/readme10-12.md)  
-[Part 5: Day 13 - 15](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/readme13-15.md)  
-[Part 6: Day 16 - 18](#)  
-[Part 7: Day 19 - 21](#)  
-[Part 8: Day 22 - 24](#)  
-[Part 9: Day 25 - 27](#)  
-[Part 10:Day  28 - 30](#)
+🧳 [Part 1: Day 1 - 3](https://github.com/Asabeneh/30-Days-Of-Python)  
+🧳 [Part 2: Day 4 - 6](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/readme4-6.md)  
+🧳 [Part 3: Day 7 - 9](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/readme7-9.md)  
+🧳 [Part 4: Day 10 - 12](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/readme10-12.md)  
+🧳 [Part 5: Day 13 - 15](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/readme13-15.md)  
+🧳 [Part 6: Day 16 - 18](#)  
+🧳 [Part 7: Day 19 - 21](#)  
+🧳 [Part 8: Day 22 - 24](#)  
+🧳 [Part 9: Day 25 - 27](#)  
+🧳 [Part 10:Day  28 - 30](#)
 
 ---
 
