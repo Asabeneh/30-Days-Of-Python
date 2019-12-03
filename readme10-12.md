@@ -13,7 +13,6 @@
 [Part 10:Day  28 - 30](#)
 
 ---
-![30DaysOfPython](./images/30DaysOfPython_banner3@2x.png)
 
 - [📘 Day 10](#%f0%9f%93%98-day-10)
   - [Loops](#loops)

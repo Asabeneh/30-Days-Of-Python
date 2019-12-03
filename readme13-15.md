@@ -13,7 +13,6 @@
 [Part 10:Day  28 - 30](#)
 
 ---
-
 - [📘 Day 13](#%f0%9f%93%98-day-13)
   - [List Comprehension](#list-comprehension)
   - [Lambda Function](#lambda-function)

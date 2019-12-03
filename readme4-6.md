@@ -12,9 +12,7 @@
 [Part 9: Day 25 - 27](#)  
 [Part 10:Day  28 - 30](#)
 
----
-
-![30DaysOfPython](./images/30DaysOfPython_banner3@2x.png)
+---)
 - [Day 4](#day-4)
   - [String](#string)
     - [Creating a string](#creating-a-string)
