@@ -1,9 +1,21 @@
-[Part 1](https://github.com/Asabeneh/30-Days-Of-Python) | [Part 2](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/readme4-6.md)| [Part 3](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/readme7-9.md)| [Part 4](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/readme10-12.md)| [Part 5](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/readme13-15.md)
-***
 
 ![30DaysOfPython](./images/30DaysOfPython_banner3@2x.png)
 
-- [Day 10](#day-10)
+[Part 1: Day 1 - 3](https://github.com/Asabeneh/30-Days-Of-Python)  
+[Part 2: Day 4 - 6](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/readme4-6.md)  
+[Part 3: Day 7 - 9](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/readme7-9.md)  
+[Part 4: Day 10 - 12](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/readme10-12.md)  
+[Part 5: Day 13 - 15](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/readme13-15.md)  
+[Part 6: Day 16 - 18](#)  
+[Part 7: Day 19 - 21](#)  
+[Part 8: Day 22 - 24](#)  
+[Part 9: Day 25 - 27](#)  
+[Part 10:Day  28 - 30](#)
+
+---
+![30DaysOfPython](./images/30DaysOfPython_banner3@2x.png)
+
+- [📘 Day 10](#%f0%9f%93%98-day-10)
   - [Loops](#loops)
     - [While Loop](#while-loop)
     - [Break and continue](#break-and-continue)
@@ -13,8 +25,8 @@
     - [Nested for loop](#nested-for-loop)
     - [For Else](#for-else)
     - [Pass](#pass)
-  - [Exercises: Day 10](#exercises-day-10)
-- [Day 11](#day-11)
+  - [💻 Exercises: Day 10](#%f0%9f%92%bb-exercises-day-10)
+- [📘 Day 11](#%f0%9f%93%98-day-11)
   - [Functions](#functions)
     - [Defining a Function](#defining-a-function)
     - [Declaring and calling a function](#declaring-and-calling-a-function)
@@ -27,8 +39,8 @@
     - [Arbitrary number of arguments](#arbitrary-number-of-arguments)
     - [Default and arbitrary number of parameters in function](#default-and-arbitrary-number-of-parameters-in-function)
     - [Function as parameter of other function](#function-as-parameter-of-other-function)
-  - [Exercises: Day 11](#exercises-day-11)
-- [Day 12](#day-12)
+  - [💻 Exercises: Day 11](#%f0%9f%92%bb-exercises-day-11)
+- [📘 Day 12](#%f0%9f%93%98-day-12)
   - [Module](#module)
     - [What is a module](#what-is-a-module)
     - [Creating a module](#creating-a-module)
@@ -41,8 +53,8 @@
     - [Statistics Module](#statistics-module)
     - [Math Module](#math-module)
     - [Random Module](#random-module)
-  - [Exercises: Day 12](#exercises-day-12)
-# Day 10
+  - [💻 Exercises: Day 12](#%f0%9f%92%bb-exercises-day-12)
+# 📘 Day 10
 ## Loops
 Life is full of routines. In programming also we do lots of repetitive tasks. In order to handle repetitive task programming languages provide loops. Python programming language also provides the following types of two loops to handle looping. 
 1. while loop
@@ -309,7 +321,7 @@ If we want to execute some message when the loop ends, we use else.
 ### Pass
 In python after semicolon, it requires some code to run but we don't like to execute any code after if or for loop we can write the word *pass* to avoid error.
 
-## Exercises: Day 10
+## 💻 Exercises: Day 10
 1. Iterate 0 to 10 using for loop, do the same using while and do while loop.
 2. Iterate 10 to 0 using for loop, do the same using while and do while loop.
 3. Write a loop that makes seven calls to print() output the following triangle:
@@ -361,7 +373,7 @@ In python after semicolon, it requires some code to run but we don't like to exe
 11. Go to the data folder and use the countries.py file. Loop through the countries and extract all the countries containing the word *land*.
 12. This is a fruit list, ['banana', 'orange', 'mango', 'lemon'] reverse the order using loop.
 
-# Day 11
+# 📘 Day 11
 ## Functions
 So far we have seen many builtin python functions. In this section, we will focus on custom functions. What is a function? Before we start making functions, lets understand what function is and why we need function?
 ### Defining a Function
@@ -642,7 +654,7 @@ generate_groups('Team-1','Asabeneh','Brook','David','Eyob')
       return f(x)
   print(do_something(square_number, 3))
 ```
-## Exercises: Day 11
+## 💻 Exercises: Day 11
 1. Declare a function *add_two_numbers* and it takes two two parameters and it returns sum.
 2. Area of a circle is calculated as follows: area = π x r x r. Write a function which calculates *area_of_circle*.
 3. Write a function called add_all_nums which take arbitrary number of arguments and sum all the arguments.  Check if all the list items are number types. If not give return reasonable feedback.
@@ -681,7 +693,7 @@ Call your function *is_empty*, it takes a parameter and it checks if it is empty
 * Create a function called the most_spoken_languages the world and it returns the 10 or 20 most spoken countries in the world in descending order
 * Create a function called the most_populated_countries and it return 10 or 20 most populated countries in descending order.
 
-# Day 12
+# 📘 Day 12
 ## Module
 ### What is a module
 A module is a file containing set of codes or a set of function which can be included to an application. A module could be a file containing a single variable, or function, a big code base.  
@@ -819,7 +831,7 @@ By now you are familiar with importing modules. Lets do another more import to b
   print(random())   # it doesn't take argument and return 0 to 0.9999
   print(randint(5, 20)) # it returns a random number between 5 and 20
   ```
-## Exercises: Day 12
+## 💻 Exercises: Day 12
 1. Writ a function which generates a six digit random_user_id.
     ```py
       print(random_user_id());

@@ -1,8 +1,21 @@
-[Part 1](https://github.com/Asabeneh/30-Days-Of-Python) | [Part 2](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/readme4-6.md)| [Part 3](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/readme7-9.md)| [Part 4](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/readme10-12.md)| [Part 5](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/readme13-15.md)
-***
 
 ![30DaysOfPython](./images/30DaysOfPython_banner3@2x.png)
-- [Day 7](#day-7)
+
+[Part 1: Day 1 - 3](https://github.com/Asabeneh/30-Days-Of-Python)  
+[Part 2: Day 4 - 6](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/readme4-6.md)  
+[Part 3: Day 7 - 9](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/readme7-9.md)  
+[Part 4: Day 10 - 12](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/readme10-12.md)  
+[Part 5: Day 13 - 15](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/readme13-15.md)  
+[Part 6: Day 16 - 18](#)  
+[Part 7: Day 19 - 21](#)  
+[Part 8: Day 22 - 24](#)  
+[Part 9: Day 25 - 27](#)  
+[Part 10:Day  28 - 30](#)
+
+---
+
+![30DaysOfPython](./images/30DaysOfPython_banner3@2x.png)
+- [📘 Day 7](#%f0%9f%93%98-day-7)
   - [Set](#set)
     - [Creating a set](#creating-a-set)
     - [Getting set length](#getting-set-length)
@@ -19,8 +32,8 @@
     - [Checking difference between two sets](#checking-difference-between-two-sets)
     - [Finding Symmetric difference between two sets](#finding-symmetric-difference-between-two-sets)
     - [Joining set](#joining-set)
-  - [Exercises: Day 7](#exercises-day-7)
-- [Day 8](#day-8)
+  - [💻 Exercises: Day 7](#%f0%9f%92%bb-exercises-day-7)
+- [📘 Day 8](#%f0%9f%93%98-day-8)
   - [Dictionary](#dictionary)
     - [Creating a dictionary](#creating-a-dictionary)
     - [Dictionary Length](#dictionary-length)
@@ -35,8 +48,8 @@
     - [Copy a dictionary](#copy-a-dictionary)
     - [Getting dictionary keys as list](#getting-dictionary-keys-as-list)
     - [Getting dictionary values as list](#getting-dictionary-values-as-list)
-  - [Exercises: Day 8](#exercises-day-8)
-- [Day 9](#day-9)
+  - [💻 Exercises: Day 8](#%f0%9f%92%bb-exercises-day-8)
+- [📘 Day 9](#%f0%9f%93%98-day-9)
   - [Conditionals](#conditionals)
     - [If condition](#if-condition)
     - [If Else](#if-else)
@@ -44,10 +57,10 @@
     - [Short Hand](#short-hand)
     - [Nested condition](#nested-condition)
     - [If condition and and logical operator](#if-condition-and-and-logical-operator)
-    - [### If and or logical operator](#if-and-or-logical-operator)
-  - [Exercises: Day 9](#exercises-day-9)
+    - [If and or logical operator](#if-and-or-logical-operator)
+  - [💻 Exercises: Day 9](#%f0%9f%92%bb-exercises-day-9)
 
-# Day 7
+# 📘 Day 7
 ## Set
 Let me take you back to your elementary or high school Mathematics lesson. The Mathematics definition of set can be applied also in python. Set is a collection of unordered and unindexed distinct elements. In python set uses to store unique items, and it is possible to find the *union*, *intersection*, *difference*, *symmetric difference*, *subset*, *super set* and *disjoint set* among sets.
 ### Creating a set
@@ -281,7 +294,6 @@ st1 = {'item1', 'item2', 'item3', 'item4'}
 st2 = {'item2', 'item3'}
 # it mean (A\B)U(B)
 st2.symmetric_difference(st1) # {'item1', 'item4'}
-
 ```
 **Example:**
 ```py
@@ -292,7 +304,6 @@ whole_numbers.symmetric_difference(even_numbers) # {0, 6, 7, 8, 9, 10}
 python = {'p', 'y', 't', 'o','n'}
 dragon = {'d', 'r', 'a', 'g', 'o','n'}
 python.symmetric_difference(dragon)  # {'r', 't', 'p', 'y', 'g', 'a', 'd'}
-
 ```
 ### Joining set
 If two set do not have common item or items we call it disjoint set. We can check if two sets are joint or disjoint using *isdisjoint()* method.
@@ -314,7 +325,7 @@ dragon = {'d', 'r', 'a', 'g', 'o','n'}
 python.disjoint(dragon)  # False, there is common items {'o', 'n'}
 ```
 
-## Exercises: Day 7
+## 💻 Exercises: Day 7
 ```py
 # sets
 it_companies = {'Facebook', 'Google', 'Microsoft', 'Apple', 'IBM', 'Oracle', 'Amazon'}
@@ -338,7 +349,7 @@ age = [22, 19, 24, 25, 26, 24, 25, 24]
 14. Explain the difference among the following data types: string, list, tuple and set
 15. *I am a teacher and I love to inspire and teach people.* How many unique words have been used in the sentence.
 
-# Day 8
+# 📘 Day 8
 ## Dictionary
 A dictionary is a collection of unordered, modifiable(mutable) key value paired data type.
 ### Creating a dictionary
@@ -582,7 +593,7 @@ dct = {'key1':'item1', 'key2':'item2', 'key3':'item3', 'key4':'item4'}
 values = dct.values()
 print(values)     # dict_values(['item1', 'item2', 'item3', 'item4'])
 ```
-## Exercises: Day 8
+## 💻 Exercises: Day 8
 1. Create a an empty dictionary called dog
 2. Add name, color, breed, legs, age to the dog, dictionary
 3. Create a student dictionary and add first_name, last_name, gender, age, marital status, skills, country, city and address as key for the dictionary
@@ -596,7 +607,7 @@ print(values)     # dict_values(['item1', 'item2', 'item3', 'item4'])
 11. Delete the dictionary completely
 
 
-# Day 9
+# 📘 Day 9
 ## Conditionals
 By default , statements in python script executed sequentially from top to bottom. If the processing logic require so, the sequential flow of execution can be altered in two way:
 * Conditional execution: a block of one or more statements will be executed if a certain expression is true
@@ -713,7 +724,7 @@ elif a == 0:
 else:
     print('A negative number')
 ```
-### ### If and or logical operator
+### If and or logical operator
 ```py
 # syntax
 if condition or condition:
@@ -730,7 +741,7 @@ else:
     print('A negative number')
 ```
 
-## Exercises: Day 9
+## 💻 Exercises: Day 9
 1. Get user input using input(“Enter your age:”). If user is 18 or older , give feedback:You are old enough to drive but if not 18 give feedback to wait for the years he supposed to wait for. Output:
     ```sh
     Enter your age: 30

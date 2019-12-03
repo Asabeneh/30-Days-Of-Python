@@ -1,17 +1,27 @@
-[Part 1](https://github.com/Asabeneh/30-Days-Of-Python) | [Part 2](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/readme4-6.md)| [Part 3](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/readme7-9.md)| [Part 4](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/readme10-12.md)| [Part 5](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/readme13-15.md)
-
----
 
 ![30DaysOfPython](./images/30DaysOfPython_banner3@2x.png)
 
-- [Day 13](#day-13)
+[Part 1: Day 1 - 3](https://github.com/Asabeneh/30-Days-Of-Python)  
+[Part 2: Day 4 - 6](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/readme4-6.md)  
+[Part 3: Day 7 - 9](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/readme7-9.md)  
+[Part 4: Day 10 - 12](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/readme10-12.md)  
+[Part 5: Day 13 - 15](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/readme13-15.md)  
+[Part 6: Day 16 - 18](#)  
+[Part 7: Day 19 - 21](#)  
+[Part 8: Day 22 - 24](#)  
+[Part 9: Day 25 - 27](#)  
+[Part 10:Day  28 - 30](#)
+
+---
+
+- [📘 Day 13](#%f0%9f%93%98-day-13)
   - [List Comprehension](#list-comprehension)
   - [Lambda Function](#lambda-function)
     - [Creating a lambda function](#creating-a-lambda-function)
     - [Lambda function inside other function](#lambda-function-inside-other-function)
-  - [Exercises: Day 13](#exercises-day-13)
-- [Day 14](#day-14)
-- [Higher Order Functions](#higher-order-functions)
+  - [💻 Exercises: Day 13](#%f0%9f%92%bb-exercises-day-13)
+- [📘 Day 14](#%f0%9f%93%98-day-14)
+  - [Higher Order Functions](#higher-order-functions)
     - [Function as a parameter](#function-as-a-parameter)
     - [Function as a return value](#function-as-a-return-value)
   - [Python closures](#python-closures)
@@ -23,9 +33,22 @@
     - [Python - Map Function](#python---map-function)
     - [Python - Filter Function](#python---filter-function)
     - [Python - Reduce Function](#python---reduce-function)
-  - [Exercises: Day 14](#exercises-day-14)
+  - [💻 Exercises: Day 14](#%f0%9f%92%bb-exercises-day-14)
+- [📘 Day 15](#%f0%9f%93%98-day-15)
+  - [Python Error Types](#python-error-types)
+    - [SyntaxError](#syntaxerror)
+    - [NameError](#nameerror)
+    - [IndexError](#indexerror)
+    - [ModuleNotFoundError](#modulenotfounderror)
+    - [AttributeError](#attributeerror)
+    - [KeyError](#keyerror)
+    - [TypeError](#typeerror)
+    - [ImportError](#importerror)
+    - [ValueError](#valueerror)
+    - [ZeroDivisionError](#zerodivisionerror)
+  - [💻 Exercises: Day 15](#%f0%9f%92%bb-exercises-day-15)
 
-# Day 13
+# 📘 Day 13
 
 ## List Comprehension
 
@@ -146,7 +169,7 @@ cube = power(2)(3) # 8
 two_power_of_five = power(2)(5) # 32
 ```
 
-## Exercises: Day 13
+## 💻 Exercises: Day 13
 
 1. Filter only negative or zero in the list using list comprehension
    ```py
@@ -197,9 +220,9 @@ two_power_of_five = power(2)(5) # 32
    ```
 1. Write a lambda function which can solve slope or y-intercept.
 
-# Day 14
+# 📘 Day 14
 
-# Higher Order Functions
+## Higher Order Functions
 
 In python functions are treated as first class citizens, allowing you to perform the following operations on functions:
 
@@ -476,7 +499,7 @@ print(list(long_names))         # ['Asabeneh']
 
 ### Python - Reduce Function
 
-The *reduce()* function is defined in the functools module and we should import it from this module.Like map and filter it takes two parameters, a function and an iterable. However, it doesn't return another iterable, instead it returns a single value.
+The _reduce()_ function is defined in the functools module and we should import it from this module.Like map and filter it takes two parameters, a function and an iterable. However, it doesn't return another iterable, instead it returns a single value.
 
 **Example:2**
 
@@ -489,12 +512,14 @@ total = reduce(add_two, numbers_str)
 print(total)    # 15
 ```
 
-## Exercises: Day 14
+## 💻 Exercises: Day 14
+
 ```py
 countries = ['Estonia', 'Finland', 'Sweden', 'Denmark', 'Norway', 'Iceland']
 names = ['Asabeneh', 'Lidiya', 'Ermias', 'Abraham']
 numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 ```
+
 1. Explain the difference between map, filter, and reduce.
 1. Explain the difference between higher order function, closure and decorator
 1. Define a call function before map, filter or reduce, see examples.
@@ -509,18 +534,357 @@ numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 1. Use filter to filter out countries containing six letters and more in the country list.
 1. Use filter to filter out country start with 'E'
 1. Chain two or more list iterators(eg. arr.map(callback).filter(callback).reduce(callback))
-1. Declare a function called getStringLists which takes an list as a parameter and then returns an list only with string items.
+1. Declare a function called get_string_lists which takes an list as a parameter and then returns an list only with string items.
 1. Use reduce to sum all the numbers in the numbers list.
 1. Use reduce to concatenate all the countries and to produce this sentence: Estonia, Finland, Sweden, Denmark, Norway, and IceLand are north European countries
-2. Declare a function called categorize_countries which returns an list of countries which have some common pattern(you find the countries list in this repository as countries.js(eg 'land', 'ia', 'island', 'stan')).
-3. Create a function which return an list of objects, which is the letter and the number of times the letter use to start with a name of a country.
-4. Declare a get_first_ten_countries function and return an list of ten countries. Use different functional programming to work on the countries.js list
-5. Declare a get_last_ten_countries function which which returns the last ten countries in the countries list.
-6. Find out which letter is used many times as initial for a country name from the countries list(eg. Finland, Fiji, France etc)
-7. Use the countries_data.py file information, in the data folder. Sort countries by name, by capital, by population
-8.  Sort out the ten most spoken languages by location.
-9.  Sort out the ten most populated countries.
+1. Declare a function called categorize_countries which returns an list of countries which have some common pattern(you find the [countries list](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/data/countries.py) in this repository as countries.js(eg 'land', 'ia', 'island', 'stan')).
+1. Create a function which return a list of dictionary, which is the letter and the number of times the letter used to start a name of a country.
+1. Declare a get_first_ten_countries function and return an list of ten countries from the countries.js list in the data folder.
+1. Declare a get_last_ten_countries function which which returns the last ten countries in the countries list.
+1. Find out which letter is used many times as initial for a country name from the [countries list](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/data/countries-data.py)(eg. Finland, Fiji, France etc)
+1. Use the countries_data.py file information, in the data folder.
+   - Sort countries by name, by capital, by population
+   - Sort out the ten most spoken languages by location.
+   - Sort out the ten most populated countries.
 
+# 📘 Day 15
+
+## Python Error Types
+
+When we write code it common that we make a typo or other common errors. Based on the type of error we make python raise a kind of error which suggests us to fix it by reading the feedback. Understanding different types of errors in a certain programming language can help us to debug our code quick and in return it makes us a better programmer.
+
+Let's see the most common error types step by step by open our python interactive shell. Go to your you computer terminal and write, python, the python interactive shell will be opened.
+
+### SyntaxError
+
+**Example 1: SyntaxError**
+
+```py
+asabeneh@Asabeneh:~$ python
+Python 3.7.5 (default, Nov  1 2019, 02:16:32)
+[Clang 11.0.0 (clang-1100.0.33.8)] on darwin
+Type "help", "copyright", "credits" or "license" for more information.
+>>> print 'hello world'
+  File "<stdin>", line 1
+    print 'hello world'
+                      ^
+SyntaxError: Missing parentheses in call to 'print'. Did you mean print('hello world')?
+>>>
+```
+
+As you can see we made a syntax error because we forgot to enclose the string with parenthesis and python is already suggested us to fix. Let's fix it.
+
+```py
+Last login: Tue Dec  3 15:20:41 on ttys002
+asabeneh@Asabeneh:~$ python
+Python 3.7.5 (default, Nov  1 2019, 02:16:32)
+[Clang 11.0.0 (clang-1100.0.33.8)] on darwin
+Type "help", "copyright", "credits" or "license" for more information.
+>>> print 'hello world'
+  File "<stdin>", line 1
+    print 'hello world'
+                      ^
+SyntaxError: Missing parentheses in call to 'print'. Did you mean print('hello world')?
+>>> print('hello world')
+hello world
+>>>
+```
+
+The error was a _SyntaxError_ and we fixed and our code executed. Let see more error types.
+
+### NameError
+
+**Example 1: NameError**
+
+```py
+Last login: Tue Dec  3 15:20:41 on ttys002
+asabeneh@Asabeneh:~$ python
+Python 3.7.5 (default, Nov  1 2019, 02:16:32)
+[Clang 11.0.0 (clang-1100.0.33.8)] on darwin
+Type "help", "copyright", "credits" or "license" for more information.
+>>> print(age)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'age' is not defined
+>>>
+```
+
+As you can see from the above error, it says that name age is not defined. Yes, it is true. We did define an age variable but we were trying to print it as if we declare it. Now, lets fix this by declaring age variable and assigning with a value.
+
+```py
+Last login: Tue Dec  3 15:20:41 on ttys002
+asabeneh@Asabeneh:~$ python
+Python 3.7.5 (default, Nov  1 2019, 02:16:32)
+[Clang 11.0.0 (clang-1100.0.33.8)] on darwin
+Type "help", "copyright", "credits" or "license" for more information.
+>>> print(age)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'age' is not defined
+>>> age = 25
+>>> print(age)
+25
+>>>
+```
+
+The type of error was a _NameError_. We debugged the error by defining the variable name.
+
+### IndexError
+
+**Example 1: IndexError**
+
+```py
+Last login: Tue Dec  3 15:20:41 on ttys002
+asabeneh@Asabeneh:~$ python
+Python 3.7.5 (default, Nov  1 2019, 02:16:32)
+[Clang 11.0.0 (clang-1100.0.33.8)] on darwin
+Type "help", "copyright", "credits" or "license" for more information.
+>>> numbers = [1, 2, 3, 4, 5]
+>>> numbers[5]
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+IndexError: list index out of range
+>>>
+```
+
+In the above example, python raised an _IndexError_ because the list has only 0 to 4 indexes, so it was out of range.
+
+### ModuleNotFoundError
+
+**Example 1: ModuleNotFoundError**
+
+```py
+Last login: Tue Dec  3 15:20:41 on ttys002
+asabeneh@Asabeneh:~$ python
+Python 3.7.5 (default, Nov  1 2019, 02:16:32)
+[Clang 11.0.0 (clang-1100.0.33.8)] on darwin
+Type "help", "copyright", "credits" or "license" for more information.
+>>> import maths
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+ModuleNotFoundError: No module named 'maths'
+>>>
+```
+
+In the above example, I added extra s to math deliberately and _ModuleNotFoundError_ was raised. Lets fix the error by removing the extra added s from math.
+
+```py
+Last login: Tue Dec  3 15:20:41 on ttys002
+asabeneh@Asabeneh:~$ python
+Python 3.7.5 (default, Nov  1 2019, 02:16:32)
+[Clang 11.0.0 (clang-1100.0.33.8)] on darwin
+Type "help", "copyright", "credits" or "license" for more information.
+>>> import maths
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+ModuleNotFoundError: No module named 'maths'
+>>> import math
+>>>
+```
+
+We fixed the error by removing the extra s. Now let's use some of the function from math module.
+
+### AttributeError
+
+**Example 1: AttributeError**
+
+```py
+Last login: Tue Dec  3 15:20:41 on ttys002
+asabeneh@Asabeneh:~$ python
+Python 3.7.5 (default, Nov  1 2019, 02:16:32)
+[Clang 11.0.0 (clang-1100.0.33.8)] on darwin
+Type "help", "copyright", "credits" or "license" for more information.
+>>> import maths
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+ModuleNotFoundError: No module named 'maths'
+>>> import math
+>>> math.PI
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+AttributeError: module 'math' has no attribute 'PI'
+>>>
+```
+
+As you can see, now again I made a mistake instead of pi, I tried to call a PI function from maths module that raise an attribute error, it means the function does not exist in the module. Lets fix it by change from PI to pi.
+
+```py
+Last login: Tue Dec  3 15:20:41 on ttys002
+asabeneh@Asabeneh:~$ python
+Python 3.7.5 (default, Nov  1 2019, 02:16:32)
+[Clang 11.0.0 (clang-1100.0.33.8)] on darwin
+Type "help", "copyright", "credits" or "license" for more information.
+>>> import maths
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+ModuleNotFoundError: No module named 'maths'
+>>> import math
+>>> math.PI
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+AttributeError: module 'math' has no attribute 'PI'
+>>> math.pi
+3.141592653589793
+>>>
+```
+
+Now, when we call pi from the math module we got the result.
+
+### KeyError
+
+**Example 1: KeyError**
+
+```py
+Last login: Tue Dec  3 15:20:41 on ttys002
+asabeneh@Asabeneh:~$ python
+Python 3.7.5 (default, Nov  1 2019, 02:16:32)
+[Clang 11.0.0 (clang-1100.0.33.8)] on darwin
+Type "help", "copyright", "credits" or "license" for more information.
+>>> users = {'name':'Asab', 'age':250, 'country':'Finland'}
+>>> users['name']
+'Asab'
+>>> users['county']
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+KeyError: 'county'
+>>>
+```
+
+As you can see, there was a typo in the key used to get the dictionary value. so, this is a key error and it is straight forward what to fix. Lets fix this.
+
+```py
+Last login: Tue Dec  3 15:20:41 on ttys002
+asabeneh@Asabeneh:~$ python
+Python 3.7.5 (default, Nov  1 2019, 02:16:32)
+[Clang 11.0.0 (clang-1100.0.33.8)] on darwin
+Type "help", "copyright", "credits" or "license" for more information.
+>>> user = {'name':'Asab', 'age':250, 'country':'Finland'}
+>>> user['name']
+'Asab'
+>>> user['county']
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+KeyError: 'county'
+>>> user['country']
+'Finland'
+>>>
+```
+
+We debug our error and our code ran and we got the value.
+
+### TypeError
+
+**Example 1: TypeError**
+
+```py
+Last login: Tue Dec  3 15:20:41 on ttys002
+asabeneh@Asabeneh:~$ python
+Python 3.7.5 (default, Nov  1 2019, 02:16:32)
+[Clang 11.0.0 (clang-1100.0.33.8)] on darwin
+Type "help", "copyright", "credits" or "license" for more information.
+>>> 4 + '3'
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: unsupported operand type(s) for +: 'int' and 'str'
+>>>
+```
+
+In the above example, a TypeError is raised because we can not add number and string. First, we should convert the string to int or float. Let's fix this error.
+
+```py
+Last login: Tue Dec  3 15:20:41 on ttys002
+asabeneh@Asabeneh:~$ python
+Python 3.7.5 (default, Nov  1 2019, 02:16:32)
+[Clang 11.0.0 (clang-1100.0.33.8)] on darwin
+Type "help", "copyright", "credits" or "license" for more information.
+>>> 4 + '3'
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: unsupported operand type(s) for +: 'int' and 'str'
+>>> 4 + int('3')
+7
+>>> 4 + float('3')
+7.0
+>>>
+```
+
+The remove the error and our and we got the result we expected.
+
+### ImportError
+
+**Example 1: TypeError**
+
+```py
+Last login: Tue Dec  3 15:20:41 on ttys002
+asabeneh@Asabeneh:~$ python
+Python 3.7.5 (default, Nov  1 2019, 02:16:32)
+[Clang 11.0.0 (clang-1100.0.33.8)] on darwin
+Type "help", "copyright", "credits" or "license" for more information.
+>>> from math import power
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+ImportError: cannot import name 'power' from 'math'
+>>>
+```
+
+There is no function called power in the math module instead we have _pow_. Lets correct it
+
+```py
+Last login: Tue Dec  3 15:20:41 on ttys002
+asabeneh@Asabeneh:~$ python
+Python 3.7.5 (default, Nov  1 2019, 02:16:32)
+[Clang 11.0.0 (clang-1100.0.33.8)] on darwin
+Type "help", "copyright", "credits" or "license" for more information.
+>>> from math import power
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+ImportError: cannot import name 'power' from 'math'
+>>> from math import pow
+>>> pow(2,3)
+8.0
+>>>
+```
+
+### ValueError
+
+```py
+Last login: Tue Dec  3 15:20:41 on ttys002
+asabeneh@Asabeneh:~$ python
+Python 3.7.5 (default, Nov  1 2019, 02:16:32)
+[Clang 11.0.0 (clang-1100.0.33.8)] on darwin
+Type "help", "copyright", "credits" or "license" for more information.
+>>> int('12a')
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+ValueError: invalid literal for int() with base 10: '12a'
+>>>
+```
+
+We can not change string to a number.
+
+### ZeroDivisionError
+
+```py
+Last login: Tue Dec  3 15:20:41 on ttys002
+asabeneh@Asabeneh:~$ python
+Python 3.7.5 (default, Nov  1 2019, 02:16:32)
+[Clang 11.0.0 (clang-1100.0.33.8)] on darwin
+Type "help", "copyright", "credits" or "license" for more information.
+>>> 1/0
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+ZeroDivisionError: division by zero
+>>>
+```
+
+We can not divide a number by zero.
+
+We have covered some of the python error types, if you want to check more about it check the python documentation about python error types.
+If you are good at reading the error types then you will be able to fix your bugs fast and you will be also a better programmer.
+
+## 💻 Exercises: Day 15
+
+1. Open you python interactive shell and try all the examples covered in this section.
 
 [<< Part 4 ](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/readme10-12.md) | [Part 6 >>](<[#](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/readme16-18.md)>)
 

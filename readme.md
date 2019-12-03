@@ -1,8 +1,21 @@
-[Part 1](https://github.com/Asabeneh/30-Days-Of-Python) | [Part 2](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/readme4-6.md)| [Part 3](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/readme7-9.md)| [Part 4](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/readme10-12.md)| [Part 5](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/readme13-15.md)
-***
 
 ![30DaysOfPython](./images/30DaysOfPython_banner3@2x.png)
-- [Day 1](#day-1)
+
+[Part 1: Day 1 - 3](https://github.com/Asabeneh/30-Days-Of-Python)  
+[Part 2: Day 4 - 6](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/readme4-6.md)  
+[Part 3: Day 7 - 9](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/readme7-9.md)  
+[Part 4: Day 10 - 12](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/readme10-12.md)  
+[Part 5: Day 13 - 15](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/readme13-15.md)  
+[Part 6: Day 16 - 18](#)  
+[Part 7: Day 19 - 21](#)  
+[Part 8: Day 22 - 24](#)  
+[Part 9: Day 25 - 27](#)  
+[Part 10:Day  28 - 30](#)
+
+---
+
+![30DaysOfPython](./images/30DaysOfPython_banner3@2x.png)
+- [📘 Day 1](#%f0%9f%93%98-day-1)
   - [Welcome](#welcome)
   - [Introduction](#introduction)
   - [Why Python ?](#why-python)
@@ -25,24 +38,24 @@
       - [Set](#set)
     - [Checking Data types](#checking-data-types)
     - [Python File](#python-file)
-  - [Exercises - Day 1](#exercises---day-1)
-- [Day 2](#day-2)
+  - [💻 Exercises - Day 1](#%f0%9f%92%bb-exercises---day-1)
+- [📘 Day 2](#%f0%9f%93%98-day-2)
   - [Built in functions](#built-in-functions)
   - [Variables](#variables)
   - [Data Types](#data-types)
   - [Checking Data types and Casting](#checking-data-types-and-casting)
   - [Number](#number-1)
-  - [Exercises - Day 2](#exercises---day-2)
-- [Day 3](#day-3)
+  - [💻 Exercises - Day 2](#%f0%9f%92%bb-exercises---day-2)
+- [📘 Day 3](#%f0%9f%93%98-day-3)
   - [Boolean](#boolean)
   - [Operators:](#operators)
     - [Assignment Operators:](#assignment-operators)
     - [Arithmetic Operators:](#arithmetic-operators)
     - [Comparison Operators](#comparison-operators)
     - [Logical Operators](#logical-operators)
-  - [Exercises - Day 3](#exercises---day-3)
+  - [💻 Exercises - Day 3](#%f0%9f%92%bb-exercises---day-3)
 
-# Day 1
+# 📘 Day 1
 ## Welcome
 **Congratulations** for deciding to participate in a ***30 days of Python*** programming challenge . In this challenge you will learn everything you need to be a python programmer and the whole concepts of programming. In the end of the challenge you will get a ***30DaysOfPython*** programming challenge certificate. [Join the telegram channel](https://t.me/ThirtyDaysOfPython)
 ## Introduction
@@ -288,7 +301,7 @@ print(type({9.8, 3.14, 2.7}))    # Tuple
 ![Running python script](./images/running_python_script.png)
 
 
-## Exercises - Day 1
+## 💻 Exercises - Day 1
   1. Check the python version you are using
   2. Open the python interactive shell and do  the following operations. The operands are 3 and 4. Check the example above
      - addition(+)
@@ -314,7 +327,7 @@ print(type({9.8, 3.14, 2.7}))    # Tuple
     - Your country
  3. Create a folder name day_1 inside 30DaysOfPython folder. Inside day_1 folder, create a file python file helloword.py and repeat question 1, 2, 3 and 4. Remember to use *print()* when you are working on a python file. Navigate to the directory where you saved your file, and run it.
 
-# Day 2
+# 📘 Day 2
 ## Built in functions
 In python we have lots of built in functions. Built-in functions are globally available for your use. Some  of the most commonly used python built-in functions are the following: *print()*,  *len()*,  *type()*,  *int()*,  *float()*,  *str()*,  *input()*,  *list()*,  *dict()*,  *min()*,  *max()*,  *sum()*,  *sorted()*,  *open()*,  *file()*,  *help()*, and *dir()*.  In the following table you will see an exhaustive list of python built in functions taken from [python documentation](https://docs.python.org/2/library/functions.html).
 
@@ -333,7 +346,6 @@ As you can see from the above terminal, python has reserved words. We do not use
 I believe,  by now you are familiar with built-in functions.  Let's do one more practice of built-in functions and we will move on to the next section
 
 ![Min Max Sum](images/builtin-functional-final.png)
-
 
 ## Variables
 Variables store data in a computer memory.  Mnemonic variables are recommend to use in many programming languages.  A variable refers to an a memory address in which a data is stored.
@@ -498,8 +510,6 @@ print(first_name)                    # 'Asabeneh'
 first_name_to_list = list(first_name) 
 print(first_name_to_list)            # ['A', 's', 'a', 'b', 'e', 'n', 'e', 'h']
 ```
-
-
  ## Number
   Numbers are python data types. 
   1. Integers: Integer(negative, zero and positive) numbers
@@ -515,7 +525,7 @@ print(first_name_to_list)            # ['A', 's', 'a', 'b', 'e', 'n', 'e', 'h']
     Example:
         1 + j, 2 + 4j, 1 - 1j
 
-## Exercises - Day 2
+## 💻 Exercises - Day 2
 1. Inside 30DaysOfPython create a folder called day_2. Inside this folder create a file name called variables.py
 2. Writ a python comment saying 'Day 2: 30 Days of python programming'
 3. Declare a first name variable and assign a value to it
@@ -547,7 +557,7 @@ print(first_name_to_list)            # ['A', 's', 'a', 'b', 'e', 'n', 'e', 'h']
 19. Use the built-in input function to get first name, last name, country and age from a user and store the value to their corresponding variable names
 20. Run help('keywords') on python shell or in your file check the reserved words
 
-# Day 3
+# 📘 Day 3
 ## Boolean
 
 A boolean data type represents one of the two values:*True* or *False*. The use of these data types will be clear when you start the comparison operator. The first letter **T** for True and **F** for False should be capital unlike JavaScript.
@@ -741,7 +751,7 @@ print(not not True)  # True
 print(not not False) # False
 ```
 
-## Exercises - Day 3
+## 💻 Exercises - Day 3
 1. Declare your age as integer variable
 2. Declare your height as a float variable
 3. Declare a complex number variable

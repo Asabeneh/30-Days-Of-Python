@@ -1,5 +1,18 @@
-[Part 1](https://github.com/Asabeneh/30-Days-Of-Python) | [Part 2](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/readme4-6.md)| [Part 3](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/readme7-9.md)| [Part 4](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/readme10-12.md)| [Part 5](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/readme13-15.md)
-***
+
+![30DaysOfPython](./images/30DaysOfPython_banner3@2x.png)
+
+[Part 1: Day 1 - 3](https://github.com/Asabeneh/30-Days-Of-Python)  
+[Part 2: Day 4 - 6](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/readme4-6.md)  
+[Part 3: Day 7 - 9](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/readme7-9.md)  
+[Part 4: Day 10 - 12](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/readme10-12.md)  
+[Part 5: Day 13 - 15](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/readme13-15.md)  
+[Part 6: Day 16 - 18](#)  
+[Part 7: Day 19 - 21](#)  
+[Part 8: Day 22 - 24](#)  
+[Part 9: Day 25 - 27](#)  
+[Part 10:Day  28 - 30](#)
+
+---
 
 ![30DaysOfPython](./images/30DaysOfPython_banner3@2x.png)
 - [Day 4](#day-4)
@@ -18,7 +31,7 @@
       - [Reversing a string](#reversing-a-string)
       - [Skipping characters while slicing](#skipping-characters-while-slicing)
     - [String Methods](#string-methods)
-  - [Exercises - Day 4](#exercises---day-4)
+  - [💻 Exercises - Day 4](#%f0%9f%92%bb-exercises---day-4)
 - [Day 5](#day-5)
   - [Lists](#lists)
     - [How to create a list](#how-to-create-a-list)
@@ -40,7 +53,7 @@
     - [Finding index of an item](#finding-index-of-an-item)
     - [Reversing a list](#reversing-a-list)
     - [Sorting list items](#sorting-list-items)
-  - [Exercises: Day 5](#exercises-day-5)
+  - [💻 Exercises: Day 5](#%f0%9f%92%bb-exercises-day-5)
 - [Day 6:](#day-6)
   - [Tuple](#tuple)
     - [Creating Tuple](#creating-tuple)
@@ -51,7 +64,7 @@
     - [Checking an item in a list](#checking-an-item-in-a-list)
     - [Joining tuples](#joining-tuples)
     - [Deleting tuple](#deleting-tuple)
-  - [Exercises: Day 6](#exercises-day-6)
+  - [💻 Exercises: Day 6](#%f0%9f%92%bb-exercises-day-6)
 # Day 4
 ## String
 Text is a string data type. Any data type written as text is a string. Any data under single or double quote are strings. There are different string methods and built-in functions to deal with string data types. To check the length of a string use the len() method.
@@ -434,7 +447,7 @@ challenge = '30 days of python'
 print(challenge.startswith('thirty')) # False
 ```
 
-## Exercises - Day 4
+## 💻 Exercises - Day 4
 1. Concatenate the string 'Thirty', 'Days', 'Of', 'Python' to a single string, 'Thirty Days Of Python'
 2. Concatenate the string 'Coding', 'For' , 'All' to a single string, 'Coding For All'
 3. Declare a variable name company and assign it to an initial value "Coding For All.
@@ -908,7 +921,7 @@ To sort list we can use *sort() method or *sorted()* builtin function. The sort(
   print(fruits)     # ['orange', 'mango', 'lemon', 'banana']          
   ```
   
-## Exercises: Day 5
+## 💻 Exercises: Day 5
 1. Declare an empty list
 2. Declare a list with more than 5 number of items
 3. Find the length of your list
@@ -1108,7 +1121,7 @@ It is not possible to remove a single item in a tuple but it is possible to dele
   ```
 
 
-## Exercises: Day 6
+## 💻 Exercises: Day 6
 1. Create an empty tuple
 2. Create a tuple containing name of your sisters and your brothers
 3. Join brothers and sisters tuples and assign it to siblings
