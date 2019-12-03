@@ -592,8 +592,9 @@ Sometimes we pass default values to parameters, when we invoke the function if w
 ````
 **Example:**
 ```py
-  message = name + ', welcome to Python for Everyone!'
-  return message
+  def greetings (name = 'Peter'):
+    message = name + ', welcome to Python for Everyone!'
+    return message
   print(greetings())
   print(greetings('Asabeneh'))
 
