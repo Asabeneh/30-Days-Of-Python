@@ -160,7 +160,10 @@ print("t3 =", t3)
 1. Today is 5 December, 2019. Change this time string to time.
 1. Calculate the time difference from now to new year.
 1. Calculate the time difference between 1 January 1970 and now.
-1. 
+1. Think about for what you can you use datetime module, 
+    * Time series analysis 
+    * To get time stamp of any activities in an application
+    * And many other users
 [<< Part 5 ](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/readme13-15.md) | [Part 7 >>](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/readme19-21.md)
 
 ---
