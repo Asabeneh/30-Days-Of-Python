@@ -21,7 +21,7 @@
     - [Time object to represent time](#time-object-to-represent-time)
     - [Difference between two datetime](#difference-between-two-datetime)
     - [Difference between two dates and times using timedelata](#difference-between-two-dates-and-times-using-timedelata)
-  - [Exercises: Day 16](#exercises-day-16)
+  - [💻 Exercises: Day 16](#%f0%9f%92%bb-exercises-day-16)
 
 # 📘 Day 16
 
@@ -164,7 +164,7 @@ print("t3 =", t3)
     date_object = 2019-12-05 00:00:00
     t3 = 86 days, 22:56:50
 ```
-## Exercises: Day 16
+## 💻  Exercises: Day 16
 1. Get the current day, month, year, hour, minute and timestamp from time date module
 1. Format the current date using in this format: "%m/%d/%Y, %H:%M:%S")
 1. Today is 5 December, 2019. Change this time string to time.
