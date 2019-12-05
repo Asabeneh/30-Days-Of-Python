@@ -84,7 +84,7 @@ Here are all the *strftime* symbols we use to format time. A reference of all th
 ### String to time using strptime
 ```py
 from datetime import datetime
-date_string = "21 June, 2018"
+date_string = "5 December, 2019"
 print("date_string =", date_string)
 date_object = datetime.strptime(date_string, "%d %B, %Y")
 print("date_object =", date_object)
@@ -127,6 +127,20 @@ b = 10:30:50
 c = 10:30:50
 d = 10:30:50.200555
 
+### Difference between two datetime
+```py
+today = date(year=2019, month=12, day=5)
+new_year = date(year=2020, month=1, day=1)
+time_left_for_newyear = new_year - today
+# Time left for new year:  27 days, 0:00:00
+print('Time left for new year: ', time_left_for_newyear)
+
+t1 = datetime(year = 2019, month = 12, day = 5, hour = 0, minute = 59, second = 0)
+t2 = datetime(year = 2020, month = 1, day = 1, hour = 0, minute = 0, second = 0)
+diff = t2 - t1
+print('Time left for new year:', diff) # Time left for new year: 26 days, 23: 01: 00
+```
+
 ### Difference between two dates and times using timedelata
 ```py
 from datetime import timedelta
@@ -136,12 +150,17 @@ t3 = t1 - t2
 print("t3 =", t3)
 ```
 ```sh
-date_string = 5 December, 2019
-date_object = 2019-12-05 00:00:00
-t3 = 86 days, 22:56:50
+    date_string = 5 December, 2019
+    date_object = 2019-12-05 00:00:00
+    t3 = 86 days, 22:56:50
 ```
 ## Exercises: Day 16
-1. Practice the example. We will use the time when we start projects.
+1. Get the current day, month, year, hour, minute and timestamp from time date module
+1. Format the current date using in this format: "%m/%d/%Y, %H:%M:%S")
+1. Today is 5 December, 2019. Change this time string to time.
+1. Calculate the time difference from now to new year.
+1. Calculate the time difference between 1 January 1970 and now.
+1. 
 [<< Part 5 ](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/readme13-15.md) | [Part 7 >>](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/readme19-21.md)
 
 ---
