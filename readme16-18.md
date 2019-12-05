@@ -12,6 +12,16 @@
 🧳 [Part 10: Day 28 - 30](#) 🔒
 
 ---
+- [📘 Day 16](#%f0%9f%93%98-day-16)
+  - [Python Datetime](#python-datetime)
+    - [Getting the datetime information](#getting-the-datetime-information)
+    - [Formating datetime output using strftime](#formating-datetime-output-using-strftime)
+    - [String to time using strptime](#string-to-time-using-strptime)
+    - [Use date from datetime](#use-date-from-datetime)
+    - [Time object to represent time](#time-object-to-represent-time)
+    - [Difference between two datetime](#difference-between-two-datetime)
+    - [Difference between two dates and times using timedelata](#difference-between-two-dates-and-times-using-timedelata)
+  - [Exercises: Day 16](#exercises-day-16)
 
 # 📘 Day 16
 
