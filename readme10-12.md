@@ -669,12 +669,34 @@ generate_groups('Team-1','Asabeneh','Brook','David','Eyob')
       print(reverse_list1.(["A", "B", "C"]))
       # ["C", "B", "A"]
   ```
-10. Declare a function name capitalize_list_items. It takes list as a parameter and it returns the capitalized list of the elements
-11. Declare a function name add_item. It takes an item parameter and it returns a list after adding the element
-Declare a function name remove_item. It takes an index parameter and it returns a list after removing an element
-12. Declare a function name sum_of_numbers. It takes a number parameter and it adds all the numbers in that range.
-13. Declare a function name sum_of_odds. It takes a number parameter and it adds all the odd numbers in that range.
-14. Declare a function name sum_of_even. It takes a number parameter and it adds all the even numbers in that - range.
+10. Declare a function name capitalize_list_items. It takes list as a parameter and it returns the capitalized list of the items
+11. 
+* Declare a function name add_item. It takes a list and an item parameter and it returns a list after adding the item
+  
+```py
+  food_staff = ['Potato', 'Tomato', 'Mango', 'Milk'];
+  print(  add_item(food_staff, 'Meat'))     # ['Potato', 'Tomato', 'Mango', 'Milk','Meat'];
+  numbers = [2, 3,7,9];
+  print(add_item(numbers, 5))      [2, 3,7,9,5]
+```
+* Declare a function name remove_item. It takes a list and an item parameter and it returns a list after removing an item.
+  
+```py
+  food_staff = ['Potato', 'Tomato', 'Mango', 'Milk'];
+  print(remove_item(food_staff, 'Mango'))  # ['Potato', 'Tomato', 'Milk'];
+  numbers = [2, 3,7, 9];
+  print(remove_item(numbers, 3))  # [2, 7, 9]
+```
+1.  Declare a function name sum_of_numbers. It takes a number parameter and it adds all the numbers in that range.
+```py
+print(sum_of_numbers(5))  # 15
+print(sum_all_numbers(10)) # 55
+print(sum_all_numbers(100)) # 5050
+
+
+```
+2.  Declare a function name sum_of_odds. It takes a number parameter and it adds all the odd numbers in that range.
+3.  Declare a function name sum_of_even. It takes a number parameter and it adds all the even numbers in that - range.
 Declare a function name evens_and_odds . It takes a positive integer as parameter and it counts number of evens and odds in the number.
   ```py
       print(evens_and_odds(100))
