@@ -1,0 +1,2 @@
+This is an example to show how to open a file and read.
+This is the second line of the text.I love python
