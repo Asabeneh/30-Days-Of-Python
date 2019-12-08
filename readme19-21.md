@@ -25,25 +25,24 @@
     - [File with csv Extension](#file-with-csv-extension)
     - [File with xlsx Extension](#file-with-xlsx-extension)
     - [File with xml Extension](#file-with-xml-extension)
-    - [](#)
   - [💻 Exercises: Day 19](#%f0%9f%92%bb-exercises-day-19)
 # 📘 Day 19
 ## File handling
-So far we have seen different python data types. We usually store our data in a different file format. In addition to handling file, we will also see different file formats(.txt, .json, .xml, .csv, .tsv, .excel) file formats in this section. First, let get familiar with handling file with common file format(.txt). 
+So far we have seen different python data types. We usually store our data in a different file format. In addition to handling file, we will also see different file formats(.txt, .json, .xml, .csv, .tsv, .excel) file formats in this section. First, let's get familiar with handling file with common file format(.txt). 
 
- File handling is an import part of programming which allows as to create, read, update and delete files. In python to handle data use use *open()* builtin function.
+File handling is an import part of programming which allows us to create, read, update and delete files. In python to handle data we use *open()* builtin function.
 ```py
-open('filename', mode) # mode could be to read, write, update
+# Syntax
+open('filename', mode) # mode(r, a, w, x, t,b,  could be to read, write, update
 ```
-r" - Read - Default value. Opens a file for reading, error if the file does not exist
-"a" - Append - Opens a file for appending, creates the file if it does not exist
-"w" - Write - Opens a file for writing, creates the file if it does not exist
-"x" - Create - Creates the specified file, returns an error if the file exists
-"t" - Text - Default value. Text mode
-
-"b" - Binary - Binary mode (e.g. images)
+* "r" - Read - Default value. Opens a file for reading, error if the file does not exist
+* "a" - Append - Opens a file for appending, creates the file if it does not exist
+* "w" - Write - Opens a file for writing, creates the file if it does not exist
+* "x" - Create - Creates the specified file, returns an error if the file exists
+* "t" - Text - Default value. Text mode
+* "b" - Binary - Binary mode (e.g. images)
 ### Opening File for reading
-The default mode of *open* is reading, so we do not have to specify 'rt'.
+The default mode of *open* is reading, so we do not have to specify 'r' or 'rt'. I have created and saved a file named reading_file_example.txt in the files directory. Let see read this file.
 ```py
 f = open('./files/reading_file_example.txt')
 print(f) # <_io.TextIOWrapper name='./files/reading_file_example.txt' mode='r' encoding='UTF-8'>
@@ -58,11 +57,12 @@ print(txt)
 f.close()
 ```
 ```sh
+# output
 <class 'str'>
 This is an example to show how to open a file and read.
 This is the second line of the text.
 ```
-Instead of printing all the text, let see print the first 10 characters of the text in the file.
+Instead of printing all the text, let see by printing the first 10 characters of the text in the file.
 ```py
 f = open('./files/reading_file_example.txt')
 txt = f.read(10)
@@ -71,6 +71,7 @@ print(txt)
 f.close()
 ```
 ```sh
+# output
 <class 'str'>
 This is an
 ```
@@ -83,6 +84,7 @@ print(line)
 f.close()
 ```
 ```sh
+# output
 <class 'str'>
 This is an example to show how to open a file and read.
 ```
@@ -95,6 +97,7 @@ print(lines)
 f.close()
 ```
 ```sh
+#output
 <class 'list'>
 ['This is an example to show how to open a file and read.\n', 'This is the second line of the text.']
 ```
@@ -160,21 +163,22 @@ JSON stands for JavaScript Object Notation. Actually, it a stringified JavaScrip
 *Example:*
 ```py
 # dictionary
-person = {
+person_dct= {
     "name":"Asabeneh",
     "country":"Finland",
     "city":"Helsinki",
     "skills":["JavaScrip", "React","Python"]
 }
 # JSON: A string form a dictionary
+person_json = "{'name': 'Asabeneh', 'country': 'Finland', 'city': 'Helsinki', 'skills': ['JavaScrip', 'React', 'Python']}"
 
-person = '{
+# we use three quotes and make it multiple line to make it more readable
+person_json = '''{
     "name":"Asabeneh",
     "country":"Finland",
     "city":"Helsinki",
     "skills":["JavaScrip", "React","Python"]
-}'
-
+}'''
 ```
 ### Changing JSON to dictionary
 To change a JSON to a dictionary we use *loads* method.
@@ -182,16 +186,20 @@ To change a JSON to a dictionary we use *loads* method.
 ```py
 import json
 # JSON
-person = '{
+person_json = '''{
     "name": "Asabeneh",
     "country": "Finland",
     "city": "Helsinki",
     "skills": ["JavaScrip", "React", "Python"]
-}'
-# let's JSON to dictionary
-person_json = json.loads(person)
-print(person_json)
-
+}'''
+# let's change JSON to dictionary
+person_dct = json.loads(person_json)
+print(person_dct)
+print(person_dct['name'])
+```
+```sh
+{'name': 'Asabeneh', 'country': 'Finland', 'city': 'Helsinki', 'skills': ['JavaScrip', 'React', 'Python']}
+Asabeneh
 ```
 
 ### Changing dictionary to JSON
@@ -235,10 +243,25 @@ CSV stands for comma separated values. CSV is a simple file format used to store
 "name","country","city","skills"
 "Asabeneh","Finland","Helsinki","JavaScrip"
 ```
+**Example:**
+```py
+with open('./files/csv_example.csv') as f:
+    csv_reader = csv.reader(f, delimiter=',')
+    line_count = 0
+    for row in csv_reader:
+        if line_count == 0:
+            print(f'Column names are {", ".join(row)}')
+            line_count += 1
+        else:
+            print(
+                f'\t{row[0]} is a teachers. He lives in {row[1]}, {row[2]}.')
+            line_count += 1
+    print(f'Processed {line_count} lines.')
+```
 ### File with xlsx Extension
 To read excel we need to install *xlrd* package. We will cover this after we cover package installing using pip.
 ### File with xml Extension
-XML is another structured data format which looks like HTML. In XML the tags are not predefined. The first line is an XML declaration. The person tag is the root of the XML. 
+XML is another structured data format which looks like HTML. In XML the tags are not predefined. The first line is an XML declaration. The person tag is the root of the XML. The person has a gender attribute.
 **Example:XML**
 ```xml
 <?xml version="1.0"?>
@@ -272,7 +295,6 @@ field city
 field skills
 ```
 
-### 
 ## 💻 Exercises: Day 19
 1. Read the countries data file in data directory:
    1. Create a function which find the ten most spoken languages
@@ -300,5 +322,14 @@ field skills
     (6, 'of'),
     (5, 'and')]
 ```
-4. Write a python application which checks similarity between two texts. It takes a file or a string as a parameter and it will evaluate the similarity of the two texts. For instance check the similarity between the transcripts of michelle's and melina's speech. You may need a couple of functions, function to clean the text(clean_text), function to remove support words(remove_support_words) and finally to check the similarity(check_text_similarity). List of stop words are in the data directory
-5. Find the 10 most repeated words in the romeo_and_juliet.txt
+4. Use the function you made at question number one to find out:
+   1. The ten most frequent words used in [Obama's speech](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/data/obama_speech.txt)
+   2. The ten most frequent words used in [Michelle's speech](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/data/michelle_obama_speech.txt)
+   3. The ten most frequent words used in [Trump's speech](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/data/donald_speech.txt)
+   4. The ten most frequent words used in [Melina's speech](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/data/melina_trump_speech.txt)
+5. Write a python application which checks similarity between two texts. It takes a file or a string as a parameter and it will evaluate the similarity of the two texts. For instance check the similarity between the transcripts of [Michelle's](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/data/michelle_obama_speech.txt) and [Melina's](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/data/melina_trump_speech.txt) speech. You may need a couple of functions, function to clean the text(clean_text), function to remove support words(remove_support_words) and finally to check the similarity(check_text_similarity). List of [stop words](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/data/stop_words.py) are in the data directory
+6. Find the 10 most repeated words in the romeo_and_juliet.txt
+7. Read the [hacker news csv](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/data/hacker_news.csv) file and find out:
+   1. Count the number of lines containing python or Python
+   2. Count the number lines containing JavaScript, javascript or Javascript
+   3. Count the number lines containing Java not JavaScript
