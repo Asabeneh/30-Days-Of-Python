@@ -330,7 +330,7 @@ field: skills
    4. Read melina_trump_speech.txt file and count number of lines and now of words
 2. Read the countries_data.json data file in data directory, create a function which find the ten most spoken languages
     ```py
-    # You output should look like this
+    # Your output should look like this
     print(most_spoken_languages(filename='./data/countries_data.json', 10))
     [(91, 'English'),
     (45, 'French'),
@@ -344,7 +344,7 @@ field: skills
     (4, 'Swahili'),
     (4, 'Serbian')
     ]
-    # You output should look like this
+    # Your output should look like this
     print(most_spoken_languages(filename='./data/countries_data.json', 3))
 
     [(91, 'English'),
@@ -354,7 +354,7 @@ field: skills
     ```
 3. Read the countries_data.json data file in data directory,create a function which create the ten most populated countries
     ```py
-    # You output should look like this
+    # Your output should look like this
     print(most_populated_countries(filename='./data/countries_data.json', 10))
 
     [{'country': 'China', 'population': 1377422166},
@@ -377,7 +377,7 @@ field: skills
 4. Extract all incoming emails from the email_exchange_big.txt file. 
 5. Find the most common words in the English language. Call the name of your function find_most_common_words, it will take two parameters which are a string or a file and a positive integer. Your function will return an array of tuples in descending order. Check the output
 ```py
-    # You output should look like this
+    # Your output should look like this
     print(find_most_common_words('sample.txt', 10))
 
     [(10, 'the'),
