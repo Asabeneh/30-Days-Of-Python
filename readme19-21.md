@@ -322,80 +322,77 @@ field skills
    2. Read michelle_obama_speech.txt file and count number of lines and now of words
    3. Read donald_speech.txt file and count number of lines and now of words
    4. Read melina_trump_speech.txt file and count number of lines and now of words
-2. Read the countries_data.json data file in data directory:
-   1. Create a function which find the ten most spoken languages
-   ```py
-print(most_spoken_languages(filename='./data/countries_data.json', 10))
-[(91, 'English'),
- (45, 'French'),
- (25, 'Arabic'),
- (24, 'Spanish'),
- (9, 'Russian'),
- (9, 'Portuguese'),
- (8, 'Dutch'),
- (7, 'German'),
- (5, 'Chinese'),
- (4, 'Swahili'),
- (4, 'Serbian')
- ]
-
- print(most_spoken_languages(filename='./data/countries_data.json', 3))
-[(91, 'English'),
- (45, 'French'),
- (25, 'Arabic')
- ]
-   ```
-
-   1. Create a function which create the ten most populated countries
-   ```py
-print(most_populated_countries(filename='./data/countries_data.json', 10))
-[{'country': 'China', 'population': 1377422166},
- {'country': 'India', 'population': 1295210000},
- {'country': 'United States of America', 'population': 323947000},
- {'country': 'Indonesia', 'population': 258705000},
- {'country': 'Brazil', 'population': 206135893},
- {'country': 'Pakistan', 'population': 194125062},
- {'country': 'Nigeria', 'population': 186988000},
- {'country': 'Bangladesh', 'population': 161006790},
- {'country': 'Russian Federation', 'population': 146599183},
- {'country': 'Japan', 'population': 126960000}]
-
- print(most_populated_countries(filename='./data/countries_data.json', 3))
-[{'country': 'China', 'population': 1377422166},
- {'country': 'India', 'population': 1295210000},
- {'country': 'United States of America', 'population': 323947000}]
-```
-1. Extract all incoming emails from the email_exchange_big.txt file. 
-2. Find the most common words in the English language. Call the name of your function find_most_common_words, it will take two parameters which are a string or a file and a positive integer. Your function will return an array of tuples in descending order. Check the output
+2. Read the countries_data.json data file in data directory, create a function which find the ten most spoken languages
     ```py
-        print(find_most_common_words('sample.txt', 10))
-
-        [(10, 'the'),
-        (8, 'be'),
-        (6, 'to'),
-        (6, 'of'),
-        (5, 'and'),
-        (4, 'a'),
-        (4, 'in'),
-        (3, 'that'),
-        (2, 'have'),
-        (2, 'I')]
-        print(find_most_common_words('sample.txt', 5))
-
-        [(10, 'the'),
-        (8, 'be'),
-        (6, 'to'),
-        (6, 'of'),
-        (5, 'and')]
+    print(most_spoken_languages(filename='./data/countries_data.json', 10))
+    [(91, 'English'),
+    (45, 'French'),
+    (25, 'Arabic'),
+    (24, 'Spanish'),
+    (9, 'Russian'),
+    (9, 'Portuguese'),
+    (8, 'Dutch'),
+    (7, 'German'),
+    (5, 'Chinese'),
+    (4, 'Swahili'),
+    (4, 'Serbian')
+    ]
+    print(most_spoken_languages(filename='./data/countries_data.json', 3))
+    [(91, 'English'),
+    (45, 'French'),
+    (25, 'Arabic')
+    ]
     ```
-3. Use the function you made at question number 3 to find out:
+3. Read the countries_data.json data file in data directory,create a function which create the ten most populated countries
+    ```py
+    print(most_populated_countries(filename='./data/countries_data.json', 10))
+    [{'country': 'China', 'population': 1377422166},
+    {'country': 'India', 'population': 1295210000},
+    {'country': 'United States of America', 'population': 323947000},
+    {'country': 'Indonesia', 'population': 258705000},
+    {'country': 'Brazil', 'population': 206135893},
+    {'country': 'Pakistan', 'population': 194125062},
+    {'country': 'Nigeria', 'population': 186988000},
+    {'country': 'Bangladesh', 'population': 161006790},
+    {'country': 'Russian Federation', 'population': 146599183},
+    {'country': 'Japan', 'population': 126960000}]
+
+    print(most_populated_countries(filename='./data/countries_data.json', 3))
+    [{'country': 'China', 'population': 1377422166},
+    {'country': 'India', 'population': 1295210000},
+    {'country': 'United States of America', 'population': 323947000}]
+    ```
+4. Extract all incoming emails from the email_exchange_big.txt file. 
+5. Find the most common words in the English language. Call the name of your function find_most_common_words, it will take two parameters which are a string or a file and a positive integer. Your function will return an array of tuples in descending order. Check the output
+```py
+    print(find_most_common_words('sample.txt', 10))
+
+    [(10, 'the'),
+    (8, 'be'),
+    (6, 'to'),
+    (6, 'of'),
+    (5, 'and'),
+    (4, 'a'),
+    (4, 'in'),
+    (3, 'that'),
+    (2, 'have'),
+    (2, 'I')]
+    print(find_most_common_words('sample.txt', 5))
+
+    [(10, 'the'),
+    (8, 'be'),
+    (6, 'to'),
+    (6, 'of'),
+    (5, 'and')]
+```
+1. Use the function, find_most_frequent_words to find out:
    1. The ten most frequent words used in [Obama's speech](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/data/obama_speech.txt)
    2. The ten most frequent words used in [Michelle's speech](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/data/michelle_obama_speech.txt)
    3. The ten most frequent words used in [Trump's speech](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/data/donald_speech.txt)
    4. The ten most frequent words used in [Melina's speech](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/data/melina_trump_speech.txt)
-4. Write a python application which checks similarity between two texts. It takes a file or a string as a parameter and it will evaluate the similarity of the two texts. For instance check the similarity between the transcripts of [Michelle's](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/data/michelle_obama_speech.txt) and [Melina's](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/data/melina_trump_speech.txt) speech. You may need a couple of functions, function to clean the text(clean_text), function to remove support words(remove_support_words) and finally to check the similarity(check_text_similarity). List of [stop words](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/data/stop_words.py) are in the data directory
-5. Find the 10 most repeated words in the romeo_and_juliet.txt
-6. Read the [hacker news csv](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/data/hacker_news.csv) file and find out:
+2. Write a python application which checks similarity between two texts. It takes a file or a string as a parameter and it will evaluate the similarity of the two texts. For instance check the similarity between the transcripts of [Michelle's](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/data/michelle_obama_speech.txt) and [Melina's](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/data/melina_trump_speech.txt) speech. You may need a couple of functions, function to clean the text(clean_text), function to remove support words(remove_support_words) and finally to check the similarity(check_text_similarity). List of [stop words](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/data/stop_words.py) are in the data directory
+3. Find the 10 most repeated words in the romeo_and_juliet.txt
+4. Read the [hacker news csv](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/data/hacker_news.csv) file and find out:
    1. Count the number of lines containing python or Python
    2. Count the number lines containing JavaScript, javascript or Javascript
    3. Count the number lines containing Java not JavaScript
