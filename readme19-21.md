@@ -214,9 +214,24 @@ person = {
     "skills": ["JavaScrip", "React", "Python"]
 }
 # let's convert it to  json
-person_json = json.dumps(person)
+person_json = json.dumps(person, indent=4) # indent could be 2, 4, 8. It beautify the json
+print(type(person_json))
 print(person_json)
-
+```
+```sh
+# when you it is printed it does not have the quote but actually it is a string
+# JSON does not have type, it is a string type.
+<class 'str'>
+{
+    "name": "Asabeneh",
+    "country": "Finland",
+    "city": "Helsinki",
+    "skills": [
+        "JavaScrip",
+        "React",
+        "Python"
+    ]
+}
 ```
 ### Saving as JSON file
 We can also save our data as a json file. Let's save it as a json file using the following steps.
@@ -245,18 +260,24 @@ CSV stands for comma separated values. CSV is a simple file format used to store
 ```
 **Example:**
 ```py
+import csv
 with open('./files/csv_example.csv') as f:
-    csv_reader = csv.reader(f, delimiter=',')
+    csv_reader = csv.reader(f, delimiter=',') # w use, reader method to read csv
     line_count = 0
     for row in csv_reader:
         if line_count == 0:
-            print(f'Column names are {", ".join(row)}')
+            print(f'Column names are :{", ".join(row)}')
             line_count += 1
         else:
             print(
                 f'\t{row[0]} is a teachers. He lives in {row[1]}, {row[2]}.')
             line_count += 1
-    print(f'Processed {line_count} lines.')
+    print(f'Number of lines:  {line_count}')
+```
+```sh
+Column names are :name, country, city, skills
+        Asabeneh is a teachers. He lives in Finland, Helsinki.
+Number of lines:  2
 ```
 ### File with xlsx Extension
 To read excel we need to install *xlrd* package. We will cover this after we cover package installing using pip.
@@ -296,40 +317,85 @@ field skills
 ```
 
 ## 💻 Exercises: Day 19
-1. Read the countries data file in data directory:
+1. Writ a function which count number of lines and number of words from a text. All the files are in data the folder:
+   1. Read obama_speech.txt file and count number of lines and now of words
+   2. Read michelle_obama_speech.txt file and count number of lines and now of words
+   3. Read donald_speech.txt file and count number of lines and now of words
+   4. Read melina_trump_speech.txt file and count number of lines and now of words
+2. Read the countries_data.json data file in data directory:
    1. Create a function which find the ten most spoken languages
-   2. Create a function which create the ten most populated countries
-2. Extract all incoming emails from the email_exchange_big.txt file. 
-3. Find the most common words in the English language. Call the name of your function find_most_common_words, it will take two parameters which are a string or a file and a positive integer. Your function will return an array of tuples in descending order. Check the output
-```py
-    print(find_most_common_words('sample.txt', 10))
+   ```py
+print(most_spoken_languages(filename='./data/countries_data.json', 10))
+[(91, 'English'),
+ (45, 'French'),
+ (25, 'Arabic'),
+ (24, 'Spanish'),
+ (9, 'Russian'),
+ (9, 'Portuguese'),
+ (8, 'Dutch'),
+ (7, 'German'),
+ (5, 'Chinese'),
+ (4, 'Swahili'),
+ (4, 'Serbian')
+ ]
 
-    [(10, 'the'),
-    (8, 'be'),
-    (6, 'to'),
-    (6, 'of'),
-    (5, 'and'),
-    (4, 'a'),
-    (4, 'in'),
-    (3, 'that'),
-    (2, 'have'),
-    (2, 'I')]
-    print(find_most_common_words('sample.txt', 5))
+ print(most_spoken_languages(filename='./data/countries_data.json', 3))
+[(91, 'English'),
+ (45, 'French'),
+ (25, 'Arabic')
+ ]
+   ```
 
-    [(10, 'the'),
-    (8, 'be'),
-    (6, 'to'),
-    (6, 'of'),
-    (5, 'and')]
+   1. Create a function which create the ten most populated countries
+   ```py
+print(most_populated_countries(filename='./data/countries_data.json', 10))
+[{'country': 'China', 'population': 1377422166},
+ {'country': 'India', 'population': 1295210000},
+ {'country': 'United States of America', 'population': 323947000},
+ {'country': 'Indonesia', 'population': 258705000},
+ {'country': 'Brazil', 'population': 206135893},
+ {'country': 'Pakistan', 'population': 194125062},
+ {'country': 'Nigeria', 'population': 186988000},
+ {'country': 'Bangladesh', 'population': 161006790},
+ {'country': 'Russian Federation', 'population': 146599183},
+ {'country': 'Japan', 'population': 126960000}]
+
+ print(most_populated_countries(filename='./data/countries_data.json', 3))
+[{'country': 'China', 'population': 1377422166},
+ {'country': 'India', 'population': 1295210000},
+ {'country': 'United States of America', 'population': 323947000}]
 ```
-4. Use the function you made at question number 3 to find out:
+1. Extract all incoming emails from the email_exchange_big.txt file. 
+2. Find the most common words in the English language. Call the name of your function find_most_common_words, it will take two parameters which are a string or a file and a positive integer. Your function will return an array of tuples in descending order. Check the output
+    ```py
+        print(find_most_common_words('sample.txt', 10))
+
+        [(10, 'the'),
+        (8, 'be'),
+        (6, 'to'),
+        (6, 'of'),
+        (5, 'and'),
+        (4, 'a'),
+        (4, 'in'),
+        (3, 'that'),
+        (2, 'have'),
+        (2, 'I')]
+        print(find_most_common_words('sample.txt', 5))
+
+        [(10, 'the'),
+        (8, 'be'),
+        (6, 'to'),
+        (6, 'of'),
+        (5, 'and')]
+    ```
+3. Use the function you made at question number 3 to find out:
    1. The ten most frequent words used in [Obama's speech](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/data/obama_speech.txt)
    2. The ten most frequent words used in [Michelle's speech](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/data/michelle_obama_speech.txt)
    3. The ten most frequent words used in [Trump's speech](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/data/donald_speech.txt)
    4. The ten most frequent words used in [Melina's speech](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/data/melina_trump_speech.txt)
-5. Write a python application which checks similarity between two texts. It takes a file or a string as a parameter and it will evaluate the similarity of the two texts. For instance check the similarity between the transcripts of [Michelle's](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/data/michelle_obama_speech.txt) and [Melina's](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/data/melina_trump_speech.txt) speech. You may need a couple of functions, function to clean the text(clean_text), function to remove support words(remove_support_words) and finally to check the similarity(check_text_similarity). List of [stop words](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/data/stop_words.py) are in the data directory
-6. Find the 10 most repeated words in the romeo_and_juliet.txt
-7. Read the [hacker news csv](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/data/hacker_news.csv) file and find out:
+4. Write a python application which checks similarity between two texts. It takes a file or a string as a parameter and it will evaluate the similarity of the two texts. For instance check the similarity between the transcripts of [Michelle's](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/data/michelle_obama_speech.txt) and [Melina's](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/data/melina_trump_speech.txt) speech. You may need a couple of functions, function to clean the text(clean_text), function to remove support words(remove_support_words) and finally to check the similarity(check_text_similarity). List of [stop words](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/data/stop_words.py) are in the data directory
+5. Find the 10 most repeated words in the romeo_and_juliet.txt
+6. Read the [hacker news csv](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/data/hacker_news.csv) file and find out:
    1. Count the number of lines containing python or Python
    2. Count the number lines containing JavaScript, javascript or Javascript
    3. Count the number lines containing Java not JavaScript
