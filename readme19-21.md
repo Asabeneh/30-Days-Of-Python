@@ -346,7 +346,6 @@ field: skills
     ]
     # Your output should look like this
     print(most_spoken_languages(filename='./data/countries_data.json', 3))
-
     [(91, 'English'),
     (45, 'French'),
     (25, 'Arabic')
@@ -368,8 +367,9 @@ field: skills
     {'country': 'Russian Federation', 'population': 146599183},
     {'country': 'Japan', 'population': 126960000}]
 
-    print(most_populated_countries(filename='./data/countries_data.json', 3))
+    # Your output should look like this
 
+    print(most_populated_countries(filename='./data/countries_data.json', 3))
     [{'country': 'China', 'population': 1377422166},
     {'country': 'India', 'population': 1295210000},
     {'country': 'United States of America', 'population': 323947000}]
@@ -378,8 +378,8 @@ field: skills
 5. Find the most common words in the English language. Call the name of your function find_most_common_words, it will take two parameters which are a string or a file and a positive integer. Your function will return an array of tuples in descending order. Check the output
 ```py
     # Your output should look like this
+    
     print(find_most_common_words('sample.txt', 10))
-
     [(10, 'the'),
     (8, 'be'),
     (6, 'to'),
@@ -390,7 +390,8 @@ field: skills
     (3, 'that'),
     (2, 'have'),
     (2, 'I')]
-    # You output should look like this
+
+    # Your output should look like this
     print(find_most_common_words('sample.txt', 5))
 
     [(10, 'the'),
