@@ -28,7 +28,7 @@
   - [💻 Exercises: Day 19](#%f0%9f%92%bb-exercises-day-19)
 # 📘 Day 19
 ## File handling
-So far we have seen different python data types. We usually store our data in a different file format. In addition to handling file, we will also see different file formats(.txt, .json, .xml, .csv, .tsv, .excel) file formats in this section. First, let's get familiar with handling file with common file format(.txt). 
+So far we have seen different python data types. We usually store our data in a different file format. In addition to handling file, we will also see different file formats(.txt, .json, .xml, .csv, .tsv, .excel) file formats in this section. First, let's get familiar with handling file with common file format(.txt).  
 
 File handling is an import part of programming which allows us to create, read, update and delete files. In python to handle data we use *open()* builtin function.
 ```py
@@ -97,7 +97,7 @@ print(lines)
 f.close()
 ```
 ```sh
-#output
+# output
 <class 'list'>
 ['This is an example to show how to open a file and read.\n', 'This is the second line of the text.']
 ```
@@ -322,7 +322,7 @@ field skills
     (6, 'of'),
     (5, 'and')]
 ```
-4. Use the function you made at question number one to find out:
+4. Use the function you made at question number 3 to find out:
    1. The ten most frequent words used in [Obama's speech](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/data/obama_speech.txt)
    2. The ten most frequent words used in [Michelle's speech](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/data/michelle_obama_speech.txt)
    3. The ten most frequent words used in [Trump's speech](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/data/donald_speech.txt)
