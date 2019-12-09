@@ -47,7 +47,7 @@
   - [Spliting text using RegEx split](#spliting-text-using-regex-split)
   - [Writing RegEx pattern](#writing-regex-pattern)
     - [Square Bracket](#square-bracket)
-    - [Escape character(\\) in RegEx](#escape-character-in-regex)
+    - [Escape character(\) in RegEx](#escape-character-in-regex)
     - [One or more times(+)](#one-or-more-times)
     - [Period(.)](#period)
     - [Zero or more times(*)](#zero-or-more-times)
@@ -661,6 +661,8 @@ print(matches)  # ['Apple', 'apple']
 * |: Either or
   * r'apple|banana' mean either of an apple or a banana
 * (): Capture and group
+
+![Regular Expression cheat sheet](images/regex.png)
 
 Let's use example to clarify the above meta characters
 ### Square Bracket

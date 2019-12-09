@@ -38,6 +38,16 @@
     - [Reading from URL](#reading-from-url)
     - [Further information about packages](#further-information-about-packages)
   - [Exercises: Day 20](#exercises-day-20)
+- [📘 Day 21](#%f0%9f%93%98-day-21)
+  - [Classes and Objects](#classes-and-objects)
+    - [Creating a Class](#creating-a-class)
+    - [Creating an Object](#creating-an-object)
+    - [Class Constructor](#class-constructor)
+    - [Object Methods](#object-methods)
+    - [Object default methods](#object-default-methods)
+    - [Method to modify class default values](#method-to-modify-class-default-values)
+    - [Inheritance](#inheritance)
+  - [💻 Exercises: Day 20](#%f0%9f%92%bb-exercises-day-20)
 # 📘 Day 19
 ## File handling
 So far we have seen different python data types. We usually store our data in a different file format. In addition to handling file, we will also see different file formats(.txt, .json, .xml, .csv, .tsv, .excel) file formats in this section. First, let's get familiar with handling file with common file format(.txt).  
@@ -689,7 +699,195 @@ We use *json()* method from response object, if the we are fetching JSON data. F
 1. Read the countries api and find out the 10 largest countries
 2. UCI is one the most common place for get data set for data science and machine learning. Read the content of UCL(http://mlr.cs.umass.edu/ml/datasets.html). Without library it will be difficult, you may try it with BeautifulSoup4
 
+# 📘 Day 21
+## Classes and Objects
+Python is an object oriented programming language. Everything in Python is an object, with its properties and methods. A number, string, list, dictionary,tuple, set etc. used in a program is an object of a corresponding built-in class.  We create class to create an object. A Class is like an object constructor, or a "blueprint" for creating objects. We instantiate a class to create an object. The class defines attributes and the behavior of the object, while the object, on the other hand, represents the class.
 
+We have been  working with classes and objects right from the beginning of these challenge unknowingly. Every element in a Python program is an object of a class. 
+### Creating a Class
+To create a class we need the key word **class** followed by colon. Class name should be **CamelCase**.
+```sh
+# syntax
+class ClassName:
+  code goes here
+```
+**Example:**
+```py
+class Person:
+  pass
+```
+```sh
+<__main__.Person object at 0x10804e510>
+```
+### Creating an Object
+We can create an object by calling the class.
+```py
+p = Person()
+print(p)
+```
+### Class Constructor
+In the above examples, we have created an object from the Person class. However, Class without a constructor is not really useful in real applications. Let's use constructor function to make our class more useful. Like the constructor function in Java or JavaScript, python has also a builtin *__init__()* constructor function. The *__init__* constructor function has self parameter which is a reference to the current instance of the class
+**Examples:**
+```py
+class Person:
+      def __init__ (self, name):
+          self.name =name
+    
+p = Person('Asabeneh')
+print(p.name)
+print(p)
+```
+```sh
+# output
+Asabeneh
+```
+Let's add more parameter to the constructor function.
+```py
+class Person:
+      def __init__(self, firstname, lastname, age, country, city):
+          self.firstname = firstname
+          self.lastname = lastname
+          self.age = age
+          self.country = country
+          self.city = city
+
+
+p = Person('Asabeneh', 'Yetayeh', 250, 'Finland', 'Helsinki')
+print(p.firstname)
+print(p.lastname)
+print(p.age)
+print(p.country)
+print(p.city)
+```
+```sh
+# output
+Asabeneh
+Yetayeh
+250
+Finland
+Helsinki
+```
+### Object Methods
+Objects can have methods. The methods are functions which are belongs to the object.
+**Example:**
+```py
+class Person:
+      def __init__(self, firstname, lastname, age, country, city):
+          self.firstname = firstname
+          self.lastname = lastname
+          self.age = age
+          self.country = country
+          self.city = city
+
+      def person_info(self):
+        return f'{self.firstname} {self.lastname} is {self.age} year old. He lives in {self.city}, {self.country}'
+
+
+p = Person('Asabeneh', 'Yetayeh', 250, 'Finland', 'Helsinki')
+print(p.person_info())
+```
+```sh
+# output
+Asabeneh Yetayeh is 250 year old. He lives in Helsinki, Finland
+```
+### Object default methods
+Sometimes, you may want to have a default values for you object methods. If we give a default values for the parameters in the constructor, we can avoid error when we call or instantiate our class without parameters. Let's see how it looks using example.
+
+**Example:**
+```py
+class Person:
+      def __init__(self, firstname='Asabeneh', lastname='Yetayeh', age=250, country='Finland', city='Helsinki'):
+          self.firstname = firstname
+          self.lastname = lastname
+          self.age = age
+          self.country = country
+          self.city = city
+
+      def person_info(self):
+        return f'{self.firstname} {self.lastname} is {self.age} year old. He lives in {self.city}, {self.country}.'
+
+p1 = Person()
+print(p1.person_info())
+p2 = Person('John', 'Doe', 30, 'Nomanland', 'Noman city')
+print(p2.person_info())
+```
+```sh
+# output
+Asabeneh Yetayeh is 250 year old. He lives in Helsinki, Finland.
+John Doe is 30 year old. He lives in Noman city, Nomanland.
+```
+### Method to modify class default values
+In the example below, the person class, all the constructor parameters have default values and in addition to that we have a skills default value which we can access it using method. Let's create add_skill method to add skill to the skills list.
+```py
+class Person:
+      def __init__(self, firstname='Asabeneh', lastname='Yetayeh', age=250, country='Finland', city='Helsinki'):
+          self.firstname = firstname
+          self.lastname = lastname
+          self.age = age
+          self.country = country
+          self.city = city
+          self.skills = []
+
+      def person_info(self):
+        return f'{self.firstname} {self.lastname} is {self.age} year old. He lives in {self.city}, {self.country}.'
+      def add_skill(self, skill):
+          self.skills.append(skill)
+
+p1 = Person()
+print(p1.person_info())
+p1.add_skill('HTML')
+p1.add_skill('CSS')
+p1.add_skill('JavaScript')
+p2 = Person('John', 'Doe', 30, 'Nomanland', 'Noman city')
+print(p2.person_info())
+print(p1.skills)
+print(p2.skills)
+```
+```sh
+# output
+Asabeneh Yetayeh is 250 year old. He lives in Helsinki, Finland.
+John Doe is 30 year old. He lives in Noman city, Nomanland.
+['HTML', 'CSS', 'JavaScript']
+[]
+```
+### Inheritance
+
+Using inheritance we can reuse parent class code. Inheritance allows us to define a class that inherits all the methods and properties from another class. The parent class or super or base class is the class which gives all the methods and properties. Child class is the class the inherits from another class.
+Let's see create a student class by inheriting from person class.
+
+
+
+## 💻  Exercises: Day 20
+1. Develop a program which calculate the measure of central tendency of a sample(mean, median, mode) and measure of variability(range, variance, standard deviation). In addition to those measure, find the min, max, count and frequency distribution of the sample. Check the output below.
+```py
+ages = [31, 26, 34, 37, 27, 26, 32, 32, 26, 27, 27, 24, 32, 33, 27, 25, 26, 38, 37, 31, 34, 24, 33, 29, 26]
+
+print('Count:', data.count()) # 25
+print('Sum: ', data.sum()) # 744
+print('Min: ', data.min()) # 24
+print('Max: ', data.max()) # 38
+print('Range: ', data.range() # 14
+print('Mean: ', data.mean()) # 30
+print('Median: ',data.median()) # 29
+print('Mode: ', data.mode()) # {'mode': 26, 'count': 5}
+print('Variance: ',data.var()) # 17.5
+print('Standard Deviation: ', data.std()) # 4.2
+print('Variance: ',data.var()) # 17.5
+print('Frequency Distribution: ',data.freq_dist()) # [(20.0, 26), (16.0, 27), (12.0, 32), (8.0, 37), (8.0, 34), (8.0, 33), (8.0, 31), (8.0, 24), (4.0, 38), (4.0, 29), (4.0, 25)]
+
+print(data.describe())
+Count: 25
+Sum:  744
+Min:  24
+Max:  38
+Range:  14
+Mean:  30
+Median:  29
+Mode:  (26, 5)
+Variance:  17.5
+Standard Deviation:  4.2
+Frequency Distribution: [(20.0, 26), (16.0, 27), (12.0, 32), (8.0, 37), (8.0, 34), (8.0, 33), (8.0, 31), (8.0, 24), (4.0, 38), (4.0, 29), (4.0, 25)]
+```
 
 
 
