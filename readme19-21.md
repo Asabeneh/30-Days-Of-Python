@@ -854,8 +854,36 @@ John Doe is 30 year old. He lives in Noman city, Nomanland.
 
 Using inheritance we can reuse parent class code. Inheritance allows us to define a class that inherits all the methods and properties from another class. The parent class or super or base class is the class which gives all the methods and properties. Child class is the class the inherits from another class.
 Let's see create a student class by inheriting from person class.
+```py
+class Student(Person):
+    pass
 
 
+s1 = Student('Eyob', 'Yetayeh', 30, 'Finland', 'Helsinki')
+s2 = Student('Lidiya', 'Teklemariam', 28, 'Finland', 'Espoo')
+print(s1.person_info())
+s1.add_skill('JavaScript')
+s1.add_skill('React')
+s1.add_skill('Python')
+print(s1.skills)
+
+print(s2.person_info())
+s2.add_skill('Organizing')
+s2.add_skill('Marketing')
+s2.add_skill('Digital Marketing')
+print(s2.skills)
+
+```
+```sh
+output
+Eyob Yetayeh is 30 year old. He lives in Helsinki, Finland.
+['JavaScript', 'React', 'Python']
+Lidiya Teklemariam is 28 year old. He lives in Espoo, Finland.
+['Organizing', 'Marketing', 'Digital Marketing']
+```
+
+We didn't call the *__init__()* constructor in the child class. If we didn't call it we can access all the properties but if we call it once we access the parent properties by calling *super*.   
+We can write addition method to the child or we can overwrite the parent class by creating the same method name in the child class.
 
 ## 💻  Exercises: Day 20
 1. Develop a program which calculate the measure of central tendency of a sample(mean, median, mode) and measure of variability(range, variance, standard deviation). In addition to those measure, find the min, max, count and frequency distribution of the sample. Check the output below.
