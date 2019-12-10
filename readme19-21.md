@@ -7,9 +7,11 @@
 🧳 [Part 5: Day 13 - 15](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/readme13-15.md)  
 🧳 [Part 6: Day 16 - 18](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/readme16-18.md)  
 🧳 [Part 7: Day 19 - 21](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/readme19-21.md)  
-🧳 [Part 8: Day 22 - 24](#) 🔒  
+🧳 [Part 8: Day 22 - 24]([#](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/readme22-24.md) 
 🧳 [Part 9: Day 25 - 27](#) 🔒  
 🧳 [Part 10: Day 28 - 30](#) 🔒
+
+---
 
 - [📘 Day 19](#%f0%9f%93%98-day-19)
   - [File handling](#file-handling)
@@ -49,7 +51,7 @@
     - [Method to modify class default values](#method-to-modify-class-default-values)
     - [Inheritance](#inheritance)
     - [Overriding parent method](#overriding-parent-method)
-  - [💻 Exercises: Day 20](#%f0%9f%92%bb-exercises-day-20)
+  - [💻 Exercises: Day 21](#%f0%9f%92%bb-exercises-day-21)
 
 # 📘 Day 19
 
@@ -1184,7 +1186,7 @@ Lidiya Teklemariam is 28 year old. She lives in Espoo, Finland.
 
 We can use super() function or the parent name Person to automatically inherit the methods and properties from its parent. In the above example, we override the parant method. The child method has a different feature, it can identify if the gender is male or female and assign the proper pronoun(He/She).
 
-## 💻 Exercises: Day 20
+## 💻 Exercises: Day 21
 
 1. Python has the module called _statistics_ and we can use this module to do all the statistical caluculations. Hower to challlenge ourselves, let's try to develop a program which calculate measure of central tendency of a sample(mean, median, mode) and measure of variability(range, variance, standard deviation). In addition to those measure, find the min, max, count and frequency distribution of the sample. Check the output below.
 
@@ -1220,3 +1222,7 @@ Variance:  17.5
 Standard Deviation:  4.2
 Frequency Distribution: [(20.0, 26), (16.0, 27), (12.0, 32), (8.0, 37), (8.0, 34), (8.0, 33), (8.0, 31), (8.0, 24), (4.0, 38), (4.0, 29), (4.0, 25)]
 ```
+   
+[<< Part 6 ](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/readme16-18.md) | [Part 8 >>](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/readme22-24.md)
+
+---
