@@ -704,6 +704,38 @@ We use *json()* method from response object, if the we are fetching JSON data. F
 Python is an object oriented programming language. Everything in Python is an object, with its properties and methods. A number, string, list, dictionary,tuple, set etc. used in a program is an object of a corresponding built-in class.  We create class to create an object. A Class is like an object constructor, or a "blueprint" for creating objects. We instantiate a class to create an object. The class defines attributes and the behavior of the object, while the object, on the other hand, represents the class.
 
 We have been  working with classes and objects right from the beginning of these challenge unknowingly. Every element in a Python program is an object of a class. 
+Let's check if everything in python is class:
+```py
+Last login: Tue Dec 10 09:35:28 on console
+asabeneh@Asabeneh:~$ pyhton
+-bash: pyhton: command not found
+asabeneh@Asabeneh:~$ python
+Python 3.7.5 (default, Nov  1 2019, 02:16:32) 
+[Clang 11.0.0 (clang-1100.0.33.8)] on darwin
+Type "help", "copyright", "credits" or "license" for more information.
+>>> num = 10
+>>> type(num)
+<class 'int'>
+>>> string = 'string'
+>>> type(string)
+<class 'str'>
+>>> boolean = True
+>>> type(boolean)
+<class 'bool'>
+
+>>> lst = []
+>>> type(lst)
+<class 'list'>
+>>> tpl = ()
+>>> type(tpl)
+<class 'tuple'>
+>>> set1 = set()
+>>> type(set1)
+<class 'set'>
+>>> dct = {}
+>>> type(dct)
+<class 'dict'>
+```
 ### Creating a Class
 To create a class we need the key word **class** followed by colon. Class name should be **CamelCase**.
 ```sh
