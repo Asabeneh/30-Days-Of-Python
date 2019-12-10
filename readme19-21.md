@@ -47,6 +47,7 @@
     - [Object default methods](#object-default-methods)
     - [Method to modify class default values](#method-to-modify-class-default-values)
     - [Inheritance](#inheritance)
+    - [Overriding parent method](#overriding-parent-method)
   - [💻 Exercises: Day 20](#%f0%9f%92%bb-exercises-day-20)
 # 📘 Day 19
 ## File handling
@@ -722,7 +723,6 @@ Type "help", "copyright", "credits" or "license" for more information.
 >>> boolean = True
 >>> type(boolean)
 <class 'bool'>
-
 >>> lst = []
 >>> type(lst)
 <class 'list'>
@@ -915,7 +915,39 @@ Lidiya Teklemariam is 28 year old. He lives in Espoo, Finland.
 ```
 
 We didn't call the *__init__()* constructor in the child class. If we didn't call it we can access all the properties but if we call it once we access the parent properties by calling *super*.   
-We can write addition method to the child or we can overwrite the parent class by creating the same method name in the child class.
+We can write add a new method to the child or we can overwrite the parent class by creating the same method name in the child class. When we add the __init__() function, the child class will no longer inherit the parent's __init__() function.
+
+### Overriding parent method
+```py
+class Student(Person):
+    def __init__ (self, firstname='Asabeneh', lastname='Yetayeh',age=250, country='Finland', city='Helsinki', gender='male'):
+        self.gender = gender
+        super().__init__(firstname, lastname,age, country, city)
+    def person_info(self):
+        gender = 'He' if self.gender =='male' else 'She'
+        return f'{self.firstname} {self.lastname} is {self.age} year old. {gender} lives in {self.city}, {self.country}.'
+
+s1 = Student('Eyob', 'Yetayeh', 30, 'Finland', 'Helsinki','male')
+s2 = Student('Lidiya', 'Teklemariam', 28, 'Finland', 'Espoo', 'female')
+print(s1.person_info())
+s1.add_skill('JavaScript')
+s1.add_skill('React')
+s1.add_skill('Python')
+print(s1.skills)
+
+print(s2.person_info())
+s2.add_skill('Organizing')
+s2.add_skill('Marketing')
+s2.add_skill('Digital Marketing')
+print(s2.skills)
+```
+```sh
+Eyob Yetayeh is 30 year old. He lives in Helsinki, Finland.
+['JavaScript', 'React', 'Python']
+Lidiya Teklemariam is 28 year old. She lives in Espoo, Finland.
+['Organizing', 'Marketing', 'Digital Marketing']
+```
+We can use super() function or the parent name Person to automatically inherit the methods and properties from its parent. In the above example, we override the parant method. The child method has a different feature, it can identify if the gender is male or female and assign the proper pronoun(He/She).
 
 ## 💻  Exercises: Day 20
 1. Develop a program which calculate the measure of central tendency of a sample(mean, median, mode) and measure of variability(range, variance, standard deviation). In addition to those measure, find the min, max, count and frequency distribution of the sample. Check the output below.
