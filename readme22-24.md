@@ -137,7 +137,12 @@ Jinja2==2.10.3
 MarkupSafe==1.1.1
 Werkzeug==0.16.0
 ```
+When you finish you should dactivate active project using *deactivate*.
+```sh
+(venv) asabeneh@Asabeneh:~/Desktop/30DaysOfPython$ deactivate
+```
 The necessary modules to work on flask are installed. Now, you project directory is ready for flask project. You should include the venv to your .gitignore file not to push it to github.
+
 
 ## 💻 Exercises: Day 23
 1. Create a project directory with a virtual environment based on the example give above.
