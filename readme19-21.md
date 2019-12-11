@@ -544,6 +544,8 @@ Let's some of the package used in the python community for different purposes. J
 
 ### Installing packages using pip
 
+
+
 Let's try to install _numpy_, which is called a numeric python. It is one of the most popular package in machine learning and data science community.
 
 - NumPy is the fundamental package for scientific computing with Python. It contains among other things:
@@ -594,6 +596,23 @@ Type "help", "copyright", "credits" or "license" for more information.
 ```
 
 This section is not about numpy nor pandas, here we are trying to learn how to install packages and how to import them. If it is needed we will talk about different packages in other sections.
+
+Let's import a web browser module, which can help us to open any website.You do not install this module, it is installed by default with python 3.  For instance if you like to open any number of website at any time or if you like to schedule something this *webbrowser* module can be use.
+```py
+import webbrowser # web browser module to open websites
+
+# list of urls: python
+url_lists = [
+    'http://www.python.org',
+    'https://www.linkedin.com/in/asabeneh/',
+    'https://twitter.com/Asabeneh',
+    'https://twitter.com/Asabeneh',
+]
+
+# opens the above list of websites in a different tab
+for url in url_lists:
+    webbrowser.open_new_tab(url)
+```
 
 ### Uninstall packages
 
