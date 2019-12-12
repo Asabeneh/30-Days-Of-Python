@@ -1207,7 +1207,7 @@ We can use super() function or the parent name Person to automatically inherit t
 
 ## 💻 Exercises: Day 21
 
-1. Python has the module called _statistics_ and we can use this module to do all the statistical caluculations. Hower to challlenge ourselves, let's try to develop a program which calculate measure of central tendency of a sample(mean, median, mode) and measure of variability(range, variance, standard deviation). In addition to those measure, find the min, max, count and frequency distribution of the sample. Check the output below.
+1. Python has the module called _statistics_ and we can use this module to do all the statistical caluculations. Hower to challlenge ourselves, let's try to develop a program which calculate measure of central tendency of a sample(mean, median, mode) and measure of variability(range, variance, standard deviation). In addition to those measures(mean, mode and median), find the min, max, count, percentile, and frequency distribution of the sample. You can create a class called Statistics and create all the functions which do statistical calculations as method for the Statistics class. Check the output below.
 
 ```py
 ages = [31, 26, 34, 37, 27, 26, 32, 32, 26, 27, 27, 24, 32, 33, 27, 25, 26, 38, 37, 31, 34, 24, 33, 29, 26]
@@ -1241,6 +1241,7 @@ Variance:  17.5
 Standard Deviation:  4.2
 Frequency Distribution: [(20.0, 26), (16.0, 27), (12.0, 32), (8.0, 37), (8.0, 34), (8.0, 33), (8.0, 31), (8.0, 24), (4.0, 38), (4.0, 29), (4.0, 25)]
 ```
+1. Create a class called PersonAccount. It has firstname, lastname, incomes, expenses properties and it has total_income, total_expense, account_info,add_income, add_expense and account_balance methods. Incomes is a set of incomes and its description and the same goes for expenses.
    
 [<< Part 6 ](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/readme16-18.md) | [Part 8 >>](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/readme22-24.md)
 
