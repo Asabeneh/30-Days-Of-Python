@@ -1207,7 +1207,7 @@ We can use super() function or the parent name Person to automatically inherit t
 
 ## 💻 Exercises: Day 21
 
-1. Python has the module called _statistics_ and we can use this module to do all the statistical caluculations. Hower to challlenge ourselves, let's try to develop a program which calculate measure of central tendency of a sample(mean, median, mode) and measure of variability(range, variance, standard deviation). In addition to those measures(mean, mode and median), find the min, max, count, percentile, and frequency distribution of the sample. You can create a class called Statistics and create all the functions which do statistical calculations as method for the Statistics class. Check the output below.
+1. Python has the module called _statistics_ and we can use this module to do all the statistical caluculations. Hower to challlenge ourselves, let's try to develop a program which calculate measure of central tendency of a sample(mean, median, mode) and measure of variability(range, variance, standard deviation). In addition to those measures find the min, max, count, percentile, and frequency distribution of the sample. You can create a class called Statistics and create all the functions which do statistical calculations as method for the Statistics class. Check the output below.
 
 ```py
 ages = [31, 26, 34, 37, 27, 26, 32, 32, 26, 27, 27, 24, 32, 33, 27, 25, 26, 38, 37, 31, 34, 24, 33, 29, 26]
