@@ -224,7 +224,7 @@ asabeneh@Asabeneh:~/Desktop/30DaysOfPython$ pip install numpy
 
 ### Importing NumPy
 
-Jupyter notebook is available if your are in favor of [jupyter notebook](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/r)
+Jupyter notebook is available if your are in favor of [jupyter notebook](https://github.com/Asabeneh/data-science-for-everyone/blob/master/numpy/numpy.ipynb)
 
 ```py
 # How to import numpy
