@@ -1,0 +1,91 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --header-bg-color: #4a7799;
+    --textarea-bg-color: rgb(235, 231, 231);
+    --body-bg-color: rgb(225, 228, 230);
+    --nav-link-color:#aaa;
+}
+
+body {
+    background: var(--body-bg-color);
+    margin: auto;
+    line-height: 1.5;
+}
+
+header {
+    background: var(--header-bg-color);
+}
+
+h1,
+h2 {
+    margin: 25px;
+}
+
+.menu-container {
+    width: 90%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    color: rgb(221, 215, 215);
+    padding: 25px;
+}
+
+.nav-lists {
+    display: flex;
+}
+
+li {
+    list-style: none;
+}
+
+.nav-list {
+    list-style: none;
+    margin: 0 5px;
+}
+
+.nav-link {
+    text-decoration: none;
+    font-size: 22px;
+    padding: 0 5px;
+    color: var(--nav-link-color);
+}
+
+main {
+    width: 90%;
+    margin: auto;
+    text-align: center;
+}
+
+.btn{
+    width: 150px;
+    height: 50px;
+    background: var(--header-bg-color);
+    color: var(--nav-link-color);
+    font-size: 20px;
+    margin:5px;
+    border: 1px solid var(--header-bg-color);
+}
+
+.btn:focus {
+    outline: 2px solid #2a70a5;
+}
+
+
+textarea {
+    padding: 20px;
+    outline: 1px solid var(--nav-link-color);
+    border: none;
+    font-size: 18px;
+}
+
+textarea:focus {
+    border: none;
+    outline: 2px solid #4a7799;
+    background: var(--textarea-bg-color);
+    font-size: 18px;
+}

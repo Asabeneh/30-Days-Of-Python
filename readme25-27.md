@@ -26,6 +26,10 @@
   - [Reading CSV File using pandas](#reading-csv-file-using-pandas)
     - [Data Exploration](#data-exploration)
   - [Exercises: Day 25](#exercises-day-25)
+- [📘 Day 26](#%f0%9f%93%98-day-26)
+  - [Python for Web](#python-for-web)
+      - [Flask](#flask)
+  - [Exercises: Day 26](#exercises-day-26)
 # 📘 Day 25
 ## Pandas
 
@@ -774,6 +778,389 @@ df.describe()  # describe can also give statistical information from a datafrom
     * Filter the titles which contain JavaScript
     * Explore the data and make sense of the data
 
+
+# 📘 Day 26
+
+## Python for Web
+
+Python is a general purpose programming language and it can be used for many places. In this section, we will see how we use python for the web. There are many python web frame works. Django and Flask are the most popular ones. Today, we will see how to use Flask for web development.
+
+#### Flask
+
+Flask is a web development framework written in python. Flask uses Jinja2 template engine. Flask can be also used with other modern frond libraries such as react.
+If you did not install the virtualenv package ye install it first. Virtual environment will allows to isolate project dependencies.
+
+Follow, the following steps to get started with Flask
+
+```sh
+pip install virtualenv
+```
+
+```sh
+asabeneh@Asabeneh:~/Desktop$ mkdir python_for_web
+asabeneh@Asabeneh:~/Desktop$ cd python_for_web/
+asabeneh@Asabeneh:~/Desktop/python_for_web$ virtualenv env
+asabeneh@Asabeneh:~/Desktop/python_for_web$ source env/bin/activate
+(env) asabeneh@Asabeneh:~/Desktop/python_for_web$ pip freeze
+(env) asabeneh@Asabeneh:~/Desktop/python_for_web$ pip install Flask
+(env) asabeneh@Asabeneh:~/Desktop/python_for_web$ pip freeze
+Click==7.0
+Flask==1.1.1
+itsdangerous==1.1.0
+Jinja2==2.10.3
+MarkupSafe==1.1.1
+Werkzeug==0.16.0
+(env) asabeneh@Asabeneh:~/Desktop/python_for_web$
+```
+
+Now, let's create app.py file in the project directory and write the following code. The following code has flask module, os module.
+
+The home route.
+
+```py
+# let's import the flask
+from flask import Flask
+import os # importing operating system module
+
+app = Flask(__name__)
+
+@app.route('/') # this decorator create the home route
+def home ():
+    return '<h1>Welcome</h1>'
+
+@app.route('/about')
+def about():
+    return '<h1>About us</h1>'
+
+
+if __name__ == '__main__':
+    port = int(os.environ.get("PORT", 5000)) # for deployment
+    # to make it work for both production and development
+    if port == 5000:
+        app.run(debug=True)
+    else:
+        app.run(port = port) # to listen to the port
+```
+
+After you run _python app.py_ check local host 5000.
+
+Let's add additional route.
+Creating about route
+
+```py
+# let's import the flask
+from flask import Flask
+import os # importing operating system module
+
+app = Flask(__name__)
+
+@app.route('/') # this decorator create the home route
+def home ():
+    return '<h1>Welcome</h1>'
+
+@app.route('/about')
+def about():
+    return '<h1>About us</h1>'
+
+
+if __name__ == '__main__':
+    port = int(os.environ.get("PORT", 5000)) # for deployment
+    # to make it work for both production and development
+    if port == 5000:
+        app.run(debug=True)
+    else:
+        app.run(port = port) # to listen to the port
+```
+
+Now, we added the about route in the above code. How about if we want to render an HTML file instead of string? It is possible to render HTML file using the function _render_templae_. Let's create a folder called templates and create home.html and about.html in the project directory. Let's also import the _render_template_ function from flask.
+
+Create the HTML files inside templates folder.
+
+home.html
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home</title>
+  </head>
+
+  <body>
+    <h1>Welcome Home</h1>
+  </body>
+</html>
+```
+
+about.html
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About</title>
+  </head>
+
+  <body>
+    <h1>About Us</h1>
+  </body>
+</html>
+```
+
+app.py
+
+```py
+# let's import the flask
+from flask import Flask, render_template
+import os # importing operating system module
+
+app = Flask(__name__)
+
+@app.route('/') # this decorator create the home route
+def home ():
+    return render_template('home.html')
+
+@app.route('/about')
+def about():
+    return render_template('about.html')
+
+if __name__ == '__main__':
+    port = int(os.environ.get("PORT", 5000)) # for deployment
+    # to make it work for both production and development
+    if port == 5000:
+        app.run(debug=True)
+    else:
+        app.run(port = port) # to listen to the port
+```
+
+As you can see to go to different pages or to navigate we need a navigation. Let's add a link to each page or let's create a layout which we use to every page.
+
+```html
+<ul>
+  <li><a href="/">Home</a></li>
+  <li><a href="/about">About</a></li>
+</ul>
+```
+
+Now, we can navigate between the pages using the above link. Let's create additional page which handle form data. You can call it any name, I like to call it post.html.
+
+We can inject data to the HTML files using Jinja2 template engine.
+
+```py
+# let's import the flask
+from flask import Flask, render_template, request, redirect, url_for
+import os # importing operating system module
+
+app = Flask(__name__)
+
+@app.route('/') # this decorator create the home route
+def home ():
+    techs = ['HTML', 'CSS', 'Flask', 'Python']
+    name = '30 Days Of Python Programming'
+    return render_template('home.html', techs=techs, name = name, title = 'Home')
+
+@app.route('/about')
+def about():
+    name = '30 Days Of Python Programming'
+    return render_template('about.html', name = name, title = 'About Us')
+
+@app.route('/post', methods= ['GET','POST'])
+def post():
+    name = 'Text Analyzer'
+    return render_template('post.html', name = name, title = name)
+
+
+if __name__ == '__main__':
+    # for deployment
+    # to make it work for both production and development
+    port = int(os.environ.get("PORT", 5000))
+    app.run(debug=True, host='0.0.0.0', port=port)
+```
+
+Let's see the templates too:
+
+home.html
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home</title>
+  </head>
+
+  <body>
+    <ul>
+      <li><a href="/">Home</a></li>
+      <li><a href="/about">About</a></li>
+    </ul>
+    <h1>Welcome to {{name}}</h1>
+    {% for tech in techs %}
+    <ul>
+      <li>{{tech}}</li>
+    </ul>
+    {% endfor %}
+  </body>
+</html>
+```
+
+about.html
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About Us</title>
+  </head>
+
+  <body>
+    <ul>
+      <li><a href="/">Home</a></li>
+      <li><a href="/about">About</a></li>
+    </ul>
+    <h1>About Us</h1>
+    <h2>{{name}}</h2>
+  </body>
+</html>
+```
+
+In the template files, there are lots of repeated codes, we can write a layout and we can remove the repetition. Let's create layout.html inside the templates folder.
+After we create the layout we will import to every file.
+
+layout.html
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    {% if title %}
+    <title>30 Days of Python - {{ title}}</title>
+    {% else %}
+    <title>30 Days of Python</title>
+    {% endif %}
+  </head>
+
+  <body>
+    <header>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/post">Text Analyzer</a></li>
+      </ul>
+    </header>
+    <main>
+      {% block content %} {% endblock %}
+    </main>
+  </body>
+</html>
+```
+
+Now, lets remove all the repeated code in the other template files and import the layout.html
+
+home.html
+
+```html
+{% extends 'layout.html' %} {% block content %}
+<h1>Welcome to {{name}}</h1>
+<p>You need the following technologies to build this web application:</p>
+{% for tech in techs %}
+<ul>
+  <li>{{tech}}</li>
+</ul>
+{% endfor %} {% endblock %}
+```
+
+about.html
+
+```html
+{% extends 'layout.html' %} {% block content %}
+<h1>About Us</h1>
+<h2>{{name}}</h2>
+{% endblock %}
+```
+
+post.html
+
+```html
+{% extends 'layout.html' %} {% block content %}
+<h1>Text Analyzer</h1>
+<textarea cols="50" rows="10"></textarea>
+<br />
+<button>Process Text</button>
+{% endblock %}
+```
+
+So far, we have seen how to use template and how to inject data to template, how to a common layout.
+Now, lets handle static file. Create a folder called static in the project director and create a folder called css. Inside css folder create main.css. Your main. css file will be linked to the layout.html.
+
+You don't have to write the css file, copy and use it. Let's move on to deployment. Heroku provides a free deployment service for both front end and fullstack applications. Create an account on [heroku](https://www.heroku.com/) and install the heroku [CLI](https://devcenter.heroku.com/articles/heroku-cli) for you machine.
+After installing heroku write the following command
+
+```sh
+asabeneh@Asabeneh:~$ heroku login
+heroku: Press any key to open up the browser to login or q to exit:
+```
+
+Let's see the result by clicking any key from the keyboard. When you press any key from you keyboard it will open the heroku login page and click the login page. Then you will local machine will be connected to the remote heroku server. If you are connected to remote server, you will see this.
+
+```sh
+asabeneh@Asabeneh:~$ heroku login
+heroku: Press any key to open up the browser to login or q to exit:
+Opening browser to https://cli-auth.heroku.com/auth/browser/be12987c-583a-4458-a2c2-ba2ce7f41610
+Logging in... done
+Logged in as asabeneh@gmail.com
+asabeneh@Asabeneh:~$
+```
+
+Before we push our code to remote server, we need requirements
+* requirements.txt
+* Procfile
+  
+```sh
+(env) asabeneh@Asabeneh:~/Desktop/python_for_web$ pip freeze
+Click==7.0
+Flask==1.1.1
+itsdangerous==1.1.0
+Jinja2==2.10.3
+MarkupSafe==1.1.1
+Werkzeug==0.16.0
+(env) asabeneh@Asabeneh:~/Desktop/python_for_web$ touch requirements.txt
+(env) asabeneh@Asabeneh:~/Desktop/python_for_web$ pip freeze > requirements.txt 
+(env) asabeneh@Asabeneh:~/Desktop/python_for_web$ cat requirements.txt 
+Click==7.0
+Flask==1.1.1
+itsdangerous==1.1.0
+Jinja2==2.10.3
+MarkupSafe==1.1.1
+Werkzeug==0.16.0
+(env) asabeneh@Asabeneh:~/Desktop/python_for_web$ touch Procfile
+(env) asabeneh@Asabeneh:~/Desktop/python_for_web$ ls
+Procfile          env/              static/
+app.py            requirements.txt  templates/
+(env) asabeneh@Asabeneh:~/Desktop/python_for_web$ 
+```
+The Procfile will have the command which run the application.
+```sh
+web: python app.py
+```
+Now, it is ready to be deployed. Steps to deploy the application on heroku
+1. git init 
+2. git add . 
+3. git commit -m "commit message"
+4. heroku create 'name of the app as one word'
+5. git push heroku master
+6. heroku open(to launch the deployed application)
+
+After this  step you will get an application like [this](https://thirtydaysofpython-v1.herokuapp.com/post)
+## Exercises: Day 26
 
 
 

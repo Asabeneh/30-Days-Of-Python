@@ -1,0 +1,11 @@
+{% extends 'layout.html' %}
+{% block content %}
+<h1>Welcome to {{name}}</h1>
+<p>You need the following technologies to build this web application:</p>
+<ul>
+    {% for tech in techs %}
+    <li>{{tech}}</li>
+
+    {% endfor %}
+</ul>
+{% endblock %}
