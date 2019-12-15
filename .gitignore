@@ -15,3 +15,5 @@ flask_project/ven/bin/
 flask_project/venv/include/
 flask_project/ven/lib
 numpy.ipynb
+.ipynb_checkpoints
+.vscode/

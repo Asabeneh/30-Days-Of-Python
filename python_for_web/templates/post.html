@@ -1,9 +1,17 @@
 {% extends 'layout.html' %}
 {% block content %}
-<h1>Text Analyzer</h1>
-<form action="result.html" method="POST"></form>
-<textarea cols="120" rows='30' name="content"></textarea>
-<br />
-<input type='submit' class="btn" value="Process Text"/>
-</form>
+<div class="container">
+    <h1>Text Analyzer</h1>
+    <form action="http://localhost:5000/post" method="POST">
+        <div>
+            <textarea rows='25' name="content" autofocus></textarea>
+        </div>
+        <div>
+            <input type='submit' class="btn" value="Process Text" />
+        </div>
+
+
+    </form>
+</div>
+
 {% endblock %}

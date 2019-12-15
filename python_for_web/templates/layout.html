@@ -4,7 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400|Nunito:300,400|Raleway:300,400,500&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
     {% if title %}
     <title>30 Days of Python - {{ title}}</title>
     {% else %}
@@ -16,19 +18,19 @@
     <header>
         <div class="menu-container">
             <div>
-                <a class="nav-link" href="/">30DaysOfPython</a>
+                <a class="brand-name nav-link" href="/">30DaysOfPython</a>
             </div>
-             <ul class="nav-lists">
-                 <li class="nav-list"><a class="nav-link" href="{{ url_for('home') }}">Home</a></li>
-                 <li class="nav-list"><a class="nav-link" href="{{ url_for('about') }}">About</a></li>
-                 <li class="nav-list"><a class="nav-link" href="{{ url_for('post') }}">Text Analyzer</a></li>
-             </ul>
+            <ul class="nav-lists">
+                <li class="nav-list"><a class="nav-link active" href="{{ url_for('home') }}">Home</a></li>
+                <li class="nav-list"><a class="nav-link active" href="{{ url_for('about') }}">About</a></li>
+                <li class="nav-list"><a class="nav-link active" href="{{ url_for('post') }}">Text Analyzer</a></li>
+            </ul>
         </div>
-       
+
 
     </header>
     <main>
-        {% block content %} {% endblock %}
+            {% block content %} {% endblock %}
     </main>
 </body>
 
