@@ -26,6 +26,7 @@
   - [Statistics Module](#statistics-module)
 - [NumPy](#numpy)
 
+GIVE FEEDBACK: http://thirtydayofpython-api.herokuapp.com/feedback
 # 📘 Day 22
 
 ## Python Web Scraping

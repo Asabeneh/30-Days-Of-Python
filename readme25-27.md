@@ -66,7 +66,7 @@
     - [Delete Document](#delete-document)
     - [Drop a collection](#drop-a-collection)
   - [💻 Exercises: Day 27](#%f0%9f%92%bb-exercises-day-27)
-
+GIVE FEEDBACK: http://thirtydayofpython-api.herokuapp.com/feedback
 # 📘 Day 25
 ## Pandas
 

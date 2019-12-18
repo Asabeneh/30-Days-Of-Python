@@ -51,6 +51,8 @@
     - [Math Module](#math-module)
     - [Random Module](#random-module)
   - [💻 Exercises: Day 12](#%f0%9f%92%bb-exercises-day-12)
+
+GIVE FEEDBACK: http://thirtydayofpython-api.herokuapp.com/feedback
 # 📘 Day 10
 ## Loops
 Life is full of routines. In programming also we do lots of repetitive tasks. In order to handle repetitive task programming languages provide loops. Python programming language also provides the following types of two loops to handle looping. 
