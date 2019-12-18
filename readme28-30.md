@@ -31,6 +31,8 @@
     - [Updating using PUT](#updating-using-put)
     - [Deleting a document using Delete](#deleting-a-document-using-delete)
   - [💻 Exercises: Day 29](#%f0%9f%92%bb-exercises-day-29)
+- [Day 30](#day-30)
+  - [Conclusions](#conclusions)
 
 # 📘 Day 28
 # Application Programming Interface(API)
@@ -574,9 +576,16 @@ if __name__ == '__main__':
 ```
 
 ## 💻 Exercises: Day 29
+1. Implement the above example and develop [this](https://thirtydayofpython-api.herokuapp.com/)
+
+# Day 30
+## Conclusions
+In the process of preparing this material I I have learning quite a lot and you have inspired me to do more. Congratulations for making it to this level. If you have done all the exercise and the projects, now you are capable to go a data analysis, data science, machine learning or web development.
 
 
-[<< Part 8 ](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/readme22-24.md) | [Part 10 >>](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/readme28-30.md)
+
+
+[<< Part 9 ](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/readme25-25.md) | [Part 10 >>](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/readme28-30.md)
 
 ---
 
