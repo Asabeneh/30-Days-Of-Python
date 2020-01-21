@@ -40,7 +40,7 @@
 - [📘 Day 2](#%f0%9f%93%98-day-2)
   - [Built in functions](#built-in-functions)
   - [Variables](#variables)
-  - [Data Types](#data-types)
+  - [Data Types](#data-types-1)
   - [Checking Data types and Casting](#checking-data-types-and-casting)
   - [Number](#number-1)
   - [💻 Exercises - Day 2](#%f0%9f%92%bb-exercises---day-2)
@@ -57,7 +57,9 @@
 
 ## Welcome
 
-**Congratulations** for deciding to participate in a **_30 days of Python_** programming challenge . In this challenge you will learn everything you need to be a python programmer and the whole concepts of programming. In the end of the challenge you will get a **_30DaysOfPython_** programming challenge certificate. [Join the telegram channel](https://t.me/ThirtyDaysOfPython)
+**Congratulations** for deciding to participate in a **_30 days of Python_** programming challenge . In this challenge you will learn everything you need to be a python programmer and the whole concepts of programming. In the end of the challenge you will get a **_30DaysOfPython_** programming challenge certificate.
+
+[Join the telegram channel](https://t.me/ThirtyDaysOfPython)
 
 ## Introduction
 
@@ -335,6 +337,7 @@ print(3 / 2)             # division(/)
 print(3 ** 2)            # exponential(**)
 print(3 % 2)             # modulus(%)
 print(3 // 2)            # Floor division operator(//)
+
 # Checking data types
 print(type(10))          # Int
 print(type(3.14))        # Float
@@ -342,7 +345,8 @@ print(type(1 + 3j))      # Complex number
 print(type('Asabeneh'))  # String
 print(type([1, 2, 3]))   # List
 print(type({'name':'Asabeneh'})) # Dictionary
-print(type({9.8, 3.14, 2.7}))    # Tuple
+print(type({9.8, 3.14, 2.7}))    # Set
+print(type((9.8, 3.14, 2.7)))    # Tuple
 ```
 
 ![Running python script](./images/running_python_script.png)
@@ -493,6 +497,7 @@ Variable can also be declared in one line:
 
 ```py
 first_name, last_name, country, age, is_married = 'Asabeneh', 'Yetayeh', 'Helsink', 250, True
+
 print(first_name, last_name, country, age, is_married)
 print('First name:', first_name)
 print('Last name: ', last_name)
@@ -507,6 +512,7 @@ Getting user input using the _input()_ built-in function. Let's assign the data 
 ```py
 first_name = input('What is your name: ')
 age = input('How old are you? ')
+
 print(first_name)
 print(age)
 ```
@@ -584,20 +590,14 @@ print(first_name_to_list)            # ['A', 's', 'a', 'b', 'e', 'n', 'e', 'h']
 Numbers are python data types.
 
 1. Integers: Integer(negative, zero and positive) numbers
-
-
     Example:
         ... -3, -2, -1, 0, 1, 2, 3 ...
 
 2. Floating Numbers(Decimal numbers)
-
-
     Example:
         ... -3.5, -2.25, -1.0, 0.0, 1.1, 2.2, 3.5 ...
 
 3. Complex Numbers
-
-
     Example:
         1 + j, 2 + 4j, 1 - 1j
 
