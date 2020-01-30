@@ -574,12 +574,12 @@ print(num_str)                  # '10'
 
 # str to int
 num_str = '10.6'
-print('num_int', int(num_str))      # 10
+#print('num_int', int(num_str))      # Will give error as the value in the string is a float value
 print('num_float', float(num_str))  # 10.6
 
 # str to list
-first = 'Asabeneh'
-print(first_name)
+first_name = 'Asabeneh'
+#print(first_name)
 print(first_name)                    # 'Asabeneh'
 first_name_to_list = list(first_name)
 print(first_name_to_list)            # ['A', 's', 'a', 'b', 'e', 'n', 'e', 'h']
