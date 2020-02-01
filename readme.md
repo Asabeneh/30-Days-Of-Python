@@ -166,7 +166,7 @@ Before we move on to the next section, lets practice more on the python interact
 
 ### Installing Visual Studio Code
 
-The python interactive shell is good to try and test small script codes but it won't be for a big project. In real work environment, developers use different code editors to write codes. In this 30 days python programming challenge we will use visual studio code. Visual studio code is a very popular open source text editor. I am a fun of vscode and I would recommend to [download](https://code.visualstudio.com/) visual studio code, but if you are in favor of other editors, feel free to follow with what you have.
+The python interactive shell is good to try and test small script codes but it won't be for a big project. In real work environment, developers use different code editors to write codes. In this 30 days python programming challenge we will use visual studio code. Visual studio code is a very popular open source text editor. I am a fan of vscode and I would recommend to [download](https://code.visualstudio.com/) visual studio code, but if you are in favor of other editors, feel free to follow with what you have.
 
 [![Visual Studio Code](./images/vscode.png)](https://code.visualstudio.com/)
 
