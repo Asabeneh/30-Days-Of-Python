@@ -683,8 +683,8 @@ lst.append(item)
 ```py
 fruits = ['banana', 'orange', 'mango', 'lemon']
 fruits.append('apple')
-print(fruits)           # ['banana', 'orange', 'mango', 'lemon', 'apple']
-fruits.append('lime')   # ['banana', 'orange', 'mango', 'lemon', 'apple', 'lime']
+print(fruits)           # ['banana', 'orange', 'apple', 'mango', 'lemon']
+fruits.append('lime')   # ['banana', 'orange', 'apple', 'lime', 'mango', 'lemon']
 print(fruits)
 ```
 ### Inserting item in to a list
