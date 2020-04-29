@@ -59,7 +59,7 @@
 
 **Congratulations** for deciding to participate in a **_30 days of Python_** programming challenge . In this challenge you will learn everything you need to be a python programmer and the whole concepts of programming. In the end of the challenge you will get a **_30DaysOfPython_** programming challenge certificate.
 
-[Join the telegram channel](https://t.me/ThirtyDaysOfPython)
+[Join the telegram channel to get help](https://t.me/ThirtyDaysOfPython)
 
 ## Introduction
 
@@ -97,10 +97,10 @@ As you can see from the terminal, I am using _python 3.7.5_ version at the momen
 
 ### Python Shell
 
-Python is an interpreted scripting language,o it doesn't need to be compiled. It means it executes the code line by line. Python comes with a _Python Shell (Python Interactive Shell)_. It is used to execute a single python command and get the result.
+Python is an interpreted scripting language,so it doesn't need to be compiled. It means it executes the code line by line. Python comes with a _Python Shell (Python Interactive Shell)_. It is used to execute a single python command and get the result.
 
 Python Shell waits for the python code from the user. When you enter the code, it interprets the code and shows the result in the next line.
-Open your terminal or cmd and write:
+Open your terminal or command prompt(cmd) and write:
 
 ```shell
 python
@@ -149,7 +149,7 @@ In python we have the following additional operations:
 - 3 % 2 = 1 => which means finding the remainder
 - 3 // 2 = 1 => which means removing the remainder
 
-Lets change the above mathematical expressions to code. The python shell has opened and lets write a comment at the very beginning of the shell.
+Lets change the above mathematical expressions to code. The python shell has been opened and lets write a comment at the very beginning of the shell.
 A _comment_ is a part of the code which is not executed by python. So we can leave some text in our code to make our code more readable. Python does not run the comment part. A comment in python starts with hash(#) symbol.
 This is a how you write comment in python
 
@@ -160,13 +160,13 @@ This is a how you write comment in python
 
 ![Maths on python shell](./images/maths_on_python_shell.png)
 
-Before we move on to the next section, lets practice more on the python interactive shell. Close the opened shell by writing _exit()_ on the shell and open it again and lets practice how to write text on the python shell.
+Before we move on to the next section, lets practice more on the python interactive shell. Close the opened shell by writing _exit()_ on the shell and open it again and let's practice how to write text on the python shell.
 
 ![Writing String on python shell](images/writing_string_on_shell.png)
 
 ### Installing Visual Studio Code
 
-The python interactive shell is good to try and test small script codes but it won't be for a big project. In real work environment, developers use different code editors to write codes. In this 30 days python programming challenge we will use visual studio code. Visual studio code is a very popular open source text editor. I am a fun of vscode and I would recommend to [download](https://code.visualstudio.com/) visual studio code, but if you are in favor of other editors, feel free to follow with what you have.
+The python interactive shell is good to try and test small script codes but it won't be for a big project. In real work environment, developers use different code editors to write codes. In this 30 days of python programming challenge we will use visual studio code. Visual studio code is a very popular open source text editor. I am a fan of vscode and I would recommend to [download](https://code.visualstudio.com/) visual studio code, but if you are in favor of other editors, feel free to follow with what you have.
 
 [![Visual Studio Code](./images/vscode.png)](https://code.visualstudio.com/)
 
@@ -350,6 +350,8 @@ print(type((9.8, 3.14, 2.7)))    # Tuple
 ```
 
 ![Running python script](./images/running_python_script.png)
+
+🌕  You are amazing. You have just completed day 1 challenge and you are in your way to greatness. Now do some exercises for your brain and for your muscle.
 
 ## 💻 Exercises - Day 1
 

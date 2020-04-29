@@ -1,4 +1,6 @@
+
 # Variables in Python
+
 first_name = 'Asabeneh'
 last_name = 'Yetayeh'
 country = 'Finland'
@@ -12,7 +14,9 @@ person_info = {
     'country':'Finland',
     'city':'Helsinki'
     }
+
 # Printing the values stored in the variables
+
 print('First name:', first_name)
 print('First name length:', len(first_name))
 print('Last name: ', last_name)
@@ -25,7 +29,9 @@ print('Skills: ', skills)
 print('Person information: ', person_info)
 
 # Declaring multiple variables in one line
+
 first_name, last_name, country, age, is_married = 'Asabeneh', 'Yetayeh', 'Helsink', 250, True
+
 print(first_name, last_name, country, age, is_married)
 print('First name:', first_name)
 print('Last name: ', last_name)

@@ -35,7 +35,7 @@
     - [Accessing list items using positive indexing](#accessing-list-items-using-positive-indexing)
     - [Accessing list items using negative indexing](#accessing-list-items-using-negative-indexing)
     - [Unpacking list items](#unpacking-list-items)
-    - [Slicing items from list](#slicing-items-from-list)
+    - [Slicing  items from list](#slicing-items-from-list)
     - [Modifying list](#modifying-list)
     - [Check items in a list](#check-items-in-a-list)
     - [Adding item in a list](#adding-item-in-a-list)
@@ -44,7 +44,7 @@
     - [Removing item using pop](#removing-item-using-pop)
     - [Removing item using del](#removing-item-using-del)
     - [Clearing list items](#clearing-list-items)
-    - [Copying a list](#copying-a-list)
+    - [Copying  a list](#copying-a-list)
     - [Joining lists](#joining-lists)
     - [Counting Items in a list](#counting-items-in-a-list)
     - [Finding index of an item](#finding-index-of-an-item)
@@ -62,11 +62,15 @@
     - [Joining tuples](#joining-tuples)
     - [Deleting tuple](#deleting-tuple)
   - [💻 Exercises: Day 6](#%f0%9f%92%bb-exercises-day-6)
+
 # Day 4
+
 ## String
+
 Text is a string data type. Any data type written as text is a string. Any data under single or double quote are strings. There are different string methods and built-in functions to deal with string data types. To check the length of a string use the len() method.
 
 ### Creating a string
+
 ```py
 letter = 'P'                # A string could be a single character or a bunch of texts
 print(letter)               # P
@@ -76,9 +80,10 @@ print(greeting)             # Hello, World!
 print(len(greeting))        # 13
 sentence = "I hope you are enjoying 30 days of python challenge"
 print(sentence)
-
 ```
+
 Multiline string is created by using triple ''' or  quotes.See the example below.
+
 ```py
 multiline_string = '''I am a teacher and enjoy teaching.
 I didn't find anything as rewarding as empowering people.
@@ -90,8 +95,11 @@ I didn't find anything as rewarding as empowering people.
 That is why I created 30 days of python."""
 print(multiline_string)
 ```
+
 ### String Concatenation
+
 We can connect to strings together. Merging or connecting to strings together is called concatenation.See the example below
+
   ```py
   first_name = 'Asabeneh'
   last_name = 'Yetayeh'
@@ -104,13 +112,17 @@ We can connect to strings together. Merging or connecting to strings together is
   print(len(first_name) > len(last_name)) # True
   print(len(full_name)) # 15
   ```
+
 ### Escape Sequences in string
+
 In python and other programming language \ followed by a character. Let's see the most common escape characters:
+
 * \n: new line
 * \t: Tab means(8 spaces)
 * \\\\: Back slash
 * \\': Single quote (')
 * \\":Double quote (")
+
 ```py
 print('I hope every one enjoying the python challenge.\nDo you ?') # line break
 print('Days\tTopics\tExercises')
@@ -132,10 +144,14 @@ Day 4	1	    35
 This is a back slash  symbol (\)
 In every programming language it starts with "Hello, World!"
 ```
+
 ### String formating
+
 #### Old Style String Formatting (% Operator)
+
 In python there many ways of formating string. In this section we will cover some of them.
 The "%" operator is used to format a set of variables enclosed in a "tuple" (a fixed size list), together with a format string, which contains normal text together with "argument specifiers", special symbols like "%s",  "%d", "%f", "%.<number of digits>f". 
+
 * %s - String (or any object with a string representation, like numbers)
 * %d - Integers
 * %f - Floating point numbers
@@ -247,11 +263,14 @@ print(last_letter) # n
 second_last = language[-2]
 print(second_last) # o
   ```
+
 #### Slicing Python Strings
-    In python we can slice substrings from a string.
+
+In python we can slice substrings from a string.
+
 ```py
 language = 'Python'
-first_three = language[0,3] # starts at zero index and up to 3 but not include 3
+first_three = language[0:3] # starts at zero index and up to 3 but not include 3
 last_three = language[3:6]
 print(last_three) # hon
 # Another way
@@ -260,8 +279,11 @@ print(last_three)   # hon
 last_three = language[3:]
 print(last_three)   # hon
 ```
+
 #### Reversing a string
+
 We can easily reverse string in python.
+
 ```py
 greeting = 'Hello, World!'
 print(greeting[::-1]) # !dlroW ,olleH
