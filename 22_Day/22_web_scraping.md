@@ -7,20 +7,23 @@
   <img alt="Twitter Follow" src="https://img.shields.io/twitter/follow/asabeneh?style=social">
   </a>
 
-  <sub>Author:
-  <a href="https://www.linkedin.com/in/asabeneh/" target="_blank">Asabeneh Yetayeh</a><br>
-  <small> First Edition: Nov 22 - Dec 22, 2019</small>
-  </sub>
+<sub>Author:
+<a href="https://www.linkedin.com/in/asabeneh/" target="_blank">Asabeneh Yetayeh</a><br>
+<small> First Edition: Nov 22 - Dec 22, 2019</small>
+</sub>
+
 </div>
 </div>
 
 [<< Day 21](../21_Day/21_class_and_object.md) | [Day 23 >>](../23_Day/23_virtual_environment.md)
 
 ![30DaysOfPython](../images/30DaysOfPython_banner3@2x.png)
+
 - [📘 Day 22](#%f0%9f%93%98-day-22)
   - [Python Web Scraping](#python-web-scraping)
     - [What is web scrapping](#what-is-web-scrapping)
   - [💻 Exercises: Day 22](#%f0%9f%92%bb-exercises-day-22)
+
 # 📘 Day 22
 
 ## Python Web Scraping
@@ -99,7 +102,6 @@ For reference check the beautiful [soup documentation](https://www.crummy.com/so
 
 1. Extract the table in this url (http://mlr.cs.umass.edu/ml/datasets.html) and change it to a json file
 2. Scrape the presidents table and store the data as json(https://en.wikipedia.org/wiki/List_of_presidents_of_the_United_States)
-
 
 🎉 CONGRATULATIONS ! 🎉
 

@@ -215,7 +215,7 @@ print(f) # n
 #### Accessing characters in strings by index
   In programming counting starts from zero. Therefore the first letter of a string is at zero index and the last letter of a string is the length of a string minus one.
 
-  ![String index](./images/string_index.png)
+  ![String index](../images/string_index.png)
   
 ```py
 language = 'Python'

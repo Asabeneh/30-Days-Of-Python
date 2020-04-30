@@ -7,16 +7,18 @@
   <img alt="Twitter Follow" src="https://img.shields.io/twitter/follow/asabeneh?style=social">
   </a>
 
-  <sub>Author:
-  <a href="https://www.linkedin.com/in/asabeneh/" target="_blank">Asabeneh Yetayeh</a><br>
-  <small> First Edition: Nov 22 - Dec 22, 2019</small>
-  </sub>
+<sub>Author:
+<a href="https://www.linkedin.com/in/asabeneh/" target="_blank">Asabeneh Yetayeh</a><br>
+<small> First Edition: Nov 22 - Dec 22, 2019</small>
+</sub>
+
 </div>
 </div>
 
 [<< Day 19](../19_Day/19_file_handling.md) | [Day 21 >>](../21_Day/21_class_and_object.md)
 
 ![30DaysOfPython](../images/30DaysOfPython_banner3@2x.png)
+
 - [📘 Day 20](#%f0%9f%93%98-day-20)
   - [Python PIP - Python Package Manager](#python-pip---python-package-manager)
     - [What is PIP ?](#what-is-pip)
@@ -30,7 +32,6 @@
     - [Creating a package](#creating-a-package)
     - [Further information about packages](#further-information-about-packages)
   - [Exercises: Day 20](#exercises-day-20)
-
 
 # 📘 Day 20
 
@@ -66,8 +67,6 @@ As you can see, I am using pip version 19.3.1, if you see some number a bit belo
 Let's some of the package used in the python community for different purposes. Just to let you know that there are lots of package which are available for use with different applications.
 
 ### Installing packages using pip
-
-
 
 Let's try to install _numpy_, which is called a numeric python. It is one of the most popular package in machine learning and data science community.
 
@@ -120,7 +119,8 @@ Type "help", "copyright", "credits" or "license" for more information.
 
 This section is not about numpy nor pandas, here we are trying to learn how to install packages and how to import them. If it is needed we will talk about different packages in other sections.
 
-Let's import a web browser module, which can help us to open any website.You do not install this module, it is installed by default with python 3.  For instance if you like to open any number of website at any time or if you like to schedule something this *webbrowser* module can be use.
+Let's import a web browser module, which can help us to open any website.You do not install this module, it is installed by default with python 3. For instance if you like to open any number of website at any time or if you like to schedule something this _webbrowser_ module can be use.
+
 ```py
 import webbrowser # web browser module to open websites
 
@@ -237,9 +237,9 @@ asabeneh@Asabeneh:~$ pip install requests
 
 We will see _get_, _status_code_, _headers_, _text_ and _json_ methods from _requests_ module
 _ get(): to open a network and fetch data from url and it returns a response object
-_ status_code: After we fetched, we check the status(succes, error, etc)
-_ headers: To check the header types
-_ text: to extract the text from the fetched response object \* json: to extract json data
+_ status*code: After we fetched, we check the status(succes, error, etc)
+* headers: To check the header types
+\_ text: to extract the text from the fetched response object \* json: to extract json data
 Let's read a txt file form this website, https://www.w3.org/TR/PNG/iso_8859-1.txt.
 
 ```py
@@ -363,23 +363,28 @@ def remainder(a, b):
 def power(a, b):
     return a ** b
 ```
+
 ```py
 # mypackage/greet.py
 # greet.py
 def greet_person(firstname, lastname):
     return f'{firstname} {lastname}, welcome to 30DaysOfPython Challenge!'
 ```
+
 The folder structure of your package should look like this:
+
 ```sh
 ─ mypackage
     ├── __init__.py
     ├── arithmetic.py
     └── greet.py
 ```
+
 Now let's open the python interactive shell and try the package we have created:
+
 ```sh
 asabeneh@Asabeneh:~/Desktop/30DaysOfPython$ python
-Python 3.7.5 (default, Nov  1 2019, 02:16:32) 
+Python 3.7.5 (default, Nov  1 2019, 02:16:32)
 [Clang 11.0.0 (clang-1100.0.33.8)] on darwin
 Type "help", "copyright", "credits" or "license" for more information.
 >>> from mypackage import arithmetics
@@ -398,10 +403,11 @@ Type "help", "copyright", "credits" or "license" for more information.
 >>> from mypackage import greet
 >>> greet.greet_person('Asabeneh', 'Yetayeh')
 'Asabeneh Yetayeh, welcome to 30DaysOfPython Challenge!'
->>> 
+>>>
 ```
-As you can see our package works perfect. The package folder contains a special file called __init__.py which stores the package's content. If we put  __init__.py in the package folder, python start recognizes it as a package.
-The __init__.py exposes specified resources from its modules to be imported to other python files. An empty __init__.py file makes all functions available when a package is imported. The __init__.py is essential for the folder to be recognized by Python as a package. 
+
+As you can see our package works perfect. The package folder contains a special file called **init**.py which stores the package's content. If we put **init**.py in the package folder, python start recognizes it as a package.
+The **init**.py exposes specified resources from its modules to be imported to other python files. An empty **init**.py file makes all functions available when a package is imported. The **init**.py is essential for the folder to be recognized by Python as a package.
 
 ### Further information about packages
 

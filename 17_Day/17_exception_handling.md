@@ -39,7 +39,7 @@ Python uses _try_ and _except_ to handle error gracefully. A graceful exit (or g
 
 We have cover the different python _error_ types in the previous section. If we use _try_ and _except_ our program don't raise error.
 
-![Try and Except](images/try_except.png)
+![Try and Except](../images/try_except.png)
 
 ```py
 try:

@@ -7,16 +7,18 @@
   <img alt="Twitter Follow" src="https://img.shields.io/twitter/follow/asabeneh?style=social">
   </a>
 
-  <sub>Author:
-  <a href="https://www.linkedin.com/in/asabeneh/" target="_blank">Asabeneh Yetayeh</a><br>
-  <small> First Edition: Nov 22 - Dec 22, 2019</small>
-  </sub>
+<sub>Author:
+<a href="https://www.linkedin.com/in/asabeneh/" target="_blank">Asabeneh Yetayeh</a><br>
+<small> First Edition: Nov 22 - Dec 22, 2019</small>
+</sub>
+
 </div>
 </div>
 
 [<< Day 20](../20_Day/20_python_package_manager.md) | [Day 22 >>](../22_Day/22_web_scraping.md)
 
 ![30DaysOfPython](../images/30DaysOfPython_banner3@2x.png)
+
 - [📘 Day 21](#%f0%9f%93%98-day-21)
   - [Classes and Objects](#classes-and-objects)
     - [Creating a Class](#creating-a-class)
@@ -351,8 +353,8 @@ Variance:  17.5
 Standard Deviation:  4.2
 Frequency Distribution: [(20.0, 26), (16.0, 27), (12.0, 32), (8.0, 37), (8.0, 34), (8.0, 33), (8.0, 31), (8.0, 24), (4.0, 38), (4.0, 29), (4.0, 25)]
 ```
+
 1. Create a class called PersonAccount. It has firstname, lastname, incomes, expenses properties and it has total_income, total_expense, account_info,add_income, add_expense and account_balance methods. Incomes is a set of incomes and its description and the same goes for expenses.
-   
 
 🎉 CONGRATULATIONS ! 🎉
 

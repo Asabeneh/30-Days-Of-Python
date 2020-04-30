@@ -7,24 +7,28 @@
   <img alt="Twitter Follow" src="https://img.shields.io/twitter/follow/asabeneh?style=social">
   </a>
 
-  <sub>Author:
-  <a href="https://www.linkedin.com/in/asabeneh/" target="_blank">Asabeneh Yetayeh</a><br>
-  <small> First Edition: Nov 22 - Dec 22, 2019</small>
-  </sub>
+<sub>Author:
+<a href="https://www.linkedin.com/in/asabeneh/" target="_blank">Asabeneh Yetayeh</a><br>
+<small> First Edition: Nov 22 - Dec 22, 2019</small>
+</sub>
+
 </div>
 </div>
 
-[<< Day 29](../29_Day/29_building_API.md) 
+[<< Day 29](../29_Day/29_building_API.md)
 ![30DaysOfPython](../images/30DaysOfPython_banner3@2x.png)
+
 - [Day 30](#day-30)
   - [Conclusions](#conclusions)
+
 # Day 30
+
 ## Conclusions
+
 In the process of preparing this material I I have learning quite a lot and you have inspired me to do more. Congratulations for making it to this level. If you have done all the exercise and the projects, now you are capable to go a data analysis, data science, machine learning or web development.
 
 GIVE FEEDBACK: http://thirtydayofpython-api.herokuapp.com/feedback
 
-
 🎉 CONGRATULATIONS ! 🎉
 
-[<< Day 29](../29_Day/29_building_API.md) 
+[<< Day 29](../29_Day/29_building_API.md)

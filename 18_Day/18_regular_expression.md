@@ -225,7 +225,7 @@ print(matches)  # ['Apple', 'apple']
   * r'apple|banana' mean either of an apple or a banana
 * (): Capture and group
 
-![Regular Expression cheat sheet](images/regex.png)
+![Regular Expression cheat sheet](../images/regex.png)
 
 Let's use example to clarify the above meta characters
 ### Square Bracket

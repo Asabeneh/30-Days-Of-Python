@@ -7,10 +7,11 @@
   <img alt="Twitter Follow" src="https://img.shields.io/twitter/follow/asabeneh?style=social">
   </a>
 
-  <sub>Author:
-  <a href="https://www.linkedin.com/in/asabeneh/" target="_blank">Asabeneh Yetayeh</a><br>
-  <small> First Edition: Nov 22 - Dec 22, 2019</small>
-  </sub>
+<sub>Author:
+<a href="https://www.linkedin.com/in/asabeneh/" target="_blank">Asabeneh Yetayeh</a><br>
+<small> First Edition: Nov 22 - Dec 22, 2019</small>
+</sub>
+
 </div>
 </div>
 
@@ -36,7 +37,6 @@
     - [Drop a collection](#drop-a-collection)
   - [💻 Exercises: Day 27](#%f0%9f%92%bb-exercises-day-27)
 
-
 # 📘 Day 27
 
 # Python with MongoDB
@@ -49,7 +49,7 @@ MongoDB is a NoSQL database. MongoDB stores data in a JSON like document which m
 
 ### SQL versus NoSQL
 
-![SQL versus NoSQL](./images/mongoDB/sql-vs-nosql.png)
+![SQL versus NoSQL](../images/mongoDB/sql-vs-nosql.png)
 
 In this section we will focus on a NoSQL database MongoDB. Lets sign up on [mongoDB](https://www.mongodb.com/) by click on the sign in button then click register on the next page.
 
@@ -61,15 +61,15 @@ Complete the fields and click continue
 
 Select the free plan
 
-![Mongodb free plan](./images/mongoDB/mongodb-free.png)
+![Mongodb free plan](../images/mongoDB/mongodb-free.png)
 
-Choose the proximate free region and give any name for you cluster. 
+Choose the proximate free region and give any name for you cluster.
 
-![Mongodb cluster name](./images/mongoDB/mongodb-cluster-name.png)
+![Mongodb cluster name](../images/mongoDB/mongodb-cluster-name.png)
 
 Now, a free sandbox is created
 
-![Mongodb sandbox](./images/mongoDB/mongodb-sandbox.png)
+![Mongodb sandbox](../images/mongoDB/mongodb-sandbox.png)
 
 All local host access
 
@@ -178,7 +178,7 @@ Check your mongoDB cluster and you will see both the database and the collection
 
 If you see this on the mongoDB cluster, it means you have successfully created a database and a collection.
 
-![Creating database and collection](./images/mongoDB/mongodb-creating_database.png)
+![Creating database and collection](../images/mongoDB/mongodb-creating_database.png)
 
 If you have seen on the figure, the document has been created with a long id which acts as a primary key. Every time we create a document mongoDB create and unique id for it.
 
@@ -464,8 +464,11 @@ for student in students:
 {'_id': ObjectId('5df68a23f106fe2d315bbc8d'), 'name': 'John', 'country': 'Sweden', 'city': 'Stockholm', 'age': 28}
 {'_id': ObjectId('5df68a23f106fe2d315bbc8e'), 'name': 'Sami', 'country': 'Finland', 'city': 'Helsinki', 'age': 25}
 ```
+
 ### Limiting documents
-We can limit the number of documents we return using the *limit()* method.
+
+We can limit the number of documents we return using the _limit()_ method.
+
 ```py
 # let's import the flask
 from flask import Flask, render_template
@@ -628,11 +631,10 @@ client = pymongo.MongoClient(MONGODB_URI)
 db = client['thirty_days_of_python'] # accessing the database
 db.students.drop()
 ```
+
 Now, we have deleted the students collection from the database.
 
 ## 💻 Exercises: Day 27
-
-
 
 🎉 CONGRATULATIONS ! 🎉
 

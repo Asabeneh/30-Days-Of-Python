@@ -7,16 +7,18 @@
   <img alt="Twitter Follow" src="https://img.shields.io/twitter/follow/asabeneh?style=social">
   </a>
 
-  <sub>Author:
-  <a href="https://www.linkedin.com/in/asabeneh/" target="_blank">Asabeneh Yetayeh</a><br>
-  <small> First Edition: Nov 22 - Dec 22, 2019</small>
-  </sub>
+<sub>Author:
+<a href="https://www.linkedin.com/in/asabeneh/" target="_blank">Asabeneh Yetayeh</a><br>
+<small> First Edition: Nov 22 - Dec 22, 2019</small>
+</sub>
+
 </div>
 </div>
 
 [<< Day 12](../12_Day/12_module.md) | [Day 14>>](../14_Day/14_higher_order_function.md)
 
 ![30DaysOfPython](../images/30DaysOfPython_banner3@2x.png)
+
 - [📘 Day 13](#%f0%9f%93%98-day-13)
   - [List Comprehension](#list-comprehension)
   - [Lambda Function](#lambda-function)

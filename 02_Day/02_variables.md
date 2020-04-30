@@ -7,10 +7,11 @@
   <img alt="Twitter Follow" src="https://img.shields.io/twitter/follow/asabeneh?style=social">
   </a>
 
-  <sub>Author:
-  <a href="https://www.linkedin.com/in/asabeneh/" target="_blank">Asabeneh Yetayeh</a><br>
-  <small> First Edition: Nov 22 - Dec 22, 2019</small>
-  </sub>
+<sub>Author:
+<a href="https://www.linkedin.com/in/asabeneh/" target="_blank">Asabeneh Yetayeh</a><br>
+<small> First Edition: Nov 22 - Dec 22, 2019</small>
+</sub>
+
 </div>
 </div>
 
@@ -25,8 +26,6 @@
   - [Checking Data types and Casting](#checking-data-types-and-casting)
   - [Number](#number)
   - [💻 Exercises - Day 2](#%f0%9f%92%bb-exercises---day-2)
-
-
 
 # 📘 Day 2
 
@@ -240,16 +239,16 @@ print(first_name_to_list)            # ['A', 's', 'a', 'b', 'e', 'n', 'e', 'h']
 Numbers are python data types.
 
 1. Integers: Integer(negative, zero and positive) numbers
-    Example:
-        ... -3, -2, -1, 0, 1, 2, 3 ...
+   Example:
+   ... -3, -2, -1, 0, 1, 2, 3 ...
 
 2. Floating Numbers(Decimal numbers)
-    Example:
-        ... -3.5, -2.25, -1.0, 0.0, 1.1, 2.2, 3.5 ...
+   Example:
+   ... -3.5, -2.25, -1.0, 0.0, 1.1, 2.2, 3.5 ...
 
 3. Complex Numbers
-    Example:
-        1 + j, 2 + 4j, 1 - 1j
+   Example:
+   1 + j, 2 + 4j, 1 - 1j
 
 ## 💻 Exercises - Day 2
 
@@ -270,20 +269,19 @@ Numbers are python data types.
 15. Using the _len()_ built-in function find the length of your first name
 16. Compare the length of your first name and your last name
 17. Declare 5 as num_one and 4 as num_two
-    1. Add num_one and num_two and assign the value to a variable _total_
-    2. Subtract num_two from num_one and assign the value to a variable _diff_
-    3. Multiply num_two and num_one and assign the value to a variable _product_
-    4. Divide num_one by num_two and assign the value to a variable _division_
-    5. Use modulus division to find num_two divided by num_one and assign the value to a variable _remainder_
-    6. Calculate num_one the power of num_two and assign the value to a variable _exp_
-    7. Find floor division of num_one by num_two and assign the value to a variable _floor_division_
+    1. Add num*one and num_two and assign the value to a variable \_total*
+    2. Subtract num*two from num_one and assign the value to a variable \_diff*
+    3. Multiply num*two and num_one and assign the value to a variable \_product*
+    4. Divide num*one by num_two and assign the value to a variable \_division*
+    5. Use modulus division to find num*two divided by num_one and assign the value to a variable \_remainder*
+    6. Calculate num*one the power of num_two and assign the value to a variable \_exp*
+    7. Find floor division of num*one by num_two and assign the value to a variable \_floor_division*
 18. The radius of a circle is 30 meters.
     1. Calculate the area of a circle and assign the value to a variable _area_of_circle_
     2. Calculate the circumference of a circle and assign the value to a variable _circum_of_circle_
     3. Take radius as user input and calculate the area.
 19. Use the built-in input function to get first name, last name, country and age from a user and store the value to their corresponding variable names
 20. Run help('keywords') on python shell or in your file check the reserved words
-
 
 🎉 CONGRATULATIONS ! 🎉
 

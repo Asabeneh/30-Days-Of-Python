@@ -7,16 +7,18 @@
   <img alt="Twitter Follow" src="https://img.shields.io/twitter/follow/asabeneh?style=social">
   </a>
 
-  <sub>Author:
-  <a href="https://www.linkedin.com/in/asabeneh/" target="_blank">Asabeneh Yetayeh</a><br>
-  <small> First Edition: Nov 22 - Dec 22, 2019</small>
-  </sub>
+<sub>Author:
+<a href="https://www.linkedin.com/in/asabeneh/" target="_blank">Asabeneh Yetayeh</a><br>
+<small> First Edition: Nov 22 - Dec 22, 2019</small>
+</sub>
+
 </div>
 </div>
 
 [<< Day 18](../18_Day/18_regular_expression.md) | [Day 20 >>](../20_Day/20_python_package_manager.md)
 
 ![30DaysOfPython](../images/30DaysOfPython_banner3@2x.png)
+
 - [📘 Day 19](#%f0%9f%93%98-day-19)
   - [File handling](#file-handling)
     - [Opening File for reading](#opening-file-for-reading)
@@ -32,7 +34,6 @@
     - [File with xlsx Extension](#file-with-xlsx-extension)
     - [File with xml Extension](#file-with-xml-extension)
   - [💻 Exercises: Day 19](#%f0%9f%92%bb-exercises-day-19)
-
 
 # 📘 Day 19
 
@@ -489,7 +490,6 @@ field: skills
    1. Count the number of lines containing python or Python
    2. Count the number lines containing JavaScript, javascript or Javascript
    3. Count the number lines containing Java not JavaScript
-
 
 🎉 CONGRATULATIONS ! 🎉
 

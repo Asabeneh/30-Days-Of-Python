@@ -7,19 +7,22 @@
   <img alt="Twitter Follow" src="https://img.shields.io/twitter/follow/asabeneh?style=social">
   </a>
 
-  <sub>Author:
-  <a href="https://www.linkedin.com/in/asabeneh/" target="_blank">Asabeneh Yetayeh</a><br>
-  <small> First Edition: Nov 22 - Dec 22, 2019</small>
-  </sub>
+<sub>Author:
+<a href="https://www.linkedin.com/in/asabeneh/" target="_blank">Asabeneh Yetayeh</a><br>
+<small> First Edition: Nov 22 - Dec 22, 2019</small>
+</sub>
+
 </div>
 </div>
 
 [<< Day 22](../22_Day/22_web_scraping.md) | [Day 24 >>](../24_Day/24_statistics.md)
 
 ![30DaysOfPython](../images/30DaysOfPython_banner3@2x.png)
+
 - [📘 Day 23](#%f0%9f%93%98-day-23)
   - [Setting up Virtual Environments](#setting-up-virtual-environments)
   - [💻 Exercises: Day 23](#%f0%9f%92%bb-exercises-day-23)
+
 # 📘 Day 23
 
 ## Setting up Virtual Environments
@@ -83,8 +86,8 @@ When you finish you should dactivate active project using _deactivate_.
 The necessary modules to work on flask are installed. Now, you project directory is ready for flask project. You should include the venv to your .gitignore file not to push it to github.
 
 ## 💻 Exercises: Day 23
-1. Create a project directory with a virtual environment based on the example give above.
 
+1. Create a project directory with a virtual environment based on the example give above.
 
 🎉 CONGRATULATIONS ! 🎉
 [<< Day 22](../22_Day/22_web_scraping.md) | [Day 24 >>](../24_Day/24_statistics.md)
