@@ -15,7 +15,7 @@
 </div>
 </div>
 
-[<< Day 1](../01_Day_Introduction/introduction.md) | [Day 3 >>](../03_Day_Operators/03_operators.md)
+[<< Day 1](../readme.md) | [Day 3 >>](../03_Day_Operators/03_operators.md)
 
 ![30DaysOfPython](../images/30DaysOfPython_banner3@2x.png)
 
@@ -285,4 +285,4 @@ Numbers are python data types.
 
 🎉 CONGRATULATIONS ! 🎉
 
-[<< Day 1](../01_Day_Introduction/introduction.md) | [Day 3 >>](../03_Day_Operators/03_operators.md)
+[<< Day 1](../readme.md) | [Day 3 >>](../03_Day_Operators/03_operators.md)
