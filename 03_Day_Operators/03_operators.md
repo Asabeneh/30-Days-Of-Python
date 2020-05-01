@@ -15,7 +15,7 @@
 </div>
 </div>
 
-[<< Day 2](../02_Day/02_variables.md) | [Day 4 >>](../04_Day/04_string.md)
+[<< Day 2](../02_Day_Variables/02_variables.md) | [Day 4 >>](../04_Day_Strings/04_string.md)
 
 ![30DaysOfPython](../images/30DaysOfPython_banner3@2x.png)
 
@@ -310,4 +310,4 @@ You lived 3153600000 seconds.
 
 🎉 CONGRATULATIONS ! 🎉
 
-[<< Day 2](../02_Day/02_variables.md) | [Day 4 >>](../04_Day/04_string.md)
+[<< Day 2](../02_Day_Variables/02_variables.md) | [Day 4 >>](../04_Day_Strings/04_string.md)

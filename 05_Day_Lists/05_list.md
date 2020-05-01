@@ -15,7 +15,7 @@
 </div>
 </div>
 
-[<< Day 5](../04_Day/04_string.md) | [Day 6 >>](../06_Day/06_tuple.md)
+[<< Day 5](../04_Day_Strings/04_string.md) | [Day 6 >>](../06_Day_Tuples/06_tuple.md)
 
 ![30DaysOfPython](../images/30DaysOfPython_banner3@2x.png)
 
@@ -128,7 +128,7 @@ Number of countries: 5
 ### Accessing list items using positive indexing
 
 We access each item in a list using their index. A list index start from 0. The picture below show clearly where the index starts
-![List index](./images/list_index.png)
+![List index](../images/list_index.png)
 
 ```py
 fruits = ['banana', 'orange', 'mango', 'lemon']
@@ -596,4 +596,4 @@ ages = [19, 22, 19, 24, 20, 25, 26, 24, 25, 24]
 
 🎉 CONGRATULATIONS ! 🎉
 
-[<< Day 5](../04_Day/04_string.md) | [Day 6 >>](../06_Day/06_tuple.md)
+[<< Day 5](../04_Day_Strings/04_string.md) | [Day 6 >>](../06_Day_Tuples/06_tuple.md)

@@ -15,7 +15,7 @@
 </div>
 </div>
 
-[<< Day 5](../05_Day/05_list.md) | [Day 7 >>](../07_Day/07_set.md)
+[<< Day 5](../05_Day_Lists/05_list.md) | [Day 7 >>](../07_Day_Sets/07_set.md)
 
 ![30DaysOfPython](../images/30DaysOfPython_banner3@2x.png)
 
@@ -235,4 +235,4 @@ del fruits
   nordic_countries = ('Denmark', 'Finland','Iceland', 'Norway', 'Sweden')
   ```
 
-[<< Day 4](../05_Day/05_list.md) | [Day 7 >>]()
+[<< Day 5](../05_Day_Lists/05_list.md) | [Day 7 >>](../07_Day_Sets/07_set.md)
