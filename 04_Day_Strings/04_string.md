@@ -20,19 +20,19 @@
 ![30DaysOfPython](../images/30DaysOfPython_banner3@2x.png)
 - [Day 4](#day-4)
   - [String](#string)
-    - [Creating a string](#creating-a-string)
+    - [Creating a String](#creating-a-string)
     - [String Concatenation](#string-concatenation)
-    - [Escape Sequences in string](#escape-sequences-in-string)
-    - [String formating](#string-formating)
+    - [Escape Sequences in Strings](#escape-sequences-in-string)
+    - [String Formating](#string-formating)
       - [Old Style String Formatting (% Operator)](#old-style-string-formatting--operator)
       - [New Style String Formatting (str.format)](#new-style-string-formatting-strformat)
       - [String Interpolation / f-Strings (Python 3.6+)](#string-interpolation--f-strings-python-36)
-    - [Python strings as sequences of characters](#python-strings-as-sequences-of-characters)
-      - [Unpacking characters](#unpacking-characters)
-      - [Accessing characters in strings by index](#accessing-characters-in-strings-by-index)
+    - [Python Strings as Sequences of Characters](#python-strings-as-sequences-of-characters)
+      - [Unpacking Characters](#unpacking-characters)
+      - [Accessing Characters in Strings by Index](#accessing-characters-in-strings-by-index)
       - [Slicing Python Strings](#slicing-python-strings)
-      - [Reversing a string](#reversing-a-string)
-      - [Skipping characters while slicing](#skipping-characters-while-slicing)
+      - [Reversing a String](#reversing-a-string)
+      - [Skipping Characters While Slicing](#skipping-characters-while-slicing)
     - [String Methods](#string-methods)
   - [💻 Exercises - Day 4](#%f0%9f%92%bb-exercises---day-4)
 # Day 4
@@ -41,7 +41,7 @@
 
 Text is a string data type. Any data type written as text is a string. Any data under single or double quote are strings. There are different string methods and built-in functions to deal with string data types. To check the length of a string use the len() method.
 
-### Creating a string
+### Creating a String
 
 ```py
 letter = 'P'                # A string could be a single character or a bunch of texts
@@ -50,11 +50,11 @@ print(len(letter))          # 1
 greeting = 'Hello, World!'  # String could be  a single or double quote,"Hello, World!"
 print(greeting)             # Hello, World!
 print(len(greeting))        # 13
-sentence = "I hope you are enjoying 30 days of python challenge"
+sentence = "I hope you are enjoying 30 days of Python Challenge"
 print(sentence)
 ```
 
-Multiline string is created by using triple ''' or  quotes.See the example below.
+Multiline string is created by using triple single (''') or double quotes ("""). See the example below.
 
 ```py
 multiline_string = '''I am a teacher and enjoy teaching.
@@ -70,22 +70,22 @@ print(multiline_string)
 
 ### String Concatenation
 
-We can connect to strings together. Merging or connecting to strings together is called concatenation.See the example below
+We can connect strings together. Merging or connecting strings is called concatenation. See the example below:
+  
+```py
+first_name = 'Asabeneh'
+last_name = 'Yetayeh'
+space = ' '
+full_name = first_name  +  space + last_name
+print(full_name) # Asabeneh Yetayeh
+# Checking length of a string using len() builtin function
+print(len(first_name))  # 8
+print(len(last_name))   # 7
+print(len(first_name) > len(last_name)) # True
+print(len(full_name)) # 15
+```
 
-  ```py
-  first_name = 'Asabeneh'
-  last_name = 'Yetayeh'
-  space = ' '
-  full_name = first_name  +  space + last_name
-  print(full_name) # Asabeneh Yetayeh
-  # Checking length of a string using len() builtin function
-  print(len(first_name))  # 8
-  print(len(last_name))   # 7
-  print(len(first_name) > len(last_name)) # True
-  print(len(full_name)) # 15
-  ```
-
-### Escape Sequences in string
+### Escape Sequences in Strings
 
 In python and other programming language \ followed by a character. Let's see the most common escape characters:
 
