@@ -50,26 +50,26 @@
 
 ## Welcome
 
-**Congratulations** for deciding to participate in a _30 days of Python_ programming challenge . In this challenge you will learn everything you need to be a python programmer and the whole concepts of programming. In the end of the challenge you will get a _30DaysOfPython_ programming challenge certificate.
+**Congratulations** for deciding to participate in a _30 days of Python_ programming challenge . In this challenge you will learn everything you need to be a python programmer and the whole concept of programming. In the end of the challenge you will get a _30DaysOfPython_ programming challenge certificate.
 
 [Join the telegram channel to get help](https://t.me/ThirtyDaysOfPython)
 
 ## Introduction
 
-Python is a high-level programming language for general-purpose programming. It is an open source. This 30 days python challenge will help you learn the latest version of Python, Python 3 step by step. The topics are broken down into 30 days, where each days contains several topics with easy-to-understand explanations, real-world examples and many hands on exercises.
+Python is a high-level programming language for general-purpose programming. It is open source. This 30 days python challenge will help you learn the latest version of Python, Python 3 step by step. The topics are broken down into 30 days, where each day contains several topics with easy-to-understand explanations, real-world examples and many hands on exercises.
 
 This challenge is designed for beginners and professionals who want to learn python programming language.
 
 ## Why Python ?
 
 It is a programming language which is very close to human language and because of that it is easy to learn and easy to use.
-Python used in varies industries including Google. It has been used to develop web applications, desktop applications, system adminstration, and machine learning libraries. Python is highly embraced language in the data science and machine learning community. I hope this is enough to convince you to start learning python. Python is eating the world and you are killing it before it eats you.
+Python is used by various industries and companies (including Google). It has been used to develop web applications, desktop applications, system adminstration, and machine learning libraries. Python is highly embraced language in the data science and machine learning community. I hope this is enough to convince you to start learning python. Python is eating the world and you are killing it before it eats you.
 
 ## Environment Setup
 
 ### Installing Python
 
-To run python script you need to install python. Let's [download](https://www.python.org/) python.
+To run a python script you need to install python. Let's [download](https://www.python.org/) python.
 If your are a windows user. Click the button encircled in red.
 
 [![installing on Windows](./images/installing_on_windows.png)](https://www.python.org/)
@@ -90,7 +90,7 @@ As you can see from the terminal, I am using _python 3.7.5_ version at the momen
 
 ### Python Shell
 
-Python is an interpreted scripting language,so it doesn't need to be compiled. It means it executes the code line by line. Python comes with a _Python Shell (Python Interactive Shell)_. It is used to execute a single python command and get the result.
+Python is an interpreted scripting language, so it doesn't need to be compiled. It means it executes the code line by line. Python comes with a _Python Shell (Python Interactive Shell)_. It is used to execute a single python command and get the result.
 
 Python Shell waits for the python code from the user. When you enter the code, it interprets the code and shows the result in the next line.
 Open your terminal or command prompt(cmd) and write:
@@ -111,24 +111,24 @@ To close the shell, next to this symbol >> write **exit()** command and press En
 
 ![Exit from python shell](./images/exit_from_shell.png)
 
-Now, you knew how to open the python interactive shell and how to exit from it.
+Now, you know how to open the python interactive shell and how to exit from it.
 
-Python can give you result if you write scripts what python understands if not it returns errors. Let's make a deliberate mistake and see what python will return.
+Python will give you results if you write scripts that python understands, if not it returns errors. Let's make a deliberate mistake and see what python will return.
 
 ![Invalid Syntax Error](./images/invalid_syntax_error.png)
 
 As you can see from the returned error, python is so clever that it knows the mistake we made and which was _Syntax Error: invalid syntax_. Using x as multiplication in python is a syntax error because (x) is not a valid syntax in python. Instead of (**x**) we use asterisk (*) for multiplication. The returned error clearly shows what to fix.
-The process of identifying and removing errors from a program is called *debugging*. Let's debug it by replacing * in place of **x**.
+The process of identifying and removing errors from a program is called *debugging*. Let's debug it by putting * in place of **x**.
 
 ![Fixing Syntax Error](./images/fixing_syntax_error.png)
 
-Our bug was fixed and the code run and we got a result we were expecting. As a programmer you will see such kind of errors on daily basis. It is good to know how to debug. To be good at debugging you should understand what kind of errors you are facing:SyntaxError, IndexError, ModuleNotFoundError, KeyError, ImportError etc. We will see more about different python **_error types_** in later section .
+Our bug was fixed, the code ran and we got a result we were expecting. As a programmer you will see such kind of errors on daily basis. It is good to know how to debug. To be good at debugging you should understand what kind of errors you are facing:SyntaxError, IndexError, ModuleNotFoundError, KeyError, ImportError etc. We will see more about different python **_error types_** in later sections.
 
-Let's practice more , how to use python interactive shell. Go to your terminal or command prompt and write the word **python**.
+Let's practice more how to use python interactive shell. Go to your terminal or command prompt and write the word **python**.
 
 ![Python Scripting Shell](./images/opening_python_shell.png)
 
-The python interactive shell is open and lets do some basic mathematics operations(addition, subtraction, multiplication, division, modulus, exponential).
+The python interactive shell is opened. Let's do some basic mathematic operations (addition, subtraction, multiplication, division, modulus, exponent).
 Lets do some maths first before we write any python code:
 
 - 2 + 3 = 5
@@ -144,11 +144,11 @@ In python we have the following additional operations:
 
 Lets change the above mathematical expressions to code. The python shell has been opened and lets write a comment at the very beginning of the shell.
 A _comment_ is a part of the code which is not executed by python. So we can leave some text in our code to make our code more readable. Python does not run the comment part. A comment in python starts with hash(#) symbol.
-This is a how you write comment in python
+This is how you write a comment in python
 
 ```shell
  # comment starts with hash
- # this is a python comment itself because it starts with a (#) symbol
+ # this is a python comment, because it starts with a (#) symbol
 ```
 
 ![Maths on python shell](./images/maths_on_python_shell.png)
@@ -167,21 +167,21 @@ If you installed visual studio code, let's see how to use it.
 
 #### How to use visual studio code
 
-Open the visual studio code by double clicking the visual studio icon. When you open it you will get this kind of interface. Try to interact with the labelled icons.
+Open the visual studio code by double clicking the visual studio icon. When you open it you will get this kind of interface. Try to interact with the labeled icons.
 
 ![Visual studio Code](./images/vscode_ui.png)
 
-Create a folder name 30DaysOfPython on your desktop. Then open it using visual studio code.
+Create a folder named 30DaysOfPython on your desktop. Then open it using visual studio code.
 
 ![Opening Project on Visual studio](./images/how_to_open_project_on_vscode.png)
 
 ![Opening a project](./images/opening_project.png)
 
-After you opened you can create file and folder inside the your project directory which is 30DaysOfPython. As you can see below, I have created the very first file, helloworld.py. You can do the same.
+After opening it you will see shortcuts for creating files and folders inside of 30DaysOfPython project's directory. As you can see below, I have created the very first file, helloworld.py. You can do the same.
 
 ![Creating a python file](./images/helloworld.png)
 
-After a long day of coding, you want to close your code editor, right ?. This is how you will close the opened project.
+After a long day of coding, you want to close your code editor, right? This is how you will close the opened project.
 
 ![Closing project](./images/closing_opened_project.png)
 
@@ -191,18 +191,18 @@ Congratulations, you have finished setting up the development environment. Let's
 
 ### Python Syntax
 
-A python script can be written on python interactive shell or on code editor. A python file has an extension .py.
+A python script can be written in python interactive shell or in the code editor. A python file has an extension .py.
 
 ### Python Indentation
 
-An indentation is a white space in a text. Indentation in many languages used to increase code readability, however python uses indentation to create block of codes. In other programming languages curly bracket used to create block of codes instead of indentation. One of the common bug when you write a python code will be wrong indentation.
+An indentation is a white space in a text. Indentation in many languages is used to increase code readability, however python uses indentation to create block of codes. In other programming languages curly brackets are used to create blocks of codes instead of indentation. One of the common bugs when writing python code is wrong indentation.
 
 ![Indentation Error](./images/indentation.png)
 
-### Comment
+### Comments
 
-Comment is very important to make code more readable and to leave to remark in our code. Python doesn't run comment part of our code.
-Any text starts with hash(#) in python is a comment.
+Comments are very important to make the code more readable and to leave remarks in our code. Python doesn't run comment parts of our code.
+Any text starting with hash(#) in python is a comment.
 
 **Example: Single Line Comment**
 
@@ -218,14 +218,14 @@ Triple quote can be used for multiline comment if it is not assigned to a variab
 
 ```shell
 """This is multiline comment
-multiline comment take multiple lines.
+multiline comment takes multiple lines.
 python is eating the world
 """
 ```
 
 ### Data types
 
-In python there are several types of data types. Let's get started with the most common ones. Different data types will be covered in detail in other sections for the time being just go through the different data types and get familiar with them. You do not have to have a clear understanding now.
+In python there are several types of data types. Let's get started with the most common ones. Different data types will be covered in detail in other sections. For the time being let us just go through the different data types and get familiar with them. You do not have to have a clear understanding now.
 
 #### Number
 
@@ -241,7 +241,7 @@ In python there are several types of data types. Let's get started with the most
 
 #### String
 
-A collection of one or more characters under a single or double quote. If a string is more than one sentence we use triple quote.
+A collection of one or more characters under a single or double quote. If a string is more than one sentence then we use a triple quote.
 
 **Example:**
 
@@ -260,8 +260,8 @@ A boolean data type is either a True or False value. T and F should be always up
 **Example:**
 
 ```python
-    True  #  if the light on, if it is on the value is True
-    False # if the light off, if it is off the value is False
+    True  #  Is the light on? If it is on, then the value is True
+    False # Is the light on? If it is off, then the value is False
 ```
 
 #### List
@@ -271,10 +271,10 @@ Python list is an ordered collection which allows to store different data type i
 **Example:**
 
 ```py
-[0, 1, 2, 3, 4, 5]  # all are the same data types which are list of numbers
-['Banana', 'Orange', 'Mango', 'Avocado'] # all the same data type which are list of fruits
-['Finland','Estonia', 'Sweden','Norway'] # all the same data type which are list of countries
-['Banana', 10, False, 9.81] # different data types in the list which are string, integer, boolean and float
+[0, 1, 2, 3, 4, 5]  # all are the same data types - a list of numbers
+['Banana', 'Orange', 'Mango', 'Avocado'] # all the same data types - a list of strings (fruits!)
+['Finland','Estonia', 'Sweden','Norway'] # all the same data types - a list of strings (countries!)
+['Banana', 10, False, 9.81] # different data types in the list - string, integer, boolean and float
 ```
 
 #### Dictionary
@@ -299,9 +299,9 @@ A tuple is an ordered collection of different data types like list but tuples ca
 
 #### Set
 
-A set is a collection data types similar to list and tuple. Unlike list and tuple, set is not an ordered collection of items. Like in mathematics, set in python store only unique items.
+A set is a collection of data types similar to list and tuple. Unlike list and tuple, set is not an ordered collection of items. Like in mathematics, set in python stores only unique items.
 
-In later sections, we will go in detail in each and every python data types.
+In later sections, we will go in detail about each and every python data type.
 
 **Example:**
 
@@ -311,13 +311,13 @@ In later sections, we will go in detail in each and every python data types.
 
 ### Checking Data types
 
-To check the data type of a certain data type we use the **type** function. In the following terminal you will see the different python data types:
+To check the data type of certain data/variable we use the **type** function. In the following terminal you will see different python data types:
 
 ![Checking Data types](./images/checking_data_types.png)
 
 ### Python File
 
-First open your project folder, 30DaysOfPython. If you don't have this folder,create a folder name called 30DaysOfPython. Inside this folder, create a file called helloworld.py. Now, let's do what we did on python interactive shell using visual studio code.
+First open your project folder, 30DaysOfPython. If you don't have this folder, create a folder name called 30DaysOfPython. Inside this folder, create a file called helloworld.py. Now, let's do what we did on python interactive shell using visual studio code.
 The python interactive shell was printing without using **print** but on visual studio code to see our result we should use a built in function **print(some data to print)**. See the examples below.
 
 **Example:**
@@ -331,7 +331,7 @@ print(2 + 3)             # addition(+)
 print(3 - 1)             # subtraction(-)
 print(2 * 3)             # multiplication(*)
 print(3 / 2)             # division(/)
-print(3 ** 2)            # exponential(**)
+print(3 ** 2)            # exponent(**)
 print(3 % 2)             # modulus(%)
 print(3 // 2)            # Floor division operator(//)
 
@@ -346,11 +346,11 @@ print(type({9.8, 3.14, 2.7}))    # Set
 print(type((9.8, 3.14, 2.7)))    # Tuple
 ```
 
-To run the python file check the image below. You can run the python file either by running the green button or by *python helloworld.py* on the terminal .
+To run the python file check the image below. You can run the python file either by running the green button or by typing *python helloworld.py* in the terminal .
 
 ![Running python script](./images/running_python_script.png)
 
-🌕  You are amazing. You have just completed day 1 challenge and you are in your way to greatness. Now do some exercises for your brain and for your muscle.
+🌕  You are amazing. You have just completed day 1 challenge and you are on your way to greatness. Now do some exercises for your brain and for your muscle.
 
 ## 💻 Exercises - Day 1
 
@@ -361,7 +361,7 @@ To run the python file check the image below. You can run the python file either
    - multiplication(\*)
    - modulus(%)
    - division(/)
-   - exponential(\*\*)
+   - exponent(\*\*)
    - floor division operator(//)
 3. Write strings on the python interactive shell. The strings are the following:
    - Your name
@@ -377,7 +377,7 @@ To run the python file check the image below. You can run the python file either
    - Your name
    - Your family name
    - Your country
-5. Create a folder name day_1 inside 30DaysOfPython folder. Inside day_1 folder, create a python file helloword.py and repeat question 1, 2, 3 and 4. Remember to use _print()_ when you are working on a python file. Navigate to the directory where you saved your file, and run it.
+5. Create a folder named day_1 inside 30DaysOfPython folder. Inside day_1 folder, create a python file helloword.py and repeat questions 1, 2, 3 and 4. Remember to use _print()_ when you are working on a python file. Navigate to the directory where you have saved your file, and run it.
 
 🎉 CONGRATULATIONS ! 🎉
 
