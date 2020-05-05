@@ -22,7 +22,7 @@
   - [String](#string)
     - [Creating a String](#creating-a-string)
     - [String Concatenation](#string-concatenation)
-    - [Escape Sequences in Strings](#escape-sequences-in-string)
+    - [Escape Sequences in Strings](#escape-sequences-in-strings)
     - [String Formating](#string-formating)
       - [Old Style String Formatting (% Operator)](#old-style-string-formatting--operator)
       - [New Style String Formatting (str.format)](#new-style-string-formatting-strformat)
