@@ -20,11 +20,11 @@
 ![30DaysOfPython](../images/30DaysOfPython_banner3@2x.png)
 
 - [📘 Day 2](#%f0%9f%93%98-day-2)
-  - [Built-in functions](#built-in-functions)
+  - [Built in functions](#built-in-functions)
   - [Variables](#variables)
   - [Data Types](#data-types)
   - [Checking Data types and Casting](#checking-data-types-and-casting)
-  - [Numbers](#number)
+  - [Numbers](#numbers)
   - [💻 Exercises - Day 2](#%f0%9f%92%bb-exercises---day-2)
 
 # 📘 Day 2
@@ -41,7 +41,7 @@ Let's open the python shell and start using some of the most common built-in fun
 
 Let's practice more by using different built-in functions
 
-![Help and Dir Built in Functions](/../images/help_and_dir_builtin.png)
+![Help and Dir Built in Functions](../images/help_and_dir_builtin.png)
 
 As you can see from the terminal above, python has got reserved words. We do not use reserved words to declare variables or functions. We will cover variables in the next section.
 
