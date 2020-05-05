@@ -33,7 +33,7 @@
   - [Basic Python](#basic-python)
     - [Python Syntax](#python-syntax)
     - [Python Indentation](#python-indentation)
-    - [Comment](#comment)
+    - [Comments](#comments)
     - [Data types](#data-types)
       - [Number](#number)
       - [String](#string)
@@ -128,7 +128,7 @@ Let's practice more how to use python interactive shell. Go to your terminal or 
 
 ![Python Scripting Shell](./images/opening_python_shell.png)
 
-The python interactive shell is opened. Let's do some basic mathematic operations (addition, subtraction, multiplication, division, modulus, exponent).
+The python interactive shell is opened. Let's do some basic mathematic operations (addition, subtraction, multiplication, division, modulus,  exponential).
 Lets do some maths first before we write any python code:
 
 - 2 + 3 = 5
@@ -331,7 +331,7 @@ print(2 + 3)             # addition(+)
 print(3 - 1)             # subtraction(-)
 print(2 * 3)             # multiplication(*)
 print(3 / 2)             # division(/)
-print(3 ** 2)            # exponent(**)
+print(3 ** 2)            # exponential(**)
 print(3 % 2)             # modulus(%)
 print(3 // 2)            # Floor division operator(//)
 
@@ -361,7 +361,7 @@ To run the python file check the image below. You can run the python file either
    - multiplication(\*)
    - modulus(%)
    - division(/)
-   - exponent(\*\*)
+   - exponential(\*\*)
    - floor division operator(//)
 3. Write strings on the python interactive shell. The strings are the following:
    - Your name
