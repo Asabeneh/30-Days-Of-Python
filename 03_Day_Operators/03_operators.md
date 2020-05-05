@@ -32,7 +32,7 @@
 
 ## Boolean
 
-A boolean data type represents one of the two values:_True_ or _False_. The use of these data types will be clear when you start the comparison operator. The first letter **T** for True and **F** for False should be capital unlike JavaScript.
+A boolean data type represents one of the two values: _True_ or _False_. The use of these data types will be clear once we start using the comparison operator. The first letter **T** for True and **F** for False should be capital unlike JavaScript.
 **Example: Boolean Values**
 
 ```py
@@ -53,12 +53,12 @@ Assignment operators are used to assign values to variables. Let's take = as an 
 ### Arithmetic Operators:
 
 - Addition(+): a + b
-- Subtraction(-): a -b
-- Multiplication(_):a _ b
+- Subtraction(-): a - b
+- Multiplication(*):a * b
 - Division(/): a / b
 - Modulus(%):a % b
 - Floor division(//): a // b
-- Exponential(**):a ** b
+- Exponentiation(**):a ** b
 
 ![Arithmetic Operators](../images/arithmetic_operators.png)
 
@@ -77,15 +77,15 @@ print('Division: ', 7 / 2)
 print('Division without the remainder: ', 7 // 2)   # gives without the floating number or without the remaining
 print('Modulus: ', 3 % 2)                           # Gives the remainder
 print ('Division without the remainder: ',7 // 3)
-print('Exponential: ', 3 ** 2)                      # it means 3 * 3
+print('Exponentiation: ', 3 ** 2)                      # it means 3 * 3
 ```
 
 **Example:Floats**
 
 ```py
 # Floating numbers
-print('Floating Number,PI', 3.14)
-print('Floating Number, gravity', 9.81)
+print('Floating Point Number, PI', 3.14)
+print('Floating Point Number, gravity', 9.81)
 ```
 
 **Example:Complex numbers**
@@ -93,10 +93,10 @@ print('Floating Number, gravity', 9.81)
 ```py
 # Complex numbers
 print('Complex number: ', 1+1j)
-print('Multiplying complex number: ',(1+1j) * (1-1j))
+print('Multiplying complex numbers: ',(1+1j) * (1-1j))
 ```
 
-Let's declare a variable and assign a number data type. I am going to use single character variable but remember do not develop a habit of declaring such types of variable. Variable names should be all the time mnemonic.
+Let's declare a variable and assign a number data type. I am going to use single character variable but remember do not develop a habit of declaring such types of variables. Variable names should be all the time mnemonic.
 
 **Example:**
 
@@ -115,15 +115,15 @@ remainder = a % b
 floor_division = a // b
 exponential = a ** b
 
-# I should have used sum instead of total but sum is a built-in function try to avoid overriding builtin functions
-print(total) # if you don't label your print with some string, you never know from where is  the result is coming
+# I should have used sum instead of total but sum is a built-in function - try to avoid overriding builtin functions
+print(total) # if you don't label your print with some string, you never know where the result is coming from
 print('a + b = ', total)
 print('a - b = ', diff)
 print('a * b = ', product)
 print('a / b = ', division)
 print('a % b = ', remainder)
 print('a // b = ', floor_division)
-print('a ** b = ', exponential)
+print('a ** b = ', exponentiation)
 ```
 
 **Example:**
@@ -150,7 +150,7 @@ print('division: ', div)
 print('remainder: ', remainder)
 ```
 
-Let's start start connecting the dots and start making use of what we knew to calculate(area, volume, weight, perimeter, distance, force)
+Let's start start connecting the dots and start making use of what we already know to calculate (area, volume, weight, perimeter, distance, force)
 
 **Example:**
 
@@ -197,7 +197,7 @@ print(len('tomato') == len('potato'))  # True
 print(len('python') > len('dragon'))   # False
 
 
-# Comparing something give either a True or False
+# Comparing something gives either a True or False
 
 print('True == True: ', True == True)
 print('True == False: ', True == False)
@@ -211,22 +211,22 @@ In addition to the above comparison operator python uses:
 
 - _is_: Returns true if both variables are the same object(x is y)
 - _is not_: Returns true if both variables are not the same object(x is not y)
-- _in_: Returns True if a list with the a certain item(x in y)
-- _not in_: Returns True if a list doesn't have the a certain item(x in y)
+- _in_: Returns True if the queried list contains a certain item(x in y)
+- _not in_: Returns True if the queried list doesn't have a certain item(x in y)
 
 ```py
 print('1 is 1', 1 is 1)                   # True - because the data values are the same
 print('1 is not 2', 1 is not 2)           # True - because 1 is not 2
 print('A in Asabeneh', 'A' in 'Asabeneh') # True - A found in the string
-print('B in Asabeneh', 'B' in 'Asabeneh') # False -there is no uppercase B
+print('B in Asabeneh', 'B' in 'Asabeneh') # False - there is no uppercase B
 print('coding' in 'coding for all') # True - because coding for all has the word coding
 print('a in an:', 'a' in 'an')      # True
-print('4 is 2 ** 2:', 4 is 2 **2)   # True
+print('4 is 2 ** 2:', 4 is 2 ** 2)   # True
 ```
 
 ### Logical Operators
 
-Unlike other programming languages python uses the key word _and_, _or_ and _not_ for logical operator. Logical operators are used to combine conditional statements:
+Unlike other programming languages python uses keywords _and_, _or_ and _not_ for logical operators. Logical operators are used to combine conditional statements:
 
 ![Logical Operators](../images/logical_operators.png)
 
@@ -235,7 +235,7 @@ print(3 > 2 and 4 > 3) # True - because both statements are true
 print(3 > 2 and 4 < 3) # False - because the second statement is false
 print(3 < 2 and 4 < 3) # False - because both statements are false
 print(3 > 2 or 4 > 3)  # True - because both statements are true
-print(3 > 2 or 4 < 3)  # True - because one of the statement is true
+print(3 > 2 or 4 < 3)  # True - because one of the statements is true
 print(3 < 2 or 4 < 3)  # False - because both statements are false
 print(not 3 > 2)     # False - because 3 > 2 is true, then not True gives False
 print(not True)      # False - Negation, the not operator turns true to false
@@ -244,22 +244,22 @@ print(not not True)  # True
 print(not not False) # False
 ```
 
-🌕 You have boundless energy. You have just completed day 3 challenges and you are three steps a head in to your way to greatness. Now do some exercises for your brain and for your muscle.
+🌕 You have boundless energy. You have just completed day 3 challenges and you are three steps ahead on your way to greatness. Now do some exercises for your brain and for your muscle.
 
 ## 💻 Exercises - Day 3
 
 1. Declare your age as integer variable
 2. Declare your height as a float variable
 3. Declare a complex number variable
-4. Write a script that prompt the user to enter base and height of the triangle and calculate an area of a triangle (area = 0.5 x b x h).
+4. Write a script that prompts the user to enter base and height of the triangle and calculate an area of this triangle (area = 0.5 x b x h).
 
 ```py
     Enter base: 20
     Enter height: 10
-    The area of the triangle is 50
+    The area of the triangle is 100
 ```
 
-5. Write a script that prompt the user to enter side a, side b, and side c of the triangle and and calculate the perimeter of triangle (perimeter = a + b + c)
+5. Write a script that prompts the user to enter side a, side b, and side c of the triangle. Calculate the perimeter of the triangle (perimeter = a + b + c).
 
 ```py
 Enter side a: 5
@@ -268,14 +268,14 @@ Enter side c: 3
 The perimeter of the triangle is 12
 ```
 
-6. Get length and width using prompt and calculate an area of rectangle (area = length x width and the perimeter of rectangle (perimeter = 2 x (length + width))
-7. Get radius using prompt and calculate the area of a circle (area = pi x r x r) and circumference of a circle(c = 2 x pi x r) where pi = 3.14.
+6. Get length and width of a rectangle using prompt. Calculate its area (area = length x width) and perimeter (perimeter = 2 x (length + width))
+7. Get radius of a circle using prompt. Calculate the area (area = pi x r x r) and circumference (c = 2 x pi x r) where pi = 3.14.
 8. Calculate the slope, x-intercept and y-intercept of y = 2x -2
-9. Slope is (m = y2-y1/x2-x1). Find the slope between point (2, 2) and point(6,10)
-10. Compare the slope of q10 and 11
+9. Slope is (m = y2-y1/x2-x1). Find the slope between point (2, 2) and point (6,10)
+10. Compare the slopes in tasks 8 and 9.
 11. Calculate the value of y (y = x^2 + 6x + 9). Try to use different x values and figure out at what x value y is 0.
-12. Find the length of python and jargon and make a falsy comparison statement.
-13. Use _and_ operator to check if 'on' is found in both python and jargon
+12. Find the length of 'python' and 'jargon' and make a falsy comparison statement.
+13. Use _and_ operator to check if 'on' is found in both 'python' and 'jargon'
 14. _I hope this course is not full of jargon_. Use _in_ operator to check if _jargon_ is in the sentence.
 15. There is no 'on' in both dragon and python
 16. Find the length of the text _python_ and convert the value to float and convert it to string
@@ -283,7 +283,7 @@ The perimeter of the triangle is 12
 18. The floor division of 7 by 3 is equal to the int converted value of 2.7.
 19. Check if type of '10' is equal to 10
 20. Check if int('9.8') is equal to 10
-21. Writ a script that prompt a user to enters hours and rate per hour. Calculate pay of the person?
+21. Writ a script that prompts the user to enter hours and rate per hour. Calculate pay of the person?
 
 ```py
 Enter hours: 40
@@ -291,14 +291,14 @@ Enter rate per hour: 28
 Your weekly earning is 1120
 ```
 
-22. Write a script that prompt the user to enter number of years. Calculate the number of seconds a person can live. Assume some one lives just hundred years
+22. Write a script that prompts the user to enter number of years. Calculate the number of seconds a person can live. Assume someone lives up to hundred years
 
 ```py
-Enter number of yours you live: 100
-You lived 3153600000 seconds.
+Enter number of years you have lived: 100
+You have lived for 3153600000 seconds.
 ```
 
-23. Write a python script that display the following table
+23. Write a python script that displays the following table
 
 ```py
 1 1 1 1 1
