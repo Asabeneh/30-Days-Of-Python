@@ -80,10 +80,6 @@ In the above example, the exception block will run and we do not know exactly th
 In the following example, it will handle the error and also tells the kind of error raised.
 
 ```py
-except TypeError:
-    print(TypeError)
-except:
-    print('Something goes wrong')
 try:
     name = input('Enter your name:')
     year_born = input('Year you born:')
