@@ -21,21 +21,21 @@
 
 - [📘 Day 7](#%f0%9f%93%98-day-7)
   - [Set](#set)
-    - [Creating a set](#creating-a-set)
-    - [Getting set length](#getting-set-length)
-    - [Accessing Items in set](#accessing-items-in-set)
-    - [Checking an item](#checking-an-item)
-    - [Adding items to a list](#adding-items-to-a-list)
-    - [Removing item from a list](#removing-item-from-a-list)
-    - [Clearing item in a set](#clearing-item-in-a-set)
-    - [Deleting a set](#deleting-a-set)
-    - [Converting list to set](#converting-list-to-set)
-    - [Joining sets](#joining-sets)
-    - [Finding intersection items](#finding-intersection-items)
-    - [Checking subset and super set](#checking-subset-and-super-set)
-    - [Checking difference between two sets](#checking-difference-between-two-sets)
-    - [Finding Symmetric difference between two sets](#finding-symmetric-difference-between-two-sets)
-    - [Joining set](#joining-set)
+    - [Creating a Set](#creating-a-set)
+    - [Getting Set's Length](#getting-sets-length)
+    - [Accessing Items in a Set](#accessing-items-in-a-set)
+    - [Checking an Item](#checking-an-item)
+    - [Adding Items to a List](#adding-items-to-a-list)
+    - [Removing Items from a List](#removing-items-from-a-list)
+    - [Clearing Items in a Set](#clearing-item-in-a-set)
+    - [Deleting a Set](#deleting-a-set)
+    - [Converting List to a Set](#converting-list-to-a-set)
+    - [Joining Sets](#joining-sets)
+    - [Finding Intersection Items](#finding-intersection-items)
+    - [Checking Subsets and Super Sets](#checking-subsets-and-super-sets)
+    - [Checking Difference Between Two Sets](#checking-difference-between-two-sets)
+    - [Finding Symmetric Difference Between Two Sets](#finding-symmetric-difference-between-two-sets)
+    - [Joining Sets](#joining-sets)
   - [💻 Exercises: Day 7](#%f0%9f%92%bb-exercises-day-7)
 
 # 📘 Day 7
@@ -44,7 +44,7 @@
 
 Let me take you back to your elementary or high school Mathematics lesson. The Mathematics definition of set can be applied also in python. Set is a collection of unordered and unindexed distinct elements. In python set uses to store unique items, and it is possible to find the _union_, _intersection_, _difference_, _symmetric difference_, _subset_, _super set_ and _disjoint set_ among sets.
 
-### Creating a set
+### Creating a Set
 
 We use curly bracket, {} to create a set.
 
@@ -71,7 +71,7 @@ st = {'item1', 'item2', 'item3', 'item4'}
 fruits = {'banana', 'orange', 'mango', 'lemon'}
 ```
 
-### Getting set length
+### Getting Set's Length
 
 We use **len()** method to find the length of a set.
 
