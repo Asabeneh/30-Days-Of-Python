@@ -33,7 +33,7 @@
     - [Removing Items from a List](#removing-items-from-a-list)
     - [Removing Items Using Pop](#removing-items-using-pop)
     - [Removing Items Using Del](#removing-items-using-del)
-    - [Clearing List items](#clearing-list-items)
+    - [Clearing List Items](#clearing-list-items)
     - [Copying a List](#copying-a-list)
     - [Joining Lists](#joining-lists)
     - [Counting Items in a List](#counting-items-in-a-list)
@@ -203,7 +203,7 @@ print(es)
 
 ```py
 fruits = ['banana', 'orange', 'mango', 'lemon']
-all_fruits = fruits[0:3] # it returns all the fruits
+all_fruits = fruits[0:4] # it returns all the fruits
 # this will also give the same result as the one above
 all_fruits = fruits[0:] # if we don't set where to stop it takes all the rest
 orange_and_mango = fruits[1:3] # it does not include the first index
@@ -502,7 +502,7 @@ print(ages.reverse())
 
 To sort lists we can use _sort()_ method or _sorted()_ built-in functions. The _sort()_ method reorders the list items in ascending order and modifies the original list. If an argument of _sort()_ method reverse is equal to true, it will arrange the list in descending order.
 
-- sort():
+- sort(): this method modifies the original list
 
   ```py
   # syntax
@@ -541,7 +541,7 @@ To sort lists we can use _sort()_ method or _sorted()_ built-in functions. The _
   print(sorted(fruits))     # ['banana', 'lemon', 'mango', 'orange']
   # Reverse order
   fruits = ['banana', 'orange', 'mango', 'lemon']
-  fruits = sorted(fruits,reverse=True)     # we can modify the original list this way too
+  fruits = sorted(fruits,reverse=True)
   print(fruits)     # ['orange', 'mango', 'lemon', 'banana']
   ```
 
@@ -573,10 +573,12 @@ To sort lists we can use _sort()_ method or _sorted()_ built-in functions. The _
 24. Remove all IT companies from the list
 25. Destroy the IT companies list
 26. Join the following lists:
+
     ```py
     front_end = ['HTML', 'CSS', 'JS', 'React', 'Redux']
     back_end = ['Node','Express', 'MongoDB']
     ```
+
 27. After joining the lists in question 26. Copy the joined list and assign it to a variable full_stack. Then insert Python and SQL after Redux.
 28. The following is a list of 10 students ages:
 
