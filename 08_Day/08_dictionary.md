@@ -21,36 +21,36 @@
 
 - [📘 Day 8](#%f0%9f%93%98-day-8)
   - [Dictionary](#dictionary)
-    - [Creating a dictionary](#creating-a-dictionary)
+    - [Creating a Dictionary](#creating-a-dictionary)
     - [Dictionary Length](#dictionary-length)
-    - [Accessing a dictionary items](#accessing-a-dictionary-items)
-    - [Adding Item to a dictionary](#adding-item-to-a-dictionary)
-    - [Modifying Item in a dictionary](#modifying-item-in-a-dictionary)
-    - [Checking a key in a dictionary](#checking-a-key-in-a-dictionary)
-    - [Removing key items from dictionary](#removing-key-items-from-dictionary)
-    - [Changing dictionary to list items](#changing-dictionary-to-list-items)
-    - [Clearing dictionary list items](#clearing-dictionary-list-items)
-    - [Deleting dictionary](#deleting-dictionary)
-    - [Copy a dictionary](#copy-a-dictionary)
-    - [Getting dictionary keys as list](#getting-dictionary-keys-as-list)
-    - [Getting dictionary values as list](#getting-dictionary-values-as-list)
+    - [Accessing Dictionary Items](#accessing-dictionary-items)
+    - [Adding Items to a Dictionary](#adding-items-to-a-dictionary)
+    - [Modifying Items in a Dictionary](#modifying-items-in-a-dictionary)
+    - [Checking Keys in a Dictionary](#checking-keys-in-a-dictionary)
+    - [Removing Key and Value Pairs from a Dictionary](#removing-key-and-value-pairs-from-a-dictionary)
+    - [Changing Dictionary to a List of Items](#changing-dictionary-to-a-list-of-items)
+    - [Clearing a Dictionary](#clearing-a-dictionary)
+    - [Deleting a Dictionary](#deleting-a-dictionary)
+    - [Copying a Dictionary](#copying-a-dictionary)
+    - [Getting Dictionary Keys as a List](#getting-dictionary-keys-as-a-list)
+    - [Getting Dictionary Values as a List](#getting-dictionary-values-as-list)
   - [💻 Exercises: Day 8](#%f0%9f%92%bb-exercises-day-8)
 
 # 📘 Day 8
 
 ## Dictionary
 
-A dictionary is a collection of unordered, modifiable(mutable) key value paired data type.
+A dictionary is a collection of unordered, modifiable(mutable) paired (key: value) data type.
 
-### Creating a dictionary
+### Creating a Dictionary
 
-To create a dictionary we use a curly bracket, {}.
+To create a dictionary we use curly brackets, {}.
 
 ```py
 # syntax
 empty_dict = {}
 # Dictionary with data values
-dct = {'key1':'item1', 'key2':'item2', 'key3':'item3', 'key4':'item4'}
+dct = {'key1':'value1', 'key2':'value2', 'key3':'value3', 'key4':'value4'}
 ```
 
 **Example:**
@@ -74,11 +74,11 @@ The dictionary above shows that a value could be any different data type:string,
 
 ### Dictionary Length
 
-It checks the number of key value pairs in the dictionary.
+It checks the number of 'key: value' pairs in the dictionary.
 
 ```py
 # syntax
-dct = {'key1':'item1', 'key2':'item2', 'key3':'item3', 'key4':'item4'}
+dct = {'key1':'value1', 'key2':'value2', 'key3':'value3', 'key4':'value4'}
 print(len(dct)) # 4
 ```
 
@@ -101,15 +101,15 @@ print(len(person)) # 7
 
 ```
 
-### Accessing a dictionary items
+### Accessing Dictionary Items
 
-We can access a dictionary items by referring to its key name.
+We can access Dictionary items by referring to its key name.
 
 ```py
 # syntax
-dct = {'key1':'item1', 'key2':'item2', 'key3':'item3', 'key4':'item4'}
-print(dct['key1']) # item1
-print(dct['key4']) # item4
+dct = {'key1':'value1', 'key2':'value2', 'key3':'value3', 'key4':'value4'}
+print(dct['key1']) # value1
+print(dct['key4']) # value4
 ```
 
 **Example:**
@@ -129,13 +129,13 @@ person = {
     }
 print(person['first_name']) # Asabeneh
 print(person['country'])    # Finland
-print(person['skills'])     # ['HTML','CSS','JavaScript', 'React', 'Node', 'MongoDB', 'Python']
+print(person['skills'])     # ['JavaScript', 'React', 'Node', 'MongoDB', 'Python']
+print(person['skills'][0])  # JavaScript
+print(person['address']['street']) # Space street
 print(person['city'])       # Error
 ```
 
-Accessing an item by key name raises an error if the key does not exist. To avoid this error first we have to check if a key exist or we can use the _get_ method.The get method returns None, which is a NoneType object data type.
-object if the data
-
+Accessing an item by key name raises an error if the key does not exist. To avoid this error first we have to check if a key exist or we can use the _get_ method. The get method returns None, which is a NoneType object data type, if the key does not exist.
 ```py
 person = {
     'first_name':'Asabeneh',
@@ -155,14 +155,14 @@ print(person.get('skills')) #['HTML','CSS','JavaScript', 'React', 'Node', 'Mongo
 print(person.get('city'))   # None
 ```
 
-### Adding Item to a dictionary
+### Adding Items to a Dictionary
 
-We can add new key and value pair to a dictionary
+We can add new key and value pairs to a dictionary
 
 ```py
 # syntax
-dct = {'key1':'item1', 'key2':'item2', 'key3':'item3', 'key4':'item4'}
-dct['key5'] = 'item5'
+dct = {'key1':'value1', 'key2':'value2', 'key3':'value3', 'key4':'value4'}
+dct['key5'] = 'value5'
 ```
 
 **Example:**
@@ -185,14 +185,14 @@ person['skills'].append('HTML')
 print(person)
 ```
 
-### Modifying Item in a dictionary
+### Modifying Items in a Dictionary
 
-We can add modify item in a dictionary
+We can modify items in a dictionary
 
 ```py
 # syntax
-dct = {'key1':'item1', 'key2':'item2', 'key3':'item3', 'key4':'item4'}
-dct['key1'] = 'item-one'
+dct = {'key1':'value1', 'key2':'value2', 'key3':'value3', 'key4':'value4'}
+dct['key1'] = 'value-one'
 ```
 
 **Example:**
@@ -214,30 +214,30 @@ person['first_name'] = 'Eyob'
 person['age']
 ```
 
-### Checking a key in a dictionary
+### Checking Keys in a Dictionary
 
 We use the _in_ operator to check if a key exist in a dictionary
 
 ```py
 # syntax
-dct = {'key1':'item1', 'key2':'item2', 'key3':'item3', 'key4':'item4'}
+dct = {'key1':'value1', 'key2':'value2', 'key3':'value3', 'key4':'value4'}
 print('key2' in dct) # True
 print('key5' in dct) # False
 ```
 
-### Removing key items from dictionary
+### Removing Key and Value Pairs from a Dictionary
 
 - _pop(key)_: removes the item with the specified key name:
-- _popitem()_: remove the last time
-- _del_: removes the item with the specified key name
+- _popitem()_: removes the last item
+- _del_: removes an item with specified key name
 
 ```py
 # syntax
-dct = {'key1':'item1', 'key2':'item2', 'key3':'item3', 'key4':'item4'}
-dct.pop('key1') # the first key pair removed
-dct = {'key1':'item1', 'key2':'item2', 'key3':'item3', 'key4':'item4'}
-dct.popitem() # remove the last item
-del dct['key2'] # remove key 2 item
+dct = {'key1':'value1', 'key2':'value2', 'key3':'value3', 'key4':'value4'}
+dct.pop('key1') # removes key1 item
+dct = {'key1':'value1', 'key2':'value2', 'key3':'value3', 'key4':'value4'}
+dct.popitem() # removes the last item
+del dct['key2'] # removes key2 item
 ```
 
 **Example:**
@@ -255,86 +255,86 @@ person = {
         'zipcode':'02210'
     }
     }
-person.pop('first_name')        # Remove the firstname item
-person.popitem()                # Remove the lastname item
-del person['is_married']        # Remove the is_married item
+person.pop('first_name')        # Removes the firstname item
+person.popitem()                # Removes the lastname item
+del person['is_married']        # Removes the is_married item
 ```
 
-### Changing dictionary to list items
+### Changing Dictionary to a List of Items
 
-The _items()_ method change a dictionary to list of tuples.
+The _items()_ method changes dictionary to a list of tuples.
 
 ```py
 # syntax
-dct = {'key1':'item1', 'key2':'item2', 'key3':'item3', 'key4':'item4'}
-print(dct.items()) # dict_items([('key1', 'item1'), ('key2', 'item2'), ('key3', 'item3'), ('key4', 'item4')])
+dct = {'key1':'value1', 'key2':'value2', 'key3':'value3', 'key4':'value4'}
+print(dct.items()) # dict_items([('key1', 'value1'), ('key2', 'value2'), ('key3', 'value3'), ('key4', 'value4')])
 ```
 
-### Clearing dictionary list items
+### Clearing a Dictionary
 
-If we don't want the items in a dictionary we can clear them using _clear()_ methods
+If we don't want the items in a dictionary we can clear them using _clear()_ method
 
 ```py
 # syntax
-dct = {'key1':'item1', 'key2':'item2', 'key3':'item3', 'key4':'item4'}
-print(dct.clear()) # {}
+dct = {'key1':'value1', 'key2':'value2', 'key3':'value3', 'key4':'value4'}
+print(dct.clear()) # None
 ```
 
-### Deleting dictionary
+### Deleting a Dictionary
 
 If we do not use the dictionary we can delete it completely
 
 ```py
 # syntax
-dct = {'key1':'item1', 'key2':'item2', 'key3':'item3', 'key4':'item4'}
+dct = {'key1':'value1', 'key2':'value2', 'key3':'value3', 'key4':'value4'}
 del dct
 ```
 
-### Copy a dictionary
+### Copy a Dictionary
 
-We copy a dictionary using a _copy()_ method. Using copy we can avoid mutation of the original dictionary.
+We can copy a dictionary using a _copy()_ method. Using copy we can avoid mutation of the original dictionary.
 
 ```py
 # syntax
-dct = {'key1':'item1', 'key2':'item2', 'key3':'item3', 'key4':'item4'}
-dct_copy = dct.copy() # {'key1':'item1', 'key2':'item2', 'key3':'item3', 'key4':'item4'}
+dct = {'key1':'value1', 'key2':'value2', 'key3':'value3', 'key4':'value4'}
+dct_copy = dct.copy() # {'key1':'value1', 'key2':'value2', 'key3':'value3', 'key4':'value4'}
 ```
 
-### Getting dictionary keys as list
+### Getting Dictionary Keys as a List
 
 The _keys()_ method gives us all the keys of a a dictionary as a list.
 
 ```py
 # syntax
-dct = {'key1':'item1', 'key2':'item2', 'key3':'item3', 'key4':'item4'}
+dct = {'key1':'value1', 'key2':'value2', 'key3':'value3', 'key4':'value4'}
 keys = dct.keys()
 print(keys)     # dict_keys(['key1', 'key2', 'key3', 'key4'])
 ```
 
-### Getting dictionary values as list
+### Getting Dictionary Values as a List
 
 The _values_ method gives us all the values of a a dictionary as a list.
 
 ```py
 # syntax
-dct = {'key1':'item1', 'key2':'item2', 'key3':'item3', 'key4':'item4'}
+dct = {'key1':'value1', 'key2':'value2', 'key3':'value3', 'key4':'value4'}
 values = dct.values()
-print(values)     # dict_values(['item1', 'item2', 'item3', 'item4'])
+print(values)     # dict_values(['value1', 'value2', 'value3', 'value4'])
 ```
 
 ## 💻 Exercises: Day 8
 
 1. Create a an empty dictionary called dog
-2. Add name, color, breed, legs, age to the dog, dictionary
-3. Create a student dictionary and add first_name, last_name, gender, age, marital status, skills, country, city and address as key for the dictionary
-4. Get the length of student dictionary
-5. Get the value of skills and check the data type, it should be list
-6. Modify the skills value by adding one or two skills
-7. Get the dictionary keys as list
-8. Get the dictionary values as list
-9. Change the dictionary to a list of tuples using \*items() method
-10. Delete one of the item in the dictionary
-11. Delete the dictionary completely
+2. Add name, color, breed, legs, age to the dog dictionary
+3. Create a student dictionary and add first_name, last_name, gender, age, marital status, skills, country, city and address as keys for the dictionary
+4. Get the length of the student dictionary
+5. Get the value of skills and check the data type, it should be a list
+6. Modify the skills values by adding one or two skills
+7. Get the dictionary keys as a list
+8. Get the dictionary values as a list
+9. Change the dictionary to a list of tuples using _items()_ method
+10. Delete one of the items in the dictionary
+11. Delete one of the dictionaries
 
 🎉 CONGRATULATIONS ! 🎉
 
