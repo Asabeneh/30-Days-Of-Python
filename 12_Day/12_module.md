@@ -21,16 +21,17 @@
 
 - [📘 Day 12](#%f0%9f%93%98-day-12)
   - [Module](#module)
-    - [What is a module](#what-is-a-module)
-    - [Creating a module](#creating-a-module)
-    - [Importing a module](#importing-a-module)
-    - [Import functions from a module](#import-functions-from-a-module)
-    - [Import functions from a module and renaming](#import-functions-from-a-module-and-renaming)
-  - [Import Builtin Modules](#import-builtin-modules)
+    - [What is a Module](#what-is-a-module)
+    - [Creating a Module](#creating-a-module)
+    - [Importing a Module](#importing-a-module)
+    - [Import Functions from a Module](#import-functions-from-a-module)
+    - [Import Functions from a Module and Renaming](#import-functions-from-a-module-and-renaming)
+  - [Import Built-in Modules](#import-built-in-modules)
     - [OS Module](#os-module)
     - [Sys Module](#sys-module)
     - [Statistics Module](#statistics-module)
     - [Math Module](#math-module)
+    - [String Module](#string-module)
     - [Random Module](#random-module)
   - [💻 Exercises: Day 12](#%f0%9f%92%bb-exercises-day-12)
 
@@ -38,25 +39,25 @@
 
 ## Module
 
-### What is a module
+### What is a Module
 
-A module is a file containing set of codes or a set of function which can be included to an application. A module could be a file containing a single variable, or function, a big code base.
+A module is a file containing a set of codes or a set of functions which can be included to an application. A module could be a file containing a single variable, or a function, a big code base.
 
-### Creating a module
+### Creating a Module
 
-To create a module we write our codes in a python script and we save it as .py file. Create a file named mymodule.py inside your project folder. Let write code on this file.
+To create a module we write our codes in a python script and we save it as a .py file. Create a file named mymodule.py inside your project folder. Let write some code in this file.
 
 ```py
 # mymodule.py file
 def generate_full_name(firstname, lastname):
-      space = ' '
-      fullname = firstname + space + lastname
-      return fullname
+    space = ' '
+    fullname = firstname + space + lastname
+    return fullname
 ```
 
 Create main.py file in your project directory and import the mymodule.py file.
 
-### Importing a module
+### Importing a Module
 
 To import the file we use the _import_ keyword and the name of the file only.
 
@@ -66,7 +67,7 @@ import mymodule
 print(mymodule.generate_full_name('Asabeneh', 'Yetayeh'))
 ```
 
-### Import functions from a module
+### Import Functions from a Module
 
 We can have many functions in a file and we can import all the functions differently.
 
@@ -81,7 +82,7 @@ print(weight)
 print(person['firstname'])
 ```
 
-### Import functions from a module and renaming
+### Import Functions from a Module and Renaming
 
 During importing we can rename the name of the module.
 
@@ -97,13 +98,13 @@ print(p)
 print(p['firstname'])
 ```
 
-## Import Builtin Modules
+## Import Built-in Modules
 
-Like other programming languages we can also import modules by importing the file/function using the key word _import_. Lets import the common module we will use most of the time. Some of the common builtin modules _math_, _datetime_, _os_,_sys_, _random_, _statistics_, _collections_, _json_,_re_
+Like other programming languages we can also import modules by importing the file/function using the key word _import_. Let's import the common module we will use most of the time. Some of the common built-in modules: _math_, _datetime_, _os_,_sys_, _random_, _statistics_, _collections_, _json_,_re_
 
 ### OS Module
 
-Using python _os_ module it is possible to automatically perform many operating system tasks.The OS module in Python provides functions for creating, changing current working directory, and removing a directory (folder), fetching its contents, changing and identifying the current directory.
+Using python _os_ module it is possible to automatically perform many operating system tasks. The OS module in Python provides functions for creating, changing current working directory, and removing a directory (folder), fetching its contents, changing and identifying the current directory.
 
 ```py
 # import the module
@@ -120,50 +121,69 @@ os.rmdir()
 
 ### Sys Module
 
-The sys module provides functions and variables used to manipulate different parts of the Python runtime environment. sys.argv returns a list of command line arguments passed to a Python script. The item at index 0 in this list is always the name of the script, at index 1 is argument passed from the command line.
+The sys module provides functions and variables used to manipulate different parts of the Python runtime environment. Function sys.argv returns a list of command line arguments passed to a Python script. The item at index 0 in this list is always the name of the script, at index 1 is the argument passed from the command line.
+
+Example of a script.py file:
 
 ```py
 import sys
-print(sys.argv[0], argv[1],sys.argv[2])
+#print(sys.argv[0], argv[1],sys.argv[2])  # this line would print out: filename argument1 argument2
 print('Welcome {}. Enjoy  {} challenge!'.format(sys.argv[1], sys.argv[2]))
-output
-Welcome Asabeneh. Enjoy  30DayOfPython challenge!
+```
 
-# to exist syst
+Now to check how this script works I wrote in command line:
+
+```sh
+python script.py Asabeneh 30DaysOfPython
+```
+
+The result:
+
+```sh
+Welcome Asabeneh. Enjoy  30DayOfPython challenge! 
+```
+
+Some useful sys commands:
+
+```py
+# to exit sys
 sys.exit()
 # To know the largest integer variable it takes
 sys.maxsize
 # To know environment path
-syst.path
+sys.path
 # To know the version of python you are using
 sys.version
 ```
 
 ### Statistics Module
 
-The statistics module provides functions to mathematical statistics of numeric data. The popular statistical functions which are defined in this module _mean_, _median_, _mode_, _stdev_ etc.
+The statistics module provides functions for mathematical statistics of numeric data. The popular statistical functions which are defined in this module: _mean_, _median_, _mode_, _stdev_ etc.
 
 ```py
-from statistics import * # importing all the statistics module
-print(mean(ages))       # 22.4
+from statistics import * # importing all the statistics modules
+ages = [20,20,24,24,25,22,26,20,23,22,26]
+print(mean(ages))       # ~22.9
 print(median(ages))     # 23
 print(mode(ages))       # 20
-print(stdev(ages))      # 2.3
+print(stdev(ages))      # ~2.3
 ```
 
 ### Math Module
+
+Module containing many mathematical operations and constants.
 
 ```py
 import math
 print(math.pi)           # 3.141592653589793, pi constant
 print(math.sqrt(2))      # 1.4142135623730951, square root
-print(math.pow(2, 3))    # 8.0, exponential
+print(math.pow(2, 3))    # 8.0, exponential function
 print(math.floor(9.81))  # 9, rounding to the lowest
 print(math.ceil(9.81))   # 10, rounding to the highest
-print(math.log10(100))   # 2
+print(math.log10(100))   # 2, logarithim with 10 as base
 ```
 
-Now, we have imported the math module which contains lots of function which can help us to perform mathematical calculations.To check what functions the module has, you can use _help(math)_, or dir(math) and this will display the available functions in the module. If we want to import only a specific function from a module we import as follow:
+Now, we have imported the math module which contains lots of function whichs can help us to perform mathematical calculations. To check what functions the module has got, you can use _help(math)_, or _dir(math)_. This will display the available functions in the module. If we want to import only a specific function from the module we import it as follows:
 
 ```py
 from math import pi
@@ -174,7 +194,7 @@ It is also possible to import multiple functions at once
 
 ```py
 
-from math import pi, sqrt, pow, floor, ceil,log10
+from math import pi, sqrt, pow, floor, ceil, log10
 print(pi)                 # 3.141592653589793
 print(sqrt(2))            # 1.4142135623730951
 print(pow(2, 3))          # 8.0
@@ -203,51 +223,68 @@ from math import pi as  PI
 print(PI) # 3.141592653589793
 ```
 
+### String Module
+
+A useful module for many purposes. Below an example of strings we can get from it.
+
+```py
+import string
+print(string.ascii_letters) # abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ
+print(string.digits)        # 0123456789
+print(string.punctuation)   # !"#$%&'()*+,-./:;<=>?@[\]^_`{|}~
+```
+
 ### Random Module
 
-By now you are familiar with importing modules. Lets do another more import to be very familiar with importing. Let's import _random_ module which can gives random number between 0 and 0.9999.... The _random_ module has lots of functions but in this section we will only see _random_ and _randint_.
+By now you are familiar with importing modules. Let's do one more import to get very familiar with it. Let's import _random_ module which gives us a random number between 0 and 0.9999.... The _random_ module has lots of functions but in this section we will only use _random_ and _randint_.
 
 ```py
 from random import random, randint
-print(random())   # it doesn't take argument and return 0 to 0.9999
-print(randint(5, 20)) # it returns a random number between 5 and 20
+print(random())   # it doesn't take any arguments; it returns a value between 0 and 0.9999
+print(randint(5, 20)) # it returns a random integer number between 5 and 20
 ```
 
 ## 💻 Exercises: Day 12
 
-1. Writ a function which generates a six digit random_user_id.
+1. Writ a function which generates a six digit/character random_user_id.
    ```py
      print(random_user_id());
      '1ee33d'
    ```
-2. Modify question number above . Declare a function name user_id_gen_by_user. It doesn’t take any parameter but it takes two inputs using input(). One of the input is the number of characters and the second input is the number of ids which are supposed to be generated.
+2. Modify the previous task. Declare a function named user_id_gen_by_user. It doesn’t take any parameters but it takes two inputs using input(). One of the inputs is the number of characters and the second input is the number of IDs which are supposed to be generated.
    ```py
-   user_id_gen_by_user()
-   "kcsy2
-   SMFYb
-   bWmeq
-   ZXOYh
-   2Rgxf
-   "
-   user_id_gen_by_user()
-   "1GCSgPLMaBAVQZ26
-   YD7eFwNQKNs7qXaT
-   ycArC5yrRupyG00S
-   UbGxOFI7UXSWAyKN
-   dIV0SSUTgAdKwStr
-   "
+user_id_gen_by_user() # user input: 5 5
+#output:
+#kcsy2
+#SMFYb
+#bWmeq
+#ZXOYh
+#2Rgxf
+   
+user_id_gen_by_user() # 16 5
+#1GCSgPLMaBAVQZ26
+#YD7eFwNQKNs7qXaT
+#ycArC5yrRupyG00S
+#UbGxOFI7UXSWAyKN
+#dIV0SSUTgAdKwStr
+
    ```
-3. Write a function name rgb_color_gen and it generates rgb colors.
+3. Write a function named rgb_color_gen. It will generate rgb colors (3 values ranging from 0 to 255 each).
    ```py
-         print(rgb_color_gen())
-       # rgb(125,244,255)
+print(rgb_color_gen())
+# rgb(125,244,255) - the output should be in this form
    ```
-4. Write a function list_of_hexa_colors which return any number of hexadecimal colors in an array.
-5. Write a function list_of_rgb_colors which return any number of RGB colors in an array.
-   Write a function generate_colors which can generate any number of hexa or rgb colors.
-   `py generate_colors('hexa', 3) # ['#a3e12f','#03ed55','#eb3d2b'] generate_colors('hexa', 1) # '#b334ef' generate_colors('rgb', 3) # ['rgb(5, 55, 175','rgb(50, 105, 100','rgb(15, 26, 80'] generate_colors('rgb', 1) # 'rgb(33,79, 176)'`
-6. Call your function shuffle_list, it takes a list as a parameter and it returns a shuffled list
-7. Write a function which returns array of seven random numbers in a range of 0-9. All the numbers must be unique.
+4. Write a function list_of_hexa_colors which returns any number of hexadecimal colors in an array (six hexadecimal numbers written after #. Hexadecimal numeral system is made out of 16 symbols, 0-9 and first 6 letters of the alphabet, a-f. Check the task 6 for output examples).
+5. Write a function list_of_rgb_colors which returns any number of RGB colors in an array.
+6. Write a function generate_colors which can generate any number of hexa or rgb colors.
+   ```py
+    generate_colors('hexa', 3) # ['#a3e12f','#03ed55','#eb3d2b'] 
+    generate_colors('hexa', 1) # ['#b334ef']
+    generate_colors('rgb', 3)  # ['rgb(5, 55, 175','rgb(50, 105, 100','rgb(15, 26, 80'] 
+    generate_colors('rgb', 1)  # ['rgb(33,79, 176)']
+    ```
+7. Call your function shuffle_list, it takes a list as a parameter and it returns a shuffled list
+8. Write a function which returns an array of seven random numbers in a range of 0-9. All the numbers must be unique.
 
 🎉 CONGRATULATIONS ! 🎉
 

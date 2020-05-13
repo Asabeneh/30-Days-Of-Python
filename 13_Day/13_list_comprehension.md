@@ -76,7 +76,8 @@ print(numbers)                             # [(0, 0), (1, 1), (2, 4), (3, 9), (4
 
 **Example:2**
 
-List compression can be combined with an if expression
+List comprehension can be combined with if expression
+
 
 ```py
 # Generating even numbers

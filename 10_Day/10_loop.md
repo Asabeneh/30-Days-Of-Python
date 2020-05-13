@@ -22,11 +22,11 @@
 - [📘 Day 10](#%f0%9f%93%98-day-10)
   - [Loops](#loops)
     - [While Loop](#while-loop)
-    - [Break and continue](#break-and-continue)
+    - [Break and Continue - Part 1](#break-and-continue---part-1)
     - [For Loop](#for-loop)
-    - [Break and Continue](#break-and-continue-1)
-    - [The range function](#the-range-function)
-    - [Nested for loop](#nested-for-loop)
+    - [Break and Continue - Part 2](#break-and-continue---part-2)
+    - [The Range Function](#the-range-function)
+    - [Nested For Loop](#nested-for-loop)
     - [For Else](#for-else)
     - [Pass](#pass)
   - [💻 Exercises: Day 10](#%f0%9f%92%bb-exercises-day-10)
@@ -35,75 +35,76 @@
 
 ## Loops
 
-Life is full of routines. In programming also we do lots of repetitive tasks. In order to handle repetitive task programming languages provide loops. Python programming language also provides the following types of two loops to handle looping.
+Life is full of routines. In programming we also do lots of repetitive tasks. In order to handle repetitive task programming languages provide loops. Python programming language also provides the following types of two loops:
 
 1. while loop
 2. for loop
 
 ### While Loop
 
-We use the reserved word _while_ to make a while loop. While loop is used to execute a block of statements repeatedly until a given condition is satisfied. When the condition becomes false, the line immediately after the loop will be executed.
+We use the reserved word _while_ to make a while loop. It is used to execute a block of statements repeatedly until a given condition is satisfied. When the condition becomes false, the lines of code after the loop will be continued to be executed.
 
 ```py
   # syntax
-  while condition:
-      code goes here
+while condition:
+    code goes here
 ```
 
 **Example:**
 
 ```py
-  count = 0
-  while count < 5:
-      print(count)
-      count = count + 1
+count = 0
+while count < 5:
+    print(count)
+    count = count + 1
 ```
 
-In the above while loop, the condition become false when count is 5, then the loop stops.
+In the above while loop, the condition becomes false when count is 5. That is when the loop stops.
 If we are interested to run block of code once the condition is no longer true, we can use _else_.
 
 ```py
   # syntax
-  while condition:
-      code goes here
-  else:
-      code goes here
+while condition:
+    code goes here
+else:
+    code goes here
 ```
 
 **Example:**
 
 ```py
-  count = 0
-  while count < 5:
-        print(count)
-        count = count + 1
-  else:
-      print(count)
+count = 0
+while count < 5:
+    print(count)
+    count = count + 1
+else:
+    print(count)
 ```
 
-The above loop condition will be false when count is 5 and the loop stops, and execution starts the else statement and 5 prints in the else statement.
+The above loop condition will be false when count is 5 and the loop stops, and execution starts the else statement. As a result 5 will be printed.
 
-### Break and continue
 
-- Break: We use break when we like to get out or stop the loop.
+### Break and Continue - Part 1
+
+- Break: We use break when we like to get out of or stop the loop.
 
 ```py
-  # syntax
-  while condition:
-      code goes here
-      if another_condition:
-          break
+# syntax
+while condition:
+    code goes here
+    if another_condition:
+        break
 ```
 
 **Example:**
 
 ```py
-  count = 0
-  while count < 5:
-      print(count)
-      count = count + 1
-      if count == 3:
-          break
+count = 0
+while count < 5:
+    print(count)
+    count = count + 1
+    if count == 3:
+        break
 ```
 
 The above while loop only prints 0, 1, 2, but when it reaches 3 it stops.
@@ -112,10 +113,10 @@ The above while loop only prints 0, 1, 2, but when it reaches 3 it stops.
 
 ```py
   # syntax
-  while condition:
-      code goes here
-      if another_condition:
-          continue
+while condition:
+    code goes here
+    if another_condition:
+        continue
 ```
 
 **Example:**
@@ -129,57 +130,57 @@ while count < 5:
     count = count + 1
 ```
 
-The above while loop only prints 0, 1, 2,4 but skips 3.
+The above while loop only prints 0, 1, 2 and 4 (skips 3).
 
 ### For Loop
 
-A _for_ key word used to make a for loop like in other programming language but with some syntax difference. Loop is used for iterating over a sequence (that is either a list, a tuple, a dictionary, a set, or a string).
+A _for_ keyword is used to make a for loop, similar with other programming languages, but with some syntax differences. Loop is used for iterating over a sequence (that is either a list, a tuple, a dictionary, a set, or a string).
 
 - For loop with list
 
 ```py
-  # syntax
-  for iterator in lst:
+# syntax
+for iterator in lst:
     code goes here
 ```
 
 **Example:**
 
 ```py
-  numbers = [0, 1, 2, 3, 4, 5]
-  for number in numbers:
-      print(number)
+numbers = [0, 1, 2, 3, 4, 5]
+for number in numbers: # number is temporary name to refer to the list's items, valid only inside this loop
+    print(number)       # the numbers will be printed line by line, from 0 to 5
 ```
 
 - For loop with string
 
 ```py
-  # syntax
-  for iterator in string:
+# syntax
+for iterator in string:
     code goes here
 ```
 
 **Example:**
 
 ```py
-  language = 'Python'
-  for letter in language:
+language = 'Python'
+for letter in language:
     print(letter)
 ```
 
 - For loop with tuple
 
 ```py
-  # syntax
-  for iterator in tpl:
+# syntax
+for iterator in tpl:
     code goes here
 ```
 
 **Example:**
 
 ```py
-  numbers = (0, 1,2,3,4,5)
-  for number in numbers:
+numbers = (0,1,2,3,4,5)
+for number in numbers:
     print(number)
 ```
 
@@ -188,156 +189,156 @@ A _for_ key word used to make a for loop like in other programming language but 
 
 ```py
   # syntax
-  for iterator in dct:
+for iterator in dct:
     code goes here
 ```
 
 **Example:**
 
 ```py
-  person = {
-      'first_name':'Asabeneh',
-      'last_name':'Yetayeh',
-      'age':250,
-      'country':'Finland',
-      'is_marred':True,
-      'skills':['JavaScript', 'React', 'Node', 'MongoDB', 'Python'],
-      'address':{
-          'street':'Space street',
-          'zipcode':'02210'
-      }
-      }
-  for key in person:
+person = {
+    'first_name':'Asabeneh',
+    'last_name':'Yetayeh',
+    'age':250,
+    'country':'Finland',
+    'is_marred':True,
+    'skills':['JavaScript', 'React', 'Node', 'MongoDB', 'Python'],
+    'address':{
+        'street':'Space street',
+        'zipcode':'02210'
+    }
+}
+for key in person:
     print(key)
 
-  for key, value in person.items():
-    print(key, value) #
+for key, value in person.items():
+    print(key, value) # this way we get both keys and values printed out
 ```
 
 - Loops in set
 
 ```py
-  # syntax
-  for iterator in st:
+# syntax
+for iterator in st:
     code goes here
 ```
 
 **Example:**
 
 ```py
-  it_companies = {'Facebook', 'Google', 'Microsoft', 'Apple', 'IBM', 'Oracle', 'Amazon'}
-  for company in it_companies:
+it_companies = {'Facebook', 'Google', 'Microsoft', 'Apple', 'IBM', 'Oracle', 'Amazon'}
+for company in it_companies:
     print(company)
 ```
 
-### Break and Continue
+### Break and Continue - Part 2
 
-_Break_: We use break when we like to stop our loop before the loop is completed.
+Short reminder:
+_Break_: We use break when we like to stop our loop before it is completed.
 
 ```py
-  # syntax
-  for iterator in sequence:
+# syntax
+for iterator in sequence:
     code goes here
     if condition:
-      break
+        break
 ```
 
 **Example:**
 
 ```py
-  numbers = (0, 1,2,3,4,5)
-  for number in numbers:
+numbers = (0,1,2,3,4,5)
+for number in numbers:
     print(number)
     if number == 3:
-      break
+        break
 ```
 
 In the above example, the loop stops when it reaches 3.
-Continue: We use continue when we like to skip some of the step in the iteration of the loop.
+
+Continue: We use continue when we like to skip some of the steps in the iteration of the loop.
 
 ```py
   # syntax
-  for iterator in sequence:
+for iterator in sequence:
     code goes here
     if condition:
-      continue
+        continue
 ```
 
-    **Example:**
+**Example:**
 
 ```py
-  numbers = (0, 1,2,3,4,5)
-  for number in numbers:
+numbers = (0,1,2,3,4,5)
+for number in numbers:
     print(number)
     if number == 3:
-      continue
+        continue
+    print('Next number should be ', number + 1) if number != 5 else print("loop's end") # for short hand conditions need both if and else statements
+print('outside the loop')
 ```
 
-In the above example, if number is 3 the skip step and continues to the next.
+In the example above, if the number equals 3, the step *after* the condition (but inside the loop) is skipped and the execution of the loop continues if there are any iterations left.
 
-### The range function
+### The Range Function
 
-The range() function uses to loop through a set of code a certain number of times. The _range(start,end, step)_ takes three parameters:starting, ending and increment.By default it starts from 0 and the increment is 1. The range sequence doesn't include the end.
-Creating sequence using range
+The _range()_ function is used to loop through a set of code a certain number of times. The _range(start,end, step)_ takes three parameters: starting, ending and increment. By default it starts from 0 and the increment is 1. The range sequence needs at least 1 argument (end).
+Creating sequences using range
 
 ```py
-  lst = list(rang(11))
-  print(lst) # [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-  st = set(range(11))
-  print(st) # {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10}
+lst = list(range(11)) 
+print(lst) # [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+st = set(range(1, 11))    # 2 arguments indicate start and end of the sequence, step set to default 1
+print(st) # {1, 2, 3, 4, 5, 6, 7, 8, 9, 10}
 
-  lst = list(rang(0,11,2))
-  print(lst) # [0, 2, 4, 6, 8, 10]
-  st = set(range(0,11,2))
-  print(st) #  {0, 2, 4, 6, 8, 10}
+lst = list(range(0,11,2))
+print(lst) # [0, 2, 4, 6, 8, 10]
+st = set(range(0,11,2))
+print(st) #  {0, 2, 4, 6, 8, 10}
 ```
 
 ```py
-  # syntax
-  for iterator in range(start, end, increment):
+# syntax
+for iterator in range(start, end, increment):
 ```
 
 **Example:**
 
 ```py
-  for number in range(11):
+for number in range(11):
     print(number)   # prints 0 to 10, not including 11
-  fruits = ['banana', 'orange', 'mango', 'lemon']
-  for fruit in fruits:
-    print(fruit)
 ```
 
-### Nested for loop
+### Nested For Loop
 
-We can write loop inside another loop.
+We can write loops inside a loop.
 
 ```py
-  # syntax
-  for x in y:
+# syntax
+for x in y:
     for t in s:
-      print(t)
+        print(t)
 ```
 
 **Example:**
 
 ```py
-  person = {
-      'first_name': 'Asabeneh',
-      'last_name': 'Yetayeh',
-      'age': 250,
-      'country': 'Finland',
-      'is_marred': True,
-      'skills': ['JavaScript', 'React', 'Node', 'MongoDB', 'Python'],
-      'address': {
-          'street': 'Space street',
-          'zipcode': '02210'
-      }
-  }
-  for key in person:
-      if key == 'skills':
+person = {
+    'first_name': 'Asabeneh',
+    'last_name': 'Yetayeh',
+    'age': 250,
+    'country': 'Finland',
+    'is_marred': True,
+    'skills': ['JavaScript', 'React', 'Node', 'MongoDB', 'Python'],
+    'address': {
+        'street': 'Space street',
+        'zipcode': '02210'
+    }
+}
+for key in person:
+    if key == 'skills':
         for skill in person['skills']:
-          print(skill)
-
+            print(skill)
 ```
 
 ### For Else
@@ -345,31 +346,38 @@ We can write loop inside another loop.
 If we want to execute some message when the loop ends, we use else.
 
 ```py
-  # syntax
-  for iterator in range(start, end, increment):
+# syntax
+for iterator in range(start, end, increment):
     do something
-  else:
-    print('The loop is ended')
+else:
+    print('The loop ended')
 ```
 
 **Example:**
 
 ```py
-  for number in range(11):
+for number in range(11):
     print(number)   # prints 0 to 10, not including 11
-  else:
+else:
     print('The loop stops at', number)
 ```
 
 ### Pass
 
-In python after semicolon, it requires some code to run but we don't like to execute any code after if or for loop we can write the word _pass_ to avoid error.
+In python when statement is required (after semicolon), but we don't like to execute any code there, we can write the word _pass_ to avoid errors. Also we can use it as a placeholder, for future statements.
+
+**Example:**
+
+```py
+for number in range(6):
+    pass
+```
 
 ## 💻 Exercises: Day 10
 
-1. Iterate 0 to 10 using for loop, do the same using while and do while loop.
-2. Iterate 10 to 0 using for loop, do the same using while and do while loop.
-3. Write a loop that makes seven calls to print() output the following triangle:
+1. Iterate 0 to 10 using for loop, do the same using while loop.
+2. Iterate 10 to 0 using for loop, do the same using while loop.
+3. Write a loop that makes seven calls to print(), so we get on the output the following triangle:
    ```py
      #
      ##
@@ -413,7 +421,7 @@ In python after semicolon, it requires some code to run but we don't like to exe
    ```
 10. Use for loop to iterate from 0 to 100 and print the sum of all evens and the sum of all odds.
     ```sh
-      The sum of all evens is 2550. And the sum of all odds is 2500.
+    The sum of all evens is 2550. And the sum of all odds is 2500.
     ```
 11. Go to the data folder and use the countries.py file. Loop through the countries and extract all the countries containing the word _land_.
 12. This is a fruit list, ['banana', 'orange', 'mango', 'lemon'] reverse the order using loop.

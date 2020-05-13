@@ -21,28 +21,28 @@
 
 - [Day 6:](#day-6)
   - [Tuple](#tuple)
-    - [Creating Tuple](#creating-tuple)
-    - [Tuple length](#tuple-length)
-    - [Accessing tuple items](#accessing-tuple-items)
-    - [Slicing tuples](#slicing-tuples)
-    - [Changing tuples to list](#changing-tuples-to-list)
-    - [Checking an item in a list](#checking-an-item-in-a-list)
-    - [Joining tuples](#joining-tuples)
-    - [Deleting tuple](#deleting-tuple)
+    - [Creating a Tuple](#creating-a-tuple)
+    - [Tuple Length](#tuple-length)
+    - [Accessing Tuple Items](#accessing-tuple-items)
+    - [Slicing Tuples](#slicing-tuples)
+    - [Changing Tuples to Lists](#changing-tuples-to-lists)
+    - [Checking an Item in a List](#checking-an-item-in-a-list)
+    - [Joining Tuples](#joining-tuples)
+    - [Deleting Tuples](#deleting-tuples)
   - [💻 Exercises: Day 6](#%f0%9f%92%bb-exercises-day-6)
 
 # Day 6:
 
 ## Tuple
 
-A tuple is a collection of different data types which is ordered and unchangeable(immutable). Tuples are written with round brackets,(). Once a tuple is created, we can not change its values. We can not add, insert, remove a tuple because it is not modifiable (mutable). Unlike list, tuple has few methods. Methods related to tuple:
+A tuple is a collection of different data types which is ordered and unchangeable (immutable). Tuples are written with round brackets, (). Once a tuple is created, we cannot change its values. We cannot use add, insert, remove methods in a tuple because it is not modifiable (mutable). Unlike list, tuple has few methods. Methods related to tuples:
 
 - tuple(): to create an empty tuple
 - count(): to count the number of a specified item in a tuple
 - index(): to find the index of a specified item in a tuple
-- - operator: to join two or more tuples and to create new tuple
+- - operator: to join two or more tuples and to create a new tuple
 
-### Creating Tuple
+### Creating a Tuple
 
 - Empty tuple: Creating an empty tuple
   ```py
@@ -71,7 +71,7 @@ tpl = ('item1', 'item2', 'item3')
 len(tpl)
 ```
 
-### Accessing tuple items
+### Accessing Tuple Items
 
 - Positive Indexing
   Similar to the list data type we use positive or negative indexing to access tuple items.
@@ -93,7 +93,7 @@ len(tpl)
   ```
 
 - Negative indexing
-  Negative indexing means beginning from the end, -1 refers to the last item, -2 refers to the second last and the negative of the list length refers to the first item.
+  Negative indexing means beginning from the end, -1 refers to the last item, -2 refers to the second last and the negative of the list/tuple length refers to the first item.
   ![Tuple Negative indexing](../images/tuple_negative_indexing.png)
   ```py
   # Syntax
@@ -110,7 +110,7 @@ len(tpl)
 
 ### Slicing tuples
 
-We can slice out a sub tuple by specifying a range of indexes where to start and where to end in the tuple, the return value will be a new tuple with the specified items.
+We can slice out a subtuple by specifying a range of indexes where to start and where to end in the tuple, the return value will be a new tuple with the specified items.
 
 - Range of Positive Indexes
 
@@ -136,7 +136,7 @@ We can slice out a sub tuple by specifying a range of indexes where to start and
   # Syntax
   tpl = ('item1', 'item2', 'item3','item4')
   all_items = tpl[-4:]         # all items
-  middle_two_items = tpl[-3:-1]  # does not include item at index 3
+  middle_two_items = tpl[-3:-1]  # does not include item at index 3 (-1)
   ```
 
   ```py
@@ -146,9 +146,9 @@ We can slice out a sub tuple by specifying a range of indexes where to start and
   orange_to_the_rest = fruits[-3:]
   ```
 
-### Changing tuples to list
+### Changing Tuples to Lists
 
-We can change tuples to list and list to tuple. Tuple is immutable if we want to modify a tuple we should change to a list.
+We can change tuples to lists and lists to tuples. Tuple is immutable if we want to modify a tuple we should change it to a list.
 
 ```py
 # Syntax
@@ -165,9 +165,9 @@ fruits = tuple(fruits)
 print(fruits)     # ('apple', 'orange', 'mango', 'lemon')
 ```
 
-### Checking an item in a list
+### Checking an Item in a List
 
-We can check an item if it exists in a list or not using _in_, it returns boolean.
+We can check if an item exists or not in a list using _in_, it returns a boolean.
 
 ```py
 # Syntax
@@ -177,12 +177,12 @@ tpl = ('item1', 'item2', 'item3','item4')
 
 ```py
 fruits = ('banana', 'orange', 'mango', 'lemon')
-'orange' in fruits # True
-'apple' in fruits # False
-fruits[0] = 'apple'
+print('orange' in fruits) # True
+print('apple' in fruits) # False
+fruits[0] = 'apple' # TypeError: 'tuple' object does not support item assignment
 ```
 
-### Joining tuples
+### Joining Tuples
 
 We can join two or more tuples using + operator
 
@@ -199,7 +199,7 @@ vegetables = ('Tomato', 'Potato', 'Cabbage','Onion', 'Carrot')
 fruits_and_vegetables = fruits + vegetables
 ```
 
-### Deleting tuple
+### Deleting Tuples
 
 It is not possible to remove a single item in a tuple but it is possible to delete the tuple itself using _del_.
 
@@ -218,12 +218,12 @@ del fruits
 ## 💻 Exercises: Day 6
 
 1. Create an empty tuple
-2. Create a tuple containing name of your sisters and your brothers
+2. Create a tuple containing names of your sisters and your brothers (imaginary siblings are fine)
 3. Join brothers and sisters tuples and assign it to siblings
-4. How many siblings do you have ?
+4. How many siblings do you have?
 5. Modify the siblings tuple and add the name of your father and mother and assign it to family_members
 6. Unpack siblings and parents from family_members
-7. Create a fruits, vegetables and animal products tuples. Join the three tuples and assign it to a variable called food_stuff.
+7. Create fruits, vegetables and animal products tuples. Join the three tuples and assign it to a variable called food_stuff.
 8. Slice out the middle item or items from the food_staff list
 9. Slice out the first three items and the last three items from food_staff list
 10. Delete the food_staff list completely
