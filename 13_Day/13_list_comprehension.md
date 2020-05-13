@@ -22,15 +22,15 @@
 - [📘 Day 13](#%f0%9f%93%98-day-13)
   - [List Comprehension](#list-comprehension)
   - [Lambda Function](#lambda-function)
-    - [Creating a lambda function](#creating-a-lambda-function)
-    - [Lambda function inside other function](#lambda-function-inside-other-function)
+    - [Creating a Lambda Function](#creating-a-lambda-function)
+    - [Lambda Function Inside Another Function](#lambda-function-inside-another-function)
   - [💻 Exercises: Day 13](#%f0%9f%92%bb-exercises-day-13)
 
 # 📘 Day 13
 
 ## List Comprehension
 
-List comprehension in Python is a compact way of creating a list from a sequence. It is a short way to create a new list. List comprehension is considerably faster than processing a list using the for loop.
+List comprehension in Python is a compact way of creating a list from a sequence. It is a short way to create a new list. List comprehension is considerably faster than processing a list using the _for_ loop.
 
 ```py
 # syntax
@@ -39,7 +39,7 @@ List comprehension in Python is a compact way of creating a list from a sequence
 
 **Example:1**
 
-For instance if you want to change a string to a list of characters. You can use a couple methods. Let's see some of them
+For instance if you want to change a string to a list of characters. You can use a couple of methods. Let's see some of them:
 
 ```py
 # One way
@@ -61,48 +61,50 @@ For instance if you want to generate a list of numbers
 
 ```py
 # Generating numbers
-numbers = [i for i in range(11)]  # to generate number from 0 to 10
+numbers = [i for i in range(11)]  # to generate numbers from 0 to 10
 print(numbers)                    # [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
-# It is possible to do mathematical operation during iteration
+# It is possible to do mathematical operations during iteration
 squares = [i * i for i in range(11)]
 print(squares)                    # [0, 1, 4, 9, 16, 25, 36, 49, 64, 81, 100]
 
-# It is possible to do mathematical operation during iteration
+# It is also possible to make a list of tuples
 numbers = [(i, i * i) for i in range(11)]
 print(numbers)                             # [(0, 0), (1, 1), (2, 4), (3, 9), (4, 16), (5, 25)]
 
 ```
 
 **Example:2**
+
 List comprehension can be combined with if expression
+
 
 ```py
 # Generating even numbers
-even_numbers = [i for i in range(21) if i % 2 == 0]  # to generate even number between 0 to 21
+even_numbers = [i for i in range(21) if i % 2 == 0]  # to generate even numbers list in range 0 to 21
 print(even_numbers)                    # [0, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20]
 
 # Generating odd numbers
-odd_numbers = [i for i in range(21) if i % 2 != 0]  # to generate odd number between 0 to 21
+odd_numbers = [i for i in range(21) if i % 2 != 0]  # to generate odd numbers in range 0 to 21
 print(odd_numbers)                      # [1, 3, 5, 7, 9, 11, 13, 15, 17, 19]
-# Filter numbers: let's filter positive and even numbers from the list below
+# Filter numbers: let's filter out positive even numbers from the list below
 numbers = [-8, -7, -3, -1, 0, 1, 3, 4, 5, 7, 6, 8, 10]
 positive_even_numbers = [i for i in range(21) if i % 2 == 0 and i > 0]
 print(positive_even_numbers)                    # [2, 4, 6, 8, 10, 12, 14, 16, 18, 20]
 
-# Flattening two dimensional array
-two_dimen_list = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
-flattened_list = [ number for row in two_dimen_list for number in row]
+# Flattening a three dimensional array
+three_dimen_list = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+flattened_list = [ number for row in three_dimen_list for number in row]
 print(flattened_list)    # [1, 2, 3, 4, 5, 6, 7, 8, 9]
 ```
 
 ## Lambda Function
 
-Lambda function is a small anonymous function without name.A lambda function can take any number of arguments, but can only have one expression. Lambda function is similar to anonymous function in JavaScript. We need lambda function when we want to write an anonymous function inside another function.
+Lambda function is a small anonymous function without a name. It can take any number of arguments, but can only have one expression. Lambda function is similar to anonymous functions in JavaScript. We need it when we want to write an anonymous function inside another function.
 
-### Creating a lambda function
+### Creating a Lambda Function
 
-To create a lambda function we use _lambda_ keyword followed by parameter, followed by expression. See the syntax and the example below. Lambda function do not use return but it explicitly return the expression.
+To create a lambda function we use _lambda_ keyword followed by a parameter(s), followed by an expression. See the syntax and the example below. Lambda function does not use return but it explicitly returns the expression.
 
 ```py
 # syntax
@@ -117,13 +119,13 @@ print(x(arg1, arg2, arg3))
 def add_two_nums(a, b):
     return a + b
 
-print(2, 3)     # 3
-# Lets change the above function to lambda function
+print(2, 3)     # 5
+# Lets change the above function to a lambda function
 add_two_nums = lambda a, b: a + b
 print(add_two_nums(2,3))    # 5
 
 # Self invoking lambda function
-(lambda a, b: a + b)(2,3) # 5
+(lambda a, b: a + b)(2,3) # 5 - need to encapsulate it in print() to see the result in the console
 
 square = lambda x : x ** 2
 print(square(3))    # 9
@@ -135,25 +137,27 @@ multiple_variable = lambda a, b, c: a ** 2 - 3 * b + 4 * c
 print(multiple_variable(5, 5, 3))
 ```
 
-### Lambda function inside other function
+### Lambda Function Inside Another Function
 
-Using lambda function inside another function.
+Using a lambda function inside another function.
 
 ```py
 def power(x):
     return lambda n : x ** n
 
-cube = power(2)(3) # 8
-two_power_of_five = power(2)(5) # 32
+cube = power(2)(3)   # function power now need 2 arguments to run, in separate rounded brackets
+print(cube)          # 8
+two_power_of_five = power(2)(5) 
+print(two_power_of_five)  # 32
 ```
 
 ## 💻 Exercises: Day 13
 
-1. Filter only negative or zero in the list using list comprehension
+1. Filter only negative and zero in the list using list comprehension
    ```py
    numbers = [-4, -3, -2, -1, 0, 2, 4, 6]
    ```
-1. Flatten the following list of lists of lists to a one dimensional list :
+2. Flatten the following list of lists of lists to a one dimensional list :
 
    ```py
    list_of_lists =[[[1, 2, 3]], [[4, 5, 6]], [[7, 8, 9]]]
@@ -162,7 +166,7 @@ two_power_of_five = power(2)(5) # 32
    [1, 2, 3, 4, 5, 6, 7, 8, 9]
    ```
 
-1. Using list comprehension create the following list of tuples:
+3. Using list comprehension create the following list of tuples:
    ```py
    [(0, 1, 0, 0, 0, 0, 0),
    (1, 1, 1, 1, 1, 1, 1),
@@ -176,13 +180,13 @@ two_power_of_five = power(2)(5) # 32
    (9, 1, 9, 81, 729, 6561, 59049),
    (10, 1, 10, 100, 1000, 10000, 100000)]
    ```
-1. Change the following list to a flatten list:
+4. Flatten the following list to a new list:
    ```py
    countries = [[('Finland', 'Helsinki')], [('Sweden', 'Stockholm')], [('Norway', 'Oslo')]]
    output:
    ['FINLAND', 'HELSINKI', 'SWEDEN', 'STOCKHOLM', 'NORWAY', 'OSLO']
    ```
-1. Change the following list to a list of dictionaries:
+5. Change the following list to a list of dictionaries:
    ```py
    countries = [[('Finland', 'Helsinki')], [('Sweden', 'Stockholm')], [('Norway', 'Oslo')]]
    output:
@@ -190,13 +194,13 @@ two_power_of_five = power(2)(5) # 32
    {'country': 'SWEDEN', 'city': 'STOCKHOLM'},
    {'country': 'NORWAY', 'city': 'OSLO'}]
    ```
-1. Change the following list of lists to flat list:
+6. Change the following list of lists to a list of concatenated strings:
    ```py
    names = [[('Asabeneh', 'Yetaeyeh')], [('David', 'Smith')], [('Donald', 'Trump')], [('Bill', 'Gates')]]
    output
    ['Asabeneh Yetaeyeh', 'David Smith', 'Donald Trump', 'Bill Gates']
    ```
-1. Write a lambda function which can solve slope or y-intercept.
+7. Write a lambda function which can solve a slope or y-intercept of linear functions.
 
 🎉 CONGRATULATIONS ! 🎉
 
