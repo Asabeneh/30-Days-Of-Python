@@ -19,18 +19,18 @@
 - [📘 Day 16](#%f0%9f%93%98-day-16)
   - [Python *datetime*](#python-datetime)
     - [Getting *datetime* Information](#getting-datetime-information)
-    - [Formating *datetime* Output Using *strftime*](#formating-datetime-output-using-strftime)
+    - [Formating Date Output Using *strftime*](#formating-date-output-using-strftime)
     - [String to Time Using *strptime*](#string-to-time-using-strptime)
     - [Using *date* from *datetime*](#using-date-from-datetime)
-    - [Time Object to Represent Time](#time-object-to-represent-time)
-    - [Difference Between Two *datetime*](#difference-between-two-datetime)
+    - [Time Objects to Represent Time](#time-objects-to-represent-time)
+    - [Difference Between Two Points in Time Using](#difference-between-two-points-in-time)
     - [Difference Between Two Points in Time Using *timedelata*](#difference-between-two-points-in-time-using-timedelata)
   - [💻 Exercises: Day 16](#%f0%9f%92%bb-exercises-day-16)
 # 📘 Day 16
 
 ## Python *datetime*
 
-Python has _datetime_ module to handle date and time.
+Python has got _datetime_ module to handle date and time.
 
 ```py
 import datetime
@@ -40,7 +40,7 @@ print(dir(datetime))
 
 With dir or help built-in commands it is possible to know the available functions in a certain module. As you can see, in the datetime module there are many functions, but we will focus on _date_, _datetime_, _time_ and _timedelta_. Let's see them one by one.
 
-### Getting *datetime* information
+### Getting *datetime* Information
 
 ```py
 from datetime import datetime
@@ -58,7 +58,9 @@ print('timestamp', timestamp)
 print(f'{day}/{month}/{year}, {hour}:{minute}')  # 4/12/2019, 23:38
 ```
 
-### Formating *datetime* output using *strftime*
+Timestamp or Unix timestamp is the number of seconds elapsed from 1st of January 1970 UTC.
+
+### Formating Date Output Using *strftime*
 
 ```py
 from datetime import datetime
@@ -97,7 +99,7 @@ time one: 12/05/2019, 01:05:01
 time two: 05/12/2019, 01:05:01
 ```
 
-Here are all the _strftime_ symbols we use to format time. A reference of all the legal format codes.
+Here are all the _strftime_ symbols we use to format time. An example of all the formats for this module.
 
 ![strftime](./images/strftime.png)
 
@@ -130,7 +132,7 @@ print("Current month:", today.month) # 12
 print("Current day:", today.day)     # 5
 ```
 
-### Time Object to Represent Time
+### Time Objects to Represent Time
 
 ```py
 from datetime import time
@@ -154,7 +156,7 @@ b = 10:30:50
 c = 10:30:50  
 d = 10:30:50.200555
 
-### Difference Between Two *datetime*
+### Difference Between Two Points in Time Using
 
 ```py
 today = date(year=2019, month=12, day=5)
@@ -187,15 +189,15 @@ print("t3 =", t3)
 
 ## 💻 Exercises: Day 16
 
-1. Get the current day, month, year, hour, minute and timestamp from time date module
-1. Format the current date using in this format: "%m/%d/%Y, %H:%M:%S")
+1. Get the current day, month, year, hour, minute and timestamp from datetime module
+1. Format the current date using this format: "%m/%d/%Y, %H:%M:%S")
 1. Today is 5 December, 2019. Change this time string to time.
-1. Calculate the time difference from now to new year.
+1. Calculate the time difference between now and new year.
 1. Calculate the time difference between 1 January 1970 and now.
-1. Think about for what you can you use datetime module,
+1. Think, what can you use the datetime module for? Examples:
    - Time series analysis
-   - To get time stamp of any activities in an application
-   - And many other users
+   - To get a timestamp of any activities in an application
+   - Adding posts on a blog 
 
 🎉 CONGRATULATIONS ! 🎉
 
