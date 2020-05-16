@@ -17,18 +17,18 @@
 [<< Day 15](../15_Day/15_python_type_error.md) | [Day 17 >>](../17_Day/17_exception_handling.md)
 ![30DaysOfPython](../images/30DaysOfPython_banner3@2x.png)
 - [📘 Day 16](#%f0%9f%93%98-day-16)
-  - [Python Datetime](#python-datetime)
-    - [Getting the datetime information](#getting-the-datetime-information)
-    - [Formating datetime output using strftime](#formating-datetime-output-using-strftime)
-    - [String to time using strptime](#string-to-time-using-strptime)
-    - [Use date from datetime](#use-date-from-datetime)
-    - [Time object to represent time](#time-object-to-represent-time)
-    - [Difference between two datetime](#difference-between-two-datetime)
-    - [Difference between two dates and times using timedelata](#difference-between-two-dates-and-times-using-timedelata)
+  - [Python *datetime*](#python-datetime)
+    - [Getting the *datetime* Information](#getting-the-datetime-information)
+    - [Formating Datetime Output Using Strftime](#formating-datetime-output-using-strftime)
+    - [String to Time Using Strptime](#string-to-time-using-strptime)
+    - [Use Date from Datetime](#use-date-from-datetime)
+    - [Time Object to Represent Time](#time-object-to-represent-time)
+    - [Difference Between Two Datetime](#difference-between-two-datetime)
+    - [Difference Between Two Dates and Times Using Timedelata](#difference-between-two-dates-and-times-using-timedelata)
   - [💻 Exercises: Day 16](#%f0%9f%92%bb-exercises-day-16)
 # 📘 Day 16
 
-## Python Datetime
+## Python *datetime*
 
 Python has _datetime_ module to handle date and time.
 
@@ -38,7 +38,7 @@ print(dir(datetime))
 ['MAXYEAR', 'MINYEAR', '__builtins__', '__cached__', '__doc__', '__file__', '__loader__', '__name__', '__package__', '__spec__', 'date', 'datetime', 'datetime_CAPI', 'sys', 'time', 'timedelta', 'timezone', 'tzinfo']
 ```
 
-Using the dir or help builtin function it is possible to know the available functions in a certain module. As you can see in the datetime there are many functions but we will focus on _date_, _datetime_, _time_ and _timedelta_. Let see them step by step.
+With dir or help built-in commands it is possible to know the available functions in a certain module. As you can see, in the datetime module there are many functions, but we will focus on _date_, _datetime_, _time_ and _timedelta_. Let's see them one by one.
 
 ### Getting the datetime information
 
