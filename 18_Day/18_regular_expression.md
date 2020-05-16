@@ -19,8 +19,8 @@
 ![30DaysOfPython](../images/30DaysOfPython_banner3@2x.png)
 
 - [📘 Day 18](#%f0%9f%93%98-day-18)
-  - [Regular Expression](#regular-expression)
-    - [Import re module](#import-re-module)
+  - [Regular Expressions](#regular-expression)
+    - [The *re* module](#The-re-module)
     - [re functions](#re-functions)
       - [Match](#match)
       - [Search](#search)
@@ -32,7 +32,7 @@
     - [Escape character(\\) in RegEx](#escape-character-in-regex)
     - [One or more times(+)](#one-or-more-times)
     - [Period(.)](#period)
-    - [Zero or more times(*)](#zero-or-more-times)
+    - [Zero or more times(\*)](#zero-or-more-times)
     - [Zero or one times(?)](#zero-or-one-times)
     - [Quantifier in RegEx](#quantifier-in-regex)
     - [Cart ^](#cart)
@@ -44,6 +44,7 @@
 A regular expression or RegEx is a small programming language that helps to find pattern in data. A RegEx can be used to check if some pattern exists in a different data type. To use RegEx in python first we should import the RegEx module which is *re*.
 
 ### Import re module
+
 After importing the module we can use it to detect or find patterns.
 ```py
 import re
