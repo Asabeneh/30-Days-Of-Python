@@ -24,7 +24,7 @@
     - [Using *date* from *datetime*](#using-date-from-datetime)
     - [Time Object to Represent Time](#time-object-to-represent-time)
     - [Difference Between Two *datetime*](#difference-between-two-datetime)
-    - [Difference Between Two *date* and *time* Using *timedelata*](#difference-between-two-date-and-time-using-timedelata)
+    - [Difference Between Two Points in Time Using *timedelata*](#difference-between-two-points-in-time-using-timedelata)
   - [💻 Exercises: Day 16](#%f0%9f%92%bb-exercises-day-16)
 # 📘 Day 16
 
@@ -169,7 +169,7 @@ diff = t2 - t1
 print('Time left for new year:', diff) # Time left for new year: 26 days, 23: 01: 00
 ```
 
-### Difference Between Two *date* and *time* Using *timedelata*
+### Difference Between Two Points in Time Using *timedelata*
 
 ```py
 from datetime import timedelta
