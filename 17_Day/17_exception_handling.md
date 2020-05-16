@@ -20,11 +20,11 @@
   - [Exception Handling](#exception-handling)
   - [Packing and Unpacking Arguments in Python](#packing-and-unpacking-arguments-in-python)
     - [Unpacking](#unpacking)
-      - [Unpacking list](#unpacking-list)
-      - [Unpacking dictionary](#unpacking-dictionary)
+      - [Unpacking Lists](#unpacking-lists)
+      - [Unpacking Dictionaries](#unpacking-dictionaries)
     - [Packing](#packing)
-    - [Packing list](#packing-list)
-      - [Packing dictionary](#packing-dictionary)
+    - [Packing Lists](#packing-lists)
+      - [Packing Dictionaries](#packing-dictionaries)
   - [Spreading in Python](#spreading-in-python)
   - [Enumerate](#enumerate)
   - [Zip](#zip)
@@ -35,9 +35,9 @@
 
 ## Exception Handling
 
-Python uses _try_ and _except_ to handle error gracefully. A graceful exit (or graceful handling) of error is a simple programming idiom wherein a program detects a serious error condition and "exits gracefully" in a controlled manner as a result. Often the program prints a descriptive error message to a terminal or log as part of the graceful exit, this make our application more robust. The cause of an exception is often external to the program itself. An example of exceptions could be an incorrect input, wrong file name, unable to find a file, a malfunctioning IO device. Graceful handling of errors prevent our application from crashing.
+Python uses _try_ and _except_ to handle errors gracefully. A graceful exit (or graceful handling) of errors is a simple programming idiom - a program detects a serious error condition and "exits gracefully", in a controlled manner as a result. Often the program prints a descriptive error message to a terminal or log as part of the graceful exit, this makes our application more robust. The cause of an exception is often external to the program itself. An example of exceptions could be an incorrect input, wrong file name, unable to find a file, a malfunctioning IO device. Graceful handling of errors prevents our applications from crashing.
 
-We have cover the different python _error_ types in the previous section. If we use _try_ and _except_ our program don't raise error.
+We have covered the different python _error_ types in the previous section. If we use _try_ and _except_ in our program, then it won't raise errors in those blocks.
 
 ![Try and Except](../images/try_except.png)
 
@@ -54,59 +54,55 @@ except:
 try:
     print(10 + '5')
 except:
-    print('Something goes wrong')
+    print('Something went wrong')
 ```
 
-In the above example the second operand is a string. So, we should change to float or int to add it with a number. Therefore, the second block which is the _except_ executed.
+In the example above the second operand is a string. We could change it to float or int to add it with the number to make it work. But without any changes, the second block, _except_, will be executed.
+
 **Example:**
 
 ```py
 try:
     name = input('Enter your name:')
-    year_born = input('Year you born:')
+    year_born = input('Year you were born:')
     age = 2019 - year_born
 
     print(f'You are {name}. And your age is {age}.')
 except:
-    print('Something goes wrong')
+    print('Something went wrong')
 ```
 
 ```sh
-Something goes wrong
+Something went wrong
 ```
 
-In the above example, the exception block will run and we do not know exactly the problem. To know the problem we can use the different error types with except.
+In the above example, the exception block will run and we do not know exactly the problem. To analize the problem, we can use the different error types with except.
 
-In the following example, it will handle the error and also tells the kind of error raised.
+In the following example, it will handle the error and will also tell us the kind of error raised.
 
 ```py
-except TypeError:
-    print(TypeError)
-except:
-    print('Something goes wrong')
 try:
     name = input('Enter your name:')
-    year_born = input('Year you born:')
+    year_born = input('Year you were born:')
     age = 2019 - year_born
     print(f'You are {name}. And your age is {age}.')
 except TypeError:
-    print('Type error occur')
+    print('Type error occured')
 except ValueError:
-    print('Value error occur')
+    print('Value error occured')
 except ZeroDivisionError:
-    print('zero division error occur')
+    print('zero division error occured')
 ```
 
 ```sh
 Enter your name:Asabeneh
 Year you born:1920
-Type error occur
-I alway run.
+Type error occured
 ```
 
-In the above code the output is going to be _TypeError_.
+In the code above the output is going to be _TypeError_.
 
-Now, lets by by adding additional block:
+Now, let's add an additional block:
 
 ```py
 try:
@@ -114,7 +110,7 @@ try:
     year_born = input('Year you born:')
     age = 2019 - int(year_born)
 
-    print(f'You are {name}. And your age is {age}.')
+    print('You are {name}. And your age is {age}.')
 except TypeError:
     print('Type error occur')
 except ValueError:
@@ -147,7 +143,7 @@ Let's take as an example below. It takes only arguments but we have list. We can
 
 ### Unpacking
 
-#### Unpacking list
+#### Unpacking Lists
 
 ```py
 def sum_of_five_nums(a, b, c, d, e):
@@ -157,7 +153,7 @@ lst = [1,2,3,4,5]
 print(sum_of_five_nums(lst)) # TypeError: sum_of_five_nums() missing 4 required positional arguments: 'b', 'c', 'd', and 'e'
 ```
 
-When we run the above code, it raises an error because this function takes numbers as arguments not as list. Let's unpack or destructure the list.
+When we run the this code, it raises an error, because this function takes numbers (not a list) as arguments. Let's unpack/destructure the list.
 
 ```py
 def sum_of_five_nums(a, b, c, d, e):
@@ -167,7 +163,7 @@ lst = [1,2,3,4,5]
 print(sum_of_five_nums(*lst))  # 15
 ```
 
-We can also use unpacking in the range builtin function that expects start and end.
+We can also use unpacking in the range built-in function that expects a start and an end.
 
 ```py
 numbers = range(2, 7)  # normal call with separate arguments
@@ -178,31 +174,31 @@ print(numbers)      # [2, 3, 4, 5,6]
 
 ```
 
-A list or a tuple can be also be unpacked like this:
+A list or a tuple can also be unpacked like this:
 
 ```py
 countries = ['Finland', 'Sweden', 'Norway', 'Denmark', 'Iceland']
 fin, sw, nor, *rest = countries
 print(fin, sw, nor, rest)   # Finland Sweden Norway ['Denmark', 'Iceland']
 numbers = [1, 2, 3, 4, 5, 6, 7]
-one, *middle,last = numbers
+one, *middle, last = numbers
 print(one, middle, last)      #  1 [2, 3, 4, 5, 6] 7
 ```
 
-#### Unpacking dictionary
+#### Unpacking Dictionaries
 
 ```py
 def unpacking_person_info(name, country, city, age):
-    return f'{name} lives in {country}, {city}. He is {age} year old.'
+    return '{name} lives in {country}, {city}. He is {age} year old.'
 dct = {'name':'Asabeneh', 'country':'Finland', 'city':'Helsinki', 'age':250}
 print(unpacking_person_info(**dct)) # Asabeneh lives in Finland, Helsinki. He is 250 years old.
 ```
 
 ### Packing
 
-Sometimes we never know how many arguments need to be passed to a python function, we can use packing method to allow our function to take unlimited number or arbitrary number of arguments.
+Sometimes we never know how many arguments need to be passed to a python function. We can use the packing method to allow our function to take unlimited number or arbitrary number of arguments.
 
-### Packing list
+### Packing Lists
 
 ```py
 def sum_all(*args):
@@ -214,7 +210,7 @@ print(sum_all(1, 2, 3))             # 6
 print(sum_all(1, 2, 3, 4, 5, 6, 7)) # 28
 ```
 
-#### Packing dictionary
+#### Packing Dictionaries
 
 ```py
 def packing_person_info(**kwargs):
@@ -222,7 +218,7 @@ def packing_person_info(**kwargs):
     # print(type(kwargs))
 	# Printing dictionary items
     for key in kwargs:
-        print(f"{key} = {kwargs[key]}")
+        print("{key} = {kwargs[key]}")
     return kwargs
 
 print(packing_person_info(name="Asabeneh",
@@ -239,7 +235,7 @@ age = 250
 
 ## Spreading in Python
 
-Like JavaScript it is possible to spread in python. Lets see the example below:
+Like in JavaScript, spreading is possible in python. Let's check it in an example below:
 
 ```py
 lst_one = [1, 2, 3]
@@ -251,19 +247,23 @@ country_lst_two = ['Denmark', 'Iceland']
 nordic_countries = [*country_lst_one, *country_lst_two]
 print(nordic_countries)        ['Finland', 'Sweden', 'Norway', 'Denmark', 'Iceland']
 ```
+
 ## Enumerate
+
 In we are interested in an index of a list, we use *enumerate*.
 ```py
 for index, i in enumerate(countries):
     print('hi')
     if i == 'Finland':
-        print(f'The country {i} has been found at index {index}')
+        print('The country {i} has been found at index {index}')
 ```
 ```sh
 The country Finland has been found at index 1.
 ```
+
 ## Zip
-Sometimes we like to combine to lists when we loop through. See the example below:
+
+Sometimes we would like to combine lists when looping through them. See the example below:
 ```py
 fruits = ['banana', 'orange', 'mango', 'lemon']                    
 vegetables = ['Tomato', 'Potato', 'Cabbage','Onion', 'Carrot']
@@ -278,6 +278,7 @@ print(fruits_and_veges)
 ```
 
 ## Exercises: Day 17
+
 1. names = ['Finland', 'Sweden', 'Norway','Denmark','Iceland', 'Estonia','Russia']. Unpack the first five countries and store them in a variable nordic_countries, store Estonia and Russia in es, and ru respectively.
 
 
