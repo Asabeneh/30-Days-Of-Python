@@ -22,15 +22,15 @@
 - [📘 Day 20](#%f0%9f%93%98-day-20)
   - [Python PIP - Python Package Manager](#python-pip---python-package-manager)
     - [What is PIP ?](#what-is-pip)
-    - [Installing pip](#installing-pip)
-    - [Installing packages using pip](#installing-packages-using-pip)
-    - [Uninstall packages](#uninstall-packages)
-    - [List of packages](#list-of-packages)
-    - [Show package](#show-package)
-    - [PIP freeze](#pip-freeze)
+    - [Installing PIP](#installing-pip)
+    - [Installing Packages Using PIP](#installing-packages-using-pip)
+    - [Uninstalling Packages](#uninstalling-packages)
+    - [List of Packages](#list-of-packages)
+    - [Show Package](#show-package)
+    - [PIP Freeze](#pip-freeze)
     - [Reading from URL](#reading-from-url)
-    - [Creating a package](#creating-a-package)
-    - [Further information about packages](#further-information-about-packages)
+    - [Creating a Package](#creating-a-package)
+    - [Further Information About Packages](#further-information-about-packages)
   - [Exercises: Day 20](#exercises-day-20)
 
 # 📘 Day 20
@@ -40,12 +40,12 @@
 ### What is PIP ?
 
 PIP stands for Preferred installer program. We use _pip_ to install different python packages.
-Package is a python module which can contain one or more modules or other packages. A module or modules which we can install to our application is a package.
-In programming, we do not have to write every utility programs instead we install packages and import the package to our applications.
+Package is a python module that can contain one or more modules or other packages. A module or modules that we can install to our application is a package.
+In programming, we do not have to write every utility program, instead we install packages and import them to our applications.
 
-### Installing pip
+### Installing PIP
 
-If you did not install pip, lets install pip. Go to your terminal or command prompt and copy and past this:
+If you did not install pip, let us do it now. Go to your terminal or command prompt and copy and paste this:
 
 ```sh
 asabeneh@Asabeneh:~$ pip install pip
@@ -62,13 +62,13 @@ asabeneh@Asabeneh:~$ pip --version
 pip 19.3.1 from /usr/local/lib/python3.7/site-packages/pip (python 3.7)
 ```
 
-As you can see, I am using pip version 19.3.1, if you see some number a bit below or above that mean you have pip installed.
+As you can see, I am using pip version 19.3.1, if you see some number a bit below or above that, means you have pip installed.
 
-Let's some of the package used in the python community for different purposes. Just to let you know that there are lots of package which are available for use with different applications.
+Let's check some of the packages used in the python community for different purposes. Just to let you know that there are lots of packages available for use with different applications.
 
 ### Installing packages using pip
 
-Let's try to install _numpy_, which is called a numeric python. It is one of the most popular package in machine learning and data science community.
+Let's try to install _numpy_, called numeric python. It is one of the most popular packages in machine learning and data science community.
 
 - NumPy is the fundamental package for scientific computing with Python. It contains among other things:
   - a powerful N-dimensional array object
@@ -103,7 +103,7 @@ array([3, 4, 5, 6, 7])
 >>>
 ```
 
-Pandas is an open source, BSD-licensed library providing high-performance, easy-to-use data structures and data analysis tools for the Python programming language. Lets install big brother of numpy _pandas_ as we did for _numpy_.
+Pandas is an open source, BSD-licensed library providing high-performance, easy-to-use data structures and data analysis tools for the Python programming language. Let's install the big brother of numpy, _pandas_:
 
 ```sh
 asabeneh@Asabeneh:~$ pip install pandas
@@ -117,9 +117,9 @@ Type "help", "copyright", "credits" or "license" for more information.
 >>> import pandas
 ```
 
-This section is not about numpy nor pandas, here we are trying to learn how to install packages and how to import them. If it is needed we will talk about different packages in other sections.
+This section is not about numpy nor pandas, here we are trying to learn how to install packages and how to import them. If it is needed, we will talk about different packages in other sections.
 
-Let's import a web browser module, which can help us to open any website.You do not install this module, it is installed by default with python 3. For instance if you like to open any number of website at any time or if you like to schedule something this _webbrowser_ module can be use.
+Let's import a web browser module, which can help us to open any website. We do not install this module, it is already installed by default with python 3. For instance if you like to open any number of websites at any time or if you like to schedule something, this _webbrowser_ module can be of use.
 
 ```py
 import webbrowser # web browser module to open websites
@@ -137,7 +137,7 @@ for url in url_lists:
     webbrowser.open_new_tab(url)
 ```
 
-### Uninstall packages
+### Uninstalling Packages
 
 If you do not like to keep the installed packages, you can remove them.
 
@@ -145,15 +145,15 @@ If you do not like to keep the installed packages, you can remove them.
 pip uninstall packagename
 ```
 
-### List of packages
+### List of Packages
 
-To see the installed packages on our machine. We can use pip followed by lis.
+To see the installed packages on our machine. We can use pip followed by list.
 
 ```sh
 pip list
 ```
 
-### Show package
+### Show Package
 
 To show information about a package
 
@@ -175,7 +175,7 @@ Requires: python-dateutil, pytz, numpy
 Required-by:
 ```
 
-If we want even more detail than the above, just add --verbose
+If we want even more details, just add --verbose
 
 ```sh
 asabeneh@Asabeneh:~$ pip show --verbose pandas
@@ -209,7 +209,7 @@ Entry-points:
   matplotlib = pandas:plotting._matplotlib
 ```
 
-### PIP freeze
+### PIP Freeze
 
 Generate output suitable for a requirements file.
 
@@ -222,24 +222,25 @@ Pygments==1.6
 Sphinx==1.2.2
 ```
 
-The pip freeze gave us the packages use installed and their version. We use with requirements.txt file for deployment.
+The pip freeze gave us the packages used, installed and their version. We use it with requirements.txt file for deployment.
 
 ### Reading from URL
 
-By now you are familiar with how to read or write on a file which is located in you local machine. Sometimes, we may like to read from a website using url or from an API.
-API stands for Application Program Interface. It is a means to exchange structure data between servers primarily a json data. To open network, we need a package called _requests_ which allows to open network and to implement CRUD(create, read, update and delete) operation. In this section, we will cover only reading part of a CRUD.
+By now you are familiar with how to read or write on a file located on you local machine. Sometimes, we would like to read from a website using url or from an API.
+API stands for Application Program Interface. It is a means to exchange structured data between servers primarily as json data. To open a network connection, we need a package called _requests_ - it allows to open a network connection and to implement CRUD(create, read, update and delete) operations. In this section, we will cover only reading part of a CRUD.
 
-Let's install _requests_
+Let's install _requests_:
 
 ```py
 asabeneh@Asabeneh:~$ pip install requests
 ```
 
-We will see _get_, _status_code_, _headers_, _text_ and _json_ methods from _requests_ module
-_ get(): to open a network and fetch data from url and it returns a response object
-_ status*code: After we fetched, we check the status(succes, error, etc)
-* headers: To check the header types
-\_ text: to extract the text from the fetched response object \* json: to extract json data
+We will see _get_, _status_code_, _headers_, _text_ and _json_ methods in _requests_ module:
+  - _get()_: to open a network and fetch data from url - it returns a response object
+  - _status_code_: After we fetched data, we can check the status of the operation (succes, error, etc)
+  - _headers_: To check the header types
+  - _text_: to extract the text from the fetched response object 
+  - _json_: to extract json data
 Let's read a txt file form this website, https://www.w3.org/TR/PNG/iso_8859-1.txt.
 
 ```py
@@ -260,7 +261,7 @@ print(response.text) # gives all the text from the page
 {'date': 'Sun, 08 Dec 2019 18:00:31 GMT', 'last-modified': 'Fri, 07 Nov 2003 05:51:11 GMT', 'etag': '"17e9-3cb82080711c0;50c0b26855880-gzip"', 'accept-ranges': 'bytes', 'cache-control': 'max-age=31536000', 'expires': 'Mon, 07 Dec 2020 18:00:31 GMT', 'vary': 'Accept-Encoding', 'content-encoding': 'gzip', 'access-control-allow-origin': '*', 'content-length': '1616', 'content-type': 'text/plain', 'strict-transport-security': 'max-age=15552000; includeSubdomains; preload', 'content-security-policy': 'upgrade-insecure-requests'}
 ```
 
-- Lets read from an api. API stands for Application Program Interface. It is a means to exchange structure data between servers primarily a json data. An example of api:https://restcountries.eu/rest/v2/all. Let's read this API using _requests_ module.
+- Let's read from an api. API stands for Application Program Interface. It is a means to exchange structure data between servers primarily a json data. An example of an api:https://restcountries.eu/rest/v2/all. Let's read this API using _requests_ module.
 
 ```py
 import requests
@@ -326,9 +327,9 @@ print(countries[:1])  # we sliced only the first country, remove the slicing to 
 
 We use _json()_ method from response object, if the we are fetching JSON data. For txt, html, xml and other file formats we can use _text_.
 
-### Creating a package
+### Creating a Package
 
-We organize a large number of files in different folders and subfolders based on some criteria, so that we can find and manage them easily. As you know, a module can contain multiple objects, such as classes, functions, etc. A package can contain one or more relevant modules.A package is actually a folder containing one or more module files. Let's create a package named mypackage, using the following steps:
+We organize a large number of files in different folders and subfolders based on some criteria, so that we can find and manage them easily. As you know, a module can contain multiple objects, such as classes, functions, etc. A package can contain one or more relevant modules. A package is actually a folder containing one or more module files. Let's create a package named mypackage, using the following steps:
 
 Create a new folder named mypacakge inside 30DaysOfPython folder
 Create an empty **init**.py file in the mypackage folder.
@@ -406,10 +407,10 @@ Type "help", "copyright", "credits" or "license" for more information.
 >>>
 ```
 
-As you can see our package works perfect. The package folder contains a special file called **init**.py which stores the package's content. If we put **init**.py in the package folder, python start recognizes it as a package.
+As you can see our package works perfectly. The package folder contains a special file called **init**.py - it stores the package's content. If we put **init**.py in the package folder, python start recognizes it as a package.
 The **init**.py exposes specified resources from its modules to be imported to other python files. An empty **init**.py file makes all functions available when a package is imported. The **init**.py is essential for the folder to be recognized by Python as a package.
 
-### Further information about packages
+### Further Information About Packages
 
 - Database
   - SQLAlchemy or SQLObject - Object oriented access to several different database systems
@@ -443,10 +444,10 @@ The **init**.py exposes specified resources from its modules to be imported to o
 
 ## Exercises: Day 20
 
-1. Read this url and find out the 10 most frequent words.romeo_and_juliet = 'http://www.gutenberg.org/files/1112/1112.txt'
-1. Read the cats api and cats_api = 'https://api.thecatapi.com/v1/breeds' and find the avarage weight of cat in metric unit.
-1. Read the countries api and find out the 10 largest countries
-1. UCI is one the most common place for get data set for data science and machine learning. Read the content of UCL(http://mlr.cs.umass.edu/ml/datasets.html). Without library it will be difficult, you may try it with BeautifulSoup4
+1. Read this url and find the 10 most frequent words. Romeo_and_juliet = 'http://www.gutenberg.org/files/1112/1112.txt'
+2. Read the cats api and cats_api = 'https://api.thecatapi.com/v1/breeds' and find the avarage weight of a cat in metric units.
+3. Read the countries api and find the 10 largest countries
+4. UCI is one the most common places to get data sets for data science and machine learning. Read the content of UCL (http://mlr.cs.umass.edu/ml/datasets.html). Without additional libraries it will be difficult, so you may try it with BeautifulSoup4
 
 🎉 CONGRATULATIONS ! 🎉
 
