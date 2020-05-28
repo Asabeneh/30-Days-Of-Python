@@ -34,22 +34,36 @@ asabeneh@Asabeneh:~/Desktop/30DaysOfPython/flask_project$ pip install virtualenv
 ```
 
 After installing the virtualenv package go to your project folder and create a virtual env by writing:
-``sh
+
+For Mac/Linux:
+```sh
 asabeneh@Asabeneh:~/Desktop/30DaysOfPython/flask_project\$ virtualenv venv
 
-````
-The venv name could another name too but I prefer to call it venv. Let's check if the the venv is create by using ls command.
+```
+
+For Windows:
+```sh
+C:\Users\User\Documents\30DaysOfPython\flask_project>python3 -m venv venv
+```
+
+I prefer to call the new project venv, but feel free to name it differently. Let's check if the the venv was created by using ls (or dir for windows command prompt) command.
+
 ```sh
 asabeneh@Asabeneh:~/Desktop/30DaysOfPython/flask_project$ ls
 venv/
-````
+```
 
 Let's activate the virtual environment by writing the following command at our project folder.
 
+For Mac/Linux:
 ```sh
 asabeneh@Asabeneh:~/Desktop/30DaysOfPython/flask_project$ source venv/bin/activate
-
 ```
+For Windows:
+```sh
+C:\Users\User\Documents\30DaysOfPython\flask_project> venv\Scripts\activate
+```
+
 
 After you write the activation command, your project directory will start with venv. See the example below.
 
@@ -57,7 +71,7 @@ After you write the activation command, your project directory will start with v
 (venv) asabeneh@Asabeneh:~/Desktop/30DaysOfPython/flask_project$
 ```
 
-Now, lets check the available package in this project by writing pip freeze. You will not see any package.
+Now, lets check the available packages in this project by writing pip freeze. You will not see any packages.
 
 We are going to do a small flask project so let's install flask to this project.
 
@@ -65,7 +79,7 @@ We are going to do a small flask project so let's install flask to this project.
 (venv) asabeneh@Asabeneh:~/Desktop/30DaysOfPython/flask_project$ pip install Flask
 ```
 
-Now, let's write pip freeze to see the install packages in the project
+Now, let's write pip freeze to see a list of installed packages in the project:
 
 ```sh
 (venv) asabeneh@Asabeneh:~/Desktop/30DaysOfPython/flask_project$ pip freeze
@@ -83,11 +97,11 @@ When you finish you should dactivate active project using _deactivate_.
 (venv) asabeneh@Asabeneh:~/Desktop/30DaysOfPython$ deactivate
 ```
 
-The necessary modules to work on flask are installed. Now, you project directory is ready for flask project. You should include the venv to your .gitignore file not to push it to github.
+The necessary modules to work with flask are installed. Now, your project directory is ready for a flask project. You should include the venv to your .gitignore file not to push it to github.
 
 ## 💻 Exercises: Day 23
 
-1. Create a project directory with a virtual environment based on the example give above.
+1. Create a project directory with a virtual environment based on the example given above.
 
 🎉 CONGRATULATIONS ! 🎉
 [<< Day 22](../22_Day/22_web_scraping.md) | [Day 24 >>](../24_Day/24_statistics.md)
