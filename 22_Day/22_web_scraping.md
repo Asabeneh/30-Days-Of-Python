@@ -21,29 +21,29 @@
 
 - [📘 Day 22](#%f0%9f%93%98-day-22)
   - [Python Web Scraping](#python-web-scraping)
-    - [What is web scrapping](#what-is-web-scrapping)
+    - [What is Web Scrapping](#what-is-web-scrapping)
   - [💻 Exercises: Day 22](#%f0%9f%92%bb-exercises-day-22)
 
 # 📘 Day 22
 
 ## Python Web Scraping
 
-### What is web scrapping
+### What is Web Scrapping
 
-The internet is full huge amount of data which can be used for different uses. To collect this data we need to know how scrape data on a website.
+The internet is full of huge amount of data which can be used for different purposes. To collect this data we need to know how to scrape data from a website.
 
-Web scraping is the process of extracting and collecting data from websites and storing the data into a local machine or into a database.
+Web scraping is the process of extracting and collecting data from websites and storing it on a local machine or in a database.
 
-In this section, we will use beautifulsoup and requests package to scape data. The beautifulsoup package we are using beautifulsoup 4.
+In this section, we will use beautifulsoup and requests package to scrape data. The package version we are using is beautifulsoup 4.
 
-To start scraping a website you need _requests_, _beautifoulSoup4_ and _website_ to be scrapped.
+To start scraping websites you need _requests_, _beautifoulSoup4_ and _website_.
 
 ```sh
 pip install requests
-pip installl install beautifulsoup4
+pip install beautifulsoup4
 ```
 
-To scrape a data on a website it needs basic understanding of HTML tags and css selectors. We target content from a website using HTML tag, class or an id.
+To scrape data from websites, basic understanding of HTML tags and css selectors is needed. We target content from a website using HTML tags, classes or/and ids.
 Let's import the requests and BeautifulSoup module
 
 ```py
@@ -84,19 +84,18 @@ soup = BeautifulSoup(content, 'html.parser') # beautiful soup will give a chance
 print(soup.title) # <title>UCI Machine Learning Repository: Data Sets</title>
 print(soup.title.get_text()) # UCI Machine Learning Repository: Data Sets
 print(soup.body) # gives the whole page on the website
-# print(soup.body)
 print(response.status_code)
 
 tables = soup.find_all('table', {'cellpadding':'3'})
-# We are targeting the table with cellpadding attribute and the attribute value
+# We are targeting the table with cellpadding attribute with the value of 3
 # We can select using id, class or HTML tag , for more information check the beautifulsoup doc
-table = tables[0] # the result is list, we are taking out from the list
+table = tables[0] # the result is a list, we are taking out data from it
 for td in table.find('tr').find_all('td'):
     print(td.text)
 ```
 
-If you run the above code, you can see that the extraction is half done. You can continue doing it because it is part of exercise 1.
-For reference check the beautiful [soup documentation](https://www.crummy.com/software/BeautifulSoup/bs4/doc/#quick-start)
+If you run this code, you can see that the extraction is half done. You can continue doing it because it is part of exercise 1.
+For reference check the [beautifulsoup documentation](https://www.crummy.com/software/BeautifulSoup/bs4/doc/#quick-start)
 
 ## 💻 Exercises: Day 22
 
