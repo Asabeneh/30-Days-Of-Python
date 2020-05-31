@@ -20,43 +20,52 @@
 
 - [📘 Day 25](#%f0%9f%93%98-day-25)
   - [Pandas](#pandas)
-  - [Importing pandas](#importing-pandas)
-    - [Creating Pandas Series with default index](#creating-pandas-series-with-default-index)
-    - [Creating  Pandas Series with custom index](#creating-pandas-series-with-custom-index)
-    - [Creating Pandas Series from a dictionary](#creating-pandas-series-from-a-dictionary)
-    - [Creating a constant pandas series](#creating-a-constant-pandas-series)
-    - [Creating a  pandas series using linspace](#creating-a-pandas-series-using-linspace)
+  - [Importing Pandas](#importing-pandas)
+    - [Creating Pandas Series with Default Index](#creating-pandas-series-with-default-index)
+    - [Creating  Pandas Series with Custom Index](#creating-pandas-series-with-custom-index)
+    - [Creating Pandas Series from a Dictionary](#creating-pandas-series-from-a-dictionary)
+    - [Creating a Constant Pandas Series](#creating-a-constant-pandas-series)
+    - [Creating a  Pandas Series Using Linspace](#creating-a-pandas-series-using-linspace)
   - [DataFrames](#dataframes)
-    - [Creating DataFrames from list of lists](#creating-dataframes-from-list-of-lists)
-    - [Creating DataFrame using Dictionary](#creating-dataframe-using-dictionary)
-    - [Creating DataFrams from list of dictionaries](#creating-dataframs-from-list-of-dictionaries)
-  - [Reading CSV File using pandas](#reading-csv-file-using-pandas)
+    - [Creating DataFrames from List of Lists](#creating-dataframes-from-list-of-lists)
+    - [Creating DataFrame Using Dictionary](#creating-dataframe-using-dictionary)
+    - [Creating DataFrames from a List of Dictionaries](#creating-dataframes-from-a-list-of-dictionaries)
+  - [Reading CSV File Using Pandas](#reading-csv-file-using-pandas)
     - [Data Exploration](#data-exploration)
-  - [Modifying DataFrame](#modifying-dataframe)
-    - [Create a DataFrame](#create-a-dataframe)
-    - [Adding new column](#adding-new-column)
-    - [Modifying column values](#modifying-column-values)
-    - [Formating DataFrame column](#formating-dataframe-column)
-  - [Checking data types of Column values](#checking-data-types-of-column-values)
+  - [Modifying a DataFrame](#modifying-a-dataframe)
+    - [Creating a DataFrame](#creating-a-dataframe)
+    - [Adding a New Column](#adding-a-new-column)
+    - [Modifying Column Values](#modifying-column-values)
+    - [Formating DataFrame Columns](#formating-dataframe-columns)
+  - [Checking Data Types of Column Values](#checking-data-types-of-column-values)
     - [Boolean Indexing](#boolean-indexing)
   - [Exercises: Day 25](#exercises-day-25)
 # 📘 Day 25
 ## Pandas
 
-Pandas is an open source,high-performance, easy-to-use data structures and data analysis tools for the Python programming language.
-Pandas adds data structures and tools designed to work with table-like data which is Series and Data Frames
+Pandas is an open source, high-performance, easy-to-use data structures and data analysis tools for the Python programming language.
+Pandas adds data structures and tools designed to work with table-like data which is Series and Data Frames.
 Pandas provides tools for data manipulation: reshaping, merging, sorting, slicing, aggregation and imputation.
+
+For Mac:
 ```py
 pip install conda
 conda install pandas
 ```
+
+For Windows:
+```py
+pip install conda
+pip install pandas
+```
+
 Pandas data structure is based on *Series* and *DataFrames*
 A series is a column and a DataFrame is a multidimensional table made up of collection of series. In order to create a pandas series we should use numpy to create a one dimensional arrays or a python list.
 Let's see an example of a series:
 
-Names pandas Series
+Names Pandas Series
 
-![pandas series](../mages/pandas-series-1.png) 
+![pandas series](../images/pandas-series-1.png) 
 
 Countries Series
 
@@ -66,20 +75,20 @@ Cities Series
 
 ![pandas series](../images/pandas-series-3.png)
 
-As you can see, pandas series is just one column data. If we want to have multiple columns we use data frames. The example below shows pandas DataFrames.
+As you can see, pandas series is just one column of data. If we want to have multiple columns we use data frames. The example below shows pandas DataFrames.
 
 Let's see, an example of a pandas data frame:
 
 ![Pandas data frame](../images/pandas-dataframe-1.png)
 
-Data from is a collection of rows and columns. Look at the table below it has many columns than the above
+Data frame is a collection of rows and columns. Look at the table below; it has many more columns than the example above:
 
 
 ![Pandas data frame](../images/pandas-dataframe-2.png)
 
 Next, we will see how to import pandas and how to create Series and DataFrames using pandas
 
-## Importing pandas
+## Importing Pandas
 
 
 ```python
@@ -87,25 +96,24 @@ import pandas as pd # importing pandas as pd
 import numpy  as np # importing numpy as np
 ```
 
-### Creating Pandas Series with default index
+### Creating Pandas Series with Default Index
 
 
 ```python
 nums = [1, 2, 3, 4,5]
 s = pd.Series(nums)
-s
+print(s)
 ```
 
 
-
-
+```sh
     0    1
     1    2
     2    3
     3    4
     4    5
     dtype: int64
-
+```
 
 
 ### Creating  Pandas Series with custom index
@@ -114,40 +122,40 @@ s
 ```python
 nums = [1, 2, 3, 4, 5]
 s = pd.Series(nums, index=[1, 2, 3, 4, 5])
-s
+print(s)
 
 ```
 
 
 
-
+```sh
     1    1
     2    2
     3    3
     4    4
     5    5
     dtype: int64
-
+```
 
 
 
 ```python
 fruits = ['Orange','Banana','Mangao']
 fruits = pd.Series(fruits, index=[1, 2, 3])
-fruits
+print(fruits)
 ```
 
 
 
-
+```sh
     1    Orange
     2    Banana
     3    Mangao
     dtype: object
+```
 
 
-
-### Creating Pandas Series from a dictionary
+### Creating Pandas Series from a Dictionary
 
 
 ```python
@@ -157,48 +165,48 @@ dct = {'name':'Asabeneh','country':'Finland','city':'Helsinki'}
 
 ```python
 s = pd.Series(dct)
-s
+print(s)
 ```
 
 
 
-
+```sh
     name       Asabeneh
     country     Finland
     city       Helsinki
     dtype: object
+```
 
 
-
-### Creating a constant pandas series
+### Creating a Constant Pandas Series
 
 
 ```python
 s = pd.Series(10, index = [1, 2,3])
-s
+print(s)
 ```
 
 
 
-
+```sh
     1    10
     2    10
     3    10
     dtype: int64
+```
 
 
-
-### Creating a  pandas series using linspace
+### Creating a  Pandas Series Using Linspace
 
 
 ```python
 s = pd.Series(np.linspace(5, 20, 10)) # linspace(starting, end, items)
-s
+print(s)
 ```
 
 
 
-
+```sh
     0     5.000000
     1     6.666667
     2     8.333333
@@ -210,14 +218,13 @@ s
     8    18.333333
     9    20.000000
     dtype: float64
-
-
+```
 
 ## DataFrames
 
 Pandas data frames can be created in different ways.
 
-### Creating DataFrames from list of lists
+### Creating DataFrames from List of Lists
 
 
 ```python
@@ -227,27 +234,9 @@ data = [
     ['John', 'Sweden', 'Stockholm']
 ]
 df = pd.DataFrame(data, columns=['Names','Country','City'])
-df
-
+print(df)
 ```
 
-
-
-
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -278,37 +267,18 @@ df
     </tr>
   </tbody>
 </table>
-</div>
 
-
-
-### Creating DataFrame using Dictionary
+### Creating DataFrame Using Dictionary
 
 
 ```python
 data = {'Name': ['Asabeneh', 'David', 'John'], 'Country':[
     'Finland', 'UK', 'Sweden'], 'City': ['Helsiki', 'London', 'Stockholm']}
 df = pd.DataFrame(data)
-df
+print(df)
 ```
 
 
-
-
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -339,16 +309,9 @@ df
     </tr>
   </tbody>
 </table>
-</div>
 
 
-
-
-```python
-
-```
-
-### Creating DataFrams from list of dictionaries
+### Creating DataFrames from a List of Dictionaries
 
 
 ```python
@@ -357,26 +320,10 @@ data = [
     {'Name': 'David', 'Country': 'UK', 'City': 'London'},
     {'Name': 'John', 'Country': 'Sweden', 'City': 'Stockholm'}]
 df = pd.DataFrame(data)
-df
+print(df)
 ```
 
 
-
-
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -407,17 +354,23 @@ df
     </tr>
   </tbody>
 </table>
-</div>
 
 
 
-## Reading CSV File using pandas
 
+## Reading CSV File Using Pandas
+
+To download the csv file, needed in this example, console/command line is enough:
+
+```sh
+curl -O https://raw.githubusercontent.com/Asabeneh/30-Days-Of-Python/master/data/weight-height.csv
+```
 
 ```python
 import pandas as pd
 
-df = pd.read_csv('./data/weight-height.csv')
+df = pd.read_csv('weight-height.csv')
+print(df)
 ```
 
 ### Data Exploration
@@ -425,26 +378,10 @@ Let's read only the first 5 rows using head()
 
 
 ```python
-df.head() # give five rows we can increase the number of rows by passing argument to the head() method
+print(df.head()) # give five rows we can increase the number of rows by passing argument to the head() method
 ```
 
 
-
-
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -487,15 +424,14 @@ df.head() # give five rows we can increase the number of rows by passing argumen
     </tr>
   </tbody>
 </table>
-</div>
 
 
 
-As you can see the csv file has three rows:Gender, Height and Weight. But we don't know the number of rows. Let's use shape meathod.
+As you can see the csv file has three rows: Gender, Height and Weight. But we don't know the number of rows. Let's use shape meathod.
 
 
 ```python
-df.shape # as you can see 10000 rows and three columns
+print(df.shape) # as you can see 10000 rows and three columns
 ```
 
 
@@ -510,7 +446,7 @@ Let's get all the columns using columns.
 
 
 ```python
-df.columns
+print(df.columns)
 ```
 
 
@@ -524,26 +460,10 @@ Let's read only the last 5 rows using tail()
 
 
 ```python
-df.tail() # tails give the last five rows, we can increase the rows by passing argument to tail method
+print(df.tail()) # tails give the last five rows, we can increase the rows by passing argument to tail method
 ```
 
 
-
-
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -586,26 +506,24 @@ df.tail() # tails give the last five rows, we can increase the rows by passing a
     </tr>
   </tbody>
 </table>
-</div>
 
 
-
-Now, lets get specif colums using the column key
+Now, lets get a specific column using the column key
 
 
 
 ```python
-heights = df['Height'] # this is now a a series
+heights = df['Height'] # this is now a series
 ```
 
 
 ```python
-heights
+print(heights)
 ```
 
 
 
-
+```sh
     0       73.847017
     1       68.781904
     2       74.110105
@@ -618,7 +536,7 @@ heights
     9998    69.034243
     9999    61.944246
     Name: Height, Length: 10000, dtype: float64
-
+```
 
 
 
@@ -628,12 +546,11 @@ weights = df['Weight'] # this is now a series
 
 
 ```python
-weights
+print(weights)
 ```
 
 
-
-
+```sh
     0       241.893563
     1       162.310473
     2       212.740856
@@ -646,12 +563,12 @@ weights
     9998    163.852461
     9999    113.649103
     Name: Weight, Length: 10000, dtype: float64
-
+```
 
 
 
 ```python
-len(heights) == len(weights)
+print(len(heights) == len(weights))
 ```
 
 
@@ -663,12 +580,11 @@ len(heights) == len(weights)
 
 
 ```python
-heights.describe() # give statisical information about height data
+print(heights.describe()) # give statisical information about height data
 ```
 
 
-
-
+```sh
     count    10000.000000
     mean        66.367560
     std          3.847528
@@ -678,17 +594,17 @@ heights.describe() # give statisical information about height data
     75%         69.174262
     max         78.998742
     Name: Height, dtype: float64
-
-
-
-
-```python
-weights.describe()
 ```
 
 
 
+```python
+print(weights.describe())
+```
 
+
+
+```sh
     count    10000.000000
     mean       161.440357
     std         32.108439
@@ -698,31 +614,15 @@ weights.describe()
     75%        187.169525
     max        269.989699
     Name: Weight, dtype: float64
-
-
-
-
-```python
-df.describe()  # describe can also give statistical information from a datafrom
 ```
 
 
 
+```python
+print(df.describe())  # describe can also give statistical information from a dataFrame
+```
 
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -774,23 +674,22 @@ df.describe()  # describe can also give statistical information from a datafrom
     </tr>
   </tbody>
 </table>
-</div>
+
+
+## Modifying a DataFrame
 
 
 
-## Modifying DataFrame
-
-
-
-Modifying a DataFrame
+Modifying a DataFrame:
     * We can create a new DataFrame
-    * We can create a new column and add to DataFrame, 
-    * we can remove an existing column from DataFrame, 
-    * we can modify an existing column from DataFrame, 
-    * we can change the data type of column values from DataFrame
+    * We can create a new column and add it to the DataFrame, 
+    * we can remove an existing column from a DataFrame, 
+    * we can modify an existing column in a DataFrame, 
+    * we can change the data type of column values in the DataFrame
 
-### Create a DataFrame
-All the time, first we import the necessary packages. Now, lets import pandas and numpy two best friends ever.
+### Creating a DataFrame
+
+As always, first we import the necessary packages. Now, lets import pandas and numpy, two best friends ever.
 
 
 ```python
@@ -801,26 +700,9 @@ data = [
     {"Name": "David", "Country":"UK","City":"London"},
     {"Name": "John", "Country":"Sweden","City":"Stockholm"}]
 df = pd.DataFrame(data)
-df
+print(df)
 ```
 
-
-
-
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -851,15 +733,13 @@ df
     </tr>
   </tbody>
 </table>
-</div>
 
 
+Adding a column to a DataFrame is like adding a key to a dictionary.
 
-Adding column in DataFrame is like adding a key in dictionary.
+First let's use the previous example to create a DataFrame. After we create the DataFrame, we will start modifying the columns and column values.
 
-First let's use the previous example to create a DataFrame. After we create the DataFrame,  we will start modifying the columns and column values.
-
-### Adding new column
+### Adding a New Column
 Let's add a weight column in the DataFrame
 
 
@@ -870,22 +750,6 @@ df
 ```
 
 
-
-
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -920,36 +784,17 @@ df
     </tr>
   </tbody>
 </table>
-</div>
 
-
-
-Let's add a height column in the DataFrame
+Let's add a height column into the DataFrame aswell
 
 
 ```python
 heights = [173, 175, 169]
-df['Height'] =heights
-df
+df['Height'] = heights
+print(df)
 ```
 
 
-
-
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -988,13 +833,10 @@ df
     </tr>
   </tbody>
 </table>
-</div>
 
+As you can see in the DataFrame above, we did add new columns, Weight and Height. Let's add one additional column called BMI(Body Mass Index) by calculating their BMI using thier mass and height. BMI is mass divided by height squared (in meters) - Weight/Height * Height.
 
-
-As you can see from the above DataFrame, now we new added columns, the Weight and Height. Let's add one additional column by called BMI(Body Mass Index) by calculating their BMI using thier mass and height. BMI is mass divided by height square meter(Weight/Height * Height).
-
-As you can see, the hieght is in centimeter, so we shoud change the height to meter. So, let's modify the height row
+As you can see, the height is in centimeters, so we shoud change it to meters. Let's modify the height row.
 
 ### Modifying column values
 
@@ -1002,26 +844,8 @@ As you can see, the hieght is in centimeter, so we shoud change the height to me
 ```python
 df['Height'] = df['Height'] * 0.01
 df
-
 ```
 
-
-
-
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -1060,13 +884,9 @@ df
     </tr>
   </tbody>
 </table>
-</div>
-
-
-
 
 ```python
-# Using function makes our code clean but you can just calculate the bmi without function
+# Using functions makes our code clean, but you can calculate the bmi without one
 def calculate_bmi ():
     weights = df['Weight']
     heights = df['Height']
@@ -1086,23 +906,6 @@ df['BMI'] = bmi
 df
 ```
 
-
-
-
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -1145,37 +948,20 @@ df
     </tr>
   </tbody>
 </table>
-</div>
 
 
 
-### Formating DataFrame column
+### Formating DataFrame columns
 
-The BMI of the above DataFrame has is float with many significant digits after decimal. Let's make it to have only one significant digit after point.
+The BMI column values of the DataFrame are float with many significant digits after decimal. Let's change it to one significant digit after point.
 
 
 ```python
 df['BMI'] = round(df['BMI'], 1)
-df
+print(df)
 ```
 
 
-
-
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -1218,38 +1004,19 @@ df
     </tr>
   </tbody>
 </table>
-</div>
-
-
 
 The information in the DataFrame seems not yet complete, let's add birth year and current year columns.
 
 
 ```python
 birth_year = ['1769', '1985', '1990']
-current_year = pd.Series(2019, index=[0, 1,2])
+current_year = pd.Series(2020, index=[0, 1,2])
 df['Birth Year'] = birth_year
 df['Current Year'] = current_year
 df
 ```
 
 
-
-
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -1274,7 +1041,7 @@ df
       <td>1.73</td>
       <td>24.7</td>
       <td>1769</td>
-      <td>2019</td>
+      <td>2020</td>
     </tr>
     <tr>
       <td>1</td>
@@ -1285,7 +1052,7 @@ df
       <td>1.75</td>
       <td>25.5</td>
       <td>1985</td>
-      <td>2019</td>
+      <td>2020</td>
     </tr>
     <tr>
       <td>2</td>
@@ -1296,65 +1063,55 @@ df
       <td>1.69</td>
       <td>24.2</td>
       <td>1990</td>
-      <td>2019</td>
+      <td>2020</td>
     </tr>
   </tbody>
 </table>
-</div>
-
 
 
 ## Checking data types of Column values
 
 
 ```python
-df.Weight.dtype
+print(df.Weight.dtype)
 ```
 
 
 
-
+```sh
     dtype('int64')
-
+```
 
 
 
 ```python
-df['Birth Year'].dtype # it give string object , we should change this to number
+df['Birth Year'].dtype # it gives string object , we should change this to number
 
 ```
-
-
-
-
-    dtype('O')
-
 
 
 
 ```python
 df['Birth Year'] = df['Birth Year'].astype('int')
-df['Birth Year'].dtype # let's check the data type now
+print(df['Birth Year'].dtype) # let's check the data type now
 ```
 
 
 
+```sh
+    dtype('int32')
+```
 
-    dtype('int64')
-
-
-
+Now same for the current year:
 
 ```python
 df['Current Year'] = df['Current Year'].astype('int')
 df['Current Year'].dtype
 ```
 
-
-
-
-    dtype('int64')
-
+```sh
+    dtype('int32')
+```
 
 
 Now, the column values of birth year and current year are integers. We can calculate the age.
@@ -1368,36 +1125,20 @@ ages
 
 
 
-    0    250
-    1     34
-    2     29
-    dtype: int64
+    0    251
+    1     35
+    2     30
+    dtype: int32
 
 
 
 
 ```python
 df['Ages'] = ages
-df
+print(df)
 ```
 
 
-
-
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -1452,51 +1193,32 @@ df
     </tr>
   </tbody>
 </table>
-</div>
 
+The person in the first row lived so far for 251 years. It is unlikely for someone to live so long. Either it is a typo or the data is cooked. So lets fill that data with average of the columns without including outlier. 
 
-
-The person in the first row lives 250 years. It is unlikely for someone to live 250 years. Either it is a typo or the data is cooked. So lets fill that data with average of the columns without including outlier. 
-
-mean = (34 + 29)/ 2
+mean = (35 + 30)/ 2
 
 
 ```python
-mean = (34 + 29)/ 2
-mean
+mean = (35 + 30)/ 2
+print('Mean: ',mean)	#it is good to add some description to the output, so we know what is what
 ```
 
 
 
-
-    31.5
-
+```sh
+   Mean:  32.5
+```
 
 
 ### Boolean Indexing
 
 
 ```python
-df[df['Ages'] > 120]
+print(df[df['Ages'] > 120])
 ```
 
 
-
-
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -1522,37 +1244,19 @@ df[df['Ages'] > 120]
       <td>1.73</td>
       <td>24.7</td>
       <td>1769</td>
-      <td>2019</td>
-      <td>250</td>
+      <td>2020</td>
+      <td>251</td>
     </tr>
   </tbody>
 </table>
-</div>
-
-
 
 
 ```python
-df[df['Ages'] < 120]
+print(df[df['Ages'] < 120])
 ```
 
 
 
-
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -1578,8 +1282,8 @@ df[df['Ages'] < 120]
       <td>1.75</td>
       <td>25.5</td>
       <td>1985</td>
-      <td>2019</td>
-      <td>34</td>
+      <td>2020</td>
+      <td>35</td>
     </tr>
     <tr>
       <td>2</td>
@@ -1590,21 +1294,12 @@ df[df['Ages'] < 120]
       <td>1.69</td>
       <td>24.2</td>
       <td>1990</td>
-      <td>2019</td>
-      <td>29</td>
+      <td>2020</td>
+      <td>30</td>
     </tr>
   </tbody>
 </table>
-</div>
 
-
-
-
-```python
-df['Ages']  = df[df['Ages'] > 120]
-        
-        
-```
 
 ## Exercises: Day 25
 1. Read the hacker_ness.csv file from data directory 
@@ -1614,7 +1309,7 @@ df['Ages']  = df[df['Ages'] > 120]
 1. Count the number of rows and columns
     * Filter the titles which contain python
     * Filter the titles which contain JavaScript
-    * Explore the data and make sense of the data
+    * Explore the data and make sense of it
 
 🎉 CONGRATULATIONS ! 🎉
 
