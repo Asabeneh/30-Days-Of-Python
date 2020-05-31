@@ -20,43 +20,52 @@
 
 - [📘 Day 25](#%f0%9f%93%98-day-25)
   - [Pandas](#pandas)
-  - [Importing pandas](#importing-pandas)
-    - [Creating Pandas Series with default index](#creating-pandas-series-with-default-index)
-    - [Creating  Pandas Series with custom index](#creating-pandas-series-with-custom-index)
-    - [Creating Pandas Series from a dictionary](#creating-pandas-series-from-a-dictionary)
-    - [Creating a constant pandas series](#creating-a-constant-pandas-series)
-    - [Creating a  pandas series using linspace](#creating-a-pandas-series-using-linspace)
+  - [Importing Pandas](#importing-pandas)
+    - [Creating Pandas Series with Default Index](#creating-pandas-series-with-default-index)
+    - [Creating  Pandas Series with Custom Index](#creating-pandas-series-with-custom-index)
+    - [Creating Pandas Series from a Dictionary](#creating-pandas-series-from-a-dictionary)
+    - [Creating a Constant Pandas Series](#creating-a-constant-pandas-series)
+    - [Creating a  Pandas Series Using Linspace](#creating-a-pandas-series-using-linspace)
   - [DataFrames](#dataframes)
-    - [Creating DataFrames from list of lists](#creating-dataframes-from-list-of-lists)
-    - [Creating DataFrame using Dictionary](#creating-dataframe-using-dictionary)
-    - [Creating DataFrams from list of dictionaries](#creating-dataframs-from-list-of-dictionaries)
-  - [Reading CSV File using pandas](#reading-csv-file-using-pandas)
+    - [Creating DataFrames from List of Lists](#creating-dataframes-from-list-of-lists)
+    - [Creating DataFrame Using Dictionary](#creating-dataframe-using-dictionary)
+    - [Creating DataFrams from List of Dictionaries](#creating-dataframs-from-list-of-dictionaries)
+  - [Reading CSV File Using Pandas](#reading-csv-file-using-pandas)
     - [Data Exploration](#data-exploration)
   - [Modifying DataFrame](#modifying-dataframe)
     - [Create a DataFrame](#create-a-dataframe)
-    - [Adding new column](#adding-new-column)
-    - [Modifying column values](#modifying-column-values)
-    - [Formating DataFrame column](#formating-dataframe-column)
-  - [Checking data types of Column values](#checking-data-types-of-column-values)
+    - [Adding a New Column](#adding-a-new-column)
+    - [Modifying Column Values](#modifying-column-values)
+    - [Formating DataFrame Column](#formating-dataframe-column)
+  - [Checking Data Types of Column Values](#checking-data-types-of-column-values)
     - [Boolean Indexing](#boolean-indexing)
   - [Exercises: Day 25](#exercises-day-25)
 # 📘 Day 25
 ## Pandas
 
-Pandas is an open source,high-performance, easy-to-use data structures and data analysis tools for the Python programming language.
-Pandas adds data structures and tools designed to work with table-like data which is Series and Data Frames
+Pandas is an open source, high-performance, easy-to-use data structures and data analysis tools for the Python programming language.
+Pandas adds data structures and tools designed to work with table-like data which is Series and Data Frames.
 Pandas provides tools for data manipulation: reshaping, merging, sorting, slicing, aggregation and imputation.
+
+For Mac:
 ```py
 pip install conda
 conda install pandas
 ```
+
+For Windows:
+```py
+pip install conda
+pip install pandas
+```
+
 Pandas data structure is based on *Series* and *DataFrames*
 A series is a column and a DataFrame is a multidimensional table made up of collection of series. In order to create a pandas series we should use numpy to create a one dimensional arrays or a python list.
 Let's see an example of a series:
 
-Names pandas Series
+Names Pandas Series
 
-![pandas series](../mages/pandas-series-1.png) 
+![pandas series](../images/pandas-series-1.png) 
 
 Countries Series
 
@@ -66,20 +75,20 @@ Cities Series
 
 ![pandas series](../images/pandas-series-3.png)
 
-As you can see, pandas series is just one column data. If we want to have multiple columns we use data frames. The example below shows pandas DataFrames.
+As you can see, pandas series is just one column of data. If we want to have multiple columns we use data frames. The example below shows pandas DataFrames.
 
 Let's see, an example of a pandas data frame:
 
 ![Pandas data frame](../images/pandas-dataframe-1.png)
 
-Data from is a collection of rows and columns. Look at the table below it has many columns than the above
+Data frame is a collection of rows and columns. Look at the table below; it has many more columns than the example above:
 
 
 ![Pandas data frame](../images/pandas-dataframe-2.png)
 
 Next, we will see how to import pandas and how to create Series and DataFrames using pandas
 
-## Importing pandas
+## Importing Pandas
 
 
 ```python
@@ -87,25 +96,24 @@ import pandas as pd # importing pandas as pd
 import numpy  as np # importing numpy as np
 ```
 
-### Creating Pandas Series with default index
+### Creating Pandas Series with Default Index
 
 
 ```python
 nums = [1, 2, 3, 4,5]
 s = pd.Series(nums)
-s
+print(s)
 ```
 
 
-
-
+```sh
     0    1
     1    2
     2    3
     3    4
     4    5
     dtype: int64
-
+```
 
 
 ### Creating  Pandas Series with custom index
@@ -114,40 +122,40 @@ s
 ```python
 nums = [1, 2, 3, 4, 5]
 s = pd.Series(nums, index=[1, 2, 3, 4, 5])
-s
+print(s)
 
 ```
 
 
 
-
+```sh
     1    1
     2    2
     3    3
     4    4
     5    5
     dtype: int64
-
+```
 
 
 
 ```python
 fruits = ['Orange','Banana','Mangao']
 fruits = pd.Series(fruits, index=[1, 2, 3])
-fruits
+print(fruits)
 ```
 
 
 
-
+```sh
     1    Orange
     2    Banana
     3    Mangao
     dtype: object
+```
 
 
-
-### Creating Pandas Series from a dictionary
+### Creating Pandas Series from a Dictionary
 
 
 ```python
@@ -157,48 +165,48 @@ dct = {'name':'Asabeneh','country':'Finland','city':'Helsinki'}
 
 ```python
 s = pd.Series(dct)
-s
+print(s)
 ```
 
 
 
-
+```sh
     name       Asabeneh
     country     Finland
     city       Helsinki
     dtype: object
+```
 
 
-
-### Creating a constant pandas series
+### Creating a Constant Pandas Series
 
 
 ```python
 s = pd.Series(10, index = [1, 2,3])
-s
+print(s)
 ```
 
 
 
-
+```sh
     1    10
     2    10
     3    10
     dtype: int64
+```
 
 
-
-### Creating a  pandas series using linspace
+### Creating a  Pandas Series Using Linspace
 
 
 ```python
 s = pd.Series(np.linspace(5, 20, 10)) # linspace(starting, end, items)
-s
+print(s)
 ```
 
 
 
-
+```sh
     0     5.000000
     1     6.666667
     2     8.333333
@@ -210,14 +218,13 @@ s
     8    18.333333
     9    20.000000
     dtype: float64
-
-
+```
 
 ## DataFrames
 
 Pandas data frames can be created in different ways.
 
-### Creating DataFrames from list of lists
+### Creating DataFrames from List of Lists
 
 
 ```python
@@ -227,13 +234,13 @@ data = [
     ['John', 'Sweden', 'Stockholm']
 ]
 df = pd.DataFrame(data, columns=['Names','Country','City'])
-df
+print(df)
 
 ```
 
 
 
-
+```html
 <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -279,10 +286,10 @@ df
   </tbody>
 </table>
 </div>
+```
 
 
-
-### Creating DataFrame using Dictionary
+### Creating DataFrame Using Dictionary
 
 
 ```python
@@ -348,7 +355,7 @@ df
 
 ```
 
-### Creating DataFrams from list of dictionaries
+### Creating DataFrams from List of Dictionaries
 
 
 ```python
@@ -411,7 +418,7 @@ df
 
 
 
-## Reading CSV File using pandas
+## Reading CSV File Using Pandas
 
 
 ```python
@@ -491,7 +498,7 @@ df.head() # give five rows we can increase the number of rows by passing argumen
 
 
 
-As you can see the csv file has three rows:Gender, Height and Weight. But we don't know the number of rows. Let's use shape meathod.
+As you can see the csv file has three rows: Gender, Height and Weight. But we don't know the number of rows. Let's use shape meathod.
 
 
 ```python
@@ -590,7 +597,7 @@ df.tail() # tails give the last five rows, we can increase the rows by passing a
 
 
 
-Now, lets get specif colums using the column key
+Now, lets get specific column using the column key
 
 
 
@@ -703,7 +710,7 @@ weights.describe()
 
 
 ```python
-df.describe()  # describe can also give statistical information from a datafrom
+df.describe()  # describe can also give statistical information from a dataFrame
 ```
 
 
@@ -790,7 +797,8 @@ Modifying a DataFrame
     * we can change the data type of column values from DataFrame
 
 ### Create a DataFrame
-All the time, first we import the necessary packages. Now, lets import pandas and numpy two best friends ever.
+
+All the time, first we import the necessary packages. Now, lets import pandas and numpy, two best friends ever.
 
 
 ```python
@@ -859,7 +867,7 @@ Adding column in DataFrame is like adding a key in dictionary.
 
 First let's use the previous example to create a DataFrame. After we create the DataFrame,  we will start modifying the columns and column values.
 
-### Adding new column
+### Adding a New Column
 Let's add a weight column in the DataFrame
 
 
