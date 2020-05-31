@@ -287,7 +287,36 @@ print(df)
 </table>
 </div>
 ```
-
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Names</th>
+      <th>Country</th>
+      <th>City</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>0</td>
+      <td>Asabeneh</td>
+      <td>Finland</td>
+      <td>Helsink</td>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>David</td>
+      <td>UK</td>
+      <td>London</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>John</td>
+      <td>Sweden</td>
+      <td>Stockholm</td>
+    </tr>
+  </tbody>
+</table>
 
 ### Creating DataFrame Using Dictionary
 
