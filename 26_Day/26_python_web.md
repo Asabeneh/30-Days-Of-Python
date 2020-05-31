@@ -21,34 +21,34 @@
 - [📘 Day 26](#%f0%9f%93%98-day-26)
   - [Python for Web](#python-for-web)
     - [Flask](#flask)
-      - [Folder structure](#folder-structure)
-    - [Setting up your project directory](#setting-up-your-project-directory)
-    - [Creating routes](#creating-routes)
-    - [Creating templates](#creating-templates)
+      - [Folder Structure](#folder-structure)
+    - [Setting Up Your Project Directory](#setting-up-your-project-directory)
+    - [Creating Routes](#creating-routes)
+    - [Creating Templates](#creating-templates)
     - [Python Script](#python-script)
     - [Navigation](#navigation)
-    - [Creating a layout](#creating-a-layout)
+    - [Creating a Layout](#creating-a-layout)
     - [Deployment](#deployment)
-      - [Creating Heroku account](#creating-heroku-account)
+      - [Creating Heroku Account](#creating-heroku-account)
       - [Login to Heroku](#login-to-heroku)
-      - [Create requirements and Procfile](#create-requirements-and-procfile)
-      - [Pushing project to heroku](#pushing-project-to-heroku)
+      - [Create Requirements and Procfile](#create-requirements-and-procfile)
+      - [Pushing Project to Heroku](#pushing-project-to-heroku)
   - [Exercises: Day 26](#exercises-day-26)
 
 # 📘 Day 26
 
 ## Python for Web
 
-Python is a general purpose programming language and it can be used for many places. In this section, we will see how we use python for the web. There are many python web frame works. Django and Flask are the most popular ones. Today, we will see how to use Flask for web development.
+Python is a general purpose programming language and it can be used in many places. In this section, we will see how we can use python for the web. There are many python web frameworks. Django and Flask are the most popular ones. Today we will see how to use Flask for web development.
 
 ### Flask
 
-Flask is a web development framework written in python. Flask uses Jinja2 template engine. Flask can be also used with other modern frond libraries such as react.
-If you did not install the virtualenv package ye install it first. Virtual environment will allows to isolate project dependencies.
+Flask is a web development framework written in python. Flask uses Jinja2 template engine. Flask can be also used with other modern front end libraries such as react.
+If you did not install the virtualenv package yet install it first. Virtual environment allows to isolate project dependencies.
 
 #### Folder structure
 
-After completing all the step your project file structure should look like this:
+After completing all the steps your project file structure should look like this:
 
 ```sh
 
@@ -68,7 +68,7 @@ After completing all the step your project file structure should look like this:
     └── result.html
 ```
 
-### Setting up your project directory
+### Setting Up Your Project Directory
 
 Follow, the following steps to get started with Flask.
 Step 1: install virtualenv using the following command.
@@ -79,11 +79,27 @@ pip install virtualenv
 
 Step 2:
 
+For Windows environment:
+
+```sh
+C:\Users\User\Documents>mkdir python_for_web
+C:\Users\User\Documents>cd python_for_web
+C:\Users\User\Documents\python_for_web>python3 -m venv env
+C:\Users\User\Documents\python_for_web>env\Scripts\activate
+```
+
+For Mac/Linux environment:
+
 ```sh
 asabeneh@Asabeneh:~/Desktop$ mkdir python_for_web
 asabeneh@Asabeneh:~/Desktop$ cd python_for_web/
 asabeneh@Asabeneh:~/Desktop/python_for_web$ virtualenv env
 asabeneh@Asabeneh:~/Desktop/python_for_web$ source env/bin/activate
+```
+
+After activating the virtual environment:
+
+```sh
 (env) asabeneh@Asabeneh:~/Desktop/python_for_web$ pip freeze
 (env) asabeneh@Asabeneh:~/Desktop/python_for_web$ pip install Flask
 (env) asabeneh@Asabeneh:~/Desktop/python_for_web$ pip freeze
@@ -96,11 +112,11 @@ Werkzeug==0.16.0
 (env) asabeneh@Asabeneh:~/Desktop/python_for_web$
 ```
 
-We created a project director named python*for_web. Inside the project we created a virtual environment \_env* which could be any name but I prefer to call it _env_. Then we activated the virtual environment. We used pip freeze to check the installed packages in the project directory. The result of pip freeze was empty because a package was not installed yet.
+We created a project directory named python_for_web. Inside the project we created a virtual environment _env_ - it could be any name, but I prefer to call it like that. Then we activated the virtual environment. We used pip freeze to check the installed packages in the project directory. The result of pip freeze was empty because no packages were installed yet.
 
 Now, let's create app.py file in the project directory and write the following code. The app.py file will be the main file in the project. The following code has flask module, os module.
 
-### Creating routes
+### Creating Routes
 
 The home route.
 
@@ -111,14 +127,9 @@ import os # importing operating system module
 
 app = Flask(__name__)
 
-@app.route('/') # this decorator create the home route
+@app.route('/') # this decorator creates the home route
 def home ():
     return '<h1>Welcome</h1>'
-
-@app.route('/about')
-def about():
-    return '<h1>About us</h1>'
-
 
 if __name__ == '__main__':
     # for deployment we use the environ
@@ -127,10 +138,10 @@ if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0', port=port)
 ```
 
-After you run _python app.py_ check local host 5000.
+After you run _python app.py_ check localhost:5000 in the web browser.
 
-Let's add additional route.
-Creating about route
+Let's add an additional route.
+Creating about route:
 
 ```py
 # let's import the flask
@@ -139,7 +150,7 @@ import os # importing operating system module
 
 app = Flask(__name__)
 
-@app.route('/') # this decorator create the home route
+@app.route('/') # this decorator creates the home route
 def home ():
     return '<h1>Welcome</h1>'
 
@@ -154,7 +165,7 @@ if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0', port=port)
 ```
 
-Now, we added the about route in the above code. How about if we want to render an HTML file instead of string? It is possible to render HTML file using the function _render_templae_. Let's create a folder called templates and create home.html and about.html in the project directory. Let's also import the _render_template_ function from flask.
+Now, we added the about route in the code above. What if we want to render an HTML file instead of a string? It is possible to render HTML files using the function _render_template_. Let's create a folder called templates and create home.html and about.html in the project directory. Let's also import the _render_template_ function from flask.
 
 ### Creating templates
 
@@ -220,7 +231,7 @@ if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0', port=port)
 ```
 
-As you can see to go to different pages or to navigate we need a navigation. Let's add a link to each page or let's create a layout which we use to every page.
+As you can see to go to different pages or to navigate we need some kind of navigation. Let's add a link to each page or let's create a layout which we can use on every page.
 
 ### Navigation
 
@@ -231,7 +242,7 @@ As you can see to go to different pages or to navigate we need a navigation. Let
 </ul>
 ```
 
-Now, we can navigate between the pages using the above link. Let's create additional page which handle form data. You can call it any name, I like to call it post.html.
+Now, we can navigate between the pages using the links above. Let's create an additional page which will handle form data. Name it as you like, I will call my page post.html.
 
 We can inject data to the HTML files using Jinja2 template engine.
 
@@ -316,10 +327,10 @@ about.html
 </html>
 ```
 
-### Creating a layout
+### Creating a Layout
 
 In the template files, there are lots of repeated codes, we can write a layout and we can remove the repetition. Let's create layout.html inside the templates folder.
-After we create the layout we will import to every file.
+After we create the layout we will import it to every file.
 
 layout.html
 
@@ -429,9 +440,10 @@ post.html
 {% endblock %}
 ```
 
-Request methods, there are different request methods(GET, POST, PUT, DELETE) are the common request methods which allow us to do CRUD(Create Read Update Delete) operation.
+Request methods: there are different request methods(GET, POST, PUT, DELETE) - these are the common request methods which allow us to do CRUD(Create Read Update Delete) operations.
 
-In the post, route we will use GET and POST method alternative depending on the type of request, check how it looks in the code below. The request method is a function to handle request methods and also to access form data.
+In the post route we will use GET and POST methods, depending on the type of request. Check how it looks in the code written below. The request methods are functions to handle and access form data.
+
 app.py
 
 ```py
@@ -477,8 +489,8 @@ if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0', port=port)
 ```
 
-So far, we have seen how to use template and how to inject data to template, how to a common layout.
-Now, lets handle static file. Create a folder called static in the project director and create a folder called css. Inside css folder create main.css. Your main. css file will be linked to the layout.html.
+So far, we have seen how to use templates and how to inject data to templates and how to inject a common layout.
+Now, lets handle static files. Create a folder called static in the project directory and create a folder called css. Inside css folder create main.css. Your main.css file will be linked to the layout.html.
 
 You don't have to write the css file, copy and use it. Let's move on to deployment.
 
@@ -486,8 +498,8 @@ You don't have to write the css file, copy and use it. Let's move on to deployme
 
 #### Creating Heroku account
 
-Heroku provides a free deployment service for both front end and fullstack applications. Create an account on [heroku](https://www.heroku.com/) and install the heroku [CLI](https://devcenter.heroku.com/articles/heroku-cli) for you machine.
-After installing heroku write the following command
+Heroku provides a free deployment service for both front end and fullstack applications. Create an account on [heroku](https://www.heroku.com/) and install the heroku [CLI](https://devcenter.heroku.com/articles/heroku-cli) for your machine.
+After installing heroku write the following command:
 
 #### Login to Heroku
 
@@ -509,7 +521,7 @@ asabeneh@Asabeneh:~$
 
 #### Create requirements and Procfile
 
-Before we push our code to remote server, we need requirements
+Before we push our code to a remote server, we need the project's requirements:
 
 - requirements.txt
 - Procfile
@@ -522,15 +534,19 @@ itsdangerous==1.1.0
 Jinja2==2.10.3
 MarkupSafe==1.1.1
 Werkzeug==0.16.0
-(env) asabeneh@Asabeneh:~/Desktop/python_for_web$ touch requirements.txt
 (env) asabeneh@Asabeneh:~/Desktop/python_for_web$ pip freeze > requirements.txt
-(env) asabeneh@Asabeneh:~/Desktop/python_for_web$ cat requirements.txt
+(env) asabeneh@Asabeneh:~/Desktop/python_for_web$ cat requirements.txt         	#for windows write: type requirements.txt
 Click==7.0
 Flask==1.1.1
 itsdangerous==1.1.0
 Jinja2==2.10.3
 MarkupSafe==1.1.1
 Werkzeug==0.16.0
+```
+
+For Mac/linux:
+
+```sh
 (env) asabeneh@Asabeneh:~/Desktop/python_for_web$ touch Procfile
 (env) asabeneh@Asabeneh:~/Desktop/python_for_web$ ls
 Procfile          env/              static/
@@ -538,15 +554,21 @@ app.py            requirements.txt  templates/
 (env) asabeneh@Asabeneh:~/Desktop/python_for_web$
 ```
 
-The Procfile will have the command which run the application in the web server in our case on Heroku.
+Windows does not have an easy _touch_ command equivalent. The easiest way to make the required Procfile would be:
+
+```sh
+C:\Users\User\Documents\python_for_web>echo web: python app.py > Procfile
+```
+
+The Procfile will have the command which runs the application in the web server in our case on Heroku.
 
 ```sh
 web: python app.py
 ```
 
-#### Pushing project to heroku
+#### Pushing Project to Heroku
 
-Now, it is ready to be deployed. Steps to deploy the application on heroku
+Now, it is ready to be deployed. Steps to deploy the application on heroku:
 
 1. git init
 2. git add .
@@ -559,7 +581,7 @@ After this step you will get an application like [this](http://thirdaysofpython-
 
 ## Exercises: Day 26
 
-1. You will build [this application](https://thirtydaysofpython-v1-final.herokuapp.com/). Only the text analyser part is left
+1. You will build [this application](https://thirtydaysofpython-v1-final.herokuapp.com/). Only the text analyser part is left.
 
 
 🎉 CONGRATULATIONS ! 🎉
