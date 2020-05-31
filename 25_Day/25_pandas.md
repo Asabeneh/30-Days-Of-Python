@@ -1295,7 +1295,7 @@ print(df[df['Ages'] < 120])
       <td>24.2</td>
       <td>1990</td>
       <td>2020</td>
-      <td>50</td>
+      <td>30</td>
     </tr>
   </tbody>
 </table>
