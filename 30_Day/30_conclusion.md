@@ -25,7 +25,7 @@
 
 ## Conclusions
 
-In the process of preparing this material I I have learning quite a lot and you have inspired me to do more. Congratulations for making it to this level. If you have done all the exercise and the projects, now you are capable to go a data analysis, data science, machine learning or web development.
+In the process of preparing this material I have learned quite a lot and you have inspired me to do more. Congratulations for making it to this level. If you have done all the exercises and the projects, now you are capable in all of the following: data analysis, data science, machine learning or web development.
 
 GIVE FEEDBACK: http://thirtydayofpython-api.herokuapp.com/feedback
 
