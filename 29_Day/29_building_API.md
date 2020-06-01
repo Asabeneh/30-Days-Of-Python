@@ -20,7 +20,7 @@
 ![30DaysOfPython](../images/30DaysOfPython_banner3@2x.png)
 
 - [Day 29](#day-29)
-- [Building API](#building-api)
+- [Building an API](#building-an-api)
   - [Structure of an API](#structure-of-an-api)
   - [Retrieving data using get](#retrieving-data-using-get)
   - [Getting a document by id](#getting-a-document-by-id)
@@ -31,15 +31,15 @@
 
 ## Day 29
 
-## Building API
+## Building an API
 
 An example [API](https://restcountries.eu/rest/v2/all).
-In this section, we will cove a RESTful API that uses HTTP request methods to GET, PUT, POST and DELETE data.
+In this section, we will cover a RESTful API that uses HTTP request methods to GET, PUT, POST and DELETE data.
 
-RESTful API is an application program interface (API) that uses HTTP requests to GET, PUT, POST and DELETE data. In the previous sections, we have learned about python, flask and mongoDB. We will use the knowledge we acquire to develop a RESTful API using python flask and mongoDB. Every application which has CRUD(Create, Read, Update, Delete) operation has an API to create data, to get data, to update data or to delete data from database.
+RESTful API is an application program interface (API) that uses HTTP requests to GET, PUT, POST and DELETE data. In the previous sections, we have learned about python, flask and mongoDB. We will use the knowledge we acquired to develop a RESTful API using python flask and mongoDB. Every application which has CRUD (Create, Read, Update, Delete) operations has an API to create data, to get data, to update data or to delete data from the database.
 
-The browser can handle only get request. Therefore, we have to have a tool which can help us to handle all request methods(GET, POST, PUT, DELETE). [Postman](https://www.getpostman.com/) is a very popular tool when it comes to API development. So, if you like to do this section you need to [download postman](https://www.getpostman.com/)
-![Postman](./images/postman.png)
+The browser can handle only get request. Therefore, we have to have a tool which can help us to handle all request methods (GET, POST, PUT, DELETE). [Postman](https://www.getpostman.com/) is a very popular tool when it comes to API development. So, if you want to do this section you will require such a tool - [download postman](https://www.getpostman.com/)
+![Postman](../images/postman.png)
 
 ### Structure of an API
 
@@ -71,13 +71,12 @@ To implement this API, we will use:
 
 ### Retrieving data using get
 
-In this step, let's use dummy data and return it as a json. To return it as json, will use json module and Response module.
+In this step, let's use dummy data and return it as a json. To return it as json, we will use json module and Response module.
 
 ```py
-# let's import the flask
-
 from flask import Flask,  Response
 import json
+import os
 
 app = Flask(__name__)
 
@@ -117,18 +116,19 @@ When you request the http://localhost:5000/api/v1.0/students url on the browser 
 
 ![Get on browser](../images/get_on_browser.png)
 
-When you request the http://localhost:5000/api/v1.0/students url on the browser you will get this:
+When you request the http://localhost:5000/api/v1.0/students url in Postman with the GET mothod, you will get this:
 
 ![Get on postman](../images/get_on_postman.png)
 
-In stead of displaying dummy data let's connect the flask application with MongoDB and let's get data from mongoDB database.
+Instead of displaying dummy data let's connect the flask application with MongoDB and let's get data from mongoDB database.
 
 ```py
-# let's import the flask
-
 from flask import Flask,  Response
 import json
+import os
 import pymongo
+from bson.json_util import dumps
+
 
 
 app = Flask(__name__)
@@ -140,9 +140,7 @@ db = client['thirty_days_of_python'] # accessing the database
 
 @app.route('/api/v1.0/students', methods = ['GET'])
 def students ():
-
-    return Response(json.dumps(student), mimetype='application/json')
-
+    return Response(dumps(db.students.find()), mimetype='application/json')
 
 if __name__ == '__main__':
     # for deployment
@@ -185,20 +183,18 @@ By connecting the flask, we can fetch students collection data from the thirty_d
 ]
 ```
 
-### Getting a document by id
+### Getting a Document by Id
 
 We can access signle document using an id, let's access Asabeneh using his id.
 http://localhost:5000/api/v1.0/students/5df68a21f106fe2d315bbc8b
 
 ```py
-# let's import the flask
-
 from flask import Flask,  Response
 import json
-from bson.objectid import ObjectId
-import json
-from bson.json_util import dumps
+import os
 import pymongo
+from bson.json_util import dumps
+from bson.objectid import ObjectId
 
 
 app = Flask(__name__)
@@ -210,8 +206,8 @@ db = client['thirty_days_of_python'] # accessing the database
 
 @app.route('/api/v1.0/students', methods = ['GET'])
 def students ():
+    return Response(dumps(db.students.find()), mimetype='application/json')
 
-    return Response(json.dumps(student), mimetype='application/json')
 @app.route('/api/v1.0/students/<id>', methods = ['GET'])
 def single_student (id):
     student = db.students.find({'_id':ObjectId(id)})
@@ -238,19 +234,18 @@ if __name__ == '__main__':
 ]
 ```
 
-### Creating data using POST
+### Creating Data Using POST
 
 We use the POST request method to create data
 
 ```py
-# let's import the flask
-
 from flask import Flask,  Response
 import json
-from bson.objectid import ObjectId
-import json
-from bson.json_util import dumps
+import os
 import pymongo
+from bson.json_util import dumps
+from bson.objectid import ObjectId
+
 from datetime import datetime
 
 
@@ -263,8 +258,8 @@ db = client['thirty_days_of_python'] # accessing the database
 
 @app.route('/api/v1.0/students', methods = ['GET'])
 def students ():
+    return Response(dumps(db.students.find()), mimetype='application/json')
 
-    return Response(json.dumps(student), mimetype='application/json')
 @app.route('/api/v1.0/students/<id>', methods = ['GET'])
 def single_student (id):
     student = db.students.find({'_id':ObjectId(id)})
@@ -290,7 +285,6 @@ def create_student ():
     }
     db.students.insert_one(student)
     return ;
-def update_student (id):
 if __name__ == '__main__':
     # for deployment
     # to make it work for both production and development
@@ -298,17 +292,15 @@ if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0', port=port)
 ```
 
-### Updating using PUT
+### Updating Using PUT
 
 ```py
-# let's import the flask
-
 from flask import Flask,  Response
 import json
-from bson.objectid import ObjectId
-import json
-from bson.json_util import dumps
+import os
 import pymongo
+from bson.json_util import dumps
+from bson.objectid import ObjectId
 from datetime import datetime
 
 
@@ -321,8 +313,8 @@ db = client['thirty_days_of_python'] # accessing the database
 
 @app.route('/api/v1.0/students', methods = ['GET'])
 def students ():
+    return Response(dumps(db.students.find()), mimetype='application/json')
 
-    return Response(json.dumps(student), mimetype='application/json')
 @app.route('/api/v1.0/students/<id>', methods = ['GET'])
 def single_student (id):
     student = db.students.find({'_id':ObjectId(id)})
@@ -371,7 +363,6 @@ def update_student (id):
     db.students.update_one(query, student)
     # return Response(dumps({"result":"a new student has been created"}), mimetype='application/json')
     return
-def update_student (id):
 if __name__ == '__main__':
     # for deployment
     # to make it work for both production and development
@@ -379,17 +370,15 @@ if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0', port=port)
 ```
 
-### Deleting a document using Delete
+### Deleting a Document Using Delete
 
 ```py
-# let's import the flask
-
 from flask import Flask,  Response
 import json
-from bson.objectid import ObjectId
-import json
-from bson.json_util import dumps
+import os
 import pymongo
+from bson.json_util import dumps
+from bson.objectid import ObjectId
 from datetime import datetime
 
 
@@ -402,8 +391,8 @@ db = client['thirty_days_of_python'] # accessing the database
 
 @app.route('/api/v1.0/students', methods = ['GET'])
 def students ():
+    return Response(dumps(db.students.find()), mimetype='application/json')
 
-    return Response(json.dumps(student), mimetype='application/json')
 @app.route('/api/v1.0/students/<id>', methods = ['GET'])
 def single_student (id):
     student = db.students.find({'_id':ObjectId(id)})
