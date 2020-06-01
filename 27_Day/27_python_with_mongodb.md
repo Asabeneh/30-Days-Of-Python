@@ -24,24 +24,24 @@
   - [MongoDB](#mongodb)
     - [SQL versus NoSQL](#sql-versus-nosql)
     - [Getting Connection String(MongoDB URI)](#getting-connection-stringmongodb-uri)
-    - [Connecting Flask application to MongoDB Cluster](#connecting-flask-application-to-mongodb-cluster)
-    - [Creating a database and collection](#creating-a-database-and-collection)
-    - [Inserting many documents to collection](#inserting-many-documents-to-collection)
+    - [Connecting Flask Application to MongoDB Cluster](#connecting-flask-application-to-mongodb-cluster)
+    - [Creating a Database and Collection](#creating-a-database-and-collection)
+    - [Inserting Many Documents to Collection](#inserting-many-documents-to-collection)
     - [MongoDB Find](#mongodb-find)
     - [Find with Query](#find-with-query)
-    - [Find query with modifier](#find-query-with-modifier)
-    - [Limiting documents](#limiting-documents)
-    - [Find with sort](#find-with-sort)
-    - [Update with query](#update-with-query)
+    - [Find Query with Modifier](#find-query-with-modifier)
+    - [Limiting Documents](#limiting-documents)
+    - [Find with Sort](#find-with-sort)
+    - [Update with Query](#update-with-query)
     - [Delete Document](#delete-document)
-    - [Drop a collection](#drop-a-collection)
+    - [Drop a Collection](#drop-a-collection)
   - [💻 Exercises: Day 27](#%f0%9f%92%bb-exercises-day-27)
 
 # 📘 Day 27
 
 # Python with MongoDB
 
-Python is a backend technology and it can be connected with different data base applications such as MongoDB and SQL.
+Python is a backend technology and it can be connected with different database applications such as MongoDB and SQL.
 
 ## MongoDB
 
@@ -51,13 +51,13 @@ MongoDB is a NoSQL database. MongoDB stores data in a JSON like document which m
 
 ![SQL versus NoSQL](../images/mongoDB/sql-vs-nosql.png)
 
-In this section we will focus on a NoSQL database MongoDB. Lets sign up on [mongoDB](https://www.mongodb.com/) by click on the sign in button then click register on the next page.
+In this section we will focus on a NoSQL database MongoDB. Lets sign up on [mongoDB](https://www.mongodb.com/) by clicking on the sign-in button then click register on the next page.
 
-![MongoDB Sign up pages](./images/mongoDB/mongodb-signup-page.png)
+![MongoDB Sign-up pages](../images/mongoDB/mongodb-signup-page.png)
 
 Complete the fields and click continue
 
-![Mongodb register](./images/mongoDB/mongodb-register.png)
+![Mongodb register](../images/mongoDB/mongodb-register.png)
 
 Select the free plan
 
