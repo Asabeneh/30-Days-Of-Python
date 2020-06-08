@@ -17,11 +17,10 @@
 </div>
 
 <div>
-  <small>Support Asabeneh to create more educational materials</small>
 
-   [<img src = './images/become_patreon.png' alt='become-asabeneh-patreon' title='click' />](https://www.patreon.com/asabeneh?fan_landing=true)
-
-  </div>
+<small>Support [**Asabeneh**](https://www.patreon.com/asabeneh?fan_landing=true) to create more educational materials</small>  
+[<img src = './images/become_patreon.png' alt='become-asabeneh-patreon' title='click' />](https://www.patreon.com/asabeneh?fan_landing=true) 
+ 
 </div>
 
 [Day 2 >>](./02_Day_Variables/02_variables.md)
