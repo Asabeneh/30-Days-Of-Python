@@ -13,6 +13,13 @@
 </sub>
 
 </div>
+
+<div>
+  <small>Support Asabeneh to create more educational materials</small>
+
+   [<img src = '../images/become_patreon.png' alt='become-asabeneh-patreon' />](https://www.patreon.com/asabeneh?fan_landing=true)
+
+  </div>
 </div>
 
 [<< Day 29](../29_Day/29_building_API.md)

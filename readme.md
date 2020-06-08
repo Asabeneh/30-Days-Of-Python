@@ -15,16 +15,23 @@
   <small> First Edition: Nov 22 - Dec 22, 2019</small>
   </sub>
 </div>
+
+<div>
+  <small>Support Asabeneh to create more educational materials</small>
+
+   [<img src = './images/become_patreon.png' alt='become-asabeneh-patreon' />](https://www.patreon.com/asabeneh?fan_landing=true)
+
+  </div>
 </div>
 
 [Day 2 >>](./02_Day_Variables/02_variables.md)
 
 ![30DaysOfPython](./images/30DaysOfPython_banner3@2x.png)
 
-- [📘 Day 1](#%f0%9f%93%98-day-1)
+- [📘 Day 1](#-day-1)
   - [Welcome](#welcome)
   - [Introduction](#introduction)
-  - [Why Python ?](#why-python)
+  - [Why Python ?](#why-python-)
   - [Environment Setup](#environment-setup)
     - [Installing Python](#installing-python)
     - [Python Shell](#python-shell)
@@ -44,7 +51,7 @@
       - [Set](#set)
     - [Checking Data types](#checking-data-types)
     - [Python File](#python-file)
-  - [💻 Exercises - Day 1](#%f0%9f%92%bb-exercises---day-1)
+  - [💻 Exercises - Day 1](#-exercises---day-1)
 
 # 📘 Day 1
 
