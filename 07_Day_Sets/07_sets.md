@@ -15,7 +15,7 @@
 </div>
 </div>
 
-[<< Day 6](../06_Day_Tuples/06_tuple.md) | [Day 8 >>](../08_Day_Dictionaries/08_dictionaries.md)
+[<< Day 6](../06_Day_Tuples/06_tuples.md) | [Day 8 >>](../08_Day_Dictionaries/08_dictionaries.md)
 
 ![30DaysOfPython](../images/30DaysOfPython_banner3@2x.png)
 
@@ -407,4 +407,4 @@ age = [22, 19, 24, 25, 26, 24, 25, 24]
 
 🎉 CONGRATULATIONS ! 🎉
 
-[<< Day 6](../06_Day_Tuples/06_tuple.md) | [Day 8 >>](../08_Day_Dictionaries/08_dictionaries.md)
+[<< Day 6](../06_Day_Tuples/06_tuples.md) | [Day 8 >>](../08_Day_Dictionaries/08_dictionaries.md)
