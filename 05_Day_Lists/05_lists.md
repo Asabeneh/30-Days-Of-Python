@@ -41,6 +41,8 @@
     - [Reversing a List](#reversing-a-list)
     - [Sorting List Items](#sorting-list-items)
   - [💻 Exercises: Day 5](#-exercises-day-5)
+    - [Exercises: Level 1](#exercises-level-1)
+    - [Exercises: Level 2](#exercises-level-2)
 
 # Day 5
 
@@ -545,7 +547,11 @@ To sort lists we can use _sort()_ method or _sorted()_ built-in functions. The _
   print(fruits)     # ['orange', 'mango', 'lemon', 'banana']
   ```
 
+🌕 You are diligent and you have already achieved quite a lot. You have just completed day 5 challenges and you are 5 steps a head in to your way to greatness. Now do some exercises for your brain and for your muscle.
+
 ## 💻 Exercises: Day 5
+
+### Exercises: Level 1
 
 1. Declare an empty list
 2. Declare a list with more than 5 items
@@ -580,7 +586,10 @@ To sort lists we can use _sort()_ method or _sorted()_ built-in functions. The _
     ```
 
 27. After joining the lists in question 26. Copy the joined list and assign it to a variable full_stack. Then insert Python and SQL after Redux.
-28. The following is a list of 10 students ages:
+
+### Exercises: Level 2
+
+1. The following is a list of 10 students ages:
 
 ```sh
 ages = [19, 22, 19, 24, 20, 25, 26, 24, 25, 24]
@@ -593,9 +602,9 @@ ages = [19, 22, 19, 24, 20, 25, 26, 24, 25, 24]
 - Find the range of the ages (max minus min)
 - Compare the value of (min - average) and (max - average), use _abs()_ method
 
-29. Find the middle country(ies) in the [countries list](https://github.com/Asabeneh/30-Days-Of-Python/tree/master/data/countries.py)
-30. Divide the countries list into two equal lists if it is even if not one more country for the first half.
-31. ['China', 'Russia', 'USA', 'Finland', 'Sweden', 'Norway', 'Denmark']. Unpack the first three countries and the rest as scandic countries.
+1. Find the middle country(ies) in the [countries list](https://github.com/Asabeneh/30-Days-Of-Python/tree/master/data/countries.py)
+1. Divide the countries list into two equal lists if it is even if not one more country for the first half.
+1. ['China', 'Russia', 'USA', 'Finland', 'Sweden', 'Norway', 'Denmark']. Unpack the first three countries and the rest as scandic countries.
 
 🎉 CONGRATULATIONS ! 🎉
 
