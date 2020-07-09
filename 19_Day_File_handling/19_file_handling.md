@@ -6,7 +6,6 @@
   <a class="header-badge" target="_blank" href="https://twitter.com/Asabeneh">
   <img alt="Twitter Follow" src="https://img.shields.io/twitter/follow/asabeneh?style=social">
   </a>
-
 <sub>Author:
 <a href="https://www.linkedin.com/in/asabeneh/" target="_blank">Asabeneh Yetayeh</a><br>
 <small> First Edition: Nov 22 - Dec 22, 2019</small>
@@ -435,7 +434,8 @@ field: skills
    # Your output should look like this
    print(most_populated_countries(filename='./data/countries_data.json', 10))
 
-   [{'country': 'China', 'population': 1377422166},
+   [
+   {'country': 'China', 'population': 1377422166},
    {'country': 'India', 'population': 1295210000},
    {'country': 'United States of America', 'population': 323947000},
    {'country': 'Indonesia', 'population': 258705000},
@@ -444,14 +444,17 @@ field: skills
    {'country': 'Nigeria', 'population': 186988000},
    {'country': 'Bangladesh', 'population': 161006790},
    {'country': 'Russian Federation', 'population': 146599183},
-   {'country': 'Japan', 'population': 126960000}]
+   {'country': 'Japan', 'population': 126960000}
+   ]
 
    # Your output should look like this
 
    print(most_populated_countries(filename='./data/countries_data.json', 3))
-   [{'country': 'China', 'population': 1377422166},
+   [
+   {'country': 'China', 'population': 1377422166},
    {'country': 'India', 'population': 1295210000},
-   {'country': 'United States of America', 'population': 323947000}]
+   {'country': 'United States of America', 'population': 323947000}
+   ]
    ```
 
 4. Extract all incoming email addresses as a list from the email_exchange_big.txt file.
