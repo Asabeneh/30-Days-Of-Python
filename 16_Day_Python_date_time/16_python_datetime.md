@@ -14,18 +14,19 @@
 </div>
 </div>
 
-[<< Day 15](../15_Day/15_python_type_error.md) | [Day 17 >>](../17_Day/17_exception_handling.md)
+[<< Day 15](../15_Day_Python_type_errors/15_python_type_errors.md) | [Day 17 >>](../17_Day_Exception_handling/17_exception_handling.md)
+
 ![30DaysOfPython](../images/30DaysOfPython_banner3@2x.png)
-- [📘 Day 16](#%f0%9f%93%98-day-16)
+- [📘 Day 16](#-day-16)
   - [Python *datetime*](#python-datetime)
     - [Getting *datetime* Information](#getting-datetime-information)
     - [Formating Date Output Using *strftime*](#formating-date-output-using-strftime)
     - [String to Time Using *strptime*](#string-to-time-using-strptime)
     - [Using *date* from *datetime*](#using-date-from-datetime)
     - [Time Objects to Represent Time](#time-objects-to-represent-time)
-    - [Difference Between Two Points in Time Using](#difference-between-two-points-in-time)
+    - [Difference Between Two Points in Time Using](#difference-between-two-points-in-time-using)
     - [Difference Between Two Points in Time Using *timedelata*](#difference-between-two-points-in-time-using-timedelata)
-  - [💻 Exercises: Day 16](#%f0%9f%92%bb-exercises-day-16)
+  - [💻 Exercises: Day 16](#-exercises-day-16)
 # 📘 Day 16
 
 ## Python *datetime*
@@ -187,6 +188,8 @@ print("t3 =", t3)
     t3 = 86 days, 22:56:50
 ```
 
+🌕 You are extraordinary. You are 16 steps a head to your way to greatness. Now do some exercises for your brain and for your muscle.
+
 ## 💻 Exercises: Day 16
 
 1. Get the current day, month, year, hour, minute and timestamp from datetime module
@@ -201,4 +204,4 @@ print("t3 =", t3)
 
 🎉 CONGRATULATIONS ! 🎉
 
-[<< Day 15](../15_Day/15_python_type_error.md) | [Day 17 >>](../17_Day/17_exception_handling.md)
+[<< Day 15](../15_Day_Python_type_errors/15_python_type_errors.md) | [Day 17 >>](../17_Day_Exception_handling/17_exception_handling.md)
