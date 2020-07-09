@@ -15,25 +15,25 @@
 </div>
 </div>
 
-[<< Day 18](../18_Day/18_regular_expression.md) | [Day 20 >>](../20_Day/20_python_package_manager.md)
+[<< Day 18](../18_Day_Regular_expressions/18_regular_expressions.md) | [Day 20 >>](../20_Day_Python_package_manager/20_python_package_manager.md)
 
 ![30DaysOfPython](../images/30DaysOfPython_banner3@2x.png)
 
-- [📘 Day 19](#%f0%9f%93%98-day-19)
+- [📘 Day 19](#-day-19)
   - [File Handling](#file-handling)
-    - [Opening Files for Reading](#opening-file-for-reading)
-    - [Opening Files for Writing and Updating](#opening-file-for-writing-and-updating)
+    - [Opening Files for Reading](#opening-files-for-reading)
+    - [Opening Files for Writing and Updating](#opening-files-for-writing-and-updating)
     - [Deleting Files](#deleting-files)
   - [File Types](#file-types)
-    - [Files with txt Extension](#file-with-txt-extension)
-    - [Files with json Extension](#file-with-json-extension)
+    - [File with txt Extension](#file-with-txt-extension)
+    - [File with json Extension](#file-with-json-extension)
     - [Changing JSON to Dictionary](#changing-json-to-dictionary)
     - [Changing Dictionary to JSON](#changing-dictionary-to-json)
     - [Saving as JSON File](#saving-as-json-file)
     - [File with csv Extension](#file-with-csv-extension)
     - [File with xlsx Extension](#file-with-xlsx-extension)
     - [File with xml Extension](#file-with-xml-extension)
-  - [💻 Exercises: Day 19](#%f0%9f%92%bb-exercises-day-19)
+  - [💻 Exercises: Day 19](#-exercises-day-19)
 
 # 📘 Day 19
 
@@ -396,6 +396,8 @@ field: city
 field: skills
 ```
 
+🌕 You are making progress. Maintain your momentum, keep the good work. Now do some exercises for your brain and for your muscle.
+
 ## 💻 Exercises: Day 19
 
 1. Write a function which count number of lines and number of words in a text. All the files are in the data the folder:
@@ -494,4 +496,4 @@ field: skills
 
 🎉 CONGRATULATIONS ! 🎉
 
-[<< Day 18](../18_Day/18_regular_expression.md) | [Day 20 >>](../20_Day/20_python_package_manager.md)
+[<< Day 18](../18_Day_Regular_expressions/18_regular_expressions.md) | [Day 20 >>](../20_Day_Python_package_manager/20_python_package_manager.md)
