@@ -14,10 +14,10 @@
 </div>
 </div>
 
-[<< Day 14](../14_Day/14_higher_order_function.md) | [Day 16 >>](../16_Day/16_python_datetime.md)
+[<< Day 14](../14_Day_Higher_order_functions/14_higher_order_functions.md) | [Day 16 >>](../16_Day_Python_date_time/16_python_datetime.md)
 
 ![30DaysOfPython](../images/30DaysOfPython_banner3@2x.png)
-- [📘 Day 15](#%f0%9f%93%98-day-15)
+- [📘 Day 15](#-day-15)
   - [Python Error Types](#python-error-types)
     - [SyntaxError](#syntaxerror)
     - [NameError](#nameerror)
@@ -29,7 +29,7 @@
     - [ImportError](#importerror)
     - [ValueError](#valueerror)
     - [ZeroDivisionError](#zerodivisionerror)
-  - [💻 Exercises: Day 15](#%f0%9f%92%bb-exercises-day-15)
+  - [💻 Exercises: Day 15](#-exercises-day-15)
 
 # 📘 Day 15
 
@@ -366,10 +366,12 @@ We cannot divide a number by zero.
 We have covered some of the python error types, if you want to check more about it check the python documentation about python error types.
 If you are good at reading the error types then you will be able to fix your bugs fast and you will also become a better programmer.
 
+🌕 You are excelling. You made it to half way to your way to greatness. Now do some exercises for your brain and for your muscle.
+
 ## 💻 Exercises: Day 15
 
 1. Open you python interactive shell and try all the examples covered in this section.
 
 🎉 CONGRATULATIONS ! 🎉
 
-[<< Day 14](../14_Day/14_higher_order_function.md) | [Day 16 >>](../16_Day/16_python_datetime.md)
+[<< Day 14](../14_Day_Higher_order_functions/14_higher_order_functions.md) | [Day 16 >>](../16_Day_Python_date_time/16_python_datetime.md)
