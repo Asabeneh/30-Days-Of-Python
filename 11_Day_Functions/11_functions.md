@@ -15,11 +15,11 @@
 </div>
 </div>
 
-[<< Day 10](../10_Day/10_loop.md) | [Day 12 >>](../12_Day/12_module.md)
+[<< Day 10](../10_Day_Loops/10_loop.md) | [Day 12 >>](../12_Day_Modules/12_modules.md)
 
 ![30DaysOfPython](../images/30DaysOfPython_banner3@2x.png)
 
-- [📘 Day 11](#%f0%9f%93%98-day-11)
+- [📘 Day 11](#-day-11)
   - [Functions](#functions)
     - [Defining a Function](#defining-a-function)
     - [Declaring and Calling a Function](#declaring-and-calling-a-function)
@@ -32,7 +32,7 @@
     - [Arbitrary Number of Arguments](#arbitrary-number-of-arguments)
     - [Default and Arbitrary Number of Parameters in Functions](#default-and-arbitrary-number-of-parameters-in-functions)
     - [Function as a Parameter of Another Function](#function-as-a-parameter-of-another-function)
-  - [💻 Exercises: Day 11](#%f0%9f%92%bb-exercises-day-11)
+  - [💻 Exercises: Day 11](#-exercises-day-11)
 
 # 📘 Day 11
 
@@ -441,4 +441,4 @@ print(sum_all_numbers(100)) # 5050
 
 🎉 CONGRATULATIONS ! 🎉
 
-[<< Day 10](../10_Day/10_loop.md) | [Day 12 >>](../12_Day/12_module.md)
+[<< Day 10](../10_Day_Loops/10_loop.md) | [Day 12 >>](../12_Day_Modules/12_modules.md)
