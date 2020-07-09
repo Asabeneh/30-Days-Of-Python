@@ -14,9 +14,10 @@
 </div>
 </div>
 
-[<< Day 16](../16_Day/16_python_datetime.md) | [Day 18 >>](../18_Day/18_regular_expression.md)
+[<< Day 16](../16_Day_Python_date_time/16_python_datetime.md) | [Day 18 >>](../18_Day_Regular_expressions/18_regular_expressions.md)
+
 ![30DaysOfPython](../images/30DaysOfPython_banner3@2x.png)
-- [📘 Day 17](#%f0%9f%93%98-day-17)
+- [📘 Day 17](#-day-17)
   - [Exception Handling](#exception-handling)
   - [Packing and Unpacking Arguments in Python](#packing-and-unpacking-arguments-in-python)
     - [Unpacking](#unpacking)
@@ -251,12 +252,14 @@ print(nordic_countries)        ['Finland', 'Sweden', 'Norway', 'Denmark', 'Icela
 ## Enumerate
 
 In we are interested in an index of a list, we use *enumerate*.
+
 ```py
 for index, i in enumerate(countries):
     print('hi')
     if i == 'Finland':
         print('The country {i} has been found at index {index}')
 ```
+
 ```sh
 The country Finland has been found at index 1.
 ```
@@ -264,6 +267,7 @@ The country Finland has been found at index 1.
 ## Zip
 
 Sometimes we would like to combine lists when looping through them. See the example below:
+
 ```py
 fruits = ['banana', 'orange', 'mango', 'lemon']                    
 vegetables = ['Tomato', 'Potato', 'Cabbage','Onion', 'Carrot']
@@ -273,16 +277,17 @@ for f, v in zip(fruits, vegetables):
 
 print(fruits_and_veges)
 ```
+
 ```sh
 [{'fruit': 'banana', 'veg': 'Tomato'}, {'fruit': 'orange', 'veg': 'Potato'}, {'fruit': 'mango', 'veg': 'Cabbage'}, {'fruit': 'lemon', 'veg': 'Onion'}]
 ```
+
+🌕 You are determined. You are 17 steps a head to your way to greatness. Now do some exercises for your brain and for your muscle.
 
 ## Exercises: Day 17
 
 1. names = ['Finland', 'Sweden', 'Norway','Denmark','Iceland', 'Estonia','Russia']. Unpack the first five countries and store them in a variable nordic_countries, store Estonia and Russia in es, and ru respectively.
 
-
-
 🎉 CONGRATULATIONS ! 🎉
 
-[<< Day 16](../16_Day/16_python_datetime.md) | [Day 18 >>](../18_Day/18_regular_expression.md)
+[<< Day 16](../16_Day_Python_date_time/16_python_datetime.md) | [Day 18 >>](../18_Day_Regular_expressions/18_regular_expressions.md)
