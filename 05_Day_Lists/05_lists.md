@@ -1,5 +1,5 @@
 <div align="center">
-  <h1> 30 Days Of Python: Day 5 - List</h1>
+  <h1> 30 Days Of Python: Day 5 - Lists</h1>
   <a class="header-badge" target="_blank" href="https://www.linkedin.com/in/asabeneh/">
   <img src="https://img.shields.io/badge/style--5eba00.svg?label=LinkedIn&logo=linkedin&style=social">
   </a>
@@ -15,7 +15,7 @@
 </div>
 </div>
 
-[<< Day 5](../04_Day_Strings/04_strings.md) | [Day 6 >>](../06_Day_Tuples/06_tuples.md)
+[<< Day 4](../04_Day_Strings/04_strings.md) | [Day 6 >>](../06_Day_Tuples/06_tuples.md)
 
 ![30DaysOfPython](../images/30DaysOfPython_banner3@2x.png)
 
@@ -608,4 +608,4 @@ ages = [19, 22, 19, 24, 20, 25, 26, 24, 25, 24]
 
 🎉 CONGRATULATIONS ! 🎉
 
-[<< Day 5](../04_Day_Strings/04_strings.md) | [Day 6 >>](../06_Day_Tuples/06_tuples.md)
+[<< Day 4](../04_Day_Strings/04_strings.md) | [Day 6 >>](../06_Day_Tuples/06_tuples.md)
