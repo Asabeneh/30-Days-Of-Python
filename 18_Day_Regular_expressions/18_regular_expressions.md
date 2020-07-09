@@ -38,7 +38,6 @@
     - [Cart ^](#cart-)
   - [💻 Exercises: Day 18](#-exercises-day-18)
 
-
 # 📘 Day 18
 
 ## Regular Expressions
@@ -56,6 +55,7 @@ import re
 ### Functions in *re* Module
 
 To find a pattern we use different set of *re* character sets that allows to search for a match in a string.
+
 * *re.match()*: searches only in the beginning of the first line of the string and returns matched objects if found, else returns none. 
 * *re.search*: Returns a match object if there is one anywhere in the string, including multiline strings.
 * *re.findall*: Returns a list containing all matches
@@ -96,6 +96,7 @@ As you can see from the example above, the pattern we are looking for (or the su
 re.match(substring, string, re.I)
 # substring is a pattern, string is the text we look for a pattern , re.I is case ignore flag
 ```
+
 ```py
 import re
 
@@ -184,6 +185,7 @@ D%o%es thi%s m%ot%iv%a%te %y%o%u to b%e a t%e%a%cher?'''
 matches = re.sub('%', '', txt)
 print(matches)
 ```
+
 ```sh
 I am teacher and  I love teaching.
 There is nothing as rewarding as educating and empowering people.
@@ -200,6 +202,7 @@ I found teaching more interesting than any other jobs.
 Does this motivate you to be a teacher?'''
 print(re.split('\n', txt)) # splitting using \n - end of line symbol
 ```
+
 ```sh
 ['I am teacher and  I love teaching.', 'There is nothing as rewarding as educating and empowering people.', 'I found teaching more interesting than any other jobs.', 'Does this motivate you to be a teacher?']
 ```
@@ -300,6 +303,7 @@ print(matches)  # ['6', '2019'] - now, this is better!
 ```
 
 ### Period(.)
+
 ```py
 regex_pattern = r'[a].'  # this square bracket means a and . means any character except new line
 txt = '''Apple and banana are fruits'''
@@ -309,7 +313,6 @@ print(matches)  # ['an', 'an', 'an', 'a ', 'ar']
 regex_pattern = r'[a].+'  # . any character, + any character one or more times 
 matches = re.findall(regex_pattern, txt)
 print(matches)  # ['and banana are fruits']
-
 ```
 
 ### Zero or more times(\*)
@@ -317,12 +320,10 @@ print(matches)  # ['and banana are fruits']
 Zero or many times. The pattern could may not occur or it can occur many times.
 
 ```py
-
 regex_pattern = r'[a].*'  # . any character, * any character zero or more times 
 txt = '''Apple and banana are fruits'''
 matches = re.findall(regex_pattern, txt)
 print(matches)  # ['and banana are fruits']
-
 ```
 
 ### Zero or one time(?)
@@ -335,7 +336,6 @@ Some people write it email others may write it as Email or E-mail.'''
 regex_pattern = r'[Ee]-?mail'  # ? means here that '-' is optional
 matches = re.findall(regex_pattern, txt)
 print(matches)  # ['e-mail', 'email', 'Email', 'E-mail']
-
 ```
 
 ### Quantifier in RegEx
@@ -352,7 +352,6 @@ txt = 'This regular expression example was made on December 6,  2019.'
 regex_pattern = r'\d{1, 4}'   # 1 to 4
 matches = re.findall(regex_pattern, txt)
 print(matches)  # ['6', '2019']
-
 ```
 
 ### Cart ^
@@ -381,6 +380,7 @@ print(matches)  # ['6,', '2019.']
 ```py
     paragraph = 'I love teaching. If you do not love teaching what else can you love. I love Python if you do not love something which can give you all the capabilities to develop an application what else can you love.
 ```
+
 ```sh
     [(6, 'love'),
     (5, 'you'),
