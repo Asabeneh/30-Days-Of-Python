@@ -15,11 +15,11 @@
 </div>
 </div>
 
-[<< Day 8](../08_Day/08_dictionary.md) | [Day 10 >>](../10_Day/10_loop.md)
+[<< Day 8](../08_Day_Dictionaries/08_dictionaries.md) | [Day 10 >>](../10_Day_loops/10_loops.md)
 
 ![30DaysOfPython](../images/30DaysOfPython_banner3@2x.png)
 
-- [📘 Day 9](#%f0%9f%93%98-day-9)
+- [📘 Day 9](#-day-9)
   - [Conditionals](#conditionals)
     - [If Condition](#if-condition)
     - [If Else](#if-else)
@@ -28,7 +28,7 @@
     - [Nested Conditions](#nested-conditions)
     - [If Condition and Logical Operators](#if-condition-and-logical-operators)
     - [If and Or Logical Operators](#if-and-or-logical-operators)
-  - [💻 Exercises: Day 9](#%f0%9f%92%bb-exercises-day-9)
+  - [💻 Exercises: Day 9](#-exercises-day-9)
 
 # 📘 Day 9
 
@@ -196,6 +196,8 @@ else:
     print('Access denied!')
 ```
 
+🌕 You are doing great.Never give up because great things take time. You have just completed day 9 challenges and you are 9 steps a head in to your way to greatness. Now do some exercises for your brain and for your muscle.
+
 ## 💻 Exercises: Day 9
 
 1.  Get user input using input(“Enter your age: ”). If user is 18 or older, give feedback: You are old enough to drive. If below 18 give feedback to wait for the missing amount of years. Output:
@@ -260,4 +262,4 @@ else:
 
 🎉 CONGRATULATIONS ! 🎉
 
-[<< Day 8](../08_Day/08_dictionary.md) | [Day 10 >>](../10_Day/10_loop.md)
+[<< Day 8](../08_Day_Dictionaries/08_dictionaries.md) | [Day 10 >>](../10_Day_loops/10_loops.md)
