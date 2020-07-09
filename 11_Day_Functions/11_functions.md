@@ -369,6 +369,8 @@ def do_something(f, x):
 print(do_something(square_number, 3))
 ```
 
+🌕 You achieved quite a lot so far.  Keep going! You have just completed day 11 challenges and you are 11 steps a head in to your way to greatness. Now do some exercises for your brain and for your muscle.
+
 ## 💻 Exercises: Day 11
 
 1. Declare a function _add_two_numbers_. It takes two parameters and it returns a sum.
@@ -441,4 +443,4 @@ print(sum_all_numbers(100)) # 5050
 
 🎉 CONGRATULATIONS ! 🎉
 
-[<< Day 10](../10_Day_Loops/10_loop.md) | [Day 12 >>](../12_Day_Modules/12_modules.md)
+[<< Day 10](../10_Day_Loops/10_loops.md) | [Day 12 >>](../12_Day_Modules/12_modules.md)
