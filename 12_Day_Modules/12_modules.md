@@ -15,12 +15,12 @@
 </div>
 </div>
 
-[<< Day 11](../11_Day/11_function.md) | [Day 13>>](../13_Day/13_list_comprehension.md)
+[<< Day 11](../11_Day_Functions/11_functions.md) | [Day 13>>](../13_Day_List_comprehension/13_list_comprehension.md)
 
 ![30DaysOfPython](../images/30DaysOfPython_banner3@2x.png)
 
-- [📘 Day 12](#%f0%9f%93%98-day-12)
-  - [Module](#module)
+- [📘 Day 12](#-day-12)
+  - [Modules](#modules)
     - [What is a Module](#what-is-a-module)
     - [Creating a Module](#creating-a-module)
     - [Importing a Module](#importing-a-module)
@@ -33,11 +33,11 @@
     - [Math Module](#math-module)
     - [String Module](#string-module)
     - [Random Module](#random-module)
-  - [💻 Exercises: Day 12](#%f0%9f%92%bb-exercises-day-12)
+  - [💻 Exercises: Day 12](#-exercises-day-12)
 
 # 📘 Day 12
 
-## Module
+## Modules
 
 ### What is a Module
 
@@ -244,6 +244,8 @@ print(random())   # it doesn't take any arguments; it returns a value between 0 
 print(randint(5, 20)) # it returns a random integer number between 5 and 20
 ```
 
+🌕 You are going far. Keep going! You have just completed day 12 challenges and you are 12 steps a head in to your way to greatness. Now do some exercises for your brain and for your muscle.
+
 ## 💻 Exercises: Day 12
 
 1. Writ a function which generates a six digit/character random_user_id.
@@ -288,4 +290,4 @@ print(rgb_color_gen())
 
 🎉 CONGRATULATIONS ! 🎉
 
-[<< Day 11](../11_Day/11_function.md) | [Day 13>>](../13_Day/13_list_comprehension.md)
+[<< Day 11](../11_Day_Functions/11_functions.md) | [Day 13>>](../13_Day_List_comprehension/13_list_comprehension.md)
