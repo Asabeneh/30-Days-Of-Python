@@ -15,16 +15,16 @@
 </div>
 </div>
 
-[<< Day 12](../12_Day/12_module.md) | [Day 14>>](../14_Day/14_higher_order_function.md)
+[<< Day 12](../12_Day_Modules/12_modules.md) | [Day 14>>](../14_Day_Higher_order_functions/14_higher_order_functions.md)
 
 ![30DaysOfPython](../images/30DaysOfPython_banner3@2x.png)
 
-- [📘 Day 13](#%f0%9f%93%98-day-13)
+- [📘 Day 13](#-day-13)
   - [List Comprehension](#list-comprehension)
   - [Lambda Function](#lambda-function)
     - [Creating a Lambda Function](#creating-a-lambda-function)
     - [Lambda Function Inside Another Function](#lambda-function-inside-another-function)
-  - [💻 Exercises: Day 13](#%f0%9f%92%bb-exercises-day-13)
+  - [💻 Exercises: Day 13](#-exercises-day-13)
 
 # 📘 Day 13
 
@@ -151,6 +151,8 @@ two_power_of_five = power(2)(5)
 print(two_power_of_five)  # 32
 ```
 
+🌕 Keep up the good work. Keep pushing, the sky is the limit! You have just completed day 13 challenges and you are 13 steps a head in to your way to greatness. Now do some exercises for your brain and for your muscle.
+
 ## 💻 Exercises: Day 13
 
 1. Filter only negative and zero in the list using list comprehension
@@ -204,4 +206,4 @@ print(two_power_of_five)  # 32
 
 🎉 CONGRATULATIONS ! 🎉
 
-[<< Day 12](../13_Day/13_list_comprehension.md) | [Day 15>>](../15_Day/15_python_type_error.md)
+[<< Day 12](../12_Day_Modules/12_modules.md) | [Day 14>>](../14_Day_Higher_order_functions/14_higher_order_functions.md)
