@@ -14,29 +14,29 @@
 </div>
 </div>
 
-[<< Day 17](../17_Day/17_exception_handling.md) | [Day 19>>](../19_Day/19_file_handling.md)
+[<< Day 17](../17_Day_Exception_handling/17_exception_handling.md) | [Day 19>>](../19_Day_File_handling/19_file_handling.md)
 
 ![30DaysOfPython](../images/30DaysOfPython_banner3@2x.png)
 
-- [📘 Day 18](#%f0%9f%93%98-day-18)
-  - [Regular Expressions](#regular-expression)
-    - [The *re* Module](#The-re-module)
+- [📘 Day 18](#-day-18)
+  - [Regular Expressions](#regular-expressions)
+    - [The *re* Module](#the-re-module)
     - [Functions in *re* Module](#functions-in-re-module)
       - [Match](#match)
       - [Search](#search)
       - [Searching for All Matches Using *findall*](#searching-for-all-matches-using-findall)
-      - [Replacing a Substring](#replacing-a-Substring)
+      - [Replacing a Substring](#replacing-a-substring)
   - [Splitting Text Using RegEx Split](#splitting-text-using-regex-split)
   - [Writing RegEx Patterns](#writing-regex-patterns)
-    - [Square Brackets](#square-brackets)
+    - [Square Bracket](#square-bracket)
     - [Escape character(\\) in RegEx](#escape-character-in-regex)
     - [One or more times(+)](#one-or-more-times)
     - [Period(.)](#period)
     - [Zero or more times(\*)](#zero-or-more-times)
-    - [Zero or one times(?)](#zero-or-one-times)
-    - [Quantifiers in RegEx](#quantifiers-in-regex)
-    - [Cart ^](#cart)
-  - [💻 Exercises: Day 18](#%f0%9f%92%bb-exercises-day-18)
+    - [Zero or one time(?)](#zero-or-one-time)
+    - [Quantifier in RegEx](#quantifier-in-regex)
+    - [Cart ^](#cart-)
+  - [💻 Exercises: Day 18](#-exercises-day-18)
 
 
 # 📘 Day 18
@@ -375,7 +375,6 @@ matches = re.findall(regex_pattern, txt)
 print(matches)  # ['6,', '2019.']
 ```
 
-
 ## 💻 Exercises: Day 18
 
   1. What is the most frequent word in the following paragraph?
@@ -434,8 +433,6 @@ distance = 12
     print(most_frequent_words(cleaned_text)) # [(3, 'I'), (2, 'teaching'), (2, 'teacher')]
     ```
 
-
-    
 🎉 CONGRATULATIONS ! 🎉
 
-[<< Day 17](../17_Day/17_exception_handling.md) | [Day 19>>](../19_Day/19_file_handling.md)
+[<< Day 17](../17_Day_Exception_handling/17_exception_handling.md) | [Day 19>>](../19_Day_File_handling/19_file_handling.md)
