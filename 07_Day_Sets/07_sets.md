@@ -1,5 +1,5 @@
 <div align="center">
-  <h1> 30 Days Of Python: Day 7 - Set</h1>
+  <h1> 30 Days Of Python: Day 7 - Sets</h1>
   <a class="header-badge" target="_blank" href="https://www.linkedin.com/in/asabeneh/">
   <img src="https://img.shields.io/badge/style--5eba00.svg?label=LinkedIn&logo=linkedin&style=social">
   </a>
@@ -20,7 +20,7 @@
 ![30DaysOfPython](../images/30DaysOfPython_banner3@2x.png)
 
 - [📘 Day 7](#-day-7)
-  - [Set](#set)
+  - [Sets](#sets)
     - [Creating a Set](#creating-a-set)
     - [Getting Set's Length](#getting-sets-length)
     - [Accessing Items in a Set](#accessing-items-in-a-set)
@@ -40,7 +40,7 @@
 
 # 📘 Day 7
 
-## Set
+## Sets
 
 Let me take you back to your elementary or high school Mathematics lesson. The Mathematics definition of a set can be applied also in python. Set is a collection of unordered and unindexed distinct elements. In python set is used to store unique items, and it is possible to find the _union_, _intersection_, _difference_, _symmetric difference_, _subset_, _super set_ and _disjoint set_ among sets.
 
@@ -376,6 +376,8 @@ python = {'p', 'y', 't', 'h', 'o','n'}
 dragon = {'d', 'r', 'a', 'g', 'o','n'}
 python.disjoint(dragon)  # False, there are common items {'o', 'n'}
 ```
+
+🌕 You are a rising star . You have just completed day 7 challenges and you are 7 steps a head in to your way to greatness. Now do some exercises for your brain and for your muscle.
 
 ## 💻 Exercises: Day 7
 
