@@ -15,18 +15,18 @@
 </div>
 </div>
 
-[<< Day 2](../02_Day_Variables/02_variables.md) | [Day 4 >>](../04_Day_Strings/04_string.md)
+[<< Day 2](../02_Day_Variables/02_variables.md) | [Day 4 >>](../04_Day_Strings/04_strings.md)
 
 ![30DaysOfPython](../images/30DaysOfPython_banner3@2x.png)
 
-- [📘 Day 3](#%f0%9f%93%98-day-3)
+- [📘 Day 3](#-day-3)
   - [Boolean](#boolean)
   - [Operators:](#operators)
     - [Assignment Operators:](#assignment-operators)
     - [Arithmetic Operators:](#arithmetic-operators)
     - [Comparison Operators](#comparison-operators)
     - [Logical Operators](#logical-operators)
-  - [💻 Exercises - Day 3](#%f0%9f%92%bb-exercises---day-3)
+  - [💻 Exercises - Day 3](#-exercises---day-3)
 
 # 📘 Day 3
 
@@ -310,4 +310,4 @@ You have lived for 3153600000 seconds.
 
 🎉 CONGRATULATIONS ! 🎉
 
-[<< Day 2](../02_Day_Variables/02_variables.md) | [Day 4 >>](../04_Day_Strings/04_string.md)
+[<< Day 2](../02_Day_Variables/02_variables.md) | [Day 4 >>](../04_Day_Strings/04_strings.md)
