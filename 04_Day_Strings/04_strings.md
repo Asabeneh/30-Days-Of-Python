@@ -15,7 +15,7 @@
 </div>
 </div>
 
-[<< Day 3](../03_Day_Operators/03_operators.md) | [Day 5 >>](../05_Day_Lists/05_list.md)
+[<< Day 3](../03_Day_Operators/03_operators.md) | [Day 5 >>](../05_Day_Lists/05_lists.md)
 
 ![30DaysOfPython](../images/30DaysOfPython_banner3@2x.png)
 - [Day 4](#day-4)
@@ -524,4 +524,4 @@ The area of a cricle with radius 10 is 314 meters square.
 
 🎉 CONGRATULATIONS ! 🎉
 
-[<< Day 3](../03_Day_Operators/03_operators.md) | [Day 5 >>](../05_Day_Lists/05_list.md)
+[<< Day 3](../03_Day_Operators/03_operators.md) | [Day 5 >>](../05_Day_Lists/05_lists.md)
