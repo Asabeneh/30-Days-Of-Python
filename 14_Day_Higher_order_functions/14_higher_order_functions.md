@@ -14,10 +14,10 @@
 </div>
 </div>
 
-[<< Day 13](../13_Day/13_list_comprehension.md) | [Day 15>>](../15_Day/15_python_type_error.md)
+[<< Day 13](../13_Day_List_comprehension/13_list_comprehension.md) | [Day 15>>](../15_Day/15_python_type_error.md)
 
 ![30DaysOfPython](../images/30DaysOfPython_banner3@2x.png)
-- [📘 Day 14](#%f0%9f%93%98-day-14)
+- [📘 Day 14](#-day-14)
   - [Higher Order Functions](#higher-order-functions)
     - [Function as a Parameter](#function-as-a-parameter)
     - [Function as a Return Value](#function-as-a-return-value)
@@ -30,7 +30,7 @@
     - [Python - Map Function](#python---map-function)
     - [Python - Filter Function](#python---filter-function)
     - [Python - Reduce Function](#python---reduce-function)
-  - [💻 Exercises: Day 14](#%f0%9f%92%bb-exercises-day-14)
+  - [💻 Exercises: Day 14](#-exercises-day-14)
 
 # 📘 Day 14
 
@@ -359,4 +359,4 @@ numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
 🎉 CONGRATULATIONS ! 🎉
 
-[<< Day 13](../13_Day/13_list_comprehension.md) | [Day 15>>](../15_Day/15_python_type_error.md)
+[<< Day 13](../13_Day_List_comprehension/13_list_comprehension.md) | [Day 15>>](../15_Day/15_python_type_error.md)
