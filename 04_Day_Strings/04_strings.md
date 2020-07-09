@@ -458,6 +458,8 @@ challenge = '30 days of python'
 print(challenge.startswith('thirty')) # False
 ```
 
+🌕 You are extraordinary and you have a remarkable potential. You have just completed day 4 challenges and you are four steps a head in to your way to greatness. Now do some exercises for your brain and for your muscle.
+
 ## 💻 Exercises - Day 4
 1. Concatenate the string 'Thirty', 'Days', 'Of', 'Python' to a single string, 'Thirty Days Of Python'.
 2. Concatenate the string 'Coding', 'For' , 'All' to a single string, 'Coding For All'.
