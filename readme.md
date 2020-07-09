@@ -23,7 +23,7 @@
  
 </div>
 
-[Day 2 >>](./02_Day_Variables/02_variables.md)
+[Day 2 >>](./02_Day_Variables_builtin_functions)
 
 ![30DaysOfPython](./images/30DaysOfPython_banner3@2x.png)
 
@@ -394,4 +394,4 @@ To run the python file check the image below. You can run the python file either
 
 🎉 CONGRATULATIONS ! 🎉
 
-[Day 2 >>](./02_Day_Variables/02_variables.md)
+[Day 2 >>](./02_Day_Variables_builtin_functions)
