@@ -1,5 +1,5 @@
 <div align="center">
-  <h1> 30 Days Of Python: Day 6 - Tuple</h1>
+  <h1> 30 Days Of Python: Day 6 - Tuples</h1>
   <a class="header-badge" target="_blank" href="https://www.linkedin.com/in/asabeneh/">
   <img src="https://img.shields.io/badge/style--5eba00.svg?label=LinkedIn&logo=linkedin&style=social">
   </a>
@@ -45,18 +45,21 @@ A tuple is a collection of different data types which is ordered and unchangeabl
 ### Creating a Tuple
 
 - Empty tuple: Creating an empty tuple
+  
   ```py
   # syntax
   empty_tuple = ()
   # or using the tuple constructor
   empty_tuple = tuple()
   ```
+
 - Tuple with initial values
+  
   ```py
   # syntax
   tpl = ('item1', 'item2','item3')
   ```
-  -
+
   ```py
   fruits = ('banana', 'orange', 'mango', 'lemon')
   ```
@@ -95,12 +98,14 @@ len(tpl)
 - Negative indexing
   Negative indexing means beginning from the end, -1 refers to the last item, -2 refers to the second last and the negative of the list/tuple length refers to the first item.
   ![Tuple Negative indexing](../images/tuple_negative_indexing.png)
+
   ```py
   # Syntax
   tpl = ('item1', 'item2', 'item3','item4')
   first_item = tpl[-4]
   second_item = tpl[-3]
   ```
+
   ```py
   fruits = ('banana', 'orange', 'mango', 'lemon')
   first_fruit = fruits[-4]
@@ -215,6 +220,8 @@ fruits = ('banana', 'orange', 'mango', 'lemon')
 del fruits
 ```
 
+🌕 You are so brave, you made it to this far. You have just completed day 6 challenges and you are 6 steps a head in to your way to greatness. Now do some exercises for your brain and for your muscle.
+
 ## 💻 Exercises: Day 6
 
 1. Create an empty tuple
@@ -231,6 +238,7 @@ del fruits
 
 - Check if 'Estonia' is a nordic country
 - Check if 'Iceland' is a nordic country
+
   ```py
   nordic_countries = ('Denmark', 'Finland','Iceland', 'Norway', 'Sweden')
   ```
