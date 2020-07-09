@@ -51,6 +51,8 @@
     - [Checking Data types](#checking-data-types)
     - [Python File](#python-file)
   - [💻 Exercises - Day 1](#-exercises---day-1)
+    - [Exercise: Level 1](#exercise-level-1)
+    - [Exercise: Level 1](#exercise-level-1-1)
 
 # 📘 Day 1
 
@@ -360,6 +362,8 @@ To run the python file check the image below. You can run the python file either
 
 ## 💻 Exercises - Day 1
 
+### Exercise: Level 1
+
 1. Check the python version you are using
 2. Open the python interactive shell and do the following operations. The operands are 3 and 4. Check the example above
    - addition(+)
@@ -383,7 +387,10 @@ To run the python file check the image below. You can run the python file either
    - Your name
    - Your family name
    - Your country
-5. Create a folder named day_1 inside 30DaysOfPython folder. Inside day_1 folder, create a python file helloword.py and repeat questions 1, 2, 3 and 4. Remember to use _print()_ when you are working on a python file. Navigate to the directory where you have saved your file, and run it.
+
+### Exercise: Level 1
+
+1. Create a folder named day_1 inside 30DaysOfPython folder. Inside day_1 folder, create a python file helloword.py and repeat questions 1, 2, 3 and 4. Remember to use _print()_ when you are working on a python file. Navigate to the directory where you have saved your file, and run it.
 
 🎉 CONGRATULATIONS ! 🎉
 
