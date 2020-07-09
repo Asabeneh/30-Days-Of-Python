@@ -15,11 +15,11 @@
 </div>
 </div>
 
-[<< Day 6](../06_Day_Tuples/06_tuple.md) | [Day 8 >>](../08_Day/08_dictionary.md)
+[<< Day 6](../06_Day_Tuples/06_tuple.md) | [Day 8 >>](../08_Day_Dictionaries/08_dictionaries.md)
 
 ![30DaysOfPython](../images/30DaysOfPython_banner3@2x.png)
 
-- [📘 Day 7](#%f0%9f%93%98-day-7)
+- [📘 Day 7](#-day-7)
   - [Set](#set)
     - [Creating a Set](#creating-a-set)
     - [Getting Set's Length](#getting-sets-length)
@@ -27,16 +27,16 @@
     - [Checking an Item](#checking-an-item)
     - [Adding Items to a Set](#adding-items-to-a-set)
     - [Removing Items from a Set](#removing-items-from-a-set)
-    - [Clearing Items in a Set](#clearing-item-in-a-set)
+    - [Clearing Items in a Set](#clearing-items-in-a-set)
     - [Deleting a Set](#deleting-a-set)
-    - [Converting List to a Set](#converting-list-to-a-set)
+    - [Converting List to Set](#converting-list-to-set)
     - [Joining Sets](#joining-sets)
     - [Finding Intersection Items](#finding-intersection-items)
-    - [Checking Subsets and Super Sets](#checking-subsets-and-super-sets)
+    - [Checking Subset and Super Set](#checking-subset-and-super-set)
     - [Checking the Difference Between Two Sets](#checking-the-difference-between-two-sets)
     - [Finding Symmetric Difference Between Two Sets](#finding-symmetric-difference-between-two-sets)
-    - [Joining Sets](#joining-sets)
-  - [💻 Exercises: Day 7](#%f0%9f%92%bb-exercises-day-7)
+    - [Joining Sets](#joining-sets-1)
+  - [💻 Exercises: Day 7](#-exercises-day-7)
 
 # 📘 Day 7
 
@@ -405,4 +405,4 @@ age = [22, 19, 24, 25, 26, 24, 25, 24]
 
 🎉 CONGRATULATIONS ! 🎉
 
-[<< Day 6](../06_Day_Tuples/06_tuple.md) | [Day 8 >>](../08_Day/08_dictionary.md)
+[<< Day 6](../06_Day_Tuples/06_tuple.md) | [Day 8 >>](../08_Day_Dictionaries/08_dictionaries.md)

@@ -1,5 +1,5 @@
 <div align="center">
-  <h1> 30 Days Of Python: Day 7 - Dictionary</h1>
+  <h1> 30 Days Of Python: Day 8 - Dictionary</h1>
   <a class="header-badge" target="_blank" href="https://www.linkedin.com/in/asabeneh/">
   <img src="https://img.shields.io/badge/style--5eba00.svg?label=LinkedIn&logo=linkedin&style=social">
   </a>
@@ -15,12 +15,12 @@
 </div>
 </div>
 
-[<< Day 7 ](../07_Day/07_set.md) | [Day 9 >>](../09_Day/09_conditional.md)
+[<< Day 7 ](../07_Day_Sets/07_sets.md) | [Day 9 >>](../09_Day_Conditionals/09_conditionals.md)
 
 ![30DaysOfPython](../images/30DaysOfPython_banner3@2x.png)
 
-- [📘 Day 8](#%f0%9f%93%98-day-8)
-  - [Dictionary](#dictionary)
+- [📘 Day 8](#-day-8)
+  - [Dictionaries](#dictionaries)
     - [Creating a Dictionary](#creating-a-dictionary)
     - [Dictionary Length](#dictionary-length)
     - [Accessing Dictionary Items](#accessing-dictionary-items)
@@ -31,14 +31,14 @@
     - [Changing Dictionary to a List of Items](#changing-dictionary-to-a-list-of-items)
     - [Clearing a Dictionary](#clearing-a-dictionary)
     - [Deleting a Dictionary](#deleting-a-dictionary)
-    - [Copying a Dictionary](#copying-a-dictionary)
+    - [Copy a Dictionary](#copy-a-dictionary)
     - [Getting Dictionary Keys as a List](#getting-dictionary-keys-as-a-list)
-    - [Getting Dictionary Values as a List](#getting-dictionary-values-as-list)
-  - [💻 Exercises: Day 8](#%f0%9f%92%bb-exercises-day-8)
+    - [Getting Dictionary Values as a List](#getting-dictionary-values-as-a-list)
+  - [💻 Exercises: Day 8](#-exercises-day-8)
 
 # 📘 Day 8
 
-## Dictionary
+## Dictionaries
 
 A dictionary is a collection of unordered, modifiable(mutable) paired (key: value) data type.
 
@@ -338,4 +338,4 @@ print(values)     # dict_values(['value1', 'value2', 'value3', 'value4'])
 
 🎉 CONGRATULATIONS ! 🎉
 
-[<< Day 7 ](../07_Day/07_set.md) | [Day 9 >>](../09_Day/09_conditional.md)
+[<< Day 7 ](../07_Day_Sets/07_sets.md) | [Day 9 >>](../09_Day_Conditionals/09_conditionals.md)
