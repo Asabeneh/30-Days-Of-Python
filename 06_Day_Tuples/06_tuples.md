@@ -15,25 +15,25 @@
 </div>
 </div>
 
-[<< Day 5](../05_Day_Lists/05_list.md) | [Day 7 >>](../07_Day_Sets/07_set.md)
+[<< Day 5](../05_Day_Lists/05_lists.md) | [Day 7 >>](../07_Day_Sets/07_sets.md)
 
 ![30DaysOfPython](../images/30DaysOfPython_banner3@2x.png)
 
 - [Day 6:](#day-6)
-  - [Tuple](#tuple)
+  - [Tuples](#tuples)
     - [Creating a Tuple](#creating-a-tuple)
-    - [Tuple Length](#tuple-length)
+    - [Tuple length](#tuple-length)
     - [Accessing Tuple Items](#accessing-tuple-items)
-    - [Slicing Tuples](#slicing-tuples)
+    - [Slicing tuples](#slicing-tuples)
     - [Changing Tuples to Lists](#changing-tuples-to-lists)
     - [Checking an Item in a List](#checking-an-item-in-a-list)
     - [Joining Tuples](#joining-tuples)
     - [Deleting Tuples](#deleting-tuples)
-  - [💻 Exercises: Day 6](#%f0%9f%92%bb-exercises-day-6)
+  - [💻 Exercises: Day 6](#-exercises-day-6)
 
 # Day 6:
 
-## Tuple
+## Tuples
 
 A tuple is a collection of different data types which is ordered and unchangeable (immutable). Tuples are written with round brackets, (). Once a tuple is created, we cannot change its values. We cannot use add, insert, remove methods in a tuple because it is not modifiable (mutable). Unlike list, tuple has few methods. Methods related to tuples:
 

@@ -19,11 +19,11 @@
 
 ![30DaysOfPython](../images/30DaysOfPython_banner3@2x.png)
 - [Day 4](#day-4)
-  - [String](#string)
+  - [Strings](#strings)
     - [Creating a String](#creating-a-string)
     - [String Concatenation](#string-concatenation)
     - [Escape Sequences in Strings](#escape-sequences-in-strings)
-    - [String Formating](#string-formating)
+    - [String formating](#string-formating)
       - [Old Style String Formating (% Operator)](#old-style-string-formating--operator)
       - [New Style String Formating (str.format)](#new-style-string-formating-strformat)
       - [String Interpolation / f-Strings (Python 3.6+)](#string-interpolation--f-strings-python-36)
@@ -34,10 +34,10 @@
       - [Reversing a String](#reversing-a-string)
       - [Skipping Characters While Slicing](#skipping-characters-while-slicing)
     - [String Methods](#string-methods)
-  - [💻 Exercises - Day 4](#%f0%9f%92%bb-exercises---day-4)
+  - [💻 Exercises - Day 4](#-exercises---day-4)
 # Day 4
 
-## String
+## Strings
 
 Text is a string data type. Any data type written as text is a string. Any data under single or double quote are strings. There are different string methods and built-in functions to deal with string data types. To check the length of a string use the len() method.
 

@@ -15,7 +15,7 @@
 </div>
 </div>
 
-[<< Day 5](../04_Day_Strings/04_string.md) | [Day 6 >>](../06_Day_Tuples/06_tuple.md)
+[<< Day 5](../04_Day_Strings/04_strings.md) | [Day 6 >>](../06_Day_Tuples/06_tuples.md)
 
 ![30DaysOfPython](../images/30DaysOfPython_banner3@2x.png)
 
@@ -40,7 +40,7 @@
     - [Finding Index of an Item](#finding-index-of-an-item)
     - [Reversing a List](#reversing-a-list)
     - [Sorting List Items](#sorting-list-items)
-  - [💻 Exercises: Day 5](#%f0%9f%92%bb-exercises-day-5)
+  - [💻 Exercises: Day 5](#-exercises-day-5)
 
 # Day 5
 
@@ -599,4 +599,4 @@ ages = [19, 22, 19, 24, 20, 25, 26, 24, 25, 24]
 
 🎉 CONGRATULATIONS ! 🎉
 
-[<< Day 5](../04_Day_Strings/04_string.md) | [Day 6 >>](../06_Day_Tuples/06_tuple.md)
+[<< Day 5](../04_Day_Strings/04_strings.md) | [Day 6 >>](../06_Day_Tuples/06_tuples.md)
