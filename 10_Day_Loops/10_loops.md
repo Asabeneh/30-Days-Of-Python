@@ -15,11 +15,11 @@
 </div>
 </div>
 
-[<< Day 9](../09_Day/09_conditional.md) | [Day 11 >>](../11_Day/11_function.md)
+[<< Day 9](../09_Day_Conditionals/09_conditional.md) | [Day 11 >>](../11_Day_Functions/11_functions.md)
 
 ![30DaysOfPython](../images/30DaysOfPython_banner3@2x.png)
 
-- [📘 Day 10](#%f0%9f%93%98-day-10)
+- [📘 Day 10](#-day-10)
   - [Loops](#loops)
     - [While Loop](#while-loop)
     - [Break and Continue - Part 1](#break-and-continue---part-1)
@@ -29,7 +29,7 @@
     - [Nested For Loop](#nested-for-loop)
     - [For Else](#for-else)
     - [Pass](#pass)
-  - [💻 Exercises: Day 10](#%f0%9f%92%bb-exercises-day-10)
+  - [💻 Exercises: Day 10](#-exercises-day-10)
 
 # 📘 Day 10
 
@@ -373,11 +373,14 @@ for number in range(6):
     pass
 ```
 
+🌕 You established a big milestone, you are unstoppable. Keep going! You have just completed day 10 challenges and you are 10 steps a head in to your way to greatness. Now do some exercises for your brain and for your muscle.
+
 ## 💻 Exercises: Day 10
 
 1. Iterate 0 to 10 using for loop, do the same using while loop.
 2. Iterate 10 to 0 using for loop, do the same using while loop.
 3. Write a loop that makes seven calls to print(), so we get on the output the following triangle:
+
    ```py
      #
      ##
@@ -387,7 +390,9 @@ for number in range(6):
      ######
      #######
    ```
+
 4. Use nested loops to create the following:
+
    ```sh
    # # # # # # # #
    # # # # # # # #
@@ -398,7 +403,9 @@ for number in range(6):
    # # # # # # # #
    # # # # # # # #
    ```
+
 5. Print the following pattern:
+
    ```sh
    0 x 0 = 0
    1 x 1 = 1
@@ -412,20 +419,25 @@ for number in range(6):
    9 x 9 = 81
    10 x 10 = 100
    ```
+
 6. Iterate through the list, ['Python', 'Numpy','Pandas','Django', 'Flask'] using a for loop and print out the items.
 7. Use for loop to iterate from 0 to 100 and print only even numbers
 8. Use for loop to iterate from 0 to 100 and print only odd numbers
 9. Use for loop to iterate from 0 to 100 and print the sum of all numbers.
+
    ```sh
    The sum of all numbers is 5050.
    ```
+
 10. Use for loop to iterate from 0 to 100 and print the sum of all evens and the sum of all odds.
+
     ```sh
     The sum of all evens is 2550. And the sum of all odds is 2500.
     ```
+
 11. Go to the data folder and use the countries.py file. Loop through the countries and extract all the countries containing the word _land_.
 12. This is a fruit list, ['banana', 'orange', 'mango', 'lemon'] reverse the order using loop.
 
 🎉 CONGRATULATIONS ! 🎉
 
-[<< Day 9](../09_Day/09_conditional.md) | [Day 11 >>](../11_Day/11_function.md)
+[<< Day 9](../09_Day_Conditionals/09_conditional.md) | [Day 11 >>](../11_Day_Functions/11_functions.md)
