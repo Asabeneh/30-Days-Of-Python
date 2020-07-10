@@ -15,11 +15,11 @@
 </div>
 </div>
 
-[<< Day 26](../26_Day/26_python_web.md) | [Day 28 >>](../28_Day/28_API.md)
+[<< Day 26](../26_Day_Python_web/26_python_web.md) | [Day 28 >>](../28_Day_API/28_API.md)
 
 ![30DaysOfPython](../images/30DaysOfPython_banner3@2x.png)
 
-- [📘 Day 27](#%f0%9f%93%98-day-27)
+- [📘 Day 27](#-day-27)
 - [Python with MongoDB](#python-with-mongodb)
   - [MongoDB](#mongodb)
     - [SQL versus NoSQL](#sql-versus-nosql)
@@ -35,7 +35,7 @@
     - [Update with query](#update-with-query)
     - [Delete Document](#delete-document)
     - [Drop a collection](#drop-a-collection)
-  - [💻 Exercises: Day 27](#%f0%9f%92%bb-exercises-day-27)
+  - [💻 Exercises: Day 27](#-exercises-day-27)
 
 # 📘 Day 27
 
@@ -638,4 +638,4 @@ Now, we have deleted the students collection from the database.
 
 🎉 CONGRATULATIONS ! 🎉
 
-[<< Day 26](../26_Day/26_python_web.md) | [Day 28 >>](../28_Day/28_API.md)
+[<< Day 26](../26_Day_Python_web/26_python_web.md) | [Day 28 >>](../28_Day_API/28_API.md)
