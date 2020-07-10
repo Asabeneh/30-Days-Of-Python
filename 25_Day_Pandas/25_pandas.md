@@ -1205,19 +1205,15 @@ print('Mean: ',mean)	#it is good to add some description to the output, so we kn
 ```
 
 
-
 ```sh
    Mean:  32.5
 ```
 
-
 ### Boolean Indexing
-
 
 ```python
 print(df[df['Ages'] > 120])
 ```
-
 
 <table border="1" class="dataframe">
   <thead>
@@ -1254,8 +1250,6 @@ print(df[df['Ages'] > 120])
 ```python
 print(df[df['Ages'] < 120])
 ```
-
-
 
 <table border="1" class="dataframe">
   <thead>
@@ -1299,7 +1293,6 @@ print(df[df['Ages'] < 120])
     </tr>
   </tbody>
 </table>
-
 
 ## Exercises: Day 25
 1. Read the hacker_ness.csv file from data directory 
