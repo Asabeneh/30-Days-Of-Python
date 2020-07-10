@@ -15,11 +15,11 @@
 </div>
 </div>
 
-[<< Day 23](../23_Day/23_virtual_environment.md) | [Day 25 >>](../25_Day/25_pandas.md)
+[<< Day 23](../23_Day_Virtual_environment/23_virtual_environment.md) | [Day 25 >>](../25_Day_Pandas/25_pandas.md)
 
 ![30DaysOfPython](../images/30DaysOfPython_banner3@2x.png)
 
-- [📘 Day 24](#%f0%9f%93%98-day-24)
+- [📘 Day 24](#-day-24)
   - [Python for Statistical Analysis](#python-for-statistical-analysis)
   - [Statistics](#statistics)
   - [Data](#data)
@@ -60,4 +60,4 @@ So far, we have been using vscode but from now on I would recommend using Jupyte
 
 🎉 CONGRATULATIONS ! 🎉
 
-[<< Day 23](../23_Day/23_virtual_environment.md) | [Day 25 >>](../25_Day/25_pandas.md)
+[<< Day 23](../23_Day_Virtual_environment/23_virtual_environment.md) | [Day 25 >>](../25_Day_Pandas/25_pandas.md)
