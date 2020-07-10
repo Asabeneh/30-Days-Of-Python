@@ -15,11 +15,11 @@
 </div>
 </div>
 
-[<< Day 27](../27_Day/27_python_with_mongodb.md) | [Day 29 >>](../29_Day/29_building_API.md)
+[<< Day 27](../27_Day_Python_with_mongodb/27_python_with_mongodb.md) | [Day 29 >>](../29_Day_API/29_API.md)
 
 ![30DaysOfPython](../images/30DaysOfPython_banner3@2x.png)
 
-- [📘 Day 28](#%f0%9f%93%98-day-28)
+- [📘 Day 28](#-day-28)
 - [Application Programming Interface(API)](#application-programming-interfaceapi)
   - [API](#api)
   - [Building API](#building-api)
@@ -30,7 +30,7 @@
     - [Header Fields](#header-fields)
     - [The message body](#the-message-body)
     - [Request Methods](#request-methods)
-  - [💻 Exercises: Day 28](#%f0%9f%92%bb-exercises-day-28)
+  - [💻 Exercises: Day 28](#-exercises-day-28)
 
 # 📘 Day 28
 
