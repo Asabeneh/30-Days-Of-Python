@@ -403,7 +403,7 @@ age = [22, 19, 24, 25, 26, 24, 25, 24]
 12. Delete the sets completely
 13. Convert the ages to a set and compare the length of the list and the set, which one is bigger?
 14. Explain the difference between the following data types: string, list, tuple and set
-15. _I am a teacher and I love to inspire and teach people._ How many unique words have been used in the sentence?
+15. _I am a teacher and I love to inspire and teach people._ How many unique words have been used in the sentence? You did not learn loops yet you can do it manually.
 
 🎉 CONGRATULATIONS ! 🎉
 
