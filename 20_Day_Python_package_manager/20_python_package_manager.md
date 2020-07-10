@@ -15,15 +15,15 @@
 </div>
 </div>
 
-[<< Day 19](../19_Day/19_file_handling.md) | [Day 21 >>](../21_Day/21_class_and_object.md)
+[<< Day 19](../19_Day_File_handling/19_file_handling.md) | [Day 21 >>](../21_Day_Classes_and_objects/21_classes_and_objects.md)
 
 ![30DaysOfPython](../images/30DaysOfPython_banner3@2x.png)
 
-- [📘 Day 20](#%f0%9f%93%98-day-20)
+- [📘 Day 20](#-day-20)
   - [Python PIP - Python Package Manager](#python-pip---python-package-manager)
-    - [What is PIP ?](#what-is-pip)
+    - [What is PIP ?](#what-is-pip-)
     - [Installing PIP](#installing-pip)
-    - [Installing Packages Using PIP](#installing-packages-using-pip)
+    - [Installing packages using pip](#installing-packages-using-pip)
     - [Uninstalling Packages](#uninstalling-packages)
     - [List of Packages](#list-of-packages)
     - [Show Package](#show-package)
@@ -442,6 +442,9 @@ The **init**.py exposes specified resources from its modules to be imported to o
   - requests: is a package which we can use to send requests to a server(GET, POST, DELETE, PUT)
     - _pip install requests_
 
+
+🌕 You are always progressing and you are a head of 20 steps to your way to greatness.
+
 ## Exercises: Day 20
 
 1. Read this url and find the 10 most frequent words. Romeo_and_juliet = 'http://www.gutenberg.org/files/1112/1112.txt'
@@ -451,4 +454,4 @@ The **init**.py exposes specified resources from its modules to be imported to o
 
 🎉 CONGRATULATIONS ! 🎉
 
-[<< Day 19](../19_Day/19_file_handling.md) | [Day 21 >>](../21_Day/21_class_and_object.md)
+[<< Day 19](../19_Day_File_handling/19_file_handling.md) | [Day 21 >>](../21_Day_Classes_and_objects/21_classes_and_objects.md)
