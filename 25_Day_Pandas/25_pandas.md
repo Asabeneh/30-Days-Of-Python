@@ -14,15 +14,15 @@
 </div>
 </div>
 
-[<< Day 24](../24_Day/24_statistics.md) | [Day 26 >>](../26_Day/26_python_web.md)
+[<< Day 24](../24_Day_Statistics/24_statistics.md) | [Day 26 >>](../26_Day_Python_web/26_python_web.md)
 
 ![30DaysOfPython](../images/30DaysOfPython_banner3@2x.png)
 
-- [📘 Day 25](#%f0%9f%93%98-day-25)
+- [📘 Day 25](#-day-25)
   - [Pandas](#pandas)
   - [Importing Pandas](#importing-pandas)
     - [Creating Pandas Series with Default Index](#creating-pandas-series-with-default-index)
-    - [Creating  Pandas Series with Custom Index](#creating-pandas-series-with-custom-index)
+    - [Creating  Pandas Series with custom index](#creating-pandas-series-with-custom-index)
     - [Creating Pandas Series from a Dictionary](#creating-pandas-series-from-a-dictionary)
     - [Creating a Constant Pandas Series](#creating-a-constant-pandas-series)
     - [Creating a  Pandas Series Using Linspace](#creating-a-pandas-series-using-linspace)
@@ -35,9 +35,9 @@
   - [Modifying a DataFrame](#modifying-a-dataframe)
     - [Creating a DataFrame](#creating-a-dataframe)
     - [Adding a New Column](#adding-a-new-column)
-    - [Modifying Column Values](#modifying-column-values)
-    - [Formating DataFrame Columns](#formating-dataframe-columns)
-  - [Checking Data Types of Column Values](#checking-data-types-of-column-values)
+    - [Modifying column values](#modifying-column-values)
+    - [Formating DataFrame columns](#formating-dataframe-columns)
+  - [Checking data types of Column values](#checking-data-types-of-column-values)
     - [Boolean Indexing](#boolean-indexing)
   - [Exercises: Day 25](#exercises-day-25)
 # 📘 Day 25
@@ -1313,4 +1313,4 @@ print(df[df['Ages'] < 120])
 
 🎉 CONGRATULATIONS ! 🎉
 
-[<< Day 24](../24_Day/24_statistics.md) | [Day 26 >>](../26_Day/26_python_web.md)
+[<< Day 24](../24_Day_Statistics/24_statistics.md) | [Day 26 >>](../26_Day_Python_web/26_python_web.md)
