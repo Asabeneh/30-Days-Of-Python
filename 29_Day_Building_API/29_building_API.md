@@ -15,7 +15,7 @@
 </div>
 </div>
 
-[<< Day 28](../28_Day/28_API.md) | [Day 29 >>](../30_Day/30_conclusion.md)
+[<< Day 28](../28_Day_API/28_API.md) | [Day 29 >>](../30_Day_Conclusions/30_conclusions.md)
 
 ![30DaysOfPython](../images/30DaysOfPython_banner3@2x.png)
 
@@ -27,7 +27,7 @@
   - [Creating data using POST](#creating-data-using-post)
   - [Updating using PUT](#updating-using-put)
   - [Deleting a document using Delete](#deleting-a-document-using-delete)
-- [💻 Exercises: Day 29](#%f0%9f%92%bb-exercises-day-29)
+- [💻 Exercises: Day 29](#-exercises-day-29)
 
 ## Day 29
 
@@ -492,4 +492,4 @@ if __name__ == '__main__':
 
 🎉 CONGRATULATIONS ! 🎉
 
-[<< Day 28](../28_Day/28_API.md) | [Day 29 >>](../30_Day/30_conclusion.md)
+[<< Day 28](../28_Day_API/28_API.md) | [Day 29 >>](../30_Day_Conclusions/30_conclusions.md)
