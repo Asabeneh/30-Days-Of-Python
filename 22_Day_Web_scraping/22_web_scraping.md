@@ -15,14 +15,14 @@
 </div>
 </div>
 
-[<< Day 21](../21_Day/21_class_and_object.md) | [Day 23 >>](../23_Day/23_virtual_environment.md)
+[<< Day 21](../21_Day_Web_scraping/21_class_and_object.md) | [Day 23 >>](../23_Day_Virtual_environment/23_virtual_environment.md)
 
 ![30DaysOfPython](../images/30DaysOfPython_banner3@2x.png)
 
-- [📘 Day 22](#%f0%9f%93%98-day-22)
+- [📘 Day 22](#-day-22)
   - [Python Web Scraping](#python-web-scraping)
     - [What is Web Scrapping](#what-is-web-scrapping)
-  - [💻 Exercises: Day 22](#%f0%9f%92%bb-exercises-day-22)
+  - [💻 Exercises: Day 22](#-exercises-day-22)
 
 # 📘 Day 22
 
@@ -97,6 +97,8 @@ for td in table.find('tr').find_all('td'):
 If you run this code, you can see that the extraction is half done. You can continue doing it because it is part of exercise 1.
 For reference check the [beautifulsoup documentation](https://www.crummy.com/software/BeautifulSoup/bs4/doc/#quick-start)
 
+🌕 You are so special, you are progressing everyday.You are left with only eight days to your way to greatness. Now do some exercises for your brain and for your muscle.
+
 ## 💻 Exercises: Day 22
 
 1. Extract the table in this url (http://mlr.cs.umass.edu/ml/datasets.html) and change it to a json file
@@ -104,4 +106,4 @@ For reference check the [beautifulsoup documentation](https://www.crummy.com/sof
 
 🎉 CONGRATULATIONS ! 🎉
 
-[<< Day 21](../21_Day/21_class_and_object.md) | [Day 23 >>](../23_Day/23_virtual_environment.md)
+[<< Day 21](../21_Day_Web_scraping/21_class_and_object.md) | [Day 23 >>](../23_Day_Virtual_environment/23_virtual_environment.md)
