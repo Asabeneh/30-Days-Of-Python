@@ -30,8 +30,8 @@
 |  26   |  [Python web](./26_Day_Python_web/26_python_web.md)    |
 |  27   |  [Python with MongoDB](./27_Day_Python_with_mongodb/27_python_with_mongodb.md)     |
 |  28   |  [API](./28_Day_API/28_API.md)     |
-|  29   |  [Building API](./29_Day_Building_API/29_building_API.m)     |
-|  30   |  [Conclusions](../30_Day_Conclusions/30_conclusions.md)      |
+|  29   |  [Building API](./29_Day_Building_API/29_building_API.md)     |
+|  30   |  [Conclusions](./30_Day_Conclusions/30_conclusions.md)      |
 
 🧡🧡🧡 HAPPY CODING 🧡🧡🧡
 <div align="center">
@@ -64,7 +64,7 @@
 
 ![30DaysOfPython](./images/30DaysOfPython_banner3@2x.png)
 
-- [🐍30 Days Of Python](#30-days-of-python)
+- [🐍 30 Days Of Python](#-30-days-of-python)
 - [📘 Day 1](#-day-1)
   - [Welcome](#welcome)
   - [Introduction](#introduction)
