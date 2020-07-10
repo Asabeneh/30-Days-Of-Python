@@ -15,7 +15,7 @@
 </div>
 </div>
 
-[<< Day 21](../21_Day_Web_scraping/21_class_and_object.md) | [Day 23 >>](../23_Day_Virtual_environment/23_virtual_environment.md)
+[<< Day 21](../21_Day_Classes_and_objects/21_classes_and_objects.md) | [Day 23 >>](../23_Day_Virtual_environment/23_virtual_environment.md)
 
 ![30DaysOfPython](../images/30DaysOfPython_banner3@2x.png)
 
