@@ -15,13 +15,13 @@
 </div>
 </div>
 
-[<< Day 22](../22_Day/22_web_scraping.md) | [Day 24 >>](../24_Day/24_statistics.md)
+[<< Day 22](../22_Day_Web_scraping/22_web_scraping.md) | [Day 24 >>](../24_Day_Statistics/24_statistics.md)
 
 ![30DaysOfPython](../images/30DaysOfPython_banner3@2x.png)
 
-- [📘 Day 23](#%f0%9f%93%98-day-23)
+- [📘 Day 23](#-day-23)
   - [Setting up Virtual Environments](#setting-up-virtual-environments)
-  - [💻 Exercises: Day 23](#%f0%9f%92%bb-exercises-day-23)
+  - [💻 Exercises: Day 23](#-exercises-day-23)
 
 # 📘 Day 23
 
@@ -104,4 +104,4 @@ The necessary modules to work with flask are installed. Now, your project direct
 1. Create a project directory with a virtual environment based on the example given above.
 
 🎉 CONGRATULATIONS ! 🎉
-[<< Day 22](../22_Day/22_web_scraping.md) | [Day 24 >>](../24_Day/24_statistics.md)
+[<< Day 22](../22_Day_Web_scraping/22_web_scraping.md) | [Day 24 >>](../24_Day_Statistics/24_statistics.md)
