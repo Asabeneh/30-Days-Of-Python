@@ -15,11 +15,11 @@
 </div>
 </div>
 
-[<< Day 20](../20_Day/20_python_package_manager.md) | [Day 22 >>](../22_Day/22_web_scraping.md)
+[<< Day 20](../20_Day_Python_package_manager/20_python_package_manager.md) | [Day 22 >>](../22_Day_Web_scraping/22_web_scraping.md)
 
 ![30DaysOfPython](../images/30DaysOfPython_banner3@2x.png)
 
-- [📘 Day 21](#%f0%9f%93%98-day-21)
+- [📘 Day 21](#-day-21)
   - [Classes and Objects](#classes-and-objects)
     - [Creating a Class](#creating-a-class)
     - [Creating an Object](#creating-an-object)
@@ -28,8 +28,8 @@
     - [Object Default Methods](#object-default-methods)
     - [Method to Modify Class Default Values](#method-to-modify-class-default-values)
     - [Inheritance](#inheritance)
-    - [Overriding Parent Method](#overriding-parent-method)
-  - [💻 Exercises: Day 21](#%f0%9f%92%bb-exercises-day-21)
+    - [Overriding parent method](#overriding-parent-method)
+  - [💻 Exercises: Day 21](#-exercises-day-21)
 
 # 📘 Day 21
 
@@ -319,6 +319,8 @@ Lidiya Teklemariam is 28 years old. She lives in Espoo, Finland.
 
 We can use super() function or the parent name Person to automatically inherit the methods and properties from its parent. In the example above we override the parant method. The child method has a different feature, it can identify, if the gender is male or female and assign the proper pronoun(He/She).
 
+🌕 Now, you are fully charged with a super power of programming.  Now do some exercises for your brain and for your muscle.
+
 ## 💻 Exercises: Day 21
 
 1. Python has the module called _statistics_ and we can use this module to do all the statistical caluculations. However to challlenge ourselves, let's try to develop a program, which calculates the measure of central tendency of a sample (mean, median, mode) and measure of variability (range, variance, standard deviation). In addition to those measures, find the min, max, count, percentile, and frequency distribution of the sample. You can create a class called Statistics and create all the functions that do statistical calculations as methods for the Statistics class. Check the output below.
@@ -360,4 +362,4 @@ Frequency Distribution: [(20.0, 26), (16.0, 27), (12.0, 32), (8.0, 37), (8.0, 34
 
 🎉 CONGRATULATIONS ! 🎉
 
-[<< Day 20](../20_Day/20_python_package_manager.md) | [Day 22 >>](../22_Day/22_web_scraping.md)
+[<< Day 20](../20_Day_Python_package_manager/20_python_package_manager.md) | [Day 22 >>](../22_Day_Web_scraping/22_web_scraping.md)
