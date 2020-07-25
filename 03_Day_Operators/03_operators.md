@@ -139,7 +139,7 @@ num_two = 4
 total = num_one + num_two
 diff = num_two - num_one
 product = num_one * num_two
-div = num_two / num_two
+div = num_two / num_one
 remainder = num_two % num_one
 
 # Printing values with label
