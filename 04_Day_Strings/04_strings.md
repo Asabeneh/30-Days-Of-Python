@@ -144,7 +144,7 @@ area = pi * radius ** 2
 formated_string = 'The area of circle with a radius %d is %.2f.' %(radius, area) # 2 refers the 2 significant digits after the point
 
 python_libraries = ['Django', 'Flask', 'Numpy', 'Pandas']
-formated_string = 'The following are python libraries:' % python_libraries
+formated_string = 'The following are python libraries: %s' %(python_libraries)
 print(formated_string) # "The following are python libraries:['Django', 'Flask', 'Numpy', 'Pandas']"
 ```
 #### New Style String Formating (str.format)
