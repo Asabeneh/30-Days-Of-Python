@@ -139,7 +139,7 @@ num_two = 4
 total = num_one + num_two
 diff = num_two - num_one
 product = num_one * num_two
-div = num_two / num_two
+div = num_two / num_one
 remainder = num_two % num_one
 
 # Printing values with label
@@ -164,7 +164,7 @@ print('Area of a circle:', area_of_circle)
 length = 10
 width = 20
 area_of_rectangle = length * width
-print('Area of rectangle:', area_of_width)
+print('Area of rectangle:', area_of_rectangle)
 
 # Calculating a weight of an object
 mass = 75

@@ -73,7 +73,7 @@ print(last_three)   # hon
 
 # Skipping character while splitting Python strings
 language = 'Python'
-pto = language[0,6:2] # 
+pto = language[0:6:2] # 
 print(pto) # pto
 
 # Escape sequence

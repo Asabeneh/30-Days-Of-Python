@@ -229,7 +229,7 @@ print('num_int', int(num_str))      # 10
 print('num_float', float(num_str))  # 10.6
 
 # str to list
-first = 'Asabeneh'
+first_name = 'Asabeneh'
 print(first_name)
 print(first_name)                    # 'Asabeneh'
 first_name_to_list = list(first_name)
