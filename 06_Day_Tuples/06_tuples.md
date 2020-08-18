@@ -231,10 +231,10 @@ del fruits
 5. Modify the siblings tuple and add the name of your father and mother and assign it to family_members
 6. Unpack siblings and parents from family_members
 7. Create fruits, vegetables and animal products tuples. Join the three tuples and assign it to a variable called food_stuff.
-8. Slice out the middle item or items from the food_staff list
-9. Slice out the first three items and the last three items from food_staff list
-10. Delete the food_staff list completely
-11. Check if an item exist in a tuple:
+8. Slice out the middle item or items from the food_stuff tuple.
+9. Slice out the first three items and the last three items from food_stuff tuple.
+10. Delete the food_stuff tuple completely.
+11. Check if an item exists in a tuple:
 
 - Check if 'Estonia' is a nordic country
 - Check if 'Iceland' is a nordic country
