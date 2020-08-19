@@ -374,10 +374,10 @@ even_numbers.isdisjoint(odd_numbers) # True, because no common item
 
 python = {'p', 'y', 't', 'h', 'o','n'}
 dragon = {'d', 'r', 'a', 'g', 'o','n'}
-python.disjoint(dragon)  # False, there are common items {'o', 'n'}
+python.isdisjoint(dragon)  # False, there are common items {'o', 'n'}
 ```
 
-🌕 You are a rising star . You have just completed day 7 challenges and you are 7 steps a head in to your way to greatness. Now do some exercises for your brain and for your muscle.
+🌕 You are a rising star . You have just completed day 7 challenges and you are 7 steps ahead in to your way to greatness. Now do some exercises for your brain and for your muscle.
 
 ## 💻 Exercises: Day 7
 
