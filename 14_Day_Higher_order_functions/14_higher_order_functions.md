@@ -312,14 +312,14 @@ print(list(long_names))         # ['Asabeneh']
 
 The _reduce()_ function is defined in the functools module and we should import it from this module. Like map and filter it takes two parameters, a function and an iterable. However, it doesn't return another iterable, instead it returns a single value.
 
-**Example:2**
+**Example:1**
 
 ```py
 numbers_str = ['1', '2', '3', '4', '5']  # iterable
 def add(x, y):
     return int(x) + int(y)
 
-total = reduce(add_two, numbers_str)
+total = reduce(add, numbers_str)
 print(total)    # 15
 ```
 
