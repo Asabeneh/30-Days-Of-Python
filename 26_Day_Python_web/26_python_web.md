@@ -44,7 +44,7 @@ Python is a general purpose programming language and it can be used for many pla
 ### Flask
 
 Flask is a web development framework written in python. Flask uses Jinja2 template engine. Flask can be also used with other modern frond libraries such as react.
-If you did not install the virtualenv package ye install it first. Virtual environment will allows to isolate project dependencies.
+If you did not install the virtualenv package yet, install it first. Virtual environment will allows to isolate project dependencies.
 
 #### Folder structure
 
