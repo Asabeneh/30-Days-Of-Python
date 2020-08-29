@@ -243,4 +243,4 @@ del fruits
   nordic_countries = ('Denmark', 'Finland','Iceland', 'Norway', 'Sweden')
   ```
 
-[<< Day 5](../05_Day_Lists/05_list.md) | [Day 7 >>](../07_Day_Sets/07_set.md)
+[<< Day 5](../05_Day_Lists/05_list.md) | [Day 7 >>](../07_Day_Sets/07_sets.md)
