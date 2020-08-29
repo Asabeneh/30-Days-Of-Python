@@ -1295,7 +1295,7 @@ print(df[df['Ages'] < 120])
 </table>
 
 ## Exercises: Day 25
-1. Read the hacker_ness.csv file from data directory 
+1. Read the hacker_news.csv file from data directory 
 1. Get the first five rows
 1. Get the last five rows
 1. Get the title column as pandas series
