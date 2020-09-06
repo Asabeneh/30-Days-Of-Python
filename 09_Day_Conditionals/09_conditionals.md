@@ -49,7 +49,7 @@ if condition:
     this part of code runs for truthy conditions
 ```
 
-**Example: **
+**Example: 1**
 
 ```py
 a = 3

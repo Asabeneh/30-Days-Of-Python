@@ -256,7 +256,7 @@ person = {
     }
     }
 person.pop('first_name')        # Removes the firstname item
-person.popitem()                # Removes the lastname item
+person.popitem()                # Removes the address item
 del person['is_married']        # Removes the is_married item
 ```
 
@@ -326,7 +326,7 @@ print(values)     # dict_values(['value1', 'value2', 'value3', 'value4'])
 
 ## 💻 Exercises: Day 8
 
-1. Create a an empty dictionary called dog
+1. Create  an empty dictionary called dog
 2. Add name, color, breed, legs, age to the dog dictionary
 3. Create a student dictionary and add first_name, last_name, gender, age, marital status, skills, country, city and address as keys for the dictionary
 4. Get the length of the student dictionary

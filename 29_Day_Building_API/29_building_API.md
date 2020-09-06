@@ -492,4 +492,4 @@ if __name__ == '__main__':
 
 🎉 CONGRATULATIONS ! 🎉
 
-[<< Day 28](../28_Day_API/28_API.md) | [Day 29 >>](../30_Day_Conclusions/30_conclusions.md)
+[<< Day 28](../28_Day_API/28_API.md) | [Day 30 >>](../30_Day_Conclusions/30_conclusions.md)

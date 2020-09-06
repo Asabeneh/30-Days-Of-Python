@@ -40,7 +40,7 @@ A tuple is a collection of different data types which is ordered and unchangeabl
 - tuple(): to create an empty tuple
 - count(): to count the number of a specified item in a tuple
 - index(): to find the index of a specified item in a tuple
-- - operator: to join two or more tuples and to create a new tuple
+- + operator: to join two or more tuples and to create a new tuple
 
 ### Creating a Tuple
 
@@ -230,11 +230,12 @@ del fruits
 4. How many siblings do you have?
 5. Modify the siblings tuple and add the name of your father and mother and assign it to family_members
 6. Unpack siblings and parents from family_members
-7. Create fruits, vegetables and animal products tuples. Join the three tuples and assign it to a variable called food_stuff.
-8. Slice out the middle item or items from the food_staff list
-9. Slice out the first three items and the last three items from food_staff list
-10. Delete the food_staff list completely
-11. Check if an item exist in a tuple:
+7. Create fruits, vegetables and animal products tuples. Join the three tuples and assign it to a variable called food_stuff_tp.
+8. Change the about food_stuff_tp  tuple to a food_stuff_lt list
+9. Slice out the middle item or items from the food_stuff_tp tuple or food_stuff_lt list.
+10. Slice out the first three items and the last three items from food_staff_lt list
+11. Delete the food_staff_tp tuple completely
+12. Check if an item exists in  tuple:
 
 - Check if 'Estonia' is a nordic country
 - Check if 'Iceland' is a nordic country
@@ -243,4 +244,4 @@ del fruits
   nordic_countries = ('Denmark', 'Finland','Iceland', 'Norway', 'Sweden')
   ```
 
-[<< Day 5](../05_Day_Lists/05_list.md) | [Day 7 >>](../07_Day_Sets/07_set.md)
+[<< Day 5](../05_Day_Lists/05_lists.md) | [Day 7 >>](../07_Day_Sets/07_sets.md)

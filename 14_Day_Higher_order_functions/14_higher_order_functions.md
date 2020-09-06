@@ -311,15 +311,14 @@ print(list(long_names))         # ['Asabeneh']
 ### Python - Reduce Function
 
 The _reduce()_ function is defined in the functools module and we should import it from this module. Like map and filter it takes two parameters, a function and an iterable. However, it doesn't return another iterable, instead it returns a single value.
-
-**Example:2**
+**Example:1**
 
 ```py
 numbers_str = ['1', '2', '3', '4', '5']  # iterable
-def add(x, y):
+def add_two_nums(x, y):
     return int(x) + int(y)
 
-total = reduce(add_two, numbers_str)
+total = reduce(add_two_nums, numbers_str)
 print(total)    # 15
 ```
 
@@ -352,6 +351,7 @@ numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 19. Create a function returning a dictionary, where keys stand for starting letters of countries and values are the number of country names starting with that letter.
 20. Declare a get_first_ten_countries function - it returns a list of first ten countries from the countries.js list in the data folder.
 21. Declare a get_last_ten_countries function that returns the last ten countries in the countries list.
+
 23. Use the countries_data.py (https://github.com/Asabeneh/30-Days-Of-Python/blob/master/data/countries-data.py) file and follow the tasks below:
    - Sort countries by name, by capital, by population
    - Sort out the ten most spoken languages by location.
