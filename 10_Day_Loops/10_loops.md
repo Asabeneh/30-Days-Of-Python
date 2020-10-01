@@ -152,7 +152,7 @@ for number in numbers: # number is temporary name to refer to the list's items, 
     print(number)       # the numbers will be printed line by line, from 0 to 5
 ```
 
-- For loop with string
+-Using For loop on string
 
 ```py
 # syntax
@@ -168,7 +168,7 @@ for letter in language:
     print(letter)
 ```
 
-- For loop with tuple
+-Using For loop on tuple
 
 ```py
 # syntax
@@ -215,7 +215,7 @@ for key, value in person.items():
     print(key, value) # this way we get both keys and values printed out
 ```
 
-- Loops in set
+-Using For Loop in set
 
 ```py
 # syntax
@@ -234,7 +234,7 @@ for company in it_companies:
 ### Break and Continue - Part 2
 
 Short reminder:
-_Break_: We use break when we like to stop our loop before it is completed.
+_Break_: We use break when we want to stop our loop before it is completed.
 
 ```py
 # syntax
@@ -256,7 +256,7 @@ for number in numbers:
 
 In the above example, the loop stops when it reaches 3.
 
-Continue: We use continue when we like to skip some of the steps in the iteration of the loop.
+Continue: We use continue when we want to skip some of the steps in the iteration of the loop.
 
 ```py
   # syntax
@@ -282,7 +282,12 @@ In the example above, if the number equals 3, the step *after* the condition (bu
 
 ### The Range Function
 
-The _range()_ function is used to loop through a set of code a certain number of times. The _range(start,end, step)_ takes three parameters: starting, ending and increment. By default it starts from 0 and the increment is 1. The range sequence needs at least 1 argument (end).
+The _range()_ function is used to loop through a set of code a certain number of times. The _range(start,end, step)_ takes three parameters: starting, ending and increment. 
+  start: integer starting from which the sequence of integers is to be returned
+  stop: integer before which the sequence of integers is to be returned.
+         The range of integers end at stop – 1.
+  step: integer value which determines the increment between each integer in the sequence
+By default it starts from 0 and the increment is 1. The range sequence needs at least 1 argument (end).
 Creating sequences using range
 
 ```py
