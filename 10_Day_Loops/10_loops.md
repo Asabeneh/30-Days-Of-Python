@@ -136,7 +136,7 @@ The above while loop only prints 0, 1, 2 and 4 (skips 3).
 
 A _for_ keyword is used to make a for loop, similar with other programming languages, but with some syntax differences. Loop is used for iterating over a sequence (that is either a list, a tuple, a dictionary, a set, or a string).
 
-- For loop with list
+-Using For loop on list
 
 ```py
 # syntax
