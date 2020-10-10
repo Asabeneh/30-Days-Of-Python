@@ -333,8 +333,8 @@ print(challenge.find('th')) # 0
 
 ```py
 challenge = 'thirty days of python'
-print(challenge.find('y'))  # 5
-print(challenge.find('th')) # 1
+print(challenge.rfind('y'))  # 16
+print(challenge.rfind('th')) # 17
 ```
 
 - format(): formats string into a nicer output  
