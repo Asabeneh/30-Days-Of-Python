@@ -255,7 +255,7 @@ To add item to the end of an existing list we use the method
 ```py
 # syntax
 lst = list()
-lst.append(item)
+lst.append('item')
 ```
 
 ```py
