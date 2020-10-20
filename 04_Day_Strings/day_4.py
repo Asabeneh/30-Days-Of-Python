@@ -30,7 +30,7 @@ print(full_name) # Asabeneh Yetayeh
 print(len(first_name))  # 8
 print(len(last_name))   # 7
 print(len(first_name) > len(last_name)) # True
-print(len(full_name)) # 15
+print(len(full_name)) # 16
 
 #### Unpacking characters 
 language = 'Python'
@@ -127,7 +127,7 @@ print(sentence) # I am Asabeneh Yetayeh. I am a teacher. I live in Finland.
 
 radius = 10
 pi = 3.14
-area = pi # radius ## 2
+area = pi * radius ** 2
 result = 'The area of circle with {} is {}'.format(str(radius), str(area))
 print(result) # The area of circle with 10 is 314.0
 
