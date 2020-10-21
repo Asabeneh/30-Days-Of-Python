@@ -33,7 +33,7 @@
 
 ## Built in functions
 
-In python we have lots of built-in functions. Built-in functions are globally available for your use. Some of the most commonly used python built-in functions are the following: _print()_, _len()_, _type()_, _int()_, _float()_, _str()_, _input()_, _list()_, _dict()_, _min()_, _max()_, _sum()_, _sorted()_, _open()_, _file()_, _help()_, and _dir()_. In the following table you will see an exhaustive list of python built-in functions taken from [python documentation](https://docs.python.org/2/library/functions.html).
+In python we have lots of built-in functions. Built-in functions are globally available for your use. Some of the most commonly used python built-in functions are the following: _print()_, _len()_, _type()_, _int()_, _float()_, _str()_, _input()_, _list()_, _dict()_, _min()_, _max()_, _sum()_, _sorted()_, _open()_, _file()_, _help()_, and _dir()_. In the following table you will see an exhaustive list of python built-in functions taken from [python documentation](https://docs.python.org/3.9/library/functions.html).
 
 ![Built-in Functions](../images/builtin-functions.png)
 
