@@ -133,8 +133,9 @@ print(result) # The area of circle with 10 is 314.0
 
 # index(): Returns the index of substring
 challenge = 'thirty days of python'
-print(challenge.find('y'))  # 5
-print(challenge.find('th')) # 0
+sub_string = 'da'
+print(challenge.index(sub_string))  # 7
+print(challenge.index(sub_string, 9)) # error
 
 # isalnum(): Checks alphanumeric character
 
