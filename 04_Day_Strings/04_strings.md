@@ -281,7 +281,7 @@ It is possible to skip characters while slicing by passing step argument to slic
 
 ```py
 language = 'Python'
-pto = language[0,6:2] #
+pto = language[0:6:2] #
 print(pto) # Pto
 ```
 
