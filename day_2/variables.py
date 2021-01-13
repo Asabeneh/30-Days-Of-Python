@@ -28,10 +28,10 @@ print(len(first_name) == len(last_name))
 num_one = 5
 num_two = 4
 variable_total = (num_one) + (num_two)
-variable_diff = (num_one) - (num_two)
-variable_product = (num_two) * (num_one)
-variable_division = (num_one)/(num_two)
-variable_remainder = (num_one) % (num_two)
+variable_diff = int(num_one) - int(num_two)
+variable_product = int(num_two) * int(num_one)
+variable_division = int(num_one)/int(num_two)
+variable_remainder = int(num_one) % int(num_two)
 variable_exp = num_one**num_two
 variable_floor_division = num_one // num_two
 
