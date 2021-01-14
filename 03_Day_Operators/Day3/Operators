@@ -1,0 +1,62 @@
+#Day 3
+age = 25
+height = 5.67
+complex = 1+1j
+
+b = int(input("Enter base: "))
+h = int(input("Enter height: "))
+
+area_tri = b*h/2
+
+print("The area of a triangle is ", area_tri)
+
+a = int(input("Enter side a: "))
+b = int(input("Enter side b: "))
+c = int(input("Enter side c: "))
+
+tri_perimeter = a+b+c
+
+print("The perimeter of the triangle is ", tri_perimeter)
+
+l = int(input("Enter length: "))
+w = int(input("Enter width: "))
+
+area_rec = l*w
+
+print("Area of the rectangle is: ",area_rec)
+
+rec_perimeter = 2*(l+w)
+
+print("Perimeter of the rectangle is: ",rec_perimeter)
+
+r = int(input("Enter radius: "))
+
+pi = 3.14
+
+area_c = pi * r ** 2
+circum_of_circle = 2 * pi * r
+
+#Calculate the slope, x-intercept and y-intercept of y = 2x -2
+
+#Slope is (m = y2-y1/x2-x1). Find the slope between point (2, 2) and point (6,10)
+
+def slope(x1, y1, x2, y2):
+  retun(float)(y2-y1)/(x2-x1)
+  
+ x1 = 2
+ y1 = 2
+ x2 = 6
+ y2 = 10
+ print("Slope is: ", slope(x1,y1,x2,y2))
+ 
+ print(len('python') != len('jargon'))
+ 
+ print('on in python', 'on' in 'python and 'on' in 'jargon')
+ 
+ print('on in I hope this course is not full of jargon', 'on' in 'I hope this course is not full of jargon')
+ 
+ #Find the length of the text python and convert the value to float and convert it to string
+ #Even numbers are divisible by 2 and the remainder is zero. How do you check if a number is even or not using python?
+ 
+ n = []
+ n%2 == 0
