@@ -1,0 +1,51 @@
+lst = []
+list2 = ['red', 'yellow', 'green', 'blue', 'orange', 'purple']
+print(len(list2))
+list_red = list2[0]
+print(list_red)
+
+list_green = list2[2]
+print(list_green)
+
+list_purple = list2[-1]
+print(list_purple)
+
+mixed_data_types = ['Chandler', '25', '67in', 'single' '9255 Blue House Rd']
+it_companies = ['Facebook', 'Google', 'Microsoft', 'Apple', 'IBM', 'Oracle', 'Amazon']
+print(it_companies)
+
+companies = len(it_companies)
+
+company_one = it_companies[0]
+company_mid = it_companies[3]
+company_last = it_companies[-1]
+
+print(company_one)
+print(company_mid)
+print(company_last)
+
+it_companies[3] = 'Apples'
+print(it_companies)
+
+it_companies.insert('Teradata')
+it_companies.insert(3, 'SAP')
+
+it_companies.upper('Google')
+
+'#; '.join(it_companies)
+
+does_exist = 'Microsoft' in it_companies
+print(does_exist)
+
+it_companies.reverse()
+print(it_companies.reverse())
+
+it_companies.sort()
+print(it_companies)
+
+first_three = it_companies[0:3]
+
+it_companies.clear()
+print(it_companies)
+
+#Finish Exercise 2
