@@ -1,0 +1,34 @@
+tpl = ()
+sis = ('Jasmine')
+bro = ('Sidney')
+siblings = sis + bro
+len(siblings)
+
+siblings = list(siblings)
+
+siblings[0] = 'Carolyn'
+siblings[1] = 'Jerrold'
+
+print(siblings)
+
+siblings = tuple(siblings)
+
+partents = siblings[0:2]
+siblings = [1:]
+
+fruits = ('apples', 'mango', 'orange', 'peach')
+veggies = ('cucumber', 'tomato', 'lettuce')
+animals = ('dog', 'sheep', 'goat', camel')
+
+food_stuff_tp = fruits + veggies + animals
+
+food_stuff_lt = list(food_stuff_tp)
+
+food_stuff_lt[0:3]
+food_stuff_lt[-3]
+
+del food_stuff_tp
+
+nordic_countries = ('Denmark', 'Finland','Iceland', 'Norway', 'Sweden')
+print('Estonia' in nordic_countries)
+print('Iceland' in nordic_countries)
