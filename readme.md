@@ -183,7 +183,8 @@ Lets do some maths first before we write any python code:
 - 3 - 2 = 1
 - 3 \* 2 = 6
 - 3 / 2 = 1.5
-- 3 ^ 2 = 3 x 3 = 9
+- 3 ^ 2 = 1
+- 3 \* 3 = 9
 
 In python we have the following additional operations:
 
