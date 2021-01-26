@@ -36,6 +36,12 @@
 |  30   |  [Conclusions](./30_Day_Conclusions/30_conclusions.md)      |
 
 🧡🧡🧡 HAPPY CODING 🧡🧡🧡
+<div>
+<small>Support the <strong>author</strong> to create more educational materials</small> <br />  
+<a href = "https://www.paypal.me/asabeneh"><img src='./images/paypal_lg.png' alt='Paypal Logo' style="width:10%"/></a>
+</div>
+
+
 <div align="center">
 
   <h1> 30 Days Of Python: Day 1 - Introduction</h1>
@@ -55,8 +61,7 @@
 
 <div>
 
-<small>Support [**Asabeneh**](https://www.patreon.com/asabeneh?fan_landing=true) to create more educational materials</small>  
-[<img src = './images/become_patreon.png' alt='become-asabeneh-patreon' title='click' />](https://www.patreon.com/asabeneh?fan_landing=true) 
+
  
 </div>
 
