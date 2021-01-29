@@ -46,14 +46,11 @@ Let me take you back to your elementary or high school Mathematics lesson. The M
 
 ### Creating a Set
 
-We use curly brackets, {} to create a set.
+To create an empty set, we use the set() function. Empty curly brackets {} will create a dictionary. 
 
 - Creating an empty set
 
 ```py
-# syntax
-st = {}
-# or
 st = set()
 ```
 
