@@ -197,7 +197,7 @@ Another new string formating is string interpolation, f-strings. Strings start w
 ```py
 a = 4
 b = 3
-print(f'{a} + {b} = {a +b}')
+print(f'{a} + {b} = {a + b}')
 print(f'{a} - {b} = {a - b}')
 print(f'{a} * {b} = {a * b}')
 print(f'{a} / {b} = {a / b:.2f}')
