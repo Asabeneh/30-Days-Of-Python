@@ -199,7 +199,7 @@ import os
 if os.path.exist('./files/example.txt'):
     os.remove('./files/example.txt')
 else:
-    os.remove('The file does not exist')
+    print('The file does not exist')
 ```
 
 ## File Types
