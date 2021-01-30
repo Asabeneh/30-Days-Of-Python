@@ -102,7 +102,7 @@ time two: 05/12/2019, 01:05:01
 
 Here are all the _strftime_ symbols we use to format time. An example of all the formats for this module.
 
-![strftime](./images/strftime.png)
+![strftime](../images/strftime.png)
 
 ### String to Time Using *strptime*
 
