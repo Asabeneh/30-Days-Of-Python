@@ -16,7 +16,7 @@
 |  10   |  [Loops](./10_Day_Loops/10_loops.md)   |
 |  11   |  [Functions](./11_Day_Functions/11_functions.md)     |
 |  12   |  [Modules](./12_Day_Modules/12_modules.md)   |
-|  13   |  [List Comprehension](../13_Day_List_comprehension/13_list_comprehension.md)|
+|  13   |  [List Comprehension](./13_Day_List_comprehension/13_list_comprehension.md)|
 |  14   |  [Higher Order Functions](./14_Day_Higher_order_functions/14_higher_order_functions.md)|     
 |  15   |  [Python Type Errors](./15_Day_Python_type_errors/15_python_type_errors.md)     | 
 |  16   |  [Python Date time](./16_Day_Python_date_time/16_python_datetime.md)      |     
