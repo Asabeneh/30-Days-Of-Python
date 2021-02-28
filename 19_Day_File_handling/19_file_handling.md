@@ -196,10 +196,10 @@ If the file does not exist, the remove method will raise an error, so it is good
 
 ```py
 import os
-if os.path.exist('./files/example.txt'):
+if os.path.exists('./files/example.txt'):
     os.remove('./files/example.txt')
 else:
-    os.remove('The file does not exist')
+    print('The file does not exist')
 ```
 
 ## File Types
