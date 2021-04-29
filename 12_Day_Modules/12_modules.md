@@ -272,8 +272,8 @@ print(randint(5, 20)) # it returns a random integer number between 5 and 20
    ```
 3. Write a function named rgb_color_gen. It will generate rgb colors (3 values ranging from 0 to 255 each).
    ```py
-print(rgb_color_gen())
-# rgb(125,244,255) - the output should be in this form
+    print(rgb_color_gen())
+    # rgb(125,244,255) - the output should be in this form
    ```
 4. Write a function list_of_hexa_colors which returns any number of hexadecimal colors in an array (six hexadecimal numbers written after #. Hexadecimal numeral system is made out of 16 symbols, 0-9 and first 6 letters of the alphabet, a-f. Check the task 6 for output examples).
 5. Write a function list_of_rgb_colors which returns any number of RGB colors in an array.
