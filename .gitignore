@@ -17,3 +17,4 @@ flask_project/ven/lib
 numpy.ipynb
 .ipynb_checkpoints
 .vscode/
+test.py
