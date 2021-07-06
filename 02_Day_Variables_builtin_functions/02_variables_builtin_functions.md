@@ -9,10 +9,9 @@
 
 <sub>Author:
 <a href="https://www.linkedin.com/in/asabeneh/" target="_blank">Asabeneh Yetayeh</a><br>
-<small> Second Edition: July, 2020</small>
+<small> Second Edition: July, 2021</small>
 </sub>
 
-</div>
 </div>
 
 [<< Day 1](../readme.md) | [Day 3 >>](../03_Day_Operators/03_operators.md)
