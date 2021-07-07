@@ -9,10 +9,9 @@
 
 <sub>Author:
 <a href="https://www.linkedin.com/in/asabeneh/" target="_blank">Asabeneh Yetayeh</a><br>
-<small> First Edition: Nov 22 - Dec 22, 2019</small>
+<small> Second Edition: July, 2021</small>
 </sub>
 
-</div>
 </div>
 
 [<< Day 8](../08_Day_Dictionaries/08_dictionaries.md) | [Day 10 >>](../10_Day_Loops/10_loops.md)
@@ -29,19 +28,20 @@
     - [If Condition and Logical Operators](#if-condition-and-logical-operators)
     - [If and Or Logical Operators](#if-and-or-logical-operators)
   - [💻 Exercises: Day 9](#-exercises-day-9)
+    - [Exercises: Level 1](#exercises-level-1)
 
 # 📘 Day 9
 
 ## Conditionals
 
-By default, statements in python script are executed sequentially from top to bottom. If the processing logic require so, the sequential flow of execution can be altered in two way:
+By default, statements in Python script are executed sequentially from top to bottom. If the processing logic require so, the sequential flow of execution can be altered in two way:
 
 - Conditional execution: a block of one or more statements will be executed if a certain expression is true
 - Repetitive execution: a block of one or more statements will be repetitively executed as long as a certain expression is true. In this section, we will cover _if_, _else_, _elif_ statements. The comparison and logical operators we learned in previous sections will be useful here.
 
 ### If Condition
 
-In python and other programming languages the key word _if_ we use to check if a condition is true and to execute the block code. Remember the indentation after the colon.
+In python and other programming languages the key word _if_ is used to check if a condition is true and to execute the block code. Remember the indentation after the colon.
 
 ```py
 # syntax
@@ -196,9 +196,11 @@ else:
     print('Access denied!')
 ```
 
-🌕 You are doing great.Never give up because great things take time. You have just completed day 9 challenges and you are 9 steps a head in to your way to greatness. Now do some exercises for your brain and for your muscle.
+🌕 You are doing great.Never give up because great things take time. You have just completed day 9 challenges and you are 9 steps a head in to your way to greatness. Now do some exercises for your brain and muscles.
 
 ## 💻 Exercises: Day 9
+
+### Exercises: Level 1
 
 1.  Get user input using input(“Enter your age: ”). If user is 18 or older, give feedback: You are old enough to drive. If below 18 give feedback to wait for the missing amount of years. Output:
     ```sh
@@ -219,7 +221,9 @@ else:
     Enter number two: 3
     4 is greater than 3
     ```
-4.  Write a code which gives grade to students according to theirs scores:
+
+    ### Exercises: Level 2
+    4.  Write a code which gives grade to students according to theirs scores:
     ```sh
     80-100, A
     70-89, B
@@ -237,7 +241,8 @@ else:
     fruits = ['banana', 'orange', 'mango', 'lemon']
     ```
     If a fruit doesn't exist in the list add the fruit to the list and print the modified list. If the fruit exists print('That fruit already exist in the list') 
-7. Here we have a person dictionary. Feel free to modify it!
+    ### Exercises: Level 3
+    7. Here we have a person dictionary. Feel free to modify it!
     ```py
         person={
     'first_name': 'Asabeneh',
@@ -252,10 +257,11 @@ else:
     }
     }
     ```
-        * Check if the person dictionary has skills key, if so print out the middle skill in the skills list.
-        * Check if the person dictionary has skills key, if so check if the person has 'Python' skill and print out the result.
-        * If a person skills has only JavaScript and React, print('He is a front end developer'), if the person skills has Node, Python, MongoDB, print('He is a backend developer'), if the person skills has React, Node and MongoDB, Print('He is a fullstack developer'), else print('unknown title') - for more accurate results more conditions can be nested!
-        * If the person is married and if he lives in Finland, print the information in the following format:
+
+     * Check if the person dictionary has skills key, if so print out the middle skill in the skills list.
+     * Check if the person dictionary has skills key, if so check if the person has 'Python' skill and print out the result.
+     * If a person skills has only JavaScript and React, print('He is a front end developer'), if the person skills has Node, Python, MongoDB, print('He is a backend developer'), if the person skills has React, Node and MongoDB, Print('He is a fullstack developer'), else print('unknown title') - for more accurate results more conditions can be nested!
+     * If the person is married and if he lives in Finland, print the information in the following format:
     ```py
         Asabeneh Yetayeh lives in Finland. He is married.
     ```
