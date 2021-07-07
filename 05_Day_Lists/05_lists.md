@@ -9,10 +9,9 @@
 
 <sub>Author:
 <a href="https://www.linkedin.com/in/asabeneh/" target="_blank">Asabeneh Yetayeh</a><br>
-<small> First Edition: Nov 22 - Dec 22, 2019</small>
+<small> Second Edition: July - 2021</small>
 </sub>
 
-</div>
 </div>
 
 [<< Day 4](../04_Day_Strings/04_strings.md) | [Day 6 >>](../06_Day_Tuples/06_tuples.md)
@@ -48,18 +47,18 @@
 
 ## Lists
 
-There are four collection data types in python :
+There are four collection data types in Python :
 
 - List: is a collection which is ordered and changeable(modifiable). Allows duplicate members.
 - Tuple: is a collection which is ordered and unchangeable or unmodifiable(immutable). Allows duplicate members.
-- Set: is a collection which is unordered, unindexed and unmodifiable, but you can add new items. No duplicate members.
+- Set: is a collection which is unordered, un-indexed and unmodifiable, but we can add new items to the set. Duplicate members are not allowed.
 - Dictionary: is a collection which is unordered, changeable(modifiable) and indexed. No duplicate members.
 
-A list is collection of different data types which is ordered and modifiable(mutable). A list can be empty or it may have different data type items or items
+A list is collection of different data types which is ordered and modifiable(mutable). A list can be empty or it may have different data type items.
 
 ### How to Create a List
 
-In python we can create lists in two ways:
+In Python we can create lists in two ways:
 
 - Using list built-in function
 
@@ -218,9 +217,9 @@ orange_and_lemon = fruits[::2] # here we used a 3rd argument, step. It will take
 ```py
 fruits = ['banana', 'orange', 'mango', 'lemon']
 all_fruits = fruits[-4:] # it returns all the fruits
-orange_and_mango = fruits[-3:-1] # it does not include the last index
-orange_mango_lemon = fruits[-3:] # this will give the same result as the one above
-reverse_fruits = fruits[::-1] # a negative step will take the list in reverse order
+orange_and_mango = fruits[-3:-1] # it does not include the last index,['orange', 'mango']
+orange_mango_lemon = fruits[-3:] # this will give starting from -3 to the end,['orange', 'mango', 'lemon']
+reverse_fruits = fruits[::-1] # a negative step will take the list in reverse order,['lemon', 'mango', 'orange', 'banana']
 ```
 
 ### Modifying Lists
@@ -240,6 +239,8 @@ print(fruits)        #  ['avocado', 'apple', 'mango', 'lime']
 
 ### Checking Items in a List
 
+Checking an item if it is a member of a list using *in* operator. See the example below.
+
 ```py
 fruits = ['banana', 'orange', 'mango', 'lemon']
 does_exist = 'banana' in fruits
@@ -250,7 +251,7 @@ print(does_exist)  # False
 
 ### Adding Items to a List
 
-To add item to the end of an existing list we use the method
+To add item to the end of an existing list we use the method *append()*.
 
 ```py
 # syntax
@@ -268,7 +269,7 @@ print(fruits)
 
 ### Inserting Items into a List
 
-Use insert() method to insert a single item at a specified index in a list. Note that other items are shifted to the right.
+We can use *insert()* method to insert a single item at a specified index in a list. Note that other items are shifted to the right. The *insert()* methods takes two arguments:index and an item to insert.
 
 ```py
 # syntax
@@ -297,14 +298,14 @@ lst.remove(item)
 ```py
 fruits = ['banana', 'orange', 'mango', 'lemon', 'banana']
 fruits.remove('banana')
-print(fruits)  # ['orange', 'mango', 'lemon', 'banana'] - this method removes the first occurence of the item in the list
+print(fruits)  # ['orange', 'mango', 'lemon', 'banana'] - this method removes the first occurrence of the item in the list
 fruits.remove('lemon')
 print(fruits)  # ['orange', 'mango', 'banana']
 ```
 
 ### Removing Items Using Pop
 
-The pop() method removes the specified index, (or the last item if index is not specified):
+The *pop()* method removes the specified index, (or the last item if index is not specified):
 
 ```py
 # syntax
@@ -324,7 +325,7 @@ print(fruits)       # ['orange', 'mango']
 
 ### Removing Items Using Del
 
-The del keyword removes the specified index and it can also be used to delete items within index range. It can also delete the list completely
+The *del* keyword removes the specified index and it can also be used to delete items within index range. It can also delete the list completely
 
 ```py
 # syntax
@@ -347,7 +348,7 @@ print(fruits)       # This should give: NameError: name 'fruits' is not defined
 
 ### Clearing List Items
 
-The clear() method empties the list:
+The *clear()* method empties the list:
 
 ```py
 # syntax
@@ -363,7 +364,7 @@ print(fruits)       # []
 
 ### Copying a List
 
-It is possible to copy a list by reassigning it to a new variable in the following way: list2 = list1. Now, list2 is a reference of list1, any changes we make in list2 will also modify the original, list2. But there are lots of case in which we do not like to modify the original instead we like to have a different copy. One of way avoid the problem above is using _copy()_.
+It is possible to copy a list by reassigning it to a new variable in the following way: list2 = list1. Now, list2 is a reference of list1, any changes we make in list2 will also modify the original, list2. But there are lots of case in which we do not like to modify the original instead we like to have a different copy. One of way of avoiding the problem above is using _copy()_.
 
 ```py
 # syntax
@@ -393,21 +394,15 @@ positive_numbers = [1, 2, 3, 4, 5]
 zero = [0]
 negative_numbers = [-5,-4,-3,-2,-1]
 integers = negative_numbers + zero + positive_numbers
-print(integers)
+print(integers) # [-5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5]
 fruits = ['banana', 'orange', 'mango', 'lemon']
 vegetables = ['Tomato', 'Potato', 'Cabbage', 'Onion', 'Carrot']
 fruits_and_vegetables = fruits + vegetables
-print(fruits_and_vegetables )
-
-```
-
-```py
-# output
-[-5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5]
-['banana', 'orange', 'mango', 'lemon', 'Tomato', 'Potato', 'Cabbage', 'Onion', 'Carrot']
+print(fruits_and_vegetables ) # ['banana', 'orange', 'mango', 'lemon', 'Tomato', 'Potato', 'Cabbage', 'Onion', 'Carrot']
 ```
 
 - Joining using extend() method
+  The *extend()* method allows to append list in a list. See the example below.
 
 ```py
 # syntax
@@ -418,32 +413,25 @@ list1.extend(list2)
 
 ```py
 num1 = [0, 1, 2, 3]
-num2= [4, 5,6]
+num2= [4, 5, 6]
 num1.extend(num2)
-print('Numbers:', num1)
+print('Numbers:', num1) # Numbers: [0, 1, 2, 3, 4, 5, 6]
 negative_numbers = [-5,-4,-3,-2,-1]
 positive_numbers = [1, 2, 3,4,5]
 zero = [0]
 
 negative_numbers.extend(zero)
 negative_numbers.extend(positive_numbers)
-print('Integers:', negative_numbers)
+print('Integers:', negative_numbers) # Integers: [-5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5]
 fruits = ['banana', 'orange', 'mango', 'lemon']
 vegetables = ['Tomato', 'Potato', 'Cabbage', 'Onion', 'Carrot']
 fruits.extend(vegetables)
-print('Fruits and vegetables:', fruits )
-
-```
-
-```py
-Numbers: [0, 1, 2, 3, 4, 5, 6]
-Integers: [-5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5]
-Fruits and vegetables: ['banana', 'orange', 'mango', 'lemon', 'Tomato', 'Potato', 'Cabbage', 'Onion', 'Carrot']
+print('Fruits and vegetables:', fruits ) # Fruits and vegetables: ['banana', 'orange', 'mango', 'lemon', 'Tomato', 'Potato', 'Cabbage', 'Onion', 'Carrot']
 ```
 
 ### Counting Items in a List
 
-The count() method returns the number of times an item appears in a list:
+The *count()* method returns the number of times an item appears in a list:
 
 ```py
 # syntax
@@ -460,7 +448,7 @@ print(ages.count(24))           # 3
 
 ### Finding Index of an Item
 
-The index() method returns the index of an item in the list:
+The *index()* method returns the index of an item in the list:
 
 ```py
 # syntax
@@ -477,7 +465,7 @@ print(ages.index(24))           # 2, the first occurrence
 
 ### Reversing a List
 
-The reverse() method reverses the order of a list.
+The *reverse()* method reverses the order of a list.
 
 ```py
 # syntax
@@ -489,15 +477,10 @@ lst.reverse()
 ```py
 fruits = ['banana', 'orange', 'mango', 'lemon']
 fruits.reverse()
-print(fruits.reverse())
+print(fruits.reverse()) # ['lemon', 'mango', 'orange', 'banana']
 ages = [22, 19, 24, 25, 26, 24, 25, 24]
 ages.reverse()
-print(ages.reverse())
-```
-
-```py
-['lemon', 'mango', 'orange', 'banana']
-[24, 25, 24, 26, 25, 24, 19, 22]
+print(ages.reverse()) # [24, 25, 24, 26, 25, 24, 19, 22]
 ```
 
 ### Sorting List Items
@@ -518,36 +501,30 @@ To sort lists we can use _sort()_ method or _sorted()_ built-in functions. The _
   ```py
   fruits = ['banana', 'orange', 'mango', 'lemon']
   fruits.sort()
-  print(fruits)             # sorted in alphabetical order
+  print(fruits)             # sorted in alphabetical order, ['banana', 'lemon', 'mango', 'orange']
   fruits.sort(reverse=True)
-  print(fruits)
+  print(fruits) # ['orange', 'mango', 'lemon', 'banana']
   ages = [22, 19, 24, 25, 26, 24, 25, 24]
   ages.sort()
-  print(ages)
+  print(ages) #  [19, 22, 24, 24, 24, 25, 25, 26]
+ 
   ages.sort(reverse=True)
-  print(ages)
+  print(ages) #  [26, 25, 25, 24, 24, 24, 22, 19]
   ```
 
-  ```sh
-  ['banana', 'lemon', 'mango', 'orange']
-  ['orange', 'mango', 'lemon', 'banana']
-  [19, 22, 24, 24, 24, 25, 25, 26]
-  [26, 25, 25, 24, 24, 24, 22, 19]
-  ```
-
-  sorted(): returns the ordered list without modifying the original
+  sorted(): returns the ordered list without modifying the original list
   **Example:**
 
   ```py
   fruits = ['banana', 'orange', 'mango', 'lemon']
-  print(sorted(fruits))     # ['banana', 'lemon', 'mango', 'orange']
+  print(sorted(fruits))   # ['banana', 'lemon', 'mango', 'orange']
   # Reverse order
   fruits = ['banana', 'orange', 'mango', 'lemon']
   fruits = sorted(fruits,reverse=True)
   print(fruits)     # ['orange', 'mango', 'lemon', 'banana']
   ```
 
-🌕 You are diligent and you have already achieved quite a lot. You have just completed day 5 challenges and you are 5 steps a head in to your way to greatness. Now do some exercises for your brain and for your muscle.
+🌕 You are diligent and you have already achieved quite a lot. You have just completed day 5 challenges and you are 5 steps a head in to your way to greatness. Now do some exercises for your brain and muscles.
 
 ## 💻 Exercises: Day 5
 

@@ -336,8 +336,8 @@ print(challenge.find('th')) # 0
 
 ```py
 challenge = 'thirty days of python'
-print(challenge.find('y'))  # 5
-print(challenge.find('th')) # 1
+print(challenge.rfind('y'))  # 5
+print(challenge.rfind('th')) # 1
 ```
 
 - format(): formats string into a nicer output  
@@ -414,7 +414,7 @@ print(challenge.isdecimal())  # True
 challenge = '\u00B2'
 print(challenge.isdigit())   # False
 challenge = '12 3'
-print(challenge.isdecimal())  # False, no space allowed
+print(challenge.isdecimal())  # False, space not allowed
 ```
 
 - isdigit(): Checks if all characters in a string are numbers (0-9 and some other unicode characters for numbers)
