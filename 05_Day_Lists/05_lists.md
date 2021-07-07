@@ -209,7 +209,7 @@ all_fruits = fruits[0:4] # it returns all the fruits
 all_fruits = fruits[0:] # if we don't set where to stop it takes all the rest
 orange_and_mango = fruits[1:3] # it does not include the first index
 orange_mango_lemon = fruits[1:]
-orange_and_lemon = fruits[::2] # here we used a 3rd argument, step. It will take every 2cnd item - ['orange', 'lemon']
+orange_and_lemon = fruits[::2] # here we used a 3rd argument, step. It will take every 2cnd item - ['banana', 'mango']
 ```
 
 - Negative Indexing: We can specify a range of negative indexes by specifying the start, end and step, the return value will be a new list.
@@ -477,10 +477,10 @@ lst.reverse()
 ```py
 fruits = ['banana', 'orange', 'mango', 'lemon']
 fruits.reverse()
-print(fruits.reverse()) # ['lemon', 'mango', 'orange', 'banana']
+print(fruits) # ['lemon', 'mango', 'orange', 'banana']
 ages = [22, 19, 24, 25, 26, 24, 25, 24]
 ages.reverse()
-print(ages.reverse()) # [24, 25, 24, 26, 25, 24, 19, 22]
+print(ages) # [24, 25, 24, 26, 25, 24, 19, 22]
 ```
 
 ### Sorting List Items

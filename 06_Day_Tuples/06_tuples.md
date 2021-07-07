@@ -9,10 +9,9 @@
 
 <sub>Author:
 <a href="https://www.linkedin.com/in/asabeneh/" target="_blank">Asabeneh Yetayeh</a><br>
-<small> First Edition: Nov 22 - Dec 22, 2019</small>
+<small> Second Edition: July, 2021</small>
 </sub>
 
-</div>
 </div>
 
 [<< Day 5](../05_Day_Lists/05_lists.md) | [Day 7 >>](../07_Day_Sets/07_sets.md)
@@ -26,7 +25,7 @@
     - [Accessing Tuple Items](#accessing-tuple-items)
     - [Slicing tuples](#slicing-tuples)
     - [Changing Tuples to Lists](#changing-tuples-to-lists)
-    - [Checking an Item in a List](#checking-an-item-in-a-list)
+    - [Checking an Item in a Tuple](#checking-an-item-in-a-tuple)
     - [Joining Tuples](#joining-tuples)
     - [Deleting Tuples](#deleting-tuples)
   - [💻 Exercises: Day 6](#-exercises-day-6)
@@ -115,7 +114,7 @@ len(tpl)
 
 ### Slicing tuples
 
-We can slice out a subtuple by specifying a range of indexes where to start and where to end in the tuple, the return value will be a new tuple with the specified items.
+We can slice out a sub-tuple by specifying a range of indexes where to start and where to end in the tuple, the return value will be a new tuple with the specified items.
 
 - Range of Positive Indexes
 
@@ -170,9 +169,9 @@ fruits = tuple(fruits)
 print(fruits)     # ('apple', 'orange', 'mango', 'lemon')
 ```
 
-### Checking an Item in a List
+### Checking an Item in a Tuple
 
-We can check if an item exists or not in a list using _in_, it returns a boolean.
+We can check if an item exists or not in a tuple using _in_, it returns a boolean.
 
 ```py
 # Syntax
