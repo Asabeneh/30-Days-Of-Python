@@ -359,7 +359,7 @@ result = 'The area of a circle with radius {} is {}'.format(str(radius), str(are
 print(result) # The area of a circle with radius 10 is 314
 ```
 
-- index(): Returns the lowest index of a substring, additional arguments indicate starting and ending index (default 0 and string length - 1)
+- index(): Returns the lowest index of a substring, additional arguments indicate starting and ending index (default 0 and string length - 1). If the substring is not found it raises a valueError. 
 
 ```py
 challenge = 'thirty days of python'
