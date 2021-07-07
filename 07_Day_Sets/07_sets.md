@@ -9,10 +9,9 @@
 
 <sub>Author:
 <a href="https://www.linkedin.com/in/asabeneh/" target="_blank">Asabeneh Yetayeh</a><br>
-<small> First Edition: Nov 22 - Dec 22, 2019</small>
+<small> Second Edition: July, 2021</small>
 </sub>
 
-</div>
 </div>
 
 [<< Day 6](../06_Day_Tuples/06_tuples.md) | [Day 8 >>](../08_Day_Dictionaries/08_dictionaries.md)
@@ -37,16 +36,19 @@
     - [Finding Symmetric Difference Between Two Sets](#finding-symmetric-difference-between-two-sets)
     - [Joining Sets](#joining-sets-1)
   - [💻 Exercises: Day 7](#-exercises-day-7)
+    - [Exercises: Level 1](#exercises-level-1)
+    - [Exercises: Level 2](#exercises-level-2)
+    - [Exercises: Level 3](#exercises-level-3)
 
 # 📘 Day 7
 
 ## Sets
 
-Let me take you back to your elementary or high school Mathematics lesson. The Mathematics definition of a set can be applied also in python. Set is a collection of unordered and unindexed distinct elements. In python set is used to store unique items, and it is possible to find the _union_, _intersection_, _difference_, _symmetric difference_, _subset_, _super set_ and _disjoint set_ among sets.
+Set is a collection of items. Let me take you back to your elementary or high school Mathematics lesson. The Mathematics definition of a set can be applied also in Python. Set is a collection of unordered and un-indexed distinct elements. In Python set is used to store unique items, and it is possible to find the _union_, _intersection_, _difference_, _symmetric difference_, _subset_, _super set_ and _disjoint set_ among sets.
 
 ### Creating a Set
 
-We use curly brackets, {} to create a set.
+We use curly brackets, {} to create a set or the *set()* built-in function.
 
 - Creating an empty set
 
@@ -94,7 +96,7 @@ We use loops to access items. We will see this in loop section
 
 ### Checking an Item
 
-To check if an item exist in a list use use _in_.
+To check if an item exist in a list we use _in_ membership operator.
 
 ```py
 # syntax
@@ -106,12 +108,12 @@ print("Does set st contain item3? ", 'item3' in st) # Does set st contain item3?
 
 ```py
 fruits = {'banana', 'orange', 'mango', 'lemon'}
-'mango' in fruits
+print('mango' in fruits ) # True
 ```
 
 ### Adding Items to a Set
 
-Once a set is created we cannot change any items but we can add additional ones.
+Once a set is created we cannot change any items and we can also add additional items.
 
 - Add one item using _add()_
 
@@ -129,6 +131,7 @@ fruits.add('lime')
 ```
 
 - Add multiple items using _update()_
+  The *update()* allows to add multiple items to a set. The *update()* takes a list argument.
 
 ```py
 # syntax
@@ -186,7 +189,7 @@ If we want to delete the set itself we use _del_ operator.
 ```py
 # syntax
 st = {'item1', 'item2', 'item3', 'item4'}
-del set
+del st
 ```
 
 **Example:**
@@ -198,7 +201,7 @@ del fruits
 
 ### Converting List to Set
 
-We can convert list to set and set to list back. Converting list to set removes duplicates and only unique items will be reserved.
+We can convert list to set and set to list. Converting list to set removes duplicates and only unique items will be reserved.
 
 ```py
 # syntax
@@ -338,7 +341,7 @@ It returns the the symmetric difference between two sets. It means that it retur
 # syntax
 st1 = {'item1', 'item2', 'item3', 'item4'}
 st2 = {'item2', 'item3'}
-# it means (A\B)∪(B)
+# it means (A\B)∪(B\A)
 st2.symmetric_difference(st1) # {'item1', 'item4'}
 ```
 
@@ -377,7 +380,7 @@ dragon = {'d', 'r', 'a', 'g', 'o','n'}
 python.isdisjoint(dragon)  # False, there are common items {'o', 'n'}
 ```
 
-🌕 You are a rising star . You have just completed day 7 challenges and you are 7 steps ahead in to your way to greatness. Now do some exercises for your brain and for your muscle.
+🌕 You are a rising star . You have just completed day 7 challenges and you are 7 steps ahead in to your way to greatness. Now do some exercises for your brain and muscles.
 
 ## 💻 Exercises: Day 7
 
@@ -389,21 +392,30 @@ B = {19, 22, 20, 25, 26, 24, 28, 27}
 age = [22, 19, 24, 25, 26, 24, 25, 24]
 ```
 
+### Exercises: Level 1
+
 1. Find the length of the set it_companies
 2. Add 'Twitter' to it_companies
 3. Insert multiple IT companies at once to the set it_companies
 4. Remove one of the companies from the set it_companies
 5. What is the difference between remove and discard
-6. Join A and B
-7. Find A intersection B
-8. Is A subset of B
-9. Are A and B disjoint sets
-10. Join A with B and B with A
-11. What is the symmetric difference between A and B
-12. Delete the sets completely
-13. Convert the ages to a set and compare the length of the list and the set, which one is bigger?
-14. Explain the difference between the following data types: string, list, tuple and set
-15. _I am a teacher and I love to inspire and teach people._ How many unique words have been used in the sentence? You did not learn loops yet you can do it manually.
+
+### Exercises: Level 2
+
+1. Join A and B
+1. Find A intersection B
+1. Is A subset of B
+1. Are A and B disjoint sets
+1. Join A with B and B with A
+1. What is the symmetric difference between A and B
+1. Delete the sets completely
+
+### Exercises: Level 3
+
+1. Convert the ages to a set and compare the length of the list and the set, which one is bigger?
+1. Explain the difference between the following data types: string, list, tuple and set
+2. _I am a teacher and I love to inspire and teach people._ How many unique words have been used in the sentence? Use the split methods and set to get the unique words.
+
 
 🎉 CONGRATULATIONS ! 🎉
 
