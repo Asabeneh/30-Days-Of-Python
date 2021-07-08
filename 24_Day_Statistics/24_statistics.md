@@ -1182,7 +1182,7 @@ np_arr + 2
 
 array([ 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12])
 
-We use linear equation for quatities which have linear relationship. Let's see the example below:
+We use linear equation for quantities which have linear relationship. Let's see the example below:
 
 ```python
 temp = np.array([1,2,3,4,5])
