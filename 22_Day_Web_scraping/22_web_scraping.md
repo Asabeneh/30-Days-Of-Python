@@ -9,10 +9,8 @@
 
 <sub>Author:
 <a href="https://www.linkedin.com/in/asabeneh/" target="_blank">Asabeneh Yetayeh</a><br>
-<small> First Edition: Nov 22 - Dec 22, 2019</small>
+<small> Second Edition: July, 2021</small>
 </sub>
-
-</div>
 </div>
 
 [<< Day 21](../21_Day_Classes_and_objects/21_classes_and_objects.md) | [Day 23 >>](../23_Day_Virtual_environment/23_virtual_environment.md)
@@ -36,28 +34,28 @@ Web scraping is the process of extracting and collecting data from websites and 
 
 In this section, we will use beautifulsoup and requests package to scrape data. The package version we are using is beautifulsoup 4.
 
-To start scraping websites you need _requests_, _beautifoulSoup4_ and _website_.
+To start scraping websites you need _requests_, _beautifoulSoup4_ and a _website_.
 
 ```sh
 pip install requests
 pip install beautifulsoup4
 ```
 
-To scrape data from websites, basic understanding of HTML tags and css selectors is needed. We target content from a website using HTML tags, classes or/and ids.
-Let's import the requests and BeautifulSoup module
+To scrape data from websites, basic understanding of HTML tags and CSS selectors is needed. We target content from a website using HTML tags, classes or/and ids.
+Let us import the requests and BeautifulSoup module
 
 ```py
 import requests
 from bs4 import BeautifulSoup
 ```
 
-Let's declare url variable for the website which we are going to scrape.
+Let us declare url variable for the website which we are going to scrape.
 
 ```py
 
 import requests
 from bs4 import BeautifulSoup
-url = 'http://mlr.cs.umass.edu/ml/datasets.html'
+url = 'https://archive.ics.uci.edu/ml/datasets.php'
 
 # Lets use the requests get method to fetch the data from url
 
@@ -76,7 +74,7 @@ Using beautifulSoup to parse content from the page
 ```py
 import requests
 from bs4 import BeautifulSoup
-url = 'http://mlr.cs.umass.edu/ml/datasets.html'
+url = 'https://archive.ics.uci.edu/ml/datasets.php'
 
 response = requests.get(url)
 content = response.content # we get all the content from the website
@@ -97,12 +95,13 @@ for td in table.find('tr').find_all('td'):
 If you run this code, you can see that the extraction is half done. You can continue doing it because it is part of exercise 1.
 For reference check the [beautifulsoup documentation](https://www.crummy.com/software/BeautifulSoup/bs4/doc/#quick-start)
 
-🌕 You are so special, you are progressing everyday.You are left with only eight days to your way to greatness. Now do some exercises for your brain and for your muscle.
+🌕 You are so special, you are progressing everyday. You are left with only eight days to your way to greatness. Now do some exercises for your brain and muscles.
 
 ## 💻 Exercises: Day 22
 
-1. Extract the table in this url (http://mlr.cs.umass.edu/ml/datasets.html) and change it to a json file
-2. Scrape the presidents table and store the data as json(https://en.wikipedia.org/wiki/List_of_presidents_of_the_United_States)
+1. Scrape the following website and store the data as json file(url = 'http://www.bu.edu/president/boston-university-facts-stats/').
+1. Extract the table in this url (https://archive.ics.uci.edu/ml/datasets.php) and change it to a json file
+2. Scrape the presidents table and store the data as json(https://en.wikipedia.org/wiki/List_of_presidents_of_the_United_States). The table is not very structured and the scrapping may take very long time.
 
 🎉 CONGRATULATIONS ! 🎉
 
