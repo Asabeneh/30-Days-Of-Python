@@ -157,12 +157,23 @@ st = {'item1', 'item2', 'item3', 'item4'}
 st.remove('item2')
 ```
 
+The pop() methods remove a random item from a list and it returns the removed item.
+
 **Example:**
 
 ```py
 fruits = {'banana', 'orange', 'mango', 'lemon'}
-fruits.pop()  # removes the last element from the set
+fruits.pop()  # removes a random item from the set
+
 ```
+
+If we are interested in the removed item.
+
+```py
+fruits = {'banana', 'orange', 'mango', 'lemon'}
+removed_item = fruits.pop() 
+```
+
 
 ### Clearing Items in a Set
 
