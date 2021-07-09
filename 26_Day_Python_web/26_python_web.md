@@ -9,7 +9,7 @@
 
   <sub>Author:
   <a href="https://www.linkedin.com/in/asabeneh/" target="_blank">Asabeneh Yetayeh</a><br>
-  <small> First Edition: Nov 22 - Dec 22, 2019</small>
+  <small>Second Edition: July, 2021</small>
   </sub>
 </div>
 </div>
@@ -28,6 +28,7 @@
     - [Python Script](#python-script)
     - [Navigation](#navigation)
     - [Creating a layout](#creating-a-layout)
+      - [Serving Static File](#serving-static-file)
     - [Deployment](#deployment)
       - [Creating Heroku account](#creating-heroku-account)
       - [Login to Heroku](#login-to-heroku)
@@ -39,16 +40,17 @@
 
 ## Python for Web
 
-Python is a general purpose programming language and it can be used for many places. In this section, we will see how we use python for the web. There are many python web frame works. Django and Flask are the most popular ones. Today, we will see how to use Flask for web development.
+Python is a general purpose programming language and it can be used for many places. In this section, we will see how we use Python for the web. There are many Python web frame works. Django and Flask are the most popular ones. Today, we will see how to use Flask for web development.
 
 ### Flask
 
-Flask is a web development framework written in python. Flask uses Jinja2 template engine. Flask can be also used with other modern frond libraries such as react.
-If you did not install the virtualenv package yet install it first. Virtual environment will allows to isolate project dependencies.
+Flask is a web development framework written in Python. Flask uses Jinja2 template engine. Flask can be also used with other modern front libraries such as React.
+
+If you did not install the virtualenv package yet install it first. Virtual environment will allows to isolate project dependencies from the local machine dependencies.
 
 #### Folder structure
 
-After completing all the step your project file structure should look like this:
+After completing all the step, your project file structure should look like this:
 
 ```sh
 
@@ -70,7 +72,8 @@ After completing all the step your project file structure should look like this:
 
 ### Setting up your project directory
 
-Follow, the following steps to get started with Flask.
+Follow the following steps to get started with Flask.
+
 Step 1: install virtualenv using the following command.
 
 ```sh
@@ -82,8 +85,8 @@ Step 2:
 ```sh
 asabeneh@Asabeneh:~/Desktop$ mkdir python_for_web
 asabeneh@Asabeneh:~/Desktop$ cd python_for_web/
-asabeneh@Asabeneh:~/Desktop/python_for_web$ virtualenv env
-asabeneh@Asabeneh:~/Desktop/python_for_web$ source env/bin/activate
+asabeneh@Asabeneh:~/Desktop/python_for_web$ virtualenv venv
+asabeneh@Asabeneh:~/Desktop/python_for_web$ source venv/bin/activate
 (env) asabeneh@Asabeneh:~/Desktop/python_for_web$ pip freeze
 (env) asabeneh@Asabeneh:~/Desktop/python_for_web$ pip install Flask
 (env) asabeneh@Asabeneh:~/Desktop/python_for_web$ pip freeze
@@ -96,7 +99,7 @@ Werkzeug==0.16.0
 (env) asabeneh@Asabeneh:~/Desktop/python_for_web$
 ```
 
-We created a project director named python*for_web. Inside the project we created a virtual environment \_env* which could be any name but I prefer to call it _env_. Then we activated the virtual environment. We used pip freeze to check the installed packages in the project directory. The result of pip freeze was empty because a package was not installed yet.
+We created a project director named python_for_web. Inside the project we created a virtual environment *venv* which could be any name but I prefer to call it _venv_. Then we activated the virtual environment. We used pip freeze to check the installed packages in the project directory. The result of pip freeze was empty because a package was not installed yet.
 
 Now, let's create app.py file in the project directory and write the following code. The app.py file will be the main file in the project. The following code has flask module, os module.
 
@@ -127,9 +130,11 @@ if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0', port=port)
 ```
 
+To run the flask application, write python app.py in the main flask application directory.
+
 After you run _python app.py_ check local host 5000.
 
-Let's add additional route.
+Let us add additional route.
 Creating about route
 
 ```py
@@ -154,7 +159,7 @@ if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0', port=port)
 ```
 
-Now, we added the about route in the above code. How about if we want to render an HTML file instead of string? It is possible to render HTML file using the function _render_templae_. Let's create a folder called templates and create home.html and about.html in the project directory. Let's also import the _render_template_ function from flask.
+Now, we added the about route in the above code. How about if we want to render an HTML file instead of string? It is possible to render HTML file using the function *render_templae*. Let us create a folder called templates and create home.html and about.html in the project directory. Let us also import the *render_template* function from flask.
 
 ### Creating templates
 
@@ -231,7 +236,7 @@ As you can see to go to different pages or to navigate we need a navigation. Let
 </ul>
 ```
 
-Now, we can navigate between the pages using the above link. Let's create additional page which handle form data. You can call it any name, I like to call it post.html.
+Now, we can navigate between the pages using the above link. Let us create additional page which handle form data. You can call it any name, I like to call it post.html.
 
 We can inject data to the HTML files using Jinja2 template engine.
 
@@ -285,11 +290,11 @@ home.html
       <li><a href="/about">About</a></li>
     </ul>
     <h1>Welcome to {{name}}</h1>
+     <ul>
     {% for tech in techs %}
-    <ul>
       <li>{{tech}}</li>
-    </ul>
     {% endfor %}
+    </ul>
   </body>
 </html>
 ```
@@ -320,6 +325,10 @@ about.html
 
 In the template files, there are lots of repeated codes, we can write a layout and we can remove the repetition. Let's create layout.html inside the templates folder.
 After we create the layout we will import to every file.
+
+#### Serving Static File
+
+Create a static folder in your project directory. Inside the static folder create CSS or styles folder and create a CSS stylesheet. We use the *url_for* module to serve the static file. 
 
 layout.html
 
@@ -429,7 +438,7 @@ post.html
 {% endblock %}
 ```
 
-Request methods, there are different request methods(GET, POST, PUT, DELETE) are the common request methods which allow us to do CRUD(Create Read Update Delete) operation.
+Request methods, there are different request methods(GET, POST, PUT, DELETE) are the common request methods which allow us to do CRUD(Create, Read, Update, Delete) operation.
 
 In the post, route we will use GET and POST method alternative depending on the type of request, check how it looks in the code below. The request method is a function to handle request methods and also to access form data.
 app.py

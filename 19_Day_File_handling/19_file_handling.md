@@ -197,10 +197,10 @@ If the file does not exist, the remove method will raise an error, so it is good
 
 ```py
 import os
-if os.path.exist('./files/example.txt'):
+if os.path.exists('./files/example.txt'):
     os.remove('./files/example.txt')
 else:
-    os.remove('The file does not exist')
+    print('The file does not exist')
 ```
 
 ## File Types
@@ -509,9 +509,8 @@ field: skills
    a) Count the number of lines containing python or Python
    b) Count the number lines containing JavaScript, javascript or Javascript
    c) Count the number lines containing Java and not JavaScript
-   
-### Exercises: Level 3
 
+### Exercises: Level 3
 
 🎉 CONGRATULATIONS ! 🎉
 
