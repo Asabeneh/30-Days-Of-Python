@@ -8,15 +8,11 @@
   </a>
 <sub>Author:
 <a href="https://www.linkedin.com/in/asabeneh/" target="_blank">Asabeneh Yetayeh</a><br>
-<small> First Edition: Nov 22 - Dec 22, 2019</small>
+<small>Second Edition: July, 2021</small>
 </sub>
-</div>
 <div>
 
 <small>Support [**Asabeneh**](https://www.patreon.com/asabeneh?fan_landing=true) to create more educational materials</small>  
-[<img src = '../images/become_patreon.png' alt='become-asabeneh-patreon' title='click' />](https://www.patreon.com/asabeneh?fan_landing=true) 
- 
-</div>
 
 [<< Day 29](../29_Day_Building_API/29_building_API.md)
 ![30DaysOfPython](../images/30DaysOfPython_banner3@2x.png)
