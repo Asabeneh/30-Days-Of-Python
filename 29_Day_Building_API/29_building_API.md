@@ -47,7 +47,7 @@ Examples of API
 
 [Postman](https://www.getpostman.com/) is a very popular tool when it comes to API development. So, if you like to do this section you need to [download postman](https://www.getpostman.com/). An alternative of Postman is [Insomnia](https://insomnia.rest/download).
 
-![Postman](./images/postman.png)
+![Postman](../images/postman.png)
 
 ### Structure of an API
 
