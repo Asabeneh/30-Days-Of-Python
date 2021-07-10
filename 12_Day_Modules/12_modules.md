@@ -259,7 +259,7 @@ print(randint(5, 20)) # it returns a random integer number between [5, 20] inclu
 2. Modify the previous task. Declare a function named user_id_gen_by_user. It doesn’t take any parameters but it takes two inputs using input(). One of the inputs is the number of characters and the second input is the number of IDs which are supposed to be generated.
    
 ```py
-user_id_gen_by_user() # user input: 5 5
+print(user_id_gen_by_user()) # user input: 5 5
 #output:
 #kcsy2
 #SMFYb
@@ -267,7 +267,7 @@ user_id_gen_by_user() # user input: 5 5
 #ZXOYh
 #2Rgxf
    
-user_id_gen_by_user() # 16 5
+print(user_id_gen_by_user()) # 16 5
 #1GCSgPLMaBAVQZ26
 #YD7eFwNQKNs7qXaT
 #ycArC5yrRupyG00S
