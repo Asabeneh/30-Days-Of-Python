@@ -10,9 +10,9 @@
 <a href="https://www.linkedin.com/in/asabeneh/" target="_blank">Asabeneh Yetayeh</a><br>
 <small>Second Edition: July, 2021</small>
 </sub>
+
 <div>
 
-<small>Support [**Asabeneh**](https://www.patreon.com/asabeneh?fan_landing=true) to create more educational materials</small>  
 
 [<< Day 29](../29_Day_Building_API/29_building_API.md)
 ![30DaysOfPython](../images/30DaysOfPython_banner3@2x.png)
