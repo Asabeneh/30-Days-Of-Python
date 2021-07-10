@@ -9,7 +9,7 @@
 
 <sub>Author:
 <a href="https://www.linkedin.com/in/asabeneh/" target="_blank">Asabeneh Yetayeh</a><br>
-<small> First Edition: Nov 22 - Dec 22, 2019</small>
+<small>Second Edition: July, 2021</small>
 </sub>
 
 </div>
@@ -33,12 +33,20 @@
 
 ## Building API
 
-An example [API](https://restcountries.eu/rest/v2/all).
+
 In this section, we will cove a RESTful API that uses HTTP request methods to GET, PUT, POST and DELETE data.
 
 RESTful API is an application program interface (API) that uses HTTP requests to GET, PUT, POST and DELETE data. In the previous sections, we have learned about python, flask and mongoDB. We will use the knowledge we acquire to develop a RESTful API using python flask and mongoDB. Every application which has CRUD(Create, Read, Update, Delete) operation has an API to create data, to get data, to update data or to delete data from database.
 
-The browser can handle only get request. Therefore, we have to have a tool which can help us to handle all request methods(GET, POST, PUT, DELETE). [Postman](https://www.getpostman.com/) is a very popular tool when it comes to API development. So, if you like to do this section you need to [download postman](https://www.getpostman.com/)
+The browser can handle only get request. Therefore, we have to have a tool which can help us to handle all request methods(GET, POST, PUT, DELETE).
+
+Examples of API
+
+- Countries API: https://restcountries.eu/rest/v2/all
+- Cats breed API: https://api.thecatapi.com/v1/breeds
+
+[Postman](https://www.getpostman.com/) is a very popular tool when it comes to API development. So, if you like to do this section you need to [download postman](https://www.getpostman.com/). An alternative of Postman is [Insomnia](https://insomnia.rest/download).
+
 ![Postman](./images/postman.png)
 
 ### Structure of an API
@@ -60,7 +68,7 @@ PUT        Used for object update
 DELETE     Used for object deletion
 ```
 
-Let's build an api which collects information about 30DaysOfPython students. We will collect the name, country, city, date of birth, skills and bio.
+Let us build an API which collects information about 30DaysOfPython students. We will collect the name, country, city, date of birth, skills and bio.
 
 To implement this API, we will use:
 
@@ -71,7 +79,7 @@ To implement this API, we will use:
 
 ### Retrieving data using get
 
-In this step, let's use dummy data and return it as a json. To return it as json, will use json module and Response module.
+In this step, let us use dummy data and return it as a json. To return it as json, will use json module and Response module.
 
 ```py
 # let's import the flask
@@ -121,7 +129,7 @@ When you request the http://localhost:5000/api/v1.0/students url on the browser 
 
 ![Get on postman](../images/get_on_postman.png)
 
-In stead of displaying dummy data let's connect the flask application with MongoDB and let's get data from mongoDB database.
+In stead of displaying dummy data let us connect the flask application with MongoDB and get data from mongoDB database.
 
 ```py
 # let's import the flask

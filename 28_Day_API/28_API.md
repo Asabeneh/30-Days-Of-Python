@@ -159,4 +159,4 @@ The GET, POST, PUT and DELETE are the HTTP request methods which we are going to
 
 🎉 CONGRATULATIONS ! 🎉
 
-[<< Day 27](../27_Day_Python_with_mongodb/27_python_with_mongodb.md) | [Day 29 >>](../29_Day_Building_API/29_building_API.md))
+[<< Day 27](../27_Day_Python_with_mongodb/27_python_with_mongodb.md) | [Day 29 >>](../29_Day_Building_API/29_building_API.md)
