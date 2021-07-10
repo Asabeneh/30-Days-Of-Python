@@ -13,7 +13,6 @@
 </sub>
 
 </div>
-</div>
 
 [<< Day 28](../28_Day_API/28_API.md) | [Day 29 >>](../30_Day_Conclusions/30_conclusions.md)
 
