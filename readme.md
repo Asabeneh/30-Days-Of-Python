@@ -146,22 +146,14 @@ python
 ![Python Scripting Shell](./images/opening_python_shell.png)
 
 The Python interactive shell is opened and it is waiting for you to write Python code(Python script). You will write your Python script next to this symbol >>> and then click Enter.
+Let us write our very first script on the Python scripting shell.
 
-```py
-asabeneh@Asabeneh:~$ python --version
-Python 3.9.6
-```
+![Python script on Python shell](./images/adding_on_python_shell.png)
 
 Well done, you wrote your first Python script on Python interactive shell. How do we close the Python interactive shell ?
 To close the shell, next to this symbol >> write **exit()** command and press Enter.
 
-```py
-asabeneh@Asabeneh:~$ python
-Python 3.9.6 (default, Jun 28 2021, 15:26:21)
-[Clang 11.0.0 (clang-1100.0.33.8)] on darwin
-Type "help", "copyright", "credits" or "license" for more information.
->>> |
-```
+![Exit from python shell](./images/exit_from_shell.png)
 
 Now, you know how to open the Python interactive shell and how to exit from it.
 
