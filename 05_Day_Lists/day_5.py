@@ -31,7 +31,7 @@ print(last_fruit) # lemon
 last_index = len(fruits) - 1
 last_fruit = fruits[last_index]
 
-# Accessing itmes
+# Accessing items
 fruits = ['banana', 'orange', 'mango', 'lemon'] 
 last_fruit = fruits[-1]
 second_last = fruits[-2]
