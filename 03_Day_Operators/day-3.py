@@ -4,12 +4,12 @@
 print('Addition: ', 1 + 2)
 print('Subtraction: ', 2 - 1)
 print('Multiplication: ', 2 * 3)
-print ('Division: ', 4 / 2)                         # Division in python gives floating number
+print('Division: ', 4 / 2)                         # Division in python gives floating number
 print('Division: ', 6 / 2)
 print('Division: ', 7 / 2)
 print('Division without the remainder: ', 7 // 2)   # gives without the floating number or without the remaining
 print('Modulus: ', 3 % 2)                           # Gives the remainder
-print ('Division without the remainder: ',7 // 3)
+print('Division without the remainder: ',7 // 3)
 print('Exponential: ', 3 ** 2)                     # it means 3 * 3
 
 # Floating numbers
@@ -45,6 +45,7 @@ print('a // b = ', floor_division)
 print('a ** b = ', exponential)
 
 # Declaring values and organizing them together
+# Here underscores count as a character and giving space insead of underscore will result in error
 num_one = 3
 num_two = 4
 
@@ -80,6 +81,7 @@ gravity = 9.81
 weight = mass * gravity
 print(weight, 'N')
 
+#All of them will only give two results either True or False
 print(3 > 2)     # True, because 3 is greater than 2
 print(3 >= 2)    # True, because 3 is greater than 2
 print(3 < 2)     # False,  because 3 is greater than 2
@@ -87,6 +89,8 @@ print(2 < 3)     # True, because 2 is less than 3
 print(2 <= 3)    # True, because 2 is less than 3
 print(3 == 2)    # False, because 3 is not equal to 2
 print(3 != 2)    # True, because 3 is not equal to 2
+
+#Here len varibale gives the length of the argument and compare it to the next argument
 print(len('mango') == len('avocado'))  # False
 print(len('mango') != len('avocado'))  # True
 print(len('mango') < len('avocado'))   # True
