@@ -166,7 +166,7 @@ with open('./files/reading_file_example.txt') as f:
 
 To write to an existing file, we must add a mode as parameter to the _open()_ function:
 
-- "a" - append - will append to the end of the file, if the file does not it creates a new file.
+- "a" - append - will append to the end of the file, if the file does not exist it creates a new file.
 - "w" - write - will overwrite any existing content, if the file does not exist it creates.
 
 Let us append some text to the file we have been reading:
