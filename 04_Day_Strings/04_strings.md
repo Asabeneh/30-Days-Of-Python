@@ -529,7 +529,7 @@ challenge = '30 days of python'
 print(challenge.startswith('thirty')) # False
 ```
 
-🌕 You are an extraordinary person and you have a remarkable potential. You have just completed day 4 challenges and you are four steps a head in to your way to greatness. Now do some exercises for your brain and muscles.
+🌕 You are an extraordinary person and you have a remarkable potential. You have just completed day 4 challenges and you are four steps ahead into your way to greatness. Now do some exercises for your brain and muscles.
 
 ## 💻 Exercises - Day 4
 
