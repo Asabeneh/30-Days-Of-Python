@@ -346,7 +346,7 @@ dragon.difference(python)     # {'d', 'r', 'a', 'g'}
 
 ### Finding Symmetric Difference Between Two Sets
 
-It returns the the symmetric difference between two sets. It means that it returns a set that contains all items from both sets, except items that are present in both sets, mathematically: (A\B) ∪ (B\A)
+It returns the symmetric difference between two sets. It means that it returns a set that contains all items from both sets, except items that are present in both sets, mathematically: (A\B) ∪ (B\A)
 
 ```py
 # syntax
