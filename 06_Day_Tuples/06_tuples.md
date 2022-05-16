@@ -202,7 +202,7 @@ tpl3 = tpl1 + tpl2
 ```py
 fruits = ('banana', 'orange', 'mango', 'lemon')
 vegetables = ('Tomato', 'Potato', 'Cabbage','Onion', 'Carrot')
-fruits_and_vegetables = fruits + vegetables
+fruits_and_vegetables = fruits + vegetables # ('banana', 'orange', 'mango', 'lemon', 'Tomato', 'Potato', 'Cabbage','Onion', 'Carrot')
 ```
 
 ### Deleting Tuples
