@@ -223,7 +223,7 @@ two_dimensional_list = np.array([[0, 1, 2],
                               [6, 7, 8]])
 
 print('The size:', numpy_array_from_list.size) # 5
-print('The size:', two_dimensional_list.size)  # 3
+print('The size:', two_dimensional_list.size)  # 9
 
 ```
 
