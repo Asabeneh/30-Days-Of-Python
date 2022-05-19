@@ -666,7 +666,7 @@ flattened
            [2, 3, 3]])
 ```
 
-### Generationg random numbers
+### Generating random numbers
 
 ```py
     # np.random.normal(mu, sigma, size)
