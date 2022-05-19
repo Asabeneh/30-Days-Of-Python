@@ -241,7 +241,7 @@ Mathematical Operation:
 - Subtraction (-)
 - Multiplication (\*)
 - Division (/)
-- Modules (%)
+- Modulus (%)
 - Floor Division(//)
 - Exponential(\*\*)
 
