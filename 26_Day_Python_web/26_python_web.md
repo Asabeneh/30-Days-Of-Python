@@ -118,11 +118,6 @@ app = Flask(__name__)
 def home ():
     return '<h1>Welcome</h1>'
 
-@app.route('/about')
-def about():
-    return '<h1>About us</h1>'
-
-
 if __name__ == '__main__':
     # for deployment we use the environ
     # to make it work for both production and development
