@@ -62,7 +62,7 @@ print(second_last) # o
 # Slicing
 
 language = 'Python'
-first_three = language[0:3] # starts at zero index and up to 3 but not include 3
+first_three = language[:3]
 last_three = language[3:6]
 print(last_three) # hon
 # Another way
@@ -73,7 +73,7 @@ print(last_three)   # hon
 
 # Skipping character while splitting Python strings
 language = 'Python'
-pto = language[0:6:2] # 
+pto = language[:6:2]
 print(pto) # pto
 
 # Escape sequence
@@ -122,13 +122,13 @@ first_name = 'Asabeneh'
 last_name = 'Yetayeh'
 job = 'teacher'
 country = 'Finland'
-sentence = 'I am {} {}. I am a {}. I live in {}.'.format(first_name, last_name, job, country)
+sentence = f'I am {first_name} {last_name}. I am a {job}. I live in {country}.'
 print(sentence) # I am Asabeneh Yetayeh. I am a teacher. I live in Finland.
 
 radius = 10
 pi = 3.14
 area = pi # radius ## 2
-result = 'The area of circle with {} is {}'.format(str(radius), str(area))
+result = f'The area of circle with {radius} is {area}'
 print(result) # The area of circle with 10 is 314.0
 
 # index(): Returns the index of substring
@@ -234,7 +234,7 @@ challenge = 'thirty days of python'
 print(challenge.title()) # Thirty Days Of Python
 
 # swapcase(): Checks if String Starts with the Specified String
-  
+
 challenge = 'thirty days of python'
 print(challenge.swapcase())   # THIRTY DAYS OF PYTHON
 challenge = 'Thirty Days Of Python'

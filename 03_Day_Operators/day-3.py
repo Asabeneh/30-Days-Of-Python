@@ -30,8 +30,7 @@ total = a + b
 diff = a - b
 product = a * b
 division = a / b
-remainder = a % b
-floor_division = a // b
+floor_division, remainder = divmod(a, b)
 exponential = a ** b
 
 # I should have used sum instead of total but sum is a built-in function try to avoid overriding builtin functions
@@ -52,7 +51,7 @@ num_two = 4
 total = num_one + num_two
 diff = num_two - num_one
 product = num_one * num_two
-div = num_two / num_two
+div = 1
 remainder = num_two % num_one
 
 # Printing values with label
@@ -96,9 +95,9 @@ print(len('tomato') == len('potato'))  # True
 print(len('python') > len('dragon'))   # False
 
 # Boolean comparison
-print('True == True: ', True == True)
-print('True == False: ', True == False)
-print('False == False:', False == False)
+print('True == True: ', True)
+print('True == False: ', not True)
+print('False == False:', not False)
 print('True and True: ', True and True)
 print('True or False:', True or False)
 
@@ -117,8 +116,8 @@ print(3 < 2 and 4 < 3) # False - because both statements are false
 print(3 > 2 or 4 > 3)  # True - because both statements are true
 print(3 > 2 or 4 < 3)  # True - because one of the statement is true
 print(3 < 2 or 4 < 3)  # False - because both statements are false
-print(not 3 > 2)     # False - because 3 > 2 is true, then not True gives False
+print(3 <= 2)
 print(not True)      # False - Negation, the not operator turns true to false
 print(not False)     # True
-print(not not True)  # True
-print(not not False) # False
+print(not False)
+print(not True)

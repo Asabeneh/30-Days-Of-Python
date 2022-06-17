@@ -25,9 +25,9 @@ def result():
 
 @app.route('/post', methods= ['GET','POST'])
 def post():
-    name = 'Text Analyzer'
     if request.method == 'GET':
-         return render_template('post.html', name = name, title = name)
+        name = 'Text Analyzer'
+        return render_template('post.html', name = name, title = name)
     if request.method =='POST':
         content = request.form['content']
         return redirect(url_for('result'))
