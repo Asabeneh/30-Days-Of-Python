@@ -265,6 +265,7 @@ for index, item in enumerate([20, 30, 40]):
 ```
 
 ```py
+countries = ['Finland', 'Sweden', 'Norway', 'Denmark', 'Iceland']
 for index, i in enumerate(countries):
     if i == 'Finland':
         print(f'The country {i} has been found at index {index}')
