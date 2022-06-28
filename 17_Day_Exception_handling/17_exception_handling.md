@@ -225,7 +225,7 @@ def packing_person_info(**kwargs):
     # print(type(kwargs))
 	# Printing dictionary items
     for key in kwargs:
-        print("{key} = {kwargs[key]}")
+        print(f"{key} = {kwargs[key]}")
     return kwargs
 
 print(packing_person_info(name="Asabeneh",
@@ -266,13 +266,12 @@ for index, item in enumerate([20, 30, 40]):
 
 ```py
 for index, i in enumerate(countries):
-    print('hi')
     if i == 'Finland':
-        print('The country {i} has been found at index {index}')
+        print(f'The country {i} has been found at index {index}')
 ```
 
 ```sh
-The country Finland has been found at index 1.
+The country Finland has been found at index 0.
 ```
 
 ## Zip
