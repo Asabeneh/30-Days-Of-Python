@@ -80,7 +80,7 @@ We use **len()** method to find the length of a set.
 ```py
 # syntax
 st = {'item1', 'item2', 'item3', 'item4'}
-len(set)
+len(st)
 ```
 
 **Example:**
