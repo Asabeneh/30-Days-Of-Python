@@ -180,7 +180,7 @@ Asabeneh Yetayeh is 250 years old. He lives in Helsinki, Finland
 
 ### Object Default Methods
 
-Sometimes, you may want to have a default values for your object methods. If we give default values for the parameters in the constructor, we can avoid errors when we call or instantiate our class without parameters. Let's see how it looks:
+Sometimes, you may want to have default values for your object methods. If we give default values for the parameters in the constructor, we can avoid errors when we call or instantiate our class without parameters. Let's see how it looks:
 
 **Example:**
 
