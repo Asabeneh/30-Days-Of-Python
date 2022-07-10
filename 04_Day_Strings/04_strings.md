@@ -107,7 +107,7 @@ print('Day 2\t3\t5')
 print('Day 3\t3\t5')
 print('Day 4\t3\t5')
 print('This is a backslash  symbol (\\)') # To write a backslash
-print('In every programming language it starts with \"Hello, World!\"') # to write a double quote inside a single quote
+print('In every programming language it starts with \'Hello, World!\'') # to write a single quote inside a single quote
 
 # output
 I hope every one is enjoying the Python Challenge.
