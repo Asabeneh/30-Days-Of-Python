@@ -1,14 +1,16 @@
 # Introduction
 # Day 1 - 30DaysOfPython Challenge
 
-print(2 + 3)   # addition(+)
-print(3 - 1)   # subtraction(-)
-print(2 * 3)   # multiplication(*)
-print(3 / 2)   # division(/)
-print(3 ** 2)  # exponential(**)
-print(3 % 2)   # modulus(%)
-print(3 // 2)  # Floor division operator(//)
-
+print(2 + 3)  #5  # addition(+)
+print(3 - 1)  #2  # subtraction(-)
+print(2 * 3)  #6  # multiplication(*)
+print(3 / 2)  #1.5  # division(/)
+print(3 ** 2) #9  # exponential(**)
+print(3 % 2)  #1  # modulus(%)
+print(3 // 2) #1 Floor division operator(//) # 
+#When the result of floor division (//) is positive, it is as though the fractional portion is truncated off, leaving only the integer portion. 
+#When the result is negative, the result is rounded down to the next smallest (greater negative) integer
+#eg print(-10//4) #o/p -3
 # Checking data types
 
 print(type(10))                  # Int
