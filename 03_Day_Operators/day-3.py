@@ -1,3 +1,11 @@
+#First Learn to identify which is operator and which is operands?
+total=a+b
+#In the above total is a variable which holds value returned after performing calculation.
+#Operators are symbols which help to perform specific tasks
+#operands are the values on which operators perform the tasks.
+#a and b are operands
+#+ is a operator
+
 # Arithmetic Operations in Python
 # Integers
 
