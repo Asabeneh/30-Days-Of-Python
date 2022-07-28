@@ -249,8 +249,8 @@ An indentation is a white space in a text. Indentation in many languages is used
 
 ### Comments
 
-Comments are very important to make the code more readable and to leave remarks in our code. Python does not run comment parts of our code.
-Any text starting with hash(#) in Python is a comment.
+Comments are important as they make the code more understandable and to leave remarks. While Python does run comment part of the code, 
+any text starting with hash(#) is a comment. 
 
 **Example: Single Line Comment**
 
