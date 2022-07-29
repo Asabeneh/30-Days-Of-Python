@@ -125,7 +125,7 @@ If you are a macOS user. Click the button encircled in red.
 To check if python is installed write the following command on your device terminal.
 
 ```shell
-python --version
+python3 --version
 ```
 
 ![Python Version](./images/python_versio.png)
