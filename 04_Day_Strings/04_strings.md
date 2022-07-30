@@ -101,7 +101,7 @@ Now, let us see the use of the above escape sequences with examples.
 
 ```py
 print('I hope everyone is enjoying the Python Challenge.\nAre you ?') # line break
-print('Days\tTopics\tExercises') # adding tab space or 4 spaces 
+print('Days\tTopics\tExercises') # adding tab space or 4 spaces
 print('Day 1\t3\t5')
 print('Day 2\t3\t5')
 print('Day 3\t3\t5')
@@ -304,7 +304,7 @@ print(challenge.capitalize()) # 'Thirty days of python'
 ```py
 challenge = 'thirty days of python'
 print(challenge.count('y')) # 3
-print(challenge.count('y', 7, 14)) # 1, 
+print(challenge.count('y', 7, 14)) # 1,
 print(challenge.count('th')) # 2`
 ```
 
@@ -328,8 +328,8 @@ print(challenge.expandtabs(10)) # 'thirty    days      of        python'
 
 ```py
 challenge = 'thirty days of python'
-print(challenge.find('y'))  # 16
-print(challenge.find('th')) # 17
+print(challenge.find('y'))  # 5
+print(challenge.find('th')) # 0
 ```
 
 - rfind(): Returns the index of the last occurrence of a substring, if not found returns -1
@@ -359,7 +359,7 @@ result = 'The area of a circle with radius {} is {}'.format(str(radius), str(are
 print(result) # The area of a circle with radius 10 is 314
 ```
 
-- index(): Returns the lowest index of a substring, additional arguments indicate starting and ending index (default 0 and string length - 1). If the substring is not found it raises a valueError. 
+- index(): Returns the lowest index of a substring, additional arguments indicate starting and ending index (default 0 and string length - 1). If the substring is not found it raises a valueError.
 
 ```py
 challenge = 'thirty days of python'
@@ -600,5 +600,3 @@ The area of a circle with radius 10 is 314 meters square.
 🎉 CONGRATULATIONS ! 🎉
 
 [<< Day 3](../03_Day_Operators/03_operators.md) | [Day 5 >>](../05_Day_Lists/05_lists.md)
-
-
