@@ -93,7 +93,7 @@ num-1
 1num
 ```
 
-We will use standard Python variable naming style which has been adopted by many Python developers. Python developers use snake case(snake_case) variable naming convention. We use underscore character after each word for a variable containing more than one word(eg. first_name, last_name, engine_rotation_speed).  The example below is an example of standard naming of variables, underscore is required when the variable name is more than one word.
+We will use standard Python variable naming style which has been adopted by many Python developers. Python developers use snake case(snake_case) variable naming convention. We use underscore character after each word for a variable containing more than one word(eg. first_name, last_name, engine_rotation_speed). The example below is an example of standard naming of variables, underscore is required when the variable name is more than one word.
 
 When we assign a certain data type to a variable, it is called variable declaration. For instance in the example below my first name is assigned to a variable first_name. The equal sign is an assignment operator. Assigning means storing data in the variable. The equal sign in Python is not equality as in Mathematics.
 
@@ -118,7 +118,7 @@ person_info = {
 
 Let us use the _print()_ and _len()_ built-in functions. Print function takes unlimited number of arguments. An argument is a value which we can be passed or put inside the function parenthesis, see the example below.
 
-**Example:**
+**Examples:**
 
 ```py
 print('Hello, World!') # The text Hello, World! is an argument
@@ -128,7 +128,7 @@ print(len('Hello, World!')) # it takes only one argument
 
 Let us print and also find the length of the variables declared at the top:
 
-**Example:**
+**Examples:**
 
 ```py
 # Printing the values stored in the variables
@@ -149,7 +149,7 @@ print('Person information: ', person_info)
 
 Multiple variables can also be declared in one line:
 
-**Example:**
+**Examples:**
 
 ```py
 first_name, last_name, country, age, is_married = 'Asabeneh', 'Yetayeh', 'Helsink', 250, True
@@ -163,7 +163,7 @@ print('Married: ', is_married)
 ```
 
 Getting user input using the _input()_ built-in function. Let us assign the data we get from a user into first_name and age variables.
-**Example:**
+**Examples:**
 
 ```py
 first_name = input('What is your name: ')
@@ -180,7 +180,7 @@ There are several data types in Python. To identify the data type we use the _ty
 ## Checking Data types and Casting
 
 - Check Data types: To check the data type of certain data/variable we use the _type_
-  **Example:**
+  **Examples:**
 
 ```py
 # Different python data types
@@ -281,17 +281,17 @@ Number data types in Python:
 1. Using the _len()_ built-in function, find the length of your first name
 1. Compare the length of your first name and your last name
 1. Declare 5 as num_one and 4 as num_two
-    1. Add num_one and num_two and assign the value to a variable total
-    2. Subtract num_two from num_one and assign the value to a variable diff
-    3. Multiply num_two and num_one and assign the value to a variable product
-    4. Divide num_one by num_two and assign the value to a variable division
-    5. Use modulus division to find num_two divided by num_one and assign the value to a variable remainder
-    6. Calculate num_one to the power of num_two and assign the value to a variable exp
-    7. Find floor division of num_one by num_two and assign the value to a variable floor_division
+   1. Add num_one and num_two and assign the value to a variable total
+   2. Subtract num_two from num_one and assign the value to a variable diff
+   3. Multiply num_two and num_one and assign the value to a variable product
+   4. Divide num_one by num_two and assign the value to a variable division
+   5. Use modulus division to find num_two divided by num_one and assign the value to a variable remainder
+   6. Calculate num_one to the power of num_two and assign the value to a variable exp
+   7. Find floor division of num_one by num_two and assign the value to a variable floor_division
 1. The radius of a circle is 30 meters.
-    1. Calculate the area of a circle and assign the value to a variable name of _area_of_circle_
-    2. Calculate the circumference of a circle and assign the value to a variable name of _circum_of_circle_
-    3. Take radius as user input and calculate the area.
+   1. Calculate the area of a circle and assign the value to a variable name of _area_of_circle_
+   2. Calculate the circumference of a circle and assign the value to a variable name of _circum_of_circle_
+   3. Take radius as user input and calculate the area.
 1. Use the built-in input function to get first name, last name, country and age from a user and store the value to their corresponding variable names
 1. Run help('keywords') in Python shell or in your file to check for the Python reserved words or keywords
 
