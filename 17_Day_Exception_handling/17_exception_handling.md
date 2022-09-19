@@ -177,7 +177,7 @@ numbers = range(2, 7)  # normal call with separate arguments
 print(list(numbers)) # [2, 3, 4, 5, 6]
 args = [2, 7]
 numbers = range(*args)  # call with arguments unpacked from a list
-print(numbers)      # [2, 3, 4, 5,6]
+print(list(numbers))      # [2, 3, 4, 5,6]
 
 ```
 
@@ -225,7 +225,7 @@ def packing_person_info(**kwargs):
     # print(type(kwargs))
 	# Printing dictionary items
     for key in kwargs:
-        print("{key} = {kwargs[key]}")
+        print(f'{key} = {kwargs[key]}')
     return kwargs
 
 print(packing_person_info(name="Asabeneh",
