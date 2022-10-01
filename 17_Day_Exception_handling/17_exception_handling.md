@@ -225,7 +225,7 @@ def packing_person_info(**kwargs):
     # print(type(kwargs))
 	# Printing dictionary items
     for key in kwargs:
-        print("{key} = {kwargs[key]}")
+        print(f'{key} = {kwargs[key]}')
     return kwargs
 
 print(packing_person_info(name="Asabeneh",
