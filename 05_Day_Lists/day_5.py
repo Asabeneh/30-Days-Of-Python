@@ -43,7 +43,7 @@ fruits = ['banana', 'orange', 'mango', 'lemon']
 all_fruits = fruits[0:4] # it returns all the fruits
 # this is also give the same result as the above
 all_fruits = fruits[0:] # if we don't set where to stop it takes all the rest
-orange_and_mango = fruits[1:3] # it does not include the end index
+orange_and_mango = fruits[1:3] # it does not include first and the end index
 orange_mango_lemon = fruits[1:]
 
 fruits = ['banana', 'orange', 'mango', 'lemon'] 
