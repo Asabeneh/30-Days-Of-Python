@@ -25,7 +25,7 @@
     - [Using *date* from *datetime*](#using-date-from-datetime)
     - [Time Objects to Represent Time](#time-objects-to-represent-time)
     - [Difference Between Two Points in Time Using](#difference-between-two-points-in-time-using)
-    - [Difference Between Two Points in Time Using *timedelata*](#difference-between-two-points-in-time-using-timedelata)
+    - [Difference Between Two Points in Time Using *timedelta*](#difference-between-two-points-in-time-using-timedelta)
   - [💻 Exercises: Day 16](#-exercises-day-16)
 # 📘 Day 16
 
