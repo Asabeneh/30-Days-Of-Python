@@ -20,11 +20,11 @@
 - [📘 3일차](#3일차)
   - [불리언](#불리언)
   - [연산자](#연산자)
-    - [대입 연산자](#대입 연산자)
-    - [산술 연산자:](#산술 연산자)
-    - [비교 연산자](#비교 연산자)
-    - [논리 연산자](#논리 연산자)
-  - [💻 3일차: 실습](#3일차: 실습)
+    - [대입 연산자](#대입-연산자)
+    - [산술 연산자:](#산술-연산자)
+    - [비교 연산자](#비교-연산자)
+    - [논리 연산자](#논리-연산자)
+  - [💻 3일차: 실습](3일차:-실습)
 
 # 📘 3일차
 
@@ -179,83 +179,83 @@ density = mass / volume # 1000 Kg/m^3
 
 ### 비교 연산자
 
-In programming we compare values, we use comparison operators to compare two values. We check if a value is greater or less or equal to other value. The following table shows Python comparison operators which was taken from [w3shool](https://www.w3schools.com/python/python_operators.asp).
+프로그래밍에서 우리는 비교 연산자를 사용하여 두 값을 비교합니다. 우리는 값이 다른 값보다 크거나 작거나 같은지 확인합니다. 다음 표는[w3shool](https://www.w3schools.com/python/python_operators.asp)에서 가져온 파이썬의 비교 연산자를 보여줍니다.
 
 ![Comparison Operators](../images/comparison_operators.png)
-**Example: Comparison Operators**
+**Example: 비교 연산자**
 
 ```py
-print(3 > 2)     # True, because 3 is greater than 2
-print(3 >= 2)    # True, because 3 is greater than 2
-print(3 < 2)     # False,  because 3 is greater than 2
-print(2 < 3)     # True, because 2 is less than 3
-print(2 <= 3)    # True, because 2 is less than 3
-print(3 == 2)    # False, because 3 is not equal to 2
-print(3 != 2)    # True, because 3 is not equal to 2
-print(len('mango') == len('avocado'))  # False
-print(len('mango') != len('avocado'))  # True
-print(len('mango') < len('avocado'))   # True
-print(len('milk') != len('meat'))      # False
-print(len('milk') == len('meat'))      # True
-print(len('tomato') == len('potato'))  # True
-print(len('python') > len('dragon'))   # False
+print(3 > 2)     # 참, 3이 2보다 크기 때문에
+print(3 >= 2)    # 참, 3이 2보다 크기 때문에
+print(3 < 2)     # 거짓, 3이 더 크기 때문에
+print(2 < 3)     # 참, 2가 3보다 작기 때문에
+print(2 <= 3)    # 참, 2가 3보다 작기 때문에
+print(3 == 2)    # 거짓, 3과 2는 같지 않기 때문에
+print(3 != 2)    # 참, 3은 2와 다르기 때문에
+print(len('mango') == len('avocado'))  # 거짓
+print(len('mango') != len('avocado'))  # 참
+print(len('mango') < len('avocado'))   # 참
+print(len('milk') != len('meat'))      # 거짓
+print(len('milk') == len('meat'))      # 참
+print(len('tomato') == len('potato'))  # 참
+print(len('python') > len('dragon'))   # 거짓
 
 
-# Comparing something gives either a True or False
+# 무언가를 비교하면 참 또는 거짓이 됩니다.
 
 print('True == True: ', True == True)
 print('True == False: ', True == False)
 print('False == False:', False == False)
 ```
 
-In addition to the above comparison operator Python uses:
+위의 비교 연산자 외에 파이썬은 다음과 같은 연산자를 사용합니다:
 
-- _is_: Returns true if both variables are the same object(x is y)
-- _is not_: Returns true if both variables are not the same object(x is not y)
-- _in_: Returns True if the queried list contains a certain item(x in y)
-- _not in_: Returns True if the queried list doesn't have a certain item(x in y)
+- _is_: 두 변수가 동일할 경우 참을 반환합니다.(x is y)
+- _is not_: 두 변수가 동일하지 않을 경우 참을 반환합니다.(x is not y)
+- _in_: 제시된 목록에 특정 항목이 포함된 경우 참을 반환합니다.(x in y)
+- _not in_: 제시된 목록에 특정 항목이 없으면 참을 반환합니다.(x in y)
 
 ```py
-print('1 is 1', 1 is 1)                   # True - because the data values are the same
-print('1 is not 2', 1 is not 2)           # True - because 1 is not 2
-print('A in Asabeneh', 'A' in 'Asabeneh') # True - A found in the string
-print('B in Asabeneh', 'B' in 'Asabeneh') # False - there is no uppercase B
-print('coding' in 'coding for all') # True - because coding for all has the word coding
-print('a in an:', 'a' in 'an')      # True
-print('4 is 2 ** 2:', 4 is 2 ** 2)   # True
+print('1 is 1', 1 is 1)                   # 참 - 데이터 값이 동일하기 때문에
+print('1 is not 2', 1 is not 2)           # 참 - 1과 2는 다르기 때문에
+print('A in Asabeneh', 'A' in 'Asabeneh') # 참 - 문자열에서 A를 찾을 수 있습니다
+print('B in Asabeneh', 'B' in 'Asabeneh') # 거짓 - 대문자 B가 없습니다
+print('coding' in 'coding for all') # 참 - coding이라는 단어를 coding for all이 가지고 있기 때문에
+print('a in an:', 'a' in 'an')      # 참
+print('4 is 2 ** 2:', 4 is 2 ** 2)   # 참
 ```
 
-### Logical Operators
+### 논리 연산자
 
-Unlike other programming languages python uses keywords _and_, _or_ and _not_ for logical operators. Logical operators are used to combine conditional statements:
+다른 프로그래밍 언어와 달리 파이썬은 논리 연산자를 위해 _and_, _or_, _not_ 키워드를 사용합니다. 논리 연산자는 다음과 같은 조건문을 결합하는 데 사용됩니다.
 
 ![Logical Operators](../images/logical_operators.png)
 
 ```py
-print(3 > 2 and 4 > 3) # True - because both statements are true
-print(3 > 2 and 4 < 3) # False - because the second statement is false
-print(3 < 2 and 4 < 3) # False - because both statements are false
+print(3 > 2 and 4 > 3) # 참 - 두 개의 문장이 참이기 때문에 
+print(3 > 2 and 4 < 3) # 거짓 - 두 번째 문장이 거짓이기 때문에
+print(3 < 2 and 4 < 3) # 거짓 - 두 가지 문장 모두 거짓이기 때문에
 print('True and True: ', True and True)
-print(3 > 2 or 4 > 3)  # True - because both statements are true
-print(3 > 2 or 4 < 3)  # True - because one of the statements is true
-print(3 < 2 or 4 < 3)  # False - because both statements are false
+print(3 > 2 or 4 > 3)  # 참 - 두 가지 문장 모두 참이기 때문에
+print(3 > 2 or 4 < 3)  # 참 - 두 가지 중 하나의 문장이 참이기 때문에
+print(3 < 2 or 4 < 3)  # 거짓 - 두 가지 문장 모두 거짓이기 때문에
 print('True or False:', True or False)
-print(not 3 > 2)     # False - because 3 > 2 is true, then not True gives False
-print(not True)      # False - Negation, the not operator turns true to false
+print(not 3 > 2)     # 거짓 - 3이 2보다 큰 것은 참이기 때문에, 참이 아닐 경우 거짓을 줍니다.
+print(not True)      # 거짓 - 부정으로 참에서 거짓으로 바뀝니다.
 print(not False)     # True
 print(not not True)  # True
 print(not not False) # False
 
 ```
 
-🌕 You have boundless energy. You have just completed day 3 challenges and you are three steps ahead on your way to greatness. Now do some exercises for your brain and your muscles.
+🌕 당신은 무한한 에너지를 가지고 있어요. 여러분은 이제 막 3일차 도전을 마쳤고 위대함으로 가는 길에 세 걸음 앞서 있습니다. 이제 여러분의 뇌와 근육을 위한 운동을 하세요.
 
-## 💻 Exercises - Day 3
+## 💻 3일차: 실습
 
-1. Declare your age as integer variable
-2. Declare your height as a float variable
-3. Declare a variable that store a complex number
-4. Write a script that prompts the user to enter base and height of the triangle and calculate an area of this triangle (area = 0.5 x b x h).
+1. 나이를 정수 변수로 선언합니다.
+2. 자신의 키를 플로트 변수로 선언합니다.
+3. 복소수를 저장하는 변수 선언합니다.
+4. 삼각형의 밑면과 높이를 입력하도록 사용자에게 지시하는 스크립트를 작성하고 이 삼각형의 면적(면적 = 0.5 x b x h)을 계산합니다.
 
 ```py
     Enter base: 20
@@ -263,7 +263,7 @@ print(not not False) # False
     The area of the triangle is 100
 ```
 
-5. Write a script that prompts the user to enter side a, side b, and side c of the triangle. Calculate the perimeter of the triangle (perimeter = a + b + c).
+5. 삼각형의 측면 a, 측면 b, 측면 c를 입력하라는 메시지를 표시하는 스크립트를 작성합니다. 삼각형의 둘레(지름 = a + b + c)를 계산합니다.
 
 ```py
 Enter side a: 5
@@ -272,22 +272,22 @@ Enter side c: 3
 The perimeter of the triangle is 12
 ```
 
-6. Get length and width of a rectangle using prompt. Calculate its area (area = length x width) and perimeter (perimeter = 2 x (length + width))
-7. Get radius of a circle using prompt. Calculate the area (area = pi x r x r) and circumference (c = 2 x pi x r) where pi = 3.14.
-8. Calculate the slope, x-intercept and y-intercept of y = 2x -2
-9. Slope is (m = y2-y1/x2-x1). Find the slope and [Euclidean distance](https://en.wikipedia.org/wiki/Euclidean_distance#:~:text=In%20mathematics%2C%20the%20Euclidean%20distance,being%20called%20the%20Pythagorean%20distance.) between point (2, 2) and point (6,10) 
-10. Compare the slopes in tasks 8 and 9.
-11. Calculate the value of y (y = x^2 + 6x + 9). Try to use different x values and figure out at what x value y is going to be 0.
-12. Find the length of 'python' and 'dragon' and make a falsy comparison statement.
-13. Use _and_ operator to check if 'on' is found in both 'python' and 'dragon'
-14. _I hope this course is not full of jargon_. Use _in_ operator to check if _jargon_ is in the sentence.
-15. There is no 'on' in both dragon and python
-16. Find the length of the text _python_ and convert the value to float and convert it to string
-17. Even numbers are divisible by 2 and the remainder is zero. How do you check if a number is even or not using python?
-18. Check if the floor division of 7 by 3 is equal to the int converted value of 2.7.
-19. Check if type of '10' is equal to type of 10
-20. Check if int('9.8') is equal to 10
-21. Writ a script that prompts the user to enter hours and rate per hour. Calculate pay of the person?
+6. 프롬프트를 사용하여 직사각형의 길이와 너비를 가져옵니다. 면적(면적 = 길이 x 폭) 및 둘레(면적 = 2 x (길이 + 폭)) 계산합니다.
+7. 프롬프트를 사용하여 원의 반지름을 구합니다. 면적(면적 = 픽스 r x r)과 원주(c = 2 x 픽스 r)를 계산합니다. 여기서 pi = 3.14입니다.
+8. y = 2x-2의 기울기, x-제곱 및 y-제곱을 계산합니다.
+9. 기울기는 (m = y2-y1/x2-x1)입니다. 기울기와 [유클리드 거리](https://en.wikipedia.org/wiki/Euclidean_distance#:~:text=In%20mathematics%2C%20the%20Euclidean%20distance,being%20called%20the%20Pythagorean%20distance.) 점(2,2)과 점(6,10) 사이를 구합니다.
+10. 과제 8과 9의 기울기를 비교합니다.
+11. y 값(y = x^2 + 6x + 9)을 계산합니다. 다른 x 값을 사용하고 y 값이 0이 되는 x 값을 계산해 보십시오.
+12. 'python'과 'dragon'의 길이를 찾아 거짓 비교를 합니다.
+13. _and_ 연산자를 사용하여 'python'과 'dragon' 모두에 'on'이 있는지 확인합니다.
+14. _나는 이 강좌가 전문용어로 가득하지 않기를 바랍니다. _in_ 연산자를 사용하여 _jargon_ 이 문장에 있는지 확인합니다.
+15. dragon과 python 모두 'On'이 없습니다.
+16. _python_ 텍스트의 길이를 찾아서 값을 float로 변환하고 문자열로 변환합니다.
+17. 짝수는 2로 나누고 나머지는 0입니다. 파이썬을 사용하여 숫자가 짝수인지 아닌지 어떻게 확인합니까?
+18. 7 x 3의 나눗셈 버림이 2.7의 int 변환값과 동일한지 확인합니다.
+19. '10'의 유형이 10의 유형과 동일한지 확인합니다.
+20. if int('9)를 확인합니다.8')는 10과 같습니다.
+21. 사용자에게 시간 및 시간당 요금을 입력하도록 요청하는 스크립트를 작성합니다. 그 사람의 급여를 계산합니까?
 
 ```py
 Enter hours: 40
@@ -295,14 +295,14 @@ Enter rate per hour: 28
 Your weekly earning is 1120
 ```
 
-22. Write a script that prompts the user to enter number of years. Calculate the number of seconds a person can live. Assume a person can live hundred years
+22. 사용자에게 년 수를 입력하도록 요청하는 스크립트를 작성합니다. 사람이 살 수 있는 시간을 초 단위로 계산합니다. 사람이 100년을 살 수 있다고 가정합시다.
 
 ```py
 Enter number of years you have lived: 100
 You have lived for 3153600000 seconds.
 ```
 
-23. Write a Python script that displays the following table
+23. 다음을 표시하는 파이썬 스크립트를 작성합니다.
 
 ```py
 1 1 1 1 1
@@ -312,6 +312,6 @@ You have lived for 3153600000 seconds.
 5 1 5 25 125
 ```
 
-🎉 CONGRATULATIONS ! 🎉
+🎉 축하합니다 ! 🎉
 
 [<< Day 2](../02_Day_Variables_builtin_functions/02_variables_builtin_functions.md) | [Day 4 >>](../04_Day_Strings/04_strings.md)
