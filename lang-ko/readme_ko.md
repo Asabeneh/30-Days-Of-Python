@@ -2,42 +2,42 @@
 
 |# Day | Topics                                                    |
 |------|:---------------------------------------------------------:|
-| 01  |  [Introduction](./readme.md)|
-| 02  |  [Variables, Built-in Functions](./02_Day_Variables_builtin_functions/02_variables_builtin_functions.md)|
-| 03  |  [Operators](./03_Day_Operators/03_operators.md)|
-| 04  |  [Strings](./04_Day_Strings/04_strings.md)|
-| 05  |  [Lists](./05_Day_Lists/05_lists.md)|
-| 06  |  [Tuples](./06_Day_Tuples/06_tuples.md)|
-| 07  |  [Sets](./07_Day_Sets/07_sets.md)|
-| 08  |  [Dictionaries](./08_Day_Dictionaries/08_dictionaries.md)|
-| 09  |  [Conditionals](./09_Day_Conditionals/09_conditionals.md)|
-| 10  |  [Loops](./10_Day_Loops/10_loops.md)|
-| 11  |  [Functions](./11_Day_Functions/11_functions.md)|
-| 12  |  [Modules](./12_Day_Modules/12_modules.md)|
-| 13  |  [List Comprehension](./13_Day_List_comprehension/13_list_comprehension.md)|
-| 14  |  [Higher Order Functions](./14_Day_Higher_order_functions/14_higher_order_functions.md)|     
-| 15  |  [Python Type Errors](./15_Day_Python_type_errors/15_python_type_errors.md)| 
-| 16 |  [Python Date time](./16_Day_Python_date_time/16_python_datetime.md) |     
-| 17 |  [Exception Handling](./17_Day_Exception_handling/17_exception_handling.md)|    
-| 18 |  [Regular Expressions](./18_Day_Regular_expressions/18_regular_expressions.md)|    
-| 19 |  [File Handling](./19_Day_File_handling/19_file_handling.md)|
-| 20 |  [Python Package Manager](./20_Day_Python_package_manager/20_python_package_manager.md)|
-| 21 |  [Classes and Objects](./21_Day_Classes_and_objects/21_classes_and_objects.md)|
-| 22 |  [Web Scraping](./22_Day_Web_scraping/22_web_scraping.md)|
-| 23 |  [Virtual Environment](./23_Day_Virtual_environment/23_virtual_environment.md)|
-| 24 |  [Statistics](./24_Day_Statistics/24_statistics.md)|
-| 25 |  [Pandas](./25_Day_Pandas/25_pandas.md)|
-| 26 |  [Python web](./26_Day_Python_web/26_python_web.md)|
-| 27 |  [Python with MongoDB](./27_Day_Python_with_mongodb/27_python_with_mongodb.md)|
-| 28 |  [API](./28_Day_API/28_API.md)|
-| 29 |  [Building API](./29_Day_Building_API/29_building_API.md)|
-| 30 |  [Conclusions](./30_Day_Conclusions/30_conclusions.md)|
+| 01  |  [Introduction](../readme_ko.md)|
+| 02  |  [Variables, Built-in Functions](../02_Day_Variables_builtin_functions/02_variables_builtin_functions.md)|
+| 03  |  [Operators](../03_Day_Operators/03_operators.md)|
+| 04  |  [Strings](../04_Day_Strings/04_strings.md)|
+| 05  |  [Lists](../05_Day_Lists/05_lists.md)|
+| 06  |  [Tuples](../06_Day_Tuples/06_tuples.md)|
+| 07  |  [Sets](../07_Day_Sets/07_sets.md)|
+| 08  |  [Dictionaries](../08_Day_Dictionaries/08_dictionaries.md)|
+| 09  |  [Conditionals](../09_Day_Conditionals/09_conditionals.md)|
+| 10  |  [Loops](../10_Day_Loops/10_loops.md)|
+| 11  |  [Functions](../11_Day_Functions/11_functions.md)|
+| 12  |  [Modules](../12_Day_Modules/12_modules.md)|
+| 13  |  [List Comprehension](../13_Day_List_comprehension/13_list_comprehension.md)|
+| 14  |  [Higher Order Functions](../14_Day_Higher_order_functions/14_higher_order_functions.md)|     
+| 15  |  [Python Type Errors](../15_Day_Python_type_errors/15_python_type_errors.md)| 
+| 16 |  [Python Date time](../16_Day_Python_date_time/16_python_datetime.md) |     
+| 17 |  [Exception Handling](../17_Day_Exception_handling/17_exception_handling.md)|    
+| 18 |  [Regular Expressions](../18_Day_Regular_expressions/18_regular_expressions.md)|    
+| 19 |  [File Handling](../19_Day_File_handling/19_file_handling.md)|
+| 20 |  [Python Package Manager](../20_Day_Python_package_manager/20_python_package_manager.md)|
+| 21 |  [Classes and Objects](../21_Day_Classes_and_objects/21_classes_and_objects.md)|
+| 22 |  [Web Scraping](../22_Day_Web_scraping/22_web_scraping.md)|
+| 23 |  [Virtual Environment](../23_Day_Virtual_environment/23_virtual_environment.md)|
+| 24 |  [Statistics](../24_Day_Statistics/24_statistics.md)|
+| 25 |  [Pandas](../25_Day_Pandas/25_pandas.md)|
+| 26 |  [Python web](../26_Day_Python_web/26_python_web.md)|
+| 27 |  [Python with MongoDB](../27_Day_Python_with_mongodb/27_python_with_mongodb.md)|
+| 28 |  [API](../28_Day_API/28_API.md)|
+| 29 |  [Building API](../29_Day_Building_API/29_building_API.md)|
+| 30 |  [Conclusions](../30_Day_Conclusions/30_conclusions.md)|
 
 🧡🧡🧡 HAPPY CODING 🧡🧡🧡
 
 <div>
 <small>Support the <strong>author</strong> to create more educational materials</small> <br />  
-<a href = "https://www.paypal.me/asabeneh"><img src='./images/paypal_lg.png' alt='Paypal Logo' style="width:10%"/></a>
+<a href = "https://www.paypal.me/asabeneh"><img src='../images/paypal_lg.png' alt='Paypal Logo' style="width:10%"/></a>
 </div>
 
 <div align="center">
@@ -56,25 +56,25 @@
 </div>
 
 
-[Day 2 >>](./02_Day_Variables_builtin_functions/02_variables_builtin_functions.md)
+[Day 2 >>](../02_Day_Variables_builtin_functions/02_variables_builtin_functions.md)
 
-![30DaysOfPython](./images/30DaysOfPython_banner3@2x.png)
+![30DaysOfPython](../images/30DaysOfPython_banner3@2x.png)
 
 - [🐍 30 Days Of Python](#-30-days-of-python)
 - [📘 Day 1](#-day-1)
-  - [환영합니다](#welcome)
-  - [소개](#introduction)
-  - [왜 Python이느냐?](#why-python-)
-  - [환경 설정](#environment-setup)
-    - [Python 설치](#installing-python)
-    - [Python 셸](#python-shell)
-    - [Visual Studio Code 설치](#installing-visual-studio-code)
-      - [visual studio code를 사용하기](#how-to-use-visual-studio-code)
-  - [Python 기본](#basic-python)
-    - [Python 구문](#python-syntax)
-    - [Python 들여쓰기](#python-indentation)
-    - [주석](#comments)
-    - [데이터 타입](#data-types)
+  - [환영합니다](#환영합니다)
+  - [소개](#소개)
+  - [왜 Python이느냐?](#왜-python이느냐?)
+  - [환경 설정](#환경-설정)
+    - [Python 설치](#python-설치)
+    - [Python 셸](#python-셸)
+    - [Visual Studio Code 설치](#visual-studio-code-설치)
+      - [visual studio code를 사용하기](#visual-studio-code를-사용하기)
+  - [Python 기본](#python-기본)
+    - [Python 구문](#python-구문)
+    - [Python 들여쓰기](#python-들여쓰기)
+    - [주석](#주석)
+    - [데이터 타입](#데이터-타입)
       - [Number](#number)
       - [String](#string)
       - [Booleans](#booleans)
@@ -82,8 +82,8 @@
       - [Dictionary](#dictionary)
       - [Tuple](#tuple)
       - [Set](#set)
-    - [데이터 타입 체크](#checking-data-types)
-    - [Python 파일](#python-file)
+    - [데이터 타입 체크](#데이터-타입-체크)
+    - [Python 파일](#python-파일)
   - [💻 Exercises - Day 1](#-exercises---day-1)
     - [Exercise: Level 1](#exercise-level-1)
     - [Exercise: Level 2](#exercise-level-2)
@@ -119,7 +119,7 @@ Windows 사용자인 경우. 빨간색 동그라미 친 버튼을 클릭합니�
 
 macOS 사용자인 경우. 빨간색 동그라미 친 버튼을 클릭합니다.
 
-[![Windows에서 설치](./images/installing_on_windows.png)](https://www.python.org/)
+[![Windows에서 설치](../images/installing_on_windows.png)](https://www.python.org/)
 
 Python이 설치되어 있는지 확인하려면 장치 터미널에 다음 명령을 작성하십시오.
 
@@ -127,7 +127,7 @@ Python이 설치되어 있는지 확인하려면 장치 터미널에 다음 명�
 python --version
 ```
 
-![Python Version](./images/python_versio.png)
+![Python Version](../images/python_versio.png)
 
 터미널에서 보시다시피 저는 현재 _Python 3.7.5_ 버전을 사용하고 있습니다. 귀하의 Python 버전은 내 버전과 다를 수 있지만 3.6 이상이어야 합니다. Python 버전을 볼 수 있다면 잘한 것입니다. 이제 컴퓨터에 Python이 설치되었습니다. 다음 섹션으로 계속 진행하십시오.
 
@@ -142,35 +142,35 @@ Python Shell은 사용자의 Python 코드를 기다립니다. 코드를 입력�
 python
 ```
 
-![Python Scripting Shell](./images/opening_python_shell.png)
+![Python Scripting Shell](../images/opening_python_shell.png)
 
 Python 대화형 셸이 열리고 Python 코드(Python 스크립트)를 작성하기를 기다립니다. 기호 >>> 옆에 Python 스크립트를 작성하고 Enter를 누릅니다.
 Python 스크립팅 셸에서 첫 번째 스크립트를 작성해 보겠습니다.
 
-![Python script on Python shell](./images/adding_on_python_shell.png)
+![Python script on Python shell](../images/adding_on_python_shell.png)
 
 훌륭합니다. Python 대화형 셸에서 첫 번째 Python 스크립트를 작성했습니다. Python 대화형 셸을 어떻게 닫습니까?
 셸을 닫으려면 기호 옆에 >> **exit()** 명령을 작성하고 Enter 키를 누릅니다.
 
-![Exit from python shell](./images/exit_from_shell.png)
+![Exit from python shell](../images/exit_from_shell.png)
 
 이제 Python 대화형 셸을 여는 방법과 종료하는 방법을 알았습니다.
 
 Python은 Python이 이해하는 스크립트를 작성하면 결과를 제공하고 그렇지 않으면 오류를 반환합니다. 고의적인 실수를 하고 Python이 무엇을 반환하는지 봅시다.
 
-![Invalid Syntax Error](./images/invalid_syntax_error.png)
+![Invalid Syntax Error](../images/invalid_syntax_error.png)
 
 반환된 오류에서 볼 수 있듯이 Python은 우리가 저지른 실수와 _Syntax Error: invalid syntax_를 알고 있을 정도로 영리합니다. Python에서 x를 곱셈으로 사용하는 것은 (x)가 Python에서 유효한 구문이 아니기 때문에 구문 오류입니다. (**x**) 대신 곱셈에 별표(*)를 사용합니다. 반환된 오류는 수정해야 할 사항을 명확하게 보여줍니다.
 
 프로그램에서 오류를 식별하고 제거하는 프로세스를 *디버깅*이라고 합니다. **x** 대신 *를 넣어 디버깅해 봅시다.
 
-![Fixing Syntax Error](./images/fixing_syntax_error.png)
+![Fixing Syntax Error](../images/fixing_syntax_error.png)
 
 버그가 수정되었고 코드가 실행되었으며 예상했던 결과를 얻었습니다. 프로그래머로서 매일 이러한 종류의 오류를 보게 될 것입니다. 디버깅 방법을 아는 것이 좋습니다. 디버깅을 잘하려면 어떤 종류의 오류가 발생했는지 이해해야 합니다. 발생할 수 있는 Python 오류 중 일부는 *SyntaxError*, *IndexError*, *NameError*, *ModuleNotFoundError*, *KeyError*, *ImportError*, *AttributeError*, *TypeError*, *ValueError*, *ZeroDivisionError* 등입니다. 이후 섹션에서 다른 Python **_오류 유형_**에 대해 자세히 알아볼 것입니다.
 
 Python 대화형 셸을 사용하는 방법을 더 연습해 보겠습니다. 터미널이나 명령 프롬프트로 이동하여 **python**이라는 단어를 씁니다.
 
-![Python Scripting Shell](./images/opening_python_shell.png)
+![Python Scripting Shell](../images/opening_python_shell.png)
 
 Python 대화형 셸이 열립니다. 몇 가지 기본적인 수학 연산(더하기, 빼기, 곱하기, 나누기, 나머지, 지수)을 수행해 보겠습니다.
 
@@ -197,17 +197,17 @@ _comment_는 Python에 의해 실행되지 않는 코드의 일부입니다. 따
  # (#) 심볼로 시작하기 때문에 이것은 파이썬 주석입니다.
 ```
 
-![Maths on python shell](./images/maths_on_python_shell.png)
+![Maths on python shell](../images/maths_on_python_shell.png)
 
 다음 섹션으로 이동하기 전에 Python 대화형 셸에서 더 많은 연습을 해 보겠습니다. 셸에서 _exit()_를 작성하여 열린 셸을 닫았다가 다시 열어 Python 셸에서 텍스트를 쓰는 방법을 연습해 봅시다.
 
-![Writing String on python shell](./images/writing_string_on_shell.png)
+![Writing String on python shell](../images/writing_string_on_shell.png)
 
 ### Visual Studio Code 설치
 
 Python 대화형 셸은 작은 스크립트 코드를 시도하고 테스트하는 데 적합하지만 큰 프로젝트에는 적합하지 않습니다. 실제 작업 환경에서 개발자는 다양한 코드 편집기를 사용하여 코드를 작성합니다. 이 30일간의 Python 프로그래밍 챌린지에서는 Visual Studio 코드를 사용합니다. Visual Studio Code는 매우 인기 있는 오픈 소스 텍스트 편집기입니다. 나는 vscode의 팬이고 Visual Studio 코드를 [다운로드](https://code.visualstudio.com/)하는 것을 추천하고 싶지만, 다른 편집자를 선호한다면 가지고 있는 것을 자유롭게 따르십시오.
 
-[![Visual Studio Code](./images/vscode.png)](https://code.visualstudio.com/)
+[![Visual Studio Code](../images/vscode.png)](https://code.visualstudio.com/)
 
 Visual Studio Code를 설치하셨다면 어떻게 사용하는지 알아보겠습니다.
 비디오를 선호하는 경우 Python용 Visual Studio Code[비디오 자습서](https://www.youtube.com/watch?v=bn7Cx4z-vSo)를 따를 수 있습니다.
@@ -216,21 +216,21 @@ Visual Studio Code를 설치하셨다면 어떻게 사용하는지 알아보겠�
 
 Visual Studio 아이콘을 두 번 클릭하여 Visual Studio 코드를 엽니다. 열면 이런 종류의 인터페이스가 나타납니다. 레이블이 지정된 아이콘을 따라해보세요.
 
-![Visual studio Code](./images/vscode_ui.png)
+![Visual studio Code](../images/vscode_ui.png)
 
 바탕 화면에 30DaysOfPython이라는 폴더를 만듭니다. 그런 다음 Visual Studio 코드를 사용하여 엽시다.
 
-![Opening Project on Visual studio](./images/how_to_open_project_on_vscode.png)
+![Opening Project on Visual studio](../images/how_to_open_project_on_vscode.png)
 
-![Opening a project](./images/opening_project.png)
+![Opening a project](../images/opening_project.png)
 
 파일을 열면 30DaysOfPython 프로젝트의 디렉토리 내부에 파일과 폴더를 생성하기 위한 바로 가기가 표시됩니다. 아래에서 볼 수 있듯이 첫 번째 파일인 helloworld.py를 만들었습니다. 당신도 똑같이 할 수 있습니다.
 
-![Creating a python file](./images/helloworld.png)
+![Creating a python file](../images/helloworld.png)
 
 하루동안 오래 코딩을 한 후에 코드 편집기를 닫고 싶습니까? 이렇게 열린 프로젝트를 닫으면 됩니다.
 
-![Closing project](./images/closing_opened_project.png)
+![Closing project](../images/closing_opened_project.png)
 
 축하합니다. 개발 환경 설정을 완료했습니다. 코딩을 시작해 봅시다.
 
@@ -244,7 +244,7 @@ Python 스크립트는 Python 대화형 셸 또는 코드 편집기에서 작성
 
 들여쓰기는 텍스트의 공백입니다. 많은 언어에서 들여쓰기는 코드 가독성을 높이는 데 사용되지만 Python은 들여쓰기를 사용하여 코드 블록을 만듭니다. 다른 프로그래밍 언어에서는 중괄호를 사용하여 들여쓰기 대신 코드 블록을 만듭니다. Python 코드를 작성할 때 흔히 발생하는 버그 중 하나는 잘못된 들여쓰기입니다.
 
-![Indentation Error](./images/indentation.png)
+![Indentation Error](../images/indentation.png)
 
 ### 주석
 
@@ -372,7 +372,7 @@ Python 사전 개체는 키 값 쌍 형식의 정렬되지 않은 데이터 모�
 
 특정 데이터/변수의 데이터 유형을 확인하기 위해 **type** 기능을 사용합니다. 다음 터미널에서 다양한 Python 데이터 유형을 볼 수 있습니다:
 
-![Checking Data types](./images/checking_data_types.png)
+![Checking Data types](../images/checking_data_types.png)
 
 ### Python 파일
 
@@ -408,7 +408,7 @@ print(type((9.8, 3.14, 2.7)))    # Tuple
 
 Python 파일을 실행하려면 아래 이미지를 확인하세요. Visual Studio Code에서 녹색 버튼을 실행하거나 터미널에 *python helloworld.py*를 입력하여 Python 파일을 실행할 수 있습니다.
 
-![Running python script](./images/running_python_script.png)
+![Running python script](../images/running_python_script.png)
 
 🌕  좋습니다. 당신은 방금 1일차 도전을 완료했고 당신은 위대한 여정에 있습니다. 이제 뇌와 근육을 위한 몇 가지 훈련을 해봅시다.
 
@@ -451,4 +451,4 @@ Python 파일을 실행하려면 아래 이미지를 확인하세요. Visual Stu
 
 🎉 축하합니다 ! 🎉
 
-[Day 2 >>](./02_Day_Variables_builtin_functions/02_variables_builtin_functions.md)
+[Day 2 >>](../02_Day_Variables_builtin_functions/02_variables_builtin_functions.md)
