@@ -41,9 +41,9 @@
 </div>
 
 <div align="center">
-  <h1> 30 днів Python: День 1 - Вступ</h1>
+  <h1> 30 днів Python: День 1 - Вступ</h1>  
   <a class="header-badge" target="_blank" href="https://www.linkedin.com/in/asabeneh/">
-  <img src="https://img.shields.io/badge/style--5eba00.svg?label=LinkedIn&logo=linkedin&style=social">
+  <img src="https://img.shields.io/badge/style--5eba00.svg?label=LinkedIn&logo=linkedin&style=social" alt="">
   </a>
   <a class="header-badge" target="_blank" href="https://twitter.com/Asabeneh">
   <img alt="Twitter Follow" src="https://img.shields.io/twitter/follow/asabeneh?style=social">
@@ -58,7 +58,7 @@
 
 [День 2 >>](../02_Day_Variables_builtin_functions/02_variables_builtin_functions.md)
 
-![30DaysOfPython](../images/30DaysOfPython_banner3@2x.png)
+![30 днів з Python](../images/30DaysOfPython_banner3@2x.png)
 
 - [🐍 30 днів Python](#-30-days-of-python)
 - [📘 День 1](#-day-1)
@@ -68,13 +68,13 @@
   - [Налаштування середовища](#налаштування-середовища)
     - [Установлення Python](#установлення-python)
     - [Оболонка Python](#оболонка-python)
-    - [Установлення Visual Studio Code](#installing-visual-studio-code)
-      - [Як використовувати Visual studio code](#how-to-use-visual-studio-code)
-  - [Початковий Python](#basic-python)
-    - [Синтаксис у Python](#python-syntax)
-    - [Відступи у Python](#python-indentation)
-    - [Коментарі](#comments)
-    - [Типи даних](#data-types)
+    - [Установлення Visual Studio Code](#установлення-visual-studio-code)
+      - [Як використовувати Visual studio code](#як-використовувати-visual-studio-code)
+  - [Початковий Python](#початковий-python)
+    - [Синтаксис у Python](#синтаксис-у-python)
+    - [Відступи у Python](#відступи-у-python)
+    - [Коментарі](#коментарі)
+    - [Типи даних](#типи-даних)
       - [Number (числовий)](#number)
       - [String (рядок)](#string)
       - [Booleans (логічний двійковий)](#booleans)
@@ -82,18 +82,18 @@
       - [Dictionary (словник)](#dictionary)
       - [Tuple (кортеж)](#tuple)
       - [Set (набір)](#set)
-    - [Перевірка типів даних](#checking-data-types)
-    - [Файл Python](#python-file)
+    - [Перевірка типів даних](#перевірка-типів-даних)
+    - [Файл Python](#файл-python)
   - [💻 Вправи - День 1](#вправи--день-1)
-    - [Вправи: Рівень 1](#exercise-level-1)
-    - [Вправи: Рівень 2](#exercise-level-2)
-    - [Вправи: Рівень 3](#exercise-level-3)
+    - [Вправи: Рівень 1](#вправи--рівень-1)
+    - [Вправи: Рівень 2](#вправи--рівень-2)
+    - [Вправи: Рівень 3](#вправи--рівень-3)
 
 # 📘 День 1
 
 ## Ласкаво просимо
 
-**Вітаємо** за прийняття рішення про участь у випробуванні з про _30 днів з Python_ programming challenge . У цьому випробуванні ви дізнаєтеся все, що вам потрібно для того, щоб стати програмістом на python, і всю концепцію програмування. В кінці випробування ви отримаєте сертифікат про проходження випробування з програмування _30DaysOfPython_.
+**Вітаємо** за прийняття рішення про участь у 30-денному виклику з програмування на Python. У цьому виклику ви дізнаєтеся все, що вам потрібно для того, щоб стати програмістом на python, і всю концепцію програмування. У кінці цього виклику ви отримаєте сертифікат про проходження виклику з програмування _30DaysOfPython_.
 
 Якщо ви бажаєте активно долучитися до виклику, ви можете приєднатися до групи у Telegram [30DaysOfPython challenge](https://t.me/ThirtyDaysOfPython).  
 
@@ -113,16 +113,16 @@ Python використовується різними галузями та к�
 
 ### Установлення Python
 
-To run a python script you need to install python. Let's [download](https://www.python.org/) python.
-If your are a windows user. Click the button encircled in red.
+Для запуску скрипту на python, вам потрібно встановити python. Нумо [завантажимо](https://www.python.org/) Python.
+Якщо ви є користувачем Windows. Натисніть кнопку, обведену червоним кольором.
 
 [![установлення на Windows](../images/installing_on_windows.png)](https://www.python.org/)
 
-If you are a macOS user. Click the button encircled in red.
+Якщо ви є користувачем MacOS. Натисніть кнопку, обведену червоним кольором.
 
 [![установлення на Windows](../images/installing_on_macOS.png)](https://www.python.org/)
 
-To check if python is installed write the following command on your device terminal.
+Щоб перевірити, чи встановлено Python, напишіть наступну команду у терміналі вашого пристрою.
 
 ```shell
 python --version
@@ -143,7 +143,7 @@ Python Shell чекає на код Python від користувача. Кол
 python
 ```
 
-![Python Scripting Shell](../images/opening_python_shell.png)
+![Скриптова оболонка Python](../images/opening_python_shell.png)
 
 Відкриється інтерактивна оболонка Python, яка чекає на написання коду на Python (скрипт Python). Ви напишете свій скрипт Python поруч з цими символами >>>, а потім натиснете Enter.
 Гайда напишемо наш перший скрипт у скриптовій оболонці Python.
@@ -153,25 +153,25 @@ python
 Чудово, ви написали свій перший Python-скрипт в інтерактивній оболонці Python. Як закрити інтерактивну оболонку Python?
 Щоби закрити оболонку, поруч з цим символом >> напишіть команду **exit()** і натисніть Enter.
 
-![Exit from python shell](../images/exit_from_shell.png)
+![Вихід з оболонки Python](../images/exit_from_shell.png)
 
 Now, you know how to open the Python interactive shell and how to exit from it.
 
 Python will give you results if you write scripts that Python understands, if not it returns errors. Let's make a deliberate mistake and see what Python will return.
 
-![Invalid Syntax Error](../images/invalid_syntax_error.png)
+![Неправильний синтаксис](../images/invalid_syntax_error.png)
 
 As you can see from the returned error, Python is so clever that it knows the mistake we made and which was _Syntax Error: invalid syntax_. Using x as multiplication in Python is a syntax error because (x) is not a valid syntax in Python. Instead of (**x**) we use asterisk (*) for multiplication. The returned error clearly shows what to fix.
 
-The process of identifying and removing errors from a program is called *debugging*. Let us debug it by putting * in place of **x**.
+Процес виявлення та усунення помилок у програмі називається *зневадженням (англ. debugging)*. Гайда розберемось з помилками, підставивши * замість **x**.
 
-![Fixing Syntax Error](../images/fixing_syntax_error.png)
+![Виправлення синтаксичної помилки](../images/fixing_syntax_error.png)
 
 Our bug was fixed, the code ran and we got a result we were expecting. As a programmer you will see such kind of errors on daily basis. It is good to know how to debug. To be good at debugging you should understand what kind of errors you are facing. Some of the Python errors you may encounter are *SyntaxError*, *IndexError*, *NameError*, *ModuleNotFoundError*, *KeyError*, *ImportError*, *AttributeError*, *TypeError*, *ValueError*, *ZeroDivisionError* etc. We will see more about different Python **_error types_** in later sections.
 
 Let us practice more how to use Python interactive shell. Go to your terminal or command prompt and write the word **python**.
 
-![Python Scripting Shell](../images/opening_python_shell.png)
+![Скриптова оболонка Python](../images/opening_python_shell.png)
 
 The Python interactive shell is opened. Let us do some basic mathematical operations (addition, subtraction, multiplication, division, modulus,  exponential).
 
@@ -370,13 +370,13 @@ In later sections, we will go in detail about each and every Python data type.
 
 ### Перевірка типів даних
 
-To check the data type of certain data/variable we use the **type** function. In the following terminal you will see different python data types:
+Для перевірки типу даних певних даних/змінних ми використовуємо функцію **type**. У наведеному нижче терміналі ви побачите різні типи даних python:
 
-![Checking Data types](../images/checking_data_types.png)
+![Перевірка типів даних](../images/checking_data_types.png)
 
 ### Файл Python
 
-First open your project folder, 30DaysOfPython. If you don't have this folder, create a folder name called 30DaysOfPython. Inside this folder, create a file called helloworld.py. Now, let's do what we did on python interactive shell using visual studio code.
+По-перше, відкрийте свою теку з проєктому 30DaysOfPython. Якщо ви не маєте цієї теки, то створіть її з назвою 30DaysOfPython. Усередині цієї теки, створіть файл з назвою helloworld.py. Тепер зробімо те, що ми робили в інтерактивній оболонці python, використовуючи Visual Studio Code.
 
 The Python interactive shell was printing without using **print** but on visual studio code to see our result we should use a built in function *print(). The *print()* built-in function takes one or more arguments as follows *print('arument1', 'argument2', 'argument3')*. See the examples below.
 
@@ -389,8 +389,8 @@ The Python interactive shell was printing without using **print** but on visual 
 
 print(2 + 3)             # додавання(+)
 print(3 - 1)             # віднімання(-)
-print(2 * 3)             # multiplication(*)
-print(3 / 2)             # division(/)
+print(2 * 3)             # множення(*)
+print(3 / 2)             # ділення(/)
 print(3 ** 2)            # exponential(**)
 print(3 % 2)             # modulus(%)
 print(3 // 2)            # Floor division operator(//)
@@ -406,15 +406,15 @@ print(type({9.8, 3.14, 2.7}))    # Set
 print(type((9.8, 3.14, 2.7)))    # Tuple
 ```
 
-To run the python file check the image below. You can run the python file either by running the green button on Visual Studio Code or by typing *python helloworld.py* in the terminal .
+Для запуску python-файл перевірте зображення нижче. Ви можете запустити файл python, натиснувши зелену кнопку на Visual Studio Code або ввівши *python helloworld.py* в терміналі.
 
-![Running python script](../images/running_python_script.png)
+![Запуск python-скриптк](../images/running_python_script.png)
 
 🌕  Ви дивовижні. Ви щойно виконали завдання першого дня і вже на шляху до величі. Тепер виконайте кілька вправ для мозку та м'язів.
 
-## 💻 Вправи - День 1
+## 💻 Вправи - день 1
 
-### Вправи: День 1
+### Вправи: рівень 1
 
 1. Перевірте версію python, яку ви використовуєте
 2. Відкрийте інтерактивну оболонку python і виконайте наступні дії. Параметрами є числа 3 та 4.
@@ -440,15 +440,15 @@ To run the python file check the image below. You can run the python file either
    - Ваше прізвище
    - Ваша країна
 
-### Вправи: Рівень 2
+### Вправи: рівень 2
 
 1. Створіть теку з назвою day_1 всередині теки 30DaysOfPython. Усередині теки day_1, створити python-файл helloworld.py і повторіть питання 1, 2, 3 та 4. Пам'ятайте використовувати _print()_ коли ви працюєте над python-файлом. Перейдіть до теки, куди ви зберегли файл, і запустіть його.
 
-### Вправи: Рівень 3
+### Вправи: рівень 3
 
 1. Напишіть приклад для різних типів даних Python, як-от Number(Integer, Float, Complex), String, Boolean, List, Tuple, Set та Dictionary.
 2. Знайдіть [Евклідову відстань](https://uk.wikipedia.org/wiki/%D0%95%D0%B2%D0%BA%D0%BB%D1%96%D0%B4%D0%BE%D0%B2%D0%B0_%D0%B2%D1%96%D0%B4%D1%81%D1%82%D0%B0%D0%BD%D1%8C) між (2, 3) та (10, 8)
 
 🎉 ВІТАННЯ ! 🎉
 
-[Day 2 >>](../02_Day_Variables_builtin_functions/02_variables_builtin_functions.md)
+[День 2 >>](../02_Day_Variables_builtin_functions/02_variables_builtin_functions.md)
