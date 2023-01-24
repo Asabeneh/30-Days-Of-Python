@@ -467,7 +467,7 @@ import pymongo
 MONGODB_URI = 'mongodb+srv://asabeneh:your_password_goes_here@30daysofpython-twxkr.mongodb.net/test?retryWrites=true&w=majority'
 client = pymongo.MongoClient(MONGODB_URI)
 db = client['thirty_days_of_python'] # accessing the database
-query = {"age":{"$gt":30}}
+query = {"age":{"$lt":30}}
 students = db.students.find(query)
 for student in students:
     print(student)
