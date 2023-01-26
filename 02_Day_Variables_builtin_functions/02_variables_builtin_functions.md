@@ -63,7 +63,7 @@ Python Variable Name Rules
 - A variable name can only contain alpha-numeric characters and underscores (A-z, 0-9, and \_ )
 - Variable names are case-sensitive (firstname, Firstname, FirstName and FIRSTNAME) are different variables)
 
-Let us se valid variable names
+Let us see valid variable names
 
 ```shell
 firstname
