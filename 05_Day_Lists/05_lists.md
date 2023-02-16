@@ -175,7 +175,7 @@ print(rest)           # ['item4', 'item5']
 ```py
 # First Example
 fruits = ['banana', 'orange', 'mango', 'lemon','lime','apple']
-first_fruit, second_fruit, third_fruit, *rest = lst
+first_fruit, second_fruit, third_fruit, *rest = fruits
 print(first_fruit)     # banana
 print(second_fruit)    # orange
 print(third_fruit)     # mango
