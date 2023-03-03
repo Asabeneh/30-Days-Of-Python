@@ -619,12 +619,13 @@ Similar to describe(), the info() method also give information about the dataset
 
 ## Modifying a DataFrame
 
-Modifying a DataFrame:
-    * We can create a new DataFrame
-    * We can create a new column and add it to the DataFrame, 
-    * we can remove an existing column from a DataFrame, 
-    * we can modify an existing column in a DataFrame, 
-    * we can change the data type of column values in the DataFrame
+Some possible modifications:
+
+* We can create a new DataFrame
+* We can create a new column and add it to the DataFrame
+* We can remove an existing column from a DataFrame
+* We can modify an existing column in a DataFrame
+* We can change the data type of column values in the DataFrame
 
 ### Creating a DataFrame
 
