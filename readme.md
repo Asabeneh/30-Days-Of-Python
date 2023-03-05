@@ -1,37 +1,37 @@
-# 🐍 30 Days Of Python 
+# 🐍 30 Days Of Python
 
-|# Day | Topics                                                    |
-|------|:---------------------------------------------------------:|
-| 01  |  [Introduction](./readme.md)|
-| 02  |  [Variables, Built-in Functions](./02_Day_Variables_builtin_functions/02_variables_builtin_functions.md)|
-| 03  |  [Operators](./03_Day_Operators/03_operators.md)|
-| 04  |  [Strings](./04_Day_Strings/04_strings.md)|
-| 05  |  [Lists](./05_Day_Lists/05_lists.md)|
-| 06  |  [Tuples](./06_Day_Tuples/06_tuples.md)|
-| 07  |  [Sets](./07_Day_Sets/07_sets.md)|
-| 08  |  [Dictionaries](./08_Day_Dictionaries/08_dictionaries.md)|
-| 09  |  [Conditionals](./09_Day_Conditionals/09_conditionals.md)|
-| 10  |  [Loops](./10_Day_Loops/10_loops.md)|
-| 11  |  [Functions](./11_Day_Functions/11_functions.md)|
-| 12  |  [Modules](./12_Day_Modules/12_modules.md)|
-| 13  |  [List Comprehension](./13_Day_List_comprehension/13_list_comprehension.md)|
-| 14  |  [Higher Order Functions](./14_Day_Higher_order_functions/14_higher_order_functions.md)|     
-| 15  |  [Python Type Errors](./15_Day_Python_type_errors/15_python_type_errors.md)| 
-| 16 |  [Python Date time](./16_Day_Python_date_time/16_python_datetime.md) |     
-| 17 |  [Exception Handling](./17_Day_Exception_handling/17_exception_handling.md)|    
-| 18 |  [Regular Expressions](./18_Day_Regular_expressions/18_regular_expressions.md)|    
-| 19 |  [File Handling](./19_Day_File_handling/19_file_handling.md)|
-| 20 |  [Python Package Manager](./20_Day_Python_package_manager/20_python_package_manager.md)|
-| 21 |  [Classes and Objects](./21_Day_Classes_and_objects/21_classes_and_objects.md)|
-| 22 |  [Web Scraping](./22_Day_Web_scraping/22_web_scraping.md)|
-| 23 |  [Virtual Environment](./23_Day_Virtual_environment/23_virtual_environment.md)|
-| 24 |  [Statistics](./24_Day_Statistics/24_statistics.md)|
-| 25 |  [Pandas](./25_Day_Pandas/25_pandas.md)|
-| 26 |  [Python web](./26_Day_Python_web/26_python_web.md)|
-| 27 |  [Python with MongoDB](./27_Day_Python_with_mongodb/27_python_with_mongodb.md)|
-| 28 |  [API](./28_Day_API/28_API.md)|
-| 29 |  [Building API](./29_Day_Building_API/29_building_API.md)|
-| 30 |  [Conclusions](./30_Day_Conclusions/30_conclusions.md)|
+| # Day |                                                 Topics                                                  |
+| ----- | :-----------------------------------------------------------------------------------------------------: |
+| 01    |                                       [Introduction](./readme.md)                                       |
+| 02    | [Variables, Built-in Functions](./02_Day_Variables_builtin_functions/02_variables_builtin_functions.md) |
+| 03    |                             [Operators](./03_Day_Operators/03_operators.md)                             |
+| 04    |                                [Strings](./04_Day_Strings/04_strings.md)                                |
+| 05    |                                   [Lists](./05_Day_Lists/05_lists.md)                                   |
+| 06    |                                 [Tuples](./06_Day_Tuples/06_tuples.md)                                  |
+| 07    |                                    [Sets](./07_Day_Sets/07_sets.md)                                     |
+| 08    |                        [Dictionaries](./08_Day_Dictionaries/08_dictionaries.md)                         |
+| 09    |                        [Conditionals](./09_Day_Conditionals/09_conditionals.md)                         |
+| 10    |                                   [Loops](./10_Day_Loops/10_loops.md)                                   |
+| 11    |                             [Functions](./11_Day_Functions/11_functions.md)                             |
+| 12    |                                [Modules](./12_Day_Modules/12_modules.md)                                |
+| 13    |               [List Comprehension](./13_Day_List_comprehension/13_list_comprehension.md)                |
+| 14    |         [Higher Order Functions](./14_Day_Higher_order_functions/14_higher_order_functions.md)          |
+| 15    |               [Python Type Errors](./15_Day_Python_type_errors/15_python_type_errors.md)                |
+| 16    |                   [Python Date time](./16_Day_Python_date_time/16_python_datetime.md)                   |
+| 17    |               [Exception Handling](./17_Day_Exception_handling/17_exception_handling.md)                |
+| 18    |              [Regular Expressions](./18_Day_Regular_expressions/18_regular_expressions.md)              |
+| 19    |                       [File Handling](./19_Day_File_handling/19_file_handling.md)                       |
+| 20    |         [Python Package Manager](./20_Day_Python_package_manager/20_python_package_manager.md)          |
+| 21    |              [Classes and Objects](./21_Day_Classes_and_objects/21_classes_and_objects.md)              |
+| 22    |                        [Web Scraping](./22_Day_Web_scraping/22_web_scraping.md)                         |
+| 23    |              [Virtual Environment](./23_Day_Virtual_environment/23_virtual_environment.md)              |
+| 24    |                           [Statistics](./24_Day_Statistics/24_statistics.md)                            |
+| 25    |                                 [Pandas](./25_Day_Pandas/25_pandas.md)                                  |
+| 26    |                           [Python web](./26_Day_Python_web/26_python_web.md)                            |
+| 27    |              [Python with MongoDB](./27_Day_Python_with_mongodb/27_python_with_mongodb.md)              |
+| 28    |                                      [API](./28_Day_API/28_API.md)                                      |
+| 29    |                        [Building API](./29_Day_Building_API/29_building_API.md)                         |
+| 30    |                          [Conclusions](./30_Day_Conclusions/30_conclusions.md)                          |
 
 🧡🧡🧡 HAPPY CODING 🧡🧡🧡
 
@@ -49,12 +49,12 @@
   <img alt="Twitter Follow" src="https://img.shields.io/twitter/follow/asabeneh?style=social">
   </a>
 
-  <sub>Author:
-  <a href="https://www.linkedin.com/in/asabeneh/" target="_blank">Asabeneh Yetayeh</a><br>
-  <small> Second Edition: July, 2021</small>
-  </sub>
-</div>
+<sub>Author:
+<a href="https://www.linkedin.com/in/asabeneh/" target="_blank">Asabeneh Yetayeh</a><br>
+<small> Second Edition: July, 2021</small>
+</sub>
 
+</div>
 
 [Day 2 >>](./02_Day_Variables_builtin_functions/02_variables_builtin_functions.md)
 
@@ -95,11 +95,11 @@
 
 **Congratulations** for deciding to participate in a _30 days of Python_ programming challenge . In this challenge you will learn everything you need to be a python programmer and the whole concept of programming. In the end of the challenge you will get a _30DaysOfPython_ programming challenge certificate.
 
-If you would like to actively engage in the challenge, you may join the [30DaysOfPython challenge](https://t.me/ThirtyDaysOfPython) telegram group.  
+If you would like to actively engage in the challenge, you may join the [30DaysOfPython challenge](https://t.me/ThirtyDaysOfPython) telegram group.
 
 ## Introduction
 
-Python is a high-level programming language for general-purpose programming. It is an open source, interpreted, objected-oriented programming language. Python was created by a Dutch programmer, Guido van Rossum. The name of Python programming language was derived from a British sketch comedy series, *Month Python's Flying Circus*.  The first version was released on February 20, 1991. This 30 days of Python challenge will help you learn the latest version of Python, Python 3 step by step. The topics are broken down into 30 days, where each day contains several topics with easy-to-understand explanations, real-world examples, many hands on exercises and projects.
+Python is a high-level programming language for general-purpose programming. It is an open source, interpreted, objected-oriented programming language. Python was created by a Dutch programmer, Guido van Rossum. The name of Python programming language was derived from a British sketch comedy series, _Month Python's Flying Circus_. The first version was released on February 20, 1991. This 30 days of Python challenge will help you learn the latest version of Python, Python 3 step by step. The topics are broken down into 30 days, where each day contains several topics with easy-to-understand explanations, real-world examples, many hands on exercises and projects.
 
 This challenge is designed for beginners and professionals who want to learn python programming language. It may take 30 to 100 days to complete the challenge, people who actively participate on the telegram group have a high probability of completing the challenge.
 If you are a visual learner or in favor of videos, you may get started with this [Python for Absolute Beginners video](https://www.youtube.com/watch?v=11OYpBrhdyM).
@@ -161,19 +161,19 @@ Python will give you results if you write scripts that Python understands, if no
 
 ![Invalid Syntax Error](./images/invalid_syntax_error.png)
 
-As you can see from the returned error, Python is so clever that it knows the mistake we made and which was _Syntax Error: invalid syntax_. Using x as multiplication in Python is a syntax error because (x) is not a valid syntax in Python. Instead of (**x**) we use asterisk (*) for multiplication. The returned error clearly shows what to fix.
+As you can see from the returned error, Python is so clever that it knows the mistake we made and which was _Syntax Error: invalid syntax_. Using x as multiplication in Python is a syntax error because (x) is not a valid syntax in Python. Instead of (**x**) we use asterisk (\*) for multiplication. The returned error clearly shows what to fix.
 
-The process of identifying and removing errors from a program is called *debugging*. Let us debug it by putting * in place of **x**.
+The process of identifying and removing errors from a program is called _debugging_. Let us debug it by putting \* in place of **x**.
 
 ![Fixing Syntax Error](./images/fixing_syntax_error.png)
 
-Our bug was fixed, the code ran and we got a result we were expecting. As a programmer you will see such kind of errors on daily basis. It is good to know how to debug. To be good at debugging you should understand what kind of errors you are facing. Some of the Python errors you may encounter are *SyntaxError*, *IndexError*, *NameError*, *ModuleNotFoundError*, *KeyError*, *ImportError*, *AttributeError*, *TypeError*, *ValueError*, *ZeroDivisionError* etc. We will see more about different Python **_error types_** in later sections.
+Our bug was fixed, the code ran and we got a result we were expecting. As a programmer you will see such kind of errors on daily basis. It is good to know how to debug. To be good at debugging you should understand what kind of errors you are facing. Some of the Python errors you may encounter are _SyntaxError_, _IndexError_, _NameError_, _ModuleNotFoundError_, _KeyError_, _ImportError_, _AttributeError_, _TypeError_, _ValueError_, _ZeroDivisionError_ etc. We will see more about different Python **_error types_** in later sections.
 
 Let us practice more how to use Python interactive shell. Go to your terminal or command prompt and write the word **python**.
 
 ![Python Scripting Shell](./images/opening_python_shell.png)
 
-The Python interactive shell is opened. Let us do some basic mathematical operations (addition, subtraction, multiplication, division, modulus,  exponential).
+The Python interactive shell is opened. Let us do some basic mathematical operations (addition, subtraction, multiplication, division, modulus, exponential).
 
 Let us do some maths first before we write any Python code:
 
@@ -181,7 +181,7 @@ Let us do some maths first before we write any Python code:
 - 3 - 2 = 1
 - 3 \* 2 = 6
 - 3 / 2 = 1.5
-- 3 ^ 2 = 3 x 3 = 9
+- 3 \*\* 2 = 3 x 3 = 9
 
 In python we have the following additional operations:
 
@@ -278,14 +278,14 @@ In Python there are several types of data types. Let us get started with the mos
 #### Number
 
 - Integer: Integer(negative, zero and positive) numbers
-    Example:
-    ... -3, -2, -1, 0, 1, 2, 3 ...
+  Example:
+  ... -3, -2, -1, 0, 1, 2, 3 ...
 - Float: Decimal number
-    Example
-    ... -3.5, -2.25, -1.0, 0.0, 1.1, 2.2, 3.5 ...
+  Example
+  ... -3.5, -2.25, -1.0, 0.0, 1.1, 2.2, 3.5 ...
 - Complex
-    Example
-    1 + j, 2 + 4j
+  Example
+  1 + j, 2 + 4j
 
 #### String
 
@@ -327,7 +327,7 @@ Python list is an ordered collection which allows to store different data type i
 
 #### Dictionary
 
-A Python dictionary object is an unordered collection of data in a key value pair format. 
+A Python dictionary object is an unordered collection of data in a key value pair format.
 
 **Example:**
 
@@ -335,8 +335,8 @@ A Python dictionary object is an unordered collection of data in a key value pai
 {
 'first_name':'Asabeneh',
 'last_name':'Yetayeh',
-'country':'Finland', 
-'age':250, 
+'country':'Finland',
+'age':250,
 'is_married':True,
 'skills':['JS', 'React', 'Node', 'Python']
 }
@@ -379,7 +379,7 @@ To check the data type of certain data/variable we use the **type** function. In
 
 First open your project folder, 30DaysOfPython. If you don't have this folder, create a folder name called 30DaysOfPython. Inside this folder, create a file called helloworld.py. Now, let's do what we did on python interactive shell using visual studio code.
 
-The Python interactive shell was printing without using **print** but on visual studio code to see our result we should use a built in function *print(). The *print()* built-in function takes one or more arguments as follows *print('arument1', 'argument2', 'argument3')*. See the examples below.
+The Python interactive shell was printing without using **print** but on visual studio code to see our result we should use a built in function *print(). The *print()* built-in function takes one or more arguments as follows *print('arument1', 'argument2', 'argument3')\*. See the examples below.
 
 **Example:**
 
@@ -407,11 +407,11 @@ print(type({9.8, 3.14, 2.7}))    # Set
 print(type((9.8, 3.14, 2.7)))    # Tuple
 ```
 
-To run the python file check the image below. You can run the python file either by running the green button on Visual Studio Code or by typing *python helloworld.py* in the terminal .
+To run the python file check the image below. You can run the python file either by running the green button on Visual Studio Code or by typing _python helloworld.py_ in the terminal .
 
 ![Running python script](./images/running_python_script.png)
 
-🌕  You are amazing. You have just completed day 1 challenge and you are on your way to greatness. Now do some exercises for your brain and muscles.
+🌕 You are amazing. You have just completed day 1 challenge and you are on your way to greatness. Now do some exercises for your brain and muscles.
 
 ## 💻 Exercises - Day 1
 
@@ -443,7 +443,7 @@ To run the python file check the image below. You can run the python file either
 
 ### Exercise: Level 2
 
-1. Create a folder named day_1 inside 30DaysOfPython folder. Inside day_1 folder, create a python file helloworld.py and repeat questions 1, 2, 3 and 4. Remember to use _print()_ when you are working on a python file. Navigate to the directory where you have saved your file, and run it.
+1. Create a folder named day*1 inside 30DaysOfPython folder. Inside day_1 folder, create a python file helloworld.py and repeat questions 1, 2, 3 and 4. Remember to use \_print()* when you are working on a python file. Navigate to the directory where you have saved your file, and run it.
 
 ### Exercise: Level 3
 
