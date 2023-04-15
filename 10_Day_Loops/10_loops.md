@@ -132,7 +132,7 @@ while count < 5:
     print(count)
 ```
 
-The above while loop only prints 1, 2 and 4 (skips 3).
+The above while loop only prints 1, 2, 4, and 5 (skips 3).
 
 ### For Loop
 
