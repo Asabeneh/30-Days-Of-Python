@@ -85,6 +85,7 @@ In this step, let us use dummy data and return it as a json. To return it as jso
 
 from flask import Flask,  Response
 import json
+import os
 
 app = Flask(__name__)
 
@@ -136,7 +137,7 @@ In stead of displaying dummy data let us connect the flask application with Mong
 from flask import Flask,  Response
 import json
 import pymongo
-
+import os
 
 app = Flask(__name__)
 
@@ -206,7 +207,7 @@ from bson.objectid import ObjectId
 import json
 from bson.json_util import dumps
 import pymongo
-
+import os
 
 app = Flask(__name__)
 
@@ -259,7 +260,7 @@ import json
 from bson.json_util import dumps
 import pymongo
 from datetime import datetime
-
+import os
 
 app = Flask(__name__)
 
@@ -317,7 +318,7 @@ import json
 from bson.json_util import dumps
 import pymongo
 from datetime import datetime
-
+import os
 
 app = Flask(__name__)
 
@@ -398,7 +399,7 @@ import json
 from bson.json_util import dumps
 import pymongo
 from datetime import datetime
-
+import os
 
 app = Flask(__name__)
 
