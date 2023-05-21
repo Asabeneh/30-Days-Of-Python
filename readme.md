@@ -37,85 +37,86 @@
 
 
 <div align="center">
-  <h1> 30 Days Of Python: Day 1 - Introduction</h1>
+  <h1> Python за 30 дней: День 1 - Знакомство с Python</h1>
 
-  <sub>Author:
+  <sub>Автор:
   <a href="https://www.linkedin.com/in/asabeneh/" target="_blank">Asabeneh Yetayeh</a><br>
-  <small> Second Edition: July, 2021</small>
+  <small> Второе издание: июль, 2021</small>
   </sub>
 </div>
 
 
-[Day 2 >>](./02_Day_Variables_builtin_functions/02_variables_builtin_functions.md)
+[День 2 >>](./02_Day_Variables_builtin_functions/02_variables_builtin_functions.md)
 
-![30DaysOfPython](./images/30DaysOfPython_banner3@2x.png)
+![Python за 30 дней](./images/30DaysOfPython_banner3@2x.png)
 
-- [🐍 30 Days Of Python](#-30-days-of-python)
-- [📘 Day 1](#-day-1)
-  - [Welcome](#welcome)
-  - [Introduction](#introduction)
-  - [Why Python ?](#why-python-)
-  - [Environment Setup](#environment-setup)
-    - [Installing Python](#installing-python)
+- [🐍 Python за 30 дней](#-30-days-of-python)
+- [📘 День 1](#-day-1)
+  - [Приветствие](#welcome)
+  - [Знакомство с Python](#introduction)
+  - [Почему Python?](#why-python-)
+  - [Установка среды](#environment-setup)
+    - [Установка Python](#installing-python)
     - [Python Shell](#python-shell)
-    - [Installing Visual Studio Code](#installing-visual-studio-code)
-      - [How to use visual studio code](#how-to-use-visual-studio-code)
-  - [Basic Python](#basic-python)
-    - [Python Syntax](#python-syntax)
-    - [Python Indentation](#python-indentation)
-    - [Comments](#comments)
-    - [Data types](#data-types)
-      - [Number](#number)
-      - [String](#string)
-      - [Booleans](#booleans)
-      - [List](#list)
-      - [Dictionary](#dictionary)
-      - [Tuple](#tuple)
-      - [Set](#set)
-    - [Checking Data types](#checking-data-types)
-    - [Python File](#python-file)
-  - [💻 Exercises - Day 1](#-exercises---day-1)
-    - [Exercise: Level 1](#exercise-level-1)
-    - [Exercise: Level 2](#exercise-level-2)
-    - [Exercise: Level 3](#exercise-level-3)
+    - [Установка Visual Studio Code](#installing-visual-studio-code)
+      - [Как пользоваться visual studio code?](#how-to-use-visual-studio-code)
+  - [Основы Python](#basic-python)
+    - [Синтаксис Python](#python-syntax)
+    - [Отступы в Python](#python-indentation)
+    - [Комментарии](#comments)
+    - [Типы данных](#data-types)
+      - [Числа](#number)
+      - [Строки](#string)
+      - [Булевый тип данных](#booleans)
+      - [Список](#list)
+      - [Словарь](#dictionary)
+      - [Кортеж](#tuple)
+      - [Множество](#set)
+    - [Определение типа данных](#checking-data-types)
+    - [Файл Python](#python-file)
+  - [💻 Упражнения - День 1](#-exercises---day-1)
+    - [Упражнения: Уровень 1](#exercise-level-1)
+    - [Упражнения: Уровень 2](#exercise-level-2)
+    - [Упражнения: Уровень 3](#exercise-level-3)
 
-# 📘 Day 1
+# 📘 День 1
 
-## Welcome
+## Приветствие
 
-**Congratulations** for deciding to participate in a _30 days of Python_ programming challenge . In this challenge you will learn everything you need to be a python programmer and the whole concept of programming. In the end of the challenge you will get a _30DaysOfPython_ programming challenge certificate.
+**Поздравляем и добро пожаловать!** Раз вы здесь, значит вы решились бросить себе вызов и присоединиться к нам в изучении _Python за 30 дней_ . Из наших уроков вы узнаете всё необходимое, чтобы программировать на python, и поймете, что вообще программирование из себя предсталвяет. После успешного выполнения программы вы получите сертификат _30DaysOfPython_ .
 
-If you would like to actively engage in the challenge, you may join the [30DaysOfPython challenge](https://t.me/ThirtyDaysOfPython) telegram group.  
+Для активного участия при желании можете вступить в чат в telegram: [30DaysOfPython challenge](https://t.me/ThirtyDaysOfPython).  
 
-## Introduction
+## Знакомство с Python
 
-Python is a high-level programming language for general-purpose programming. It is an open source, interpreted, objected-oriented programming language. Python was created by a Dutch programmer, Guido van Rossum. The name of Python programming language was derived from a British sketch comedy series, *Month Python's Flying Circus*.  The first version was released on February 20, 1991. This 30 days of Python challenge will help you learn the latest version of Python, Python 3 step by step. The topics are broken down into 30 days, where each day contains several topics with easy-to-understand explanations, real-world examples, many hands on exercises and projects.
+Python - это высокоуровневый язык программирования общего назначения. Python - язык open source (с открытым исходным кодом), а также интерпретируемый и объектно-ориентированный. Создатель Python - Гвидо ван Россум, нидерландский программист. Название данного языка программирования заимствовано из британского комедийного скетч-сериала, *Летающий цирк Монти Пайтона*. Первая версия вышла 20 февраля 1991 года. Челлендж **Python за 30 дней** постепенно познакомит вас с последней версией Python - Python 3. Темы разделены на 30 блоков на 30 дней соответственно. В каждом из них вы найдете объяснение темы доступным языком, реальные примеры и множество упражнений для практики.
 
-This challenge is designed for beginners and professionals who want to learn python programming language. It may take 30 to 100 days to complete the challenge, people who actively participate on the telegram group have a high probability of completing the challenge.
+Данный челлендж предназначен для интересующихся языком программирования python: от начинающих до профессионалов. Его изучение может занять у вас от 30 до 100 дней. Активные участники чата в telegram имеют все шансы справиться успешно.
 
-This challenge is easy to read, written in conversational English, engaging, motivating and at the same time, it is very demanding. You need to allocate much time to finish this challenge. If you are a visual learner, you may get the video lesson on <a href="https://www.youtube.com/channel/UC7PNRuno1rzYPb1xLa4yktw"> Washera</a> YouTube channel. You may start from [Python for Absolute Beginners video](https://youtu.be/OCCWZheOesI). Subscribe the channel, comment and ask questions on YouTube vidoes and be proactive, the author will eventually notice you. 
+Материал написан простым языком. **Python за 30 дней** поможет вам активно влиться в процесс изучения и поддерживать мотивацию, однако без ваших стараний не обойтись. Вам потребуется отвести на занятия много времени, чтобы успешно освоить программу. Тем, кто предпочитает воспринимать информацию визуально, рекомендуем обратить внимание на видео-уроки на YouTube-канале <a href="https://www.youtube.com/channel/UC7PNRuno1rzYPb1xLa4yktw"> Washera</a>. Для начала посмотрите видео [Python for Absolute Beginners video](https://youtu.be/OCCWZheOesI). Подписывайтесь на канал, оставляйте комментарии и задавайте вопросы. Автор обязательно заметит вашу активность.
 
-The author likes to hear your opinion about the challenge, share the author by expressing your thoughts about the 30DaysOfPython challenge. You can leave your testimonial on this [link](https://testimonial-vdzd.onrender.com/)
+Автору важно знать ваше мнение. Вы можете оставить отзыв здесь: [ссылка](https://testimonial-vdzd.onrender.com/)
 
-## Why Python ?
+## Почему Python?
 
-It is a programming language which is very close to human language and because of that it is easy to learn and use.
-Python is used by various industries and companies (including Google). It has been used to develop web applications, desktop applications, system adminstration, and machine learning libraries. Python is highly embraced language in the data science and machine learning community. I hope this is enough to convince you to start learning Python. Python is eating the world and you are killing it before it eats you.
+Это язык программирования, очень близкий к языку человеческому. За счет этого понимать его и работать с ним довольно просто.
+Python используется в работе крупных компаний(включая Google). Он применяется для разработки веб-приложений, десктопных приложений, а также для системного администрирования и машинного обучения. Python широко распространен среди датасаентистов и специалистов по машинному обучению. Надеемся, этого достаточно, чтоб убедить вас начать свой путь в изучении Python. Python захватывает мир: либо вы укротите его, либо он вас.
 
-## Environment Setup
+## Установка среды
 
-### Installing Python
+### Установка Python
 
-To run a python script you need to install python. Let's [download](https://www.python.org/) python.
-If your are a windows user. Click the button encircled in red.
+Для запуска кода на python вам необходимо его установить: [ссылка](https://www.python.org/).
 
-[![installing on Windows](./images/installing_on_windows.png)](https://www.python.org/)
+Пользователям windows: нажмите на кнопку, обведенную красной рамкой.
 
-If you are a macOS user. Click the button encircled in red.
+[![установка на Windows](./images/installing_on_windows.png)](https://www.python.org/)
 
-[![installing on Windows](./images/installing_on_macOS.png)](https://www.python.org/)
+Пользователям macOS: нажмите на кнопку, обведенную красной рамкой.
 
-To check if python is installed write the following command on your device terminal.
+[![установка на macOS](./images/installing_on_macOS.png)](https://www.python.org/)
+
+Проверьте, что python установлен: введите в терминал следующую команду:
 
 ```shell
 python --version
@@ -123,14 +124,14 @@ python --version
 
 ![Python Version](./images/python_versio.png)
 
-As you can see from the terminal, I am using _Python 3.7.5_ version at the moment. Your version of Python might be different from mine by but it should be 3.6 or above. If you mange to see the python version, well done. Python has been installed on your machine. Continue to the next section.
+Мы сейчас используем версию _Python 3.7.5_, согласно терминалу. У вас может быть установлена другая версия, но не ниже 3.6. Если вы видите у себя в терминале версию python, значит всё отлично. Python установлен на ваше устройство. Двигаемся дальше.
 
 ### Python Shell
 
-Python is an interpreted scripting language, so it does not need to be compiled. It means it executes the code line by line. Python comes with a _Python Shell (Python Interactive Shell)_. It is used to execute a single python command and get the result.
+Python - интерпретируемый скриптовый язык, он не требует компиляции. Это означает, что код выполняется строка за строкой. Python работает при помощи _Python Shell (Python Interactive Shell)_: выполняются команды, написанные на python, и мы получаем результат.
 
-Python Shell waits for the Python code from the user. When you enter the code, it interprets the code and shows the result in the next line.
-Open your terminal or command prompt(cmd) and write:
+Для работы Python Shell нужен код на языке Python от пользователя. Вы вводите код, он интерпретируется, и в следующей строке появляется результат.
+Откройте свой терминал или командную строку и введите:
 
 ```shell
 python
@@ -138,37 +139,37 @@ python
 
 ![Python Scripting Shell](./images/opening_python_shell.png)
 
-The Python interactive shell is opened and it is waiting for you to write Python code(Python script). You will write your Python script next to this symbol >>> and then click Enter.
-Let us write our very first script on the Python scripting shell.
+Python Shell готов к работе, осталось лишь написать код. После символа >>> вводите свой код и нажимайте Enter.
+Время написать наш первый код!
 
 ![Python script on Python shell](./images/adding_on_python_shell.png)
 
-Well done, you wrote your first Python script on Python interactive shell. How do we close the Python interactive shell ?
-To close the shell, next to this symbol >> write **exit()** command and press Enter.
+Поздравляем, вы написали свой первый код на языке Python в Python Shell. Как же теперь его закрыть?
+После символа >> введите команду **exit()** и нажмите Enter.
 
 ![Exit from python shell](./images/exit_from_shell.png)
 
-Now, you know how to open the Python interactive shell and how to exit from it.
+Теперь вы умеете открывать и закрывать Python Shell.
 
-Python will give you results if you write scripts that Python understands, if not it returns errors. Let's make a deliberate mistake and see what Python will return.
+Python выдаст вам результат только в случае отсутствия ошибок, то есть если Python понимает ваш код. Давайте специально допустим ошибку и посмотрим, что вернет нам Python.
 
 ![Invalid Syntax Error](./images/invalid_syntax_error.png)
 
-As you can see from the returned error, Python is so clever that it knows the mistake we made and which was _Syntax Error: invalid syntax_. Using x as multiplication in Python is a syntax error because (x) is not a valid syntax in Python. Instead of (**x**) we use asterisk (*) for multiplication. The returned error clearly shows what to fix.
+Как видите, Python настолько умный, что он сам понимает, какую ошибку мы допустили: _Syntax Error: invalid syntax_. Использовать символ x для перемножения в Python неправильно, это синтаксическая ошибка. Вместо символа (**x**) для перемножения используется звездочка (*). Ошибка, которую вернул нам Python, четко дает понять, что именно нужно исправить.
 
-The process of identifying and removing errors from a program is called *debugging*. Let us debug it by putting * in place of **x**.
+Процесс обнаружения и устранения ошибок в программе назывется *отладкой*. Давйте исправим ошибку, поставив звездочку * на место символа **x**.
 
 ![Fixing Syntax Error](./images/fixing_syntax_error.png)
 
-Our bug was fixed, the code ran and we got a result we were expecting. As a programmer you will see such kind of errors on daily basis. It is good to know how to debug. To be good at debugging you should understand what kind of errors you are facing. Some of the Python errors you may encounter are *SyntaxError*, *IndexError*, *NameError*, *ModuleNotFoundError*, *KeyError*, *ImportError*, *AttributeError*, *TypeError*, *ValueError*, *ZeroDivisionError* etc. We will see more about different Python **_error types_** in later sections.
+Ошибка устранена, код работает и приводит к нужному результату. При работе программистом вы будете встречаться с подобными ошибками постоянно. Важно знать, как их исправлять. Для этого необходимо научиться понимать, с какими ошибками вы сталкиваетесь. Например, вот такие ошибки вы можете встретить в случае с Python: *SyntaxError*, *IndexError*, *NameError*, *ModuleNotFoundError*, *KeyError*, *ImportError*, *AttributeError*, *TypeError*, *ValueError*, *ZeroDivisionError* и др. Больше различных **_видов ошибок_** в Python мы рассмотрим в следующих разделах.
 
-Let us practice more how to use Python interactive shell. Go to your terminal or command prompt and write the word **python**.
+Время ещё попрактиковаться в использовании Python Shell! Откройте терминал или командную строку и введите слово **python**.
 
 ![Python Scripting Shell](./images/opening_python_shell.png)
 
-The Python interactive shell is opened. Let us do some basic mathematical operations (addition, subtraction, multiplication, division, modulus,  exponential).
+Вы открыли Python Shell. Давайте попробуем выполнить простые математические операции (сложение, вычитание, умножение, деление, нахождение остатка от деления, возведение в степень).
 
-Let us do some maths first before we write any Python code:
+Прежде чем начать писать код, для начала вспомним немного математики:
 
 - 2 + 3 = 5
 - 3 - 2 = 1
@@ -176,28 +177,28 @@ Let us do some maths first before we write any Python code:
 - 3 / 2 = 1.5
 - 3 ^ 2 = 3 x 3 = 9
 
-In python we have the following additional operations:
+В python есть дополнительные операции:
 
-- 3 % 2 = 1 => which means finding the remainder
-- 3 // 2 = 1 => which means removing the remainder
+- 3 % 2 = 1 => для нахождения остатка от деления
+- 3 // 2 = 1 => для нахождения целой части от деления
 
-Let us change the above mathematical expressions to Python code. The Python shell has been opened and let us write a comment at the very beginning of the shell.
+Теперь превратим математические выражения в код на Python. Напишем комментарий в самом начале Python Shell. 
 
-A _comment_ is a part of the code which is not executed by python. So we can leave some text in our code to make our code more readable. Python does not run the comment part. A comment in python starts with hash(#) symbol.
-This is how you write a comment in python
+_Комментарий_ - это часть кода, которую python не выполняет. Так что мы можем добавить в наш код текст, чтобы сделать его более читаемым. Комментарии в python начинаются со знака решетки (#).
+Вот так пишутся комментарии в python:
 
 ```shell
- # comment starts with hash
- # this is a python comment, because it starts with a (#) symbol
+ # комментарий начинается со знака решетки
+ # это комментарий, т.к. он начинается со знака решетки (#)
 ```
 
 ![Maths on python shell](./images/maths_on_python_shell.png)
 
-Before we move on to the next section, let us practice more on the Python interactive shell. Close the opened shell by writing _exit()_ on the shell and open it again and let us practice how to write text on the Python shell.
+Прежде чем перейти к следующему разделу, давайте еще потренируемся работать с Python Shell. Введите команду _exit()_ и закройте Python shell, затем откройте заново и приступайте к практике. 
 
 ![Writing String on python shell](./images/writing_string_on_shell.png)
 
-### Installing Visual Studio Code
+### Установка Visual Studio Code
 
 The Python interactive shell is good to try and test small script codes but it will not be for a big project. In real work environment, developers use different code editors to write codes. In this 30 days of Python programming challenge we will use visual studio code. Visual studio code is a very popular open source text editor. I am a fan of vscode and I would recommend to [download](https://code.visualstudio.com/) visual studio code, but if you are in favor of other editors, feel free to follow with what you have.
 
