@@ -18,93 +18,94 @@
 ![30DaysOfPython](../images/30DaysOfPython_banner3@2x.png)
 
 - [📘 Day 3](#-day-3)
-  - [Boolean](#boolean)
-  - [Operators](#operators)
-    - [Assignment Operators](#assignment-operators)
-    - [Arithmetic Operators:](#arithmetic-operators)
-    - [Comparison Operators](#comparison-operators)
-    - [Logical Operators](#logical-operators)
-  - [💻 Exercises - Day 3](#-exercises---day-3)
+  - [ចំនួនប៊ូលីន](#ចំនួនប៊ូលីន)
+  - [ប្រតិបត្តិការ](#ប្រតិបត្តិការ)
+    - [ប្រតិបត្តិករចាត់តាំង](#ប្រតិបត្តិករចាត់តាំង)
+    - [ប្រតិបត្តិការនព្វន្ធ](#ប្រតិបត្តិការនព្វន្ធ)
+    - [ប្រតិបត្តិករប្រៀបធៀប](#ប្រតិបត្តិករប្រៀបធៀប)
+    - [ប្រតិបត្តិតក្ក](#ប្រតិបត្តិតក្ក)
 
 # 📘 Day 3
 
-## Boolean
+## ចំនួនប៊ូលីន
 
-A boolean data type represents one of the two values: _True_ or _False_. The use of these data types will be clear once we start using the comparison operator. The first letter **T** for True and **F** for False should be capital unlike JavaScript.
-**Example: Boolean Values**
+ប្រភេទទិន្នន័យ ចំនួនប៊ូលីន តំណាងឱ្យតម្លៃមួយនៃតម្លៃពីរ: _True_ ឬ _False_ ។ ការប្រើប្រាស់ ប្រភេទទិន្នន័យទាំងនេះនឹងច្បាស់ នៅពេលដែលយើងចាប់ផ្តើមប្រើប្រតិបត្តិការប្រៀបធៀប។ អក្សរដំបូង **T** សម្រាប់ True និង **F** សម្រាប់ False គួរតែមានអក្សរធំមិនដូច JavaScript ទេ។
+**Example: តម្លៃចំនួនប៊ូលីន**
 
 ```py
 print(True)
 print(False)
 ```
 
-## Operators
+## ប្រតិបត្តិការ
 
-Python language supports several types of operators. In this section, we will focus on few of them.
+ភាសា Python គាំទ្រប្រតិបត្តិការជាច្រើនប្រភេទ។ នៅក្នុងនេះ, យើងនឹងផ្តោតលើលើវាខ្លះៗ។
 
-### Assignment Operators
+### ប្រតិបត្តិករចាត់តាំង
 
-Assignment operators are used to assign values to variables. Let us take = as an example. Equal sign in mathematics shows that two values are equal, however in Python it means we are storing a value in a certain variable and we call it assignment or a assigning value to a variable. The table below shows the different types of python assignment operators, taken from [w3school](https://www.w3schools.com/python/python_operators.asp).
+ប្រតិបត្តិករចាត់តាំងត្រូវបានប្រើដើម្បីកំណត់តម្លៃទៅលើ អថេរ ។ យក = ជាឧទាហរណ៍។ សញ្ញាស្មើក្នុងគណិតវិទ្យាបង្ហាញថាតម្លៃពីរស្មើគ្នាប៉ុន្តែក្នុង Python វាមានន័យថា យើងកំពុងតែរក្សាតម្លៃនៅក្នុងអថេរមួយ ហើយយើងហៅវាថាចាត់តាំងតម្លៃទៅលើអថេរមួយ។ តារាងខាងក្រោមនេះបង្ហាញពីប្រភេទប្រតិបត្តិករចាត់តាំង Python ផ្សេងៗ, បានមកពី [w3school](https://www.w3schools.com/python/python_operators.asp).
 
 ![Assignment Operators](../images/assignment_operators.png)
 
-### Arithmetic Operators:
+### ប្រតិបត្តិការនព្វន្ធ
 
-- Addition(+): a + b
-- Subtraction(-): a - b
-- Multiplication(*): a * b
-- Division(/): a / b
-- Modulus(%): a % b
-- Floor division(//): a // b
-- Exponentiation(**): a ** b
+- បូក Addition(+): a + b 
+- ដក Subtraction(-): a - b
+- គុណ Multiplication(*): a * b
+- ចែក Division(/): a / b
+- ម៉ូឌុល (ផ្នែកដែលនៅសល់) Modulus(%): a % b
+- បង្កត់ចុះ Floor division(//): a // b
+- ស្វាយគុណ Exponentiation(**): a ** b
 
 ![Arithmetic Operators](../images/arithmetic_operators.png)
 
-**Example:Integers**
+**Example:ចំនួនគត់**
 
 ```py
-# Arithmetic Operations in Python
-# Integers
+# ប្រតិបត្តិការនព្វន្ធ ក្នុង Python
+# ចំនួនគត់
 
 print('Addition: ', 1 + 2)        # 3
 print('Subtraction: ', 2 - 1)     # 1
 print('Multiplication: ', 2 * 3)  # 6
-print ('Division: ', 4 / 2)       # 2.0  Division in Python gives floating number
+print ('Division: ', 4 / 2)       # 2.0  ការចែកក្នុង Python នឹងទទួលបានចំនួនទសភាគ
 print('Division: ', 6 / 2)        # 3.0         
 print('Division: ', 7 / 2)        # 3.5
-print('Division without the remainder: ', 7 // 2)   # 3,  gives without the floating number or without the remaining
+print('Division without the remainder: ', 7 // 2)   # 3,  ការចែក ទទួលបានចំនួនគត់
 print ('Division without the remainder: ',7 // 3)   # 2
-print('Modulus: ', 3 % 2)         # 1, Gives the remainder
-print('Exponentiation: ', 2 ** 3) # 9 it means 2 * 2 * 2
+print('Modulus: ', 3 % 2)         # 1, ការរកសំណល់
+print('Exponentiation: ', 2 ** 3) # 9 មានន័យថា 2 * 2 * 2
 ```
 
-**Example:Floats**
+**Example:ទសភាគ**
 
 ```py
-# Floating numbers
+# លេខទសភាគ
 print('Floating Point Number, PI', 3.14)
 print('Floating Point Number, gravity', 9.81)
 ```
 
-**Example:Complex numbers**
+**Example:ចំនួនកុំផ្លិច**
 
 ```py
-# Complex numbers
+# ចំនួនកុំផ្លិច
 print('Complex number: ', 1 + 1j)
 print('Multiplying complex numbers: ',(1 + 1j) * (1 - 1j))
 ```
 
 Let's declare a variable and assign a number data type. I am going to use single character variable but remember do not develop a habit of declaring such types of variables. Variable names should be all the time mnemonic.
 
+យើងអាចបង្កើត អថេរ ហើយកំណត់ប្រភេទទិន្នន័យ ខ្ញុំនឹងប្រើអថេរអក្សរតែមួយ ប៉ុន្តែចងចាំថាកុំបង្កើតទម្លាប់នៃការប្រកាសប្រភេទនៃអថេរដូចឆ្នេះ។ ឈ្មោះរបស់អថេរគួរតែចម្រុះគួរតែមានឈ្មោះជា mnemonic គឺស្រួលចាំនិងយល់។
+
 **Example:**
 
 ```python
-# Declaring the variable at the top first
+# បង្កើតអថេរនៅខាងលើមុន
 
-a = 3 # a is a variable name and 3 is an integer data type
-b = 2 # b is a variable name and 3 is an integer data type
+a = 3 # a ជាឈ្មោះអថេរ និង 3 ជាចំនួនគត់
+b = 2 # b ជាឈ្មោះអថេរ និង 2 ជាចំនួនគត់
 
-# Arithmetic operations and assigning the result to a variable
+# ប្រតិបត្តិការនព្វន្ធ និង ការដាក់ចម្លើយនៅក្នុងអថេរ
 total = a + b
 diff = a - b
 product = a * b
@@ -113,8 +114,7 @@ remainder = a % b
 floor_division = a // b
 exponential = a ** b
 
-# I should have used sum instead of total but sum is a built-in function - try to avoid overriding built-in functions
-print(total) # if you do not label your print with some string, you never know where the result is coming from
+print(total) 
 print('a + b = ', total)
 print('a - b = ', diff)
 print('a * b = ', product)
@@ -129,18 +129,18 @@ print('a ** b = ', exponentiation)
 ```py
 print('== Addition, Subtraction, Multiplication, Division, Modulus ==')
 
-# Declaring values and organizing them together
+# Dបង្កើតអថេរនិងតម្លៃ 2 ហើយរៀបវាជាមួយគ្នា
 num_one = 3
 num_two = 4
 
-# Arithmetic operations
+# ប្រតិបត្តិការនព្វន្ធ
 total = num_one + num_two
 diff = num_two - num_one
 product = num_one * num_two
 div = num_two / num_one
 remainder = num_two % num_one
 
-# Printing values with label
+# បង្ហាញចម្លើយជាមួយឈ្មោះរបស់វា
 print('total: ', total)
 print('difference: ', diff)
 print('product: ', product)
@@ -148,50 +148,50 @@ print('division: ', div)
 print('remainder: ', remainder)
 ```
 
-Let us start start connecting the dots and start making use of what we already know to calculate (area, volume,density,  weight, perimeter, distance, force).
+យើងអាចចាប់ផ្តើមប្រើអ្វីដែលយើងតឹមតែរៀងដោយគណនា (area, volume,density,  weight, perimeter, distance, force).
 
 **Example:**
 
 ```py
-# Calculating area of a circle
-radius = 10                                 # radius of a circle
-area_of_circle = 3.14 * radius ** 2         # two * sign means exponent or power
+# ការគណនាផ្ទៃក្រឡារង្វង់
+radius = 10                                 # កាំនៃរង្វង់
+area_of_circle = 3.14 * radius ** 2         # ** មានន័យថាស្វាយគុណ
 print('Area of a circle:', area_of_circle)
 
-# Calculating area of a rectangle
+# ការគណនាផ្ទៃក្រឡានៃចតុកោណកែង
 length = 10
 width = 20
 area_of_rectangle = length * width
 print('Area of rectangle:', area_of_rectangle)
 
-# Calculating a weight of an object
+# ការគណនាទម្ងន់នៃវត្ថុមួយ
 mass = 75
 gravity = 9.81
 weight = mass * gravity
-print(weight, 'N')                         # Adding unit to the weight
+print(weight, 'N')                        
 
-# Calculate the density of a liquid
+# គណនាដង់ស៊ីតេនៃអង្គធាតុរាវ
 mass = 75 # in Kg
 volume = 0.075 # in cubic meter
 density = mass / volume # 1000 Kg/m^3
 
 ```
 
-### Comparison Operators
+### ប្រតិបត្តិករប្រៀបធៀប
 
-In programming we compare values, we use comparison operators to compare two values. We check if a value is greater or less or equal to other value. The following table shows Python comparison operators which was taken from [w3shool](https://www.w3schools.com/python/python_operators.asp).
+ក្នុង programming we compare values, យើងប្រៀបធៀបតម្លៃ យើងប្រើប្រតិបត្តិការប្រៀបធៀប ដើម្បីប្រៀបធៀបតម្លៃពីរ។  យើងពិនិត្យមើលថាតើតម្លៃមួយមានតម្លៃធំជាង ឬតិចជាង ឬស្មើនឹងតម្លៃផ្សេងទៀតឬអត់។ តារាងខាងក្រោមបង្ហាញប្រតិបត្តិការប្រៀបធៀប Python បានមកពី [w3shool](https://www.w3schools.com/python/python_operators.asp).
 
 ![Comparison Operators](../images/comparison_operators.png)
-**Example: Comparison Operators**
+**Example: ប្រតិបត្តិករប្រៀបធៀប**
 
 ```py
-print(3 > 2)     # True, because 3 is greater than 2
-print(3 >= 2)    # True, because 3 is greater than 2
-print(3 < 2)     # False,  because 3 is greater than 2
-print(2 < 3)     # True, because 2 is less than 3
-print(2 <= 3)    # True, because 2 is less than 3
-print(3 == 2)    # False, because 3 is not equal to 2
-print(3 != 2)    # True, because 3 is not equal to 2
+print(3 > 2)     # True, ដោយសារតែ 3 គឺធំជាង 2
+print(3 >= 2)    # True, ដោយសារតែ 3 គឺធំជាង 2
+print(3 < 2)     # False,  ដោយសារតែ 3 គឺធំជាង 2
+print(2 < 3)     # True, ដោយសារតែ 2 គឺតិចជាង 3
+print(2 <= 3)    # True, ដោយសារតែ 2 iគឺតិចជាង 3
+print(3 == 2)    # False, ដោយសារតែ 3 មិនស្មើនឹង 2
+print(3 != 2)    # True, ដោយសារតែ 3 មិនស្មើនឹង 2
 print(len('mango') == len('avocado'))  # False
 print(len('mango') != len('avocado'))  # True
 print(len('mango') < len('avocado'))   # True
@@ -201,117 +201,51 @@ print(len('tomato') == len('potato'))  # True
 print(len('python') > len('dragon'))   # False
 
 
-# Comparing something gives either a True or False
+# ការប្រៀបធៀបអ្វីមួយផ្តល់ True ឬ False
 
 print('True == True: ', True == True)
 print('True == False: ', True == False)
 print('False == False:', False == False)
 ```
 
-In addition to the above comparison operator Python uses:
+ក្រៅពីប្រតិបត្តិការប្រៀបធៀបខាងលើ Python ប្រើ:
 
-- _is_: Returns true if both variables are the same object(x is y)
-- _is not_: Returns true if both variables are not the same object(x is not y)
-- _in_: Returns True if the queried list contains a certain item(x in y)
-- _not in_: Returns True if the queried list doesn't have a certain item(x in y)
+- _is_: ត្រឡប់មកវិញ true ប្រសិនបើអថេរទាំងពីរគឺដូចគ្នា(x is y)
+- _is not_: ត្រឡប់មកវិញ true ប្រសិនបើអថេរទាំងពីរមិនដូចគ្នា(x is not y)
+- _in_: ត្រឡប់មកវិញ true ប្រសិនបើបញ្ជីដែលត្រូវបានសួរមានវត្ថុនោះ(x in y)
+- _not in_: Rត្រឡប់មកវិញ true ប្រសិនបើបញ្ជីដែលត្រូវបានសួរមិនមានវត្ថុនោះ(x in y)
 
 ```py
-print('1 is 1', 1 is 1)                   # True - because the data values are the same
-print('1 is not 2', 1 is not 2)           # True - because 1 is not 2
-print('A in Asabeneh', 'A' in 'Asabeneh') # True - A found in the string
-print('B in Asabeneh', 'B' in 'Asabeneh') # False - there is no uppercase B
-print('coding' in 'coding for all') # True - because coding for all has the word coding
+print('1 is 1', 1 is 1)                   # True - ដោយសារតែ តម្លៃដូចគ្នា
+print('1 is not 2', 1 is not 2)           # True - ដោយសារតែ 1 មិនមែន 2
+print('A in Asabeneh', 'A' in 'Asabeneh') # True - A មាននៅក្នុងក្រុមអក្សរ
+print('B in Asabeneh', 'B' in 'Asabeneh') # False - គ្មានអក្សរ B
+print('coding' in 'coding for all') # True - ដោយសារតែ "coding for all" មានពាក្យ "coding"
 print('a in an:', 'a' in 'an')      # True
 print('4 is 2 ** 2:', 4 is 2 ** 2)   # True
 ```
 
-### Logical Operators
+### ប្រតិបត្តិតក្ក
 
-Unlike other programming languages python uses keywords _and_, _or_ and _not_ for logical operators. Logical operators are used to combine conditional statements:
+ខុសពីភាសាកម្មវិធីផ្សេងទៀត Python ប្រើពាក្យគន្លឹះ _and_, _or_ និង _not_ សម្រាប់ប្រតិបត្តិតក្ក។ ប្រតិបត្តិតក្កប្រើសម្រាប់ភ្ចាប់សេចក្តីពីរឬច្រើន។
 
 ![Logical Operators](../images/logical_operators.png)
 
 ```py
-print(3 > 2 and 4 > 3) # True - because both statements are true
-print(3 > 2 and 4 < 3) # False - because the second statement is false
-print(3 < 2 and 4 < 3) # False - because both statements are false
+print(3 > 2 and 4 > 3) # True - ដោយសារតែ សេចក្តីទាំងពីរគឺពិត
+print(3 > 2 and 4 < 3) # False - ដោយសារតែ សេចក្តីទី 2 មិនពិត
+print(3 < 2 and 4 < 3) # False - ដោយសារតែ សេចក្តីទាំងពីរគឺមិនពិត
 print('True and True: ', True and True)
-print(3 > 2 or 4 > 3)  # True - because both statements are true
-print(3 > 2 or 4 < 3)  # True - because one of the statements is true
-print(3 < 2 or 4 < 3)  # False - because both statements are false
+print(3 > 2 or 4 > 3)  # True - ដោយសារតែ សេចក្តីទាំងពីរគឺពិត
+print(3 > 2 or 4 < 3)  # True - ដោយសារតែ សេចក្តីមួយគឺពិត
+print(3 < 2 or 4 < 3)  # False - ដោយសារតែ សេចក្តីទាំងពីរគឺមិនពិត
 print('True or False:', True or False)
-print(not 3 > 2)     # False - because 3 > 2 is true, then not True gives False
-print(not True)      # False - Negation, the not operator turns true to false
+print(not 3 > 2)     # False - ដោយសារតែ 3 > 2 គឺពិត, ហើយ not True បាន False
+print(not True)      # False - ការបដិសេធ, ប្រតិបត្តិ not ទទួលបាន true ទៅ false
 print(not False)     # True
 print(not not True)  # True
 print(not not False) # False
 
 ```
-
-🌕 You have boundless energy. You have just completed day 3 challenges and you are three steps ahead on your way to greatness. Now do some exercises for your brain and your muscles.
-
-## 💻 Exercises - Day 3
-
-1. Declare your age as integer variable
-2. Declare your height as a float variable
-3. Declare a variable that store a complex number
-4. Write a script that prompts the user to enter base and height of the triangle and calculate an area of this triangle (area = 0.5 x b x h).
-
-```py
-    Enter base: 20
-    Enter height: 10
-    The area of the triangle is 100
-```
-
-5. Write a script that prompts the user to enter side a, side b, and side c of the triangle. Calculate the perimeter of the triangle (perimeter = a + b + c).
-
-```py
-Enter side a: 5
-Enter side b: 4
-Enter side c: 3
-The perimeter of the triangle is 12
-```
-
-6. Get length and width of a rectangle using prompt. Calculate its area (area = length x width) and perimeter (perimeter = 2 x (length + width))
-7. Get radius of a circle using prompt. Calculate the area (area = pi x r x r) and circumference (c = 2 x pi x r) where pi = 3.14.
-8. Calculate the slope, x-intercept and y-intercept of y = 2x -2
-9. Slope is (m = y2-y1/x2-x1). Find the slope and [Euclidean distance](https://en.wikipedia.org/wiki/Euclidean_distance#:~:text=In%20mathematics%2C%20the%20Euclidean%20distance,being%20called%20the%20Pythagorean%20distance.) between point (2, 2) and point (6,10) 
-10. Compare the slopes in tasks 8 and 9.
-11. Calculate the value of y (y = x^2 + 6x + 9). Try to use different x values and figure out at what x value y is going to be 0.
-12. Find the length of 'python' and 'dragon' and make a falsy comparison statement.
-13. Use _and_ operator to check if 'on' is found in both 'python' and 'dragon'
-14. _I hope this course is not full of jargon_. Use _in_ operator to check if _jargon_ is in the sentence.
-15. There is no 'on' in both dragon and python
-16. Find the length of the text _python_ and convert the value to float and convert it to string
-17. Even numbers are divisible by 2 and the remainder is zero. How do you check if a number is even or not using python?
-18. Check if the floor division of 7 by 3 is equal to the int converted value of 2.7.
-19. Check if type of '10' is equal to type of 10
-20. Check if int('9.8') is equal to 10
-21. Writ a script that prompts the user to enter hours and rate per hour. Calculate pay of the person?
-
-```py
-Enter hours: 40
-Enter rate per hour: 28
-Your weekly earning is 1120
-```
-
-22. Write a script that prompts the user to enter number of years. Calculate the number of seconds a person can live. Assume a person can live hundred years
-
-```py
-Enter number of years you have lived: 100
-You have lived for 3153600000 seconds.
-```
-
-23. Write a Python script that displays the following table
-
-```py
-1 1 1 1 1
-2 1 2 4 8
-3 1 3 9 27
-4 1 4 16 64
-5 1 5 25 125
-```
-
-🎉 CONGRATULATIONS ! 🎉
 
 [<< Day 2](../02_Day_Variables_builtin_functions/02_variables_builtin_functions.md) | [Day 4 >>](../04_Day_Strings/04_strings.md)
