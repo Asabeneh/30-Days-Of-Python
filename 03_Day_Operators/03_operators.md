@@ -1,308 +1,310 @@
 <div align="center">
-  <h1> 30 Days Of Python: Day 3 - Operators</h1>
-  <a class="header-badge" target="_blank" href="https://www.linkedin.com/in/asabeneh/">
-  <img src="https://img.shields.io/badge/style--5eba00.svg?label=LinkedIn&logo=linkedin&style=social">
-  </a>
-  <a class="header-badge" target="_blank" href="https://twitter.com/Asabeneh">
-  <img alt="Twitter Follow" src="https://img.shields.io/twitter/follow/asabeneh?style=social">
-  </a>
+ <h1> 30 Дней Python: День 3 - Операторы</h1> <a class="header-badge" target="_blank" href="https://www.linkedin.com/in/asabeneh/">
+ <img src="https://img.shields.io/badge/style--5eba00.svg?label=LinkedIn&logo=linkedin&style=social">
+ </a>
+ <a class="header-badge" target="_blank" href="https://twitter.com/Asabeneh">
+ <img alt="Twitter Follow" src="https://img.shields.io/twitter/follow/asabeneh?style=social">
+ </a>
 
-<sub>Author:
-<a href="https://www.linkedin.com/in/asabeneh/" target="_blank">Asabeneh Yetayeh</a><br>
-<small> Second Edition: July, 2021</small>
-</sub>
-</div>
+<sub>Автор:
+<a href="https://www.linkedin.com/in/asabeneh/" target="_blank">Asabeneh Yetayeh</a><br> <small> Второе издание: Июль, 2021</small> </sub> </div>
 
-[<< Day 2](../02_Day_Variables_builtin_functions/02_variables_builtin_functions.md) | [Day 4 >>](../04_Day_Strings/04_strings.md)
+[<< День 2](../02_Day_Variables_builtin_functions/02_variables_builtin_functions.md) | [День 4 >>](../04_Day_Strings/04_strings.md)
 
 ![30DaysOfPython](../images/30DaysOfPython_banner3@2x.png)
 
-- [📘 Day 3](#-day-3)
-  - [Boolean](#boolean)
-  - [Operators](#operators)
-    - [Assignment Operators](#assignment-operators)
-    - [Arithmetic Operators:](#arithmetic-operators)
-    - [Comparison Operators](#comparison-operators)
-    - [Logical Operators](#logical-operators)
-  - [💻 Exercises - Day 3](#-exercises---day-3)
+- [📘 День 3](#-день-3)
+ - [Булевые значения](#булевые-значения)
+ - [Операторы](#операторы)
+   - [Операторы присваивания](#операторы-присваивания)
+   - [Арифметические операторы:](#арифметические-операторы)
+   - [Операторы сравнения](#операторы-сравнения)
+   - [Логические операторы](#логические-операторы)
+ - [💻 Упражнения - День 3](#-упражнения---день-3)
 
-# 📘 Day 3
+# 📘 День 3
 
-## Boolean
+## Булевые значения
 
-A boolean data type represents one of the two values: _True_ or _False_. The use of these data types will be clear once we start using the comparison operator. The first letter **T** for True and **F** for False should be capital unlike JavaScript.
-**Example: Boolean Values**
+Булевый тип данных представляет одно из двух значений: _True_ или _False_. Использование этого типа данных станет понятнее после ознакомления с операторами сравнения. Первые буквы **T** в True и **F** в False должны быть заглавными в отличие от JavaScript.
+
+**Пример: Булевые значения**
 
 ```py
 print(True)
 print(False)
 ```
 
-## Operators
+## Операторы
 
-Python language supports several types of operators. In this section, we will focus on few of them.
+Язык Python поддерживает несколько типов операторов. В этом разделе мы расскажем о некоторых из них.
 
-### Assignment Operators
+### Операторы присваивания
 
-Assignment operators are used to assign values to variables. Let us take = as an example. Equal sign in mathematics shows that two values are equal, however in Python it means we are storing a value in a certain variable and we call it assignment or a assigning value to a variable. The table below shows the different types of python assignment operators, taken from [w3school](https://www.w3schools.com/python/python_operators.asp).
+Операторы присваивания используются для присваивания значений переменным. К примеру возьмем оператор =. Знак равенства в математике показывает, что два значения равны, однако в Python он означает, что мы помещаем значение в определенную переменную, это называется присваиванием или присваиванием значения переменной. В таблице ниже представлены разные типы операторов присваивания. Таблица взята с сайта [w3school](https://www.w3schools.com/python/python_operators.asp).
 
 ![Assignment Operators](../images/assignment_operators.png)
 
-### Arithmetic Operators:
+### Арифметические операторы
 
-- Addition(+): a + b
-- Subtraction(-): a - b
-- Multiplication(*): a * b
-- Division(/): a / b
-- Modulus(%): a % b
-- Floor division(//): a // b
-- Exponentiation(**): a ** b
+- Сложение (+): a + b
+- Вычитание (-): a - b
+- Умножение (*): a * b
+- Деление (/): a / b
+- Деление по модулю (остаток от деления) (%): a % b
+- Деление без остатка (//): a // b
+- Возведение в степень (**): a ** b
 
 ![Arithmetic Operators](../images/arithmetic_operators.png)
 
-**Example:Integers**
+**Пример: целые числа**
 
 ```py
-# Arithmetic Operations in Python
-# Integers
+# Арифметические операции в Python
+# Целые числа
 
-print('Addition: ', 1 + 2)        # 3
-print('Subtraction: ', 2 - 1)     # 1
-print('Multiplication: ', 2 * 3)  # 6
-print ('Division: ', 4 / 2)       # 2.0  Division in Python gives floating number
-print('Division: ', 6 / 2)        # 3.0         
-print('Division: ', 7 / 2)        # 3.5
-print('Division without the remainder: ', 7 // 2)   # 3,  gives without the floating number or without the remaining
-print ('Division without the remainder: ',7 // 3)   # 2
-print('Modulus: ', 3 % 2)         # 1, Gives the remainder
-print('Exponentiation: ', 2 ** 3) # 9 it means 2 * 2 * 2
+print('Сложение: ', 1 + 2) # 3
+print('Вычитание: ', 2 - 1) # 1
+print('Умножение: ', 2 * 3) # 6
+print ('Деление: ', 4 / 2) # 2.0 Результатом деления в Python будет число с плавающей точкой (тип float)
+print('Деление: ', 6 / 2) # 3.0
+print('Деление: ', 7 / 2) # 3.5
+print('Деление без остатка: ', 7 // 2) # 3, результат будет без плавающей точки или без остатка
+print ('Деление без остатка: ',7 // 3) # 2
+print('Деление по модулю (остаток от деления): ', 3 % 2) # 1, результат - остаток от деления
+print('Возведение в степень: ', 2 ** 3) # 9 эквивалентно 2 * 2 * 2 
 ```
 
-**Example:Floats**
+**Пример: числа с плавающей точкой**
 
 ```py
-# Floating numbers
-print('Floating Point Number, PI', 3.14)
-print('Floating Point Number, gravity', 9.81)
+# Числа с плавающей точкой
+print('Число с плавающей точкой, число пи', 3.14) 
+print('Число с плавающей точкой, число g', 9.81) 
 ```
 
-**Example:Complex numbers**
+**Пример: комплексные числа**
 
 ```py
-# Complex numbers
-print('Complex number: ', 1 + 1j)
-print('Multiplying complex numbers: ',(1 + 1j) * (1 - 1j))
+# Комплексные числа
+print('Комплексное число: ', 1 + 1j)
+print('Умножение комплексных чисел: ', (1 + 1j) * (1 - 1j)) 
 ```
 
-Let's declare a variable and assign a number data type. I am going to use single character variable but remember do not develop a habit of declaring such types of variables. Variable names should be all the time mnemonic.
+Объявим переменную и присвоим ей значение числового типа. Я буду использовать один символ для названия переменной, но не берите в привычку такой подход к наименованию переменных. Названия переменных всегда должны быть информативными.
 
-**Example:**
+**Пример:**
 
 ```python
-# Declaring the variable at the top first
+# Сперва объявляем переменную
 
-a = 3 # a is a variable name and 3 is an integer data type
-b = 2 # b is a variable name and 3 is an integer data type
+a = 3 # a - это название переменной, а 3 - это значение типа integer (целочисленное) 
+b = 2 # b - это название переменной, а 2 - это значение типа integer
 
-# Arithmetic operations and assigning the result to a variable
-total = a + b
-diff = a - b
-product = a * b
-division = a / b
-remainder = a % b
-floor_division = a // b
+# Арифметические операции и присвоение результата переменной 
+total = a + b 
+diff = a - b 
+product = a * b 
+division = a / b 
+remainder = a % b 
+floor_division = a // b 
 exponential = a ** b
 
-# I should have used sum instead of total but sum is a built-in function - try to avoid overriding built-in functions
-print(total) # if you do not label your print with some string, you never know where the result is coming from
-print('a + b = ', total)
-print('a - b = ', diff)
-print('a * b = ', product)
-print('a / b = ', division)
-print('a % b = ', remainder)
-print('a // b = ', floor_division)
-print('a ** b = ', exponentiation)
+# Название sum больше подходит по смыслу, чем total, но sum - это название встроенной функции, старайтесь избегать перезапись встроенных функций
+print(total) # если не пометить print какой-нибудь строкой, будет сложно понять, что за результат выведен на печать 
+print('a + b = ', total) 
+print('a - b = ', diff) 
+print('a * b = ', product) 
+print('a / b = ', division) 
+print('a % b = ', remainder) 
+print('a // b = ', floor_division) 
+print('a ** b = ', exponential) 
+```
+Примечание переводчика: начиная с версии python 3.8 возможен такой вариант вывода переменных на печать без строковой пометки:
+```
+a = 1
+print(f'{a=}') # будет напечатано a=1
 ```
 
-**Example:**
+**Пример:**
 
 ```py
-print('== Addition, Subtraction, Multiplication, Division, Modulus ==')
+print('== Сложение, Вычитание, Умножение, Деление, Деление по модулю (остаток от деления) ==')
 
-# Declaring values and organizing them together
-num_one = 3
+# Объявляем переменные и группируем их вместе в коде 
+num_one = 3 
 num_two = 4
 
-# Arithmetic operations
+# Арифметические операции
 total = num_one + num_two
 diff = num_two - num_one
 product = num_one * num_two
 div = num_two / num_one
 remainder = num_two % num_one
 
-# Printing values with label
-print('total: ', total)
-print('difference: ', diff)
-print('product: ', product)
-print('division: ', div)
-print('remainder: ', remainder)
+# Выводим на печать значения с пометкой
+print('сумма: ', total)
+print('разность: ', diff)
+print('произведение: ', product)
+print('частное: ', div)
+print('остаток: ', remainder)
 ```
 
-Let us start start connecting the dots and start making use of what we already know to calculate (area, volume,density,  weight, perimeter, distance, force).
+Начнем собирать все в целую картину, используя все, что мы уже знаем для вычислений (например, площадь, объем, плотность, вес, периметр, расстояние, возведение в степень).
 
-**Example:**
+**Пример:**
 
 ```py
-# Calculating area of a circle
-radius = 10                                 # radius of a circle
-area_of_circle = 3.14 * radius ** 2         # two * sign means exponent or power
-print('Area of a circle:', area_of_circle)
+# Рассчитаем площадь круга
+radius = 10 # радиус круга
+area_of_circle = 3.14 * radius ** 2 # два знака * означают возведение в степень
+print('Площадь круга:', area_of_circle)
 
-# Calculating area of a rectangle
+# Рассчитаем площадь прямоугольника
 length = 10
 width = 20
 area_of_rectangle = length * width
-print('Area of rectangle:', area_of_rectangle)
+print('Площадь прямоугольника:', area_of_rectangle)
 
-# Calculating a weight of an object
+# Рассчитаем вес предмета
 mass = 75
 gravity = 9.81
 weight = mass * gravity
-print(weight, 'N')                         # Adding unit to the weight
+print(weight, 'Н') # Добавим к весу единицу измерения
 
-# Calculate the density of a liquid
-mass = 75 # in Kg
-volume = 0.075 # in cubic meter
-density = mass / volume # 1000 Kg/m^3
+# Рассчитаем плотность жидкости
+mass = 75 # в кг
+volume = 0.075 # в куб. метрах
+density = mass / volume # 1000 кг/м^3
 
 ```
 
-### Comparison Operators
+### Операторы сравнения
 
-In programming we compare values, we use comparison operators to compare two values. We check if a value is greater or less or equal to other value. The following table shows Python comparison operators which was taken from [w3shool](https://www.w3schools.com/python/python_operators.asp).
+В программировании мы сравниваем значения, операторы сравнения используются для сравнения двух значений. Мы проверяем является ли значение больше или меньше или равным другому значению. В следующей таблице представлены операторы сравнения в Python. Таблица взята с сайта [w3shool](https://www.w3schools.com/python/python_operators.asp).
 
 ![Comparison Operators](../images/comparison_operators.png)
-**Example: Comparison Operators**
+**Пример: Операторы сравнения**
 
 ```py
-print(3 > 2)     # True, because 3 is greater than 2
-print(3 >= 2)    # True, because 3 is greater than 2
-print(3 < 2)     # False,  because 3 is greater than 2
-print(2 < 3)     # True, because 2 is less than 3
-print(2 <= 3)    # True, because 2 is less than 3
-print(3 == 2)    # False, because 3 is not equal to 2
-print(3 != 2)    # True, because 3 is not equal to 2
-print(len('mango') == len('avocado'))  # False
-print(len('mango') != len('avocado'))  # True
-print(len('mango') < len('avocado'))   # True
-print(len('milk') != len('meat'))      # False
-print(len('milk') == len('meat'))      # True
-print(len('tomato') == len('potato'))  # True
-print(len('python') > len('dragon'))   # False
+print(3 > 2) # True, потому что 3 больше чем 2
+print(3 >= 2) # True, потому что 3 больше чем 2
+print(3 < 2) # False, потому что 3 больше чем 2
+print(2 < 3) # True, потому что 2 меньше чем 3
+print(2 <= 3) # True, потому что 2 меньше чем 3
+print(3 == 2) # False, потому что 3 не равно двум 
+print(3 != 2) # True, потому что 3 не равно двум 
+print(len('манго') == len('авокадо')) # False
+print(len('манго') != len('авокадо')) # True
+print(len('манго') < len('авокадо')) # True
+print(len('вода') != len('мясо')) # False
+print(len('вода') == len('мясо')) # True
+print(len('томат') == len('томат')) # True
+print(len('питон') > len('гибон')) # False
 
 
-# Comparing something gives either a True or False
+# Сравнение чего-либо в результате дает или True или False
 
 print('True == True: ', True == True)
 print('True == False: ', True == False)
 print('False == False:', False == False)
 ```
 
-In addition to the above comparison operator Python uses:
+В дополнение к вышеперечисленным операторам сравнения в Python используются:
 
-- _is_: Returns true if both variables are the same object(x is y)
-- _is not_: Returns true if both variables are not the same object(x is not y)
-- _in_: Returns True if the queried list contains a certain item(x in y)
-- _not in_: Returns True if the queried list doesn't have a certain item(x in y)
+- _is_: Возвращает True, если обе переменные являются одним и тем же обьектом (x is y)
+- _is not_: Возвращает True, если обе переменные не являются одним и тем же объектом (x is not y)
+- _in_: Возвращает True, если в объекте составного типа содержится определенный элемент (x in y)
+- _not in_: Возвращает True, если в объекте составного типа не содержится определенный элемент (x not in y)
 
 ```py
-print('1 is 1', 1 is 1)                   # True - because the data values are the same
-print('1 is not 2', 1 is not 2)           # True - because 1 is not 2
-print('A in Asabeneh', 'A' in 'Asabeneh') # True - A found in the string
-print('B in Asabeneh', 'B' in 'Asabeneh') # False - there is no uppercase B
-print('coding' in 'coding for all') # True - because coding for all has the word coding
-print('a in an:', 'a' in 'an')      # True
-print('4 is 2 ** 2:', 4 is 2 ** 2)   # True
+print('1 это 1', 1 is 1) # True - потому что значения одинаковы
+print('1 это не 2', 1 is not 2) # True - потому что 1 это не  2
+print('P в Python', 'P' in 'Python') # True - символ P присутствует в строке 
+print('O в Python', 'O' in 'Python') # False - в строке нет символа O в верхнем регистре
+print('программирование' in 'программирование для всех') # True - потому что программирование для всех содержит слово программирование
+print('т в ты:', 'т' in 'ты') # True
+print('4 это 2 ** 2:', 4 is 2 ** 2) # True
 ```
 
-### Logical Operators
+### Логические операторы
 
-Unlike other programming languages python uses keywords _and_, _or_ and _not_ for logical operators. Logical operators are used to combine conditional statements:
+В отличие от других языков программирования python используем ключевые слова _and_, _or_ и _not_ в качестве логических операторов. Логические операторы используются для комбинирования условных конструкций:
 
 ![Logical Operators](../images/logical_operators.png)
 
 ```py
-print(3 > 2 and 4 > 3) # True - because both statements are true
-print(3 > 2 and 4 < 3) # False - because the second statement is false
-print(3 < 2 and 4 < 3) # False - because both statements are false
+print(3 > 2 and 4 > 3) # True - потому что оба выражения истинны
+print(3 > 2 and 4 < 3) # False - потому что второе выражение ложно
+print(3 < 2 and 4 < 3) # False - потому что оба выражения ложны
 print('True and True: ', True and True)
-print(3 > 2 or 4 > 3)  # True - because both statements are true
-print(3 > 2 or 4 < 3)  # True - because one of the statements is true
-print(3 < 2 or 4 < 3)  # False - because both statements are false
+print(3 > 2 or 4 > 3) # True - потому что оба выражения истинны
+print(3 > 2 or 4 < 3) # True - потому что одно из выражений истинно
+print(3 < 2 or 4 < 3) # False - потому что оба выражения ложны
 print('True or False:', True or False)
-print(not 3 > 2)     # False - because 3 > 2 is true, then not True gives False
-print(not True)      # False - Negation, the not operator turns true to false
-print(not False)     # True
-print(not not True)  # True
+print(not 3 > 2) # False - потому что 3 > 2 это True, тогда not True это False
+print(not True) # False - Отрицание, оператор not превращает True в False
+print(not False) # True
+print(not not True) # True
 print(not not False) # False
 
 ```
 
-🌕 You have boundless energy. You have just completed day 3 challenges and you are three steps ahead on your way to greatness. Now do some exercises for your brain and your muscles.
+🌕 У вас бесконечная энергия. Вы только что завершили день 3 челленджа и теперь на три шага дальше на пути к успеху. Теперь выполните несколько упражнений для мозга и мускулов.
 
-## 💻 Exercises - Day 3
+## 💻 Упражнения - День 3
 
-1. Declare your age as integer variable
-2. Declare your height as a float variable
-3. Declare a variable that store a complex number
-4. Write a script that prompts the user to enter base and height of the triangle and calculate an area of this triangle (area = 0.5 x b x h).
-
-```py
-    Enter base: 20
-    Enter height: 10
-    The area of the triangle is 100
-```
-
-5. Write a script that prompts the user to enter side a, side b, and side c of the triangle. Calculate the perimeter of the triangle (perimeter = a + b + c).
+1. Объявите переменную типа integer со значением, равным вашему возрасту
+2. Объявите переменную типа float со значением, равным вашему росту 
+3. Объявите переменную, хранящую комплексное число
+4. Напишите скрипт, который запрашивает у пользователя ввести основание и высоту треугольника, и рассчитайте площадь этого треугольника (площадь = 0.5 x основание x высота).
 
 ```py
-Enter side a: 5
-Enter side b: 4
-Enter side c: 3
-The perimeter of the triangle is 12
+   Введите основание: 20
+   Введите высоту: 10
+   Площадь треугольника равна 100
 ```
 
-6. Get length and width of a rectangle using prompt. Calculate its area (area = length x width) and perimeter (perimeter = 2 x (length + width))
-7. Get radius of a circle using prompt. Calculate the area (area = pi x r x r) and circumference (c = 2 x pi x r) where pi = 3.14.
-8. Calculate the slope, x-intercept and y-intercept of y = 2x -2
-9. Slope is (m = y2-y1/x2-x1). Find the slope and [Euclidean distance](https://en.wikipedia.org/wiki/Euclidean_distance#:~:text=In%20mathematics%2C%20the%20Euclidean%20distance,being%20called%20the%20Pythagorean%20distance.) between point (2, 2) and point (6,10) 
-10. Compare the slopes in tasks 8 and 9.
-11. Calculate the value of y (y = x^2 + 6x + 9). Try to use different x values and figure out at what x value y is going to be 0.
-12. Find the length of 'python' and 'dragon' and make a falsy comparison statement.
-13. Use _and_ operator to check if 'on' is found in both 'python' and 'dragon'
-14. _I hope this course is not full of jargon_. Use _in_ operator to check if _jargon_ is in the sentence.
-15. There is no 'on' in both dragon and python
-16. Find the length of the text _python_ and convert the value to float and convert it to string
-17. Even numbers are divisible by 2 and the remainder is zero. How do you check if a number is even or not using python?
-18. Check if the floor division of 7 by 3 is equal to the int converted value of 2.7.
-19. Check if type of '10' is equal to type of 10
-20. Check if int('9.8') is equal to 10
-21. Writ a script that prompts the user to enter hours and rate per hour. Calculate pay of the person?
+5. Напишите скрипт, который запрашивает у пользователя ввести сторону a, сторону b и сторону c треугольника. Рассчитайте периметр треугольника (периметр = a + b + c).
 
 ```py
-Enter hours: 40
-Enter rate per hour: 28
-Your weekly earning is 1120
+Введите сторону a: 5
+Введите сторону b: 4
+Введите сторону c: 3
+Периметр треугольника равен 12
 ```
 
-22. Write a script that prompts the user to enter number of years. Calculate the number of seconds a person can live. Assume a person can live hundred years
+6. Получите длину и ширину прямоугольника, используя ввод. Рассчитайте его площадь (площадь = длина x ширина) и периметр (периметр = 2 x (длина + ширина)) 
+7. Получите радиус круга, используя ввод. Рассчитайте площадь (площадь = пи x радиус x радиус) и длину окружности (длина окружности = 2 x пи x радиус) где пи = 3.14.
+8. Рассчитайте наклон функции, пересечение с осью x и пересечение с осью y для y = 2x - 2 
+9. Наклон по координатам это m = y2-y1/x2-x1. Найдите наклон и [Евклидову метрику](https://ru.wikipedia.org/wiki/%D0%95%D0%B2%D0%BA%D0%BB%D0%B8%D0%B4%D0%BE%D0%B2%D0%B0_%D0%BC%D0%B5%D1%82%D1%80%D0%B8%D0%BA%D0%B0) между точкой (2, 2) и точкой (6,10) 
+10. Сравните наклоны из заданий 8 и 9.
+11. Рассчитайте значение y (y = x^2 + 6x + 9). Попробуйте использовать разные значения x и выяснить при каком значении x значение y будет равно 0.
+12. Найдите длину строк 'питон' и 'гибон' и составьте ложное сравнительное выражение.
+13. Используйте оператор _and_, чтобы проверить, есть ли подстрока 'он' в обеих строках 'питон' и 'дракон'
+14. _Я надеюсь, этот курс не усыпан терминами_. Используйте оператор _in_, чтобы проверить, есть ли подстрока _термин_ в этом предложении.
+15. Истинно ли, что в обеих строках 'дракон' и 'питон' нет подстроки 'он'?
+16. Найдите длину строки _python_, преобразуйте это значение в тип float, затем преобразуйте в тип string 
+17. Четные числа делятся на 2 без остатка. Как проверить, является ли число четным или нет с помощью python?
+18. Проверьте, равен ли результат целочисленного деления 7 на 3 значению 2.7, преобразованному в integer.
+19. Проверьте, равен ли тип '10' типу 10 
+20. Проверьте, равны ли int('9.8') и 10 
+21. Напишите скрипт, который запрашивает у пользователя ввести количество рабочих часов в неделю и ставку в час. Рассчитайте заработок человека.
 
 ```py
-Enter number of years you have lived: 100
-You have lived for 3153600000 seconds.
+Введите количество часов: 40
+Введите ставку в час: 28
+Ваш недельный заработок составит 1120
 ```
 
-23. Write a Python script that displays the following table
+22. Напишите скрипт, который запрашивает у пользователя ввести количество лет. Рассчитайте количество секунд, которое прожил человек. Допустим, что человек может прожить сто лет.
+
+```py
+Введите количество прожитых лет: 100 
+Вы прожили 3153600000 секунд.
+```
+
+23. Напишите скрипт на Python, который выводит следующую таблицу:
 
 ```py
 1 1 1 1 1
@@ -312,6 +314,6 @@ You have lived for 3153600000 seconds.
 5 1 5 25 125
 ```
 
-🎉 CONGRATULATIONS ! 🎉
+🎉 ПОЗДРАВЛЯЮ ! 🎉
 
-[<< Day 2](../02_Day_Variables_builtin_functions/02_variables_builtin_functions.md) | [Day 4 >>](../04_Day_Strings/04_strings.md)
+[<< День 2](../02_Day_Variables_builtin_functions/02_variables_builtin_functions.md) | [День 4 >>](../04_Day_Strings/04_strings.md)
