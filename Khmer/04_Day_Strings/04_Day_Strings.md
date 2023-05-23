@@ -16,7 +16,7 @@
 
 [<< Day 3](../03_Day_Operators/03_Day_Operators.md) | [Day 5 >>](../05_Day_Lists/05_lists.md)
 
-![30DaysOfPython](../../images/30DaysOfPython_banner3@2x.png)
+![30DaysOfPython](../images/30DaysOfPython_banner3@2x.png)
 
 - [Day 4](#day-4)
   - [សំណុំអក្សរ](#strings)
@@ -35,3 +35,23 @@
       - [ការរំលងតួរអក្សរ កំឡុងពេលកាត់](#skipping-characters-while-slicing)
     - [វិធីសាស្ត្រ ប្រេីប្រាស់សំណុំអក្សរ](#string-methods)
   - [💻 លំហាត់ - Day 4](#-exercises---day-4)
+
+# Day4
+
+## សំណុំអក្សរ រឺ ស្រ្តីង
+ អត្ថបទជាប្រភេទ ទិន្នន័យសំណុំអក្សរ (string) រឺអាចហៅបាន ថា ប្រភេទទិន្នន័យ string ៕ ប្រភេទទិន្នន័យណាមួយដែលសរសេរជាអក្សរគឺ ទិន្នន័យសំណុំអក្សរ(string)៕
+ទិន្នន័យទាំងអស់ដែលស្ថិតក្រោមសញ្ញាធ្មេញកណ្ដុរតែមួយ, ពីរ ឬបីជា សំណុំអក្សរ រឺ ស្រ្តីង ។ នេះគឺជាវិធីសាស្រ្ត string ផ្សេងគ្នា និងមុខងារ built-in ដើម្បីដោះស្រាយប្រភេទទិន្នន័យ string ។ ដើម្បីពិនិត្យទំហំ(ប្រវែង)នៃ string ប្រើ វិធីសាស្ត្រ len() ។
+
+### Creating a String
+
+```py
+letter = 'P'                # សំណុំអក្សរមួយអាចជាអក្សរតែមួយឬសារខ្លីជាច្រើន
+print(letter)               # P
+print(len(letter))          # 1
+greeting = 'Hello, World!'  # String សំណុំអក្សរ អាចធ្វើឡើងដោយប្រើពាក្យសញ្ញាធ្មេញកណ្ដុរតែមួយឬពីរ "Hello, World!"
+print(greeting)             # Hello, World!
+print(len(greeting))        # 13
+sentence = "I hope you are enjoying 30 days of Python Challenge"
+print(sentence)
+```
+សំណុំអក្សរ លក្ខណៈច្រើនជួរត្រូវបានបង្កើតឡើងដោយប្រើ triple single (''') ឬ triple double quotes ("""") ។ សូម មើល ឧទាហរណ៍ ខាង ក្រោម។
