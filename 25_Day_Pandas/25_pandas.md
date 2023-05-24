@@ -1,5 +1,5 @@
 <div align="center">
-  <h1> 30 Days Of Python: Day 25 - Pandas </h1>
+  <h1> 30 дней Python: День 25 - Библиотека Pandas </h1>
   <a class="header-badge" target="_blank" href="https://www.linkedin.com/in/asabeneh/">
   <img src="https://img.shields.io/badge/style--5eba00.svg?label=LinkedIn&logo=linkedin&style=social">
   </a>
@@ -14,70 +14,70 @@
 
 </div>
 
-[<< Day 24](../24_Day_Statistics/24_statistics.md) | [Day 26 >>](../26_Day_Python_web/26_python_web.md)
+[<< День 24](../24_Day_Statistics/24_statistics.md) | [День 26 >>](../26_Day_Python_web/26_python_web.md)
 
 ![30DaysOfPython](../images/30DaysOfPython_banner3@2x.png)
 
-- [📘 Day 25](#-day-25)
-  - [Pandas](#pandas)
-    - [Installing Pandas](#installing-pandas)
-    - [Importing Pandas](#importing-pandas)
-    - [Creating Pandas Series with Default Index](#creating-pandas-series-with-default-index)
-    - [Creating  Pandas Series with custom index](#creating--pandas-series-with-custom-index)
-    - [Creating Pandas Series from a Dictionary](#creating-pandas-series-from-a-dictionary)
-    - [Creating a Constant Pandas Series](#creating-a-constant-pandas-series)
-    - [Creating a  Pandas Series Using Linspace](#creating-a--pandas-series-using-linspace)
+- [📘 День 25](#день-25)
+  - [Библиотека Pandas](#библиотека-pandas)
+    - [Установка библиотеки Pandas](#установка-библиотеки-pandas)
+    - [Импорт библиотеки Pandas](#импорт-библиотеки-pandas)
+    - [Создание Pandas Series с индексом по умолчанию](#создание-pandas-series-с-индексом-по-умолчанию)
+    - [Создание Pandas Series с пользовательским индексом](#создание-pandas-series-с-пользовательским-индексом)
+    - [Создание Pandas Series из словаря](#создание-pandas-series-из-словаря)
+    - [Создание постоянной Pandas Series](#создание-постоянной-pandas-series)
+    - [Создание Pandas Series с использованием linspace](#создание-pandas-series-с-использованием-linspace)
   - [DataFrames](#dataframes)
-    - [Creating DataFrames from List of Lists](#creating-dataframes-from-list-of-lists)
-    - [Creating DataFrame Using Dictionary](#creating-dataframe-using-dictionary)
-    - [Creating DataFrames from a List of Dictionaries](#creating-dataframes-from-a-list-of-dictionaries)
-  - [Reading CSV File Using Pandas](#reading-csv-file-using-pandas)
-    - [Data Exploration](#data-exploration)
-  - [Modifying a DataFrame](#modifying-a-dataframe)
-    - [Creating a DataFrame](#creating-a-dataframe)
-    - [Adding a New Column](#adding-a-new-column)
-    - [Modifying column values](#modifying-column-values)
-    - [Formating DataFrame columns](#formating-dataframe-columns)
-  - [Checking data types of Column values](#checking-data-types-of-column-values)
-    - [Boolean Indexing](#boolean-indexing)
-  - [Exercises: Day 25](#exercises-day-25)
+    - [Создание DataFrame из списка списков](#создание-dataframe-из-списка-списков)
+    - [Создание DataFrame с использованием словаря](#создание-dataframe-с-использованием-словаря)
+    - [Создание DataFrame из списка словарей](#создание-dataframe-из-списка-словарей)
+  - [Чтение CSV-файла с помощью Pandas](#чтение-csv-файла-с-помощью-pandas)
+    - [Исследование данных](#исследование-данных)
+  - [Изменение DataFrame](#изменение-dataframe)
+    - [Создание DataFrame](#создание-dataframe)
+    - [Добавление нового столбца](#добавление-нового-столбца)
+    - [Изменение значений столбцов](#изменение-значений-столбцов)
+    - [Форматирование столбцов DataFrame](#форматирование-столбцов-dataframe)
+  - [Проверка типов данных значений столбцов](#проверка-типов-данных-значений-столбцов)
+    - [Логическое (Boolean) индексирование](#логическое-(boolean)-индексирование)
+  - [Упражнения: День 25](#упражнения-день-25)
   
-# 📘 Day 25
+# 📘 День 25
 
-## Pandas
+## Библиотека Pandas
 
-Pandas is an open source, high-performance, easy-to-use data structures and data analysis tools for the Python programming language.
-Pandas adds data structures and tools designed to work with table-like data which is *Series* and *Data Frames*.
-Pandas provides tools for data manipulation: 
+Pandas - это библиотека с открытым исходным кодом, обеспечивающая высокую производительность и простоту использования для работы с данными и анализа данных в языке программирования Python.
+Pandas добавляет структуры данных и инструменты, специально разработанные для работы с табличными данными, такими как *Series* и *DataFrames*.
+Pandas предоставляет инструменты для манипуляции данными, включая: 
 
-- reshaping
-- merging
-- sorting
-- slicing
-- aggregation
-- imputation.
-If you are using anaconda, you do not have install pandas.
+- изменение формы данных (reshaping)
+- объединение данных (merging)
+- сортировку данных (sorting)
+- выборку данных (slicing)
+- агрегацию данных (aggregation)
+- заполнение пропущенных значений (imputation).
+Если вы используете Anaconda, вам не нужно устанавливать pandas, так как она включена в состав Anaconda по умолчанию.
 
-### Installing Pandas
+### Установка библиотеки Pandas
 
-For Mac:
+Для Mac:
 ```py
 pip install conda
 conda install pandas
 ```
 
-For Windows:
+Для Windows:
 ```py
 pip install conda
 pip install pandas
 ```
 
-Pandas data structure is based on *Series* and *DataFrames*. 
+Структура данных в Pandas основана на *Series* и *DataFrames*. 
 
-A *series* is a *column* and a DataFrame is a *multidimensional table* made up of collection of *series*. In order to create a pandas series we should use numpy to create a one dimensional arrays or a python list.
-Let us see an example of a series:
+*Series* представляет собой *столбец*, а *DataFrame* представляет собой *многомерную таблицу*, состоящую из коллекции *Series*. Чтобы создать *Series* в Pandas, мы можем использовать библиотеку NumPy для создания одномерных массивов или использовать обычный список в Python.
+Давайте рассмотрим пример:
 
-Names Pandas Series
+Names Series
 
 ![pandas series](../images/pandas-series-1.png) 
 
@@ -89,26 +89,26 @@ Cities Series
 
 ![pandas series](../images/pandas-series-3.png)
 
-As you can see, pandas series is just one column of data. If we want to have multiple columns we use data frames. The example below shows pandas DataFrames.
+Как видно, серия в Pandas представляет собой всего лишь один столбец данных. Если мы хотим иметь несколько столбцов, мы используем DataFrames. Приведенный ниже пример демонстрирует использование DataFrame в Pandas.
 
-Let us see, an example of a pandas data frame:
+Давайте рассмотрим пример использования Pandas DataFrame:
 
 ![Pandas data frame](../images/pandas-dataframe-1.png)
 
-Data frame is a collection of rows and columns. Look at the table below; it has many more columns than the example above:
+DataFrame представляет собой коллекцию строк и столбцов. Посмотрите на таблицу ниже; она имеет гораздо больше столбцов, чем пример выше:
 
 ![Pandas data frame](../images/pandas-dataframe-2.png)
 
-Next, we will see how to import pandas and how to create Series and DataFrames using pandas
+Далее мы рассмотрим, как импортировать библиотеку Pandas и как создавать серии (Series) и таблицы данных (DataFrames) с использованием Pandas.
 
-### Importing Pandas
+### Импорт библиотеки Pandas
 
 ```python
-import pandas as pd # importing pandas as pd
-import numpy  as np # importing numpy as np
+import pandas as pd # импорт библиотеки pandas под псевдонимом pd
+import numpy  as np # импорт библиотеки numpy под псевдонимом np
 ```
 
-### Creating Pandas Series with Default Index
+### Создание Pandas Series с индексом по умолчанию
 
 ```python
 nums = [1, 2, 3, 4,5]
@@ -125,7 +125,7 @@ print(s)
     dtype: int64
 ```
 
-### Creating  Pandas Series with custom index
+### Создание Pandas Series с пользовательским индексом
 
 ```python
 nums = [1, 2, 3, 4, 5]
@@ -155,7 +155,7 @@ print(fruits)
     dtype: object
 ```
 
-### Creating Pandas Series from a Dictionary
+### Создание Pandas Series из словаря
 
 ```python
 dct = {'name':'Asabeneh','country':'Finland','city':'Helsinki'}
@@ -173,7 +173,7 @@ print(s)
     dtype: object
 ```
 
-### Creating a Constant Pandas Series
+### Создание постоянной Pandas Series
 
 ```python
 s = pd.Series(10, index = [1, 2, 3])
@@ -187,7 +187,7 @@ print(s)
     dtype: int64
 ```
 
-### Creating a  Pandas Series Using Linspace
+### Создание Pandas Series с использованием linspace
 
 ```python
 s = pd.Series(np.linspace(5, 20, 10)) # linspace(starting, end, items)
@@ -210,9 +210,9 @@ print(s)
 
 ## DataFrames
 
-Pandas data frames can be created in different ways.
+DataFrames в Pandas можно создавать различными способами.
 
-### Creating DataFrames from List of Lists
+### Создание DataFrame из списка списков
 
 ```python
 data = [
@@ -255,7 +255,7 @@ print(df)
   </tbody>
 </table>
 
-### Creating DataFrame Using Dictionary
+### Создание DataFrame с использованием словаря
 
 ```python
 data = {'Name': ['Asabeneh', 'David', 'John'], 'Country':[
@@ -295,7 +295,7 @@ print(df)
   </tbody>
 </table>
 
-### Creating DataFrames from a List of Dictionaries
+### Создание DataFrame из списка словарей
 
 ```python
 data = [
@@ -337,15 +337,15 @@ print(df)
   </tbody>
 </table>
 
-## Reading CSV File Using Pandas
+## Чтение CSV-файла с помощью Pandas
 
-To download the CSV file, what is needed in this example, console/command line is enough:
+Чтобы скачать файл CSV, который используется в данном примере, достаточно использовать консоль или командную строку:
 
 ```sh
 curl -O https://raw.githubusercontent.com/Asabeneh/30-Days-Of-Python/master/data/weight-height.csv
 ```
 
-Put the downloaded file in your working directory.
+Положите загруженный CSV-файл в вашу рабочую директорию.
 
 ```python
 import pandas as pd
@@ -354,12 +354,12 @@ df = pd.read_csv('weight-height.csv')
 print(df)
 ```
 
-### Data Exploration
+### Исследование данных
 
-Let us read only the first 5 rows using head()
+Давайте прочитаем только первые 5 строк, используя метод head():
 
 ```python
-print(df.head()) # give five rows we can increase the number of rows by passing argument to the head() method
+print(df.head()) # выведем первые пять строк; мы можем увеличить количество строк, передав аргумент в метод head()
 ```
 
 
@@ -406,10 +406,10 @@ print(df.head()) # give five rows we can increase the number of rows by passing 
   </tbody>
 </table>
 
-Let us also explore the last recordings of the dataframe using the tail() methods.
+Давайте также рассмотрим последние записи в DataFrame с помощью метода tail():
 
 ```python
-print(df.tail()) # tails give the last five rows, we can increase the rows by passing argument to tail method
+print(df.tail()) # выведем последние пять строк; мы можем увеличить количество строк, передав аргумент в метод tail()
 ```
 
 <table border="1" class="dataframe">
@@ -455,15 +455,15 @@ print(df.tail()) # tails give the last five rows, we can increase the rows by pa
   </tbody>
 </table>
 
-As you can see the csv file has three rows: Gender, Height and Weight. If the DataFrame would have a long rows, it would be hard to know all the columns. Therefore, we should use a method to know the colums.  we do not know the number of rows. Let's use shape meathod.
+Как видно из CSV-файла, у нас есть три строки: Gender (Пол), Height (Рост) и Weight (Вес). Если DataFrame имеет большее количество строк, то может быть сложно держать на виду весь столбец сразу. Поэтому мы должны использовать метод для определения размера столбцов.Давайте воспользуемся методом shape().
 
 ```python
-print(df.shape) # as you can see 10000 rows and three columns
+print(df.shape) # как вы можете видеть, dataframe имеет 10000 строк и три столбца
 ```
 
     (10000, 3)
 
-Let us get all the columns using columns.
+Давайте получим все столбцы с помощью атрибута columns:
 
 ```python
 print(df.columns)
@@ -471,10 +471,10 @@ print(df.columns)
 
     Index(['Gender', 'Height', 'Weight'], dtype='object')
 
-Now, let us get a specific column using the column key
+Теперь давайте получим определенный столбец, используя его название (ключ):
 
 ```python
-heights = df['Height'] # this is now a series
+heights = df['Height'] # это теперь объект серии (series)
 ```
 
 ```python
@@ -497,7 +497,7 @@ print(heights)
 ```
 
 ```python
-weights = df['Weight'] # this is now a series
+weights = df['Weight'] # это теперь объект серии (series)
 ```
 
 ```python
@@ -525,10 +525,10 @@ print(len(heights) == len(weights))
 
     True
 
-The describe() method provides a descriptive statistical values of a dataset.
+Метод describe() предоставляет описательные статистические значения набора данных.
 
 ```python
-print(heights.describe()) # give statisical information about height data
+print(heights.describe()) # статистическая информация столбец (height)
 ```
 
 ```sh
@@ -560,7 +560,7 @@ print(weights.describe())
 ```
 
 ```python
-print(df.describe())  # describe can also give statistical information from a dataFrame
+print(df.describe())  # метод describe() также может предоставлять статистическую информацию о dataframe в целом
 ```
 
 <table border="1" class="dataframe">
@@ -615,20 +615,20 @@ print(df.describe())  # describe can also give statistical information from a da
   </tbody>
 </table>
 
-Similar to describe(), the info() method also give information about the dataset.
+Аналогично методу describe(), метод info() также предоставляет информацию о наборе данных:
 
-## Modifying a DataFrame
+## Изменение DataFrame
 
-Modifying a DataFrame:
-    * We can create a new DataFrame
-    * We can create a new column and add it to the DataFrame, 
-    * we can remove an existing column from a DataFrame, 
-    * we can modify an existing column in a DataFrame, 
-    * we can change the data type of column values in the DataFrame
+Изменение DataFrame:
+    * Мы можем создать новый DataFrame,
+    * Мы можем создать новый столбец и добавить его в DataFrame,
+    * Мы можем удалить существующий столбец из DataFrame, 
+    * Мы можем изменить существующий столбец в DataFrame, 
+    * Мы можем изменить тип данных значений столбца в DataFrame.
 
-### Creating a DataFrame
+### Создание DataFrame
 
-As always, first we import the necessary packages. Now, lets import pandas and numpy, two best friends ever.
+Как всегда, первым делом мы импортируем необходимые пакеты. Давайте импортируем двух неразлучных друзей - pandas и numpy.
 
 ```python
 import pandas as pd
@@ -672,13 +672,13 @@ print(df)
   </tbody>
 </table>
 
-Adding a column to a DataFrame is like adding a key to a dictionary.
+Добавление столбца в DataFrame аналогично добавлению ключа в словарь.
 
-First let's use the previous example to create a DataFrame. After we create the DataFrame, we will start modifying the columns and column values.
+Давайте сначала используем предыдущий пример, чтобы создать DataFrame. После создания DataFrame мы начнем изменять столбцы и значения в них.
 
-### Adding a New Column
+### Добавление нового столбца
 
-Let's add a weight column in the DataFrame
+Давайте добавим столбец "Weight" в DataFrame:
 
 ```python
 weights = [74, 78, 69]
@@ -721,7 +721,7 @@ df
   </tbody>
 </table>
 
-Let's add a height column into the DataFrame aswell
+Давайте также добавим столбец "Height":
 
 ```python
 heights = [173, 175, 169]
@@ -768,11 +768,11 @@ print(df)
   </tbody>
 </table>
 
-As you can see in the DataFrame above, we did add new columns, Weight and Height. Let's add one additional column called BMI(Body Mass Index) by calculating their BMI using thier mass and height. BMI is mass divided by height squared (in meters) - Weight/Height * Height.
+Как видно из приведенного выше DataFrame, мы добавили новые столбцы "Weight" и "Height". Давайте также добавим дополнительный столбец с именем "BMI" (Индекс массы тела), вычислив его значение на основе массы и роста. Индекс массы тела (ИМТ) рассчитывается как отношение массы квадрата роста (в метрах) - Вес/Рост * Рост.
 
-As you can see, the height is in centimeters, so we shoud change it to meters. Let's modify the height row.
+Как видно, рост указан в сантиметрах, поэтому мы должны перевести его в метры. Давайте изменим столбец с ростом "Height".
 
-### Modifying column values
+### Изменение значений столбцов
 
 ```python
 df['Height'] = df['Height'] * 0.01
@@ -819,7 +819,7 @@ df
 </table>
 
 ```python
-# Using functions makes our code clean, but you can calculate the bmi without one
+# Использование функций делает наш код более читабельным, но вы также можете вычислить индекс массы тела без использования функции
 def calculate_bmi ():
     weights = df['Weight']
     heights = df['Height']
@@ -882,9 +882,9 @@ df
   </tbody>
 </table>
 
-### Formating DataFrame columns
+### Форматирование столбцов DataFrame
 
-The BMI column values of the DataFrame are float with many significant digits after decimal. Let's change it to one significant digit after point.
+Значения столбца "BMI" в DataFrame являются числами с плавающей точкой с большим количеством значащих цифр после запятой. Давайте изменим их, чтобы они имели одну значащую цифру после запятой.
 
 ```python
 df['BMI'] = round(df['BMI'], 1)
@@ -934,7 +934,7 @@ print(df)
   </tbody>
 </table>
 
-The information in the DataFrame seems not yet complete, let's add birth year and current year columns.
+Информация в DataFrame, кажется неполной, давайте добавим столбцы "Birth Year" (год рождения) и "Current Year" (текущий год).
 
 ```python
 birth_year = ['1769', '1985', '1990']
@@ -995,7 +995,7 @@ df
   </tbody>
 </table>
 
-## Checking data types of Column values
+## Проверка типов данных значений столбцов
 
 ```python
 print(df.Weight.dtype)
@@ -1006,20 +1006,20 @@ print(df.Weight.dtype)
 ```
 
 ```python
-df['Birth Year'].dtype # it gives string object , we should change this to number
+df['Birth Year'].dtype # возвращает объект типа "строка", нам следует преобразовать его в число
 
 ```
 
 ```python
 df['Birth Year'] = df['Birth Year'].astype('int')
-print(df['Birth Year'].dtype) # let's check the data type now
+print(df['Birth Year'].dtype) # давайте проверим тип данных
 ```
 
 ```sh
     dtype('int32')
 ```
 
-Now same for the current year:
+Теперь то же самое для текущего года (current year):
 
 ```python
 df['Current Year'] = df['Current Year'].astype('int')
@@ -1030,7 +1030,7 @@ df['Current Year'].dtype
     dtype('int32')
 ```
 
-Now, the column values of birth year and current year are integers. We can calculate the age.
+Теперь значения столбцов "год рождения" и "текущий год" являются целыми числами. Мы можем вычислить возраст.
 
 ```python
 ages = df['Current Year'] - df['Birth Year']
@@ -1102,20 +1102,20 @@ print(df)
   </tbody>
 </table>
 
-The person in the first row lived so far for 251 years. It is unlikely for someone to live so long. Either it is a typo or the data is cooked. So lets fill that data with average of the columns without including outlier. 
+Человек в первой строке жил 251 год. Вряд ли кто-то может прожить так долго. Возможно, это ошибка или данные искажены. Поэтому давайте заполним эти данные средним значением столбцов, исключив выбросы.
 
-mean = (35 + 30)/ 2
+Среднее значение будет равно (35 + 30) / 2:
 
 ```python
 mean = (35 + 30)/ 2
-print('Mean: ',mean)	#it is good to add some description to the output, so we know what is what
+print('Mean: ',mean)	#считается правилом хорошего тона добавлять некоторое описание вывода, чтобы мы знали, что это такое.
 ```
 
 ```sh
    Mean:  32.5
 ```
 
-### Boolean Indexing
+### Логическое (Boolean) индексирование
 
 ```python
 print(df[df['Ages'] > 120])
@@ -1200,17 +1200,17 @@ print(df[df['Ages'] < 120])
   </tbody>
 </table>
 
-## Exercises: Day 25
+## Упражнения: День 25
 
-1. Read the hacker_news.csv file from data directory 
-1. Get the first five rows
-1. Get the last five rows
-1. Get the title column as pandas series
-1. Count the number of rows and columns
-    - Filter the titles which contain python
-    - Filter the titles which contain JavaScript
-    - Explore the data and make sense of it
+1. Прочитать файл hacker_news.csv из директории "data"
+2. Получить первые пять строк
+3. Получить последние пять строк
+4. Получить столбец "title" в виде серии (pandas series)
+5. Посчитать количество строк и столбцов
+    - Отфильтровать заголовки, содержащие "python"
+    - Отфильтровать заголовки, содержащие "JavaScript"
+    - Исследовать данные и понять их смысл
 
-🎉 CONGRATULATIONS ! 🎉
+🎉 МОИ ПОЗДРАВЛЕНИЯ ! 🎉
 
-[<< Day 24](../24_Day_Statistics/24_statistics.md) | [Day 26 >>](../26_Day_Python_web/26_python_web.md)
+[<< День 24](../24_Day_Statistics/24_statistics.md) | [День 26 >>](../26_Day_Python_web/26_python_web.md)
