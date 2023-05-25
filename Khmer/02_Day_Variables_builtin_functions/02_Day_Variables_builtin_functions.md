@@ -19,16 +19,16 @@
 ![30DaysOfPython](./../../images/30DaysOfPython_banner3@2x.png)
 
 - [📘 Day 2](#-day-2)
-  - [អនុគមន៍ដែកមានស្រេច](#អនុគមន៍ដែលមានស្រេច)
-  - [អថេរ](#អថេរ)
-    - [បង្កើតអថេរច្រើននៅជួរតែមួយ](#បង្កើតអថេរច្រើននៅជួរតែមួយ)
-  - [ប្រភេទទិន្នន័យ](#ប្រភេទទិន្នន័យ)
-  - [ពិនិត្យមើប្រភេទទិន្នន័យ](#ពិនិត្យមើប្រភេទទិន្នន័យ)
-  - [លេខ](#លេខ)
+  - [Built in functions](#built-in-functions)
+  - [Variables](#variables)
+    - [Declaring Multiple Variable in a Line](#declaring-multiple-variable-in-a-line)
+  - [Data Types](#data-types)
+  - [Checking Data types and Casting](#checking-data-types-and-casting)
+  - [Numbers](#numbers)
 
 # 📘 Day 2
 
-## អនុគមន៍ដែលមានស្រេច
+## Built in functions
 
 នៅក្នុង Python យើងមានអនុគមន៍ ដែលគេបង្កើតមកស្រេចច្រើន។ អនុគមន៍ដែលមានស្រេច អាចប្រើបានជាសកល ដោយមិនបាច់នាំចូលពីខាងក្រៅមកទេ។ អនុគមន៍ដែលមានស្រេច ដែលគេធ្លាប់ប្រើច្រើនជាងគេគឺ ៖
 _print()_, _len()_, _type()_, _int()_, _float()_, _str()_, _input()_, _list()_, _dict()_, _min()_, _max()_, _sum()_, _sorted()_, _open()_, _file()_, _help()_, and _dir()_
@@ -50,7 +50,7 @@ _print()_, _len()_, _type()_, _int()_, _float()_, _str()_, _input()_, _list()_, 
 
 ![Min Max Sum](../images/builtin-functional-final.png)
 
-## អថេរ
+## Variables
 
 អថេរ អាចរក្សាទុកទិន្នន័យនៅក្នុងកុំព្យូទ័រ។ គេណែនាំអោយប្រើអថេរណាដែលងាយស្រួលសម្រាប់ចាំនិងស្រួលយល់។ អថេរមិនអាចមានលេខនៅខាងមុខ, តួអក្សរពិសេស, និងសហសញ្ញា។ អថេរខ្លះមានឈ្មោះខ្លី(x, y, z)​ ខ្លះទៀតវែងហើយស្រួលយល់(firstname, lastname, age, country)។
 
@@ -142,7 +142,7 @@ print('Skills: ', skills)
 print('Person information: ', person_info)
 ```
 
-### បង្កើតអថេរច្រើននៅជួរតែមួយ
+### Declaring Multiple Variable in a Line
 
 អថេរច្រើនអាចបង្កើតបាននៅជួរតែមួយ
 
@@ -171,11 +171,11 @@ print(first_name)
 print(age)
 ```
 
-## ប្រភេទទិន្នន័យ
+## Data Types
 
 នៅ Python មានប្រភេទទិន្នន័យច្រើន។ បើចង់ដឹងថាអថេរជាប្រភេទទិន្នន័យអ្វី យើងអាចប្រើអនុគមន៍ _type_ ។ 
 
-## ពិនិត្យមើប្រភេទទិន្នន័យ
+## Checking Data types and Casting
 
 - យើងប្រើអនុគមន៍ _type_
 
@@ -237,7 +237,7 @@ first_name_to_list = list(first_name)
 print(first_name_to_list)            # ['A', 's', 'a', 'b', 'e', 'n', 'e', 'h']
 ```
 
-## លេខ
+## Numbers
 
 ប្រភេទទិន្នន័យលេខ
 

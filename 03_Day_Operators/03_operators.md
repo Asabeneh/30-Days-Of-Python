@@ -24,7 +24,6 @@
     - [Arithmetic Operators:](#arithmetic-operators)
     - [Comparison Operators](#comparison-operators)
     - [Logical Operators](#logical-operators)
-  - [💻 Exercises - Day 3](#-exercises---day-3)
 
 # 📘 Day 3
 
@@ -48,7 +47,7 @@ Assignment operators are used to assign values to variables. Let us take = as an
 
 ![Assignment Operators](../images/assignment_operators.png)
 
-### Arithmetic Operators:
+### Arithmetic Operators
 
 - Addition(+): a + b
 - Subtraction(-): a - b

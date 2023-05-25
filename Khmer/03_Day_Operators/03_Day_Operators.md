@@ -18,16 +18,16 @@
 ![30DaysOfPython](../images/30DaysOfPython_banner3@2x.png)
 
 - [📘 Day 3](#-day-3)
-  - [ចំនួនប៊ូលីន](#ចំនួនប៊ូលីន)
-  - [ប្រតិបត្តិការ](#ប្រតិបត្តិការ)
-    - [ប្រតិបត្តិករចាត់តាំង](#ប្រតិបត្តិករចាត់តាំង)
-    - [ប្រតិបត្តិការនព្វន្ធ](#ប្រតិបត្តិការនព្វន្ធ)
-    - [ប្រតិបត្តិករប្រៀបធៀប](#ប្រតិបត្តិករប្រៀបធៀប)
-    - [ប្រតិបត្តិតក្ក](#ប្រតិបត្តិតក្ក)
+  - [Boolean](#boolean)
+  - [Operators](#operators)
+    - [Assignment Operators](#assignment-operators)
+    - [Arithmetic Operators:](#arithmetic-operators)
+    - [Comparison Operators](#comparison-operators)
+    - [Logical Operators](#logical-operators)
 
 # 📘 Day 3
 
-## ចំនួនប៊ូលីន
+## Boolean
 
 ប្រភេទទិន្នន័យ ចំនួនប៊ូលីន តំណាងឱ្យតម្លៃមួយនៃតម្លៃពីរ: _True_ ឬ _False_ ។ ការប្រើប្រាស់ ប្រភេទទិន្នន័យទាំងនេះនឹងច្បាស់ នៅពេលដែលយើងចាប់ផ្តើមប្រើប្រតិបត្តិការប្រៀបធៀប។ អក្សរដំបូង **T** សម្រាប់ True និង **F** សម្រាប់ False គួរតែមានអក្សរធំមិនដូច JavaScript ទេ។
 **Example: តម្លៃចំនួនប៊ូលីន**
@@ -37,17 +37,17 @@ print(True)
 print(False)
 ```
 
-## ប្រតិបត្តិការ
+## Operators
 
 ភាសា Python គាំទ្រប្រតិបត្តិការជាច្រើនប្រភេទ។ នៅក្នុងនេះ, យើងនឹងផ្តោតលើលើវាខ្លះៗ។
 
-### ប្រតិបត្តិករចាត់តាំង
+### Assignment Operators
 
 ប្រតិបត្តិករចាត់តាំងត្រូវបានប្រើដើម្បីកំណត់តម្លៃទៅលើ អថេរ ។ យក = ជាឧទាហរណ៍។ សញ្ញាស្មើក្នុងគណិតវិទ្យាបង្ហាញថាតម្លៃពីរស្មើគ្នាប៉ុន្តែក្នុង Python វាមានន័យថា យើងកំពុងតែរក្សាតម្លៃនៅក្នុងអថេរមួយ ហើយយើងហៅវាថាចាត់តាំងតម្លៃទៅលើអថេរមួយ។ តារាងខាងក្រោមនេះបង្ហាញពីប្រភេទប្រតិបត្តិករចាត់តាំង Python ផ្សេងៗ, បានមកពី [w3school](https://www.w3schools.com/python/python_operators.asp).
 
 ![Assignment Operators](../images/assignment_operators.png)
 
-### ប្រតិបត្តិការនព្វន្ធ
+### Arithmetic Operators
 
 - បូក Addition(+): a + b 
 - ដក Subtraction(-): a - b
@@ -177,7 +177,7 @@ density = mass / volume # 1000 Kg/m^3
 
 ```
 
-### ប្រតិបត្តិករប្រៀបធៀប
+### Comparison Operators
 
 ក្នុង programming we compare values, យើងប្រៀបធៀបតម្លៃ យើងប្រើប្រតិបត្តិការប្រៀបធៀប ដើម្បីប្រៀបធៀបតម្លៃពីរ។  យើងពិនិត្យមើលថាតើតម្លៃមួយមានតម្លៃធំជាង ឬតិចជាង ឬស្មើនឹងតម្លៃផ្សេងទៀតឬអត់។ តារាងខាងក្រោមបង្ហាញប្រតិបត្តិការប្រៀបធៀប Python បានមកពី [w3shool](https://www.w3schools.com/python/python_operators.asp).
 
@@ -225,7 +225,7 @@ print('a in an:', 'a' in 'an')      # True
 print('4 is 2 ** 2:', 4 is 2 ** 2)   # True
 ```
 
-### ប្រតិបត្តិតក្ក
+### Logical Operators
 
 ខុសពីភាសាកម្មវិធីផ្សេងទៀត Python ប្រើពាក្យគន្លឹះ _and_, _or_ និង _not_ សម្រាប់ប្រតិបត្តិតក្ក។ ប្រតិបត្តិតក្កប្រើសម្រាប់ភ្ចាប់សេចក្តីពីរឬច្រើន។
 

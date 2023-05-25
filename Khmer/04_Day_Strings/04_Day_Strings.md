@@ -19,30 +19,30 @@
 ![30DaysOfPython](../images/30DaysOfPython_banner3@2x.png)
 
 - [Day 4](#day-4)
-  - [សំណុំអក្សរ](#strings)
-    - [ការបង្កេីតសំណុំអក្សរមួយ](#creating-a-string)
-    - [ការភ្ជាប់សំណុំអក្សរ](#string-concatenation)
-    - [ការចុះបន្ទាត់ក្នុងសំណុំអក្សរ](#escape-sequences-in-strings)
-    - [ការរៀបចំទ្រង់ទ្រាយសំណុំអក្សរ](#string-formatting)
-      - [ការរៀបចំទ្រង់ទ្រាយសំណុំអក្សរតាមរបៀបចាស់(% Operator)](#old-style-string-formatting--operator)
-      - [ការរៀបចំទ្រង់ទ្រាយសំណុំអក្សរតាមរបៀបថ្មី (str.format)](#new-style-string-formatting-strformat)
-      - [ការដាក់បញ្ចូលសំណុំអក្សរ / f-Strings (Python 3.6+)](#string-interpolation--f-strings-python-36)
-    - [Python សំណុំអក្សរជាលំដាប់នៃតួអក្សរ](#python-strings-as-sequences-of-characters)
-      - [ការពង្រាយតួអក្សរ](#unpacking-characters)
-      - [ការចូលដំណើរការ តួអក្សរ ក្នុង សំណុំអក្សរ ដោយ កម្រិតនៃតួអក្សរ](#accessing-characters-in-strings-by-index)
-      - [ការកាត់សំណុំអក្សរក្នុងPython](#slicing-python-strings)
-      - [ការត្រលប់សំណុំអក្សរ](#reversing-a-string)
-      - [ការរំលងតួរអក្សរ កំឡុងពេលកាត់](#skipping-characters-while-slicing)
-    - [វិធីសាស្ត្រ ប្រេីប្រាស់សំណុំអក្សរ](#string-methods)
-  - [💻 លំហាត់ - Day 4](#-exercises---day-4)
+- [Day 4](#day-4)
+  - [Strings](#strings)
+    - [Creating a String](#creating-a-string)
+    - [String Concatenation](#string-concatenation)
+    - [Escape Sequences in Strings](#escape-sequences-in-strings)
+    - [String formatting](#string-formatting)
+      - [Old Style String Formatting (% Operator)](#old-style-string-formatting--operator)
+      - [New Style String Formatting (str.format)](#new-style-string-formatting-strformat)
+      - [String Interpolation / f-Strings (Python 3.6+)](#string-interpolation--f-strings-python-36)
+    - [Python Strings as Sequences of Characters](#python-strings-as-sequences-of-characters)
+      - [Unpacking Characters](#unpacking-characters)
+      - [Accessing Characters in Strings by Index](#accessing-characters-in-strings-by-index)
+      - [Slicing Python Strings](#slicing-python-strings)
+      - [Reversing a String](#reversing-a-string)
+      - [Skipping Characters While Slicing](#skipping-characters-while-slicing)
+    - [String Methods](#string-methods)
 
 # Day4
 
-## សំណុំអក្សរ រឺ ស្រ្តីង
+## Strings
  អត្ថបទជាប្រភេទ ទិន្នន័យសំណុំអក្សរ (string) រឺអាចហៅបាន ថា ប្រភេទទិន្នន័យ string ៕ ប្រភេទទិន្នន័យណាមួយដែលសរសេរជាអក្សរគឺ ទិន្នន័យសំណុំអក្សរ(string)៕
 ទិន្នន័យទាំងអស់ដែលស្ថិតក្រោមសញ្ញាធ្មេញកណ្ដុរតែមួយ, ពីរ ឬបីជា សំណុំអក្សរ រឺ ស្រ្តីង ។ នេះគឺជាវិធីសាស្រ្ត string ផ្សេងគ្នា និងមុខងារ built-in ដើម្បីដោះស្រាយប្រភេទទិន្នន័យ string ។ ដើម្បីពិនិត្យទំហំ(ប្រវែង)នៃ string ប្រើ វិធីសាស្ត្រ len() ។
 
-### ការបង្កេីតសំណុំអក្សរមួយ
+### Creating a String
 
 ```py
 letter = 'P'                # សំណុំអក្សរមួយអាចជាអក្សរតែមួយឬសារខ្លីជាច្រើន
@@ -69,7 +69,7 @@ That is why I created 30 days of python."""
 print(multiline_string)
 ```
 
-### ការភ្ជាប់សំណុំអក្សរ
+### String Concatenation
 
 យើងអាចភ្ជាប់សំណុំអក្សរជាមួយគ្នា៕ការភ្ជាប់ ឬផ្កុំសំណុំអក្សរត្រូវបានគេហៅថា ការភ្ជាប់សំណុំអក្សរ។ សូមមើលឧទាហរណ៍ខាងក្រោម:
 
@@ -86,7 +86,7 @@ print(len(first_name) > len(last_name)) # True
 print(len(full_name)) # 16
 ```
 
-### Escape sequences ក្នុងសំណុំអក្សរ
+### Escape Sequences in Strings
 
 Escape sequences ក្នុងសំណុំអក្សរ គឺជាការចម្រុះអក្សរពិសេសដែលប្រើដើម្បីតំណាងអក្សរដែលពិបាកឬមិនអាចចូលដោយផ្ទាល់ទៅក្នុង string literal ។ វាត្រូវបានបង្កើតឡើងដោយ backslash \ ដែលបន្ទាប់មកដោយអក្សរណាមួយឬលំដាប់អក្សរ។ នៅពេលដែល backslash ត្រូវបានជួបប្រទះនៅក្នុងសំណុំអក្សរ, វាបង្ហាញពីការចាប់ផ្តើមនៃEscape sequences។សូមមើលរូបភាពសសរសេបន្ទាត់ថ្មីដែលពេញនិយមបំផុត:
 
