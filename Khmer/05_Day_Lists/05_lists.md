@@ -212,6 +212,7 @@ orange_and_lemon = fruits[::2] # នៅទីនេះយើងបានប្�
 ```
 
 - Negative Indexing: យើងអាចកំណត់អតិបរមានៃកម្រិតអវិជ្ជមានដោយកំណត់ការចាប់ផ្តើម, បញ្ចប់និងជំហាន, តម្លៃត្រឡប់នឹងជា list ថ្មី។
+
 ```py
 fruits = ['banana', 'orange', 'mango', 'lemon']
 all_fruits = fruits[-4:] # វាត្រលប់ fruits មកវិញទាំងអស់
@@ -324,6 +325,7 @@ print(fruits)       # ['orange', 'mango']
 ### Removing Items Using Del
 
 *del* keyword លុបបញ្ជីដែលបានកំណត់ ហើយវាក៏អាចត្រូវបានប្រើដើម្បីលុបវត្ថុនៅក្នុងប្រវែង index ។ វាក៏អាចលុប list ទាំងស្រុង
+
 ```py
 # syntax
 lst = ['item1', 'item2']
