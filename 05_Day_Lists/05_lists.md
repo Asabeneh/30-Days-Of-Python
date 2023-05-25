@@ -163,7 +163,7 @@ print(second_last)      # mango
 ### Unpacking List Items
 
 ```py
-lst = ['item','item2','item3', 'item4', 'item5']
+lst = ['item1','item2','item3', 'item4', 'item5']
 first_item, second_item, third_item, *rest = lst
 print(first_item)     # item1
 print(second_item)    # item2
@@ -174,7 +174,7 @@ print(rest)           # ['item4', 'item5']
 
 ```py
 # First Example
-fruits = ['banana', 'orange', 'mango', 'lemon','lime','apple']
+lst = ['banana', 'orange', 'mango', 'lemon','lime','apple']
 first_fruit, second_fruit, third_fruit, *rest = lst
 print(first_fruit)     # banana
 print(second_fruit)    # orange
