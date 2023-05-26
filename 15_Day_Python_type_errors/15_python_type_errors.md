@@ -1,5 +1,5 @@
 <div align="center">
-  <h1> 30 Days Of Python: Day 15 - Python Type Errors </h1>
+  <h1> 30 Дней Python: День 15 - Типы ошибок в Python </h1>
   <a class="header-badge" target="_blank" href="https://www.linkedin.com/in/asabeneh/">
   <img src="https://img.shields.io/badge/style--5eba00.svg?label=LinkedIn&logo=linkedin&style=social">
   </a>
@@ -7,18 +7,18 @@
   <img alt="Twitter Follow" src="https://img.shields.io/twitter/follow/asabeneh?style=social">
   </a>
 
-  <sub>Author:
+  <sub>Автор:
   <a href="https://www.linkedin.com/in/asabeneh/" target="_blank">Asabeneh Yetayeh</a><br>
-  <small> Second Edition: July, 2021</small>
+  <small> Второе издание: Июль, 2021</small>
   </sub>
 </div>
 </div>
 
-[<< Day 14](../14_Day_Higher_order_functions/14_higher_order_functions.md) | [Day 16 >>](../16_Day_Python_date_time/16_python_datetime.md)
+[<< День 14](../14_Day_Higher_order_functions/14_higher_order_functions.md) | [День 16 >>](../16_Day_Python_date_time/16_python_datetime.md)
 
 ![30DaysOfPython](../images/30DaysOfPython_banner3@2x.png)
-- [📘 Day 15](#-day-15)
-  - [Python Error Types](#python-error-types)
+- [📘 День 15](#-день-15)
+  - [Типы ошибок в Python](#типы-ошибок-в-python)
     - [SyntaxError](#syntaxerror)
     - [NameError](#nameerror)
     - [IndexError](#indexerror)
@@ -29,60 +29,57 @@
     - [ImportError](#importerror)
     - [ValueError](#valueerror)
     - [ZeroDivisionError](#zerodivisionerror)
-  - [💻 Exercises: Day 15](#-exercises-day-15)
+  - [💻 Упражнения: День 15](#-упражнения-день-15)
 
-# 📘 Day 15
+# 📘 День 15
 
-## Python Error Types
+## Типы ошибок в Python
 
-When we write code it is common that we make a typo or some other common error. If our code fails to run, the Python interpreter will display a message, containing feedback with information on where the problem occurs and the type of an error. It will also sometimes gives us suggestions on a possible fix. Understanding different types of errors in programming languages will help us to debug our code quickly and also it makes us better at what we do.
+Во время написания кода очень легко опечататься или допустить одну из частых ошибок. Если наш код не может выполниться, интерпретатор Python покажет сообщение с информацией о том, где произошла ошибка и ее тип. Также иногда он может предположить, как ее можно исправить. Понимание разных типов ошибок в языках программирования поможет в быстрой отладке кода и улучшении навыков программирования.
 
-Let us see the most common error types one by one. First let us open our Python interactive shell. Go to your you computer terminal and write 'python'. The python interactive shell will be opened.
+Давайте рассмотрим наиболее частые типы ошибок. Сперва откройте интерактивную оболочку Python interactive shell. Откройте на компьютере терминал и наберите 'python'. Это откроет интерактивную оболочку python.
 
 ### SyntaxError
 
 **Example 1: SyntaxError**
 
 ```py
-asabeneh@Asabeneh:~$ python
-Python 3.9.6 (default, Jun 28 2021, 15:26:21)
-[Clang 11.0.0 (clang-1100.0.33.8)] on darwin
+PS C:\Projects\30-Days-Of-Python> python
+Python 3.10.9 (tags/v3.10.9:1dd9be6, Dec  6 2022, 20:01:21) [MSC v.1934 64 bit (AMD64)] on win32
 Type "help", "copyright", "credits" or "license" for more information.
 >>> print 'hello world'
   File "<stdin>", line 1
     print 'hello world'
-                      ^
-SyntaxError: Missing parentheses in call to 'print'. Did you mean print('hello world')?
+    ^^^^^^^^^^^^^^^^^^^
+SyntaxError: Missing parentheses in call to 'print'. Did you mean print(...)?
 >>>
 ```
 
-As you can see we made a syntax error because we forgot to enclose the string with parenthesis and Python already suggests the solution. Let us fix it.
+Как видите, мы допустили синтаксическую ошибку, потому что забыли взять строку в круглые скобки и Python уже предлагает решение. Давайте это исправим.
 
 ```py
-asabeneh@Asabeneh:~$ python
-Python 3.9.6 (default, Jun 28 2021, 15:26:21)
-[Clang 11.0.0 (clang-1100.0.33.8)] on darwin
+PS C:\Projects\30-Days-Of-Python> python
+Python 3.10.9 (tags/v3.10.9:1dd9be6, Dec  6 2022, 20:01:21) [MSC v.1934 64 bit (AMD64)] on win32
 Type "help", "copyright", "credits" or "license" for more information.
 >>> print 'hello world'
   File "<stdin>", line 1
     print 'hello world'
-                      ^
-SyntaxError: Missing parentheses in call to 'print'. Did you mean print('hello world')?
+    ^^^^^^^^^^^^^^^^^^^
+SyntaxError: Missing parentheses in call to 'print'. Did you mean print(...)?
 >>> print('hello world')
 hello world
 >>>
 ```
 
-The error was a _SyntaxError_. After the fix our code was executed without a hitch. Let see more error types.
+Эта ошибка называется _SyntaxError_. После исправления код был выполнен. Давайте познакомимся с еще несколькими типами ошибок.
 
 ### NameError
 
-**Example 1: NameError**
+**Пример 1: NameError**
 
 ```py
-asabeneh@Asabeneh:~$ python
-Python 3.9.6 (default, Jun 28 2021, 15:26:21)
-[Clang 11.0.0 (clang-1100.0.33.8)] on darwin
+PS C:\Projects\30-Days-Of-Python> python
+Python 3.10.9 (tags/v3.10.9:1dd9be6, Dec  6 2022, 20:01:21) [MSC v.1934 64 bit (AMD64)] on win32
 Type "help", "copyright", "credits" or "license" for more information.
 >>> print(age)
 Traceback (most recent call last):
@@ -91,12 +88,11 @@ NameError: name 'age' is not defined
 >>>
 ```
 
-As you can see from the message above, name age is not defined. Yes, it is true that we did not define an age variable but we were trying to print it out as if we had had declared it. Now, lets fix this by declaring it and assigning with a value.
+Как видно в сообщении выше, переменная age не определена. Это так, мы действительно не объявили переменную age, но при этом пытались вывести ее на печать, как будто объявили. Теперь давайте это исправим, объявив переменную и присвоим ей значение.
 
 ```py
-asabeneh@Asabeneh:~$ python
-Python 3.9.6 (default, Jun 28 2021, 15:26:21)
-[Clang 11.0.0 (clang-1100.0.33.8)] on darwin
+PS C:\Projects\30-Days-Of-Python> python
+Python 3.10.9 (tags/v3.10.9:1dd9be6, Dec  6 2022, 20:01:21) [MSC v.1934 64 bit (AMD64)] on win32
 Type "help", "copyright", "credits" or "license" for more information.
 >>> print(age)
 Traceback (most recent call last):
@@ -108,16 +104,15 @@ NameError: name 'age' is not defined
 >>>
 ```
 
-The type of error was a _NameError_. We debugged the error by defining the variable name.
+Этот тип ошибки называется _NameError_. Мы исправили эту ошибку, задав имя переменной.
 
 ### IndexError
 
-**Example 1: IndexError**
+**Пример 1: IndexError**
 
 ```py
-asabeneh@Asabeneh:~$ python
-Python 3.9.6 (default, Jun 28 2021, 15:26:21)
-[Clang 11.0.0 (clang-1100.0.33.8)] on darwin
+PS C:\Projects\30-Days-Of-Python> python
+Python 3.10.9 (tags/v3.10.9:1dd9be6, Dec  6 2022, 20:01:21) [MSC v.1934 64 bit (AMD64)] on win32
 Type "help", "copyright", "credits" or "license" for more information.
 >>> numbers = [1, 2, 3, 4, 5]
 >>> numbers[5]
@@ -127,16 +122,15 @@ IndexError: list index out of range
 >>>
 ```
 
-In the example above, Python raised an _IndexError_, because the list has only indexes from 0 to 4 , so it was out of range.
+В примере выше Python вызвал исключение _IndexError_, потому что в списке есть только индексы от 0 до 4, поэтому индекс 5 был вне диапазона.
 
 ### ModuleNotFoundError
 
-**Example 1: ModuleNotFoundError**
+**Пример 1: ModuleNotFoundError**
 
 ```py
-asabeneh@Asabeneh:~$ python
-Python 3.9.6 (default, Jun 28 2021, 15:26:21)
-[Clang 11.0.0 (clang-1100.0.33.8)] on darwin
+PS C:\Projects\30-Days-Of-Python> python
+Python 3.10.9 (tags/v3.10.9:1dd9be6, Dec  6 2022, 20:01:21) [MSC v.1934 64 bit (AMD64)] on win32
 Type "help", "copyright", "credits" or "license" for more information.
 >>> import maths
 Traceback (most recent call last):
@@ -145,12 +139,11 @@ ModuleNotFoundError: No module named 'maths'
 >>>
 ```
 
-In the example above, I added an extra s to math deliberately and _ModuleNotFoundError_ was raised. Lets fix it by removing the extra s from math.
+В примере выше я умышленно добавил лишнюю s к названию модуля math и исключение _ModuleNotFoundError_ было вызвано. Давайте это исправим, убрав лишнюю s из math.
 
 ```py
-asabeneh@Asabeneh:~$ python
-Python 3.9.6 (default, Jun 28 2021, 15:26:21)
-[Clang 11.0.0 (clang-1100.0.33.8)] on darwin
+PS C:\Projects\30-Days-Of-Python> python
+Python 3.10.9 (tags/v3.10.9:1dd9be6, Dec  6 2022, 20:01:21) [MSC v.1934 64 bit (AMD64)] on win32
 Type "help", "copyright", "credits" or "license" for more information.
 >>> import maths
 Traceback (most recent call last):
@@ -160,16 +153,15 @@ ModuleNotFoundError: No module named 'maths'
 >>>
 ```
 
-We fixed it, so let's use some of the functions from the math module.
+Мы исправили ошибку, так что давайте используем несколько функций из модуля math.
 
 ### AttributeError
 
-**Example 1: AttributeError**
+**Пример 1: AttributeError**
 
 ```py
-asabeneh@Asabeneh:~$ python
-Python 3.9.6 (default, Jun 28 2021, 15:26:21)
-[Clang 11.0.0 (clang-1100.0.33.8)] on darwin
+PS C:\Projects\30-Days-Of-Python> python
+Python 3.10.9 (tags/v3.10.9:1dd9be6, Dec  6 2022, 20:01:21) [MSC v.1934 64 bit (AMD64)] on win32
 Type "help", "copyright", "credits" or "license" for more information.
 >>> import maths
 Traceback (most recent call last):
@@ -179,16 +171,14 @@ ModuleNotFoundError: No module named 'maths'
 >>> math.PI
 Traceback (most recent call last):
   File "<stdin>", line 1, in <module>
-AttributeError: module 'math' has no attribute 'PI'
+AttributeError: module 'math' has no attribute 'PI'. Did you mean: 'pi'?
 >>>
 ```
 
-As you can see, I made a mistake again! Instead of pi, I tried to call a PI function from maths module. It raised an attribute error, it means, that the function does not exist in the module. Lets fix it by changing from PI to pi.
+Как видите, я снова допустил ошибку! Вместо pi я пытался вызвать функцию PI из модуля maths. Это вызвало исключение attribute error, это означает, что функция отсутствует в модуле. Давайте исправим ошибку, изменив PI на pi.
 
 ```py
-asabeneh@Asabeneh:~$ python
-Python 3.9.6 (default, Jun 28 2021, 15:26:21)
-[Clang 11.0.0 (clang-1100.0.33.8)] on darwin
+Python 3.10.9 (tags/v3.10.9:1dd9be6, Dec  6 2022, 20:01:21) [MSC v.1934 64 bit (AMD64)] on win32
 Type "help", "copyright", "credits" or "license" for more information.
 >>> import maths
 Traceback (most recent call last):
@@ -198,62 +188,59 @@ ModuleNotFoundError: No module named 'maths'
 >>> math.PI
 Traceback (most recent call last):
   File "<stdin>", line 1, in <module>
-AttributeError: module 'math' has no attribute 'PI'
+AttributeError: module 'math' has no attribute 'PI'. Did you mean: 'pi'?
 >>> math.pi
 3.141592653589793
 >>>
 ```
 
-Now, when we call pi from the math module we got the result.
+Теперь когда мы вызываем pi из модуля math мы получаем результат.
 
 ### KeyError
 
-**Example 1: KeyError**
+**Пример 1: KeyError**
 
 ```py
-asabeneh@Asabeneh:~$ python
-Python 3.9.6 (default, Jun 28 2021, 15:26:21)
-[Clang 11.0.0 (clang-1100.0.33.8)] on darwin
+PS C:\Projects\30-Days-Of-Python> python
+Python 3.10.9 (tags/v3.10.9:1dd9be6, Dec  6 2022, 20:01:21) [MSC v.1934 64 bit (AMD64)] on win32
 Type "help", "copyright", "credits" or "license" for more information.
->>> users = {'name':'Asab', 'age':250, 'country':'Finland'}
->>> users['name']
-'Asab'
->>> users['county']
+>>> users = {'имя':'Иван', 'возраст':250, 'страна':'Россия'}
+>>> users['имя']
+'Иван'
+>>> users['стрна']
 Traceback (most recent call last):
   File "<stdin>", line 1, in <module>
-KeyError: 'county'
+KeyError: 'стрна'
 >>>
 ```
 
-As you can see, there was a typo in the key used to get the dictionary value. so, this is a key error and the fix is quite straight forward. Let's do this!
+Как вы можете видеть, при попытке получить значение словаря по ключу была допущена ошибка. Поэтому это исключение key error и его исправление весьма очевидно. Давайте это сделаем!
 
 ```py
-asabeneh@Asabeneh:~$ python
-Python 3.9.6 (default, Jun 28 2021, 15:26:21)
-[Clang 11.0.0 (clang-1100.0.33.8)] on darwin
+PS C:\Projects\30-Days-Of-Python> python
+Python 3.10.9 (tags/v3.10.9:1dd9be6, Dec  6 2022, 20:01:21) [MSC v.1934 64 bit (AMD64)] on win32
 Type "help", "copyright", "credits" or "license" for more information.
->>> user = {'name':'Asab', 'age':250, 'country':'Finland'}
->>> user['name']
-'Asab'
->>> user['county']
+>>> users = {'имя':'Иван', 'возраст':250, 'страна':'Россия'}
+>>> users['имя']
+'Иван'
+>>> users['стрна']
 Traceback (most recent call last):
   File "<stdin>", line 1, in <module>
-KeyError: 'county'
->>> user['country']
-'Finland'
+KeyError: 'стрна'
+>>> users['страна']
+'Россия'
 >>>
 ```
 
-We debugged the error, our code ran and we got the value.
+Мы исправили ошибку, наш код был выполнен, и мы получили значение.
 
 ### TypeError
 
-**Example 1: TypeError**
+**Пример 1: TypeError**
 
 ```py
-asabeneh@Asabeneh:~$ python
-Python 3.9.6 (default, Jun 28 2021, 15:26:21)
-[Clang 11.0.0 (clang-1100.0.33.8)] on darwin
+PS C:\Projects\30-Days-Of-Python> python
+Python 3.10.9 (tags/v3.10.9:1dd9be6, Dec  6 2022, 20:01:21) [MSC v.1934 64 bit (AMD64)] on win32
 Type "help", "copyright", "credits" or "license" for more information.
 >>> 4 + '3'
 Traceback (most recent call last):
@@ -262,12 +249,11 @@ TypeError: unsupported operand type(s) for +: 'int' and 'str'
 >>>
 ```
 
-In the example above, a TypeError is raised because we cannot add a number to a string. First solution would be to convert the string to int or float. Another solution would be converting the number to a string (the result then would be '43'). Let us follow the first fix.
+В примере выше было вызвано исключение TypeError, потому что нельзя прибавлять строку к числу. Первый вариант решения это привести строку к числу типа int или float. Другой вариант привести число к строковому типу (тогда результат будет '43'). Давайте пойдем по первому пути.
 
 ```py
-asabeneh@Asabeneh:~$ python
-Python 3.9.6 (default, Jun 28 2021, 15:26:21)
-[Clang 11.0.0 (clang-1100.0.33.8)] on darwin
+PS C:\Projects\30-Days-Of-Python> python
+Python 3.10.9 (tags/v3.10.9:1dd9be6, Dec  6 2022, 20:01:21) [MSC v.1934 64 bit (AMD64)] on win32
 Type "help", "copyright", "credits" or "license" for more information.
 >>> 4 + '3'
 Traceback (most recent call last):
@@ -280,35 +266,33 @@ TypeError: unsupported operand type(s) for +: 'int' and 'str'
 >>>
 ```
 
-Error removed and we got the result we expected.
+Ошибка исправлена, и мы получили ожидаемый результат.
 
 ### ImportError
 
-**Example 1: TypeError**
+**Пример 1: TypeError**
 
 ```py
-asabeneh@Asabeneh:~$ python
-Python 3.9.6 (default, Jun 28 2021, 15:26:21)
-[Clang 11.0.0 (clang-1100.0.33.8)] on darwin
+PS C:\Projects\30-Days-Of-Python> python
+Python 3.10.9 (tags/v3.10.9:1dd9be6, Dec  6 2022, 20:01:21) [MSC v.1934 64 bit (AMD64)] on win32
 Type "help", "copyright", "credits" or "license" for more information.
 >>> from math import power
 Traceback (most recent call last):
   File "<stdin>", line 1, in <module>
-ImportError: cannot import name 'power' from 'math'
+ImportError: cannot import name 'power' from 'math' (unknown location)
 >>>
 ```
 
-There is no function called power in the math module, it goes with a different name: _pow_. Let's correct it:
+В модуле math нет функции power, она называется _pow_. Давайте исправим это:
 
 ```py
-asabeneh@Asabeneh:~$ python
-Python 3.9.6 (default, Jun 28 2021, 15:26:21)
-[Clang 11.0.0 (clang-1100.0.33.8)] on darwin
+PS C:\Projects\30-Days-Of-Python> python
+Python 3.10.9 (tags/v3.10.9:1dd9be6, Dec  6 2022, 20:01:21) [MSC v.1934 64 bit (AMD64)] on win32
 Type "help", "copyright", "credits" or "license" for more information.
 >>> from math import power
 Traceback (most recent call last):
   File "<stdin>", line 1, in <module>
-ImportError: cannot import name 'power' from 'math'
+ImportError: cannot import name 'power' from 'math' (unknown location)
 >>> from math import pow
 >>> pow(2,3)
 8.0
@@ -318,9 +302,8 @@ ImportError: cannot import name 'power' from 'math'
 ### ValueError
 
 ```py
-asabeneh@Asabeneh:~$ python
-Python 3.9.6 (default, Jun 28 2021, 15:26:21)
-[Clang 11.0.0 (clang-1100.0.33.8)] on darwin
+PS C:\Projects\30-Days-Of-Python> python
+Python 3.10.9 (tags/v3.10.9:1dd9be6, Dec  6 2022, 20:01:21) [MSC v.1934 64 bit (AMD64)] on win32
 Type "help", "copyright", "credits" or "license" for more information.
 >>> int('12a')
 Traceback (most recent call last):
@@ -329,14 +312,13 @@ ValueError: invalid literal for int() with base 10: '12a'
 >>>
 ```
 
-In this case we cannot change the given string to a number, because of the 'a' letter in it.
+В данном случае мы не можем привести строку к числу из-за буквы 'a' в ней.
 
 ### ZeroDivisionError
 
 ```py
-asabeneh@Asabeneh:~$ python
-Python 3.9.6 (default, Jun 28 2021, 15:26:21)
-[Clang 11.0.0 (clang-1100.0.33.8)] on darwin
+PS C:\Projects\30-Days-Of-Python> python
+Python 3.10.9 (tags/v3.10.9:1dd9be6, Dec  6 2022, 20:01:21) [MSC v.1934 64 bit (AMD64)] on win32
 Type "help", "copyright", "credits" or "license" for more information.
 >>> 1/0
 Traceback (most recent call last):
@@ -345,17 +327,17 @@ ZeroDivisionError: division by zero
 >>>
 ```
 
-We cannot divide a number by zero.
+Мы не можем делить число на ноль.
 
-We have covered some of the python error types, if you want to check more about it check the python documentation about python error types.
-If you are good at reading the error types then you will be able to fix your bugs fast and you will also become a better programmer.
+Мы рассмотрели несколько типов ошибок в python, при желании вы можете узнать больше о типах ошибок в документации python.
+Если вы научитесь читать ошибки разных типов, вы сможете быстро отлаживать код и станете более успешным как разработчик.
 
-🌕 You are excelling. You made it to half way to your way to greatness. Now do some exercises for your brain and for your muscle.
+🌕 Вы достигли выдающихся результатов. Вы уже на пол пути к успеху. Теперь выполните несколько упражнений для мозга и мускулов.
 
-## 💻 Exercises: Day 15
+## 💻 Упражнения: День 15
 
-1. Open you python interactive shell and try all the examples covered in this section.
+1. Откройте интерактивную оболочку python и попробуйте повторить все примеры, приведенные в этом разделе.
 
-🎉 CONGRATULATIONS ! 🎉
+🎉 ПОЗДРАВЛЯЮ ! 🎉
 
-[<< Day 14](../14_Day_Higher_order_functions/14_higher_order_functions.md) | [Day 16 >>](../16_Day_Python_date_time/16_python_datetime.md)
+[<< День 14](../14_Day_Higher_order_functions/14_higher_order_functions.md) | [День 16 >>](../16_Day_Python_date_time/16_python_datetime.md)
