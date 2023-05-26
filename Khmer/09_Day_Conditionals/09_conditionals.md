@@ -125,7 +125,9 @@ print('A is positive') if a > 0 else print('A is negative') # first condition me
 
 ### Nested Conditions
 
-Conditions can be nested
+Nested condition : សំដៅទៅលើការប្រើ if ឬ else if ក្នុង if ឬ else if មួយទៀត។
+
+លក្ខខណ្ឌអាចជា nested
 
 ```py
 # syntax
@@ -151,7 +153,7 @@ else:
 
 ```
 
-យើងអាចចៀសវាងការសរសេរលក្ខខណ្ឌ nested (រញ៉េរញ៉ៃ) ដោយប្រើ logical operator _and_.
+យើងអាចចៀសវាងការសរសេរលក្ខខណ្ឌជាន់ក្នុងគ្នាដោយប្រើ logical operator _and_.
 
 ### If Condition and Logical Operators
 
