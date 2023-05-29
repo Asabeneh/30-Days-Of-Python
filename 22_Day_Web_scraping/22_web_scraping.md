@@ -1,5 +1,5 @@
 <div align="center">
-  <h1> 30 Days Of Python: Day 22 - Web Scraping </h1>
+  <h1> 30 Дней Python: День 22 - Веб-скрапинг </h1>
   <a class="header-badge" target="_blank" href="https://www.linkedin.com/in/asabeneh/">
   <img src="https://img.shields.io/badge/style--5eba00.svg?label=LinkedIn&logo=linkedin&style=social">
   </a>
@@ -7,49 +7,49 @@
   <img alt="Twitter Follow" src="https://img.shields.io/twitter/follow/asabeneh?style=social">
   </a>
 
-<sub>Author:
+<sub>Автор:
 <a href="https://www.linkedin.com/in/asabeneh/" target="_blank">Asabeneh Yetayeh</a><br>
-<small> Second Edition: July, 2021</small>
+<small> Второе издание: Июль, 2021</small>
 </sub>
 </div>
 
-[<< Day 21](../21_Day_Classes_and_objects/21_classes_and_objects.md) | [Day 23 >>](../23_Day_Virtual_environment/23_virtual_environment.md)
+[<< День 21](../21_Day_Classes_and_objects/21_classes_and_objects.md) | [День 23 >>](../23_Day_Virtual_environment/23_virtual_environment.md)
 
 ![30DaysOfPython](../images/30DaysOfPython_banner3@2x.png)
 
-- [📘 Day 22](#-day-22)
-  - [Python Web Scraping](#python-web-scraping)
-    - [What is Web Scrapping](#what-is-web-scrapping)
-  - [💻 Exercises: Day 22](#-exercises-day-22)
+- [📘 День 22](#-день-22)
+  - [Веб-скрапинг в Python](#веб-скрапинг-в-python)
+    - [Что такое веб-скрапинг](#что-такое-веб-скрапинг)
+  - [💻 Упражнения: День 22](#-упражнения-день-22)
 
-# 📘 Day 22
+# 📘 День 22
 
-## Python Web Scraping
+## Веб-скрапинг в Python
 
-### What is Web Scrapping
+### Что такое веб-скрапинг
 
-The internet is full of huge amount of data which can be used for different purposes. To collect this data we need to know how to scrape data from a website.
+В интернете есть огромное количество информации, которую можно использовать для разных целей. Для сбора этих данных нам нужно знать, как забирать информацию с веб-страниц.
 
-Web scraping is the process of extracting and collecting data from websites and storing it on a local machine or in a database.
+Веб-скрипинг это процесс извлечения и сбора информации с веб-сайтов и сохранения их на локальном компьютере или в базе данных.
 
-In this section, we will use beautifulsoup and requests package to scrape data. The package version we are using is beautifulsoup 4.
+В этом разделе мы будем использовать пакеты beautifulsoup и requests для скрапинга данных. Мы будем использовать beautifulsoup версии 4.
 
-To start scraping websites you need _requests_, _beautifoulSoup4_ and a _website_.
+Чтобы начать скрапинг веб-сайтов, вам понадобятся _requests_, _beautifulSoup4_ и _website_.
 
 ```sh
 pip install requests
 pip install beautifulsoup4
 ```
 
-To scrape data from websites, basic understanding of HTML tags and CSS selectors is needed. We target content from a website using HTML tags, classes or/and ids.
-Let us import the requests and BeautifulSoup module
+Для скрапинга данных с веб-сайта нужно базовое понимание тегов HTML и селекторов CSS. Мы отыскиваем нужное содержимое на веб-странице с помощью тегов, классов и/или идентификаторов (id) HTML.
+Давайте импортируем модули requests и BeautifulSoup
 
 ```py
 import requests
 from bs4 import BeautifulSoup
 ```
 
-Let us declare url variable for the website which we are going to scrape.
+Давайте объявим переменную url для сайта, на котором будет осуществляться скрапинг.
 
 ```py
 
@@ -57,19 +57,19 @@ import requests
 from bs4 import BeautifulSoup
 url = 'https://archive.ics.uci.edu/ml/datasets.php'
 
-# Lets use the requests get method to fetch the data from url
+# Используем метод get библиотеки requests, чтобы получить данные по адресу url
 
 response = requests.get(url)
-# lets check the status
+# проверим статус ответа
 status = response.status_code
-print(status) # 200 means the fetching was successful
+print(status) # 200 означает, что получение прошло успешно
 ```
 
 ```sh
 200
 ```
 
-Using beautifulSoup to parse content from the page
+Применим BeautifulSoup, чтобы распарсить содержимое страницы
 
 ```py
 import requests
@@ -77,32 +77,102 @@ from bs4 import BeautifulSoup
 url = 'https://archive.ics.uci.edu/ml/datasets.php'
 
 response = requests.get(url)
-content = response.content # we get all the content from the website
-soup = BeautifulSoup(content, 'html.parser') # beautiful soup will give a chance to parse
+content = response.content # мы получаем все содержимое веб-страницы
+soup = BeautifulSoup(content, 'html.parser') # класс BeautifulSoup даст нам возможности для парсинга
 print(soup.title) # <title>UCI Machine Learning Repository: Data Sets</title>
 print(soup.title.get_text()) # UCI Machine Learning Repository: Data Sets
-print(soup.body) # gives the whole page on the website
+print(soup.body) # покажет полный код страницу сайта
 print(response.status_code)
 
 tables = soup.find_all('table', {'cellpadding':'3'})
-# We are targeting the table with cellpadding attribute with the value of 3
-# We can select using id, class or HTML tag , for more information check the beautifulsoup doc
-table = tables[0] # the result is a list, we are taking out data from it
+# Мы ищем все таблицы с аттрибутом cellpadding (расстояние между границей таблицы и ее содержимым) равным 3
+# Мы можем выбирать конкретный элемент используя id, class или тег HTML, за дополнительной информацией обращайтесь к документации beautifulsoup
+table = tables[0] # результат метода .find_all() - это список, мы берем его первый элемент
 for td in table.find('tr').find_all('td'):
     print(td.text)
 ```
 
-If you run this code, you can see that the extraction is half done. You can continue doing it because it is part of exercise 1.
-For reference check the [beautifulsoup documentation](https://www.crummy.com/software/BeautifulSoup/bs4/doc/#quick-start)
+Если вы запустите этот код, вы увидите, что пол дела сделано. В упражнении 2 вы закончите эту работу.
+Ознакомьтесь с [документацией beautifulsoup](https://www.crummy.com/software/BeautifulSoup/bs4/doc/#quick-start)
 
-🌕 You are so special, you are progressing everyday. You are left with only eight days to your way to greatness. Now do some exercises for your brain and muscles.
+Еще один пример работы с beautifulsoup от переводчика.
 
-## 💻 Exercises: Day 22
+На сайте [smashingmagazine](https://www.smashingmagazine.com) в категории wallpapers публикуются подборки обоев для рабочего стола. Возьмем для примера апрельскую подборку 2023 года.
 
-1. Scrape the following website and store the data as json file(url = 'http://www.bu.edu/president/boston-university-facts-stats/').
-1. Extract the table in this url (https://archive.ics.uci.edu/ml/datasets.php) and change it to a json file
-2. Scrape the presidents table and store the data as json(https://en.wikipedia.org/wiki/List_of_presidents_of_the_United_States). The table is not very structured and the scrapping may take very long time.
+Попробуем получить прямые ссылки на все обои определенного разрешения. Сперва "варим суп"
 
-🎉 CONGRATULATIONS ! 🎉
+```python
+import requests
+from bs4 import BeautifulSoup
+url = 'https://www.smashingmagazine.com/2023/03/desktop-wallpaper-calendars-april-2023/'
+response = requests.get(url)
+content = response.content
+soup = BeautifulSoup(content, 'html.parser') # можно работать и с другими форматами, например xml
+```
 
-[<< Day 21](../21_Day_Web_scraping/21_class_and_object.md) | [Day 23 >>](../23_Day_Virtual_environment/23_virtual_environment.md)
+Когда суп готов, нужно понять, что именно мы будем искать. Визуально разобраться в HTML коде большой страницы и найти там нужный элемент может быть сложно. В этом может помочь inspect element в браузере. Выделите нужное место (например ссылку на обои размера 1920x1440), нажмите правую кнопку мыши и выберите inspect/проверить. Откроется панель с нужным участком HTML кода.
+```html
+<a href="https://www.smashingmagazine.com/files/wallpapers/apr-23/kitten-season/cal/apr-23-kitten-season-cal-1920x1440.png" title="Kitten Season - 1920x1440">1920x1440</a>
+```
+Мы видим, что это тег a, с помощью которого на веб-странице размещаются прямые ссылки на обои формата png или jpg. У этого тега есть название title и текст с разрешением, который мы видим на странице (1920x1440)
+Теперь давайте соберем со страницы все ссылки с таким текстом. Для этого сперва получим из объекта только нужный нам участок с основным контентом страницы (без верха и низа страницы). С помощью inspect вы можете убедиться, что содержимое статьи находится в контейнере div с id "article__content".
+
+```python
+import requests
+from bs4 import BeautifulSoup
+url = 'https://www.smashingmagazine.com/2023/03/desktop-wallpaper-calendars-april-2023/'
+response = requests.get(url)
+content = response.content
+soup = BeautifulSoup(content, 'html.parser')
+article_content = soup.find(id="article__content")
+```
+К article_content можно также применять методы .find() и find_all(), как и к изначальному супу. Теперь внутри article_content мы можем найти все ссылки и отобрать те их них, которые соответствуют нашему условию (с текстом 1920x1440)
+```python
+import requests
+from bs4 import BeautifulSoup
+url = 'https://www.smashingmagazine.com/2023/03/desktop-wallpaper-calendars-april-2023/'
+response = requests.get(url)
+content = response.content
+soup = BeautifulSoup(content, 'html.parser')
+article_content = soup.find(id="article__content")
+links = article_content.find_all('a') # результатом будет список со всеми тегами a внутри содержимого статьи
+for link in links:
+    if link.text == '1920x1440':
+        print(link)
+```
+
+Остается только получить сами ссылки из тега. Их можно найти в аттрибуте attrs тега, там же находится название (title) тега.
+```python
+import requests
+from bs4 import BeautifulSoup
+url = 'https://www.smashingmagazine.com/2023/03/desktop-wallpaper-calendars-april-2023/'
+response = requests.get(url)
+content = response.content
+soup = BeautifulSoup(content, 'html.parser')
+article_content = soup.find(id="article__content")
+links = article_content.find_all('a') # результатом будет список со всеми тегами a внутри содержимого статьи
+for link in links:
+    if link.text == '1920x1440':
+        print(link.attrs['href'])
+```
+
+Иногда на сайте может быть реализована защита от скрапинга автоматическими скриптами. В таком случае контент или не будет отдаваться вообще или будет отдаваться меньшая часть контента, чем при просмотре через браузер. Эту защиту можно попробовать обойти, передав в get запросе заголовки (headers), аналогичные тем, которые передает браузер.
+```python
+import requests
+HEADERS = {
+  'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36'
+}
+url = 'https://www.smashingmagazine.com/2023/03/desktop-wallpaper-calendars-april-2023/'
+response = requests.get(url, headers=HEADERS)
+```
+🌕 Вы неповторимы, вы делаете успехи каждый день. Осталось всего 8 шагов на пути к успеху. Теперь выполните несколько упражнений для мозга и мускулов.
+
+## 💻 Упражнения: День 22
+
+1. Осуществите скрапинг следующего сайта и сохраните данные в json файле (url = 'http://www.bu.edu/president/boston-university-facts-stats/').
+1. Извлеките таблицу по этому url (https://archive.ics.uci.edu/ml/datasets.php) и сохраните в json файл
+2. Осуществите скрапинг таблицы с президентами и сохраните данные в json (https://en.wikipedia.org/wiki/List_of_presidents_of_the_United_States). Таблица не очень хорошо структурирована и скрапинг может занять достаточно много времени.
+
+🎉 ПОЗДРАВЛЯЮ ! 🎉
+
+[<< День 21](../21_Day_Classes_and_objects/21_classes_and_objects.md) | [День 23 >>](../23_Day_Virtual_environment/23_virtual_environment.md)
