@@ -1,31 +1,30 @@
-# Arithmetic Operations in Python
-# Integers
+# Арифметические операции в Python
+# Целые числа
 
-print('Addition: ', 1 + 2)
-print('Subtraction: ', 2 - 1)
-print('Multiplication: ', 2 * 3)
-print ('Division: ', 4 / 2)                         # Division in python gives floating number
-print('Division: ', 6 / 2)
-print('Division: ', 7 / 2)
-print('Division without the remainder: ', 7 // 2)   # gives without the floating number or without the remaining
-print('Modulus: ', 3 % 2)                           # Gives the remainder
-print ('Division without the remainder: ', 7 // 3)
-print('Exponential: ', 3 ** 2)                     # it means 3 * 3
+print('Сложение: ', 1 + 2)
+print('Вычитание: ', 2 - 1)
+print('Умножение: ', 2 * 3)
+print('Деление: ', 4 / 2)                          # Результатом деления будет число с плавающей точкой (тип float)
+print('Деление: ', 6 / 2)
+print('Деление: ', 7 / 2)
+print('Деление без остатка: ', 7 // 2)              # результат будет без плавающей точки или без остатка
+print('Деление по модулю (остаток от деления): ', 3 % 2)  # результат - остаток от деления
+print('Возведение в степень: ', 3 ** 2)             # эквивалентно 3 * 3
 
-# Floating numbers
-print('Floating Number,PI', 3.14)
-print('Floating Number, gravity', 9.81)
+# Числа с плавающей точкой
+print('Число с плавающей точкой, число пи', 3.14)
+print('Число с плавающей точкой, число g', 9.81)
 
-# Complex numbers
-print('Complex number: ', 1 + 1j)
-print('Multiplying complex number: ',(1 + 1j) * (1-1j))
+# Комплексные числа
+print('Комплексное число: ', 1 + 1j)
+print('Умножение комплексных чисел: ', (1 + 1j) * (1 - 1j))
 
-# Declaring the variable at the top first
+# Сперва объявляем переменную
 
-a = 3 # a is a variable name and 3 is an integer data type
-b = 2 # b is a variable name and 3 is an integer data type
+a = 3  # a - это название переменной, а 3 - это значение типа integer (целочисленное)
+b = 2  # b - это название переменной, а 2 - это значение типа integer
 
-# Arithmetic operations and assigning the result to a variable
+# Арифметические операции и присвоение результата переменной
 total = a + b
 diff = a - b
 product = a * b
@@ -34,8 +33,9 @@ remainder = a % b
 floor_division = a // b
 exponential = a ** b
 
-# I should have used sum instead of total but sum is a built-in function try to avoid overriding builtin functions
-print(total) # if you don't label your print with some string, you never know from where is  the result is coming
+# Название sum больше подходит по смыслу, чем total, но sum - это название встроенной функции,
+# старайтесь избегать перезапись встроенных функций
+print(total)  # если не пометить print какой-нибудь строкой, будет сложно понять, что за результат выведен на печать
 print('a + b = ', total)
 print('a - b = ', diff)
 print('a * b = ', product)
@@ -44,81 +44,81 @@ print('a % b = ', remainder)
 print('a // b = ', floor_division)
 print('a ** b = ', exponential)
 
-# Declaring values and organizing them together
+# Объявляем переменные и группируем их вместе в коде
 num_one = 3
 num_two = 4
 
-# Arithmetic operations
+# Арифметические операции
 total = num_one + num_two
 diff = num_two - num_one
 product = num_one * num_two
-div = num_two / num_two
+div = num_two / num_one
 remainder = num_two % num_one
 
-# Printing values with label
-print('total: ', total)
-print('difference: ', diff)
-print('product: ', product)
-print('division: ', div)
-print('remainder: ', remainder)
+# Выводим на печать значения с пометкой
+print('сумма: ', total)
+print('разность: ', diff)
+print('произведение: ', product)
+print('частное: ', div)
+print('остаток: ', remainder)
 
 
-# Calculating area of a circle
-radius = 10                                 # radius of a circle
-area_of_circle = 3.14 * radius ** 2         # two * sign means exponent or power
-print('Area of a circle:', area_of_circle)
+# Рассчитаем площадь круга
+radius = 10                                 # радиус круга
+area_of_circle = 3.14 * radius ** 2         # два знака * означают возведение в степень
+print('Площадь круга:', area_of_circle)
 
-# Calculating area of a rectangle
+# Рассчитаем площадь прямоугольника
 length = 10
 width = 20
 area_of_rectangle = length * width
-print('Area of rectangle:', area_of_rectangle)
+print('Площадь прямоугольника:', area_of_rectangle)
 
-# Calculating a weight of an object
+# Рассчитаем вес предмета
 mass = 75
 gravity = 9.81
 weight = mass * gravity
-print(weight, 'N')
+print(weight, 'Н')
 
-print(3 > 2)     # True, because 3 is greater than 2
-print(3 >= 2)    # True, because 3 is greater than 2
-print(3 < 2)     # False,  because 3 is greater than 2
-print(2 < 3)     # True, because 2 is less than 3
-print(2 <= 3)    # True, because 2 is less than 3
-print(3 == 2)    # False, because 3 is not equal to 2
-print(3 != 2)    # True, because 3 is not equal to 2
-print(len('mango') == len('avocado'))  # False
-print(len('mango') != len('avocado'))  # True
-print(len('mango') < len('avocado'))   # True
-print(len('milk') != len('meat'))      # False
-print(len('milk') == len('meat'))      # True
-print(len('tomato') == len('potato'))  # True
-print(len('python') > len('dragon'))   # False
+print(3 > 2)    # True, потому что 3 больше чем 2
+print(3 >= 2)   # True, потому что 3 больше чем 2
+print(3 < 2)    # False, потому что 3 больше чем 2
+print(2 < 3)    # True, потому что 2 меньше чем 3
+print(2 <= 3)   # True, потому что 2 меньше чем 3
+print(3 == 2)   # False, потому что 3 не равно 2
+print(3 != 2)   # True, потому что 3 не равно 2
+print(len('манго') == len('авокадо'))   # False
+print(len('манго') != len('авокадо'))   # True
+print(len('манго') < len('авокадо'))    # True
+print(len('вода') != len('мясо'))       # False
+print(len('вода') == len('мясо'))       # True
+print(len('томат') == len('перец'))     # True
+print(len('питон') > len('бизон'))      # False
 
-# Boolean comparison
+# Сравнение булевых значений
 print('True == True: ', True == True)
 print('True == False: ', True == False)
 print('False == False:', False == False)
 print('True and True: ', True and True)
 print('True or False:', True or False)
 
-# Another way comparison 
-print('1 is 1', 1 is 1)                   # True - because the data values are the same
-print('1 is not 2', 1 is not 2)           # True - because 1 is not 2
-print('A in Asabeneh', 'A' in 'Asabeneh') # True - A found in the string
-print('B in Asabeneh', 'B' in 'Asabeneh') # False -there is no uppercase B
-print('coding' in 'coding for all') # True - because coding for all has the word coding
-print('a in an:', 'a' in 'an')      # True
-print('4 is 2 ** 2:', 4 is 2 ** 2)   # True
+# Другой способ сравнения
+print('1 это 1', 1 is 1)                    # True - потому что значения одинаковы
+print('1 это не 2', 1 is not 2)             # True - потому что 1 это не 2
+print('P в Python', 'P' in 'Python')        # True - символ P присутствует в строке
+print('O в Python', 'O' in 'Python')        # False - в строке нет символа O в верхнем регистре
+print('программирование' in 'программирование для всех')    # True - потому что программирование для всех содержит слово программирование
+print('т в ты:', 'т' in 'ты')               # True
+print('4 это 2 ** 2:', 4 is 2 ** 2)         # True
 
-print(3 > 2 and 4 > 3) # True - because both statements are true
-print(3 > 2 and 4 < 3) # False - because the second statement is false
-print(3 < 2 and 4 < 3) # False - because both statements are false
-print(3 > 2 or 4 > 3)  # True - because both statements are true
-print(3 > 2 or 4 < 3)  # True - because one of the statement is true
-print(3 < 2 or 4 < 3)  # False - because both statements are false
-print(not 3 > 2)     # False - because 3 > 2 is true, then not True gives False
-print(not True)      # False - Negation, the not operator turns true to false
-print(not False)     # True
-print(not not True)  # True
-print(not not False) # False
+print(3 > 2 and 4 > 3)  # True - потому что оба выражения истинны
+print(3 > 2 and 4 < 3)  # False - потому что второе выражение ложно
+print(3 < 2 and 4 < 3)  # False - потому что оба выражения ложны
+print(3 > 2 or 4 > 3)   # True - потому что оба выражения истинны
+print(3 > 2 or 4 < 3)   # True - потому что одно из выражений истинно
+print(3 < 2 or 4 < 3)   # False - потому что оба выражения ложны
+print(not 3 > 2)        # False - потому что 3 > 2 это True, тогда not True это False
+print(not True)         # False - Отрицание, оператор not превращает True в False
+print(not False)        # True
+print(not not True)     # True
+print(not not False)    # False
