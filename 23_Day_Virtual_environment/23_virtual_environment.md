@@ -1,5 +1,5 @@
 <div align="center">
-  <h1> 30 Days Of Python: Day 23 - Virtual Environment </h1>
+  <h1> 30 Дней Python: День 23 - Виртуальное окружение </h1>
   <a class="header-badge" target="_blank" href="https://www.linkedin.com/in/asabeneh/">
   <img src="https://img.shields.io/badge/style--5eba00.svg?label=LinkedIn&logo=linkedin&style=social">
   </a>
@@ -7,108 +7,115 @@
   <img alt="Twitter Follow" src="https://img.shields.io/twitter/follow/asabeneh?style=social">
   </a>
 
-<sub>Author:
+<sub>Автор:
 <a href="https://www.linkedin.com/in/asabeneh/" target="_blank">Asabeneh Yetayeh</a><br>
-<small> Second Edition: July, 2021</small>
+<small> Второе издание: Июль, 2021</small>
 </sub>
 </div>
 
-[<< Day 22](../22_Day_Web_scraping/22_web_scraping.md) | [Day 24 >>](../24_Day_Statistics/24_statistics.md)
+[<< День 22](../22_Day_Web_scraping/22_web_scraping.md) | [День 24 >>](../24_Day_Statistics/24_statistics.md)
 
 ![30DaysOfPython](../images/30DaysOfPython_banner3@2x.png)
 
-- [📘 Day 23](#-day-23)
-  - [Setting up Virtual Environments](#setting-up-virtual-environments)
-  - [💻 Exercises: Day 23](#-exercises-day-23)
+- [📘 День 23](#-день-23)
+  - [Установка виртуального окружения](#установка-виртуального-окружения)
+  - [💻 Упражнения: День 23](#-упражнения-день-23)
 
-# 📘 Day 23
+# 📘 День 23
 
-## Setting up Virtual Environments
+## Установка виртуального окружения
 
-To start with project, it would be better to have a virtual environment. Virtual environment can help us to create an isolated or separate environment. This will help us to avoid conflicts in dependencies across projects. If you write pip freeze on your terminal you will see all the installed packages on your computer. If we use virtualenv, we will access only packages which are specific for that project. Open your terminal and install virtualenv
+Перед началом работы над проектом лучше настроить виртуальное окружение. Виртуальное окружение позволяет создать изолированное или обособленное окружение. Это поможет избежать конфликтов в зависимостях у разных проектов. Если вы наберете pip freeze в вашем терминале, вы увидите все установленные на ваш компьютер пакеты. Если мы используем виртуальное окружение, мы получим доступ только к пакетам, установленным для данного проекта. Откройте ваш терминал и установите virtualenv
 
 ```sh
 asabeneh@Asabeneh:~$ pip install virtualenv
 ```
 
-Inside the 30DaysOfPython folder create a flask_project folder.
+Внутри папки 30DaysOfPython создайте папку flask_project.
 
-After installing the virtualenv package go to your project folder and create a virtual env by writing:
+После установки пакета virtualenv перейдите в созданную папку проекта и создайте виртуальное окружение командой:
 
-For Mac/Linux:
+Для Mac/Linux:
 ```sh
 asabeneh@Asabeneh:~/Desktop/30DaysOfPython/flask_project\$ virtualenv venv
 
 ```
 
-For Windows:
+Для Windows:
 ```sh
 C:\Users\User\Documents\30DaysOfPython\flask_project>python -m venv venv
 ```
 
-I prefer to call the new project venv, but feel free to name it differently. Let us check if the the venv was created by using ls (or dir for windows command prompt) command.
+Я предпочитаю называть папку для виртуального окружения venv, но вы можете использовать другое название. Давайте убедимся, что папка venv была создана с помощью команды ls (или dir для командной строки windows).
 
 ```sh
 asabeneh@Asabeneh:~/Desktop/30DaysOfPython/flask_project$ ls
 venv/
 ```
 
-Let us activate the virtual environment by writing the following command at our project folder.
+Давайте активируем виртуальное окружение, написав следующую команду в папке нашего проекта.
 
-For Mac/Linux:
+Для Mac/Linux:
 ```sh
 asabeneh@Asabeneh:~/Desktop/30DaysOfPython/flask_project$ source venv/bin/activate
 ```
-Activation of the virtual environment in Windows may very on Windows Power shell and git bash. 
+Активация виртуального окружения в Windows может отличаться в командной оболочке Windows Power shell и в git bash. 
 
-For Windows Power Shell:
+В Windows Power Shell:
 ```sh
 C:\Users\User\Documents\30DaysOfPython\flask_project> venv\Scripts\activate
 ```
 
-For Windows Git bash:
+В Windows Git bash:
 ```sh
 C:\Users\User\Documents\30DaysOfPython\flask_project> venv\Scripts\. activate
 ```
 
-After you write the activation command, your project directory will start with venv. See the example below.
+Примечание переводчика: если при использовании команды venv\Scripts\activate в Windows 10 возникает ошибка, что отключено выполнение сценариев, то в Windows Power Shell от имени администратора нужно ввести команду:
+```sh
+PS C:\Users\User>Set-ExecutionPolicy Unrestricted
+```
+
+После того как вы ввели команду активации, директория вашего проекта будет начинаться с (venv). Взгляните на пример ниже.
 
 ```sh
 (venv) asabeneh@Asabeneh:~/Desktop/30DaysOfPython/flask_project$
 ```
 
-Now, lets check the available packages in this project by writing pip freeze. You will not see any packages.
+Теперь давайте проверим доступные в этом проекте пакеты с помощью команды pip freeze. Ни одного пакета на данный момент нет.
 
-We are going to do a small flask project so let us install flask package to this project.
+Мы собираемся создать небольшой проект на flask, поэтому давайте установим пакет flask для этого проекта.
 
 ```sh
 (venv) asabeneh@Asabeneh:~/Desktop/30DaysOfPython/flask_project$ pip install Flask
 ```
 
-Now, let us write pip freeze to see a list of installed packages in the project:
+Теперь давайте снова запустим pip freeze, чтобы увидеть список установленных для проекта пакетов:
 
 ```sh
 (venv) asabeneh@Asabeneh:~/Desktop/30DaysOfPython/flask_project$ pip freeze
-Click==7.0
-Flask==1.1.1
-itsdangerous==1.1.0
-Jinja2==2.10.3
-MarkupSafe==1.1.1
-Werkzeug==0.16.0
+blinker==1.6.2
+click==8.1.3
+colorama==0.4.6
+Flask==2.3.2
+itsdangerous==2.1.2
+Jinja2==3.1.2
+MarkupSafe==2.1.2
+Werkzeug==2.3.4
 ```
 
-When you finish you should dactivate active project using _deactivate_.
+Когда закончите, следует деактивировать активированный проект с помощью команды _deactivate_.
 
 ```sh
 (venv) asabeneh@Asabeneh:~/Desktop/30DaysOfPython$ deactivate
 ```
 
-The necessary modules to work with flask are installed. Now, your project directory is ready for a flask project. You should include the venv to your .gitignore file not to push it to github.
+Необходимые для работы с flask модули установлены. Теперь директория вашего проекта готова для разработки проекта на flask. Вам следует добавить папку venv в ваш файл .gitignore, чтобы не отправлять ее на гитхаб.
 
-## 💻 Exercises: Day 23
+## 💻 Упражнения: День 23
 
-1. Create a project directory with a virtual environment based on the example given above.
+1. Создайте директорию проекта с виртуальным окружением как в примере выше.
 
-🎉 CONGRATULATIONS ! 🎉
+🎉 ПОЗДРАВЛЯЮ ! 🎉
 
-[<< Day 22](../22_Day_Web_scraping/22_web_scraping.md) | [Day 24 >>](../24_Day_Statistics/24_statistics.md)
+[<< День 22](../22_Day_Web_scraping/22_web_scraping.md) | [День 24 >>](../24_Day_Statistics/24_statistics.md)
