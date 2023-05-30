@@ -106,13 +106,14 @@ print(p)
 ### Конструктор класса
 
 В примере выше мы создали объект класса Person. Однако, класс без конструктора не очень то полезен в настоящих приложениях. Давайте используем функцию конструктора, чтобы сделать наш класс более полезным. Как функции конструкторы в Java или JavaScript, в Python также есть встроенная функция конструктор **__init__**(). Функция конструктор **__init__** принимает параметр self, который ссылается на текущую сущность класса.
+
 **Примеры:**
 
 ```py
 class Person:
-      def __init__ (self, name):
+    def __init__ (self, name):
         # self позволяет прикрепить параметр к объекту класса
-          self.name =name
+        self.name = name
 
 p = Person('Asabeneh')
 print(p.name)
@@ -129,12 +130,12 @@ Asabeneh
 
 ```py
 class Person:
-      def __init__(self, firstname, lastname, age, country, city):
-          self.firstname = firstname
-          self.lastname = lastname
-          self.age = age
-          self.country = country
-          self.city = city
+    def __init__(self, firstname, lastname, age, country, city):
+        self.firstname = firstname
+        self.lastname = lastname
+        self.age = age
+        self.country = country
+        self.city = city
 
 
 p = Person('Иван', 'Петров', 250, 'Россия', 'Урюпинск')
@@ -162,13 +163,13 @@ print(p.city)
 
 ```py
 class Person:
-      def __init__(self, firstname, lastname, age, country, city):
-          self.firstname = firstname
-          self.lastname = lastname
-          self.age = age
-          self.country = country
-          self.city = city
-      def person_info(self):
+    def __init__(self, firstname, lastname, age, country, city):
+        self.firstname = firstname
+        self.lastname = lastname
+        self.age = age
+        self.country = country
+        self.city = city
+    def person_info(self):
         return f'{self.firstname} {self.lastname} - это человек, которому {self.age} лет. Он живет в городе {self.city}, {self.country}'
 
 p = Person('Иван', 'Петров', 250, 'Россия', 'Урюпинск')
@@ -188,15 +189,15 @@ print(p.person_info())
 
 ```py
 class Person:
-      def __init__(self, firstname='Иван', lastname='Петров', age=250, country='Россия', city='Урюпинск'):
-          self.firstname = firstname
-          self.lastname = lastname
-          self.age = age
-          self.country = country
-          self.city = city
-          self.skills = []
+    def __init__(self, firstname='Иван', lastname='Петров', age=250, country='Россия', city='Урюпинск'):
+        self.firstname = firstname
+        self.lastname = lastname
+        self.age = age
+        self.country = country
+        self.city = city
+        self.skills = []
 
-      def person_info(self):
+    def person_info(self):
         return f'{self.firstname} {self.lastname} - это человек, которому {self.age} лет. Он живет в городе {self.city}, {self.country}.'
 
 p1 = Person()
@@ -219,18 +220,18 @@ print(p2.person_info())
 
 ```py
 class Person:
-      def __init__(self, firstname='Иван', lastname='Петров', age=250, country='Россия', city='Урюпинск'):
-          self.firstname = firstname
-          self.lastname = lastname
-          self.age = age
-          self.country = country
-          self.city = city
-          self.skills = []
+    def __init__(self, firstname='Иван', lastname='Петров', age=250, country='Россия', city='Урюпинск'):
+        self.firstname = firstname
+        self.lastname = lastname
+        self.age = age
+        self.country = country
+        self.city = city
+        self.skills = []
 
-      def person_info(self):
+    def person_info(self):
         return f'{self.firstname} {self.lastname} - это человек, которому {self.age} лет. Он живет в городе {self.city}, {self.country}.'
-      def add_skill(self, skill):
-          self.skills.append(skill)
+    def add_skill(self, skill):
+        self.skills.append(skill)
 
 p1 = Person()
 print(p1.person_info())
@@ -285,7 +286,7 @@ print(s2.skills)
 ['Систематизирование', 'Маркетинг', 'Цифровой маркетинг']
 ```
 
-Мы не определяли конструктор **__init__**() в дочернем классе. Но даже если его нет, мы имеем доступ ко всем свойства родительского класса. Но если мы определим свой конструктор, мы можем получить доступ к свойствам родительского класса, вызывая _super_.  
+Мы не определяли конструктор **__init__**() в дочернем классе. Но даже если его нет, мы имеем доступ ко всем свойствам родительского класса. Но если мы определим свой конструктор, мы можем получить доступ к свойствам родительского класса, вызывая _super_.  
 Мы можем добавить новый метод в дочерний класс или можем переопределить методы родительского класса, создавая метод с тем же названием в дочернем классе. Когда мы добавляем функцию **__init__**(), дочерний класс перестает наследовать родительскую функцию **__init__**().
 
 ### Переопределение родительских методов
@@ -363,7 +364,7 @@ print(data.describe())
 Частотное распределение: [(20.0, 26), (16.0, 27), (12.0, 32), (8.0, 37), (8.0, 34), (8.0, 33), (8.0, 31), (8.0, 24), (4.0, 38), (4.0, 29), (4.0, 25)]
 ```
 
-### Упражнения: уровень 2
+### Упражнения: Уровень 2
 
 1. Создайте класс под названием PersonAccount. У него есть свойства firstname (имя), lastname (фамилия), incomes (доходы), expenses (расходы) и методы total_income (общие доходы), total_expense (общие расходы), account_info (информация о счете), add_income (добавить доход), add_expense (добавить расход) и account_balance (баланс счета). Доходы это множество доходов с их описанием, то же касается и расходов.
 
