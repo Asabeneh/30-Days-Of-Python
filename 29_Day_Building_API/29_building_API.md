@@ -1,5 +1,5 @@
 <div align="center">
-  <h1> 30 Days Of Python: Day 29 - Building an API </h1>
+  <h1> 30 дней Python: День 29 - Разработка API </h1>
   <a class="header-badge" target="_blank" href="https://www.linkedin.com/in/asabeneh/">
   <img src="https://img.shields.io/badge/style--5eba00.svg?label=LinkedIn&logo=linkedin&style=social">
   </a>
@@ -14,74 +14,71 @@
 
 </div>
 
-[<< Day 28](../28_Day_API/28_API.md) | [Day 29 >>](../30_Day_Conclusions/30_conclusions.md)
+[<< День 28](../28_Day_API/28_API.md) | [День 29 >>](../30_Day_Conclusions/30_conclusions.md)
 
 ![30DaysOfPython](../images/30DaysOfPython_banner3@2x.png)
 
-- [Day 29](#day-29)
-- [Building API](#building-api)
-  - [Structure of an API](#structure-of-an-api)
-  - [Retrieving data using get](#retrieving-data-using-get)
-  - [Getting a document by id](#getting-a-document-by-id)
-  - [Creating data using POST](#creating-data-using-post)
-  - [Updating using PUT](#updating-using-put)
-  - [Deleting a document using Delete](#deleting-a-document-using-delete)
-- [💻 Exercises: Day 29](#-exercises-day-29)
+- [День 29](#день-29)
+- [Разработка API](#разработка-api)
+  - [Структура API](#структура-api)
+  - [Получение данных с использованием GET](#получение-данных-с-использованием-get)
+  - [Получение документа по идентификатору](#получение-документа-по-идентификатору)
+  - [Создание данных с использованием POST](#создание-данных-с-использованием-post)
+  - [Обновление данных с использованием PUT](#обновление-данных-с-использованием-put)
+  - [Удаление документа с использованием DELETE](#удаление-документа-с-использованием-delete)
+- [Упражнения: День 29](#упражнения-день-29)
 
-## Day 29
+## День 29
 
-## Building API
+## Разработка API
 
+В этом разделе мы разберем RESTful API, который использует методы запросов HTTP для получения (GET), обновления (PUT), создания (POST) и удаления (DELETE) данных.
 
-In this section, we will cove a RESTful API that uses HTTP request methods to GET, PUT, POST and DELETE data.
+RESTful API представляет собой интерфейс прикладного программирования (API), который использует HTTP-запросы для выполнения операций GET, PUT, POST и DELETE с данными. В предыдущих разделах мы изучили Python, Flask и MongoDB. Мы воспользуемся полученными знаниями, чтобы разработать RESTful API с использованием Python, Flask и MongoDB. Каждое приложение, имеющее операции CRUD (Create, Read, Update, Delete), имеет API для создания данных, получения данных, обновления данных или удаления данных из базы данных.
 
-RESTful API is an application program interface (API) that uses HTTP requests to GET, PUT, POST and DELETE data. In the previous sections, we have learned about python, flask and mongoDB. We will use the knowledge we acquire to develop a RESTful API using python flask and mongoDB. Every application which has CRUD(Create, Read, Update, Delete) operation has an API to create data, to get data, to update data or to delete data from database.
+Браузер может обрабатывать только запросы GET. Поэтому нам необходимо использовать инструмент, который поможет нам обрабатывать все методы запросов (GET, POST, PUT, DELETE).
 
-The browser can handle only get request. Therefore, we have to have a tool which can help us to handle all request methods(GET, POST, PUT, DELETE).
+Примеры API:
 
-Examples of API
+- API стран: https://restcountries.eu/rest/v2/all
+- API пород кошек: https://api.thecatapi.com/v1/breeds
 
-- Countries API: https://restcountries.eu/rest/v2/all
-- Cats breed API: https://api.thecatapi.com/v1/breeds
-
-[Postman](https://www.getpostman.com/) is a very popular tool when it comes to API development. So, if you like to do this section you need to [download postman](https://www.getpostman.com/). An alternative of Postman is [Insomnia](https://insomnia.rest/download).
+[Postman](https://www.getpostman.com/) это очень популярный инструмент для разработки API. Поэтому, если вы хотите продолжить этот раздел, вам следует скачать [Postman](https://www.getpostman.com/). Альтернативой Postman является [Insomnia](https://insomnia.rest/download).
 
 ![Postman](../images/postman.png)
 
-### Structure of an API
+### Структура API
 
-An API end point is a URL which can help to retrieve, create, update or delete a resource. The structure looks like this:
-Example:
+API endpoint (конечная точка API) - это URL-адрес, который позволяет получать, создавать, обновлять или удалять ресурс. Его структура выглядит следующим образом:
+
 https://api.twitter.com/1.1/lists/members.json
-Returns the members of the specified list. Private list members will only be shown if the authenticated user owns the specified list.
-The name of the company name followed by version followed by the purpose of the API.
-The methods:
-HTTP methods & URLs
 
-The API uses the following HTTP methods for object manipulation:
+Этот пример возвращает участников указанного списка. Частные участники будут отображены только в том случае, если аутентифицированный пользователь является владельцем указанного списка. В URL-адресе указывается имя компании, за которым следует версия API, а затем назначение API.
+
+API использует следующие методы HTTP для манипуляции объектами::
 
 ```sh
-GET        Used for object retrieval
-POST       Used for object creation and object actions
-PUT        Used for object update
-DELETE     Used for object deletion
+GET        Используется для извлечения объекта
+POST       Используется для создания объекта и выполнения действий с объектом
+PUT        Используется для обновления объекта
+DELETE     Используется для удаления объекта
 ```
 
-Let us build an API which collects information about 30DaysOfPython students. We will collect the name, country, city, date of birth, skills and bio.
+Давайте создадим API, которое собирает информацию о студентах ThirtyDaysOfPython. Мы будем собирать имя, страну, город, дату рождения, навыки и информация о себе.
 
-To implement this API, we will use:
+Для реализации этого API мы будем использовать следующее:
 
 - Postman
 - Python
 - Flask
 - MongoDB
 
-### Retrieving data using get
+### Получение данных с использованием GET
 
-In this step, let us use dummy data and return it as a json. To return it as json, will use json module and Response module.
+На этом шаге давайте использовать фиктивные данные и возвращать их в формате JSON. Чтобы вернуть данные в формате JSON, мы будем использовать модуль json и модуль Response.
 
 ```py
-# let's import the flask
+# импортируем flask
 
 from flask import Flask,  Response
 import json
@@ -114,24 +111,24 @@ def students ():
 
 
 if __name__ == '__main__':
-    # for deployment
-    # to make it work for both production and development
+    # для развертывания мы используем environ
+    # чтобы сделать его работающим как для продакшн-среды, так и для разработки
     port = int(os.environ.get("PORT", 5000))
     app.run(debug=True, host='0.0.0.0', port=port)
 ```
 
-When you request the http://localhost:5000/api/v1.0/students url on the browser you will get this:
+Когда вы запросите URL http://localhost:5000/api/v1.0/students в браузере, вы получите следующий результат:
 
 ![Get on browser](../images/get_on_browser.png)
 
-When you request the http://localhost:5000/api/v1.0/students url on the browser you will get this:
+Когда вы запросите URL http://localhost:5000/api/v1.0/students в Postman, вы получите следующий результат:
 
 ![Get on postman](../images/get_on_postman.png)
 
-In stead of displaying dummy data let us connect the flask application with MongoDB and get data from mongoDB database.
+Вместо отображения фиктивных данных давайте свяжем приложение Flask с MongoDB и получим данные из базы данных MongoDB.
 
 ```py
-# let's import the flask
+# импортируем flask
 
 from flask import Flask,  Response
 import json
@@ -143,7 +140,7 @@ app = Flask(__name__)
 #
 MONGODB_URI='mongodb+srv://asabeneh:your_password@30daysofpython-twxkr.mongodb.net/test?retryWrites=true&w=majority'
 client = pymongo.MongoClient(MONGODB_URI)
-db = client['thirty_days_of_python'] # accessing the database
+db = client['thirty_days_of_python'] # lдоступ к базе данных
 
 @app.route('/api/v1.0/students', methods = ['GET'])
 def students ():
@@ -152,13 +149,13 @@ def students ():
 
 
 if __name__ == '__main__':
-    # for deployment
-    # to make it work for both production and development
+    # для развертывания мы используем environ
+    # чтобы сделать его работающим как для продакшн-среды, так и для разработки
     port = int(os.environ.get("PORT", 5000))
     app.run(debug=True, host='0.0.0.0', port=port)
 ```
 
-By connecting the flask, we can fetch students collection data from the thirty_days_of_python database.
+Подключив Flask, мы можем получить данные коллекции "students" из базы данных "thirty_days_of_python".
 
 ```sh
 [
@@ -192,13 +189,13 @@ By connecting the flask, we can fetch students collection data from the thirty_d
 ]
 ```
 
-### Getting a document by id
+### Получение документа по идентификатору
 
-We can access signle document using an id, let's access Asabeneh using his id.
+Мы можем получить доступ к отдельному документу, используя его идентификатор. Давайте получим доступ к документу Asabeneh, используя его идентификатор: 
 http://localhost:5000/api/v1.0/students/5df68a21f106fe2d315bbc8b
 
 ```py
-# let's import the flask
+# импортируем flask
 
 from flask import Flask,  Response
 import json
@@ -213,7 +210,7 @@ app = Flask(__name__)
 #
 MONGODB_URI='mongodb+srv://asabeneh:your_password@30daysofpython-twxkr.mongodb.net/test?retryWrites=true&w=majority'
 client = pymongo.MongoClient(MONGODB_URI)
-db = client['thirty_days_of_python'] # accessing the database
+db = client['thirty_days_of_python'] # доступ к базе данных
 
 @app.route('/api/v1.0/students', methods = ['GET'])
 def students ():
@@ -225,8 +222,8 @@ def single_student (id):
     return Response(dumps(student), mimetype='application/json')
 
 if __name__ == '__main__':
-    # for deployment
-    # to make it work for both production and development
+    # для развертывания мы используем environ
+    # чтобы сделать его работающим как для продакшн-среды, так и для разработки
     port = int(os.environ.get("PORT", 5000))
     app.run(debug=True, host='0.0.0.0', port=port)
 ```
@@ -245,12 +242,12 @@ if __name__ == '__main__':
 ]
 ```
 
-### Creating data using POST
+### Создание данных с использованием POST
 
-We use the POST request method to create data
+Мы можем использовать метод запроса POST для создания данных.
 
 ```py
-# let's import the flask
+# импортируем flask
 
 from flask import Flask,  Response
 import json
@@ -266,7 +263,7 @@ app = Flask(__name__)
 #
 MONGODB_URI='mongodb+srv://asabeneh:your_password@30daysofpython-twxkr.mongodb.net/test?retryWrites=true&w=majority'
 client = pymongo.MongoClient(MONGODB_URI)
-db = client['thirty_days_of_python'] # accessing the database
+db = client['thirty_days_of_python'] # доступ к базе данных
 
 @app.route('/api/v1.0/students', methods = ['GET'])
 def students ():
@@ -299,16 +296,16 @@ def create_student ():
     return ;
 def update_student (id):
 if __name__ == '__main__':
-    # for deployment
-    # to make it work for both production and development
+    # для развертывания мы используем environ
+    # чтобы сделать его работающим как для продакшн-среды, так и для разработки
     port = int(os.environ.get("PORT", 5000))
     app.run(debug=True, host='0.0.0.0', port=port)
 ```
 
-### Updating using PUT
+### Обновление данных с использованием PUT
 
 ```py
-# let's import the flask
+# импортируем flask
 
 from flask import Flask,  Response
 import json
@@ -321,10 +318,9 @@ from datetime import datetime
 
 app = Flask(__name__)
 
-#
 MONGODB_URI='mongodb+srv://asabeneh:your_password@30daysofpython-twxkr.mongodb.net/test?retryWrites=true&w=majority'
 client = pymongo.MongoClient(MONGODB_URI)
-db = client['thirty_days_of_python'] # accessing the database
+db = client['thirty_days_of_python'] # доступ к базе данных
 
 @app.route('/api/v1.0/students', methods = ['GET'])
 def students ():
@@ -355,7 +351,7 @@ def create_student ():
     }
     db.students.insert_one(student)
     return
-@app.route('/api/v1.0/students/<id>', methods = ['PUT']) # this decorator create the home route
+@app.route('/api/v1.0/students/<id>', methods = ['PUT']) # этот декоратор создает маршрут home
 def update_student (id):
     query = {"_id":ObjectId(id)}
     name = request.form['name']
@@ -376,20 +372,20 @@ def update_student (id):
 
     }
     db.students.update_one(query, student)
-    # return Response(dumps({"result":"a new student has been created"}), mimetype='application/json')
+    # возвращает Response(dumps({"result":"a new student has been created"}), mimetype='application/json')
     return
 def update_student (id):
 if __name__ == '__main__':
-    # for deployment
-    # to make it work for both production and development
+    # для развертывания мы используем environ
+    # чтобы сделать его работающим как для продакшн-среды, так и для разработки
     port = int(os.environ.get("PORT", 5000))
     app.run(debug=True, host='0.0.0.0', port=port)
 ```
 
-### Deleting a document using Delete
+### Удаление документа с использованием DELETE
 
 ```py
-# let's import the flask
+# импортируем flask
 
 from flask import Flask,  Response
 import json
@@ -405,7 +401,7 @@ app = Flask(__name__)
 #
 MONGODB_URI='mongodb+srv://asabeneh:your_password@30daysofpython-twxkr.mongodb.net/test?retryWrites=true&w=majority'
 client = pymongo.MongoClient(MONGODB_URI)
-db = client['thirty_days_of_python'] # accessing the database
+db = client['thirty_days_of_python'] # доступ к базе данных
 
 @app.route('/api/v1.0/students', methods = ['GET'])
 def students ():
@@ -436,7 +432,7 @@ def create_student ():
     }
     db.students.insert_one(student)
     return
-@app.route('/api/v1.0/students/<id>', methods = ['PUT']) # this decorator create the home route
+@app.route('/api/v1.0/students/<id>', methods = ['PUT']) # этот декоратор создает маршрут home
 def update_student (id):
     query = {"_id":ObjectId(id)}
     name = request.form['name']
@@ -457,9 +453,9 @@ def update_student (id):
 
     }
     db.students.update_one(query, student)
-    # return Response(dumps({"result":"a new student has been created"}), mimetype='application/json')
+    # возвращает Response(dumps({"result":"a new student has been created"}), mimetype='application/json')
     return
-@app.route('/api/v1.0/students/<id>', methods = ['PUT']) # this decorator create the home route
+@app.route('/api/v1.0/students/<id>', methods = ['PUT']) # этот декоратор создает маршрут home
 def update_student (id):
     query = {"_id":ObjectId(id)}
     name = request.form['name']
@@ -480,23 +476,23 @@ def update_student (id):
 
     }
     db.students.update_one(query, student)
-    # return Response(dumps({"result":"a new student has been created"}), mimetype='application/json')
-    return ;
+    # возвращает Response(dumps({"result":"a new student has been created"}), mimetype='application/json')
+    return
 @app.route('/api/v1.0/students/<id>', methods = ['DELETE'])
 def delete_student (id):
     db.students.delete_one({"_id":ObjectId(id)})
     return
 if __name__ == '__main__':
-    # for deployment
-    # to make it work for both production and development
+    # для развертывания мы используем environ
+    # чтобы сделать его работающим как для продакшн-среды, так и для разработки
     port = int(os.environ.get("PORT", 5000))
     app.run(debug=True, host='0.0.0.0', port=port)
 ```
 
-## 💻 Exercises: Day 29
+## Упражнения: День 29
 
-1. Implement the above example and develop [this](https://thirtydayofpython-api.herokuapp.com/)
+1. Реализуйте приведенный выше пример и разработайте [веб-приложение](https://thirtydayofpython-api.herokuapp.com/)
 
-🎉 CONGRATULATIONS ! 🎉
+🎉 ПОЗДРАВЛЯЕМ ! 🎉
 
-[<< Day 28](../28_Day_API/28_API.md) | [Day 30 >>](../30_Day_Conclusions/30_conclusions.md)
+[<< День 28](../28_Day_API/28_API.md) | [День 30 >>](../30_Day_Conclusions/30_conclusions.md)
