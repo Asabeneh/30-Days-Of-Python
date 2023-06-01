@@ -1,5 +1,5 @@
 <div align="center">
-  <h1> 30 Days Of Python: Day 11 - Functions</h1>
+  <h1> 30 Дней Python: День 11 - Функции</h1>
   <a class="header-badge" target="_blank" href="https://www.linkedin.com/in/asabeneh/">
   <img src="https://img.shields.io/badge/style--5eba00.svg?label=LinkedIn&logo=linkedin&style=social">
   </a>
@@ -7,73 +7,73 @@
   <img alt="Twitter Follow" src="https://img.shields.io/twitter/follow/asabeneh?style=social">
   </a>
 
-<sub>Author:
+<sub>Автор:
 <a href="https://www.linkedin.com/in/asabeneh/" target="_blank">Asabeneh Yetayeh</a><br>
-<small> Second Edition: July, 2021</small>
+<small> Второе издание: Июль, 2021</small>
 </sub>
 
 </div>
 
-[<< Day 10](../10_Day_Loops/10_loops.md) | [Day 12 >>](../12_Day_Modules/12_modules.md)
+[<< День 10](../10_Day_Loops/10_loops.md) | [День 12 >>](../12_Day_Modules/12_modules.md)
 
 ![30DaysOfPython](../images/30DaysOfPython_banner3@2x.png)
 
-- [📘 Day 11](#-day-11)
-  - [Functions](#functions)
-    - [Defining a Function](#defining-a-function)
-    - [Declaring and Calling a Function](#declaring-and-calling-a-function)
-    - [Function without Parameters](#function-without-parameters)
-    - [Function Returning a Value - Part 1](#function-returning-a-value---part-1)
-    - [Function with Parameters](#function-with-parameters)
-    - [Passing Arguments with Key and Value](#passing-arguments-with-key-and-value)
-    - [Function Returning a Value - Part 2](#function-returning-a-value---part-2)
-    - [Function with Default Parameters](#function-with-default-parameters)
-    - [Arbitrary Number of Arguments](#arbitrary-number-of-arguments)
-    - [Default and Arbitrary Number of Parameters in Functions](#default-and-arbitrary-number-of-parameters-in-functions)
-    - [Function as a Parameter of Another Function](#function-as-a-parameter-of-another-function)
-  - [💻 Exercises: Day 11](#-exercises-day-11)
-    - [Exercises: Level 1](#exercises-level-1)
-    - [Exercises: Level 2](#exercises-level-2)
-    - [Exercises: Level 3](#exercises-level-3)
+- [📘 День 11](#-день-11)
+  - [Функции](#функции)
+    - [Определение функции](#определение-функции)
+    - [Объявление и вызов функции](#объявление-и-вызов-функции)
+    - [Функция без параметров](#функция-без-параметров)
+    - [Возвращаемое значение функции - Часть 1](#возвращаемое-значение-функции---часть-1)
+    - [Функция с параметрами](#функция-с-параметрами)
+    - [Передача аргументов парой ключ - значение](#передача-аргументов-парой-ключ---значение)
+    - [Возвращаемое значение функции - Часть 2](#возвращаемое-значение-функции---часть-2)
+    - [Функция с параметрами по умолчанию](#функция-с-параметрами-по-умолчанию)
+    - [Произвольное количество аргументов](#произвольное-количество-аругментов)
+    - [Количество параметров функции по умолчанию и произвольное](#количество-параметров-функции-по-умолчанию-и-произвольное)
+    - [Функция как параметр для другой функции](#функция-как-параметр-для-другой-функции)
+  - [💻 Упражнения: День 11](#-упражнения-день-11)
+    - [Упражнения: Уровень 1](#упражнения-уровень-1)
+    - [Упражнения: Уровень 2](#упражнения-уровень-2)
+    - [Упражнения: Уровень 3](#упражнения-уровень-3)
 
-# 📘 Day 11
+# 📘 День 11
 
-## Functions
+## Функции
 
-So far we have seen many built-in Python functions. In this section, we will focus on custom functions. What is a function? Before we start making functions, let us learn what a function is and why we need them?
+Мы уже рассмотрели много встроенных функций Python. В этом разделе мы сосредоточимся на пользовательских функциях. Что же такое функция? Перед созданием функций давайте узнаем, что это такое, и для чего они нам нужны?
 
-### Defining a Function
+### Определение функции
 
-A function is a reusable block of code or programming statements designed to perform a certain task. To define or declare a function, Python provides the _def_ keyword. The following is the syntax for defining a function. The function block of code is executed only if the function is called or invoked.
+Функция - это переиспользуемый блок кода или программные инструкции, разработанные для выполнения определенного задания. Чтобы объявить функцию в Python есть ключевое слово _def_. Далее представлен синтаксис объявления функции. Блок кода функции выполняется только тогда, когда она вызвана.
 
-### Declaring and Calling a Function
+### Объявление и вызов функции
 
-When we make a function, we call it declaring a function. When we start using the it,  we call it *calling* or *invoking* a function. Function can be declared with or without parameters.
+Когда мы создаем функцию, мы называем это объявлением функции. когда мы начинаем ее использовать, мы называем это вызовом функции (*calling* или *invoking*). Функции могут объявляться с параметрами и без них.
 
 ```py
-# syntax
-# Declaring a function
+# синтакисис
+# Объявление функции
 def function_name():
-    codes
-    codes
-# Calling a function
+    код
+    код
+# Вызов функции
 function_name()
 ```
 
-### Function without Parameters
+### Функция без параметров
 
-Function can be declared without parameters.
+Функция может быть объявлена без параметров.
 
-**Example:**
+**Пример:**
 
 ```py
 def generate_full_name ():
-    first_name = 'Asabeneh'
-    last_name = 'Yetayeh'
+    first_name = 'Иван'
+    last_name = 'Петров'
     space = ' '
     full_name = first_name + space + last_name
     print(full_name)
-generate_full_name () # calling a function
+generate_full_name () # вызов функции
 
 def add_two_numbers ():
     num_one = 2
@@ -83,14 +83,14 @@ def add_two_numbers ():
 add_two_numbers()
 ```
 
-### Function Returning a Value - Part 1
+### Возвращаемое значение функции - Часть 1
 
-Function can also return values, if a function does not have a return statement, the value of the function is None. Let us rewrite the above functions using return. From now on, we get a value from a function when we call the function and print it.
+Функция также может возвращать значения, если в функции нет выражения с ключевым словом return, функция возвращает значение None. Давайте перепишем функции выше, используя return. Теперь мы будем получать из вызванной функции значение и выводить его на печать.
 
 ```py
 def generate_full_name ():
-    first_name = 'Asabeneh'
-    last_name = 'Yetayeh'
+    first_name = 'Иван'
+    last_name = 'Петров'
     space = ' '
     full_name = first_name + space + last_name
     return full_name
@@ -104,30 +104,30 @@ def add_two_numbers ():
 print(add_two_numbers())
 ```
 
-### Function with Parameters
+### Функция с параметрами
 
-In a function we can pass different data types(number, string, boolean, list, tuple, dictionary or set) as a parameter
+Мы можем передать в функцию в качестве параметров разные типы данных (чисала, строки, булевые значения, списки, кортежи, словари или множества).
 
-- Single Parameter: If our function takes a parameter we should call our function with an argument
+- Один параметр: Если наша функция принимает параметр, мы должны вызвать функцию, передав в нее аргумент
 
 ```py
-  # syntax
-  # Declaring a function
+  # синтаксис
+  # Объявление функции
   def function_name(parameter):
-    codes
-    codes
-  # Calling function
+    код
+    код
+  # Вызов функции
   print(function_name(argument))
 ```
 
-**Example:**
+**Пример:**
 
 ```py
-def greetings (name):
-    message = name + ', welcome to Python for Everyone!'
+def greetings(name):
+    message = name + ', добро пожаловать в Python!'
     return message
 
-print(greetings('Asabeneh'))
+print(greetings('Иван'))
 
 def add_ten(num):
     ten = 10
@@ -138,7 +138,7 @@ def square_number(x):
     return x * x
 print(square_number(2))
 
-def area_of_circle (r):
+def area_of_circle(r):
     PI = 3.14
     area = PI * r ** 2
     return area
@@ -147,101 +147,101 @@ print(area_of_circle(10))
 def sum_of_numbers(n):
     total = 0
     for i in range(n+1):
-        total+=i
-    print(total)
+        total += i
+    return total
 print(sum_of_numbers(10)) # 55
 print(sum_of_numbers(100)) # 5050
 ```
 
-- Two Parameter: A function may or may not have a parameter or parameters. A function may also have two or more parameters. If our function takes parameters we should call it with arguments. Let us check a function with two parameters:
+- Два параметра: У функции может быть параметр (или параметры), а может и не быть. Также у функции может быть два и более параметров. Если наша функция принимает параметры, мы должны вызывать ее с аргументами. Давайте взглянем на функцию с двумя параметрами:
 
 ```py
-  # syntax
-  # Declaring a function
+  # синтаксис
+  # Объявление функции
   def function_name(para1, para2):
-    codes
-    codes
-  # Calling function
+    код
+    код
+  # Вызов функции
   print(function_name(arg1, arg2))
 ```
 
-**Example:**
+**Пример:**
 
 ```py
 def generate_full_name (first_name, last_name):
     space = ' '
-      full_name = first_name + space + last_name
-      return full_name
-print('Full Name: ', generate_full_name('Asabeneh','Yetayeh'))
+    full_name = first_name + space + last_name
+    return full_name
+print('Полное имя: ', generate_full_name('Иван','Петров'))
 
 def sum_two_numbers (num_one, num_two):
     sum = num_one + num_two
     return sum
-print('Sum of two numbers: ', sum_two_numbers(1, 9))
+print('Сумма двух чисел: ', sum_two_numbers(1, 9))
 
 def calculate_age (current_year, birth_year):
     age = current_year - birth_year
-    return age;
+    return age
 
-print('Age: ', calculate_age(2021, 1819))
+print('Возраст: ', calculate_age(2021, 1819))
 
 def weight_of_object (mass, gravity):
-    weight = str(mass * gravity)+ ' N' # the value has to be changed to a string first
+    weight = str(mass * gravity)+ ' Н' # сперва преобразуем значение в строку
     return weight
-print('Weight of an object in Newtons: ', weight_of_object(100, 9.81))
+print('Вес предмета в Ньютонах: ', weight_of_object(100, 9.81))
 ```
 
-### Passing Arguments with Key and Value
+### Передача аргументов парой ключ - значение
 
-If we pass the arguments with key and value, the order of the arguments does not matter.
+Если мы передаем аргументы парой ключ-значение, порядок аргументов не имеет значения.
 
 ```py
-# syntax
-# Declaring a function
+# синтаксис
+# Объявление функции
 def function_name(para1, para2):
-    codes
-    codes
-# Calling function
-print(function_name(para1 = 'John', para2 = 'Doe')) # the order of arguments does not matter here
+    код
+    код
+# Вызов функции
+print(function_name(para1 = 'Иван', para2 = 'Петров')) # порядок аргументов здесь не имеет значения
 ```
 
-**Example:**
+**Пример:**
 
 ```py
 def print_fullname(firstname, lastname):
     space = ' '
-    full_name = firstname  + space + lastname
+    full_name = firstname + space + lastname
     print(full_name)
-print(print_fullname(firstname = 'Asabeneh', lastname = 'Yetayeh'))
+print_fullname(firstname = 'Иван', lastname = 'Петров')
 
 def add_two_numbers (num1, num2):
     total = num1 + num2
-    print(total)
-print(add_two_numbers(num2 = 3, num1 = 2)) # Order does not matter
+    return total
+print(add_two_numbers(num2 = 3, num1 = 2)) # порядок не имеет значения
 ```
 
-### Function Returning a Value - Part 2
+### Возвращаемое значение функции - Часть 2
 
-If we do not return a value with a function, then our function is returning _None_ by default. To return a value with a function we use the keyword _return_ followed by the variable we are returning. We can return any kind of data types from a function.
+Если мы не возвращаем значение из функции, тогда наша функция по умолчанию возвращает _None_. Чтобы вернуть значение из функции мы используем ключевое слово _return_, после которого следует возвращаемая переменная. Мы можем вернуть из функции любой тип данных.
 
-- Returning a string:
-**Example:**
+- Возвращаем строку:
+**Пример:**
 
 ```py
 def print_name(firstname):
-    return firstname
-print_name('Asabeneh') # Asabeneh
+    print(firstname)
+print_name('Иван') # Иван
 
 def print_full_name(firstname, lastname):
     space = ' '
     full_name = firstname  + space + lastname
-    return full_name
-print_full_name(firstname='Asabeneh', lastname='Yetayeh')
+    print(full_name)
+print_full_name(firstname='Иван', lastname='Петров')
 ```
 
-- Returning a number:
+- Возвращаем число:
 
-**Example:**
+**Пример:**
 
 ```py
 def add_two_numbers (num1, num2):
@@ -251,25 +251,27 @@ print(add_two_numbers(2, 3))
 
 def calculate_age (current_year, birth_year):
     age = current_year - birth_year
-    return age;
-print('Age: ', calculate_age(2019, 1819))
+    return age
+print('Возраст: ', calculate_age(2019, 1819))
 ```
 
-- Returning a boolean:
-  **Example:**
+- Возвращаем булево значение:
+
+**Пример:**
 
 ```py
 def is_even (n):
     if n % 2 == 0:
-        print('even')
-        return True    # return stops further execution of the function, similar to break 
+        print('четное')
+        return True    # return останавливает дальнейшее выполнение функции, аналогично break 
     return False
 print(is_even(10)) # True
 print(is_even(7)) # False
 ```
 
-- Returning a list:
-  **Example:**
+- Возвращаем список:
+
+**Пример:**
 
 ```py
 def find_even_numbers(n):
@@ -281,114 +283,136 @@ def find_even_numbers(n):
 print(find_even_numbers(10))
 ```
 
-### Function with Default Parameters
+### Функция с параметрами по умолчанию
 
-Sometimes we pass default values to parameters, when we invoke the function. If we do not pass arguments when calling the function, their default values will be used.
+Иногда мы передаем значения параметров по умолчанию, когда вызываем функцию. Если при вызове функции не передать аргументы, будут использованы их значения по умолчанию.
 
 ```py
-# syntax
-# Declaring a function
-def function_name(param = value):
-    codes
-    codes
-# Calling function
+# синтаксис
+# Объявление функции
+def function_name(param=value): # В параметрах знак = не отделяется пробелами
+    код
+    код
+# Вызов функции
 function_name()
 function_name(arg)
 ```
 
-**Example:**
+**Пример:**
 
 ```py
-def greetings (name = 'Peter'):
-    message = name + ', welcome to Python for Everyone!'
+def greetings(name='Петр'):
+    message = name + ', добро пожаловать в Python!'
     return message
 print(greetings())
-print(greetings('Asabeneh'))
+print(greetings('Иван'))
 
-def generate_full_name (first_name = 'Asabeneh', last_name = 'Yetayeh'):
+def generate_full_name(first_name='Иван', last_name='Петров'):
     space = ' '
     full_name = first_name + space + last_name
     return full_name
 
 print(generate_full_name())
-print(generate_full_name('David','Smith'))
+print(generate_full_name('Денис', 'Никифоров'))
 
-def calculate_age (birth_year,current_year = 2021):
+def calculate_age(birth_year, current_year=2023):
     age = current_year - birth_year
-    return age;
-print('Age: ', calculate_age(1821))
+    return age
+print('Возраст: ', calculate_age(1821))
 
-def weight_of_object (mass, gravity = 9.81):
-    weight = str(mass * gravity)+ ' N' # the value has to be changed to string first
+def weight_of_object(mass, gravity=9.81):
+    weight = str(mass * gravity) + ' Н' # значение сперва должно быть преобразовано в строку
     return weight
-print('Weight of an object in Newtons: ', weight_of_object(100)) # 9.81 - average gravity on Earth's surface
-print('Weight of an object in Newtons: ', weight_of_object(100, 1.62)) # gravity on the surface of the Moon
+print('Вес предмета в Ньютонах: ', weight_of_object(100)) # 9.81 - среднее ускорение свободного падения на поверхности Земли
+print('Вес предмета в Ньютонах: ', weight_of_object(100, 1.62)) # ускорение свободного падения на поверхности Луны
 ```
 
-### Arbitrary Number of Arguments
+### Произвольное количество аргументов
 
-If we do not know the number of arguments we pass to our function, we can create a function which can take arbitrary number of arguments by adding \* before the parameter name.
+Если мы не знаем, сколько аргументов будем передавать в функцию, мы можем создать функцию, которая может принимать произвольное количество аргументов, добавив * перед названием параметра.
 
 ```py
-# syntax
-# Declaring a function
-def function_name(*args):
-    codes
-    codes
-# Calling function
+# синтаксис
+# Объявление функции
+def function_name(*args): # можно использовать любое название параметра, но при использовании * принято называть параметр args (arguments)
+    код
+    код
+# Вызов функции
 function_name(param1, param2, param3,..)
 ```
 
-**Example:**
+**Пример:**
 
 ```py
 def sum_all_nums(*nums):
     total = 0
     for num in nums:
-        total += num     # same as total = total + num 
+        total += num     # аналогично записи total = total + num 
     return total
 print(sum_all_nums(2, 3, 5)) # 10
 ```
 
-### Default and Arbitrary Number of Parameters in Functions
+Примечание переводчика: аналогично можно при объявлении функции предусмотреть, что в нее будет передаваться произвольное количество аргументов парой ключ - значение. В таком случае перед названием параметра ставится **.
+```py
+# синтаксис
+# Объявление функции
+def function_name(**kwargs): # можно использовать любое название параметра, но при использовании ** принято называть параметр kwargs (keyword arguments)
+    код
+    код
+# Вызов функции
+function_name(param1=value1, param2=value2, param3=value3,..)
+```
+
+**Пример:**
 
 ```py
-def generate_groups (team,*args):
+def create_list_of_lists(**kwargs):
+    lst = []
+    for key, value in kwargs.items():
+        lst.append([key, value])
+    return lst
+print(create_list_of_lists(a=2, b=3, c=5)) # [['a', 2], ['b', 3], ['c', 5]]
+```
+
+### Количество параметров функции по умолчанию и произвольное
+
+```py
+def generate_groups (team, *args):
     print(team)
     for i in args:
         print(i)
-print(generate_groups('Team-1','Asabeneh','Brook','David','Eyob'))
+generate_groups('Команда-1','Иван','Петр','Максим','Никита')
 ```
 
-### Function as a Parameter of Another Function
+### Функция как параметр для другой функции
 
 ```py
-#You can pass functions around as parameters
-def square_number (n):
+# Вы можете передавать функции как параметры
+def square_number(n):
     return n * n
 def do_something(f, x):
     return f(x)
-print(do_something(square_number, 3)) # 27
+print(do_something(square_number, 3)) # 9
 ```
 
-🌕 You achieved quite a lot so far.  Keep going! You have just completed day 11 challenges and you are 11 steps a head in to your way to greatness. Now do some exercises for your brain and muscles.
+🌕 Вы уже многого достигли. Продолжайте! Вы только что завершили день 11 челленджа и теперь на 11 шагов дальше на пути к успеху. Теперь выполните несколько упражнений для мозга и мускулов.
 
-## Testimony
-Now it is time to express your thoughts about the Author and 30DaysOfPython. You can leave your testimonial on this [link](https://testimonify.herokuapp.com/)
+## Обратная связь
+Самое время выразить свои мысли рб авторе и челлендже 30 дней Python. Вы можете оставить обратную связь по этой [ссылке](https://testimonify.herokuapp.com/)
 
-## 💻 Exercises: Day 11
+## 💻 Упражнения: День 11
 
-### Exercises: Level 1
+### Упражнения: Уровень 1
 
-1. Declare a function _add_two_numbers_. It takes two parameters and it returns a sum.
-2. Area of a circle is calculated as follows: area = π x r x r. Write a function that calculates _area_of_circle_.
-3. Write a function called add_all_nums which takes arbitrary number of arguments and sums all the arguments. Check if all the list items are number types. If not do give a reasonable feedback.
-4. Temperature in °C can be converted to °F using this formula: °F = (°C x 9/5) + 32. Write a function which converts °C to °F, _convert_celsius_to-fahrenheit_.
-5. Write a function called check-season, it takes a month parameter and returns the season: Autumn, Winter, Spring or Summer.
-6. Write a function called calculate_slope which return the slope of a linear equation
-7. Quadratic equation is calculated as follows: ax² + bx + c = 0. Write a function which calculates solution set of a quadratic equation, _solve_quadratic_eqn_.
-8. Declare a function named print_list. It takes a list as a parameter and it prints out each element of the list.
-9. Declare a function named reverse_list. It takes an array as a parameter and it returns the reverse of the array (use loops).
+1. Объявите функцию _add_two_numbers_. Она принимает два параметра и возвращает сумму.
+2. Площадь круга рассчитывается так: площадь = π x r x r. Напишите функцию, которая считает _area_of_circle_.
+3. Напишите функцию _add_all_nums_, которая принимает произвольное количество аргументов и суммирует все аргументы. Убедитесь, что все аргументы в списке являются числами. Если нет, дайте соответствующую обратную связь.
+4. Температуру в градусах Цельсия (°C) можно перевести в градусы Фаренгейта (°F) по формуле: °F = (°C x 9/5) + 32. Напишите функцию, которая переводит из °C в °F, _convert_celsius_to_fahrenheit_.
+5. Напишите функцию _check-season_, она принимает месяц и возвращает время года: Осень, Зима, Весна или Лето.
+6. Напишите функцию _calculate_slope_, которая возвращает наклон линейной функции
+7. Квадратное уравнение выглядит так: ax² + bx + c = 0. Напишите функцию, которая возвращает множество решений квадратного уравнения, _solve_quadratic_eqn_.
+8. Объявите функцию _print_list_. Она принимает список в качестве параметра и выводит на печать каждый элемент списка.
+9. Объявите функцию _reverse_list_. Она принимает список в качестве параметра и возвращает развернутый наоборот список (используйте циклы).
 
 ```py
 print(reverse_list([1, 2, 3, 4, 5]))
@@ -397,26 +421,26 @@ print(reverse_list1(["A", "B", "C"]))
 # ["C", "B", "A"]
 ```
 
-10. Declare a function named capitalize_list_items. It takes a list as a parameter and it returns a capitalized list of items
-11. Declare a function named add_item. It takes a list and an item parameters. It returns a list with the item added at the end.
+10. Объявите функцию _capitalize_list_items_. Она принимает список в качестве параметра и возвращает список, у которого каждый элемент начинается с заглавной буквы, а следом идут строчные.
+11. Объявите функцию  _add_item_. Она принимает список и элемент в качестве параметров. Она возвращает список с элементом добавленным в конец.
 
 ```py
-food_staff = ['Potato', 'Tomato', 'Mango', 'Milk'];
-print(add_item(food_staff, 'Meat'))     # ['Potato', 'Tomato', 'Mango', 'Milk','Meat'];
-numbers = [2, 3, 7, 9];
+food_staff = ['Картофель', 'Томат', 'Манго', 'Молоко']
+print(add_item(food_staff, 'Мясо'))     # ['Картофель', 'Томат', 'Манго', 'Молоко', 'Мясо']
+numbers = [2, 3, 7, 9]
 print(add_item(numbers, 5))      [2, 3, 7, 9, 5]
 ```
 
-12. Declare a function named remove_item. It takes a list and an item parameters. It returns a list with the item removed from it.
+12. Объявите функцию _remove_item_. Она принимает список и элемент в качестве параметров. Она возвращает список, из которого удален этот элемент.
 
 ```py
-food_staff = ['Potato', 'Tomato', 'Mango', 'Milk'];
-print(remove_item(food_staff, 'Mango'))  # ['Potato', 'Tomato', 'Milk'];
-numbers = [2, 3, 7, 9];
+food_staff = ['Картофель', 'Томат', 'Манго', 'Молоко']
+print(remove_item(food_staff, 'Манго'))  # ['Картофель', 'Томат', 'Молоко']
+numbers = [2, 3, 7, 9]
 print(remove_item(numbers, 3))  # [2, 7, 9]
 ```
 
-13. Declare a function named sum_of_numbers. It takes a number parameter and it adds all the numbers in that range.
+13. Объявите функцию _sum_of_numbers_. Она принимает числовой параметр и суммирует все числа в этом диапазоне.
 
 ```py
 print(sum_of_numbers(5))  # 15
@@ -424,34 +448,34 @@ print(sum_all_numbers(10)) # 55
 print(sum_all_numbers(100)) # 5050
 ```
 
-14. Declare a function named sum_of_odds. It takes a number parameter and it adds all the odd numbers in that range.
-15. Declare a function named sum_of_even. It takes a number parameter and it adds all the even numbers in that - range.
+14. Объявите функцию _sum_of_odds_. Она принимает числовой параметр и суммирует все нечетные числа в этом диапазоне.
+15. Объявите функцию _sum_of_even_. Она принимает числовой параметр и суммирует все четные числа в этом диапазоне.
 
-### Exercises: Level 2
+### Упражнения: Уровень 2
 
-1.  Declare a function named evens_and_odds . It takes a positive integer as parameter and it counts number of evens and odds in the number.
+1.  Объявите функцию _evens_and_odds_. Она принимает целое положительное число и считает количество четных и нечетных чисел в этом диапазоне.
 
 ```py
     print(evens_and_odds(100))
-    # The number of odds are 50.
-    # The number of evens are 51.
+    # Количество нечетных - 50.
+    # Количество четных - 51.
 ```
 
-1. Call your function factorial, it takes a whole number as a parameter and it return a factorial of the number
-1. Call your function _is_empty_, it takes a parameter and it checks if it is empty or not
-1. Write different functions which take lists. They should calculate_mean, calculate_median, calculate_mode, calculate_range, calculate_variance, calculate_std (standard deviation).
+2. Объявите функцию _factorial_, Она принимает целое число и возвращает его факториал
+3. Объявите функцию _is_empty_, она принимает параметр и проверяет, пустой он или нет
+4. напишите несколько функций, принимающих списки. Они должны: считать среднее арифметическое (calculate_mean), медиану (calculate_median), моду (calculate_mode), диапазон (calculate_range), дисперсию (calculate_variance), стандартное отклонение (calculate_std).
 
-### Exercises: Level 3
+### Упражнения: Уровень 3
 
-1. Write a function called is_prime, which checks if a number is prime.
-1. Write a functions which checks if all items are unique in the list.
-1. Write a function which checks if all the items of the list are of the same data type.
-1. Write a function which check if provided variable is a valid python variable
-1. Go to the data folder and access the countries-data.py file.
+1. Напишите функцию _is_prime_, которая проверяет, является ли число простым.
+2. Напишите функцию, которая проверяет все ли элементы в списке уникальны.
+3. Напишите функцию, которая проверяет, все ли элементы в списке одного типа.
+4. Напишите функцию, которая проверяет является ли переданная строка допустимым названием для переменной в Python
+5. Откройте файл countries-data.py в папке data.
 
-- Create a function called the most_spoken_languages in the world. It should return 10 or 20 most spoken languages in the world in descending order
-- Create a function called the most_populated_countries. It should return 10 or 20 most populated countries in descending order.
+- Создайте функцию _most_spoken_languages_ (самые часто используемые языки в мире). Она должна возвращать 10 или 20 самых используемых в мире языков в порядке убывания
+- Создайте функцию most_populated_countries. Она должна возвращать 10 или 20 самых населенных стран в порядке убывания.
 
-🎉 CONGRATULATIONS ! 🎉
+🎉 ПОЗДРАВЛЯЮ ! 🎉
 
-[<< Day 10](../10_Day_Loops/10_loops.md) | [Day 12 >>](../12_Day_Modules/12_modules.md)
+[<< День 10](../10_Day_Loops/10_loops.md) | [День 12 >>](../12_Day_Modules/12_modules.md)
