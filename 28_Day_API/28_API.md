@@ -1,5 +1,5 @@
 <div align="center">
-  <h1> 30 Days Of Python: Day 28 - API </h1>
+  <h1> 30 дней Python: День 28 - API </h1>
   <a class="header-badge" target="_blank" href="https://www.linkedin.com/in/asabeneh/">
   <img src="https://img.shields.io/badge/style--5eba00.svg?label=LinkedIn&logo=linkedin&style=social">
   </a>
@@ -15,105 +15,106 @@
 </div>
 </div>
 
-[<< Day 27](../27_Day_Python_with_mongodb/27_python_with_mongodb.md) | [Day 29 >>](../29_Day_Building_API/29_building_API.md)
+[<< День 27](../27_Day_Python_with_mongodb/27_python_with_mongodb.md) | [День 29 >>](../29_Day_Building_API/29_building_API.md)
 
 ![30DaysOfPython](../images/30DaysOfPython_banner3@2x.png)
 
-- [📘 Day 28](#-day-28)
+- [📘 День 28](#📘-день-28)
 - [Application Programming Interface(API)](#application-programming-interfaceapi)
   - [API](#api)
-  - [Building API](#building-api)
+  - [Построение API](#построение-api)
   - [HTTP(Hypertext Transfer Protocol)](#httphypertext-transfer-protocol)
-  - [Structure of HTTP](#structure-of-http)
-  - [Initial Request Line(Status Line)](#initial-request-linestatus-line)
-    - [Initial Response Line(Status Line)](#initial-response-linestatus-line)
-    - [Header Fields](#header-fields)
-    - [The message body](#the-message-body)
-    - [Request Methods](#request-methods)
-  - [💻 Exercises: Day 28](#-exercises-day-28)
+  - [Структура протокола HTTP](#структура-протокола-http)
+  - [Начальная строка запроса (строка статуса)](#начальная-строка-запроса-строка-статуса)
+    - [Начальная строка ответа (строка статуса)](#начальная-строка-ответа-строка-статуса)
+    - [Поля заголовка](#поля-заголовка)
+    - [Тело сообщения](#тело-сообщения)
+    - [Методы запросов](#методы-запросов)
+  - [💻 Упражнения: День 28](#💻-упражнения-день-28)
 
-# 📘 Day 28
+# 📘 День 28
 
 # Application Programming Interface(API)
 
 ## API
 
-API stands for Application Programming Interface. The kind of API we will cover in this section is going to be Web APIs.
-Web APIs are the defined interfaces through which interactions happen between an enterprise and applications that use its assets, which also is a Service Level Agreement (SLA) to specify the functional provider and expose the service path or URL for its API users.
+API расшифровывается как интерфейс прикладного программирования. Тип API, который мы рассмотрим в этом разделе, - это Web-API.
+Web-API - это определенные интерфейсы, посредством которых происходит взаимодействие между сервером предприятия и приложениями клиента, использующими его ресурсы, что также является соглашением об уровне обслуживания (Service Level Agreement, SLA), определяющим функционального поставщика и предоставляющим пользователям API путь или URL-адрес для доступа к сервису.
 
-In the context of web development, an API is defined as a set of specifications, such as Hypertext Transfer Protocol (HTTP) request messages, along with a definition of the structure of response messages, usually in an XML or a JavaScript Object Notation (JSON) format.
+В контексте веб-разработки, API определяется как набор спецификаций, таких как сообщения запросов по протоколу передачи гипертекста (HTTP), вместе с определением структуры ответных сообщений, обычно в формате XML или JavaScript Object Notation (JSON).
 
-Web API has been moving away from Simple Object Access Protocol (SOAP) based web services and service-oriented architecture (SOA) towards more direct representational state transfer (REST) style web resources.
+Web-API шаг за шагом отходит от веб-сервисов на базе простого объектного доступа к протоколу (Simple Object Access Protocol, SOAP) и архитектуры ориентированной на службы (service-oriented architecture, SOA) в сторону более прямого стиля передачи состояния представления (representational state transfer, REST) и работы с веб-ресурсами.
 
-Social media services, web APIs have allowed web communities to share content and data between communities and different platforms. 
+Благодаря web-API социальные медиа-сервисы позволяют веб-сообществам обмениваться контентом и данными между различными сообществами и платформами.
 
-Using API, content that is created in one place dynamically can be posted and updated to multiple locations on the web.
+С использованием API контент, созданный динамически в одном месте, может быть опубликован и обновлен в нескольких местах в сети Интернет.
 
-For example, Twitter's REST API allows developers to access core Twitter data and the Search API provides methods for developers to interact with Twitter Search and trends data.
+Например, REST API Twitter позволяет разработчикам получать доступ к основным данным Twitter, а Search API предоставляет методы для взаимодействия разработчиков с поиском и данными о трендах в Twitter.
 
-Many applications provide API end points. Some  examples of API such as the countries [API](https://restcountries.eu/rest/v2/all), [cat's breed API](https://api.thecatapi.com/v1/breeds).
+Множество приложений предоставляют конечные точки API. Некоторые примеры API включают [API стран](https://restcountries.eu/rest/v2/all), [API пород кошек](https://api.thecatapi.com/v1/breeds).
 
-In this section, we will cover a RESTful API that uses HTTP request methods to GET, PUT, POST and DELETE data.
+В этом разделе мы рассмотрим RESTful API, который использует методы запросов HTTP для получения (GET), обновления (PUT), создания (POST) и удаления (DELETE) данных.
 
-## Building API
+## Построение API
 
-RESTful API is an application program interface (API) that uses HTTP requests to GET, PUT, POST and DELETE data. In the previous sections, we have learned about python, flask and mongoDB. We will use the knowledge we acquire to develop a RESTful API using Python flask and mongoDB database. Every application which has CRUD(Create, Read, Update, Delete) operation has an API to create data, to get data, to update data or to delete data from a database.
+RESTful API представляет собой интерфейс прикладного программирования (API), который использует HTTP-запросы для выполнения операций GET, PUT, POST и DELETE с данными. В предыдущих разделах мы изучили Python, Flask и базу данных MongoDB. Мы будем использовать полученные знания для разработки RESTful API с использованием Python Flask и базы данных MongoDB. Всякое приложение, которое имеет операции CRUD (Create, Read, Update, Delete), имеет API для создания данных, получения данных, обновления данных или удаления данных из базы данных.
 
-To build an API, it is good to understand HTTP protocol and HTTP request and response cycle.
+Для создания API полезно понимать протокол HTTP и цикл запроса и ответа HTTP.
 
 ## HTTP(Hypertext Transfer Protocol)
 
-HTTP is an established communication protocol between a client and a server. A client in this case is a browser and server is the place where you access data. HTTP is a network protocol used to deliver resources which could be files on the World Wide Web, whether they are HTML files, image files, query results, scripts, or other file types.
+HTTP - это установленный протокол связи между клиентом и сервером. Клиент в данном случае - это браузер, а сервер - это место, где вы получаете доступ к данным. HTTP - это сетевой протокол, используемый для доставки ресурсов, которые могут быть файлами во Всемирной паутине, будь то HTML-файлы, файлы изображений, результаты запросов, скрипты или другие типы файлов.
 
-A browser is an HTTP client because it sends requests to an HTTP server (Web server), which then sends responses back to the client.
+Браузер является HTTP-клиентом, поскольку он отправляет запросы на HTTP-сервер (веб-сервер), который затем отправляет ответы обратно клиенту.
 
-## Structure of HTTP
+## Структура протокола HTTP
 
-HTTP uses client-server model. An HTTP client opens a connection and sends a request message to an HTTP server and the HTTP server returns response message which is the requested resources. When the request response cycle completes the server closes the connection.
+HTTP использует модель клиент-сервер. HTTP-клиент открывает соединение и отправляет сообщение запроса на HTTP-сервер, а HTTP-сервер возвращает ответное сообщение, которое является запрошенными ресурсами. Когда цикл ответа на запрос завершается, сервер закрывает соединение.
 
 ![HTTP request response cycle](../images/http_request_response_cycle.png)
 
-The format of the request and response messages are similar. Both kinds of messages have
+Формат сообщений запроса (Request) и ответа (Response) аналогичен. Оба вида сообщений имеют
 
-- an initial line,
-- zero or more header lines,
-- a blank line (i.e. a CRLF by itself), and
-- an optional message body (e.g. a file, or query data, or query output).
+- начальная строка (initial line),
+- ноль или более строк заголовка (header lines),
+- пустая строка (то есть CRLF),
+- и, при наличии, необязательное тело сообщения (например, файл, данные запроса или результат запроса).
 
-Let us an example of request and response messages by navigating this site:https://thirtydaysofpython-v1-final.herokuapp.com/. This site has been deployed on Heroku free dyno and in some months may not work because of high request. Support this work to make the server run all the time. 
+Давайте рассмотрим пример запроса и ответа при переходе на сайт: https://thirtydaysofpython-v1-final.herokuapp.com/. Обратите внимание, что этот сайт развернут на бесплатном динамическом сервере Heroku, и в некоторых месяцах он может не работать из-за большого количества запросов.
 
 ![Request and Response header](../images/request_response_header.png)
 
-## Initial Request Line(Status Line)
+## Начальная строка запроса (строка статуса)
 
-The initial request line is different from the response.
-A request line has three parts, separated by spaces:
+Начальная строка запроса отличается от начальной строки ответа.
+Начальная строка запроса состоит из трех частей, разделенных пробелами:
 
-- method name(GET, POST, HEAD)
-- path of the requested resource,
-- the version of HTTP being used. eg GET / HTTP/1.1
+- имя метода (GET, POST, HEAD),
+- путь к запрашиваемому ресурсу,
+- версия HTTP, используемая в запросе. Например, GET / HTTP/1.1.
 
-GET is the most common HTTP that helps to get or read resource and POST is a common request method to create resource.
+GET является наиболее распространенным методом HTTP, который используется для получения или чтения ресурса, а POST - распространенный метод запроса для создания ресурса.
 
-### Initial Response Line(Status Line)
+### Начальная строка ответа (строка статуса)
 
-The initial response line, called the status line, also has three parts separated by spaces:
+Начальная строка ответа, называемая строкой состояния (status line), также состоит из трех частей, разделенных пробелами:
 
-- HTTP version
-- Response status code that gives the result of the request, and a reason which describes the status code. Example of status lines are:
+- Версия HTTP
+- код состояния ответа, который указывает результат запроса, и причина, которая описывает код состояния. Примеры строк состояния (status lines) могут быть следующими::
   HTTP/1.0 200 OK
-  or
+  или
   HTTP/1.0 404 Not Found
-  Notes:
 
-The most common status codes are:
-200 OK: The request succeeded, and the resulting resource (e.g. file or script output) is returned in the message body.
-500 Server Error
-A complete list of HTTP status code can be found [here](https://httpstatuses.com/). It can be also found [here](https://httpstatusdogs.com/).
+Примечания:
 
-### Header Fields
+Самые распространенные коды состояния:
+200 OK: Запрос выполнен успешно, и результатирующий ресурс (например, файл или вывод скрипта) возвращается в теле сообщения.
+500 Server Error: Внутренняя ошибка сервера.
+Полный список кодов состояния HTTP можно найти [здесь](https://httpstatuses.com/). Также его можно найти [здесь](https://httpstatusdogs.com/).
 
-As you have seen in the above screenshot, header lines provide information about the request or response, or about the object sent in the message body.
+### Поля заголовка
+
+Как вы видите на приведенном выше скриншоте, строки заголовка (header lines) предоставляют информацию о запросе или ответе, а также об объекте, отправляемом в теле сообщения.
 
 ```sh
 GET / HTTP/1.1
@@ -132,31 +133,31 @@ Accept-Encoding: gzip, deflate, br
 Accept-Language: en-GB,en;q=0.9,fi-FI;q=0.8,fi;q=0.7,en-CA;q=0.6,en-US;q=0.5,fr;q=0.4
 ```
 
-### The message body
+### Тело сообщения
 
-An HTTP message may have a body of data sent after the header lines. In a response, this is where the requested resource is returned to the client (the most common use of the message body), or perhaps explanatory text if there's an error. In a request, this is where user-entered data or uploaded files are sent to the server.
+HTTP-сообщение может иметь тело данных, отправляемое после строк заголовка. В ответе это место, где возвращается запрошенный ресурс клиенту (самое распространенное использование тела сообщения), или, возможно, пояснительный текст в случае ошибки. В запросе это место, куда отправляются пользовательские данные или загруженные файлы на сервер.
 
-If an HTTP message includes a body, there are usually header lines in the message that describe the body. In particular,
+Если в HTTP-сообщении присутствует тело, обычно в сообщении есть строки заголовка, описывающие это тело. В частности,
 
-The Content-Type: header gives the MIME-type of the data in the body(text/html, application/json, text/plain, text/css, image/gif).
-The Content-Length: header gives the number of bytes in the body.
+- Заголовок Content-Type указывает MIME-тип данных в теле сообщения (например, text/html, application/json, text/plain, text/css, image/gif).
+- Заголовок Content-Length указывает количество байтов в теле сообщения.
 
-### Request Methods
+### Методы запросов
 
-The GET, POST, PUT and DELETE are the HTTP request methods which we are going to implement an API or a CRUD operation application.
+В HTTP существуют четыре основных метода запросов, которые мы будем реализовывать в нашем API или приложении для выполнения операций CRUD:
 
-1. GET: GET method is used to retrieve and get information from the given server using a given URI. Requests using GET should only retrieve data and should have no other effect on the data.
+1. GET: Метод GET используется для получения информации с сервера по указанному URI. Запросы с использованием GET должны только извлекать данные и не должны оказывать другого влияния на данные.
 
-2. POST: POST request is used to create data and send data to the server, for example, creating a new post, file upload, etc. using HTML forms.
+2. POST: Метод POST используется для создания данных и отправки их на сервер, например, при создании нового поста, загрузке файлов и т.д., с использованием HTML-форм.
 
-3. PUT: Replaces all current representations of the target resource with the uploaded content and we use it modify or update data.
+3. PUT: Метод PUT используется для замены всех текущих представлений целевого ресурса загруженным содержимым. Он используется для модификации или обновления данных.
 
-4. DELETE: Removes data
+4. DELETE: Метод DELETE используется для удаления данных или ресурсов. Он позволяет удалить указанные данные с сервера.
 
-## 💻 Exercises: Day 28
+## 💻 Упражнения: День 28
 
-1. Read about API and HTTP
+1. Ознакомьтесь с API и HTTP.
 
-🎉 CONGRATULATIONS ! 🎉
+🎉 ПОЗДРАВЛЯЕМ ! 🎉
 
-[<< Day 27](../27_Day_Python_with_mongodb/27_python_with_mongodb.md) | [Day 29 >>](../29_Day_Building_API/29_building_API.md)
+[<< День 27](../27_Day_Python_with_mongodb/27_python_with_mongodb.md) | [День 29 >>](../29_Day_Building_API/29_building_API.md)
