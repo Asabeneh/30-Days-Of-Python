@@ -1,5 +1,5 @@
 <div align="center">
-  <h1> 30 Days Of Python: Day 27 - Python with MongoDB </h1>
+  <h1> 30 дней Python: День 27 - Python и MongoDB </h1>
   <a class="header-badge" target="_blank" href="https://www.linkedin.com/in/asabeneh/">
   <img src="https://img.shields.io/badge/style--5eba00.svg?label=LinkedIn&logo=linkedin&style=social">
   </a>
@@ -14,88 +14,84 @@
 
 </div>
 
-[<< Day 26](../26_Day_Python_web/26_python_web.md) | [Day 28 >>](../28_Day_API/28_API.md)
+[<< День 26](../26_Day_Python_web/26_python_web.md) | [День 28 >>](../28_Day_API/28_API.md)
 
 ![30DaysOfPython](../images/30DaysOfPython_banner3@2x.png)
 
-- [📘 Day 27](#-day-27)
-- [Python with MongoDB](#python-with-mongodb)
+- [📘 День 27](#-день-27)
+- [Python и MongoDB](#python-и-mongodb)
   - [MongoDB](#mongodb)
-    - [SQL versus NoSQL](#sql-versus-nosql)
-    - [Getting Connection String(MongoDB URI)](#getting-connection-stringmongodb-uri)
-    - [Connecting Flask application to MongoDB Cluster](#connecting-flask-application-to-mongodb-cluster)
-    - [Creating a database and collection](#creating-a-database-and-collection)
-    - [Inserting many documents to collection](#inserting-many-documents-to-collection)
-    - [MongoDB Find](#mongodb-find)
-    - [Find with Query](#find-with-query)
-    - [Find query with modifier](#find-query-with-modifier)
-    - [Limiting documents](#limiting-documents)
-    - [Find with sort](#find-with-sort)
-    - [Update with query](#update-with-query)
-    - [Delete Document](#delete-document)
-    - [Drop a collection](#drop-a-collection)
-  - [💻 Exercises: Day 27](#-exercises-day-27)
+    - [SQL против NoSQL](#sql-против-nosql)
+    - [Получение строки подключения (MongoDB URI)](#получение-строки-подключения-mongodb-uri)
+    - [Подключение Flask-приложения к кластеру MongoDB](#подключение-flask-приложения-к-кластеру-mongodb)
+    - [Создание базы данных и коллекции](#создание-базы-данных-и-коллекции)
+    - [Вставка нескольких документов в коллекцию](#вставка-нескольких-документов-в-коллекцию)
+    - [Поиск данных в MongoDB](#поиск-данных-в-mongodb)
+    - [Поиск с использованием запроса](#поиск-с-использованием-запроса)
+    - [Поиск с использованием модификатора запроса](#поиск-с-использованием-модификатора-запроса)
+    - [Ограничение документов](#ограничение-документов)
+    - [Поиск с сортировкой](#поиск-с-сортировкой)
+    - [Обновление с использованием запроса](#обновление-с-использованием-запроса)
+    - [Удаление документа](#удаление-документа)
+    - [Удаление коллекции](#удаление-коллекции)
+  - [Упражнения: День 27](#упражнения-день-27)
 
-# 📘 Day 27
+# 📘 День 27
 
-# Python with MongoDB
+# Python и MongoDB
 
-Python is a backend technology and it can be connected with different data base applications. It can be connected to both SQL and noSQL databases. In this section, we connect Python with MongoDB database which is noSQL database. 
+Python является технологией для разработки серверной части и может быть связан с различными приложениями баз данных. Он может быть подключен как к реляционным базам данных (SQL), так и к нереляционным базам данных (NoSQL). В данном разделе мы подключаем Python к базе данных MongoDB, которая является NoSQL базой данных.
 
 ## MongoDB
 
-MongoDB is a NoSQL database. MongoDB stores data in a JSON like document which make MongoDB very flexible and scalable. Let us see the different terminologies of SQL and NoSQL databases. The following table will make the difference between SQL versus NoSQL databases.
+MongoDB - это база данных типа NoSQL. MongoDB хранит данные в формате документов, похожих на JSON, что делает ее очень гибкой и масштабируемой. Давайте рассмотрим различные термины SQL и NoSQL баз данных. Следующая таблица покажет различия между базами данных SQL и NoSQL.
 
-### SQL versus NoSQL
+### SQL против NoSQL
 
-![SQL versus NoSQL](../images/mongoDB/sql-vs-nosql.png)
+![SQL против NoSQL](../images/mongoDB/sql-vs-nosql.png)
 
-In this section, we will focus on a NoSQL database MongoDB. Lets sign up on [mongoDB](https://www.mongodb.com/) by click on the sign in button then click register on the next page.
+В этом разделе мы сосредоточимся на базе данных NoSQL MongoDB. Давайте зарегистрируемся на [mongoDB](https://www.mongodb.com/) - для этого нажмите кнопку "Try Free".
 
 ![MongoDB Sign up pages](../images/mongoDB/mongodb-signup-page.png)
 
-Complete the fields and click continue
+Заполните поля и нажмите "Продолжить".
 
 ![Mongodb register](../images/mongoDB/mongodb-register.png)
 
-Select the free plan
-
-![Mongodb free plan](../images/mongoDB/mongodb-free.png)
-
-Choose the proximate free region and give any name for you cluster.
+Выберите ближайший свободный регион и назначьте любое имя для вашего кластера.
 
 ![Mongodb cluster name](../images/mongoDB/mongodb-cluster-name.png)
 
-Now, a free sandbox is created
+Бесплатная песочница (sandbox) создана.
 
 ![Mongodb sandbox](../images/mongoDB/mongodb-sandbox.png)
 
-All local host access
+Добавьте доступ к локальному хосту в MongoDB.
 
 ![Mongodb allow ip access](../images/mongoDB/mongodb-allow-ip-access.png)
 
-Add user and password
+Добавьте пользователя и задайте пароль.
 
 ![Mongodb add user](../images/mongoDB/mongodb-add-user.png)
 
-Create a mongoDB uri link
+Создайте ссылку URI для MongoDB
 
 ![Mongodb create uri](../images/mongoDB/mongodb-create-uri.png)
 
-Select Python 3.6 or above driver
+Выберите драйвер для Python версии 3.12 или выше.
 
 ![Mongodb python driver](../images/mongoDB/mongodb-python-driver.png)
 
-### Getting Connection String(MongoDB URI)
+### Получение строки подключения (MongoDB URI)
 
-Copy the connection string link and you will get something like this
+Скопируйте ссылку соединения (connection string), и вы получите что-то подобное:
 
 ```sh
 mongodb+srv://asabeneh:<password>@30daysofpython-twxkr.mongodb.net/test?retryWrites=true&w=majority
 ```
 
-Do not worry about the url, it is a means to connect your application with mongoDB.
-Let us replace the password placeholder with the password you used to add a user.
+Не беспокойтесь о ссылке (URL), это средство для подключения вашего приложения к MongoDB.
+Давайте добавим пароль, который вы использовали при добавлении пользователя.
 
 **Example:**
 
@@ -103,94 +99,94 @@ Let us replace the password placeholder with the password you used to add a user
 mongodb+srv://asabeneh:123123123@30daysofpython-twxkr.mongodb.net/test?retryWrites=true&w=majority
 ```
 
-Now, I replaced everything and the password is 123123 and the name of the database is thirty_days_python. This is just an example, your password must be a bit stronger than this.
+Теперь я заменил все необходимые значения. Пароль - 123123, а имя базы данных - thirty_days_python. Это всего лишь пример, ваш пароль должен быть более надежным, чем этот.
 
-Python needs a mongoDB driver to access mongoDB database. We will use _pymongo_ with _dnspython_ to connect our application with mongoDB base . Inside your project directory install pymongo and dnspython.
+Python нуждается в драйвере MongoDB для доступа к базе данных MongoDB. Мы будем использовать библиотеку _pymongo_ с _dnspython_ для подключения нашего приложения к базе данных MongoDB. Внутри директории вашего проекта установите pymongo и dnspython.
 
 ```sh
 pip install pymongo dnspython
 ```
 
-The "dnspython" module must be installed to use mongodb+srv:// URIs. The dnspython is a DNS toolkit for Python. It supports almost all record types.
+Для использования URI вида mongodb+srv:// необходимо установить модуль "dnspython". Dnspython - это инструментарий DNS для Python, который поддерживает практически все типы записей DNS.
 
-### Connecting Flask application to MongoDB Cluster
+### Подключение Flask-приложения к кластеру MongoDB
 
 ```py
-# let's import the flask
+# импортируем Flask
 from flask import Flask, render_template
-import os # importing operating system module
+import os # импорт модуля операционной системы
 MONGODB_URI = 'mongodb+srv://asabeneh:your_password_goes_here@30daysofpython-twxkr.mongodb.net/test?retryWrites=true&w=majority'
 client = pymongo.MongoClient(MONGODB_URI)
 print(client.list_database_names())
 
 app = Flask(__name__)
 if __name__ == '__main__':
-    # for deployment we use the environ
-    # to make it work for both production and development
+    # для развертывания мы используем environ
+    # чтобы сделать его работающим как для продакшн-среды, так и для разработки
     port = int(os.environ.get("PORT", 5000))
     app.run(debug=True, host='0.0.0.0', port=port)
 
 ```
 
-When we run the above code we get the default mongoDB databases.
+Когда мы запускаем вышеприведенный код, мы получаем стандартные базы данных MongoDB.
 
 ```sh
 ['admin', 'local']
 ```
 
-### Creating a database and collection
+### Создание базы данных и коллекции
 
-Let us create a database, database and collection in mongoDB will be created if it doesn't exist. Let's create a data base name _thirty_days_of_python_ and _students_ collection.
-To create a database
+Давайте создадим базу данных. Если база данных и коллекция не существуют в MongoDB, то они будут созданы. Давайте создадим базу данных с именем _thirty_days_of_python_ и коллекцию с именем _students_.
+Для создания базы данных вы можете использовать следующий код:
 
 ```sh
-db = client.name_of_databse # we can create a database like this or the second way
+db = client.name_of_databse # Мы можем создать базу данных двумя способами
 db = client['name_of_database']
 ```
 
 ```py
-# let's import the flask
+# импортируем Flask
 from flask import Flask, render_template
-import os # importing operating system module
+import os # импорт модуля операционной системы
 MONGODB_URI = 'mongodb+srv://asabeneh:your_password_goes_here@30daysofpython-twxkr.mongodb.net/test?retryWrites=true&w=majority'
 client = pymongo.MongoClient(MONGODB_URI)
-# Creating database
+# Создание базы данных
 db = client.thirty_days_of_python
-# Creating students collection and inserting a document
+# Создание коллекции "students" и добавление документа. 
 db.students.insert_one({'name': 'Asabeneh', 'country': 'Finland', 'city': 'Helsinki', 'age': 250})
 print(client.list_database_names())
 
 app = Flask(__name__)
 if __name__ == '__main__':
-    # for deployment we use the environ
-    # to make it work for both production and development
+    # для развертывания мы используем environ
+    # чтобы сделать его работающим как для продакшн-среды, так и для разработки
     port = int(os.environ.get("PORT", 5000))
     app.run(debug=True, host='0.0.0.0', port=port)
 ```
 
-After we create a database, we also created a students collection and we used *insert_one()* method to insert a document.
-Now, the database *thirty_days_of_python* and *students* collection have been created and the document has been inserted.
-Check your mongoDB cluster and you will see both the database and the collection. Inside the collection, there will be a document.
+После создания базы данных и коллекции "students" мы использовали метод *insert_one()* для вставки документа.
+
+Теперь база данных *thirty_days_of_python* и коллекция *students* были созданы, а документ был вставлен. Проверьте свой кластер MongoDB, и вы увидите как базу данных, так и коллекцию. Внутри коллекции будет находиться вставленный документ.
 
 ```sh
 ['thirty_days_of_python', 'admin', 'local']
 ```
 
-If you see this on the mongoDB cluster, it means you have successfully created a database and a collection.
+Если вы видите это в кластере MongoDB, значит, вы успешно создали базу данных и коллекцию.
 
 ![Creating database and collection](../images/mongoDB/mongodb-creating_database.png)
 
-If you have seen on the figure, the document has been created with a long id which acts as a primary key. Every time we create a document mongoDB create and unique id for it.
+На скриншоте видно, что документ был создан с длинным идентификатором, который выступает в качестве первичного ключа. Каждый раз, когда мы создаем документ, MongoDB создает для него уникальный идентификатор.
 
-### Inserting many documents to collection
+### Вставка нескольких документов в коллекцию
 
-The *insert_one()*  method inserts one item at a time if we want to insert many documents at once either we use *insert_many()* method or for loop.
-We can use for loop to inset many documents at once.
+Метод *insert_one()* вставляет один документ за раз. Если мы хотим вставить несколько документов одновременно, мы можем использовать метод *insert_many()* или цикл for.
+
+Для вставки нескольких документов сразу можно использовать цикл for.
 
 ```py
-# let's import the flask
 from flask import Flask, render_template
-import os # importing operating system module
+import os
 MONGODB_URI = 'mongodb+srv://asabeneh:your_password_goes_here@30daysofpython-twxkr.mongodb.net/test?retryWrites=true&w=majority'
 client = pymongo.MongoClient(MONGODB_URI)
 
@@ -205,34 +201,30 @@ for student in students:
 
 app = Flask(__name__)
 if __name__ == '__main__':
-    # for deployment we use the environ
-    # to make it work for both production and development
     port = int(os.environ.get("PORT", 5000))
     app.run(debug=True, host='0.0.0.0', port=port)
 ```
 
-### MongoDB Find
+### Поиск данных в MongoDB
 
-The *find()* and *findOne()* methods are common method to find data in a collection in mongoDB database. It is similar to the SELECT statement in a MySQL database.
-Let us use the _find_one()_ method to get a document in a database collection.
+Методы *find()* и *findOne()* являются распространенными способами поиска данных в коллекции базы данных MongoDB. Они аналогичны оператору SELECT в базе данных MySQL.
 
-- \*find_one({"\_id": ObjectId("id"}): Gets the first occurrence if an id is not provided
+Давайте воспользуемся методом _find_one()_ для получения документа из коллекции базы данных.
+
+- \*find_one({"\_id": ObjectId("id"}): Если не указан идентификатор, метод find_one() возвращает первое вхождение.
 
 ```py
-# let's import the flask
 from flask import Flask, render_template
-import os # importing operating system module
+import os
 MONGODB_URI = 'mongodb+srv://asabeneh:your_password_goes_here@30daysofpython-twxkr.mongodb.net/test?retryWrites=true&w=majority'
 client = pymongo.MongoClient(MONGODB_URI)
-db = client['thirty_days_of_python'] # accessing the database
+db = client['thirty_days_of_python'] # доступ к базе данных
 student = db.students.find_one()
 print(student)
 
 
 app = Flask(__name__)
 if __name__ == '__main__':
-    # for deployment we use the environ
-    # to make it work for both production and development
     port = int(os.environ.get("PORT", 5000))
     app.run(debug=True, host='0.0.0.0', port=port)
 
@@ -242,24 +234,21 @@ if __name__ == '__main__':
 {'_id': ObjectId('5df68a21f106fe2d315bbc8b'), 'name': 'Asabeneh', 'country': 'Helsinki', 'city': 'Helsinki', 'age': 250}
 ```
 
-The above query returns the first entry but we can target specific document using specific \_id. Let us do one example, use David's id to get David object.
+Вышеуказанный запрос возвращает первую запись, но мы также можем выбрать конкретный документ, используя определенный идентификатор \_id. Давайте рассмотрим пример, где мы используем идентификатор David, чтобы получить объект David.
 '\_id':ObjectId('5df68a23f106fe2d315bbc8c')
 
 ```py
-# let's import the flask
 from flask import Flask, render_template
-import os # importing operating system module
-from bson.objectid import ObjectId # id object
+import os
+from bson.objectid import ObjectId # идентификатор объекта
 MONGODB_URI = 'mongodb+srv://asabeneh:your_password_goes_here@30daysofpython-twxkr.mongodb.net/test?retryWrites=true&w=majority'
 client = pymongo.MongoClient(MONGODB_URI)
-db = client['thirty_days_of_python'] # accessing the database
+db = client['thirty_days_of_python'] # доступ к базе данных
 student = db.students.find_one({'_id':ObjectId('5df68a23f106fe2d315bbc8c')})
 print(student)
 
 app = Flask(__name__)
 if __name__ == '__main__':
-    # for deployment we use the environ
-    # to make it work for both production and development
     port = int(os.environ.get("PORT", 5000))
     app.run(debug=True, host='0.0.0.0', port=port)
 ```
@@ -268,26 +257,23 @@ if __name__ == '__main__':
 {'_id': ObjectId('5df68a23f106fe2d315bbc8c'), 'name': 'David', 'country': 'UK', 'city': 'London', 'age': 34}
 ```
 
-We have seen, how to use _find_one()_ using the above examples. Let's move one to _find()_
+Мы рассмотрели, как использовать метод _find_one()_ в приведенных выше примерах. Перейдем к методу _find()_.
 
-- _find()_: returns all the occurrence from a collection if we don't pass a query object. The object is pymongo.cursor object.
+- Метод _find()_ возвращает все вхождения из коллекции, если мы не передаем объект запроса. Объект, который он возвращает, является объектом типа pymongo.cursor.
 
 ```py
-# let's import the flask
 from flask import Flask, render_template
-import os # importing operating system module
+import os
 
 MONGODB_URI = 'mongodb+srv://asabeneh:your_password_goes_here@30daysofpython-twxkr.mongodb.net/test?retryWrites=true&w=majority'
 client = pymongo.MongoClient(MONGODB_URI)
-db = client['thirty_days_of_python'] # accessing the database
+db = client['thirty_days_of_python'] # доступ к базе данных
 students = db.students.find()
 for student in students:
     print(student)
 
 app = Flask(__name__)
 if __name__ == '__main__':
-    # for deployment we use the environ
-    # to make it work for both production and development
     port = int(os.environ.get("PORT", 5000))
     app.run(debug=True, host='0.0.0.0', port=port)
 ```
@@ -299,24 +285,21 @@ if __name__ == '__main__':
 {'_id': ObjectId('5df68a23f106fe2d315bbc8e'), 'name': 'Sami', 'country': 'Finland', 'city': 'Helsinki', 'age': 25}
 ```
 
-We can specify which fields to return by passing second object in the _find({}, {})_. 0 means not include and 1 means include but we can not mix 0 and 1, except for \_id.
+Мы можем указать, какие поля вернуть, передавая второй объект в метод _find({}, {})._ Значение 0 означает, что поле не будет включено в результат, а значение 1 означает, что поле будет включено. Однако мы не можем комбинировать значения 0 и 1 для одного и того же поля, за исключением поля \_id.
 
 ```py
-# let's import the flask
 from flask import Flask, render_template
-import os # importing operating system module
+import os
 
 MONGODB_URI = 'mongodb+srv://asabeneh:your_password_goes_here@30daysofpython-twxkr.mongodb.net/test?retryWrites=true&w=majority'
 client = pymongo.MongoClient(MONGODB_URI)
-db = client['thirty_days_of_python'] # accessing the database
-students = db.students.find({}, {"_id":0,  "name": 1, "country":1}) # 0 means not include and 1 means include
+db = client['thirty_days_of_python'] # доступ к базе данных
+students = db.students.find({}, {"_id":0,  "name": 1, "country":1}) # Значение 0 означает, что поле не будет включено в результат, а значение 1 означает, что поле будет включено.
 for student in students:
     print(student)
 
 app = Flask(__name__)
 if __name__ == '__main__':
-    # for deployment we use the environ
-    # to make it work for both production and development
     port = int(os.environ.get("PORT", 5000))
     app.run(debug=True, host='0.0.0.0', port=port)
 ```
@@ -328,18 +311,17 @@ if __name__ == '__main__':
 {'name': 'Sami', 'country': 'Finland'}
 ```
 
-### Find with Query
+### Поиск с использованием запроса
 
-In mongoDB find take a query object. We can pass a query object and we can filter the documents we like to filter out.
+В MongoDB метод find() принимает объект запроса (query object). Мы можем передать этот объект запроса для фильтрации документов, которые мы хотим получить.
 
 ```py
-# let's import the flask
 from flask import Flask, render_template
-import os # importing operating system module
+import os
 
 MONGODB_URI = 'mongodb+srv://asabeneh:your_password_goes_here@30daysofpython-twxkr.mongodb.net/test?retryWrites=true&w=majority'
 client = pymongo.MongoClient(MONGODB_URI)
-db = client['thirty_days_of_python'] # accessing the database
+db = client['thirty_days_of_python'] # доступ к базе данных
 
 query = {
     "country":"Finland"
@@ -352,8 +334,6 @@ for student in students:
 
 app = Flask(__name__)
 if __name__ == '__main__':
-    # for deployment we use the environ
-    # to make it work for both production and development
     port = int(os.environ.get("PORT", 5000))
     app.run(debug=True, host='0.0.0.0', port=port)
 ```
@@ -363,17 +343,16 @@ if __name__ == '__main__':
 {'_id': ObjectId('5df68a23f106fe2d315bbc8e'), 'name': 'Sami', 'country': 'Finland', 'city': 'Helsinki', 'age': 25}
 ```
 
-Query with modifiers
+Запросы с модификаторами
 
 ```py
-# let's import the flask
 from flask import Flask, render_template
-import os # importing operating system module
+import os
 import pymongo
 
 MONGODB_URI = 'mongodb+srv://asabeneh:your_password_goes_here@30daysofpython-twxkr.mongodb.net/test?retryWrites=true&w=majority'
 client = pymongo.MongoClient(MONGODB_URI)
-db = client['thirty_days_of_python'] # accessing the database
+db = client['thirty_days_of_python'] # доступ к базе данных
 
 query = {
     "city":"Helsinki"
@@ -385,8 +364,6 @@ for student in students:
 
 app = Flask(__name__)
 if __name__ == '__main__':
-    # for deployment we use the environ
-    # to make it work for both production and development
     port = int(os.environ.get("PORT", 5000))
     app.run(debug=True, host='0.0.0.0', port=port)
 ```
@@ -396,17 +373,16 @@ if __name__ == '__main__':
 {'_id': ObjectId('5df68a23f106fe2d315bbc8e'), 'name': 'Sami', 'country': 'Finland', 'city': 'Helsinki', 'age': 25}
 ```
 
-### Find query with modifier
+### Поиск с использованием модификатора запроса
 
 ```py
-# let's import the flask
 from flask import Flask, render_template
-import os # importing operating system module
+import os
 import pymongo
 
 MONGODB_URI = 'mongodb+srv://asabeneh:your_password_goes_here@30daysofpython-twxkr.mongodb.net/test?retryWrites=true&w=majority'
 client = pymongo.MongoClient(MONGODB_URI)
-db = client['thirty_days_of_python'] # accessing the database
+db = client['thirty_days_of_python'] # доступ к базе данных
 query = {
     "country":"Finland",
     "city":"Helsinki"
@@ -418,8 +394,6 @@ for student in students:
 
 app = Flask(__name__)
 if __name__ == '__main__':
-    # for deployment we use the environ
-    # to make it work for both production and development
     port = int(os.environ.get("PORT", 5000))
     app.run(debug=True, host='0.0.0.0', port=port)
 ```
@@ -429,17 +403,16 @@ if __name__ == '__main__':
 {'_id': ObjectId('5df68a23f106fe2d315bbc8e'), 'name': 'Sami', 'country': 'Finland', 'city': 'Helsinki', 'age': 25}
 ```
 
-Query with modifiers
+Запросы с модификаторами
 
 ```py
-# let's import the flask
 from flask import Flask, render_template
-import os # importing operating system module
+import os
 import pymongo
 
 MONGODB_URI = 'mongodb+srv://asabeneh:your_password_goes_here@30daysofpython-twxkr.mongodb.net/test?retryWrites=true&w=majority'
 client = pymongo.MongoClient(MONGODB_URI)
-db = client['thirty_days_of_python'] # accessing the database
+db = client['thirty_days_of_python'] # доступ к базе данных
 query = {"age":{"$gt":30}}
 students = db.students.find(query)
 for student in students:
@@ -447,8 +420,6 @@ for student in students:
 
 app = Flask(__name__)
 if __name__ == '__main__':
-    # for deployment we use the environ
-    # to make it work for both production and development
     port = int(os.environ.get("PORT", 5000))
     app.run(debug=True, host='0.0.0.0', port=port)
 ```
@@ -459,14 +430,13 @@ if __name__ == '__main__':
 ```
 
 ```py
-# let's import the flask
 from flask import Flask, render_template
-import os # importing operating system module
+import os
 import pymongo
 
 MONGODB_URI = 'mongodb+srv://asabeneh:your_password_goes_here@30daysofpython-twxkr.mongodb.net/test?retryWrites=true&w=majority'
 client = pymongo.MongoClient(MONGODB_URI)
-db = client['thirty_days_of_python'] # accessing the database
+db = client['thirty_days_of_python'] # доступ к базе данных
 query = {"age":{"$gt":30}}
 students = db.students.find(query)
 for student in students:
@@ -478,35 +448,33 @@ for student in students:
 {'_id': ObjectId('5df68a23f106fe2d315bbc8e'), 'name': 'Sami', 'country': 'Finland', 'city': 'Helsinki', 'age': 25}
 ```
 
-### Limiting documents
+### Ограничение документов
 
-We can limit the number of documents we return using the _limit()_ method.
+Мы можем ограничить количество возвращаемых документов с помощью метода _limit()_.
 
 ```py
-# let's import the flask
 from flask import Flask, render_template
-import os # importing operating system module
+import os
 import pymongo
 
 MONGODB_URI = 'mongodb+srv://asabeneh:your_password_goes_here@30daysofpython-twxkr.mongodb.net/test?retryWrites=true&w=majority'
 client = pymongo.MongoClient(MONGODB_URI)
-db = client['thirty_days_of_python'] # accessing the database
+db = client['thirty_days_of_python']
 db.students.find().limit(3)
 ```
 
-### Find with sort
+### Поиск с сортировкой
 
-By default, sort is in ascending order. We can change the sorting to descending order by adding -1 parameter.
+По умолчанию сортировка происходит в порялке возрастания. Чтобы изменить сортировку на порядок убывания, можно добавить параметр -1.
 
 ```py
-# let's import the flask
 from flask import Flask, render_template
-import os # importing operating system module
+import os
 import pymongo
 
 MONGODB_URI = 'mongodb+srv://asabeneh:your_password_goes_here@30daysofpython-twxkr.mongodb.net/test?retryWrites=true&w=majority'
 client = pymongo.MongoClient(MONGODB_URI)
-db = client['thirty_days_of_python'] # accessing the database
+db = client['thirty_days_of_python'] # доступ к базе данных
 students = db.students.find().sort('name')
 for student in students:
     print(student)
@@ -526,13 +494,11 @@ for student in students:
 
 app = Flask(__name__)
 if __name__ == '__main__':
-    # for deployment we use the environ
-    # to make it work for both production and development
     port = int(os.environ.get("PORT", 5000))
     app.run(debug=True, host='0.0.0.0', port=port)
 ```
 
-Ascending order
+Порядок возрастания
 
 ```sh
 {'_id': ObjectId('5df68a21f106fe2d315bbc8b'), 'name': 'Asabeneh', 'country': 'Finland', 'city': 'Helsinki', 'age': 250}
@@ -541,7 +507,7 @@ Ascending order
 {'_id': ObjectId('5df68a23f106fe2d315bbc8e'), 'name': 'Sami', 'country': 'Finland', 'city': 'Helsinki', 'age': 25}
 ```
 
-Descending order
+Порядок убывания
 
 ```sh
 {'_id': ObjectId('5df68a23f106fe2d315bbc8e'), 'name': 'Sami', 'country': 'Finland', 'city': 'Helsinki', 'age': 25}
@@ -550,34 +516,31 @@ Descending order
 {'_id': ObjectId('5df68a21f106fe2d315bbc8b'), 'name': 'Asabeneh', 'country': 'Finland', 'city': 'Helsinki', 'age': 250}
 ```
 
-### Update with query
+### Обновление с использованием запроса
 
-We will use *update_one()* method to update one item. It takes two object one is a query and the second is the new object.
-The first person, Asabeneh got a very implausible age. Let us update Asabeneh's age.
+Мы будем использовать метод update_one() для обновления одного элемента. Он принимает два объекта: запрос (query) и новый объект (new object).
+Предположим, что первый человек, Asabeneh, имеет очень неправдоподобный возраст. Давайте обновим возраст Asabeneh.
 
 ```py
-# let's import the flask
 from flask import Flask, render_template
-import os # importing operating system module
+import os
 import pymongo
 
 MONGODB_URI = 'mongodb+srv://asabeneh:your_password_goes_here@30daysofpython-twxkr.mongodb.net/test?retryWrites=true&w=majority'
 client = pymongo.MongoClient(MONGODB_URI)
-db = client['thirty_days_of_python'] # accessing the database
+db = client['thirty_days_of_python'] # доступ к базе данных
 
 query = {'age':250}
 new_value = {'$set':{'age':38}}
 
 db.students.update_one(query, new_value)
-# lets check the result if the age is modified
+# давайте проверим результат, чтобы убедиться, что возраст был изменен
 for student in db.students.find():
     print(student)
 
 
 app = Flask(__name__)
 if __name__ == '__main__':
-    # for deployment we use the environ
-    # to make it work for both production and development
     port = int(os.environ.get("PORT", 5000))
     app.run(debug=True, host='0.0.0.0', port=port)
 ```
@@ -589,37 +552,34 @@ if __name__ == '__main__':
 {'_id': ObjectId('5df68a23f106fe2d315bbc8e'), 'name': 'Sami', 'country': 'Finland', 'city': 'Helsinki', 'age': 25}
 ```
 
-When we want to update many documents at once we use *upate_many()* method.
+Когда нам нужно обновить несколько документов одновременно, мы используем метод *update_many()*.
 
-### Delete Document
+### Удаление документа
 
-The method *delete_one()* deletes one document. The *delete_one()* takes a query object parameter. It only removes the first occurrence.
-Let us remove one John from the collection.
+Метод *delete_one()* удаляет один документ. Он принимает объект запроса в качестве параметра. Этот метод удаляет только первое вхождение документа, удовлетворяющего запросу.
+Давайте удалим одного студента по имени John из коллекции.
 
 ```py
-# let's import the flask
 from flask import Flask, render_template
-import os # importing operating system module
+import os
 import pymongo
 
 MONGODB_URI = 'mongodb+srv://asabeneh:your_password_goes_here@30daysofpython-twxkr.mongodb.net/test?retryWrites=true&w=majority'
 client = pymongo.MongoClient(MONGODB_URI)
-db = client['thirty_days_of_python'] # accessing the database
+db = client['thirty_days_of_python'] # доступ к базе данных
 
 query = {'name':'John'}
 db.students.delete_one(query)
 
 for student in db.students.find():
     print(student)
-# lets check the result if the age is modified
+# давайте проверим результат 
 for student in db.students.find():
     print(student)
 
 
 app = Flask(__name__)
 if __name__ == '__main__':
-    # for deployment we use the environ
-    # to make it work for both production and development
     port = int(os.environ.get("PORT", 5000))
     app.run(debug=True, host='0.0.0.0', port=port)
 ```
@@ -630,30 +590,27 @@ if __name__ == '__main__':
 {'_id': ObjectId('5df68a23f106fe2d315bbc8e'), 'name': 'Sami', 'country': 'Finland', 'city': 'Helsinki', 'age': 25}
 ```
 
-As you can see John has been removed from the collection.
+Как вы можете видеть, John был удален из коллекции.
 
-When we want to delete many documents we use *delete_many()* method, it takes a query object. If we pass an empty query object to *delete_many({})* it will delete all the documents in the collection.
+Когда нам нужно удалить несколько документов одновременно, мы используем метод *delete_many()*. Он принимает объект запроса в качестве параметра. Если мы передадим пустой объект запроса *delete_many({})*, то будут удалены все документы в коллекции.
 
-### Drop a collection
+### Удаление коллекции
 
-Using the _drop()_ method we can delete a collection from a database.
+С помощью метода _drop()_ мы можем удалить коллекцию из базы данных.
 
 ```py
-# let's import the flask
 from flask import Flask, render_template
-import os # importing operating system module
+import os
 import pymongo
 
 MONGODB_URI = 'mongodb+srv://asabeneh:your_password_goes_here@30daysofpython-twxkr.mongodb.net/test?retryWrites=true&w=majority'
 client = pymongo.MongoClient(MONGODB_URI)
-db = client['thirty_days_of_python'] # accessing the database
+db = client['thirty_days_of_python'] # доступ к базе данных
 db.students.drop()
 ```
 
-Now, we have deleted the students collection from the database.
+Теперь мы удалили коллекцию "students" из базы данных.
 
-## 💻 Exercises: Day 27
+🎉 ПОЗДРАВЛЯЕМ ! 🎉
 
-🎉 CONGRATULATIONS ! 🎉
-
-[<< Day 26](../26_Day_Python_web/26_python_web.md) | [Day 28 >>](../28_Day_API/28_API.md)
+[<< День 26](../26_Day_Python_web/26_python_web.md) | [День 28 >>](../28_Day_API/28_API.md)
