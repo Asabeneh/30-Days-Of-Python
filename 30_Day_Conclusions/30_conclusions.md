@@ -1,6 +1,6 @@
 <div align="center">
 
-  <h1> 30 Days Of Python: Day 30- Conclusions</h1>
+  <h1> 30 дней Python: День 30 - Выводы</h1>
   <a class="header-badge" target="_blank" href="https://www.linkedin.com/in/asabeneh/">
   <img src="https://img.shields.io/badge/style--5eba00.svg?label=LinkedIn&logo=linkedin&style=social">
   </a>
@@ -16,25 +16,24 @@
 
 </div>
 
-[<< Day 29](../29_Day_Building_API/29_building_API.md)
+[<< День 29](../29_Day_Building_API/29_building_API.md)
 ![30DaysOfPython](../images/30DaysOfPython_banner3@2x.png)
 
-- [Day 30](#day-30)
-  - [Conclusions](#conclusions)
+- [День 30](#день-30)
+  - [Выводы](#выводы)
 
-# Day 30
+# День 30
 
 
-## Conclusions
+## Выводы
 
-In the process of preparing this material I  have learned quite a lot and you have inspired me to do more. Congratulations for making it to this level. If you have done all the exercise and the projects, now you are capable to go to  a data analysis, data science, machine learning or web development paths. [Support the author for more educational materials](https://www.paypal.com/paypalme/asabeneh).
+В процессе подготовки этого материала я узнал очень много, и вы вдохновили меня на дальнейшие достижения. Поздравляю с достижением этого уровня! Если вы выполнили все упражнения и проекты, представленные в этом курсе, то теперь вы готовы к работе в областях анализа данных, науки о данных, машинного обучения или веб-разработки
+[Вы можете поддержать автора, чтобы он мог создать еще больше образовательных материалов.](https://www.paypal.com/paypalme/asabeneh)
 
-## Testimony
-Now it is time to express your thoughts about the Author and 30DaysOfPyhton. You can leave your testimonial on this [link](https://testimonial-vdzd.onrender.com/)
+## Отзыв
+Вы можете оставить свой отзыв о об Авторе и проекте 30DaysOfPython, пройдя по этой [ссылке](https://testimonial-vdzd.onrender.com/)
 
-GIVE FEEDBACK:
-http://thirtydayofpython-api.herokuapp.com/feedback
 
-🎉 CONGRATULATIONS ! 🎉
+🎉 ПОЗДРАВЛЯЕМ ! 🎉
 
-[<< Day 29](../29_Day_Building_API/29_building_API.md)
+[<< День 29](../29_Day_Building_API/29_building_API.md)
