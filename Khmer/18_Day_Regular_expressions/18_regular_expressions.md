@@ -126,11 +126,11 @@ substring = txt[start:end]
 print(substring)       # បាន first
 ```
 
-As you can see, search is much better than match because it can look for the pattern throughout the text. Search returns a match object with a first match that was found, otherwise it returns _None_. A much better *re* function is *findall*. This function checks for the pattern through the whole string and returns all the matches as a list.
+ដូចដែលអ្នកអាចមើលបាន search គឺល្អជាង match ព្រោះវាអាចស្វែងរកគំរូនៅទូទាំងអត្ថបទ។ Search ផ្តល់ object match ជាមួយនឹង match ដំបូងដែលត្រូវបានរកឃើញ បើមិនដូច្នោះទេវានឹងផ្ដល់ _None_ ។ function *re* ល្អជាងគឺ *findall*។ function នេះរួតពិនិត្យសម្រាប់គំរូក្នុង string ទាំងមូលនិងត្រឡប់មក match ទាំងអស់ជា list។
 
 #### Searching for All Matches Using *findall*
 
-*findall()* returns all the matches as a list
+*findall()* ត្រឡប់មក match ទាំងអស់ជា list
 
 ```py
 txt = '''Python is the most beautiful language that a human being has ever created.
@@ -141,8 +141,8 @@ matches = re.findall('language', txt, re.I)
 print(matches)  # ['language', 'language']
 ```
 
-As you can see, the word *language* was found two times in the string. Let us practice some more.
-Now we will look for both Python and python words in the string:
+ដូចដែលអ្នកអាចមើលបាន ពាក្យ "language" ត្រូវបានរកឃើញពីរដងនៅក្នុង string ។
+ឥឡូវយើងនឹងរកពាក្យ Python និង python ទាំងពីរនៅក្នុង string:
 
 ```py
 txt = '''Python is the most beautiful language that a human being has ever created.
@@ -154,7 +154,7 @@ print(matches)  # ['Python', 'python']
 
 ```
 
-Since we are using *re.I* both lowercase and uppercase letters are included. If we do not have the re.I flag, then we will have to write our pattern differently. Let us check it out:
+ដោយសារយើងប្រើ *re.I* ទាំងអក្សរតូច និងអក្សរធំ ត្រូវបានបញ្ចូល។ បើសិនជាយើងគ្មាន re,I, នោះយើងនឹងត្រូវសរសេរគំរូរបស់យើងខុសពីមុន។ សូមយើងមើល:
 
 ```py
 txt = '''Python is the most beautiful language that a human being has ever created.
@@ -182,7 +182,7 @@ match_replaced = re.sub('[Pp]ython', 'JavaScript', txt, re.I)
 print(match_replaced)  # JavaScript is the most beautiful language that a human being has ever created.
 ```
 
-Let us add one more example. The following string is really hard to read unless we remove the % symbol. Replacing the % with an empty string will clean the text.
+សូមយើងបន្ថែមឧទាហរណ៍មួយទៀត។ String ទាំងនេះពិតជាពិបាកក្នុងការអានលើកលែងតែយើងលុបសញ្ញា % ចេញ។
 
 ```py
 
@@ -208,7 +208,7 @@ txt = '''I am teacher and  I love teaching.
 There is nothing as rewarding as educating and empowering people.
 I found teaching more interesting than any other jobs.
 Does this motivate you to be a teacher?'''
-print(re.split('\n', txt)) # splitting using \n - end of line symbol
+print(re.split('\n', txt)) # ការបំបែក ដោយប្រើ \n - end of line symbol
 ```
 
 ```sh
@@ -217,8 +217,7 @@ print(re.split('\n', txt)) # splitting using \n - end of line symbol
 
 ## Writing RegEx Patterns
 
-To declare a string variable we use a single or double quote. To declare RegEx variable *r''*.
-The following pattern only identifies apple with lowercase, to make it case insensitive either we should rewrite our pattern or we should add a flag.  
+ដើម្បីបង្កើត string variable, យើងប្រើ single ឬ double quote។ ដើម្បីបង្កើត RegEx variable *r''*។ គំរូខាងក្រោមនេះបង្ហាញថា Apple មានអក្សរតូចប៉ុណ្ណោះ ដើម្បីធ្វើឱ្យវាមិនខ្វល់អក្សរតូចឬធំ យើងត្រូវសរសេរគំរូថ្មី ឬយើងត្រូវបន្ថែម flag។
 
 ```py
 import re
@@ -237,54 +236,55 @@ matches = re.findall(regex_pattern, txt)
 print(matches)  # ['Apple', 'apple']
 
 ```
-* []:  A set of characters
-  * [a-c] means, a or b or c
-  * [a-z] means, any letter from a to z
-  * [A-Z] means, any character from A to Z
-  * [0-3] means, 0 or 1 or 2 or 3
-  * [0-9] means any number from 0 to 9
-  * [A-Za-z0-9] any single character, that is a to z, A to Z or 0 to 9
-* \\:  uses to escape special characters
-  * \d means: match where the string contains digits (numbers from 0-9)
-  * \D means: match where the string does not contain digits
-* . : any character except new line character(\n)
-* ^: starts with
-  * r'^substring' eg r'^love', a sentence that starts with a word love
-  * r'[^abc] means not a, not b, not c.
-* $: ends with
-  * r'substring$' eg r'love$', sentence  that ends with a word love
-* *: zero or more times
-  * r'[a]*' means a optional or it can occur many times.
-* +: one or more times
-  * r'[a]+' means at least once (or more)
-* ?: zero or one time
-  *  r'[a]?' means zero times or once
-* {3}: Exactly 3 characters
-* {3,}: At least 3 characters
-* {3,8}: 3 to 8 characters
-* |: Either or
-  * r'apple|banana' means either apple or a banana
-* (): Capture and group
+
+- []:  set នៃអក្សរ
+  * [a-c] មានន័យ, a ឬ b ឬ c
+  * [a-z] មានន័យ, អក្សរណាមួយពី a ទៅ z
+  * [A-Z] មានន័យ, អក្សរណាមួយពី A ទៅ Z
+  * [0-3] មានន័យ, 0 ឬ 1 ឬ 2 ឬ 3
+  * [0-9] មានន័យ លេខណាមួយពី 0 ទៅ 9
+  * [A-Za-z0-9] អក្សរតែមួយតង់, នេះគឺ a ទៅ z, A ទៅ Z ឬ 0 ទៅ 9
+* \\:  ប្រើទៅ escape special characters
+  * \d មានន័យ: match ដែល string មានលេខ (លេខពី 0-9)
+  * \D មានន័យ: match ដែល string មិនមានលេខ
+* . : អក្សរណាមួយ លើកលែងតែ new line character(\n)
+* ^: ចាប់ផ្តើមដោយ
+  * r'^substring' eg r'^love', ប្រយោគដែលចាប់ផ្តើមដោយពាក្យថា "love"
+  * r'[^abc] មានន័យ មិនមែនជា a, មិនមែនជា b, មិនមែនជា c.
+* $: បញ្ចប់ដោយ
+  * r'substring$' eg r'love$', ប្រយោគដែលបញ្ចប់ដោយពាក្យថា "love"
+* *: សូន្យ ឬ ច្រើនដងទៀត
+  * r'[a]*' មានន័យ ជាជម្រើស ឬ វាអាចកើតឡើងច្រើនដង
+* +: មួយ ឬ ច្រើនដងទៀត
+  * r'[a]+' មានន័យ យ៉ាងហោចណាស់ម្តង (ឬ ច្រើនទៀត)
+* ?: សូន្យ ឬ មួយដង
+  *  r'[a]?' មានន័យ សូន្យដង ឬ ម្តង
+* {3}: 3 តួអក្សរ
+* {3,}: យ៉ាងហោចណាស់ 3 តួអក្សរ
+* {3,8}: ពី 3 ទៅ 8 តួអក្សរ
+* |: ឬក៏
+  * r'apple|banana' មានន័យថា apple ឬ banana
+* (): ចាប់យកនិងដាក់ក្រុម
 
 ![Regular Expression cheat sheet](../images/regex.png)
 
-Let us use examples to clarify the meta characters above 
+សូមយើងប្រើឧទាហរណ៍ដើម្បីយល់ meta characters ខាងលើ
 
 ### Square Bracket
 
-Let us use square bracket to include lower and upper case
+យើងត្រូវប្រើតង្កៀបដើម្បីបញ្ចូលអក្សរតូច និងធំ
 
 ```py
-regex_pattern = r'[Aa]pple' # this square bracket mean either A or a
+regex_pattern = r'[Aa]pple' # តង្កៀបនេះមានន័យថា A ឬ a
 txt = 'Apple and banana are fruits. An old cliche says an apple a day a doctor way has been replaced by a banana a day keeps the doctor far far away.'
 matches = re.findall(regex_pattern, txt)
 print(matches)  # ['Apple', 'apple']
 ```
 
-If we want to look for the banana, we write the pattern as follows:
+ប្រសិនបើយើងចង់ស្វែងរក banana យើងសរសេរគំរូដូចខាងក្រោម:
 
 ```py
-regex_pattern = r'[Aa]pple|[Bb]anana' # this square bracket means either A or a
+regex_pattern = r'[Aa]pple|[Bb]anana' # តង្កៀបនេះមានន័យថា A ឬ a
 txt = 'Apple and banana are fruits. An old cliche says an apple a day a doctor way has been replaced by a banana a day keeps the doctor far far away.'
 matches = re.findall(regex_pattern, txt)
 print(matches)  # ['Apple', 'banana', 'apple', 'banana']
@@ -295,7 +295,7 @@ Using the square bracket and or operator , we manage to extract Apple, apple, Ba
 ### Escape character(\\) in RegEx
 
 ```py
-regex_pattern = r'\d'  # d is a special character which means digits
+regex_pattern = r'\d'  # d គឺជាតួរអក្សរពិសេស ដែលមានន័យថាលេខ
 txt = 'This regular expression example was made on December 6,  2019 and revised on July 8, 2021'
 matches = re.findall(regex_pattern, txt)
 print(matches)  # ['6', '2', '0', '1', '9', '8', '2', '0', '2', '1'], this is not what we want
@@ -304,28 +304,28 @@ print(matches)  # ['6', '2', '0', '1', '9', '8', '2', '0', '2', '1'], this is no
 ### One or more times(+)
 
 ```py
-regex_pattern = r'\d+'  # d is a special character which means digits, + mean one or more times
+regex_pattern = r'\d+'  # d គឺជាតួរអក្សរពិសេស ដែលមានន័យថាលេខ, + មានន័យថាមួយ ឬច្រើនដង
 txt = 'This regular expression example was made on December 6,  2019 and revised on July 8, 2021'
 matches = re.findall(regex_pattern, txt)
-print(matches)  # ['6', '2019', '8', '2021'] - now, this is better!
+print(matches)  # ['6', '2019', '8', '2021'] - ឥឡូវនេះវាប្រសើរជាង!
 ```
 
 ### Period(.)
 
 ```py
-regex_pattern = r'[a].'  # this square bracket means a and . means any character except new line
+regex_pattern = r'[a].'  # តង្កៀបនេះមានន័យថា a និង . មានន័យថាតួអក្សរណាមួយ លើកលែងតែបន្ទាត់ថ្មី។
 txt = '''Apple and banana are fruits'''
 matches = re.findall(regex_pattern, txt)
 print(matches)  # ['an', 'an', 'an', 'a ', 'ar']
 
-regex_pattern = r'[a].+'  # . any character, + any character one or more times 
+regex_pattern = r'[a].+'  # . តួអក្សរទាំងអស់, + តួអក្សរណាមួយម្តង ឬច្រើនដង
 matches = re.findall(regex_pattern, txt)
 print(matches)  # ['and banana are fruits']
 ```
 
 ### Zero or more times(\*)
 
-Zero or many times. The pattern could may not occur or it can occur many times.
+Zero or many times. អាចនឹងមិនកើតឡើង ឬវាអាចកើតឡើងច្រើនដង។
 
 ```py
 regex_pattern = r'[a].*'  # . any character, * any character zero or more times 
@@ -336,12 +336,12 @@ print(matches)  # ['and banana are fruits']
 
 ### Zero or one time(?)
 
-Zero or one time. The pattern may not occur or it may occur once.
+Zero or one time. ប្រហែលជាមិនកើតឡើង ឬវាអាចកើតឡើងតែម្តង។
 
 ```py
 txt = '''I am not sure if there is a convention how to write the word e-mail.
 Some people write it as email others may write it as Email or E-mail.'''
-regex_pattern = r'[Ee]-?mail'  # ? means here that '-' is optional
+regex_pattern = r'[Ee]-?mail'  # ? មានន័យថានៅទីនេះ '-' គឺមិនចាំបាច់
 matches = re.findall(regex_pattern, txt)
 print(matches)  # ['e-mail', 'email', 'Email', 'E-mail']
 ```
@@ -352,23 +352,23 @@ We can specify the length of the substring we are looking for in a text, using a
 
 ```py
 txt = 'This regular expression example was made on December 6,  2019 and revised on July 8, 2021'
-regex_pattern = r'\d{4}'  # exactly four times
+regex_pattern = r'\d{4}'  # ៤ដង
 matches = re.findall(regex_pattern, txt)
 print(matches)  # ['2019', '2021']
 
 txt = 'This regular expression example was made on December 6,  2019 and revised on July 8, 2021'
-regex_pattern = r'\d{1, 4}'   # 1 to 4
+regex_pattern = r'\d{1, 4}'   # 1 ទៅ 4
 matches = re.findall(regex_pattern, txt)
 print(matches)  # ['6', '2019', '8', '2021']
 ```
 
 ### Cart ^
 
-* Starts with
+* ចាប់ផ្តើមដោយ
   
 ```py
 txt = 'This regular expression example was made on December 6,  2019 and revised on July 8, 2021'
-regex_pattern = r'^This'  # ^ means starts with
+regex_pattern = r'^This'  # ^ មានន៏យថា ចាប់ផ្តើមដោយ
 matches = re.findall(regex_pattern, txt)
 print(matches)  # ['This']
 ```
@@ -377,7 +377,7 @@ print(matches)  # ['This']
 
 ```py
 txt = 'This regular expression example was made on December 6,  2019 and revised on July 8, 2021'
-regex_pattern = r'[^A-Za-z ]+'  # ^ in set character means negation, not A to Z, not a to z, no space
+regex_pattern = r'[^A-Za-z ]+'  # ^ ក្នុង set character មានន៏យថា negation, មិនមែន A ទៅ Z, មិនមែន a ទៅ z, គ្មានដកគ្លា
 matches = re.findall(regex_pattern, txt)
 print(matches)  # ['6,', '2019', '8', '2021']
 ```
