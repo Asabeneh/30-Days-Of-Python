@@ -1,5 +1,5 @@
 <div align="center">
-  <h1> 30 Days Of Python: Day 8 - Dictionaries</h1>
+  <h1> 30 дней Python: День 8 - Словари </h1>
   <a class="header-badge" target="_blank" href="https://www.linkedin.com/in/asabeneh/">
   <img src="https://img.shields.io/badge/style--5eba00.svg?label=LinkedIn&logo=linkedin&style=social">
   </a>
@@ -14,45 +14,45 @@
 
 </div>
 
-[<< Day 7 ](../07_Day_Sets/07_sets.md) | [Day 9 >>](../09_Day_Conditionals/09_conditionals.md)
+[<< День 7 ](../07_Day_Sets/07_sets.md) | [День 9 >>](../09_Day_Conditionals/09_conditionals.md)
 
 ![30DaysOfPython](../images/30DaysOfPython_banner3@2x.png)
 
-- [📘 Day 8](#-day-8)
-  - [Dictionaries](#dictionaries)
-    - [Creating a Dictionary](#creating-a-dictionary)
-    - [Dictionary Length](#dictionary-length)
-    - [Accessing Dictionary Items](#accessing-dictionary-items)
-    - [Adding Items to a Dictionary](#adding-items-to-a-dictionary)
-    - [Modifying Items in a Dictionary](#modifying-items-in-a-dictionary)
-    - [Checking Keys in a Dictionary](#checking-keys-in-a-dictionary)
-    - [Removing Key and Value Pairs from a Dictionary](#removing-key-and-value-pairs-from-a-dictionary)
-    - [Changing Dictionary to a List of Items](#changing-dictionary-to-a-list-of-items)
-    - [Clearing a Dictionary](#clearing-a-dictionary)
-    - [Deleting a Dictionary](#deleting-a-dictionary)
-    - [Copy a Dictionary](#copy-a-dictionary)
-    - [Getting Dictionary Keys as a List](#getting-dictionary-keys-as-a-list)
-    - [Getting Dictionary Values as a List](#getting-dictionary-values-as-a-list)
-  - [💻 Exercises: Day 8](#-exercises-day-8)
+- [День 8](#день-8)
+  - [Словари](#словари)
+    - [Создание словаря](#создание-словаря)
+    - [Длина словаря](#длина-словаря)
+    - [Доступ к элементам словаря](#доступ-к-элементам-словаря)
+    - [Добавление элементов в словарь](#добавление-элементов-в-словарь)
+    - [Изменение элементов в словаре](#изменение-элементов-в-словаре)
+    - [Проверка ключей в словаре](#проверка-ключей-в-словаре)
+    - [Удаление пары ключ-значение из словаря](#удаление-пары-ключ-значение-из-словаря)
+    - [Преобразование словаря в список элементов](#преобразование-словаря-в-список-элементов)
+    - [Очистка словаря](#очистка-словаря)
+    - [Удаление словаря](#удаление-словаря)
+    - [Копирование словаря](#копирование-словаря)
+    - [Получение ключей словаря в виде списка](#получение-ключей-словаря-в-виде-списка)
+    - [Получение значений словаря в виде списка](#получение-значений-словаря-в-виде-списка)
+  - [Упражнения: День 8](#упражнения-день-8)
 
-# 📘 Day 8
+# День 8
 
-## Dictionaries
+## Словари
 
-A dictionary is a collection of unordered, modifiable(mutable) paired (key: value) data type.
+Словарь - это коллекция неупорядоченных, изменяемых (mutable) пар (ключ: значение) типов данных.
 
-### Creating a Dictionary
+### Создание словаря
 
-To create a dictionary we use curly brackets, {} or the *dict()* built-in function.
+Для создания словаря в Python мы используем фигурные скобки {} или встроенную функцию *dict()*.
 
 ```py
-# syntax
+# синтаксис
 empty_dict = {}
-# Dictionary with data values
+# создание словаря со значениями
 dct = {'key1':'value1', 'key2':'value2', 'key3':'value3', 'key4':'value4'}
 ```
 
-**Example:**
+**Например:**
 
 ```py
 person = {
@@ -69,19 +69,19 @@ person = {
     }
 ```
 
-The dictionary above shows that a value could be any data types:string, boolean, list, tuple, set or a dictionary.
+Вышеуказанный словарь показывает, что значение в словаре может быть любым типом данных: строкой, булевым значением, списком, кортежем, множеством или другим словарем.
 
-### Dictionary Length
+### Длина словаря
 
-It checks the number of 'key: value' pairs in the dictionary.
+Функция *len()* возвращает количество пар "ключ: значение" в словаре.
 
 ```py
-# syntax
+# синтаксис
 dct = {'key1':'value1', 'key2':'value2', 'key3':'value3', 'key4':'value4'}
 print(len(dct)) # 4
 ```
 
-**Example:**
+**Например:**
 
 ```py
 person = {
@@ -100,18 +100,18 @@ print(len(person)) # 7
 
 ```
 
-### Accessing Dictionary Items
+### Доступ к элементам словаря
 
-We can access Dictionary items by referring to its key name.
+Мы можем получить доступ к элементам словаря, обратившись к ним по имени ключа.
 
 ```py
-# syntax
+# синтаксис
 dct = {'key1':'value1', 'key2':'value2', 'key3':'value3', 'key4':'value4'}
 print(dct['key1']) # value1
 print(dct['key4']) # value4
 ```
 
-**Example:**
+**Например:**
 
 ```py
 person = {
@@ -134,7 +134,10 @@ print(person['address']['street']) # Space street
 print(person['city'])       # Error
 ```
 
-Accessing an item by key name raises an error if the key does not exist. To avoid this error first we have to check if a key exist or we can use the _get_ method. The get method returns None, which is a NoneType object data type, if the key does not exist.
+Доступ к элементу по имени ключа вызовет ошибку, если ключа не существует. Чтобы избежать этой ошибки, мы должны сначала проверить, существует ли ключ, или мы можем использовать метод _get()_. Метод _get()_ возвращает *None* (является объектом типа NoneType), если ключа не существует.
+
+**Например:**
+
 ```py
 person = {
     'first_name':'Asabeneh',
@@ -154,17 +157,17 @@ print(person.get('skills')) #['HTML','CSS','JavaScript', 'React', 'Node', 'Mongo
 print(person.get('city'))   # None
 ```
 
-### Adding Items to a Dictionary
+### Добавление элементов в словарь
 
-We can add new key and value pairs to a dictionary
+Мы можем добавлять новые пары "ключ: значение" в словарь.
 
 ```py
-# syntax
+# sсинтаксис
 dct = {'key1':'value1', 'key2':'value2', 'key3':'value3', 'key4':'value4'}
 dct['key5'] = 'value5'
 ```
 
-**Example:**
+**Например:**
 
 ```py
 person = {
@@ -184,9 +187,9 @@ person['skills'].append('HTML')
 print(person)
 ```
 
-### Modifying Items in a Dictionary
+### Изменение элементов в словаре
 
-We can modify items in a dictionary
+Мы можем изменять элементы в словаре.
 
 ```py
 # syntax
@@ -194,7 +197,7 @@ dct = {'key1':'value1', 'key2':'value2', 'key3':'value3', 'key4':'value4'}
 dct['key1'] = 'value-one'
 ```
 
-**Example:**
+**Например:**
 
 ```py
 person = {
@@ -213,33 +216,33 @@ person['first_name'] = 'Eyob'
 person['age'] = 252
 ```
 
-### Checking Keys in a Dictionary
+### Проверка ключей в словаре
 
-We use the _in_ operator to check if a key exist in a dictionary
+Используем оператор _in_ для проверки существования ключа в словаре. 
 
 ```py
-# syntax
+# синтаксис
 dct = {'key1':'value1', 'key2':'value2', 'key3':'value3', 'key4':'value4'}
 print('key2' in dct) # True
 print('key5' in dct) # False
 ```
 
-### Removing Key and Value Pairs from a Dictionary
+### Удаление пары ключ-значение из словаря
 
-- _pop(key)_: removes the item with the specified key name:
-- _popitem()_: removes the last item
-- _del_: removes an item with specified key name
+- _pop(key)_: удаляет элемент с указанным именем ключа:
+- _popitem()_: удаляет последний элемент
+- _del_: удаляет элемент с указанным именем ключа
 
 ```py
-# syntax
+# синтаксис
 dct = {'key1':'value1', 'key2':'value2', 'key3':'value3', 'key4':'value4'}
-dct.pop('key1') # removes key1 item
+dct.pop('key1') # удаляет элемент с ключом 'key1'
 dct = {'key1':'value1', 'key2':'value2', 'key3':'value3', 'key4':'value4'}
-dct.popitem() # removes the last item
-del dct['key2'] # removes key2 item
+dct.popitem() # удаляет последний элемент
+del dct['key2'] # удаляет элемент с ключом 'key2'
 ```
 
-**Example:**
+**Например:**
 
 ```py
 person = {
@@ -254,89 +257,89 @@ person = {
         'zipcode':'02210'
     }
     }
-person.pop('first_name')        # Removes the firstname item
-person.popitem()                # Removes the address item
-del person['is_married']        # Removes the is_married item
+person.pop('first_name')        # Удаляет элемент с именем "firstname"
+person.popitem()                # Удаляет элемент с именем "address"
+del person['is_married']        # Удаляет элемент с именем "is_married"
 ```
 
-### Changing Dictionary to a List of Items
+### Преобразование словаря в список элементов
 
-The _items()_ method changes dictionary to a list of tuples.
+Метод _items()_ преобразует словарь в список кортежей.
 
 ```py
-# syntax
+# синтаксис
 dct = {'key1':'value1', 'key2':'value2', 'key3':'value3', 'key4':'value4'}
 print(dct.items()) # dict_items([('key1', 'value1'), ('key2', 'value2'), ('key3', 'value3'), ('key4', 'value4')])
 ```
 
-### Clearing a Dictionary
+### Очистка словаря
 
-If we don't want the items in a dictionary we can clear them using _clear()_ method
+Если мы не хотим оставлять элементы в словаре, мы можем очистить его, используя метод _clear()_.
 
 ```py
-# syntax
+# синтаксис
 dct = {'key1':'value1', 'key2':'value2', 'key3':'value3', 'key4':'value4'}
 print(dct.clear()) # None
 ```
 
-### Deleting a Dictionary
+### Удаление словаря
 
-If we do not use the dictionary we can delete it completely
+Если мы больше не используем словарь, мы можем полностью удалить его с помощью оператора del.
 
 ```py
-# syntax
+# синтаксис
 dct = {'key1':'value1', 'key2':'value2', 'key3':'value3', 'key4':'value4'}
 del dct
 ```
 
-### Copy a Dictionary
+### Копирование словаря
 
-We can copy a dictionary using a _copy()_ method. Using copy we can avoid mutation of the original dictionary.
+Мы можем скопировать словарь с помощью метода _copy()_. Используя копию, мы можем избежать изменения исходного словаря.
 
 ```py
-# syntax
+# синтаксис
 dct = {'key1':'value1', 'key2':'value2', 'key3':'value3', 'key4':'value4'}
 dct_copy = dct.copy() # {'key1':'value1', 'key2':'value2', 'key3':'value3', 'key4':'value4'}
 ```
 
-### Getting Dictionary Keys as a List
+### Получение ключей словаря в виде списка
 
-The _keys()_ method gives us all the keys of a a dictionary as a list.
+Метод _keys()_ позволяет получить все ключи словаря в виде списка.
 
 ```py
-# syntax
+# синтаксис
 dct = {'key1':'value1', 'key2':'value2', 'key3':'value3', 'key4':'value4'}
 keys = dct.keys()
 print(keys)     # dict_keys(['key1', 'key2', 'key3', 'key4'])
 ```
 
-### Getting Dictionary Values as a List
+### Получение значений словаря в виде списка
 
-The _values_ method gives us all the values of a a dictionary as a list.
+Метод _values()_ позволяет получить все значения словаря в виде списка
 
 ```py
-# syntax
+# синтаксис
 dct = {'key1':'value1', 'key2':'value2', 'key3':'value3', 'key4':'value4'}
 values = dct.values()
 print(values)     # dict_values(['value1', 'value2', 'value3', 'value4'])
 ```
 
-🌕 You are astonishing. Now, you are super charged with the power of dictionaries. You have just completed day 8 challenges and you are 8 steps a head in to your way to greatness. Now do some exercises for your brain and  muscles.
+🌕 Вы просто великолепны! Теперь вы обладаете непревзойденной мощью словарей. Вы только что успешно выполнили задания восьмого дня и находитесь на 8 шагов впереди, двигаясь по пути к великолепию. Теперь давайте сделаем несколько упражнений для вашего ума и мышц.
 
-## 💻 Exercises: Day 8
+## Упражнения: День 8
 
-1. Create  an empty dictionary called dog
-2. Add name, color, breed, legs, age to the dog dictionary
-3. Create a student dictionary and add first_name, last_name, gender, age, marital status, skills, country, city and address as keys for the dictionary
-4. Get the length of the student dictionary
-5. Get the value of skills and check the data type, it should be a list
-6. Modify the skills values by adding one or two skills
-7. Get the dictionary keys as a list
-8. Get the dictionary values as a list
-9. Change the dictionary to a list of tuples using _items()_ method
-10. Delete one of the items in the dictionary
-11. Delete one of the dictionaries
+1. Создайте пустой словарь с именем "dog".
+2. Добавьте в словарь "dog" ключи "name", "color", "breed", "legs" и "age".
+3. Создайте словарь "student" и добавьте ключи "first_name", "last_name", "gender", "age", "marital status", "skills", "country", "city" и "address".
+4. Получите длину словаря "student".
+5. Получите значение ключа "skills" и проверьте его тип данных, он должен быть списком.
+6. Измените значения ключа "skills", добавив одну или две навыка.
+7. Получите ключи словаря в виде списка.
+8. Получите значения словаря в виде списка.
+9. Преобразуйте словарь в список кортежей с помощью метода _items()_.
+10. Удалите один из элементов из словаря.
+11. Удалите один из словарей полностью.
 
-🎉 CONGRATULATIONS ! 🎉
+🎉 ПОЗДРАВЛЯЕМ ! 🎉
 
-[<< Day 7 ](../07_Day_Sets/07_sets.md) | [Day 9 >>](../09_Day_Conditionals/09_conditionals.md)
+[<< День 7 ](../07_Day_Sets/07_sets.md) | [День 9 >>](../09_Day_Conditionals/09_conditionals.md)
