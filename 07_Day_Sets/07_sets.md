@@ -54,8 +54,6 @@ We use curly brackets, {} to create a set or the *set()* built-in function.
 
 ```py
 # syntax
-st = {}
-# or
 st = set()
 ```
 
