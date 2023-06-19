@@ -1,5 +1,5 @@
 <div align="center">
-  <h1> 30 Days Of Python: Day 10 - Loops</h1>
+  <h1> 30 Дней Python: День 10 - Циклы</h1>
   <a class="header-badge" target="_blank" href="https://www.linkedin.com/in/asabeneh/">
   <img src="https://img.shields.io/badge/style--5eba00.svg?label=LinkedIn&logo=linkedin&style=social">
   </a>
@@ -9,70 +9,70 @@
 
 <sub>Author:
 <a href="https://www.linkedin.com/in/asabeneh/" target="_blank">Asabeneh Yetayeh</a><br>
-<small> Second Edition: July, 2021</small>
+<small> Второе издание: Июль, 2021</small>
 </sub>
 </div>
 
-[<< Day 9](../09_Day_Conditionals/09_conditionals.md) | [Day 11 >>](../11_Day_Functions/11_functions.md)
+[<< День 9](../09_Day_Conditionals/09_conditionals.md) | [День 11 >>](../11_Day_Functions/11_functions.md)
 
 ![30DaysOfPython](../images/30DaysOfPython_banner3@2x.png)
 
-- [📘 Day 10](#-day-10)
-  - [Loops](#loops)
-    - [While Loop](#while-loop)
-    - [Break and Continue - Part 1](#break-and-continue---part-1)
-    - [For Loop](#for-loop)
-    - [Break and Continue - Part 2](#break-and-continue---part-2)
-    - [The Range Function](#the-range-function)
-    - [Nested For Loop](#nested-for-loop)
+- [📘 День 10](#-день-10)
+  - [Циклы](#циклы)
+    - [Цикл while](#цикл-while)
+    - [Break and Continue - Часть 1](#break-and-continue---часть-1)
+    - [Цикл for](#цикл-for)
+    - [Break and Continue - Часть 2](#break-and-continue---часть-2)
+    - [Функция range](#функция-range)
+    - [Вложенные циклы](#вложенные-циклы)
     - [For Else](#for-else)
     - [Pass](#pass)
-  - [💻 Exercises: Day 10](#-exercises-day-10)
-    - [Exercises: Level 1](#exercises-level-1)
-    - [Exercises: Level 2](#exercises-level-2)
-    - [Exercises: Level 3](#exercises-level-3)
+  - [💻 Упражнения: День 10](#-упражнения-день-10)
+    - [Упражнения: Уровень 1](#упражнения-уровень-1)
+    - [Упражнения: Уровень 2](#упражнения-уровень-2)
+    - [Упражнения: Уровень 3](#упражнения-уровень-3)
 
-# 📘 Day 10
+# 📘 День 10
 
-## Loops
+## Циклы
 
-Life is full of routines. In programming we also do lots of repetitive tasks. In order to handle repetitive task programming languages use loops. Python programming language also provides the following types of two loops:
+Жизнь полна рутины. В программировании мы также выполняем множество повторяющихся задач. Для обработки повторяющихся задач программные языки используют циклы. В Python не исключение, в нем имеются следующие виды циклов:
 
-1. while loop
-2. for loop
+1. Цикл while 
+2. Цикл for
 
-### While Loop
+### Цикл while
 
-We use the reserved word _while_ to make a while loop. It is used to execute a block of statements repeatedly until a given condition is satisfied. When the condition becomes false, the lines of code after the loop will be continued to be executed.
+Для создания цикла while используется зарезирвированное слово **while**. Этот цикл используется для повторного выполнения блока инструкций, пока заданное условие имеет значение True. Когда условие становится ложным, то цикл прекращает свое действие. 
 
 ```py
-  # syntax
+  # синтаксис
 while condition:
     code goes here
 ```
 
-**Example:**
+**Примеры:**
 
 ```py
 count = 0
 while count < 5:
     print(count)
     count = count + 1
-#prints from 0 to 4
+#возвращает числа от 0 до 4
 ```
+В приведенном выше цикле условие становится ложным, когда count становится равно 5. То есть, цикл останавливается после 4 прохода.
 
-In the above while loop, the condition becomes false when count is 5. That is when the loop stops.
-If we are interested to run block of code once the condition is no longer true, we can use _else_.
+Если нам нужно выполнить блок кода, когда условие больше не является истинным, мы можем использовать else.
 
 ```py
-  # syntax
+  # синтаксис
 while condition:
     code goes here
 else:
     code goes here
 ```
 
-**Example:**
+**Пример:**
 
 ```py
 count = 0
@@ -83,22 +83,22 @@ else:
     print(count)
 ```
 
-The above loop condition will be false when count is 5 and the loop stops, and execution starts the else statement. As a result 5 will be printed.
+В этом случае, после 4 проходов, цикл выведет число 5 т.к. мы используем оператор else, а count будет равен 5. 
 
 
-### Break and Continue - Part 1
+### Break and Continue - Часть 1
 
-- Break: We use break when we like to get out of or stop the loop.
+- Break: Мы можем использовать оператор break, когда хотим завершить цикл по определенным правилам.
 
 ```py
-# syntax
+# синтаксис
 while condition:
     code goes here
     if another_condition:
         break
 ```
 
-**Example:**
+**Пример:**
 
 ```py
 count = 0
@@ -109,19 +109,19 @@ while count < 5:
         break
 ```
 
-The above while loop only prints 0, 1, 2, but when it reaches 3 it stops.
+В данном примере цикл while проходит числа 0, 1, 2 и когда достагает 3, цикл прерывается.
 
-- Continue: With the continue statement we can skip the current iteration, and continue with the next:
+- Continue:  С помощью оператора continue мы можем пропустить текущую итерацию и продолжить со следующей.
 
 ```py
-  # syntax
+  # синтаксис
 while condition:
     code goes here
     if another_condition:
         continue
 ```
 
-**Example:**
+**Примеры:**
 
 ```py
 count = 0
@@ -132,37 +132,37 @@ while count < 5:
     count = count + 1
 ```
 
-The above while loop only prints 0, 1, 2 and 4 (skips 3).
+В этом примере цикл вернет нам числа 0, 1, 2 и 4, т.к. в условии выполнения цикла мы пропускаем цифру 3.
 
-### For Loop
+### Цикл for
 
-A _for_ keyword is used to make a for loop, similar with other programming languages, but with some syntax differences. Loop is used for iterating over a sequence (that is either a list, a tuple, a dictionary, a set, or a string).
+Для создания цикла for в Python используется ключевое слово **for**. Цикл **for** используется для итерации по последовательности (списку, кортежу, словарю, множеству или строке).
 
-- For loop with list
+- Цикл for со списками
 
 ```py
-# syntax
+# синтаксис
 for iterator in lst:
-    code goes here
+    код будет здесь
 ```
 
-**Example:**
+**Пример:**
 
 ```py
 numbers = [0, 1, 2, 3, 4, 5]
-for number in numbers: # number is temporary name to refer to the list's items, valid only inside this loop
-    print(number)       # the numbers will be printed line by line, from 0 to 5
+for number in numbers: # number - временное имя для обращения к элементам списка, действует только внутри этого цикла
+    print(number)       # числа будут выводиться построчно от 0 до 5
 ```
 
-- For loop with string
+- Цикл for со строками
 
 ```py
-# syntax
+# синтаксис
 for iterator in string:
-    code goes here
+    код будет здесь
 ```
 
-**Example:**
+**Пример:**
 
 ```py
 language = 'Python'
@@ -174,15 +174,15 @@ for i in range(len(language)):
     print(language[i])
 ```
 
-- For loop with tuple
+- Цикл for с кортежами
 
 ```py
-# syntax
+# синтаксис
 for iterator in tpl:
-    code goes here
+    код будет здесь
 ```
 
-**Example:**
+**Пример:**
 
 ```py
 numbers = (0, 1, 2, 3, 4, 5)
@@ -190,16 +190,16 @@ for number in numbers:
     print(number)
 ```
 
-- For loop with dictionary
-  Looping through a dictionary gives you the key of the dictionary.
+- Цико for со словарями
+  При итерации по словарю с помощью цикла for в Python мы получаем ключи этого словаря.
 
 ```py
-  # syntax
+  # синтаксис
 for iterator in dct:
-    code goes here
+    код будет здесь
 ```
 
-**Example:**
+**Пример:**
 
 ```py
 person = {
@@ -218,18 +218,18 @@ for key in person:
     print(key)
 
 for key, value in person.items():
-    print(key, value) # this way we get both keys and values printed out
+    print(key, value) # так мы получаем как ключи, так и значения
 ```
 
-- Loops in set
+- Цикл for во множествах
 
 ```py
-# syntax
+# синтаксис
 for iterator in st:
-    code goes here
+    код будет здесь
 ```
 
-**Example:**
+**Пример:**
 
 ```py
 it_companies = {'Facebook', 'Google', 'Microsoft', 'Apple', 'IBM', 'Oracle', 'Amazon'}
@@ -237,20 +237,19 @@ for company in it_companies:
     print(company)
 ```
 
-### Break and Continue - Part 2
+### Break and Continue - Часть 2
 
-Short reminder:
-_Break_: We use break when we like to stop our loop before it is completed.
+Небольшое напоминание: __Break__: Мы используем break, когда хотим прервать выполнение цикла до его завершения.
 
 ```py
-# syntax
+# синтаксис
 for iterator in sequence:
-    code goes here
+    код будет здесь
     if condition:
         break
 ```
 
-**Example:**
+**Пример:**
 
 ```py
 numbers = (0,1,2,3,4,5)
@@ -260,19 +259,19 @@ for number in numbers:
         break
 ```
 
-In the above example, the loop stops when it reaches 3.
+В приведенном выше примере цикл останавливается, когда достигнуто значение 3.
 
-Continue: We use continue when we like to skip some of the steps in the iteration of the loop.
+Continue: Мы используем continue, когда хотим пропустить итерации цикла.
 
 ```py
-  # syntax
+  # синтаксис
 for iterator in sequence:
-    code goes here
+    код будет здесь
     if condition:
         continue
 ```
 
-**Example:**
+**Пример:**
 
 ```py
 numbers = (0,1,2,3,4,5)
@@ -280,21 +279,22 @@ for number in numbers:
     print(number)
     if number == 3:
         continue
-    print('Next number should be ', number + 1) if number != 5 else print("loop's end") # for short hand conditions need both if and else statements
+    print('Next number should be ', number + 1) if number != 5 else print("loop's end") # для коротких условий нужны оба оператора if и else
 print('outside the loop')
 ```
 
-In the example above, if the number equals 3, the step *after* the condition (but inside the loop) is skipped and the execution of the loop continues if there are any iterations left.
+В приведенном выше примере, если число равно 3, шаг после условия (но внутри цикла) пропускается, и выполнение цикла продолжается, если остались еще итерации.
 
-### The Range Function
+### Функция range
 
-The _range()_ function is used list of numbers. The _range(start, end, step)_ takes three parameters: starting, ending and increment. By default it starts from 0 and the increment is 1. The range sequence needs at least 1 argument (end).
-Creating sequences using range
+Функция **range()** используется для создания списка чисел. range(start, end, step) принимает три аргумента: начальное значение(start), конечное значение(end) и шаг(step). По умолчанию начальное значение равно 0, а шаг равен 1. Для работы функции нам необходимо указать конечный параметр, тогда остальные значения возьмутся по умолчанию, либо указать 2 или 3 аргумента.
+
+Создание последовательностей с использованием range
 
 ```py
 lst = list(range(11)) 
 print(lst) # [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-st = set(range(1, 11))    # 2 arguments indicate start and end of the sequence, step set to default 1
+st = set(range(1, 11))  # 2 аргумента указывают начало и конец последовательности, шаг установлен по умолчанию равным 1
 print(st) # {1, 2, 3, 4, 5, 6, 7, 8, 9, 10}
 
 lst = list(range(0,11,2))
@@ -304,29 +304,30 @@ print(st) #  {0, 2, 4, 6, 8, 10}
 ```
 
 ```py
-# syntax
+# синтаксис
 for iterator in range(start, end, step):
+    код будет здесь
 ```
 
-**Example:**
+**Пример:**
 
 ```py
 for number in range(11):
-    print(number)   # prints 0 to 10, not including 11
+    print(number)   # возвращает числа с 0 до 10, число 11 не включено
 ```
 
-### Nested For Loop
+### Вложенные циклы
 
 We can write loops inside a loop.
 
 ```py
-# syntax
+# синтаксис
 for x in y:
     for t in x:
         print(t)
 ```
 
-**Example:**
+**Пример:**
 
 ```py
 person = {
@@ -349,45 +350,45 @@ for key in person:
 
 ### For Else
 
-If we want to execute some message when the loop ends, we use else.
+Если мы хотим выполнить какое-то действие после окончания цикла, мы используем конструкцию else.
 
 ```py
-# syntax
+# синтаксис
 for iterator in range(start, end, step):
     do something
 else:
     print('The loop ended')
 ```
 
-**Example:**
+**Пример:**
 
 ```py
 for number in range(11):
-    print(number)   # prints 0 to 10, not including 11
+    print(number)   # выводит числа от 0 до 10, число 11 не входит
 else:
     print('The loop stops at', number)
 ```
 
 ### Pass
 
-In python when statement is required (after semicolon), but we don't like to execute any code there, we can write the word _pass_ to avoid errors. Also we can use it as a placeholder, for future statements.
+В Python, если мы не хотим пить код после двоеточего, мы можем написать ключевое слово pass, чтобы избежать ошибок. Также мы можем использовать его в качестве заполнителя для будущих операторов.
 
-**Example:**
+**Пример:**
 
 ```py
 for number in range(6):
     pass
 ```
 
-🌕 You established a big milestone, you are unstoppable. Keep going! You have just completed day 10 challenges and you are 10 steps a head in to your way to greatness. Now do some exercises for your brain and muscles.
+🌕 Ты достиг важного этапа, ты неудержим. Продолжай в том же духе! Ты только что завершил 10-й день испытаний и стал ещё на шаг ближе к свой цели. Теперь давай займемся тренировкой нашего мозга и закреплением материала. 
 
-## 💻 Exercises: Day 10
+## 💻 Упражнения: День 10
 
-### Exercises: Level 1
+### Упражнения: Уровень 1
 
-1. Iterate 0 to 10 using for loop, do the same using while loop.
-2. Iterate 10 to 0 using for loop, do the same using while loop.
-3. Write a loop that makes seven calls to print(), so we get on the output the following triangle:
+1. Переберите числа от 0 до 10 с помощью цикла for, а после с помощью цикла while. 
+2. Переберите числа от 10 до 0 с помощью цикла for, а после с помощью цикла while. 
+3. Напишите цикл, который сделает семь вызовов функции **print()**, чтобы получить следующий треугольник:
 
    ```py
      #
@@ -399,7 +400,7 @@ for number in range(6):
      #######
    ```
 
-4. Use nested loops to create the following:
+4. Используйте вложенные циклы для создания следующей структуры:
 
    ```sh
    # # # # # # # #
@@ -412,7 +413,7 @@ for number in range(6):
    # # # # # # # #
    ```
 
-5. Print the following pattern:
+5. Выведите данный пример при помощи цикла for
 
    ```sh
    0 x 0 = 0
@@ -428,33 +429,34 @@ for number in range(6):
    10 x 10 = 100
    ```
 
-6. Iterate through the list, ['Python', 'Numpy','Pandas','Django', 'Flask'] using a for loop and print out the items.
-7. Use for loop to iterate from 0 to 100 and print only even numbers
-8. Use for loop to iterate from 0 to 100 and print only odd numbers
+6. Переберите список ['Python', 'Numpy', 'Pandas', 'Django', 'Flask'] и выведите каждый элемент списка на отдельной строке. 
+7. Используйте цикл for для вывода **четных** чисел в диапазоне от 0 до 100.
+8. Используйте цикл for для вывода **нечетных** чисел в диапазоне от 0 до 100.
    
-### Exercises: Level 2
+### Упражнения: Уровень 2
     
-1.  Use for loop to iterate from 0 to 100 and print the sum of all numbers.
+1.  Используйте цикл for для итерации от 0 до 100 и выведите сумму всех чисел:
 
    ```sh
-   The sum of all numbers is 5050.
+   Сумма всех чисел равна 5050.
    ```
 
-1. Use for loop to iterate from 0 to 100 and print the sum of all evens and the sum of all odds.
+2. Используйте цикл for для итерации от 0 до 100 и выведите  сумму всех четных чисел и сумму всех нечетных чисел:
 
     ```sh
-    The sum of all evens is 2550. And the sum of all odds is 2500.
+    Сумма всех четных чисел = 2550. Сумма всех нечетных чисел = 2500.
     ```
 
-### Exercises: Level 3
+### Упражнения: Уровень 3
 
-1. Go to the data folder and use the [countries.py](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/data/countries.py) file. Loop through the countries and extract all the countries containing the word _land_.
-1. This is a fruit list, ['banana', 'orange', 'mango', 'lemon'] reverse the order using loop.
-2. Go to the data folder and use the [countries_data.py](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/data/countries-data.py) file. 
-   1. What are the total number of languages in the data
-   2. Find the ten most spoken languages from the data
-   3. Find the 10 most populated countries in the world
+1. Перейдите по [ссылке](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/data/countries.py). Пройдитесь по списку стран и выведите все страны, содержащие слово land в своем названии.
+2. Есть список фруктов, ['banana', 'orange', 'mango', 'lemon']. Разверните его с помощью цикла.
+3. Перейдите по  [ссылке](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/data/countries-data.py):
+   1. Сколько всего языков данно в файле?
+   2. Найдите десять наиболее распространенных языков в файле.
+   3. Найдите десять наиболее населенных стран мира.
 
-🎉 CONGRATULATIONS ! 🎉
+🎉 ПОЗДРАВЛЯЕМ!  🎉
 
-[<< Day 9](../09_Day_Conditionals/09_conditionals.md) | [Day 11 >>](../11_Day_Functions/11_functions.md)
+[<< День 9](../09_Day_Conditionals/09_conditionals.md) | [День 11 >>](../11_Day_Functions/11_functions.md)
+
