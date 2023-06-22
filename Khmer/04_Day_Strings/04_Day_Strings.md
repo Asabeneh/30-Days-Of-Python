@@ -317,8 +317,7 @@ print(challenge.rfind('y'))  # 5
 print(challenge.rfind('th')) # 1
 ```
 
-- format(): formats string into a nicer output  
-   More about string formatting check this [link](https://www.programiz.com/python-programming/methods/string/format)
+- format(): format string ទៅជា output ល្អជាង string formatting check this [link](https://www.programiz.com/python-programming/methods/string/format)
 
 ```py
 first_name = 'Asabeneh'
@@ -336,7 +335,7 @@ result = 'The area of a circle with radius {} is {}'.format(str(radius), str(are
 print(result) # The area of a circle with radius 10 is 314
 ```
 
-- index(): Returns the lowest index of a substring, additional arguments indicate starting and ending index (default 0 and string length - 1). If the substring is not found it raises a valueError.
+- index(): ផ្តល់នូវបញ្ជីទាបបំផុតនៃ substring, សញ្ញាបន្ថែមបង្ហាញបញ្ជីចាប់ផ្តើមនិងបញ្ចប់ (ការចម្លង 0 និងវែងខ្សែ - 1) ។ ប្រសិនបើ substring មិនត្រូវបានរកឃើញវាលើក valueError ។
 
 ```py
 challenge = 'thirty days of python'
@@ -345,7 +344,7 @@ print(challenge.index(sub_string))  # 7
 print(challenge.index(sub_string, 9)) # error
 ```
 
-- rindex(): Returns the highest index of a substring, additional arguments indicate starting and ending index (default 0 and string length - 1)
+- rindex(): បញ្ជូន មកវិញនូវ index ខ្ពស់បំផុតនៃ substring, សំនួរបន្ថែមបង្ហាញ start និង end index (ការចម្លង 0 និង length string - 1)
 
 ```py
 challenge = 'thirty days of python'
@@ -354,7 +353,7 @@ print(challenge.rindex(sub_string))  # 8
 print(challenge.rindex(sub_string, 9)) # error
 ```
 
-- isalnum(): Checks alphanumeric character
+- isalnum(): ត្រួតពិនិត្យតួរអក្សរនិងលេខ
 
 ```py
 challenge = 'ThirtyDaysPython'
@@ -370,7 +369,7 @@ challenge = 'thirty days of python 2019'
 print(challenge.isalnum()) # False
 ```
 
-- isalpha(): Checks if all string elements are alphabet characters (a-z and A-Z)
+- isalpha(): ត្រួតពិនិត្យតួរអក្សរប្រសិនបើ string គឺជាតួរអក្សរទាំងអស់(a-z and A-Z)
 
 ```py
 challenge = 'thirty days of python'
@@ -381,7 +380,7 @@ num = '123'
 print(num.isalpha())      # False
 ```
 
-- isdecimal(): Checks if all characters in a string are decimal (0-9)
+- isdecimal(): ត្រួតពិនិត្យតួរអក្សរប្រសិនបើ string គឺជាdecimal (0-9)
 
 ```py
 challenge = 'thirty days of python'
@@ -394,7 +393,7 @@ challenge = '12 3'
 print(challenge.isdecimal())  # False, space not allowed
 ```
 
-- isdigit(): Checks if all characters in a string are numbers (0-9 and some other unicode characters for numbers)
+- isdigit(): ត្រួតពិនិត្យតួរអក្សរទាំងអស់ក្នុងstring គឺជាលេខ(0-9 and some other unicode characters for numbers)
 
 ```py
 challenge = 'Thirty'
@@ -405,7 +404,7 @@ challenge = '\u00B2'
 print(challenge.isdigit())   # True
 ```
 
-- isnumeric(): Checks if all characters in a string are numbers or number related (just like isdigit(), just accepts more symbols, like ½)
+- isnumeric():ត្រួតពិនិត្យថាតើអក្សរទាំងអស់នៅក្នុងខ្សែសង្វាក់គឺជាលេខឬលេខដែលតភ្ជាប់គ្នា (ដូច isdigit (((), គ្រាន់តែទទួលយកសញ្ញាច្រើនជាង, ដូចជា 1⁄2)))
 
 ```py
 num = '10'
@@ -416,7 +415,7 @@ num = '10.5'
 print(num.isnumeric()) # False
 ```
 
-- isidentifier(): Checks for a valid identifier - it checks if a string is a valid variable name
+- isidentifier(): ត្រួតពិនិត្យសម្រាប់អត្តសញ្ញាណដែលត្រឹមត្រូវ - វាត្រួតពិនិត្យថាតើ string គឺជាvariableដែលត្រឹមត្រូវ
 
 ```py
 challenge = '30DaysOfPython'
@@ -425,7 +424,7 @@ challenge = 'thirty_days_of_python'
 print(challenge.isidentifier()) # True
 ```
 
-- islower(): Checks if all alphabet characters in the string are lowercase
+- islower(): ត្រួតពិនិត្យតួរអក្សរក្នុងstringគឺជាlowercase
 
 ```py
 challenge = 'thirty days of python'
@@ -434,7 +433,7 @@ challenge = 'Thirty days of python'
 print(challenge.islower()) # False
 ```
 
-- isupper(): Checks if all alphabet characters in the string are uppercase
+- isupper(): ត្រួតពិនិត្យតួរអក្សរក្នុងstringគឺជា uppercase
 
 ```py
 challenge = 'thirty days of python'
@@ -443,7 +442,7 @@ challenge = 'THIRTY DAYS OF PYTHON'
 print(challenge.isupper()) # True
 ```
 
-- join(): Returns a concatenated string
+- join(): បញ្ជូន string ដែលជាប់គ្នា
 
 ```py
 web_tech = ['HTML', 'CSS', 'JavaScript', 'React']
@@ -457,21 +456,21 @@ result = '# '.join(web_tech)
 print(result) # 'HTML# CSS# JavaScript# React'
 ```
 
-- strip(): Removes all given characters starting from the beginning and end of the string
+- strip(): ដកតួអក្សរទាំងអស់ដែលត្រូវបានផ្តល់ចាប់ពីដើមនិងចុងនៃ string
 
 ```py
 challenge = 'thirty days of pythoonnn'
 print(challenge.strip('noth')) # 'irty days of py'
 ```
 
-- replace(): Replaces substring with a given string
+- replace(): ជំនួស substring ដោយ string ដែលបានផ្តល់
 
 ```py
 challenge = 'thirty days of python'
 print(challenge.replace('python', 'coding')) # 'thirty days of coding'
 ```
 
-- split(): Splits the string, using given string or space as a separator
+- split(): បំបែកstring, ប្រើstring ឬកន្លែងដែលផ្តល់ជាបំបែក
 
 ```py
 challenge = 'thirty days of python'
@@ -480,14 +479,14 @@ challenge = 'thirty, days, of, python'
 print(challenge.split(', ')) # ['thirty', 'days', 'of', 'python']
 ```
 
-- title(): Returns a title cased string
+- title(): កែប្រែតួអក្សរផ្ដើមនៃពាក្យជាuppercaseនិងអក្សរបន្ទាប់ជាlowercase
 
 ```py
 challenge = 'thirty days of python'
 print(challenge.title()) # Thirty Days Of Python
 ```
 
-- swapcase(): Converts all uppercase characters to lowercase and all lowercase characters to uppercase characters
+- swapcase(): បម្លែងអក្សរធំទាំងអស់ទៅជាអក្សរតូច និងអក្សរតូចទាំងអស់ទៅជាអក្សរធំ
 
 ```py
 challenge = 'thirty days of python'
@@ -496,7 +495,7 @@ challenge = 'Thirty Days Of Python'
 print(challenge.swapcase())  # tHIRTY dAYS oF pYTHON
 ```
 
-- startswith(): Checks if String Starts with the Specified String
+- startswith(): ត្រួតពិនិត្យថា String ចាប់ផ្តើមជាមួយ String ដែលបានកំណត់
 
 ```py
 challenge = 'thirty days of python'
