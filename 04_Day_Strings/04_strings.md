@@ -328,8 +328,8 @@ print(challenge.expandtabs(10)) # 'thirty    days      of        python'
 
 ```py
 challenge = 'thirty days of python'
-print(challenge.find('y'))  # 16
-print(challenge.find('th')) # 17
+print(challenge.find('y'))  # 5
+print(challenge.find('th')) # 0
 ```
 
 - rfind(): Returns the index of the last occurrence of a substring, if not found returns -1
