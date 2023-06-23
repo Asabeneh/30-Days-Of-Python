@@ -40,62 +40,62 @@
 
 # Python with MongoDB
 
-Python is a backend technology and it can be connected with different data base applications. It can be connected to both SQL and noSQL databases. In this section, we connect Python with MongoDB database which is noSQL database. 
+Python គឺជា backend technology ហើយវាអាចភ្ជាប់ជាមួយ data base ផ្សេងៗ។ វាអាចភ្ជាប់ទៅនឹង SQL និង noSQL databases។ នៅក្នុងផ្នែកនេះ យើងនឹងភ្ជាប់ Python ជាមួយនឹង MongoDB database ដែលជា database noSQL។
 
 ## MongoDB
 
-MongoDB is a NoSQL database. MongoDB stores data in a JSON like document which make MongoDB very flexible and scalable. Let us see the different terminologies of SQL and NoSQL databases. The following table will make the difference between SQL versus NoSQL databases.
+MongoDB គឺជា NoSQL database។ MongoDB រក្សាទុកទិន្នន័យនៅក្នុងឯកសារ JSON ដែលធ្វើអោយ MongoDB មានភាពរលូន និងអាចកែច្នៃបាន។ សូមមើលពាក្យសម្ដី ផ្សេងៗនៃ SQL និង NoSQL databases។ តារាងខាងក្រោមនេះនឹងបង្ហាញពីភាពខុសគ្នារវាង SQL versus NoSQL databases ។
 
 ### SQL versus NoSQL
 
 ![SQL versus NoSQL](../images/mongoDB/sql-vs-nosql.png)
 
-In this section, we will focus on a NoSQL database MongoDB. Lets sign up on [mongoDB](https://www.mongodb.com/) by click on the sign in button then click register on the next page.
-
+នៅក្នុងផ្នែកនេះយើងនឹងផ្តោតលើមូលដ្ឋានទិន្នន័យ NoSQL MongoDB ។ សូមចុះឈ្មោះ [mongoDB](https://www.mongodb.com/) ចុចលើប៊ូតុង Sign in រួចចុច Register នៅទំព័របន្ទាប់។
 ![MongoDB Sign up pages](../images/mongoDB/mongodb-signup-page.png)
 
-Complete the fields and click continue
+បំពេញនិងចុចបន្ត
 
 ![Mongodb register](../images/mongoDB/mongodb-register.png)
 
-Select the free plan
+ជ្រើសរើសផែនការឥតគិតថ្លៃ
 
 ![Mongodb free plan](../images/mongoDB/mongodb-free.png)
 
-Choose the proximate free region and give any name for you cluster.
+ជ្រើសរើសតំបន់ និងផ្តល់ឈ្មោះ cluster។
 
 ![Mongodb cluster name](../images/mongoDB/mongodb-cluster-name.png)
 
 Now, a free sandbox is created
+ឥឡូវនេះ, free sandbox ត្រូវបានបង្កើតឡើង
 
 ![Mongodb sandbox](../images/mongoDB/mongodb-sandbox.png)
 
-All local host access
+គ្រប់ local host access
 
 ![Mongodb allow ip access](../images/mongoDB/mongodb-allow-ip-access.png)
 
-Add user and password
+ដាក់ user និង password
 
 ![Mongodb add user](../images/mongoDB/mongodb-add-user.png)
 
-Create a mongoDB uri link
+បង្តើត mongoDB uri link
 
 ![Mongodb create uri](../images/mongoDB/mongodb-create-uri.png)
 
-Select Python 3.6 or above driver
+ជ្រើសរើស Python 3.6 ឬ ខ្ពស់ជាងនឹង
 
 ![Mongodb python driver](../images/mongoDB/mongodb-python-driver.png)
 
 ### Getting Connection String(MongoDB URI)
 
-Copy the connection string link and you will get something like this
+ចម្លង connection string link ហើយអ្នកនឹងទទួលបានអ្វីមួយដូចនេះ
 
 ```sh
 mongodb+srv://asabeneh:<password>@30daysofpython-twxkr.mongodb.net/test?retryWrites=true&w=majority
 ```
 
-Do not worry about the url, it is a means to connect your application with mongoDB.
-Let us replace the password placeholder with the password you used to add a user.
+កុំបារម្ភអំពី url, វាជាមធ្យោបាយមួយដើម្បីភ្ជាប់កម្មវិធីរបស់អ្នកទៅ MongoDB។
+សូមយើងជំនួស password placeholder ជាមួយនឹង password ដែលអ្នកប្រើសម្រាប់ user។
 
 **Example:**
 
@@ -103,15 +103,15 @@ Let us replace the password placeholder with the password you used to add a user
 mongodb+srv://asabeneh:123123123@30daysofpython-twxkr.mongodb.net/test?retryWrites=true&w=majority
 ```
 
-Now, I replaced everything and the password is 123123 and the name of the database is thirty_days_python. This is just an example, your password must be a bit stronger than this.
+ឥឡូវនេះ ខ្ញុំបានជំនួសអ្វីទាំងអស់ និង password គឺ 123123 និងឈ្មោះរបស់ database គឺ thirty_days_python។ នេះគ្រាន់តែជាឧទាហរណ៍មួយប៉ុណ្ណោះ, password របស់អ្នកត្រូវតែខ្លាំងជាងនេះបន្តិច។
 
-Python needs a mongoDB driver to access mongoDB database. We will use _pymongo_ with _dnspython_ to connect our application with mongoDB base . Inside your project directory install pymongo and dnspython.
+Python ត្រូវការ mongoDB driver ការចូលទៅកាន់ mongoDB database។ យើងនឹងប្រើ _pymongo_ ជាមួយ _dnspython_ ដើម្បីភ្ជាប់កម្មវិធីរបស់យើងជាមួយ mongoDB base។ នៅខាងក្នុង project directory បញ្ចូល pymongo និង dnspython។
 
 ```sh
 pip install pymongo dnspython
 ```
 
-The "dnspython" module must be installed to use mongodb+srv:// URIs. The dnspython is a DNS toolkit for Python. It supports almost all record types.
+"dnspython" module ត្រូវមានសម្រាប់ប្រើ mongodb+srv:// URIs។ dnspython គឺ DNS toolkit សម្រាប់ Python។ វាគាំទ្រប្រភេទឯកសារទាំងអស់។
 
 ### Connecting Flask application to MongoDB Cluster
 
@@ -132,7 +132,7 @@ if __name__ == '__main__':
 
 ```
 
-When we run the above code we get the default mongoDB databases.
+ពេលយើង run code, យើងទទួលបាន default mongoDB databases.
 
 ```sh
 ['admin', 'local']
@@ -140,8 +140,8 @@ When we run the above code we get the default mongoDB databases.
 
 ### Creating a database and collection
 
-Let us create a database, database and collection in mongoDB will be created if it doesn't exist. Let's create a data base name _thirty_days_of_python_ and _students_ collection.
-To create a database
+សូមយើងបង្កើត database និង collection ក្នុង mongoDB, នឹងត្រូវបានបង្កើតឡើង ប្រសិនបើវាមិនមាន។ សូមបង្កើត data base ឈ្នោះ _thirty_days_of_python_ និង _students_ collection។
+ដើម្បីបង្កើត database
 
 ```sh
 db = client.name_of_databse # we can create a database like this or the second way
@@ -168,24 +168,24 @@ if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0', port=port)
 ```
 
-After we create a database, we also created a students collection and we used *insert_one()* method to insert a document.
-Now, the database *thirty_days_of_python* and *students* collection have been created and the document has been inserted.
-Check your mongoDB cluster and you will see both the database and the collection. Inside the collection, there will be a document.
+បន្ទាប់ពីយើងបង្កើត database, យើងក៏បានបង្កើត students collection និងយើងប្រើ *insert_one()* method ដើម្បីបញ្ចូល document។
+ឥឡូវនេះ database *thirty_days_of_python* និង *students* collection ត្រូវបានបង្កើតឡើង ហើយ document ត្រូវបានបញ្ចូល។
+ពិនិត្យមើល mongoDB cluster ហើយអ្នកនឹងឃើញ database និង collection។ ក្នុង collection, នឹងមាន document។
 
 ```sh
 ['thirty_days_of_python', 'admin', 'local']
 ```
 
-If you see this on the mongoDB cluster, it means you have successfully created a database and a collection.
+ប្រសិនបើអ្នកឃើញនេះនៅលើ mongoDB cluster, វាមានន័យថា អ្នកបានបង្កើត database និង collection.
 
 ![Creating database and collection](../images/mongoDB/mongodb-creating_database.png)
 
-If you have seen on the figure, the document has been created with a long id which acts as a primary key. Every time we create a document mongoDB create and unique id for it.
+ប្រសិនបើអ្នកបានឃើញនៅលើរូបភាព, document ត្រូវបានបង្កើតឡើងដោយមាន id វែងដែលធ្វើជា primary key។ រាល់ពេលដែលយើងបង្កើត document, mongoDB និងបង្កើត ID ពិសេសសម្រាប់វា។
 
 ### Inserting many documents to collection
 
-The *insert_one()*  method inserts one item at a time if we want to insert many documents at once either we use *insert_many()* method or for loop.
-We can use for loop to inset many documents at once.
+*insert_one()*  method បញ្ចូល item ក្នុងពេលតែមួយ, ប្រសិនបើយើងចង់បញ្ចូលច្រើន documents ភ្លាមៗយើងប្រើ *insert_many()* method ឬ for loop។
+យើងអាចប្រើ for loop ដើម្បីបញ្ចូលច្រើន documents ភ្លាមៗ។
 
 ```py
 # let's import the flask
@@ -213,10 +213,10 @@ if __name__ == '__main__':
 
 ### MongoDB Find
 
-The *find()* and *findOne()* methods are common method to find data in a collection in mongoDB database. It is similar to the SELECT statement in a MySQL database.
-Let us use the _find_one()_ method to get a document in a database collection.
+*find()* និង *findOne()* methods ជាវិធីទូទៅដើម្បីរកទិន្នន័យនៅក្នុង collection ក្នុង mongoDB database។ វាស្រដៀងនឹង SELECT statement ក្នុង MySQL database។
+សូមយើងប្រើ _find_one()_ method ដើម្បីទទួលបាន document ក្នុង database collection។
 
-- \*find_one({"\_id": ObjectId("id"}): Gets the first occurrence if an id is not provided
+- \*find_one({"\_id": ObjectId("id"}): ទទួលបានការកើតឡើងដំបូង ប្រសិនបើ ID មិនត្រូវបានផ្តល់
 
 ```py
 # let's import the flask
@@ -242,7 +242,7 @@ if __name__ == '__main__':
 {'_id': ObjectId('5df68a21f106fe2d315bbc8b'), 'name': 'Asabeneh', 'country': 'Helsinki', 'city': 'Helsinki', 'age': 250}
 ```
 
-The above query returns the first entry but we can target specific document using specific \_id. Let us do one example, use David's id to get David object.
+Query ខាងលើបានត្រឡប់មកលេខដំបូង ប៉ុន្តែយើងអាចផ្តោតលើ document ណាមួយដោយប្រើ \_id។ សូមយើងធ្វើឧទាហរណ៍មួយ, ប្រើ id របស់ David ដើម្បីបាន David object។
 '\_id':ObjectId('5df68a23f106fe2d315bbc8c')
 
 ```py
@@ -268,9 +268,9 @@ if __name__ == '__main__':
 {'_id': ObjectId('5df68a23f106fe2d315bbc8c'), 'name': 'David', 'country': 'UK', 'city': 'London', 'age': 34}
 ```
 
-We have seen, how to use _find_one()_ using the above examples. Let's move one to _find()_
+យើងបានឃើញការប្រើ _find_one()_ ដោយប្រើឧទាហរណ៍ខាងលើ។ សូមចល័តមួយទៅ _find()_
 
-- _find()_: returns all the occurrence from a collection if we don't pass a query object. The object is pymongo.cursor object.
+- _find()_: ផ្តល់នូវការកើតឡើងទាំងអស់ពី collection ប្រសិនបើយើងមិនដាក់ query object។ Object គឺ pymongo.cursor object។
 
 ```py
 # let's import the flask
@@ -299,7 +299,7 @@ if __name__ == '__main__':
 {'_id': ObjectId('5df68a23f106fe2d315bbc8e'), 'name': 'Sami', 'country': 'Finland', 'city': 'Helsinki', 'age': 25}
 ```
 
-We can specify which fields to return by passing second object in the _find({}, {})_. 0 means not include and 1 means include but we can not mix 0 and 1, except for \_id.
+យើងអាចកំណត់ Field ដែលត្រូវត្រឡប់មកវិញ ដោយផ្ទេរ Object ទីពីរនៅក្នុង _find({}, {})_។ 0 មានន័យថាមិនរួមបញ្ចូល និង 1 មានន័យថាបញ្ចូល ប៉ុន្តែយើងមិនអាចលាយឡំគ្នា 0 និង 1, លើកលែងតែ \_id។
 
 ```py
 # let's import the flask
@@ -330,7 +330,7 @@ if __name__ == '__main__':
 
 ### Find with Query
 
-In mongoDB find take a query object. We can pass a query object and we can filter the documents we like to filter out.
+ក្នុង mongoDB find យក query object។ យើងអាចប្រើ query object និង យើងអាចតម្រង documents យើងចង់តម្រង។
 
 ```py
 # let's import the flask
@@ -363,7 +363,7 @@ if __name__ == '__main__':
 {'_id': ObjectId('5df68a23f106fe2d315bbc8e'), 'name': 'Sami', 'country': 'Finland', 'city': 'Helsinki', 'age': 25}
 ```
 
-Query with modifiers
+Query ជាមួយ modifiers
 
 ```py
 # let's import the flask
@@ -429,7 +429,7 @@ if __name__ == '__main__':
 {'_id': ObjectId('5df68a23f106fe2d315bbc8e'), 'name': 'Sami', 'country': 'Finland', 'city': 'Helsinki', 'age': 25}
 ```
 
-Query with modifiers
+Query ជាមួយ modifiers
 
 ```py
 # let's import the flask
@@ -480,7 +480,7 @@ for student in students:
 
 ### Limiting documents
 
-We can limit the number of documents we return using the _limit()_ method.
+យើងអាចកំណត់ចំនួន documents យើងត្រឡប់មកវិញ ដោយប្រើ _limit()_ method។
 
 ```py
 # let's import the flask
@@ -496,7 +496,7 @@ db.students.find().limit(3)
 
 ### Find with sort
 
-By default, sort is in ascending order. We can change the sorting to descending order by adding -1 parameter.
+ដោយ default, sort គឺមាននៅក្នុងលំដាប់ឡើង។ យើងអាចផ្លាស់ប្ដូរការ sort ទៅតាមលំដាប់ចុះដោយបន្ថែម parameter -1 ។
 
 ```py
 # let's import the flask
@@ -552,8 +552,8 @@ Descending order
 
 ### Update with query
 
-We will use *update_one()* method to update one item. It takes two object one is a query and the second is the new object.
-The first person, Asabeneh got a very implausible age. Let us update Asabeneh's age.
+យើងនឹងប្រើ *update_one()* method ដើម្បីប្តូរ item មួយ។ វាត្រូវការ object ពីរ, មួយជា query និង ពីរជា object ថ្មី។
+មនុស្សទីមួយ, Asabeneh មានអាយុមិនគួរឲ្យជឿ។ នាំយើងប្តូរអាយុរបស់ Asabeneh។
 
 ```py
 # let's import the flask
@@ -589,12 +589,12 @@ if __name__ == '__main__':
 {'_id': ObjectId('5df68a23f106fe2d315bbc8e'), 'name': 'Sami', 'country': 'Finland', 'city': 'Helsinki', 'age': 25}
 ```
 
-When we want to update many documents at once we use *upate_many()* method.
+នៅពេលដែលយើងចង់ប្តូរ documents ច្រើនភ្លាមៗ យើងប្រើ *upate_many()* method។
 
 ### Delete Document
 
-The method *delete_one()* deletes one document. The *delete_one()* takes a query object parameter. It only removes the first occurrence.
-Let us remove one John from the collection.
+*delete_one()* លុបមួយ document។ *delete_one()* ត្រូវការ query object parameter។ វាគ្រាន់តែលុបចោលការកើតឡើងដំបូង។
+យើងត្រូវដក John ម្នាក់ចេញពី collection។
 
 ```py
 # let's import the flask
@@ -630,13 +630,13 @@ if __name__ == '__main__':
 {'_id': ObjectId('5df68a23f106fe2d315bbc8e'), 'name': 'Sami', 'country': 'Finland', 'city': 'Helsinki', 'age': 25}
 ```
 
-As you can see John has been removed from the collection.
+ដូចដែលអ្នកអាចមើលបាន John ត្រូវបានដកចេញពី collection។
 
 When we want to delete many documents we use *delete_many()* method, it takes a query object. If we pass an empty query object to *delete_many({})* it will delete all the documents in the collection.
 
 ### Drop a collection
 
-Using the _drop()_ method we can delete a collection from a database.
+ការប្រើ _drop()_ method យើងអាចលុប collection ពី database។
 
 ```py
 # let's import the flask
@@ -650,9 +650,7 @@ db = client['thirty_days_of_python'] # accessing the database
 db.students.drop()
 ```
 
-Now, we have deleted the students collection from the database.
-
-## 💻 Exercises: Day 27
+ឥឡូវនេះយើងបានលុបចោល students collection ពី database។
 
 🎉 CONGRATULATIONS ! 🎉
 
