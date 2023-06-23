@@ -26,50 +26,48 @@
   - [Creating data using POST](#creating-data-using-post)
   - [Updating using PUT](#updating-using-put)
   - [Deleting a document using Delete](#deleting-a-document-using-delete)
-- [💻 Exercises: Day 29](#-exercises-day-29)
 
 ## Day 29
 
 ## Building API
 
+នៅក្នុងផ្នែកនេះ យើងនឹងពិភាក្សាអំពី RESTful API ដែកប្រើ HTTP request methods ដើម្បី GET, PUT, POST និង DELETE data។
 
-In this section, we will cove a RESTful API that uses HTTP request methods to GET, PUT, POST and DELETE data.
+RESTful API គឺជា application program interface (API) ដែលប្រើ HTTP requests ដើម្បី GET, PUT, POST និង DELETE data។ នៅក្នុងផ្នែកមុននេះយើងបានរៀនអំពី Python, flask និង mongoDB។ យើងនឹងប្រើចំណេះដឹងដែលយើងទទួលបានដើម្បីបង្កើត RESTful API ដោយប្រើ Python flask និង mongoDB database។ កម្មវិធីដែលមាន CRUD(Create, Read, Update, Delete) operation មាន API ដើម្បី create data, ដើម្បី get data, ដើម្បី update data ឬ ដើម្បី delete data ពី database។
 
-RESTful API is an application program interface (API) that uses HTTP requests to GET, PUT, POST and DELETE data. In the previous sections, we have learned about python, flask and mongoDB. We will use the knowledge we acquire to develop a RESTful API using python flask and mongoDB. Every application which has CRUD(Create, Read, Update, Delete) operation has an API to create data, to get data, to update data or to delete data from database.
+Browser អាចតែយកបាន request. ដូច្នេះ, យើងត្រូវមានឧបករណ៍ដែលអាចជួយយើងក្នុងការគ្រប់គ្រង request methods(GET, POST, PUT, DELETE)។
 
-The browser can handle only get request. Therefore, we have to have a tool which can help us to handle all request methods(GET, POST, PUT, DELETE).
-
-Examples of API
+ឧទាហរណ៍ API
 
 - Countries API: https://restcountries.eu/rest/v2/all
 - Cats breed API: https://api.thecatapi.com/v1/breeds
 
-[Postman](https://www.getpostman.com/) is a very popular tool when it comes to API development. So, if you like to do this section you need to [download postman](https://www.getpostman.com/). An alternative of Postman is [Insomnia](https://insomnia.rest/download).
+[Postman](https://www.getpostman.com/) ជាឧបករណ៍ដ៏ពេញនិយមសម្រាប់ការបង្កើត API ។ ដូច្នេះ, ប្រសិនបើអ្នកចង់ធ្វើផ្នែកនេះអ្នកត្រូវបញ្ចូល [download postman](https://www.getpostman.com/). ជម្រើសមួយទៀតគឺ [Insomnia](https://insomnia.rest/download).
 
 ![Postman](../images/postman.png)
 
 ### Structure of an API
 
-An API end point is a URL which can help to retrieve, create, update or delete a resource. The structure looks like this:
-Example:
+API end point គឺជា URL ដែលអាចជួយដល់ការ retrieve, create, update ឬ delete ធនធានណាមួយ។ រចនាសម្ព័ន្ធនេះមានរូបរាងដូចខាងក្រោម៖
+ឧទាហរណ៍:
 https://api.twitter.com/1.1/lists/members.json
-Returns the members of the specified list. Private list members will only be shown if the authenticated user owns the specified list.
-The name of the company name followed by version followed by the purpose of the API.
+បញ្ជូនសមាជិកនៃបញ្ជីដែលបានកំណត់។ Private list នៃសមាជិក នឹងត្រូវបានបង្ហាញតែប្រសិនបើអ្នកប្រើប្រាស់ដែលត្រូវបានបញ្ជាក់ជាម្ចាស់បញ្ជីដែលបានកំណត់។
+ឈ្មោះនៃឈ្មោះក្រុមហ៊ុនបន្តដោយ version បន្តដោយ គោយដៅនៃ API។
 The methods:
 HTTP methods & URLs
 
-The API uses the following HTTP methods for object manipulation:
+API ប្រើប្រាស់ដូចខាងក្រោមនៃ HTTP methods សម្រាប់ការកែប្រែ object:
 
 ```sh
-GET        Used for object retrieval
-POST       Used for object creation and object actions
-PUT        Used for object update
-DELETE     Used for object deletion
+GET        Used for object retrieval ប្រើសម្រាប់ទាញយកវត្ថុ
+POST       Used for object creation and object actions ប្រើសម្រាប់ការបង្កើតវត្ថុ និងសកម្មភាពរបស់វត្ថុ
+PUT        Used for object update ប្រើសម្រាបការកែប្រែ
+DELETE     Used for object deletion ប្រើសម្រាប់ការលុប
 ```
 
-Let us build an API which collects information about 30DaysOfPython students. We will collect the name, country, city, date of birth, skills and bio.
+សូមយើងបង្កើត API ដែលប្រមូលព័ត៌មានអំពី 30DaysOfPython students។ យើងនឹងប្រមូល name, country, city, date of birth, skills និង bio.
 
-To implement this API, we will use:
+ដើម្បីអនុវត្ត API នេះយើងនឹងប្រើ:
 
 - Postman
 - Python
@@ -78,7 +76,7 @@ To implement this API, we will use:
 
 ### Retrieving data using get
 
-In this step, let us use dummy data and return it as a json. To return it as json, will use json module and Response module.
+Iនៅក្នុងជំហាននេះ, យើងត្រូវប្រើទិន្នន័យខ្លែងខ្លាយ ហើយត្រឡប់មកវិញជា json។ ដើម្បីត្រឡប់មកវិញជា json, នឹងប្រើ json module និង Response module។
 
 ```py
 # let's import the flask
@@ -120,15 +118,15 @@ if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0', port=port)
 ```
 
-When you request the http://localhost:5000/api/v1.0/students url on the browser you will get this:
+នៅពេលដែលអ្នកសុំ URL http://localhost:5000/api/v1.0/students នៅលើ browser អ្នកនឹងទទួលបាននេះ:
 
 ![Get on browser](../images/get_on_browser.png)
 
-When you request the http://localhost:5000/api/v1.0/students url on the browser you will get this:
+នៅពេលដែលអ្នកសុំ URL http://localhost:5000/api/v1.0/students នៅលើ browser អ្នកនឹងទទួលបាននេះ:
 
 ![Get on postman](../images/get_on_postman.png)
 
-In stead of displaying dummy data let us connect the flask application with MongoDB and get data from mongoDB database.
+ក្រៅពីការប្រើទិន្នន័យខ្លែងខ្លាយ សូមយើងភ្ជាប់កម្មវិធី flask ជាមួយ MongoDB និងទទួលបានទិន្នន័យពី MongoDB database ។
 
 ```py
 # let's import the flask
@@ -158,7 +156,7 @@ if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0', port=port)
 ```
 
-By connecting the flask, we can fetch students collection data from the thirty_days_of_python database.
+ដោយភ្ជាប់ flask, យើងអាចទាញយកទិន្នន័យការប្រមូលយករបស់សិស្សពីមូលដ្ឋានទិន្នន័យ thirty_days_of_python ។
 
 ```sh
 [
@@ -194,7 +192,7 @@ By connecting the flask, we can fetch students collection data from the thirty_d
 
 ### Getting a document by id
 
-We can access signle document using an id, let's access Asabeneh using his id.
+យើងអាចយកបាន document មួយដោយប្រើ id, តោះនាំយើងយក Asabeneh ដោយប្រើ id.
 http://localhost:5000/api/v1.0/students/5df68a21f106fe2d315bbc8b
 
 ```py
@@ -247,7 +245,7 @@ if __name__ == '__main__':
 
 ### Creating data using POST
 
-We use the POST request method to create data
+យើងអាចប្រើ POST request method ដើម្បី create data
 
 ```py
 # let's import the flask
@@ -492,11 +490,5 @@ if __name__ == '__main__':
     port = int(os.environ.get("PORT", 5000))
     app.run(debug=True, host='0.0.0.0', port=port)
 ```
-
-## 💻 Exercises: Day 29
-
-1. Implement the above example and develop [this](https://thirtydayofpython-api.herokuapp.com/)
-
-🎉 CONGRATULATIONS ! 🎉
 
 [<< Day 28](../28_Day_API/28_API.md) | [Day 30 >>](../30_Day_Conclusions/30_conclusions.md)

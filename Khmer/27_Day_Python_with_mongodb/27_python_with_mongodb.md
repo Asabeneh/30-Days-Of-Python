@@ -34,7 +34,6 @@
     - [Update with query](#update-with-query)
     - [Delete Document](#delete-document)
     - [Drop a collection](#drop-a-collection)
-  - [💻 Exercises: Day 27](#-exercises-day-27)
 
 # 📘 Day 27
 
