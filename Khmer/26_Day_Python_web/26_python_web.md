@@ -34,7 +34,6 @@
       - [Login to Heroku](#login-to-heroku)
       - [Create requirements and Procfile](#create-requirements-and-procfile)
       - [Pushing project to heroku](#pushing-project-to-heroku)
-  - [Exercises: Day 26](#exercises-day-26)
 
 # 📘 Day 26
 
@@ -565,12 +564,5 @@ Now, it is ready to be deployed. Steps to deploy the application on heroku
 6. heroku open(to launch the deployed application)
 
 After this step you will get an application like [this](http://thirdaysofpython-practice.herokuapp.com/)
-
-## Exercises: Day 26
-
-1. You will build [this application](https://thirtydaysofpython-v1-final.herokuapp.com/). Only the text analyser part is left
-
-
-🎉 CONGRATULATIONS ! 🎉
 
 [<< Day 25 ](../25_Day_Pandas/25_pandas.md) | [Day 27 >>](../27_Day_Python_with_mongodb/27_python_with_mongodb.md)
