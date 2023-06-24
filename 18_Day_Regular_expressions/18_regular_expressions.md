@@ -1,5 +1,5 @@
 <div align="center">
-  <h1> 30 Days Of Python: Day 18 - Regular Expressions </h1>
+  <h1> 30 Дней Python: День 18 - Регулярные Выражения </h1>
   <a class="header-badge" target="_blank" href="https://www.linkedin.com/in/asabeneh/">
   <img src="https://img.shields.io/badge/style--5eba00.svg?label=LinkedIn&logo=linkedin&style=social">
   </a>
@@ -7,161 +7,162 @@
   <img alt="Twitter Follow" src="https://img.shields.io/twitter/follow/asabeneh?style=social">
   </a>
 
-  <sub>Author:
+  <sub>Автор:
   <a href="https://www.linkedin.com/in/asabeneh/" target="_blank">Asabeneh Yetayeh</a><br>
-  <small> First Edition: Nov 22 - Dec 22, 2019</small>
+  <small> Первое издание: ноябрь 22 - декабрь 22, 2019</small>
   </sub>
 </div>
 </div>
 
-[<< Day 17](../17_Day_Exception_handling/17_exception_handling.md) | [Day 19>>](../19_Day_File_handling/19_file_handling.md)
+[<< День 17](../17_Day_Exception_handling/17_exception_handling.md) | [День 19>>](../19_Day_File_handling/19_file_handling.md)
 
 ![30DaysOfPython](../images/30DaysOfPython_banner3@2x.png)
 
-- [📘 Day 18](#-day-18)
-  - [Regular Expressions](#regular-expressions)
-    - [The *re* Module](#the-re-module)
-    - [Methods in *re* Module](#methods-in-re-module)
-      - [Match](#match)
-      - [Search](#search)
-      - [Searching for All Matches Using *findall*](#searching-for-all-matches-using-findall)
-      - [Replacing a Substring](#replacing-a-substring)
-  - [Splitting Text Using RegEx Split](#splitting-text-using-regex-split)
-  - [Writing RegEx Patterns](#writing-regex-patterns)
-    - [Square Bracket](#square-bracket)
-    - [Escape character(\\) in RegEx](#escape-character-in-regex)
-    - [One or more times(+)](#one-or-more-times)
-    - [Period(.)](#period)
-    - [Zero or more times(\*)](#zero-or-more-times)
-    - [Zero or one time(?)](#zero-or-one-time)
-    - [Quantifier in RegEx](#quantifier-in-regex)
-    - [Cart ^](#cart-)
-  - [💻 Exercises: Day 18](#-exercises-day-18)
-    - [Exercises: Level 1](#exercises-level-1)
-    - [Exercises: Level 2](#exercises-level-2)
-    - [Exercises: Level 3](#exercises-level-3)
+- [📘 День 18](#-день-18)
+  - [Регулярные выражения](#регулярные-выражения)
+    - [Модуль *re*](#модуль-re)
+    - [Методы модуля *re*](#методы-модуля-re)
+      - [*re.match()*](#rematch)
+      - [*re.search*](#research)
+      - [Поиск всех совпадений с помощью метода **findall**](#поиск-всех-совпадений-с-помощью-метода-findall)
+      - [Замена подстроки](#замена-подстроки)
+  - [Разделение текста с использованием метода RegEx Split](#разделение-текста-с-использованием-метода-regex-split)
+  - [Написание шаблонов RegEx](#написание-шаблонов-regex)
+    - [Квадратные скобки](#квадратные-скобки)
+    - [Экранирование специального символа \\ RegEx](#экранирование-специального-символа--regex)
+    - [Одно или больше совпадений (+)](#одно-или-больше-совпадений-)
+    - [Точка(.)](#точка)
+    - [Ноль или больше совпадений(\*)](#ноль-или-больше-совпадений)
+    - [Ноль или одно совпадение(?)](#ноль-или-одно-совпадение)
+    - [Квантификатор в  RegEx](#квантификатор-в--regex)
+    - [Символ ^](#символ-)
+  - [💻 Упражнения: День 18](#-упражнения-день-18)
+    - [Упраженения: Уровень 1](#упраженения-уровень-1)
+    - [Упраженения: Уровень 2](#упраженения-уровень-2)
+    - [Упраженения: Уровень 3](#упраженения-уровень-3)
 
-# 📘 Day 18
+# 📘 День 18
 
-## Regular Expressions
+## Регулярные выражения
 
-A regular expression or RegEx is a special text string that helps to find patterns in data. A RegEx can be used to check if some pattern exists in a different data type. To use RegEx in python first we should import the RegEx module which is called *re*.
+Регулярные выражения в Python - это мощный инструмент для работы с текстом. Они позволяют выполнять различные операции по поиску, сопоставлению и обработке текстовых данных на основе заданных шаблонов. Для использования регулярных выражений в Python необходимо импортировать модуль **re**. В этом модуле предоставляются различные функции и методы для работы с регулярными выражениями.
 
-### The *re* Module
+### Модуль *re*
 
-After importing the module we can use it to detect or find patterns.
+
+После импорта модуля мы можем использовать его для поиска шаблонов.
 
 ```py
 import re
 ```
 
-### Methods in *re* Module
+### Методы модуля *re*
 
-To find a pattern we use different set of *re* character sets that allows to search for a match in a string.
+Для поиска шаблона мы используем различные методы модуля re, которые позволяют искать совпадение в строке.
 
-* *re.match()*: searches only in the beginning of the first line of the string and returns matched objects if  found, else returns None. 
-* *re.search*: Returns a match object if there is one anywhere in the string, including multiline strings.
-* *re.findall*: Returns a list containing all matches
-* *re.split*:	Takes a string, splits it at the match points, returns a list
-* *re.sub*:  Replaces one or many matches within a string
+* **re.match(pattern, string)**: Этот метод ищет совпадение шаблона pattern только в начале первой строки string. Если совпадение найдено, он возвращает объект совпадения, иначе возвращает None.
+* *re.search(pattern, string)*: Этот метод ищет совпадение шаблона pattern в строке string. Он вернет первое найденное совпадение в любой части строки. Если совпадение найдено, он возвращает объект совпадения, иначе возвращает None. 
+* **re.findall(pattern, string)**: Этот метод ищет все неперекрывающиеся совпадения шаблона pattern в строке string. Он возвращает список всех найденных.
+* **re.split(pattern, string)**: Этот метод разделяет строку string по местам совпадения шаблона pattern и возвращает список разделенных элементов. 
+* **re.sub(pattern, repl, string)**: Этот метод заменяет все совпадения шаблона pattern в строке string на строку repl. Он возвращает новую строку с выполненными заменами. 
 
-#### Match
+#### *re.match()*
 
 ```py
-# syntac
+# синтаксис
 re.match(substring, string, re.I)
-# substring is a string or a pattern, string is the text we look for a pattern , re.I is case ignore
+# substring - это строка или шаблон, string - текст, в котором мы ищем совпадение, re.I - параметр, указывающий игнорирование регистра
 ```
 
 ```py
 import re
 
-txt = 'I love to teach python and javaScript'
-# It returns an object with span, and match
-match = re.match('I love to teach', txt, re.I)
-print(match)  # <re.Match object; span=(0, 15), match='I love to teach'>
-# We can get the starting and ending position of the match as tuple using span
+txt = 'Я люблю преподавать Python и JavaScript'
+# Возвращает объект с информацией о расположении совпадения
+match = re.match('Я люблю преподавать', txt, re.I)
+print(match)  # <re.Match object; span=(0, 19), match='Я люблю преподавать'>
+# Мы можем получить начальную и конечную позицию совпадения в виде кортежа, используя метод span()
 span = match.span()
-print(span)     # (0, 15)
-# Lets find the start and stop position from the span
+print(span)     # (0, 19)
+# Давайте получим начальную и конечную позицию из кортежа
 start, end = span
-print(start, end)  # 0, 15
-substring = txt[start:end]
-print(substring)       # I love to teach
+print(start, end)  # 0, 19
+подстрока = txt[start:end]
+print(подстрока)       # Я люблю преподавать
 ```
 
-As you can see from the example above, the pattern we are looking for (or the substring we are looking for) is *I love to teach*. The match function returns an object **only** if the text starts with the pattern.
+Как видно из приведенного выше примера, мы ищем шаблон (или подстроку) Я люблю преподавать. Метод match возвращает объект **только в том случае**, если текст начинается с заданного шаблона.
 
 ```py
 import re
 
-txt = 'I love to teach python and javaScript'
-match = re.match('I like to teach', txt, re.I)
+txt = 'Я люблю преподавать Python и JavaScript'
+match = re.match('Мне нравится преподавать', txt, re.I)
 print(match)  # None
 ```
 
-The string does not string with *I like to teach*, therefore there was no match and the match method returned None.
+Текст не начинается с *Мне нравится преподавать*, поэтому совпадение не найдено, и метод match возвращает None.
 
-#### Search
+#### *re.search*
 
 ```py
-# syntax
+# синтаксис
 re.match(substring, string, re.I)
-# substring is a pattern, string is the text we look for a pattern , re.I is case ignore flag
+# substring - это строка или шаблон, string - текст, в котором мы ищем совпадение, re.I - параметр, указывающий игнорирование регистра
 ```
 
 ```py
 import re
 
-txt = '''Python is the most beautiful language that a human being has ever created.
-I recommend python for a first programming language'''
+txt = '''Python - самый прекрасный язык, который когда-либо создал человек.
+Я рекомендую Python в качестве первого языка программирования'''
 
-# It returns an object with span and match
-match = re.search('first', txt, re.I)
-print(match)  # <re.Match object; span=(100, 105), match='first'>
-# We can get the starting and ending position of the match as tuple using span
+# Возвращает объект с информацией о расположении совпадения
+match = re.search('первого', txt, re.I)
+print(match)  # <re.Match object; span=(98, 105), match='первого'>
+# Мы можем получить начальную и конечную позицию совпадения в виде кортежа, используя метод span()
 span = match.span()
-print(span)     # (100, 105)
-# Lets find the start and stop position from the span
+print(span)     # (98, 105)
+# Давайте получим начальную и конечную позицию из кортежа
 start, end = span
-print(start, end)  # 100 105
-substring = txt[start:end]
-print(substring)       # first
+print(start, end)  # 98, 105
+подстрока = txt[start:end]
+print(подстрока)       # первого
 ```
 
-As you can see, search is much better than match because it can look for the pattern throughout the text. Search returns a match object with a first match that was found, otherwise it returns _None_. A much better *re* function is *findall*. This function checks for the pattern through the whole string and returns all the matches as a list.
+Как видно из примера выше, метод **search** практичнее метода match, потому что она ищет шаблон во всем тексте. Search возвращает объект с первым найденным совпадением, в противном случае возвращает None. Более удобный метод re - это **findall**. Он проверяет весь текст на наличие совпадений с шаблоном и возвращает все найденные совпадения в виде списка.
 
-#### Searching for All Matches Using *findall*
+#### Поиск всех совпадений с помощью метода **findall**
 
-*findall()* returns all the matches as a list
+*findall()* возвращает все совпадения в виде списка.
 
 ```py
-txt = '''Python is the most beautiful language that a human being has ever created.
-I recommend python for a first programming language'''
+txt = '''Python - самый прекрасный язык, который когда-либо создал человек.
+Я рекомендую Python в качестве первого языка программирования'''
 
-# It return a list
-matches = re.findall('language', txt, re.I)
-print(matches)  # ['language', 'language']
+# Возвращает список
+matches = re.findall('язык', txt, re.I)
+print(matches)  # ['язык', 'язык']
 ```
 
-As you can see, the word *language* was found two times in the string. Let us practice some more.
-Now we will look for both Python and python words in the string:
+Как видно, слово "язык" найдено дважды в строке. Попробуем еще несколько примеров.
+Теперь мы будем искать слова "Python" и "python" в строке:
 
 ```py
-txt = '''Python is the most beautiful language that a human being has ever created.
-I recommend python for a first programming language'''
+txt = '''Python - самый прекрасный язык, который когда-либо создал человек.
+Я рекомендую Python в качестве первого языка программирования'''
 
-# It returns list
-matches = re.findall('python', txt, re.I)
+# Возвращает список
+matches = re.findall('Python|python', txt, re.I)
 print(matches)  # ['Python', 'python']
 
 ```
 
-Since we are using *re.I* both lowercase and uppercase letters are included. If we do not have the re.I flag, then we will have to write our pattern differently. Let us check it out:
+Так как мы используем флаг re.I, регистр букв не учитывается. Если флаг re.I отсутствует, то нам придется написать шаблон по-другому. Давайте проверим:
 
 ```py
-txt = '''Python is the most beautiful language that a human being has ever created.
-I recommend python for a first programming language'''
+txt = '''Python - самый прекрасный язык, который когда-либо создал человек.
+Я рекомендую Python в качестве первого языка программирования'''
 
 matches = re.findall('Python|python', txt)
 print(matches)  # ['Python', 'python']
@@ -172,20 +173,21 @@ print(matches)  # ['Python', 'python']
 
 ```
 
-#### Replacing a Substring
+#### Замена подстроки
 
 ```py
-txt = '''Python is the most beautiful language that a human being has ever created.
-I recommend python for a first programming language'''
+txt = '''Python - самый прекрасный язык, который когда-либо создал человек.
+Я рекомендую Python в качестве первого языка программирования'''
 
-match_replaced = re.sub('Python|python', 'JavaScript', txt, re.I)
-print(match_replaced)  # JavaScript is the most beautiful language that a human being has ever created.
-# OR
-match_replaced = re.sub('[Pp]ython', 'JavaScript', txt, re.I)
-print(match_replaced)  # JavaScript is the most beautiful language that a human being has ever created.
+match_replaced  = re.sub('Python|python', 'JavaScript', txt, re.I)
+print(match_replaced )  # JavaScript - самый прекрасный язык, который когда-либо создал человек.
+# ИЛИ
+match_replaced  = re.sub('[Pp]ython', 'JavaScript', txt, re.I)
+print(match_replaced )  # JavaScript - самый прекрасный язык, который когда-либо создал человек.
+
 ```
 
-Let us add one more example. The following string is really hard to read unless we remove the % symbol. Replacing the % with an empty string will clean the text.
+Рассмотрим еще один пример. Следующую строку прочитать сложно, пока мы не удалим символ %. Замена символа % на пустую строку очистит текст.
 
 ```py
 
@@ -204,24 +206,25 @@ There is nothing as rewarding as educating and empowering people.
 I found teaching more interesting than any other jobs. Does this motivate you to be a teacher?
 ```
 
-## Splitting Text Using RegEx Split
+## Разделение текста с использованием метода RegEx Split
 
 ```py
-txt = '''I am teacher and  I love teaching.
-There is nothing as rewarding as educating and empowering people.
-I found teaching more interesting than any other jobs.
-Does this motivate you to be a teacher?'''
-print(re.split('\n', txt)) # splitting using \n - end of line symbol
+txt = '''Я преподаватель и люблю преподавать.
+Нет ничего более вдохновляющего, чем образование и развитие людей.
+Я нашел преподавание более интересным, чем любую другую работу.
+Вдохновляет ли это вас стать учителем?'''
+print(re.split('\n', txt))  # разделение по символу \n - символ конца строки
 ```
 
 ```sh
-['I am teacher and  I love teaching.', 'There is nothing as rewarding as educating and empowering people.', 'I found teaching more interesting than any other jobs.', 'Does this motivate you to be a teacher?']
+['Я преподаватель и люблю преподавать.', 'Нет ничего более вдохновляющего, чем образование и развитие людей.', 'Я нашел преподавание более интересным, чем любую другую работу.', 'Вдохновляет ли это вас стать учителем?']
+
 ```
 
-## Writing RegEx Patterns
+## Написание шаблонов RegEx 
 
-To declare a string variable we use a single or double quote. To declare RegEx variable *r''*.
-The following pattern only identifies apple with lowercase, to make it case insensitive either we should rewrite our pattern or we should add a flag.  
+Для объявления переменной типа строки мы используем одинарные или двойные кавычки.  Для объявления переменной типа регулярного выражения используем **r''**.
+Следующий шаблон идентифицирует только слово "apple" в нижнем регистре. Чтобы сделать его регистронезависимым, мы можем либо переписать шаблон, либо добавить флаг.  
 
 ```py
 import re
@@ -231,164 +234,170 @@ txt = 'Apple and banana are fruits. An old cliche says an apple a day a doctor w
 matches = re.findall(regex_pattern, txt)
 print(matches)  # ['apple']
 
-# To make case insensitive adding flag '
+# Чтобы сделать поиск независимым от регистра, добавим флаг re.I
 matches = re.findall(regex_pattern, txt, re.I)
 print(matches)  # ['Apple', 'apple']
-# or we can use a set of characters method
-regex_pattern = r'[Aa]pple'  # this mean the first letter could be Apple or apple
+# Мы также можем использовать набор символов (set of characters)
+regex_pattern = r'[Aa]pple'   # это означает, что первая буква может быть "Apple" или "apple"
 matches = re.findall(regex_pattern, txt)
 print(matches)  # ['Apple', 'apple']
 
 ```
-* []:  A set of characters
-  * [a-c] means, a or b or c
-  * [a-z] means, any letter from a to z
-  * [A-Z] means, any character from A to Z
-  * [0-3] means, 0 or 1 or 2 or 3
-  * [0-9] means any number from 0 to 9
-  * [A-Za-z0-9] any single character, that is a to z, A to Z or 0 to 9
-* \\:  uses to escape special characters
-  * \d means: match where the string contains digits (numbers from 0-9)
-  * \D means: match where the string does not contain digits
-* . : any character except new line character(\n)
-* ^: starts with
-  * r'^substring' eg r'^love', a sentence that starts with a word love
-  * r'[^abc] means not a, not b, not c.
-* $: ends with
-  * r'substring$' eg r'love$', sentence  that ends with a word love
-* *: zero or more times
-  * r'[a]*' means a optional or it can occur many times.
-* +: one or more times
-  * r'[a]+' means at least once (or more)
-* ?: zero or one time
-  *  r'[a]?' means zero times or once
-* {3}: Exactly 3 characters
-* {3,}: At least 3 characters
-* {3,8}: 3 to 8 characters
-* |: Either or
-  * r'apple|banana' means either apple or a banana
-* (): Capture and group
+* []: Набор символов
+  * [a-c] означает "a" или "b" или "c"
+  * [a-z] означает любую букву от "a" до "z"
+  * [A-Z] означает любой символ от "A" до "Z"
+  * [0-3] означает 0 или 1 или 2 или 3
+  * [0-9] означает любую цифру от 0 до 9
+  * [A-Za-z0-9] означает любой отдельный символ, будь то буква от "a" до "z", от "A" до "Z" или цифра от 0 до 9
+* \\: используется для иззбегания специальных символов
+  * ∗\d означает: совпадение с цифрами(числами от 0 до 9)
+  * \D означает: совпадение со символами,не являющимися цифрами
+* . : любой символ, кроме символа новой строки (\n)
+* ^: начинающиеся
+  * r'^substring' например, r'^love' - предложения, начинающееся со слова "love"
+  * r'[^abc] означает не "a", не "b", не "c".
+* $: заканчивающиеся
+  * r'substring$' например, r'love$' - предложения, заканчивающееся словом "love"
+* *: ноль или более раз
+  * r'[a]*' означает ноль или более вхождений символа "a"
+* +: один или более раз
+  * r'[a]+' означает одно или более вхождений символа "a"
+* ?: ноль или один раз
+  *  r'[a]?' означает ноль или одно вхождение символа "a"
+* {3}: ровно 3 символа
+* {3,}: не менее 3 символов
+* {3,8}: от 3 до 8 символов
+* |: либо
+  * r'apple|banana' означает либо "apple", либо "banana"
+* (): захват и группировка
 
 ![Regular Expression cheat sheet](../images/regex.png)
 
-Let us use examples to clarify the meta characters above 
+Давайте рассмотрим несколько примеров, чтобы прояснить данные метасимволы.
 
-### Square Bracket
+### Квадратные скобки
 
-Let us use square bracket to include lower and upper case
+Давайте воспользуемся квадратными скобками для включения символов в нижнем и верхнем регистрах.
 
 ```py
-regex_pattern = r'[Aa]pple' # this square bracket mean either A or a
+regex_pattern = r'[Aa]pple' # эти квадратные скобки означают A или a
 txt = 'Apple and banana are fruits. An old cliche says an apple a day a doctor way has been replaced by a banana a day keeps the doctor far far away.'
 matches = re.findall(regex_pattern, txt)
 print(matches)  # ['Apple', 'apple']
+
 ```
 
-If we want to look for the banana, we write the pattern as follows:
+Если мы хотим найти слово "banana", мы можем написать шаблон следующим образом:
+
+
 
 ```py
-regex_pattern = r'[Aa]pple|[Bb]anana' # this square bracket means either A or a
+regex_pattern = r'[Aa]pple|[Bb]anana' # эти квадратные скобки означают A или a
 txt = 'Apple and banana are fruits. An old cliche says an apple a day a doctor way has been replaced by a banana a day keeps the doctor far far away.'
 matches = re.findall(regex_pattern, txt)
 print(matches)  # ['Apple', 'banana', 'apple', 'banana']
+
 ```
 
-Using the square bracket and or operator , we manage to extract Apple, apple, Banana and banana.
+Используя квадратные скобки и оператор "или", мы получили соответствия для слов Apple, apple, Banana и banana.
 
-### Escape character(\\) in RegEx
+### Экранирование специального символа \\ RegEx
 
 ```py
-regex_pattern = r'\d'  # d is a special character which means digits
+regex_pattern = r'\d'  # d - это специальный символ, который означает цифры
 txt = 'This regular expression example was made on December 6,  2019 and revised on July 8, 2021'
 matches = re.findall(regex_pattern, txt)
-print(matches)  # ['6', '2', '0', '1', '9', '8', '2', '0', '2', '1'], this is not what we want
+print(matches)  # ['6', '2', '0', '1', '9', '8', '2', '0', '2', '1'], это не то, что мы хотим
+
 ```
 
-### One or more times(+)
+### Одно или больше совпадений (+)
 
 ```py
-regex_pattern = r'\d+'  # d is a special character which means digits, + mean one or more times
+regex_pattern = r'\d+'  # d - это специальный символ, который означает цифры, + означает один или более раз
 txt = 'This regular expression example was made on December 6,  2019 and revised on July 8, 2021'
 matches = re.findall(regex_pattern, txt)
-print(matches)  # ['6', '2019', '8', '2021'] - now, this is better!
+print(matches)  # ['6', '2019', '8', '2021'] - теперь это лучше!
 ```
 
-### Period(.)
+### Точка(.)
 
 ```py
-regex_pattern = r'[a].'  # this square bracket means a and . means any character except new line
+regex_pattern = r'[a].'  # квадратные скобки означают символ a, а точка означает любой символ, кроме перевода строки
 txt = '''Apple and banana are fruits'''
 matches = re.findall(regex_pattern, txt)
 print(matches)  # ['an', 'an', 'an', 'a ', 'ar']
 
-regex_pattern = r'[a].+'  # . any character, + any character one or more times 
+regex_pattern = r'[a].+'  # . означает любой символ, + означает один или более раз
 matches = re.findall(regex_pattern, txt)
 print(matches)  # ['and banana are fruits']
+
 ```
 
-### Zero or more times(\*)
+### Ноль или больше совпадений(\*)
 
-Zero or many times. The pattern could may not occur or it can occur many times.
+Шаблон может не встречаться или может встречаться много раз..
 
 ```py
-regex_pattern = r'[a].*'  # . any character, * any character zero or more times 
+regex_pattern = r'[a].*'  # . любой символ, * любой символ ноль или более раз 
 txt = '''Apple and banana are fruits'''
 matches = re.findall(regex_pattern, txt)
 print(matches)  # ['and banana are fruits']
 ```
 
-### Zero or one time(?)
+### Ноль или одно совпадение(?)
 
-Zero or one time. The pattern may not occur or it may occur once.
+Шаблон может не встречаться или встретиться один раз.
 
 ```py
 txt = '''I am not sure if there is a convention how to write the word e-mail.
 Some people write it as email others may write it as Email or E-mail.'''
-regex_pattern = r'[Ee]-?mail'  # ? means here that '-' is optional
+regex_pattern = r'[Ee]-?mail'  # ? здесь означает, что '-' является необязательным
 matches = re.findall(regex_pattern, txt)
 print(matches)  # ['e-mail', 'email', 'Email', 'E-mail']
 ```
 
-### Quantifier in RegEx
+### Квантификатор в  RegEx
 
-We can specify the length of the substring we are looking for in a text, using a curly bracket. Let us imagine, we are interested in a substring with a length of 4 characters:
+Мы можем указать длину подстроки, которую мы ищем в тексте, используя фигурные скобки. Представим, что нас интересует подстрока длиной 4 символа:
 
 ```py
 txt = 'This regular expression example was made on December 6,  2019 and revised on July 8, 2021'
-regex_pattern = r'\d{4}'  # exactly four times
+regex_pattern = r'\d{4}'  # ровно четыре символа
 matches = re.findall(regex_pattern, txt)
 print(matches)  # ['2019', '2021']
 
 txt = 'This regular expression example was made on December 6,  2019 and revised on July 8, 2021'
-regex_pattern = r'\d{1, 4}'   # 1 to 4
+regex_pattern = r'\d{1, 4}'   # от 1 до 4
 matches = re.findall(regex_pattern, txt)
 print(matches)  # ['6', '2019', '8', '2021']
 ```
 
-### Cart ^
+### Символ ^
 
-* Starts with
+* Начинается с ... 
   
 ```py
 txt = 'This regular expression example was made on December 6,  2019 and revised on July 8, 2021'
-regex_pattern = r'^This'  # ^ means starts with
+regex_pattern = r'^This'   # ^ означает начало строки
 matches = re.findall(regex_pattern, txt)
 print(matches)  # ['This']
 ```
 
-* Negation
+* Отрицание
 
 ```py
 txt = 'This regular expression example was made on December 6,  2019 and revised on July 8, 2021'
-regex_pattern = r'[^A-Za-z ]+'  # ^ in set character means negation, not A to Z, not a to z, no space
+regex_pattern = r'[^A-Za-z ]+'   # ^ внутри набора символов означает отрицание: не A-Z, не a-z, нет пробела
 matches = re.findall(regex_pattern, txt)
 print(matches)  # ['6,', '2019', '8', '2021']
 ```
 
-## 💻 Exercises: Day 18
+## 💻 Упражнения: День 18
 
-### Exercises: Level 1
- 1. What is the most frequent word in the following paragraph?
+### Упраженения: Уровень 1
+ 1. Какое самое частое слово в следующей строке paragraph:
 ```py
     paragraph = 'I love teaching. If you do not love teaching what else can you love. I love Python if you do not love something which can give you all the capabilities to develop an application what else can you love.
 ```
@@ -420,7 +429,7 @@ print(matches)  # ['6,', '2019', '8', '2021']
     ]
 ```
 
-2. The position of some particles on the horizontal x-axis are -12, -4, -3 and -1 in the negative direction, 0 at origin, 4 and 8 in the positive direction. Extract these numbers from this whole text and find the distance between the two furthest particles.
+2. Положение некоторых точек на оси x: -12, -4, -3 и -1 в отрицательном направлении, 0 - начало координат, 4 и 8 в положительном направлении. Извлеките эти числа из текста и найдите расстояние между двумя наиболее удаленными частицами.
 
 ```py
 points = ['-1', '2', '-4', '-3', '-1', '0', '4', '8']
@@ -428,9 +437,9 @@ sorted_points =  [-4, -3, -1, -1, 0, 2, 4, 8]
 distance = 8 -(-4) # 12
 ```
 
-### Exercises: Level 2
+### Упраженения: Уровень 2
 
-1. Write a pattern which identifies if a string is a valid python variable
+1. Напишите шаблон, который определяет, является ли строка допустимой переменной в Python.
 
     ```sh
     is_valid_variable('first_name') # True
@@ -439,18 +448,17 @@ distance = 8 -(-4) # 12
     is_valid_variable('firstname') # True
     ```
 
-### Exercises: Level 3
+### Упраженения: Уровень 3
 
-1. Clean the following text. After cleaning, count three most frequent words in the string.
+1. Удалите символ %. После удаления подсчитайте три наиболее часто встречающихся слова в строке.
 
     ```py
     sentence = '''%I $am@% a %tea@cher%, &and& I lo%#ve %tea@ching%;. There $is nothing; &as& mo@re rewarding as educa@ting &and& @emp%o@wering peo@ple. ;I found tea@ching m%o@re interesting tha@n any other %jo@bs. %Do@es thi%s mo@tivate yo@u to be a tea@cher!?'''
 
-    print(clean_text(sentence));
-    I am a teacher and I love teaching There is nothing as more rewarding as educating and empowering people I found teaching more interesting than any other jobs Does this motivate you to be a teacher
+    print(clean_text(sentence)) # I am a teacher and I love teaching There is nothing as more rewarding as educating and empowering people I found teaching more interesting than any other jobs Does this motivate you to be a teacher
     print(most_frequent_words(cleaned_text)) # [(3, 'I'), (2, 'teaching'), (2, 'teacher')]
     ```
 
-🎉 CONGRATULATIONS ! 🎉
+🎉 ПОЗДРАВЛЯЕМ ! 🎉
 
-[<< Day 17](../17_Day_Exception_handling/17_exception_handling.md) | [Day 19>>](../19_Day_File_handling/19_file_handling.md)
+[<< День 17](../17_Day_Exception_handling/17_exception_handling.md) | [День 19>>](../19_Day_File_handling/19_file_handling.md)
