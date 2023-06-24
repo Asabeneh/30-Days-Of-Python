@@ -30,29 +30,31 @@
 
 ## Statistics
 
-Statistics is the discipline that studies the _collection_, _organization_, _displaying_, _analysing_, _interpretation_ and _presentation_ of data.
-Statistics is a branch of Mathematics that is recommended to be a prerequisite for data science and machine learning. Statistics is a very broad field but we will focus in this section only on the most relevant part.
-After completing this challenge, you may go onto the web development, data analysis, machine learning and data science path. Whatever path you may follow, at some point in your career you will get data which you may work on. Having some statistical knowledge will help you to make decisions based on data, _data tells as they say_.
+Statistics = ស្ថិតិ
+Statistics គឺជាវិស័យដែលសិក្សាអំពី _collection_, _organization_, _displaying_, _analysing_, _interpretation_ and _presentation_ នៃទិន្នន័យ។
+Statistics ជាផ្នែកមួយនៃគណិតវិទ្យា ដែលត្រូវបានណែនាំថាជាលក្ខខណ្ឌចាំបាច់សម្រាប់ data science និង machine learning។ Statistics គឺជាវិស័យដ៏ទូលំទូលាយ ប៉ុន្តែយើងនឹងផ្តោតលើផ្នែកសំខាន់បំផុតប៉ុណ្ណោះ។
+ពេលចប់ពីនេះ អ្នកយករៀនទៅលើផ្លូវ web development, data analysis, machine learning និង data science។ ទោះបីជាអ្នកដើរតាមផ្លូវណាក៏ដោយ អ្នកនឹងទទួលបានទិន្នន័យដែលអ្នកអាចធ្វើការលើ។ ការមានចំណេះដឹងខាងស្ថិតិនឹងជួយអ្នកក្នុងការសម្រេចចិត្តដោយផ្អែកលើទិន្នន័យ, _data tells as they say_.
 
 ## Data
 
-What is data? Data is any set of characters that is gathered and translated for some purpose, usually analysis. It can be any character, including text and numbers, pictures, sound, or video. If data is not put in a context, it doesn't make any sense to a human or computer. To make sense from data we need to work on the data using different tools.
+Data = ទិន្នន័យ
+តើទិន្នន័យជាអ្វី? ទិន្នន័យគឺជាអ្វីដែលត្រូវបានប្រមូលនិងបកប្រែសម្រាប់គោលបំណងណាមួយ។ វាអាចជាអ្វីណាមួយ រួមទាំងអក្សរ និងលេខ រូបភាព សំឡេង ឬវីដេអូ។ បើទិន្នន័យមិនត្រូវបានដាក់នៅក្នុងបរិបទ វាមិនមានន័យអ្វីទេ សម្រាប់មនុស្ស ឬ កុំព្យូទ័រ។ ដើម្បីយល់ពីទិន្នន័យ យើងត្រូវធ្វើការលើទិន្នន័យ ដោយប្រើឧបករណ៍ផ្សេងៗ។
 
-The work flow of data analysis, data science or machine learning starts from data. Data can be provided from some data source or it can be created. There are structured and unstructured data.
+ដំណើរការការងារ data analysis, data science ឬ machine learning ចាប់ផ្តើមពីទិន្នន័យ. ទិន្នន័យអាចត្រូវបានផ្តល់ពីប្រភពទិន្នន័យណាមួយឬយើងអាចបង្កើតវាឡើង។ មានទិន្នន័យដែលត្រូវបានរចនា និងមិនរចនា។ (Structured data and unstructured data)
 
-Data can be found in small or big format. Most of the data types we will get have been covered in the file handling section.
+ទិន្នន័យអាចត្រូវបានរកឃើញនៅក្នុងទម្រង់តូចឬធំ។ ប្រភេទទិន្នន័យភាគច្រើនដែលយើងនឹងទទួលបានត្រូវបានបង្រៀននៅក្នុងផ្នែក file handling។
 
 ## Statistics Module
 
-The Python _statistics_ module provides functions for calculating mathematical statistics of numerical data. The module is not intended to be a competitor to third-party libraries such as NumPy, SciPy, or proprietary full-featured statistics packages aimed at professional statisticians such as Minitab, SAS and Matlab. It is aimed at the level of graphing and scientific calculators.
+Python _statistics_ module ផ្តល់មុខងារសម្រាប់ការគណនាទិន្នន័យលេខ។ ម៉ូឌុលនេះមិនត្រូវបានចាត់ទុកថាជាអ្នកប្រកួតប្រជែងជាមួយ NumPy, SciPy, ឬ សម្ភារៈស្តង់ដារពេញលេញដែលមានលក្ខណៈសម្បត្តិឯកជនសម្រាប់អ្នកវិភាគជំនាញដូចជា Minitab, SAS និង Matlab។ វាមានគោលដៅលើ graphing និង scientific calculators។
 
 # NumPy
 
-In the first section we defined Python as a great general-purpose programming language on its own, but with the help of other popular libraries as(numpy, scipy, matplotlib, pandas etc) it becomes a powerful environment for scientific computing.
+នៅក្នុងផ្នែកទីមួយយើងបានកំណត់ Python ជា programming language ទូទៅដ៏អស្ចារ្យដោយខ្លួនឯង ប៉ុន្តែដោយមានជំនួយពី libraries ល្បីល្បាញដូចជា (numpy, scipy, matplotlib, pandas, etc)។ វាក្លាយជាបរិយាកាសដ៏មានល្អសម្រាប់វិទ្យាសាស្ត្កុំព្យូទ័រ។
 
-NumPy is the core library for scientific computing in Python. It provides a high-performance multidimensional array object, and tools for working with arrays.
+NumPy គឺជា library សំខាន់សម្រាប់វិទ្យាសាស្ត្កុំព្យូទ័រក្នុង Python។ វាផ្តល់នូវ multi-dimensional array ដែលមានលក្ខណៈល្អ និងឧបករណ៍សម្រាប់ធ្វើការជាមួយ arrays ។
 
-So far, we have been using vscode but from now on I would recommend using Jupyter Notebook. To access jupyter notebook let's install [anaconda](https://www.anaconda.com/). If you are using anaconda most of the common packages are included and you don't have install packages if you installed anaconda.
+រហូតមកដល់ពេលនេះ យើងបានប្រើ vscode ប៉ុន្តែចាប់ពីពេលនេះតទៅខ្ញុំសូមណែនាំឲ្យប្រើ Jupyter Notebook។ ដើម្បីប្រើ jupyter notebook យើងបញ្ចូល [anaconda](https://www.anaconda.com/)។ បើអ្នកប្រើ anaconda, package ដែលល្បីនឹងមានស្រាប់ហើយ។
 
 ```sh
 asabeneh@Asabeneh:~/Desktop/30DaysOfPython$ pip install numpy
@@ -60,7 +62,7 @@ asabeneh@Asabeneh:~/Desktop/30DaysOfPython$ pip install numpy
 
 ## Importing NumPy
 
-Jupyter notebook is available if your are in favor of [jupyter notebook](https://github.com/Asabeneh/data-science-for-everyone/blob/master/numpy/numpy.ipynb)
+អ្នកអាចប្រើ Jupyter notebook បើចូលចិត្តវា [jupyter notebook](https://github.com/Asabeneh/data-science-for-everyone/blob/master/numpy/numpy.ipynb)
 
 ```py
     # How to import numpy
@@ -97,7 +99,7 @@ Jupyter notebook is available if your are in favor of [jupyter notebook](https:/
 
 ### Creating float numpy arrays
 
-Creating a float numpy array from list with a float data type parameter
+បង្កើត float numpy array ពី list ជាមួយប្រភេទទិន្នន័យ parameter float
 
 ```py
     # Python list
@@ -109,7 +111,7 @@ Creating a float numpy array from list with a float data type parameter
 
 ### Creating boolean numpy arrays
 
-Creating a boolean a numpy array from list
+បង្កើត boolean numpy array ពី list
 
 ```py
     numpy_bool_array = np.array([0, 1, -1, 0, 0], dtype=bool)
@@ -118,7 +120,7 @@ Creating a boolean a numpy array from list
 
 ### Creating multidimensional array using numpy
 
-A numpy array may have one or multiple rows and columns
+Numpy array អាចមានមួយ ឬច្រើនជួរឈរនិងដេក
 
 ```py
     two_dimensional_list = [[0,1,2], [3,4,5], [6,7,8]]
@@ -136,6 +138,8 @@ A numpy array may have one or multiple rows and columns
 
 ### Converting numpy array to list
 
+ប្តូរ numpy ទៅ list
+
 ```python
 # We can always convert an array back to a python list using tolist().
 np_to_list = numpy_array_from_list.tolist()
@@ -152,6 +156,8 @@ print('two dimensional array: ', numpy_two_dimensional_list.tolist())
 
 ### Creating numpy array from tuple
 
+បង្កើត numpy array ពី tuple
+
 ```py
 # Numpy array from tuple
 # Creating tuple in Python
@@ -166,7 +172,7 @@ print('numpy_array_from_tuple: ', numpy_array_from_tuple) # numpy_array_from_tup
 
 ### Shape of numpy array
 
-The shape method provide the shape of the array as a tuple. The first is the row and the second is the column. If the array is just one dimensional it returns the size of the array.
+Shape method ផ្តល់ទម្រង់នៃ array ជា tuple។ ទីមួយគឺជួរឈរ និងទីពីរគឺជួរដេក។ ប្រសិនបើ array មានតែមួយ dimension វានឹងត្រឡប់មកវិញទំហំ array ។
 
 ```py
     nums = np.array([1, 2, 3, 4, 5])
@@ -192,7 +198,7 @@ The shape method provide the shape of the array as a tuple. The first is the row
 
 ### Data type of numpy array
 
-Type of data types: str, int, float, complex, bool, list, None
+ប្រភេទទិន្នន័យ: str, int, float, complex, bool, list, None
 
 ```py
 int_lists = [-3, -2, -1, 0, 1, 2,3]
@@ -214,7 +220,7 @@ print(float_array.dtype)
 
 ### Size of a numpy array
 
-In numpy to know the number of items in a numpy array list we use size
+ក្នុង numpy ដើម្បីដឹងចំនួននៃអាត្រាក្នុងបញ្ជី array numpy យើងប្រើ size។
 
 ```py
 numpy_array_from_list = np.array([1, 2, 3, 4, 5])
@@ -234,16 +240,16 @@ print('The size:', two_dimensional_list.size)  # 3
 
 ## Mathematical Operation using numpy
 
-NumPy array is not like exactly like python list. To do mathematical operation in Python list we have to loop through the items but numpy can allow to do any mathematical operation without looping.
-Mathematical Operation:
+NumPy array មិនដូច python list។ ដើម្បីធ្វើប្រតិបត្តិការគណិតវិទ្យានៅក្នុង Python list យើងត្រូវ loop តាមរយៈអត្ថបទ ប៉ុន្តែ numpy អាចអនុញ្ញាតឱ្យធ្វើប្រតិបត្តិការគណិតវិទ្យាណាមួយដោយគ្មាន looping ។
+ប្រតិបត្តិការគណិតវិទ្យា:
 
-- Addition (+)
-- Subtraction (-)
-- Multiplication (\*)
-- Division (/)
-- Modules (%)
-- Floor Division(//)
-- Exponential(\*\*)
+- Addition (+) បូក
+- Subtraction (-) ដក
+- Multiplication (\*) គុណ
+- Division (/) ចែក
+- Modules (%) រកសំណល់
+- Floor Division(//) បង្កត់
+- Exponential(\*\*) ស្វាយគុណ
 
 ### Addition
 
@@ -368,9 +374,9 @@ print(numpy_bool_arr.dtype)
 
 ### Converting types
 
-We can convert the data types of numpy array
+យើងអាចបម្លែងប្រភេទទិន្នន័យនៃ array numpy
 
-1. Int to Float
+1. Int ទៅ Float
 
 ```py
 numpy_int_arr = np.array([1,2,3,4], dtype = 'float')
@@ -379,7 +385,7 @@ numpy_int_arr
 
     array([1., 2., 3., 4.])
 
-2. Float to Int
+2. Float ទៅ Int
 
 ```py
 numpy_int_arr = np.array([1., 2., 3., 4.], dtype = 'int')
@@ -390,7 +396,7 @@ numpy_int_arr
     array([1, 2, 3, 4])
 ```
 
-3. Int ot boolean
+3. Int ទៅ boolean
 
 ```py
 np.array([-3, -2, 0, 1,2,3], dtype='bool')
@@ -401,7 +407,7 @@ np.array([-3, -2, 0, 1,2,3], dtype='bool')
     array([ True,  True, False,  True,  True,  True])
 ```
 
-4. Int to str
+4. Int ទៅ str
 
 ```py
 numpy_float_list.astype('int').astype('str')
@@ -474,7 +480,7 @@ print(two_dimension_array)
 
 ## Slicing Numpy array
 
-Slicing in numpy is similar to slicing in python list
+Slicing ក្នុង numpy ស្រដៀង slicing ក្នុង python list
 
 ```py
 two_dimension_array = np.array([[1,2,3],[4,5,6], [7,8,9]])
@@ -489,6 +495,8 @@ print(first_two_rows_and_columns)
 
 ### How to reverse the rows and the whole array?
 
+តើធ្វើដូចម្តេចដើម្បីបម្លែងជួរឈរនិង array ទាំងមូល?
+
 ```py
 two_dimension_array[::]
 ```
@@ -500,6 +508,8 @@ two_dimension_array[::]
 ```
 
 ### Reverse the row and column positions
+
+ប្តូរជួរឈរនិងដេកអោយផ្ទុយគ្នា
 
 ```py
     two_dimension_array = np.array([[1,2,3],[4,5,6], [7,8,9]])
@@ -513,6 +523,8 @@ two_dimension_array[::]
 ```
 
 ## How to represent missing values ?
+
+របៀបតំណាងតម្លៃដែលបាត់បង់?
 
 ```python
     print(two_dimension_array)
@@ -612,6 +624,8 @@ flattened
 ```
 
 #### Generating Random Numbers
+
+ការបង្តើតលេខដោយ random
 
 ```py
     # Generate a random float  number
@@ -762,7 +776,7 @@ matrix([[1., 1., 1., 1.],
 
 #### What is Arrange?
 
-Sometimes, you want to create values that are evenly spaced within a defined interval. For instance, you want to create values from 1 to 10; you can use numpy.arange() function
+ជួនកាល អ្នកចង់បង្កើតតម្លៃ ដែលមានចន្លោះ interval ណាមួយ។ ឧទាហរណ៍, អ្នកចង់បង្កើតតម្លៃពី 1 ដល់ 10; អ្នកអាចប្រើ numpy.arange() function
 
 ```py
 # creating list using range(starting, stop, step)
@@ -920,10 +934,10 @@ print('Third column: ', np_list[:,2])
 
 ### NumPy Statistical Functions with Example
 
-NumPy has quite useful statistical functions for finding minimum, maximum, mean, median, percentile,standard deviation and variance, etc from the given elements in the array.
-The functions are explained as follows −
+NumPy មានមុខងារមានប្រយោជន៍ក្នុងការរក minimum, maximum, mean, median, percentile,standard deviation និង variance, etc ពីចំណុចដែលបានផ្តល់នៅក្នុង array ។
+Functions ត្រូវបានពន្យល់ដូចខាងក្រោម −
 Statistical function
-Numpy is equipped with the robust statistical function as listed below
+Numpy ត្រូវបានបំពាក់ដោយ statistical function ដូចខាងក្រោម
 
 - Numpy Functions
   - Min np.min()
@@ -1182,7 +1196,7 @@ np_arr + 2
 
 array([ 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12])
 
-We use linear equation for quantities which have linear relationship. Let's see the example below:
+យើងប្រើ linear equation សម្រាប់ចំនួនដែលមាន linear relationship។ សូមមើលឧទាហរណ៍ខាងក្រោម:
 
 ```python
 temp = np.array([1,2,3,4,5])
@@ -1203,7 +1217,7 @@ plt.show()
 
 ![png](../test_files/test_141_0.png)
 
-To draw the Gaussian normal distribution using numpy. As you can see below, the numpy can generate random numbers. To create random sample, we need the mean(mu), sigma(standard deviation), mumber of data points.
+ដើម្បីគូរ Gaussian normal distribution ដោយប្រើ numpy។ ដូចដែលអ្នកអាចមើលឃើញខាងក្រោម, numpy អាចបង្កើតលេខដោយចៃដន្យ។ ដើម្បីបង្កើតសំណាកដោយចៃដន្យ, យើងត្រូវការ mean(mu), sigma(standard deviation), mumber of data points.
 
 ```python
 mu = 28
@@ -1217,21 +1231,5 @@ plt.show()
 ```
 
 ![png](../test_files/test_143_0.png)
-
-# Summery
-
-To summarize, the main differences with python lists are:
-
-1. Arrays support vectorized operations, while lists don’t.
-1. Once an array is created, you cannot change its size. You will have to create a new array or overwrite the existing one.
-1. Every array has one and only one dtype. All items in it should be of that dtype.
-1. An equivalent numpy array occupies much less space than a python list of lists.
-1. numpy arrays support boolean indexing.
-
-## 💻 Exercises: Day 24
-
-1. Repeat all the examples
-
-🎉 CONGRATULATIONS ! 🎉
 
 [<< Day 23](../23_Day_Virtual_environment/23_virtual_environment.md) | [Day 25 >>](../25_Day_Pandas/25_pandas.md)
