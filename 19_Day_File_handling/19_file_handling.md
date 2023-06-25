@@ -1,5 +1,5 @@
 <div align="center">
-  <h1> 30 Days Of Python: Day 19 - File Handling </h1>
+  <h1> 30 Дней Python: День 19 - Работа с файлами </h1>
   <a class="header-badge" target="_blank" href="https://www.linkedin.com/in/asabeneh/">
   <img src="https://img.shields.io/badge/style--5eba00.svg?label=LinkedIn&logo=linkedin&style=social">
   </a>
@@ -8,65 +8,66 @@
   </a>
 <sub>Author:
 <a href="https://www.linkedin.com/in/asabeneh/" target="_blank">Asabeneh Yetayeh</a><br>
-<small>Second Edition: July, 2021</small>
+<small>Второе издание: Июль, 2021</small>
 </sub>
 </div>
 
-[<< Day 18](../18_Day_Regular_expressions/18_regular_expressions.md) | [Day 20 >>](../20_Day_Python_package_manager/20_python_package_manager.md)
+[<< День 18](../18_Day_Regular_expressions/18_regular_expressions.md) | [День 20 >>](../20_Day_Python_package_manager/20_python_package_manager.md)
 
 ![30DaysOfPython](../images/30DaysOfPython_banner3@2x.png)
 
-- [📘 Day 19](#-day-19)
-  - [File Handling](#file-handling)
-    - [Opening Files for Reading](#opening-files-for-reading)
-    - [Opening Files for Writing and Updating](#opening-files-for-writing-and-updating)
-    - [Deleting Files](#deleting-files)
-  - [File Types](#file-types)
-    - [File with txt Extension](#file-with-txt-extension)
-    - [File with json Extension](#file-with-json-extension)
-    - [Changing JSON to Dictionary](#changing-json-to-dictionary)
-    - [Changing Dictionary to JSON](#changing-dictionary-to-json)
-    - [Saving as JSON File](#saving-as-json-file)
-    - [File with csv Extension](#file-with-csv-extension)
-    - [File with xlsx Extension](#file-with-xlsx-extension)
-    - [File with xml Extension](#file-with-xml-extension)
-  - [💻 Exercises: Day 19](#-exercises-day-19)
-    - [Exercises: Level 1](#exercises-level-1)
-    - [Exercises: Level 2](#exercises-level-2)
-    - [Exercises: Level 3](#exercises-level-3)
+- [📘 День 19](#-день-19)
+  - [Работа с файлами](#работа-с-файлами)
+    - [Открытие файлов для чтения](#открытие-файлов-для-чтения)
+    - [Открытие файлов для записи и обновления](#открытие-файлов-для-записи-и-обновления)
+    - [Удаление файла](#удаление-файла)
+  - [Типы файлов](#типы-файлов)
+    - [Файл с форматом txt](#файл-с-форматом-txt)
+    - [Файл с форматом json](#файл-с-форматом-json)
+    - [Преобразование JSON в словарь](#преобразование-json-в-словарь)
+    - [Преобразование словаря в JSON](#преобразование-словаря-в-json)
+    - [Сохранение в файле JSON](#сохранение-в-файле-json)
+    - [Файл с форматом csv](#файл-с-форматом-csv)
+    - [Файл с форматом xlsx](#файл-с-форматом-xlsx)
+    - [Файл с форматом xml](#файл-с-форматом-xml)
+  - [💻 Упражнения: День 19](#-упражнения-день-19)
+    - [Упражнения: Уровень 1](#упражнения-уровень-1)
+    - [Упражнения: Уровень 2](#упражнения-уровень-2)
 
-# 📘 Day 19
+# 📘 День 19
 
-## File Handling
+## Работа с файлами
 
-So far we have seen different Python data types. We usually store our data in different file formats. In addition to handling files, we will also see different file formats(.txt, .json, .xml, .csv, .tsv, .excel) in this section. First, let us get familiar with handling files with common file format(.txt).
+До сегодняшнего дня мы рассмотрели большое количество типов данных в Python.  В этом разделе мы рассмотрим форматы файлов(.txt, .json, .xml, .csv, .tsv, .excel), в которых мы можем хранить данные. 
 
-File handling is an import part of programming which allows us to create, read, update and delete files. In Python to handle data we use _open()_ built-in function.
+Давайте рассмотрим работу с форматом файла .txt
+
+Работа с файлами - важная часть программирования, которая позволяет нам создавать, читать, обновлять и удалять файлы. В Python для работы с данными мы используем встроенную функцию open().
 
 ```py
-# Syntax
-open('filename', mode) # mode(r, a, w, x, t,b)  could be to read, write, update
+# Синтаксис
+open('filename', mode) # mode(r, a, w, x, t,b). Благодаря моду мы можем прочитать, записать или обновить файл. 
 ```
 
-- "r" - Read - Default value. Opens a file for reading, it returns an error if the file does not exist
-- "a" - Append - Opens a file for appending, creates the file if it does not exist
-- "w" - Write - Opens a file for writing, creates the file if it does not exist
-- "x" - Create - Creates the specified file, returns an error if the file exists
-- "t" - Text - Default value. Text mode
-- "b" - Binary - Binary mode (e.g. images)
+- "r" - Read - Значение по умолчанию. Открывает файл для чтения, возвращает ошибку, если файл не существует.
+- "a" - Append - Открывает файл для добавления данных, создает файл, если он не существует.
+- "w" - Write - Открывает файл для записи, создает файл, если он не существует.
+- "x" - Create - Создает файл, возвращает ошибку, если файл уже существует.
+- "t" - Text -Значение по умолчанию. Режим текста.
+- "b" - Binary - Режим бинарных данных (например, изображения).
 
-### Opening Files for Reading
+### Открытие файлов для чтения
 
-The default mode of _open_ is reading, so we do not have to specify 'r' or 'rt'. I have created and saved a file named reading_file_example.txt in the files directory. Let us see how it is done:
+Для открытия файла мы используем функцию open(), режимом по умолчанию является чтение, поэтому нам не нужно указывать 'r' или 'rt'. Я создал и сохранил файл с именем reading_file_example.txt в директории files. Давайте посмотрим, как его открыть:
 
 ```py
 f = open('./files/reading_file_example.txt')
 print(f) # <_io.TextIOWrapper name='./files/reading_file_example.txt' mode='r' encoding='UTF-8'>
 ```
 
-As you can see in the example above, I printed the opened file and it gave  some information about it. Opened file has different reading methods: _read()_, _readline_, _readlines_. An opened file has to be closed with _close()_ method.
+Как вы можете видеть в приведенном выше примере, я вывел открытый файл, и он дал некоторую информацию о нем. Открытый файл имеет методы для взаимодействия с ним: read(), readline(), readlines(). После всех необходимых действий открытый файл должен быть закрыт с помощью метода close().
 
-- _read()_: read the whole text as string. If we want to limit the number of characters we want to read, we can limit it by passing int value to the *read(number)* method.
+- _read()_: читает весь текст в виде строки. Если мы хотим ограничить количество считываемых символов, мы можем передать число методу read().
 
 ```py
 f = open('./files/reading_file_example.txt')
@@ -77,13 +78,13 @@ f.close()
 ```
 
 ```sh
-# output
+# выведет
 <class 'str'>
-This is an example to show how to open a file and read.
-This is the second line of the text.
+Пример, который показывает открытие и чтение файла.
+Это вторая строка файла.
 ```
 
-Instead of printing all the text, let us print the first 10 characters of the text file.
+Вместо вывода всего текста, давайте выведем первые 10 символов из текстового файла.
 
 ```py
 f = open('./files/reading_file_example.txt')
@@ -94,12 +95,12 @@ f.close()
 ```
 
 ```sh
-# output
+# выводит
 <class 'str'>
-This is an
+Пример, вт
 ```
 
-- _readline()_: read only the first line
+- *readline()*: читает только первую строку.
 
 ```py
 f = open('./files/reading_file_example.txt')
@@ -110,12 +111,12 @@ f.close()
 ```
 
 ```sh
-# output
+# выводит
 <class 'str'>
-This is an example to show how to open a file and read.
+Пример, который показывает открытие и чтение файла.
 ```
 
-- _readlines()_: read all the text line by line and returns a list of lines
+- _readlines()_: : читает весь текст построчно и возвращает список строк.
 
 ```py
 f = open('./files/reading_file_example.txt')
@@ -126,12 +127,12 @@ f.close()
 ```
 
 ```sh
-# output
+# вывод
 <class 'list'>
-['This is an example to show how to open a file and read.\n', 'This is the second line of the text.']
+['Пример, который показывает открытие и чтение файла.\n', 'Это вторая строка файла.']
 ```
 
-Another way to get all the lines as a list is using _splitlines()_:
+Еще один способ получить все строки в виде списка - использовать метод  _splitlines()_:
 
 ```py
 f = open('./files/reading_file_example.txt')
@@ -142,12 +143,12 @@ f.close()
 ```
 
 ```sh
-# output
+# выводит
 <class 'list'>
-['This is an example to show how to open a file and read.', 'This is the second line of the text.']
+['Пример, который показывает открытие и чтение файла.\n', 'Это вторая строка файла.']
 ```
 
-After we open a file, we should close it. There is a high tendency of forgetting to close them. There is a new way of opening files using _with_ - closes the files by itself. Let us rewrite the the previous example with the _with_ method:
+После открытия файла мы должны его закрыть. Часто бывает, что мы забываем закрыть файлы. Существует дургой способ открытия файлов с помощью конструкции with, которая автоматически закрывает файлы. Давайте перепишем предыдущий пример с использованием метода with:
 
 ```py
 with open('./files/reading_file_example.txt') as f:
@@ -157,76 +158,75 @@ with open('./files/reading_file_example.txt') as f:
 ```
 
 ```sh
-# output
+# выводит
 <class 'list'>
-['This is an example to show how to open a file and read.', 'This is the second line of the text.']
+['Пример, который показывает открытие и чтение файла.\n', 'Это вторая строка файла.']
 ```
 
-### Opening Files for Writing and Updating
+### Открытие файлов для записи и обновления
 
-To write to an existing file, we must add a mode as parameter to the _open()_ function:
+Для записи в файл мы должны добавить режим в качестве параметра функции open():
 
-- "a" - append - will append to the end of the file, if the file does not it creates a new file.
-- "w" - write - will overwrite any existing content, if the file does not exist it creates.
+- "a" - append - добавит данные в конец файла, если файл не существует, он будет создан.
+- "w" - write - перезапишет существующее содержимое файла, если файл не существует, он будет создан.
 
-Let us append some text to the file we have been reading:
+Давайте рассмотрим примеры:
 
 ```py
 with open('./files/reading_file_example.txt','a') as f:
-    f.write('This text has to be appended at the end')
+    f.write('Этот текст добавлен в конец')
 ```
 
-The method below creates a new file, if the file does not exist:
+Следующий метод создает новый файл, если файл не существует:
 
 ```py
 with open('./files/writing_file_example.txt','w') as f:
-    f.write('This text will be written in a newly created file')
+    f.write('Этот текс будет добавлен в созданный файл')
 ```
 
-### Deleting Files
+### Удаление файла
 
-We have seen in previous section, how to make and remove a directory using _os_ module. Again now, if we want to remove a file we use _os_ module.
+В предыдущих разделах мы уже видели как создавать и удалять каталоги с помощью модуля os. Сейчас нам придется снова обратиться к этому модулю. 
 
 ```py
 import os
 os.remove('./files/example.txt')
-
 ```
 
-If the file does not exist, the remove method will raise an error, so it is good to use a condition like this:
+Если файл не существует, метод remove вернет ошибку, чтобы этого избежать мы можем использовать условные конструкции, например, такое:
 
 ```py
 import os
 if os.path.exists('./files/example.txt'):
     os.remove('./files/example.txt')
 else:
-    print('The file does not exist')
+    print('Файл не существует')
 ```
 
-## File Types
+## Типы файлов
 
-### File with txt Extension
+### Файл с форматом txt
 
-File with _txt_ extension is a very common form of data and we have covered it in the previous section. Let us move to the JSON file
+Файл с форматом txt является очень распространенной формой данных, и мы уже рассмотрели его в предыдущем разделе. Давайте перейдем к формату JSON.
 
-### File with json Extension
+### Файл с форматом json
 
-JSON stands for JavaScript Object Notation. Actually, it is a stringified JavaScript object or Python dictionary.
+JSON означает JavaScript Object Notation (Формат объектов JavaScript). Фактически, это строка, представляющая собой сериализованный объект JavaScript или словарь Python.
 
-_Example:_
+_Пример:_
 
 ```py
-# dictionary
+# словарь
 person_dct= {
     "name":"Asabeneh",
     "country":"Finland",
     "city":"Helsinki",
     "skills":["JavaScrip", "React","Python"]
 }
-# JSON: A string form a dictionary
+# JSON: строка из словаря
 person_json = "{'name': 'Asabeneh', 'country': 'Finland', 'city': 'Helsinki', 'skills': ['JavaScrip', 'React', 'Python']}"
 
-# we use three quotes and make it multiple line to make it more readable
+# Мы используем три кавычки и улучшаем его читаемость
 person_json = '''{
     "name":"Asabeneh",
     "country":"Finland",
@@ -235,9 +235,9 @@ person_json = '''{
 }'''
 ```
 
-### Changing JSON to Dictionary
+### Преобразование JSON в словарь
 
-To change a JSON to a dictionary, first we import the json module and then we use _loads_ method.
+Для преобразования JSON в словарь мы сначала импортируем модуль json, а затем используем метод *loads()*.
 
 ```py
 import json
@@ -248,7 +248,7 @@ person_json = '''{
     "city": "Helsinki",
     "skills": ["JavaScrip", "React", "Python"]
 }'''
-# let's change JSON to dictionary
+# давайте преобразуем JSON в словарь
 person_dct = json.loads(person_json)
 print(type(person_dct))
 print(person_dct)
@@ -256,35 +256,35 @@ print(person_dct['name'])
 ```
 
 ```sh
-# output
+# вывод
 <class 'dict'>
 {'name': 'Asabeneh', 'country': 'Finland', 'city': 'Helsinki', 'skills': ['JavaScrip', 'React', 'Python']}
 Asabeneh
 ```
 
-### Changing Dictionary to JSON
+### Преобразование словаря в JSON
 
 To change a dictionary to a JSON we use _dumps_ method from the json module.
 
 ```py
 import json
-# python dictionary
+# словарь
 person = {
     "name": "Asabeneh",
     "country": "Finland",
     "city": "Helsinki",
     "skills": ["JavaScrip", "React", "Python"]
 }
-# let's convert it to  json
-person_json = json.dumps(person, indent=4) # indent could be 2, 4, 8. It beautifies the json
+# давайте преобразуем его в JSON
+person_json = json.dumps(person, indent=4) # indent может быть равен 2, 4, 8. Он означает отступы и делает JSON более читаемым
 print(type(person_json))
 print(person_json)
 ```
 
 ```sh
-# output
-# when you print it, it does not have the quote, but actually it is a string
-# JSON does not have type, it is a string type.
+# выводит
+# когда вы выводите эту переменную, у неё нет кавычек, но на самом деле это строка
+# JSON не имеет типа, он является строковым типом.
 <class 'str'>
 {
     "name": "Asabeneh",
@@ -298,13 +298,13 @@ print(person_json)
 }
 ```
 
-### Saving as JSON File
+### Сохранение в файле JSON
 
-We can also save our data as a json file. Let us save it as a json file using the following steps. For writing a json file, we use the json.dump() method, it can take dictionary, output file, ensure_ascii and indent.
+Мы также можем сохранить наши данные в файле JSON. Давайте попробуем это сделать! Для записи файла JSON мы используем метод json.dump(), он может принимать словарь, выходной файл, ensure_ascii и indent.
 
 ```py
 import json
-# python dictionary
+# словарь
 person = {
     "name": "Asabeneh",
     "country": "Finland",
@@ -315,13 +315,13 @@ with open('./files/json_example.json', 'w', encoding='utf-8') as f:
     json.dump(person, f, ensure_ascii=False, indent=4)
 ```
 
-In the code above, we use encoding and indentation. Indentation makes the json file easy to read.
+В приведенном выше коде мы используем кодировку (encoding) и отступ (indent). Отступ облегчает читаемость файла JSON.
 
-### File with csv Extension
+### Файл с форматом csv
 
-CSV stands for comma separated values. CSV is a simple file format used to store tabular data, such as a spreadsheet or database. CSV is a very common data format in data science.
+CSV означает "comma separated values" (значения, разделенные запятыми). CSV - это простой формат файла, используемый для хранения табличных данных, таких как таблица или база данных. CSV является очень распространенным форматом данных в data science.
 
-**Example:**
+**Пример:**
 
 ```csv
 "name","country","city","skills"
@@ -333,29 +333,29 @@ CSV stands for comma separated values. CSV is a simple file format used to store
 ```py
 import csv
 with open('./files/csv_example.csv') as f:
-    csv_reader = csv.reader(f, delimiter=',') # w use, reader method to read csv
+    csv_reader = csv.reader(f, delimiter=',') # мы используем метод reader для чтения csv
     line_count = 0
     for row in csv_reader:
         if line_count == 0:
-            print(f'Column names are :{", ".join(row)}')
+            print(f'Названия столбцов: {", ".join(row)}')
             line_count += 1
         else:
             print(
-                f'\t{row[0]} is a teachers. He lives in {row[1]}, {row[2]}.')
+                f'\t{row[0]} - учитель. Он живет в  {row[1]}, {row[2]}.')
             line_count += 1
-    print(f'Number of lines:  {line_count}')
+    print(f'Количество строк:  {line_count}')
 ```
 
 ```sh
 # output:
-Column names are :name, country, city, skills
-        Asabeneh is a teacher. He lives in Finland, Helsinki.
-Number of lines:  2
+Названия столбцов: name, country, city, skills
+        Asabeneh - учитель. Он живет в Finland, Helsinki.
+Количество строк:   2
 ```
 
-### File with xlsx Extension
+### Файл с форматом xlsx
 
-To read excel files we need to install _xlrd_ package. We will cover this after we cover package installing using pip.
+Для чтения файлов Excel нам необходимо установить пакет *xlrd*. Мы рассмотрим это после того, как рассмотрим установку пакетов с помощью pip.
 
 ```py
 import xlrd
@@ -364,10 +364,11 @@ print(excel_book.nsheets)
 print(excel_book.sheet_names)
 ```
 
-### File with xml Extension
+### Файл с форматом xml
 
-XML is another structured data format which looks like HTML. In XML the tags are not predefined. The first line is an XML declaration. The person tag is the root of the XML. The person has a gender attribute.
-**Example:XML**
+XML - это еще один структурированный формат данных, который похож на HTML. В XML теги не предопределены. Первая строка - это объявление XML. Тег "person" является корневым элементом XML. У "person" есть атрибут "gender".
+
+**Пример: XML**
 
 ```xml
 <?xml version="1.0"?>
@@ -383,7 +384,7 @@ XML is another structured data format which looks like HTML. In XML the tags are
 </person>
 ```
 
-For more information on how to read an XML file check the [documentation](https://docs.python.org/2/library/xml.etree.elementtree.html)
+Для получения дополнительной информации о том, как читать файл XML, ознакомьтесь с [документацией](https://docs.python.org/2/library/xml.etree.elementtree.html)
 
 ```py
 import xml.etree.ElementTree as ET
@@ -396,7 +397,7 @@ for child in root:
 ```
 
 ```sh
-# output
+# выводит
 Root tag: person
 Attribute: {'gender': 'male'}
 field: name
@@ -405,21 +406,21 @@ field: city
 field: skills
 ```
 
-🌕 You are making a big progress. Maintain your momentum, keep the good work. Now do some exercises for your brain and muscles.
+🌕 Вы добились больших результатов. Не останавливайтесь на достигнутом, впереди Вас ждут ещё большие успехи! А теперь давайте немного поупражняемся.
 
-## 💻 Exercises: Day 19
+## 💻 Упражнения: День 19
 
-### Exercises: Level 1
+### Упражнения: Уровень 1
 
-1. Write a function which count number of lines and number of words in a text. All the files are in the data the folder:
-   a) Read obama_speech.txt file and count number of lines and words
-   b) Read michelle_obama_speech.txt file and count number of lines and words
-   c) Read donald_speech.txt file and count number of lines and words
-   d) Read melina_trump_speech.txt file and count number of lines and words
-2. Read the countries_data.json data file in data directory, create a function that finds the ten most spoken languages
+1. Напишите функцию, которая подсчитывает количество строк и количество слов в тексте. Все файлы находятся в папке "data":
+   a) Прочитайте файл "obama_speech.txt" и подсчитайте количество строк и слов.
+   b) Прочитайте файл "michelle_obama_speech.txt" и подсчитайте количество строк и слов.
+   c) Прочитайте файл "donald_speech.txt" и подсчитайте количество строк и слов.
+   d) Прочитайте файл "melina_trump_speech.txt" и подсчитайте количество строк и слов.
+2. Прочитайте файл "countries_data.json" в папке "data" и создайте функцию, которая найдет десять самых распространенных языков.
 
    ```py
-   # Your output should look like this
+   # Ваш результат должен выглядеть следующим образом
    print(most_spoken_languages(filename='./data/countries_data.json', 10))
    [(91, 'English'),
    (45, 'French'),
@@ -433,17 +434,17 @@ field: skills
    (4, 'Swahili'),
    (4, 'Serbian')]
 
-   # Your output should look like this
+   # Ваш результат должен выглядеть следующим образом
    print(most_spoken_languages(filename='./data/countries_data.json', 3))
    [(91, 'English'),
    (45, 'French'),
    (25, 'Arabic')]
    ```
 
-3. Read the countries_data.json data file in data directory, create a function that creates a list of the ten most populated countries
+3. Прочитайте файл "countries_data.json" в папке "data" и создайте функцию, которая создает список десяти наиболее населенных стран.
 
    ```py
-   # Your output should look like this
+   # Ваш результат должен выглядеть следующим образом
    print(most_populated_countries(filename='./data/countries_data.json', 10))
 
    [
@@ -459,7 +460,7 @@ field: skills
    {'country': 'Japan', 'population': 126960000}
    ]
 
-   # Your output should look like this
+   # Ваш результат должен выглядеть следующим образом
 
    print(most_populated_countries(filename='./data/countries_data.json', 3))
    [
@@ -469,13 +470,13 @@ field: skills
    ]
    ```
 
-### Exercises: Level 2
+### Упражнения: Уровень 2
 
-4. Extract all incoming email addresses as a list from the email_exchange_big.txt file.
-5. Find the most common words in the English language. Call the name of your function find_most_common_words, it will take two parameters - a string or a file and a positive integer, indicating the number of words. Your function will return an array of tuples in descending order. Check the output
+4. Извлеките все входящие адреса электронной почты в виде списка из файла "email_exchange_big.txt".
+5. Найдите наиболее часто встречающиеся слова в английском языке. Назовите свою функцию find_most_common_words. Она должна принимать два параметра: строку или файл и положительное целое число, указывающее количество слов. Ваша функция будет возвращать массив кортежей в порядке убывания. Проверьте вывод.
 
 ```py
-    # Your output should look like this
+    # Ваш результат должен выглядеть следующим образом
     print(find_most_common_words('sample.txt', 10))
     [(10, 'the'),
     (8, 'be'),
@@ -488,7 +489,7 @@ field: skills
     (2, 'have'),
     (2, 'I')]
 
-    # Your output should look like this
+    # Ваш результат должен выглядеть следующим образом
     print(find_most_common_words('sample.txt', 5))
 
     [(10, 'the'),
@@ -498,20 +499,19 @@ field: skills
     (5, 'and')]
 ```
 
-6. Use the function, find_most_frequent_words to find:
-   a) The ten most frequent words used in [Obama's speech](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/data/obama_speech.txt)
-   b) The ten most frequent words used in [Michelle's speech](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/data/michelle_obama_speech.txt)
-   c) The ten most frequent words used in [Trump's speech](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/data/donald_speech.txt)
-   d) The ten most frequent words used in [Melina's speech](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/data/melina_trump_speech.txt)
-7. Write a python application that checks similarity between two texts. It takes a file or a string as a parameter and it will evaluate the similarity of the two texts. For instance check the similarity between the transcripts of [Michelle's](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/data/michelle_obama_speech.txt) and [Melina's](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/data/melina_trump_speech.txt) speech. You may need a couple of functions, function to clean the text(clean_text), function to remove support words(remove_support_words) and finally to check the similarity(check_text_similarity). List of [stop words](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/data/stop_words.py) are in the data directory
-8. Find the 10 most repeated words in the romeo_and_juliet.txt
-9. Read the [hacker news csv](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/data/hacker_news.csv) file and find out:
-   a) Count the number of lines containing python or Python
-   b) Count the number lines containing JavaScript, javascript or Javascript
-   c) Count the number lines containing Java and not JavaScript
+6. Используйте функцию find_most_frequent_words для поиска:
+   a) Десяти наиболее часто встречающихся слов в [Obama's speech](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/data/obama_speech.txt)
+   b) Десяти наиболее часто встречающихся слов в [Michelle's speech](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/data/michelle_obama_speech.txt)
+   c) Десяти наиболее часто встречающихся слов в [Trump's speech](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/data/donald_speech.txt)
+   d) Десяти наиболее часто встречающихся слов в [Melina's speech](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/data/melina_trump_speech.txt)
+7. Напишите приложение на Python, которое проверяет сходство между двумя текстами. Оно принимает файл или строку в качестве параметра и оценивает сходство двух текстов. Например, проверьте сходство между текстами [Michelle's](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/data/michelle_obama_speech.txt) и [Melina's](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/data/melina_trump_speech.txt). Вам может понадобиться несколько функций: функция для очистки текста (clean_text), функция для удаления служебных слов (remove_support_words) и, наконец, функция для проверки сходства (check_text_similarity). Список [stop words](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/data/stop_words.py) находится в директории data.
+8. Найти 10 наиболее часто повторяющихся слов в файле "romeo_and_juliet.txt".
+9. Прочитайте файл [hacker news csv](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/data/hacker_news.csv) и определите:
+   a) Количество строк, содержащих "python" или "Python".
+   b) Количество строк, содержащих "JavaScript", "javascript" или "Javascript".
+   c) Количество строк, содержащих "Java", но не "JavaScript".
 
-### Exercises: Level 3
 
-🎉 CONGRATULATIONS ! 🎉
+🎉 ПОЗДРАВЛЯЕМ ! 🎉
 
-[<< Day 18](../18_Day_Regular_expressions/18_regular_expressions.md) | [Day 20 >>](../20_Day_Python_package_manager/20_python_package_manager.md)
+[<< День 18](../18_Day_Regular_expressions/18_regular_expressions.md) | [День 20 >>](../20_Day_Python_package_manager/20_python_package_manager.md)
