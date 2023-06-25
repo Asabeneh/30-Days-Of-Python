@@ -1,0 +1,25 @@
+#Day 2 : 30 Days of python programming
+firstName = "Dito"
+lastName  = "Laksana"
+fullName = "Emmanuel Krishnandito Laksana"
+country  = "Wakanda"
+city = "YK"
+age = 19
+year = 2023
+is_married = False
+is_true  = True
+is_light_on  =False
+
+
+aku = {"First name " : firstName, 
+       "Last name  ": lastName,
+       "Full name " : fullName,
+       "Country " : country,
+       "City " : city,
+       "Age" : age,
+       "Year" : year,
+       "Is Married  ? " : is_married,
+       "Is True ?  " : is_true,
+       "Is Light on ? " : is_light_on
+       }
+print(aku)
