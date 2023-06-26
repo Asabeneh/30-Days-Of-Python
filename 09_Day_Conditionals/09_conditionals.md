@@ -99,7 +99,7 @@ else:
 
 ```
 
-**Example: **
+**Example:**
 
 ```py
 a = 0
