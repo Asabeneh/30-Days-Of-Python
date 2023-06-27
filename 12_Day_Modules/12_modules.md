@@ -1,5 +1,5 @@
 <div align="center">
-  <h1> 30 Days Of Python: Day 12 - Modules </h1>
+  <h1> 30 Дней Python: День 12 - Модули </h1>
   <a class="header-badge" target="_blank" href="https://www.linkedin.com/in/asabeneh/">
   <img src="https://img.shields.io/badge/style--5eba00.svg?label=LinkedIn&logo=linkedin&style=social">
   </a>
@@ -7,75 +7,75 @@
   <img alt="Twitter Follow" src="https://img.shields.io/twitter/follow/asabeneh?style=social">
   </a>
 
-<sub>Author:
+<sub>Aвтор:
 <a href="https://www.linkedin.com/in/asabeneh/" target="_blank">Asabeneh Yetayeh</a><br>
-<small> Second Edition: July, 2021</small>
+<small> Второе издание: Июль, 2021</small>
 </sub>
 
 </div>
 </div>
 
-[<< Day 11](../11_Day_Functions/11_functions.md) | [Day 13>>](../13_Day_List_comprehension/13_list_comprehension.md)
+[<< День 11](../11_Day_Functions/11_functions.md) | [День 13>>](../13_Day_List_comprehension/13_list_comprehension.md)
 
 ![30DaysOfPython](../images/30DaysOfPython_banner3@2x.png)
 
 - [📘 Day 12](#-day-12)
-  - [Modules](#modules)
-    - [What is a Module](#what-is-a-module)
-    - [Creating a Module](#creating-a-module)
-    - [Importing a Module](#importing-a-module)
-    - [Import Functions from a Module](#import-functions-from-a-module)
-    - [Import Functions from a Module and Renaming](#import-functions-from-a-module-and-renaming)
-  - [Import Built-in Modules](#import-built-in-modules)
-    - [OS Module](#os-module)
-    - [Sys Module](#sys-module)
-    - [Statistics Module](#statistics-module)
-    - [Math Module](#math-module)
-    - [String Module](#string-module)
-    - [Random Module](#random-module)
-  - [💻 Exercises: Day 12](#-exercises-day-12)
-    - [Exercises: Level 1](#exercises-level-1)
-    - [Exercises: Level 2](#exercises-level-2)
-    - [Exercises: Level 3](#exercises-level-3)
+  - [Модули](#модули)
+    - [Что такое модуль](#что-такое-модуль)
+    - [Создание модуля](#создание-модуля)
+    - [Импортирование модуля](#импортирование-модуля)
+    - [Импорт функций из модуля](#импорт-функций-из-модуля)
+    - [Импорт функций из модуля с переименованием](#импорт-функций-из-модуля-с-переименованием)
+  - [Импорт встроенных модулей](#импорт-встроенных-модулей)
+    - [Модуль OS](#модуль-os)
+    - [Модуль Sys](#модуль-sys)
+    - [Модуль Statistics](#модуль-statistics)
+    - [Модуль Math](#модуль-math)
+    - [Модуль String](#модуль-string)
+    - [Модуль Random](#модуль-random)
+  - [💻 Упржнения: День 12](#-упржнения-день-12)
+    - [Упржнения: Уровень 1](#упржнения-уровень-1)
+    - [Упржнения: Уровень 2](#упржнения-уровень-2)
+    - [Упржнения: Уровень 3](#упржнения-уровень-3)
 
 # 📘 Day 12
 
-## Modules
+## Модули
 
-### What is a Module
+### Что такое модуль
 
-A module is a file containing a set of codes or a set of functions which can be included to an application. A module could be a file containing a single variable, a function or a big code base.
+Модуль - это файл, содержащий набор кодов или функций, которые могут быть задействованы в вашем коде. Модуль может быть файлом, содержащим одну переменную, функцию или большой набор строк кода.
 
-### Creating a Module
+### Создание модуля
 
-To create a module we write our codes in a python script and we save it as a .py file. Create a file named mymodule.py inside your project folder. Let us write some code in this file.
+Для создания модуля мы пишем наш код на языке Python и сохраняем его с расширением **.py**. Давайте создаим файл с именем mymodule.py внутри папки вашего проекта и напишем в нем код.
 
 ```py
-# mymodule.py file
+# файл mymodule.py 
 def generate_full_name(firstname, lastname):
     return firstname + ' ' + lastname
 ```
 
-Create main.py file in your project directory and import the mymodule.py file.
+А теперь создами файл main.py в вашей папке нашего проекта и импортируем модуль mymodule.py.
 
-### Importing a Module
+### Импортирование модуля
 
-To import the file we use the _import_ keyword and the name of the file only.
+Чтобы импортировать файл мы используем _import_ и название файла.
 
 ```py
-# main.py file
+# файл main.py
 import mymodule
-print(mymodule.generate_full_name('Asabeneh', 'Yetayeh')) # Asabeneh Yetayeh
+print(mymodule.generate_full_name('Питер', 'Паркер')) # Питер Паркер
 ```
 
-### Import Functions from a Module
+### Импорт функций из модуля
 
-We can have many functions in a file and we can import all the functions differently.
+Мы можем отдель импортировать функцию, которая нам нужна.
 
 ```py
-# main.py file
+# файл main.py 
 from mymodule import generate_full_name, sum_two_nums, person, gravity
-print(generate_full_name('Asabneh','Yetayeh'))
+print(generate_full_name('Питер', 'Паркер'))
 print(sum_two_nums(1,9))
 mass = 100;
 weight = mass * gravity
@@ -83,14 +83,14 @@ print(weight)
 print(person['firstname'])
 ```
 
-### Import Functions from a Module and Renaming
+### Импорт функций из модуля с переименованием
 
-During importing we can rename the name of the module.
+При импорте мы можем переименовать имя модуля.
 
 ```py
-# main.py file
+# файл main.py 
 from mymodule import generate_full_name as fullname, sum_two_nums as total, person as p, gravity as g
-print(fullname('Asabneh','Yetayeh'))
+print(fullname('Питер','Паркер'))
 print(total(1, 9))
 mass = 100;
 weight = mass * g
@@ -99,70 +99,69 @@ print(p)
 print(p['firstname'])
 ```
 
-## Import Built-in Modules
+## Импорт встроенных модулей
 
 Like other programming languages we can also import modules by importing the file/function using the key word _import_. Let's import the common module we will use most of the time. Some of the common built-in modules: _math_, _datetime_, _os_,_sys_, _random_, _statistics_, _collections_, _json_,_re_
 
-### OS Module
+### Модуль OS
 
-Using python _os_ module it is possible to automatically perform many operating system tasks. The OS module in Python provides functions for creating, changing current working directory, and removing a directory (folder), fetching its contents, changing and identifying the current directory.
+Как и в других языках программирования, в Python есть встроенные модули, которые мы можем импортировать, используя *import*. Давайте попробуем импортировать самые часто используемые модули. К таким модулям относятся: math, datetime, os, sys, random, statistics, collections, json, re.
 
 ```py
-# import the module
+# импорт модуля
 import os
-# Creating a directory
+# создание директории
 os.mkdir('directory_name')
-# Changing the current directory
+# изменение текущей директории
 os.chdir('path')
-# Getting current working directory
+# получение текущей рабочей директории
 os.getcwd()
-# Removing directory
+# удаление директории
 os.rmdir()
 ```
 
-### Sys Module
+### Модуль Sys
 
-The sys module provides functions and variables used to manipulate different parts of the Python runtime environment. Function sys.argv returns a list of command line arguments passed to a Python script. The item at index 0 in this list is always the name of the script, at index 1 is the argument passed from the command line.
+Модуль sys в Python предоставляет функции и переменные, связанные с системой и интерпретатором Python. Он позволяет взаимодействовать с различными компонентами операционной системы, получать информацию о среде выполнения Python, а также управлять выполнением программы. Например, функция sys.argv возвращает список аргументов командной строки, переданных в скрипт Python. Элемент с индексом 0 в списке всегда содержит имя скрипта.
 
-Example of a script.py file:
+Пример файла script.py::
 
 ```py
 import sys
-#print(sys.argv[0], argv[1],sys.argv[2])  # this line would print out: filename argument1 argument2
+#print(sys.argv[0], sys.argv[1], sys.argv[2])   # эта строка выведет: имя_файла аргумент1 аргумент2
 print('Welcome {}. Enjoy  {} challenge!'.format(sys.argv[1], sys.argv[2]))
 ```
 
-Now to check how this script works I wrote in command line:
+А теперь, давайте проверим работоспособность этого скрипта:
 
 ```sh
 python script.py Asabeneh 30DaysOfPython
 ```
 
-The result:
+Результатом будет:
 
 ```sh
 Welcome Asabeneh. Enjoy  30DayOfPython challenge! 
 ```
 
-Some useful sys commands:
+Рассотрим ещё немного полезных команд модуля sys:
 
 ```py
-# to exit sys
+# для выхода из программы
 sys.exit()
-# To know the largest integer variable it takes
+# Получение максимального значения целочисленной переменной
 sys.maxsize
-# To know environment path
+# Получение пути 
 sys.path
-# To know the version of python you are using
-sys.version
+# Получение версии Python, которую мы используем sys.version
 ```
 
-### Statistics Module
+### Модуль Statistics
 
-The statistics module provides functions for mathematical statistics of numeric data. The popular statistical functions which are defined in this module: _mean_, _median_, _mode_, _stdev_ etc.
+В модуле Statistics определены популярные статистические функции, такие как *mean*, *median*, *mode*, *stdev* и т. д.
 
 ```py
-from statistics import * # importing all the statistics modules
+from statistics import * # импортируем все функции из модуля statistics
 ages = [20, 20, 4, 24, 25, 22, 26, 20, 23, 22, 26]
 print(mean(ages))       # ~22.9
 print(median(ages))     # 23
@@ -170,28 +169,28 @@ print(mode(ages))       # 20
 print(stdev(ages))      # ~2.3
 ```
 
-### Math Module
+### Модуль Math
 
-Module containing many mathematical operations and constants.
 
+Модуль math содержит множество математических операций и констант.
 ```py
 import math
-print(math.pi)           # 3.141592653589793, pi constant
-print(math.sqrt(2))      # 1.4142135623730951, square root
-print(math.pow(2, 3))    # 8.0, exponential function
-print(math.floor(9.81))  # 9, rounding to the lowest
-print(math.ceil(9.81))   # 10, rounding to the highest
-print(math.log10(100))   # 2, logarithm with 10 as base
+print(math.pi)           # 3.141592653589793, число пи
+print(math.sqrt(2))      # 1.4142135623730951, вычисление квадратного корня
+print(math.pow(2, 3))    # 8.0, возведение в степень
+print(math.floor(9.81))  # 9, округление до ближайшего меньшего целого
+print(math.ceil(9.81))   # 10, округление до ближайшего большего целого
+print(math.log10(100))   # 2, десятичный логарифм
 ```
 
-Now, we have imported the *math* module which contains lots of function which can help us to perform mathematical calculations. To check what functions the module has got, we can use _help(math)_, or _dir(math)_. This will display the available functions in the module. If we want to import only a specific function from the module we import it as follows:
+Сейчас мы импортировали модуль math, который содержит множество функций. Чтобы проверить, какие именно функции есть в модуле, мы можем использовать функцию help(math) или dir(math). Это позволит нам увидеть доступные функции в модуле. Если мы хотим импортировать только определенную функцию из модуля, мы импортируем ее следующим образом:
 
 ```py
 from math import pi
 print(pi)
 ```
 
-It is also possible to import multiple functions at once
+А ещё, мы можем импортировать сразу несколько функций:
 
 ```py
 
@@ -205,28 +204,28 @@ print(math.log10(100))    # 2
 
 ```
 
-But if we want to import all the function in math module we can use \* .
+Однако, если мы хотим импортировать все функции из модуля math, мы можем использовать символ  \*.
 
 ```py
 from math import *
-print(pi)                  # 3.141592653589793, pi constant
-print(sqrt(2))             # 1.4142135623730951, square root
-print(pow(2, 3))           # 8.0, exponential
-print(floor(9.81))         # 9, rounding to the lowest
-print(ceil(9.81))          # 10, rounding to the highest
+print(pi)                  # 3.141592653589793, число пи
+print(sqrt(2))             # 1.4142135623730951, квадратный корень
+print(pow(2, 3))           # 8.0, возведение в степень
+print(floor(9.81))         # 9, округление вниз до целого цисла
+print(ceil(9.81))          # 10, округление вверх до целого цисла
 print(math.log10(100))     # 2
 ```
 
-When we import we can also rename the name of the function.
+При импорте мы также можем изменить имя функции:
 
 ```py
 from math import pi as  PI
 print(PI) # 3.141592653589793
 ```
 
-### String Module
+### Модуль String
 
-A string module is a useful module for many purposes. The example below shows some use of the string module.
+Модуль *string* представляет собой полезный модуль для множества задач. Приведенный ниже пример демонстрирует некоторые возможности модуля *string*.
 
 ```py
 import string
@@ -235,28 +234,28 @@ print(string.digits)        # 0123456789
 print(string.punctuation)   # !"#$%&'()*+,-./:;<=>?@[\]^_`{|}~
 ```
 
-### Random Module
+### Модуль Random
 
-By now you are familiar with importing modules. Let us do one more import to get very familiar with it. Let us import _random_ module which gives us a random number between 0 and 0.9999.... The _random_ module has lots of functions but in this section we will only use _random_ and _randint_.
+А теперь давайте импортируем модуль _random_ и посмотрим как работает он! Функция random() возвращает нам значение между 0 и 0.9999.... Модуль random имеет много функций, но в этом разделе мы будем использовать только random и randint.
 
 ```py
 from random import random, randint
-print(random())   # it doesn't take any arguments; it returns a value between 0 and 0.9999
-print(randint(5, 20)) # it returns a random integer number between [5, 20] inclusive
+print(random())  # функция random не принимает аргументов; она возвращает значение между 0 и 0.9999
+print(randint(5, 20))  # функция randint возвращает случайное целое число в диапазоне [5, 20] включительно
 ```
 
-🌕 You are going far. Keep going! You have just completed day 12 challenges and you are 12 steps a head in to your way to greatness. Now do some exercises for your brain and muscles.
+🌕 Ты уверенно движешься вперед! Так держать! Ты только что завершил 12 день челленджа и стал на 12 шагов ближе к мечте. Закрепи свой результат практическими заданиями.
 
-## 💻 Exercises: Day 12
+## 💻 Упржнения: День 12
 
-### Exercises: Level 1
+### Упржнения: Уровень 1
 
-1. Writ a function which generates a six digit/character random_user_id.
+1. Напишите функцию, которая генерирует случайный идентификатор пользователя длинной в 6 символов(random_user_id).
    ```py
      print(random_user_id());
      '1ee33d'
    ```
-2. Modify the previous task. Declare a function named user_id_gen_by_user. It doesn’t take any parameters but it takes two inputs using input(). One of the inputs is the number of characters and the second input is the number of IDs which are supposed to be generated.
+2. Модифицируйте прошлую задачу. Объявите функцию с именем user_id_gen_by_user. Она не принимает никаких параметров, но запрашивает два ввода с помощью функции input(). Первый - количество символов, второй - количество идентификаторов, которые должны быть сгенерированы.
    
 ```py
 print(user_id_gen_by_user()) # user input: 5 5
@@ -275,18 +274,18 @@ print(user_id_gen_by_user()) # 16 5
 #dIV0SSUTgAdKwStr
 ```
 
-3. Write a function named rgb_color_gen. It will generate rgb colors (3 values ranging from 0 to 255 each).
+3. Напишите функцию rgb_color_gen. Она будет генерировать цвета RGB (3 значения от 0 до 255 каждое).
    
 ```py
 print(rgb_color_gen())
-# rgb(125,244,255) - the output should be in this form
+# rgb(125,244,255) - вывод должен быть такого формата
 ```
 
-### Exercises: Level 2
+### Упржнения: Уровень 2
 
-1. Write a function list_of_hexa_colors which returns any number of hexadecimal colors in an array (six hexadecimal numbers written after #. Hexadecimal numeral system is made out of 16 symbols, 0-9 and first 6 letters of the alphabet, a-f. Check the task 6 for output examples).
-1. Write a function list_of_rgb_colors which returns any number of RGB colors in an array.
-1. Write a function generate_colors which can generate any number of hexa or rgb colors.
+1. Напишите функцию list_of_hexa_colors которая возвращает любое количество последовательностей содержащих шестнадцатеричный цвет (цвета должны быть записаны после #). Шестнадцатеричная система состоит из 6 символов: чисел 0-9 и первых 6 букв английского алфавита a-f.
+2. Напишите функцию list_of_rgb_colors, которая возвращает любое количество цветов RGB.
+3. Напишите функцию generate_colors, которая может генерировать любое количество шестнадцатеричных или RGB цветов.
 
 ```py
    generate_colors('hexa', 3) # ['#a3e12f','#03ed55','#eb3d2b'] 
@@ -295,11 +294,11 @@ print(rgb_color_gen())
    generate_colors('rgb', 1)  # ['rgb(33,79, 176)']
    ```
 
-### Exercises: Level 3
+### Упржнения: Уровень 3
 
-1. Call your function shuffle_list, it takes a list as a parameter and it returns a shuffled list
-1. Write a function which returns an array of seven random numbers in a range of 0-9. All the numbers must be unique.
+1. Создайте функцию shuffle_list, которая принимает список в качестве параметра и возвращает перемешанный список.
+2. Напишите функцию, которая возвращает последовательность из семи случайных чисел в диапазоне от 0 до 9. Все числа должны быть уникальными.
 
-🎉 CONGRATULATIONS ! 🎉
+🎉 ПОЗДРАВЛЯЕМ ! 🎉
 
-[<< Day 11](../11_Day_Functions/11_functions.md) | [Day 13>>](../13_Day_List_comprehension/13_list_comprehension.md)
+[<< День 11](../11_Day_Functions/11_functions.md) | [День 13>>](../13_Day_List_comprehension/13_list_comprehension.md)
