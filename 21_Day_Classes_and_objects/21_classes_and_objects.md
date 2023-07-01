@@ -21,27 +21,21 @@
 - [📘 Day 21](#-day-21)
   - [Classes and Objects](#classes-and-objects)
     - [Creating a Class](#creating-a-class)
-    - [Creating an Object](#creating-an-object)
+    - [បង្កើត object](#បង្កើត-object)
     - [Class Constructor](#class-constructor)
     - [Object Methods](#object-methods)
     - [Object Default Methods](#object-default-methods)
-    - [Method to Modify Class Default Values](#method-to-modify-class-default-values)
+    - [វិធីសាស្ត្រដើម្បីកែប្រែតម្លៃ default របស់ class](#វិធីសាស្ត្រដើម្បីកែប្រែតម្លៃ-default-របស់-class)
     - [Inheritance](#inheritance)
     - [Overriding parent method](#overriding-parent-method)
-  - [💻 Exercises: Day 21](#-exercises-day-21)
-    - [Exercises: Level 1](#exercises-level-1)
-    - [Exercises: Level 2](#exercises-level-2)
-    - [Exercises: Level 3](#exercises-level-3)
 
 # 📘 Day 21
 
 ## Classes and Objects
+Python គឺជា ភាសា កម្មវិធី ដែល មាន គោលដៅ ទៅលើ object ។ គ្រប់យ៉ាងនៅក្នុង Python គឺជាobjectមួយ ដែលមានលក្ខណៈសម្បត្តិ និងវិធីសាស្ត្ររបស់ខ្លួន។ ចំនួន, string, list, dictionary, tuple, set ជាដើម ដែលប្រើនៅក្នុងកម្មវិធី គឺជា object របស់ class ដែលបានបង្កើតឡើង។ យើងបង្កើត class ដើម្បីបង្កើត object កម្រិត គឺដូចជា object constructor ឬ " blueprint" សម្រាប់បង្កើត object ។ យើងបង្កើត class ដើម្បីបង្កើត object កម្រិតកំណត់លក្ខណៈសម្បត្តិ និងអាកប្បកិរិយារបស់វត្ថុ ខណៈដែលobjectវិញតំណាងឱ្យកម្រិត។
 
-Python is an object oriented programming language. Everything in Python is an object, with its properties and methods. A number, string, list, dictionary, tuple, set etc. used in a program is an object of a corresponding built-in class. We create class to create an object. A class is like an object constructor, or a "blueprint" for creating objects. We instantiate a class to create an object. The class defines attributes and the behavior of the object, while the object, on the other hand, represents the class.
-
-We have been working with classes and objects right from the beginning of this challenge unknowingly. Every element in a Python program is an object of a class.
-Let us check if everything in python is a class:
-
+យើងបានធ្វើការជាមួយថ្នាក់ និងវត្ថុ តាំងពីដើមនៃការប្រឈមនេះ ដោយមិនដឹងខ្លួន គ្រប់អេឡិចត្រូនិកនៅក្នុងកម្មវិធី Python គឺជាអាវយឺតនៃថ្នាក់។
+សូមយើងពិនិត្យមើលថាតើអ្វីគ្រប់យ៉ាងនៅក្នុង Python គឺជា class ឬទេ:
 ```py
 asabeneh@Asabeneh:~$ python
 Python 3.9.6 (default, Jun 28 2021, 15:26:21)
@@ -72,7 +66,7 @@ Type "help", "copyright", "credits" or "license" for more information.
 
 ### Creating a Class
 
-To create a class we need the key word **class** followed by the name and colon. Class name should be **CamelCase**.
+ដើម្បីបង្កើត class យើងត្រូវការពាក្យ Keyword **class** តាមក្រោយឈ្មោះ និង colon ។ ឈ្មោះថ្នាក់រៀនគួរជា **CamelCase**។
 
 ```sh
 # syntax
@@ -92,9 +86,9 @@ print(Person)
 <__main__.Person object at 0x10804e510>
 ```
 
-### Creating an Object
+### បង្កើត object
 
-We can create an object by calling the class.
+យើងអាចបង្កើត object ដោយហៅ class
 
 ```py
 p = Person()
@@ -103,7 +97,8 @@ print(p)
 
 ### Class Constructor
 
-In the examples above, we have created an object from the Person class. However, a class without a constructor is not really useful in real applications. Let us use constructor function to make our class more useful. Like the constructor function in Java or JavaScript, Python has also a built-in **__init__**() constructor function. The **__init__** constructor function has self parameter which is a reference to the current instance of the class
+នៅក្នុងឧទាហរណ៍ខាងលើនេះ យើងបានបង្កើត object ពី class Person ។ ទោះបីជាយ៉ាងណាក៏ដោយ, កម្រិតដែលគ្មាន constructor មិនសូវមានប្រយោជន៍នៅក្នុងកម្មវិធីពិតទេ។ យើងត្រូវប្រើកម្រិត constructor ដើម្បីធ្វើឱ្យ class របស់យើងមានប្រសិទ្ធភាព។ ដូច Function constructor ក្នុង Java ឬ JavaScript Python ក៏មាន Function constructor ****init****() ដែលត្រូវបានបង្កើតឡើងផងដែរ ។ តួនាទី constructor ****init**** មាន self parameter ដែលជាការអត្ថាធិប្បាយទៅនឹងករណីបច្ចុប្បន្ននៃថ្នាក់
+
 **Examples:**
 
 ```py
@@ -123,8 +118,7 @@ Asabeneh
 <__main__.Person object at 0x2abf46907e80>
 ```
 
-Let us add more parameters to the constructor function.
-
+សូមយើងបន្ថែម parameter បន្ថែមទៀតទៅលើ function constructor ។
 ```py
 class Person:
       def __init__(self, firstname, lastname, age, country, city):
@@ -154,7 +148,7 @@ Helsinki
 
 ### Object Methods
 
-Objects can have methods. The methods are functions which belong to the object.
+វត្ថុអាចមានវិធីសាស្ត្រ។ វិធីសាស្រ្ត គឺជាមុខងារដែលជារបស់វត្ថុ។
 
 **Example:**
 
@@ -180,7 +174,7 @@ Asabeneh Yetayeh is 250 years old. He lives in Helsinki, Finland
 
 ### Object Default Methods
 
-Sometimes, you may want to have a default values for your object methods. If we give default values for the parameters in the constructor, we can avoid errors when we call or instantiate our class without parameters. Let's see how it looks:
+ពេលខ្លះ, អ្នកប្រហែលជាចង់មានតម្លៃ default សម្រាប់វិធីសាស្រ្តរបស់ object របស់អ្នក។ ប្រសិន បើ យើង ផ្តល់ តម្លៃ ជា ធម្មតា សម្រាប់ Parameters ក្នុង constructor យើង អាច ជៀសវាង កំហុស នៅពេល ដែល យើង ហៅ ឬ បង្កើត instance របស់ class ដោយ គ្មាន Parameters ។ សូមមើលថាវាមើលទៅដូចម្ដេច:
 
 **Example:**
 
@@ -208,9 +202,9 @@ Asabeneh Yetayeh is 250 years old. He lives in Helsinki, Finland.
 John Doe is 30 years old. He lives in Noman city, Nomanland.
 ```
 
-### Method to Modify Class Default Values
+### វិធីសាស្ត្រដើម្បីកែប្រែតម្លៃ default របស់ class
 
-In the example below, the person class, all the constructor parameters have default values. In addition to that, we have skills parameter, which we can access using a method. Let us create add_skill method to add skills to the skills list.
+នៅក្នុងឧទាហរណ៍ខាងក្រោម, មនុស្សថ្នាក់, គ្រប់គំរូ constructor មានតម្លៃជាមុនសិន។ ក្រៅពីនេះយើងមានសមត្ថភាពដែលយើងអាចចូលទៅកាន់ដោយប្រើវិធីសាស្ត្រ។ សូមយើងបង្កើត add_skill method ដើម្បីបន្ថែម skills ទៅក្នុងបញ្ជី skills
 
 ```py
 class Person:
@@ -248,8 +242,8 @@ John Doe is 30 years old. He lives in Noman city, Nomanland.
 
 ### Inheritance
 
-Using inheritance we can reuse parent class code. Inheritance allows us to define a class that inherits all the methods and properties from parent class. The parent class or super or base class is the class which gives all the methods and properties. Child class is the class that inherits from another or parent class.
-Let us create a student class by inheriting from person class.
+ដោយប្រើ inheritance យើងអាចប្រើឡើងវិញកូដថ្នាក់ឪពុក ការទទួលកេរដំណែលអនុញ្ញាតឱ្យយើងកំណត់លំដាប់ដែលទទួលកេរដំណែលគ្រប់មធ្យោបាយ និងលក្ខណៈសម្បត្តិពីលំដាប់ឪពុកម្តាយ។ កម្រិតមេ ឬ super ឬ base class គឺជាកម្រិតដែលផ្តល់នូវវិធីសាស្ត្រ និងលក្ខណៈសម្បត្តិទាំងអស់។ Child class គឺជា class ដែលទទួលយកពី class ផ្សេង ឬ parent class ។
+សូមយើងបង្កើតclassសិស្ស ដោយទទួលយកពីclassមនុស្ស។
 
 ```py
 class Student(Person):
@@ -280,8 +274,8 @@ Lidiya Teklemariam is 28 years old. He lives in Espoo, Finland.
 ['Organizing', 'Marketing', 'Digital Marketing']
 ```
 
-We did not call the **__init__**() constructor in the child class. If we didn't call it then we can still access all the properties from the parent. But if we do call the constructor we can access the parent properties by calling _super_.  
-We can add a new method to the child or we can override the parent class methods by creating the same method name in the child class. When we add the **__init__**() function, the child class will no longer inherit the parent's **__init__**() function.
+យើងមិនបានហៅ constructor ****init****( នៅក្នុង child class ទេ បើសិនជាយើងមិនហៅវាទេ យើងនៅតែអាចចូលទៅកាន់លក្ខណៈសម្បត្តិទាំងអស់parent class។ ប៉ុន្តែបើយើងហៅ constructor យើងអាចចូលទៅកាន់ properties parent ដោយហៅ _super_
+យើងអាចបន្ថែមមធ្យោបាយថ្មីទៅលើកូន ឬយើងអាច override មធ្យោបាយថ្នាក់មេ ដោយបង្កើតឈ្មោះមធ្យោបាយដូចគ្នានៅក្នុងថ្នាក់កូន។ When we add the ****init****() function, the child class will no longer inherit the parent's ****init****() function.
 
 ### Overriding parent method
 
@@ -315,54 +309,9 @@ Eyob Yetayeh is 30 years old. He lives in Helsinki, Finland.
 Lidiya Teklemariam is 28 years old. She lives in Espoo, Finland.
 ['Organizing', 'Marketing', 'Digital Marketing']
 ```
+យើងអាចប្រើ super() built-in function ឬឈ្មោះឪពុកម្តាយ Person ដើម្បីទទួលយកលក្ខណៈសម្បត្តិ និងវិធីសាស្ត្រពីparentរបស់វា។ នៅក្នុងឧទាហរណ៍ខាងលើយើង override វិធីសាស្ត្រparent។ វិធីសាស្ត្រកូនមានលក្ខណៈខុសគ្នាវាអាចកំណត់ថា តើភេទជាប្រុសឬស្រី ហើយកំណត់ពាក្យចាត់ទុកដែលសមរម្យ (He/She) ។
 
-We can use super() built-in function or the parent name Person to automatically inherit the methods and properties from its parent. In the example above we override the parent method. The child method has a different feature, it can identify, if the gender is male or female and assign the proper pronoun(He/She).
 
-🌕 Now, you are fully charged with a super power of programming.  Now do some exercises for your brain and muscles.
-
-## 💻 Exercises: Day 21
-
-### Exercises: Level 1
-
-1. Python has the module called _statistics_ and we can use this module to do all the statistical calculations. However, to learn how to make function and reuse function let us try to develop a program, which calculates the measure of central tendency of a sample (mean, median, mode) and measure of variability (range, variance, standard deviation). In addition to those measures, find the min, max, count, percentile, and frequency distribution of the sample. You can create a class called Statistics and create all the functions that do statistical calculations as methods for the Statistics class. Check the output below.
-
-```py
-ages = [31, 26, 34, 37, 27, 26, 32, 32, 26, 27, 27, 24, 32, 33, 27, 25, 26, 38, 37, 31, 34, 24, 33, 29, 26]
-
-print('Count:', data.count()) # 25
-print('Sum: ', data.sum()) # 744
-print('Min: ', data.min()) # 24
-print('Max: ', data.max()) # 38
-print('Range: ', data.range() # 14
-print('Mean: ', data.mean()) # 30
-print('Median: ', data.median()) # 29
-print('Mode: ', data.mode()) # {'mode': 26, 'count': 5}
-print('Standard Deviation: ', data.std()) # 4.2
-print('Variance: ', data.var()) # 17.5
-print('Frequency Distribution: ', data.freq_dist()) # [(20.0, 26), (16.0, 27), (12.0, 32), (8.0, 37), (8.0, 34), (8.0, 33), (8.0, 31), (8.0, 24), (4.0, 38), (4.0, 29), (4.0, 25)]
-```
-
-```sh
-# you output should look like this
-print(data.describe())
-Count: 25
-Sum:  744
-Min:  24
-Max:  38
-Range:  14
-Mean:  30
-Median:  29
-Mode:  (26, 5)
-Variance:  17.5
-Standard Deviation:  4.2
-Frequency Distribution: [(20.0, 26), (16.0, 27), (12.0, 32), (8.0, 37), (8.0, 34), (8.0, 33), (8.0, 31), (8.0, 24), (4.0, 38), (4.0, 29), (4.0, 25)]
-```
-
-### Exercises: Level 2
-
-1. Create a class called PersonAccount. It has firstname, lastname, incomes, expenses properties and it has total_income, total_expense, account_info, add_income, add_expense and account_balance methods. Incomes is a set of incomes and its description. The same goes for expenses.
-
-### Exercises: Level 3
 
 
 🎉 CONGRATULATIONS ! 🎉
