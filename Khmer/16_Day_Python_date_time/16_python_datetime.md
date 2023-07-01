@@ -17,21 +17,22 @@
 [<< Day 15](../15_Day_Python_type_errors/15_python_type_errors.md) | [Day 17 >>](../17_Day_Exception_handling/17_exception_handling.md)
 
 ![30DaysOfPython](../images/30DaysOfPython_banner3@2x.png)
+
 - [📘 Day 16](#-day-16)
   - [Python *datetime*](#python-datetime)
     - [Getting *datetime* Information](#getting-datetime-information)
     - [Formatting Date Output Using *strftime*](#formatting-date-output-using-strftime)
     - [String to Time Using *strptime*](#string-to-time-using-strptime)
     - [Using *date* from *datetime*](#using-date-from-datetime)
-    - [Time Objects to Represent Time](#time-objects-to-represent-time)
-    - [Difference Between Two Points in Time Using](#difference-between-two-points-in-time-using)
-    - [Difference Between Two Points in Time Using *timedelata*](#difference-between-two-points-in-time-using-timedelata)
-  - [💻 Exercises: Day 16](#-exercises-day-16)
+    - [Time Objects  តំណាង ឲ្យ ពេល វេលា](#time-objects--តំណាង-ឲ្យ-ពេល-វេលា)
+    - [ភាពខុសគ្នារវាងចំណុចពីរក្នុងពេលប្រើ](#ភាពខុសគ្នារវាងចំណុចពីរក្នុងពេលប្រើ)
+    - [ភាពខុសគ្នារវាងចំណុចពីរក្នុងពេលប្រើ *timedelata*](#ភាពខុសគ្នារវាងចំណុចពីរក្នុងពេលប្រើ-timedelata)
+
 # 📘 Day 16
 
 ## Python *datetime*
 
-Python has got _datetime_ module to handle date and time.
+Python មាន_datetime_ ដើម្បីគ្រប់គ្រងថ្ងៃ និងម៉ោង។
 
 ```py
 import datetime
@@ -39,7 +40,7 @@ print(dir(datetime))
 ['MAXYEAR', 'MINYEAR', '__builtins__', '__cached__', '__doc__', '__file__', '__loader__', '__name__', '__package__', '__spec__', 'date', 'datetime', 'datetime_CAPI', 'sys', 'time', 'timedelta', 'timezone', 'tzinfo']
 ```
 
-With dir or help built-in commands it is possible to know the available functions in a certain module. As you can see, in the datetime module there are many functions, but we will focus on _date_, _datetime_, _time_ and _timedelta_. Let se see them one by one.
+ជាមួយ dir ឬ help បញ្ជាដែលត្រូវបានបង្កើតឡើងវាអាចដឹងថាមុខងារដែលមាននៅក្នុងម៉ូឌុលមួយ។ ដូចដែលអ្នកអាចមើលបាននៅក្នុងម៉ូឌុល datetime មានមុខងារជាច្រើន ប៉ុន្តែយើងនឹងផ្តោតលើ *date*, *datetime*, *time* និង *timedelta*
 
 ### Getting *datetime* Information
 
@@ -59,7 +60,7 @@ print('timestamp', timestamp)
 print(f'{day}/{month}/{year}, {hour}:{minute}')  # 8/7/2021, 7:38
 ```
 
-Timestamp or Unix timestamp is the number of seconds elapsed from 1st of January 1970 UTC.
+Timestamp ឬ Unix timestamp គឺជាចំនួនវិនាទីដែលបានហួសពីថ្ងៃទី 1 ខែមករាឆ្នាំ 1970 UTC ។
 
 ### Formatting Date Output Using *strftime*
 
@@ -78,7 +79,7 @@ print(f'{day}/{month}/{year}, {hour}:{minute}')  # 1/1/2020, 0:0
 
 ```
 
-Formatting date time using *strftime* method and the documentation can be found [here](https://strftime.org/).
+ការកំណត់កាលបរិច្ឆេទពេលប្រើវិធីសាស្ត្រ *strftime* និងឯកសារអាចរកបាននៅទីនេះ (<https://strftime.org/>) ។
 
 ```py
 from datetime import datetime
@@ -100,12 +101,12 @@ time one: 12/05/2019, 01:05:01
 time two: 05/12/2019, 01:05:01
 ```
 
-Here are all the _strftime_ symbols we use to format time. An example of all the formats for this module.
-
+ការកំណត់កាលបរិច្ឆេទពេលប្រើវិធីសាស្ត្រ *strftime* និងឯកសារអាចរកបាននៅទីនេះ (<https://strftime.org/>) ។
 ![strftime](../images/strftime.png)
 
 ### String to Time Using *strptime*
-Here is a [documentation](https://www.programiz.com/python-programming/datetime/strptimet) hat helps to understand the format. 
+
+Here is a [documentation](https://www.programiz.com/python-programming/datetime/strptimet) hat helps to understand the format.
 
 ```py
 from datetime import datetime
@@ -134,7 +135,7 @@ print("Current month:", today.month) # 12
 print("Current day:", today.day)     # 5
 ```
 
-### Time Objects to Represent Time
+### Time Objects  តំណាង ឲ្យ ពេល វេលា
 
 ```py
 from datetime import time
@@ -158,7 +159,7 @@ b = 10:30:50
 c = 10:30:50  
 d = 10:30:50.200555
 
-### Difference Between Two Points in Time Using
+### ភាពខុសគ្នារវាងចំណុចពីរក្នុងពេលប្រើ
 
 ```py
 today = date(year=2019, month=12, day=5)
@@ -173,7 +174,7 @@ diff = t2 - t1
 print('Time left for new year:', diff) # Time left for new year: 26 days, 23: 01: 00
 ```
 
-### Difference Between Two Points in Time Using *timedelata*
+### ភាពខុសគ្នារវាងចំណុចពីរក្នុងពេលប្រើ *timedelata*
 
 ```py
 from datetime import timedelta
@@ -189,19 +190,7 @@ print("t3 =", t3)
     t3 = 86 days, 22:56:50
 ```
 
-🌕 You are an extraordinary. You are 16 steps a head to your way to greatness. Now do some exercises for your brain and muscles.
-
-## 💻 Exercises: Day 16
-
-1. Get the current day, month, year, hour, minute and timestamp from datetime module
-1. Format the current date using this format: "%m/%d/%Y, %H:%M:%S")
-1. Today is 5 December, 2019. Change this time string to time.
-1. Calculate the time difference between now and new year.
-1. Calculate the time difference between 1 January 1970 and now.
-1. Think, what can you use the datetime module for? Examples:
-   - Time series analysis
-   - To get a timestamp of any activities in an application
-   - Adding posts on a blog 
+🌕 អ្នកពិតជាអស្ចារ្យណាស់ អ្នកមានជំហាន ១៦ ជំហានទៅមុខ ក្នុងការឈានទៅរកភាពអស្ចារ្យ។ ឥឡូវ ធ្វើ លំ ហាត់ប្រាណ ខ្លះ សម្រាប់ ខួរក្បាល និង សាច់ដុំ របស់ អ្នក ។
 
 🎉 CONGRATULATIONS ! 🎉
 
