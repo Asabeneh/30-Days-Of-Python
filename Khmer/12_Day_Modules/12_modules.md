@@ -33,22 +33,16 @@
     - [Math Module](#math-module)
     - [String Module](#string-module)
     - [Random Module](#random-module)
-  - [💻 Exercises: Day 12](#-exercises-day-12)
-    - [Exercises: Level 1](#exercises-level-1)
-    - [Exercises: Level 2](#exercises-level-2)
-    - [Exercises: Level 3](#exercises-level-3)
 
 # 📘 Day 12
 
 ## Modules
 
 ### What is a Module
-
-A module is a file containing a set of codes or a set of functions which can be included to an application. A module could be a file containing a single variable, a function or a big code base.
-
+Module គឺជាឯកសារដែលមានកូដ ឬមុខងារមួយចំនួនដែលអាចបញ្ចូលទៅក្នុងកម្មវិធី។ Module អាចជាឯកសារដែលមានចម្រុះតែមួយ, function ឬមូលដ្ឋានកូដធំ។
 ### Creating a Module
 
-To create a module we write our codes in a python script and we save it as a .py file. Create a file named mymodule.py inside your project folder. Let us write some code in this file.
+ដើម្បីបង្កើត module យើងសរសេរកូដរបស់យើងក្នុង Python script ហើយយើងទុកវាជា.py file បង្កើតឯកសារដែលមានឈ្មោះ mymodule.py នៅក្នុងឯកសារគម្រោងរបស់អ្នក។ សូមយើងសរសេរកូដមួយចំនួននៅក្នុងឯកសារនេះ
 
 ```py
 # mymodule.py file
@@ -56,11 +50,11 @@ def generate_full_name(firstname, lastname):
     return firstname + ' ' + lastname
 ```
 
-Create main.py file in your project directory and import the mymodule.py file.
+បង្កើតឯកសារ main.py នៅក្នុងបញ្ជីគម្រោងរបស់អ្នក ហើយនាំចូលឯកសារ mymodule.py ។
 
 ### Importing a Module
 
-To import the file we use the _import_ keyword and the name of the file only.
+ដើម្បីនាំចូលឯកសារយើងប្រើពាក្យគន្លឹះ _import_ និងឈ្មោះឯកសារប៉ុណ្ណោះ។
 
 ```py
 # main.py file
@@ -69,8 +63,7 @@ print(mymodule.generate_full_name('Asabeneh', 'Yetayeh')) # Asabeneh Yetayeh
 ```
 
 ### Import Functions from a Module
-
-We can have many functions in a file and we can import all the functions differently.
+យើង អាច មាន មុខងារ ជាច្រើន ក្នុង ឯកសារ ហើយ យើង អាច នាំចូល មុខងារ ទាំងអស់ ផ្សេងៗ
 
 ```py
 # main.py file
@@ -85,8 +78,7 @@ print(person['firstname'])
 
 ### Import Functions from a Module and Renaming
 
-During importing we can rename the name of the module.
-
+ក្នុងអំឡុងពេលនាំចូលយើងអាចប្តូរឈ្មោះម៉ូឌុល។
 ```py
 # main.py file
 from mymodule import generate_full_name as fullname, sum_two_nums as total, person as p, gravity as g
@@ -101,11 +93,10 @@ print(p['firstname'])
 
 ## Import Built-in Modules
 
-Like other programming languages we can also import modules by importing the file/function using the key word _import_. Let's import the common module we will use most of the time. Some of the common built-in modules: _math_, _datetime_, _os_,_sys_, _random_, _statistics_, _collections_, _json_,_re_
-
+ដូចភាសាកម្មវិធីផ្សេងទៀតយើងក៏អាចនាំចូលម៉ូឌុលដោយនាំចូលឯកសារ / មុខងារដោយប្រើពាក្យគន្លឹះ _import_ ។ សូម នាំចូល ម៉ូឌុល រួម យើង នឹង ប្រើប្រាស់ ភាគច្រើន នៃ ពេលវេលា ។ មួយចំនួននៃម៉ូឌុលរួមបញ្ចូលរួមគ្នា: _math_, _datetime_, _os_,_sys_, _random_, _statistics_, _collections_, _json_,_re_
 ### OS Module
 
-Using python _os_ module it is possible to automatically perform many operating system tasks. The OS module in Python provides functions for creating, changing current working directory, and removing a directory (folder), fetching its contents, changing and identifying the current directory.
+ដោយប្រើ python _os_ module វាអាចធ្វើបានដោយស្វ័យប្រវត្តិដើម្បីធ្វើការងារប្រព័ន្ធប្រតិបត្តិការជាច្រើន។ ម៉ូឌុល OS នៅក្នុង Python ផ្តល់មុខងារសម្រាប់បង្កើត, ការផ្លាស់ប្តូរ directory ការងារបច្ចុប្បន្ន, និងការលុប directory (folder) មួយ, ទាញយកខ្លឹមសាររបស់វា, ការផ្លាស់ប្តូរនិងកំណត់អត្តសញ្ញាណ directory បច្ចុប្បន្ន។
 
 ```py
 # import the module
@@ -122,7 +113,7 @@ os.rmdir()
 
 ### Sys Module
 
-The sys module provides functions and variables used to manipulate different parts of the Python runtime environment. Function sys.argv returns a list of command line arguments passed to a Python script. The item at index 0 in this list is always the name of the script, at index 1 is the argument passed from the command line.
+ម៉ូឌុល sys ផ្តល់មុខងារ និងចម្រុះដែលប្រើដើម្បីកែប្រែផ្នែកផ្សេងគ្នានៃPython runtime environment ។ Function sys.argv វិលត្រឡប់បញ្ជីបញ្ជា line arguments ដែលត្រូវបានផ្ទេរទៅ Python script ។ ចំណុចនៅ index 0 នៅក្នុងបញ្ជីនេះគឺជាឈ្មោះរបស់ script នៅ index 1 គឺជាពាក្យដែលត្រូវបានផ្ទេរចេញពី command line ។
 
 Example of a script.py file:
 
@@ -132,8 +123,7 @@ import sys
 print('Welcome {}. Enjoy  {} challenge!'.format(sys.argv[1], sys.argv[2]))
 ```
 
-Now to check how this script works I wrote in command line:
-
+ឥឡូវនេះដើម្បីពិនិត្យមើលថា តើ script នេះដំណើរការយ៉ាងម៉េច ខ្ញុំបានសរសេរនៅក្នុង command line:
 ```sh
 python script.py Asabeneh 30DaysOfPython
 ```
@@ -159,7 +149,7 @@ sys.version
 
 ### Statistics Module
 
-The statistics module provides functions for mathematical statistics of numeric data. The popular statistical functions which are defined in this module: _mean_, _median_, _mode_, _stdev_ etc.
+ម៉ូឌុលស្តង់ដារផ្តល់មុខងារសម្រាប់ស្តង់ដារគណិតវិទ្យានៃទិន្នន័យលេខ។ តួនាទីស្តង់ដារដែលពេញនិយមដែលត្រូវបានកំណត់នៅក្នុងម៉ូឌុលនេះ: _mean_, _median_, _mode_, _stdev_ ជាដើម
 
 ```py
 from statistics import * # importing all the statistics modules
@@ -172,7 +162,7 @@ print(stdev(ages))      # ~2.3
 
 ### Math Module
 
-Module containing many mathematical operations and constants.
+ម៉ូឌុលដែលមានប្រតិបត្តិការគណិតវិទ្យាជាច្រើននិងកម្រិត។
 
 ```py
 import math
@@ -184,15 +174,14 @@ print(math.ceil(9.81))   # 10, rounding to the highest
 print(math.log10(100))   # 2, logarithm with 10 as base
 ```
 
-Now, we have imported the *math* module which contains lots of function which can help us to perform mathematical calculations. To check what functions the module has got, we can use _help(math)_, or _dir(math)_. This will display the available functions in the module. If we want to import only a specific function from the module we import it as follows:
+ឥឡូវនេះយើងបាននាំចូលម៉ូឌុល _math_ ដែលមានមុខងារជាច្រើនដែលអាចជួយយើងក្នុងការធ្វើគណិតវិទ្យា ដើម្បីពិនិត្យមើលថា តើម៉ូឌុលនេះមានមុខងារអ្វីខ្លះ យើងអាចប្រើ _help (math)_ ឬ _dir (math)_ ។ នេះនឹងបង្ហាញមុខងារដែលមាននៅក្នុងម៉ូឌុល។ ប្រសិនបើយើងចង់នាំចូលមុខងារណាមួយពីម៉ូឌុលយើងនាំចូលដូចខាងក្រោម:
 
 ```py
 from math import pi
 print(pi)
 ```
 
-It is also possible to import multiple functions at once
-
+វាក៏អាចនាំចូលមុខងារជាច្រើនក្នុងពេលតែមួយ
 ```py
 
 from math import pi, sqrt, pow, floor, ceil, log10
@@ -205,8 +194,7 @@ print(math.log10(100))    # 2
 
 ```
 
-But if we want to import all the function in math module we can use \* .
-
+ប៉ុន្តែបើយើងចង់នាំចូលលក្ខខណ្ឌទាំងអស់នៅក្នុងម៉ូឌុលគណិតវិទ្យាយើងអាចប្រើ \* ។
 ```py
 from math import *
 print(pi)                  # 3.141592653589793, pi constant
@@ -217,8 +205,7 @@ print(ceil(9.81))          # 10, rounding to the highest
 print(math.log10(100))     # 2
 ```
 
-When we import we can also rename the name of the function.
-
+នៅពេលដែលយើងនាំចូលយើងក៏អាចប្តូរឈ្មោះ function ផងដែរ។
 ```py
 from math import pi as  PI
 print(PI) # 3.141592653589793
@@ -226,8 +213,7 @@ print(PI) # 3.141592653589793
 
 ### String Module
 
-A string module is a useful module for many purposes. The example below shows some use of the string module.
-
+ម៉ូឌុល string គឺជាម៉ូឌុលដែលមានប្រយោជន៍សម្រាប់គោលបំណងជាច្រើន។ ឧទាហរណ៍ខាងក្រោមនេះបង្ហាញនូវការប្រើម៉ូឌុល string ។
 ```py
 import string
 print(string.ascii_letters) # abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ
@@ -237,7 +223,7 @@ print(string.punctuation)   # !"#$%&'()*+,-./:;<=>?@[\]^_`{|}~
 
 ### Random Module
 
-By now you are familiar with importing modules. Let us do one more import to get very familiar with it. Let us import _random_ module which gives us a random number between 0 and 0.9999.... The _random_ module has lots of functions but in this section we will only use _random_ and _randint_.
+ឥឡូវនេះអ្នកបានស្គាល់អំពីការនាំចូលម៉ូឌុល។ សូមយើងធ្វើការនាំចូលមួយទៀត ដើម្បីយល់ដឹងច្បាស់លាស់។ សូមយើងនាំចូល _random_ module ដែលផ្តល់ឱ្យយើងជាចំនួនរលូនរវាង 0 និង 0.9999.... _random_ module មានមុខងារជាច្រើន ប៉ុន្តែនៅក្នុងផ្នែកនេះយើងនឹងប្រើ _random_ និង _randint_ តែប៉ុណ្ណោះ
 
 ```py
 from random import random, randint
@@ -245,60 +231,9 @@ print(random())   # it doesn't take any arguments; it returns a value between 0 
 print(randint(5, 20)) # it returns a random integer number between [5, 20] inclusive
 ```
 
-🌕 You are going far. Keep going! You have just completed day 12 challenges and you are 12 steps a head in to your way to greatness. Now do some exercises for your brain and muscles.
+🌕អ្នកនឹងទៅឆ្ងាយ។ បន្តទៅ! អ្នក ទើបតែ បញ្ចប់ ការប្រឈម ថ្ងៃទី១២ ហើយ អ្នកមាន ១២ ជំហាន ទៅរក ភាពអស្ចារ្យ។ ឥឡូវ ធ្វើ លំ ហាត់ប្រាណ ខ្លះ សម្រាប់ ខួរក្បាល និង សាច់ដុំ របស់ អ្នក ។
 
-## 💻 Exercises: Day 12
 
-### Exercises: Level 1
-
-1. Writ a function which generates a six digit/character random_user_id.
-   ```py
-     print(random_user_id());
-     '1ee33d'
-   ```
-2. Modify the previous task. Declare a function named user_id_gen_by_user. It doesn’t take any parameters but it takes two inputs using input(). One of the inputs is the number of characters and the second input is the number of IDs which are supposed to be generated.
-   
-```py
-print(user_id_gen_by_user()) # user input: 5 5
-#output:
-#kcsy2
-#SMFYb
-#bWmeq
-#ZXOYh
-#2Rgxf
-   
-print(user_id_gen_by_user()) # 16 5
-#1GCSgPLMaBAVQZ26
-#YD7eFwNQKNs7qXaT
-#ycArC5yrRupyG00S
-#UbGxOFI7UXSWAyKN
-#dIV0SSUTgAdKwStr
-```
-
-3. Write a function named rgb_color_gen. It will generate rgb colors (3 values ranging from 0 to 255 each).
-   
-```py
-print(rgb_color_gen())
-# rgb(125,244,255) - the output should be in this form
-```
-
-### Exercises: Level 2
-
-1. Write a function list_of_hexa_colors which returns any number of hexadecimal colors in an array (six hexadecimal numbers written after #. Hexadecimal numeral system is made out of 16 symbols, 0-9 and first 6 letters of the alphabet, a-f. Check the task 6 for output examples).
-1. Write a function list_of_rgb_colors which returns any number of RGB colors in an array.
-1. Write a function generate_colors which can generate any number of hexa or rgb colors.
-
-```py
-   generate_colors('hexa', 3) # ['#a3e12f','#03ed55','#eb3d2b'] 
-   generate_colors('hexa', 1) # ['#b334ef']
-   generate_colors('rgb', 3)  # ['rgb(5, 55, 175','rgb(50, 105, 100','rgb(15, 26, 80'] 
-   generate_colors('rgb', 1)  # ['rgb(33,79, 176)']
-   ```
-
-### Exercises: Level 3
-
-1. Call your function shuffle_list, it takes a list as a parameter and it returns a shuffled list
-1. Write a function which returns an array of seven random numbers in a range of 0-9. All the numbers must be unique.
 
 🎉 CONGRATULATIONS ! 🎉
 
