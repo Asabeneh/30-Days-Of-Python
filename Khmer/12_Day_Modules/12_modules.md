@@ -231,7 +231,7 @@ print(random())   # it doesn't take any arguments; it returns a value between 0 
 print(randint(5, 20)) # it returns a random integer number between [5, 20] inclusive
 ```
 
-🌕អ្នកនឹងទៅឆ្ងាយ។ បន្តទៅ! អ្នក ទើបតែ បញ្ចប់ ការប្រឈម ថ្ងៃទី១២ ហើយ អ្នកមាន ១២ ជំហាន ទៅរក ភាពអស្ចារ្យ។ ឥឡូវ ធ្វើ លំ ហាត់ប្រាណ ខ្លះ សម្រាប់ ខួរក្បាល និង សាច់ដុំ របស់ អ្នក ។
+
 
 
 

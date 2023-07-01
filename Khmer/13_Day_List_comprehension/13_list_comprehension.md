@@ -24,13 +24,11 @@
   - [Lambda Function](#lambda-function)
     - [Creating a Lambda Function](#creating-a-lambda-function)
     - [Lambda Function Inside Another Function](#lambda-function-inside-another-function)
-  - [💻 Exercises: Day 13](#-exercises-day-13)
 
 # 📘 Day 13
 
 ## List Comprehension
-
-List comprehension in Python is a compact way of creating a list from a sequence. It is a short way to create a new list. List comprehension is considerably faster than processing a list using the _for_ loop.
+ការយល់ដឹងពីបញ្ជីក្នុង Python គឺជាវិធីដ៏សាមញ្ញក្នុងការបង្កើតបញ្ជីមួយពីលំដាប់។ វាជាវិធីខ្លីដើម្បីបង្កើតបញ្ជីថ្មី។ ការយល់ដឹងបញ្ជីគឺលឿនជាងការប្រតិបត្តិការបញ្ជីដោយប្រើ _for_ loop ។
 
 ```py
 # syntax
@@ -39,7 +37,7 @@ List comprehension in Python is a compact way of creating a list from a sequence
 
 **Example:1**
 
-For instance if you want to change a string to a list of characters. You can use a couple of methods. Let's see some of them:
+ឧទាហរណ៍ បើអ្នកចង់ផ្លាស់ប្តូរ string ទៅជាបញ្ជីអក្សរ។ អ្នក អាច ប្រើ វិធីសាស្ត្រ ពីរ បី។ សូម មើល មួយ ចំនួន ៖
 
 ```py
 # One way
@@ -57,8 +55,7 @@ print(lst)       # ['P', 'y', 't', 'h', 'o', 'n']
 
 **Example:2**
 
-For instance if you want to generate a list of numbers
-
+ឧទាហរណ៍ ប្រសិនបើអ្នកចង់បង្កើតបញ្ជីលេខ
 ```py
 # Generating numbers
 numbers = [i for i in range(11)]  # to generate numbers from 0 to 10
@@ -76,8 +73,7 @@ print(numbers)                             # [(0, 0), (1, 1), (2, 4), (3, 9), (4
 
 **Example:2**
 
-List comprehension can be combined with if expression
-
+ការយល់ដឹងបញ្ជីអាចត្រូវបានរួមបញ្ចូលជាមួយ if expression
 
 ```py
 # Generating even numbers
@@ -100,11 +96,11 @@ print(flattened_list)    # [1, 2, 3, 4, 5, 6, 7, 8, 9]
 
 ## Lambda Function
 
-Lambda function is a small anonymous function without a name. It can take any number of arguments, but can only have one expression. Lambda function is similar to anonymous functions in JavaScript. We need it when we want to write an anonymous function inside another function.
+Lambda function គឺជា function តូចមួយដែលគ្មានឈ្មោះ។ វាអាចយកលេខអធិប្បាយជាច្រើន ប៉ុន្តែអាចមានតែពាក្យមួយប៉ុណ្ណោះ។ តួនាទី Lambda មាន លក្ខណៈ ស្រដៀង គ្នា នឹង តួនាទី អនាមិក ក្នុង JavaScript ។ យើង ត្រូវការ វា នៅពេល ដែល យើង ចង់ សរសេរ តួនាទី អនាមិក នៅ ក្នុង តួនាទី ផ្សេង។
 
 ### Creating a Lambda Function
 
-To create a lambda function we use _lambda_ keyword followed by a parameter(s), followed by an expression. See the syntax and the example below. Lambda function does not use return but it explicitly returns the expression.
+ដើម្បីបង្កើត a lambda function យើងប្រើ _lambda_ keyword ដែលបន្ទាប់មកដោយ parameter (s) ដែលបន្ទាប់មកដោយ expression ។ សូមមើល syntax និងឧទាហរណ៍ខាងក្រោម។ តួនាទី Lambda មិនប្រើ return ទេ ប៉ុន្តែវាបានប្ដូរ expression ដោយច្បាស់លាស់។
 
 ```py
 # syntax
@@ -139,8 +135,7 @@ print(multiple_variable(5, 5, 3)) # 22
 
 ### Lambda Function Inside Another Function
 
-Using a lambda function inside another function.
-
+ប្រើប្រាស់លំហាត់ lambda នៅក្នុងលំហាត់ផ្សេងទៀត។
 ```py
 def power(x):
     return lambda n : x ** n
@@ -151,58 +146,6 @@ two_power_of_five = power(2)(5)
 print(two_power_of_five)  # 32
 ```
 
-🌕 Keep up the good work. Keep the momentum going, the sky is the limit! You have just completed day 13 challenges and you are 13 steps a head in to your way to greatness. Now do some exercises for your brain and muscles.
-
-## 💻 Exercises: Day 13
-
-1. Filter only negative and zero in the list using list comprehension
-   ```py
-   numbers = [-4, -3, -2, -1, 0, 2, 4, 6]
-   ```
-2. Flatten the following list of lists of lists to a one dimensional list :
-
-   ```py
-   list_of_lists =[[[1, 2, 3]], [[4, 5, 6]], [[7, 8, 9]]]
-
-   output
-   [1, 2, 3, 4, 5, 6, 7, 8, 9]
-   ```
-
-3. Using list comprehension create the following list of tuples:
-   ```py
-   [(0, 1, 0, 0, 0, 0, 0),
-   (1, 1, 1, 1, 1, 1, 1),
-   (2, 1, 2, 4, 8, 16, 32),
-   (3, 1, 3, 9, 27, 81, 243),
-   (4, 1, 4, 16, 64, 256, 1024),
-   (5, 1, 5, 25, 125, 625, 3125),
-   (6, 1, 6, 36, 216, 1296, 7776),
-   (7, 1, 7, 49, 343, 2401, 16807),
-   (8, 1, 8, 64, 512, 4096, 32768),
-   (9, 1, 9, 81, 729, 6561, 59049),
-   (10, 1, 10, 100, 1000, 10000, 100000)]
-   ```
-4. Flatten the following list to a new list:
-   ```py
-   countries = [[('Finland', 'Helsinki')], [('Sweden', 'Stockholm')], [('Norway', 'Oslo')]]
-   output:
-   [['FINLAND','FIN', 'HELSINKI'], ['SWEDEN', 'SWE', 'STOCKHOLM'], ['NORWAY', 'NOR', 'OSLO']]
-   ```
-5. Change the following list to a list of dictionaries:
-   ```py
-   countries = [[('Finland', 'Helsinki')], [('Sweden', 'Stockholm')], [('Norway', 'Oslo')]]
-   output:
-   [{'country': 'FINLAND', 'city': 'HELSINKI'},
-   {'country': 'SWEDEN', 'city': 'STOCKHOLM'},
-   {'country': 'NORWAY', 'city': 'OSLO'}]
-   ```
-6. Change the following list of lists to a list of concatenated strings:
-   ```py
-   names = [[('Asabeneh', 'Yetayeh')], [('David', 'Smith')], [('Donald', 'Trump')], [('Bill', 'Gates')]]
-   output
-   ['Asabeneh Yetaeyeh', 'David Smith', 'Donald Trump', 'Bill Gates']
-   ```
-7. Write a lambda function which can solve a slope or y-intercept of linear functions.
 
 🎉 CONGRATULATIONS ! 🎉
 
