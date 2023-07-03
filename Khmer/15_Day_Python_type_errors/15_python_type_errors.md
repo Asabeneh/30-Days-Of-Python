@@ -35,9 +35,9 @@
 
 ## Python Error Types
 
-When we write code it is common that we make a typo or some other common error. If our code fails to run, the Python interpreter will display a message, containing feedback with information on where the problem occurs and the type of an error. It will also sometimes gives us suggestions on a possible fix. Understanding different types of errors in programming languages will help us to debug our code quickly and also it makes us better at what we do.
+នៅពេលយើងសរសេរកូដវាជារឿងធម្មតាដែលយើងសរសេរពាក្យខុសឬកំហុសផ្សេងៗ ប្រសិនបើកូដរបស់យើងមិនអាចដំណើរការបាន​​​ Python នឹងបង្ហាញសារ ដែលឆ្លើយតបជាមួយនឹងព័ត៌មានអំពីកន្លែងដែលមានបញ្ហាកើតឡើង និងប្រភេទនៃកំហុស។ វាក៏អាចផ្តល់យោបល់ដល់យើងអំពីការដោះស្រាយដែលអាចធ្វើបានដែរ។ ការយល់ដឹងពីកំហុសផ្សេងៗក្នុងភាសាកម្មវិធីនឹងជួយយើងក្នុងការ debug កូដរបស់យើងឲ្យបានឆាប់រហ័សហើយវាក៏ធ្វើអោយយើងល្អជាងគេនៅក្នុងអ្វីដែលយើងធ្វើ។
 
-Let us see the most common error types one by one. First let us open our Python interactive shell. Go to your you computer terminal and write 'python'. The python interactive shell will be opened.
+សូមមើលប្រភេទកំហុសដែលទូទៅបំផុតមួយៗ។ ដំបូងយើងត្រូវបើក shell Python ចូលទៅក្នុងកុំព្យូទ័រ​ Terminal របស់អ្នក ហើយសរសេរថា "python" កញ្ចប់ Python នឹងត្រូវបើក។
 
 ### SyntaxError
 
@@ -47,33 +47,33 @@ Let us see the most common error types one by one. First let us open our Python 
 asabeneh@Asabeneh:~$ python
 Python 3.9.6 (default, Jun 28 2021, 15:26:21)
 [Clang 11.0.0 (clang-1100.0.33.8)] on darwin
-Type "help", "copyright", "credits" or "license" for more information.
+សរសេរ "help", "copyright", "credits" or "license" សម្រាប់ព័ត៌មានបន្ថែម។
 >>> print 'hello world'
   File "<stdin>", line 1
     print 'hello world'
                       ^
-SyntaxError: Missing parentheses in call to 'print'. Did you mean print('hello world')?
+SyntaxError: ខ្វះខាតវង់ក្រចកនៅក្នុងការហៅទៅ 'print'. តើអ្នកមានន័យថា print('hello world')?
 >>>
 ```
 
-As you can see we made a syntax error because we forgot to enclose the string with parenthesis and Python already suggests the solution. Let us fix it.
+ដូចដែលអ្នកអាចមើលបានយើងបានធ្វើកំហុស syntax ព្រោះយើងបានភ្លេចបិទ string ជាមួយ វង់ក្រច ហើយ Python បានបង្ហាញដំណោះស្រាយរួចហើយ សូមឱ្យយើងដោះស្រាយវា។
 
 ```py
 asabeneh@Asabeneh:~$ python
 Python 3.9.6 (default, Jun 28 2021, 15:26:21)
 [Clang 11.0.0 (clang-1100.0.33.8)] on darwin
-Type "help", "copyright", "credits" or "license" for more information.
+សរសេរ "help", "copyright", "credits" or "license" សម្រាប់ព័ត៌មានបន្ថែម។
 >>> print 'hello world'
   File "<stdin>", line 1
     print 'hello world'
                       ^
-SyntaxError: Missing parentheses in call to 'print'. Did you mean print('hello world')?
+SyntaxError: ខ្វះខាតវង់ក្រចកនៅក្នុងការហៅទៅ 'print'. តើអ្នកមានន័យថា print('hello world')?
 >>> print('hello world')
 hello world
 >>>
 ```
 
-The error was a _SyntaxError_. After the fix our code was executed without a hitch. Let see more error types.
+កំហុសគឺ _SyntaxError_ បន្ទាប់ពីការកែប្រែលេខកូដរបស់យើងត្រូវបានអនុវត្តដោយគ្មានបញ្ហា។ សូមមើលប្រភេទ Error បន្ថែមទៀត
 
 ### NameError
 
@@ -83,32 +83,32 @@ The error was a _SyntaxError_. After the fix our code was executed without a hit
 asabeneh@Asabeneh:~$ python
 Python 3.9.6 (default, Jun 28 2021, 15:26:21)
 [Clang 11.0.0 (clang-1100.0.33.8)] on darwin
-Type "help", "copyright", "credits" or "license" for more information.
+សរសេរ "help", "copyright", "credits" or "license" សម្រាប់ព័ត៌មានបន្ថែម។
 >>> print(age)
-Traceback (most recent call last):
+កំណត់ត្រា (ការហៅចុងក្រោយបំផុត):
   File "<stdin>", line 1, in <module>
-NameError: name 'age' is not defined
+NameError: ឈ្មោះ 'age' មិនត្រូវបានកំណត់
 >>>
 ```
 
-As you can see from the message above, name age is not defined. Yes, it is true that we did not define an age variable but we were trying to print it out as if we had had declared it. Now, lets fix this by declaring it and assigning with a value.
+ដូចដែលអ្នកអាចមើលឃើញពីសារខាងលើ ឈ្មោះអាយុមិនត្រូវបានកំណត់។ ពិតណាស់ យើងមិនបានកំណត់​​ age variable​ ​ទេ។ ប៉ុន្តែយើងកំពុងព្យាយាមបោះពុម្ពចេញដូចយើងបានប្រកាសវា។ ឥឡូវនេះ, យើងត្រូវដោះស្រាយវាដោយប្រកាសវា និងកំណត់តម្លៃ។
 
 ```py
 asabeneh@Asabeneh:~$ python
 Python 3.9.6 (default, Jun 28 2021, 15:26:21)
 [Clang 11.0.0 (clang-1100.0.33.8)] on darwin
-Type "help", "copyright", "credits" or "license" for more information.
+សរសេរ "help", "copyright", "credits" or "license" សម្រាប់ព័ត៌មានបន្ថែម។
 >>> print(age)
-Traceback (most recent call last):
+កំណត់ត្រា (ការហៅចុងក្រោយបំផុត):
   File "<stdin>", line 1, in <module>
-NameError: name 'age' is not defined
+NameError: ឈ្មោះ 'age' មិនត្រូវបានកំណត់
 >>> age = 25
 >>> print(age)
 25
 >>>
 ```
 
-The type of error was a _NameError_. We debugged the error by defining the variable name.
+ប្រភេទកំហុសគឺ _NameError_ ។ យើងបានដោះស្រាយកំហុសដោយកំណត់ឈ្មោះរបស់ variable ។
 
 ### IndexError
 
@@ -118,16 +118,16 @@ The type of error was a _NameError_. We debugged the error by defining the varia
 asabeneh@Asabeneh:~$ python
 Python 3.9.6 (default, Jun 28 2021, 15:26:21)
 [Clang 11.0.0 (clang-1100.0.33.8)] on darwin
-Type "help", "copyright", "credits" or "license" for more information.
+សរសេរ "help", "copyright", "credits" or "license" សម្រាប់ព័ត៌មានបន្ថែម។
 >>> numbers = [1, 2, 3, 4, 5]
 >>> numbers[5]
-Traceback (most recent call last):
+កំណត់ត្រា (ការហៅចុងក្រោយបំផុត):
   File "<stdin>", line 1, in <module>
-IndexError: list index out of range
+IndexError: លើសការកំណត់ក្នុងបញ្ជីបញ្ជី​
 >>>
 ```
 
-In the example above, Python raised an _IndexError_, because the list has only indexes from 0 to 4 , so it was out of range.
+នៅក្នុងឧទាហរណ៍ខាងលើនេះ Python បានលើកឡើងថា _IndexError_ ដោយសារតែបញ្ជីមានត្រឹមតែកម្រិតពី 0 ដល់ 4 ដូច្នេះវានៅក្រៅកម្រិត។
 
 ### ModuleNotFoundError
 
@@ -137,30 +137,30 @@ In the example above, Python raised an _IndexError_, because the list has only i
 asabeneh@Asabeneh:~$ python
 Python 3.9.6 (default, Jun 28 2021, 15:26:21)
 [Clang 11.0.0 (clang-1100.0.33.8)] on darwin
-Type "help", "copyright", "credits" or "license" for more information.
+សរសេរ "help", "copyright", "credits" or "license" សម្រាប់ព័ត៌មានបន្ថែម។
 >>> import maths
-Traceback (most recent call last):
+កំណត់ត្រា (ការហៅចុងក្រោយបំផុត):
   File "<stdin>", line 1, in <module>
-ModuleNotFoundError: No module named 'maths'
+ModuleNotFoundError: គ្មានម៉ូឌុលដែលមានឈ្មោះ 'maths'
 >>>
 ```
 
-In the example above, I added an extra s to math deliberately and _ModuleNotFoundError_ was raised. Lets fix it by removing the extra s from math.
+នៅក្នុងឧទាហរណ៍ខាងលើនេះ ខ្ញុំបានបន្ថែម s បន្ថែមទៅលើគណិតវិទ្យាដោយចេតនាហើយ _ModuleNotFoundError_ ត្រូវបានលើកឡើង។ សូមដោះស្រាយវាដោយលុប s បន្ថែមពីគណិតវិទ្យា
 
 ```py
 asabeneh@Asabeneh:~$ python
 Python 3.9.6 (default, Jun 28 2021, 15:26:21)
 [Clang 11.0.0 (clang-1100.0.33.8)] on darwin
-Type "help", "copyright", "credits" or "license" for more information.
+សរសេរ "help", "copyright", "credits" or "license" សម្រាប់ព័ត៌មានបន្ថែម។
 >>> import maths
-Traceback (most recent call last):
+កំណត់ត្រា (ការហៅចុងក្រោយបំផុត):
   File "<stdin>", line 1, in <module>
-ModuleNotFoundError: No module named 'maths'
+ModuleNotFoundError: គ្មានម៉ូឌុលដែលមានឈ្មោះ 'maths'
 >>> import math
 >>>
 ```
 
-We fixed it, so let's use some of the functions from the math module.
+យើងបានដោះស្រាយវារួចហើយ ដូច្នេះយើងត្រូវប្រើប្រាស់មុខងារខ្លះពីម៉ូឌុលគណិតវិទ្យា
 
 ### AttributeError
 
@@ -170,41 +170,41 @@ We fixed it, so let's use some of the functions from the math module.
 asabeneh@Asabeneh:~$ python
 Python 3.9.6 (default, Jun 28 2021, 15:26:21)
 [Clang 11.0.0 (clang-1100.0.33.8)] on darwin
-Type "help", "copyright", "credits" or "license" for more information.
+សរសេរ "help", "copyright", "credits" or "license" សម្រាប់ព័ត៌មានបន្ថែម។
 >>> import maths
-Traceback (most recent call last):
+កំណត់ត្រា (ការហៅចុងក្រោយបំផុត):
   File "<stdin>", line 1, in <module>
-ModuleNotFoundError: No module named 'maths'
+ModuleNotFoundError: គ្មានម៉ូឌុលដែលមានឈ្មោះ 'maths'
 >>> import math
 >>> math.PI
-Traceback (most recent call last):
+កំណត់ត្រា (ការហៅចុងក្រោយបំផុត):
   File "<stdin>", line 1, in <module>
-AttributeError: module 'math' has no attribute 'PI'
+AttributeError: ម៉ូឌុល 'math' គ្មានលក្ខណៈសម្បត្តិ 'PI'
 >>>
 ```
 
-As you can see, I made a mistake again! Instead of pi, I tried to call a PI function from maths module. It raised an attribute error, it means, that the function does not exist in the module. Lets fix it by changing from PI to pi.
+ដូច ដែល អ្នក អាច មើល បាន ខ្ញុំ បាន ធ្វើ កំហុស ម្តង ទៀត! ជំនួសពី pi ខ្ញុំព្យាយាមហៅ function PI ពីម៉ូឌុលគណិតវិទ្យា វាបានលើកឡើងពីកំហុសលក្ខណៈសម្បត្តិ ដែលមានន័យថា តួនាទីនេះមិនមាននៅក្នុងម៉ូឌុល។ យើងកែវាដោយផ្លាស់ប្តូរពី PI ទៅ pi
 
 ```py
 asabeneh@Asabeneh:~$ python
 Python 3.9.6 (default, Jun 28 2021, 15:26:21)
 [Clang 11.0.0 (clang-1100.0.33.8)] on darwin
-Type "help", "copyright", "credits" or "license" for more information.
+សរសេរ "help", "copyright", "credits" or "license" សម្រាប់ព័ត៌មានបន្ថែម។
 >>> import maths
-Traceback (most recent call last):
+កំណត់ត្រា (ការហៅចុងក្រោយបំផុត):
   File "<stdin>", line 1, in <module>
-ModuleNotFoundError: No module named 'maths'
+ModuleNotFoundError: គ្មានម៉ូឌុលដែលមានឈ្មោះ 'maths'
 >>> import math
 >>> math.PI
-Traceback (most recent call last):
+កំណត់ត្រា (ការហៅចុងក្រោយបំផុត):
   File "<stdin>", line 1, in <module>
-AttributeError: module 'math' has no attribute 'PI'
+AttributeError: ម៉ូឌុល 'math' គ្មានលក្ខណៈសម្បត្តិ 'PI'
 >>> math.pi
 3.141592653589793
 >>>
 ```
 
-Now, when we call pi from the math module we got the result.
+ឥឡូវនេះ, នៅពេលដែលយើងហៅ pi ពីម៉ូឌុលគណិតវិទ្យាយើងទទួលបានលទ្ធផល។
 
 ### KeyError
 
@@ -214,29 +214,29 @@ Now, when we call pi from the math module we got the result.
 asabeneh@Asabeneh:~$ python
 Python 3.9.6 (default, Jun 28 2021, 15:26:21)
 [Clang 11.0.0 (clang-1100.0.33.8)] on darwin
-Type "help", "copyright", "credits" or "license" for more information.
+សរសេរ "help", "copyright", "credits" or "license" សម្រាប់ព័ត៌មានបន្ថែម។
 >>> users = {'name':'Asab', 'age':250, 'country':'Finland'}
 >>> users['name']
 'Asab'
 >>> users['county']
-Traceback (most recent call last):
+កំណត់ត្រា (ការហៅចុងក្រោយបំផុត):
   File "<stdin>", line 1, in <module>
 KeyError: 'county'
 >>>
 ```
 
-As you can see, there was a typo in the key used to get the dictionary value. so, this is a key error and the fix is quite straight forward. Let's do this!
+ដូចដែលអ្នកបានឃើញ គឺមានកំហុសក្នុង Key ដែលប្រើដើម្បីទទួលបានតម្លៃនៃ Dictionary ដូច្នេះវាជា Key Error ហើយការកែប្រែគឺងាយស្រួល។ សូមធ្វើវា!
 
 ```py
 asabeneh@Asabeneh:~$ python
 Python 3.9.6 (default, Jun 28 2021, 15:26:21)
 [Clang 11.0.0 (clang-1100.0.33.8)] on darwin
-Type "help", "copyright", "credits" or "license" for more information.
+សរសេរ "help", "copyright", "credits" or "license" សម្រាប់ព័ត៌មានបន្ថែម។
 >>> user = {'name':'Asab', 'age':250, 'country':'Finland'}
 >>> user['name']
 'Asab'
 >>> user['county']
-Traceback (most recent call last):
+កំណត់ត្រា (ការហៅចុងក្រោយបំផុត):
   File "<stdin>", line 1, in <module>
 KeyError: 'county'
 >>> user['country']
@@ -244,7 +244,7 @@ KeyError: 'county'
 >>>
 ```
 
-We debugged the error, our code ran and we got the value.
+យើងបានកែប្រែកំហុស, កូដរបស់យើងបានដំណើរការ ហើយយើងទទួលបានតម្លៃ។
 
 ### TypeError
 
@@ -254,25 +254,25 @@ We debugged the error, our code ran and we got the value.
 asabeneh@Asabeneh:~$ python
 Python 3.9.6 (default, Jun 28 2021, 15:26:21)
 [Clang 11.0.0 (clang-1100.0.33.8)] on darwin
-Type "help", "copyright", "credits" or "license" for more information.
+សរសេរ "help", "copyright", "credits" or "license" សម្រាប់ព័ត៌មានបន្ថែម។
 >>> 4 + '3'
-Traceback (most recent call last):
+កំណត់ត្រា (ការហៅចុងក្រោយបំផុត):
   File "<stdin>", line 1, in <module>
-TypeError: unsupported operand type(s) for +: 'int' and 'str'
+TypeError: operand មិនគាំទ្រ type(s) for +: 'int' and 'str'
 >>>
 ```
 
-In the example above, a TypeError is raised because we cannot add a number to a string. First solution would be to convert the string to int or float. Another solution would be converting the number to a string (the result then would be '43'). Let us follow the first fix.
+នៅក្នុងឧទាហរណ៍ខាងលើ, TypeError ត្រូវបានលើកឡើងដោយសារយើងមិនអាចបន្ថែមលេខទៅលើ string ។ ដំណោះស្រាយដំបូងគឺដើម្បីបម្លែង string ទៅ int ឬ float ។ ដំណោះស្រាយមួយទៀតគឺការបម្លែងចំនួនទៅជាខ្សែ (លទ្ធផលបន្ទាប់មកគឺ '43') ។ សូមយើងតាមដានការកែប្រែដំបូង។
 
 ```py
 asabeneh@Asabeneh:~$ python
 Python 3.9.6 (default, Jun 28 2021, 15:26:21)
 [Clang 11.0.0 (clang-1100.0.33.8)] on darwin
-Type "help", "copyright", "credits" or "license" for more information.
+សរសេរ "help", "copyright", "credits" or "license" សម្រាប់ព័ត៌មានបន្ថែម។
 >>> 4 + '3'
-Traceback (most recent call last):
+កំណត់ត្រា (ការហៅចុងក្រោយបំផុត):
   File "<stdin>", line 1, in <module>
-TypeError: unsupported operand type(s) for +: 'int' and 'str'
+TypeError: operand មិនគាំទ្រ type(s) for +: 'int' and 'str'
 >>> 4 + int('3')
 7
 >>> 4 + float('3')
@@ -280,7 +280,7 @@ TypeError: unsupported operand type(s) for +: 'int' and 'str'
 >>>
 ```
 
-Error removed and we got the result we expected.
+កំហុសត្រូវបានដោះស្រាយហើយយើងទទួលបានលទ្ធផលដែលយើងរំពឹងទុក។
 
 ### ImportError
 
@@ -290,25 +290,25 @@ Error removed and we got the result we expected.
 asabeneh@Asabeneh:~$ python
 Python 3.9.6 (default, Jun 28 2021, 15:26:21)
 [Clang 11.0.0 (clang-1100.0.33.8)] on darwin
-Type "help", "copyright", "credits" or "license" for more information.
+សរសេរ "help", "copyright", "credits" or "license" សម្រាប់ព័ត៌មានបន្ថែម។
 >>> from math import power
-Traceback (most recent call last):
+កំណត់ត្រា (ការហៅចុងក្រោយបំផុត):
   File "<stdin>", line 1, in <module>
-ImportError: cannot import name 'power' from 'math'
+ImportError: មិនអាចនាំចូលឈ្មោះ 'power' from 'math'
 >>>
 ```
 
-There is no function called power in the math module, it goes with a different name: _pow_. Let's correct it:
+មិនមានលក្ខខណ្ឌដែលមានឈ្មោះថា power នៅក្នុងម៉ូឌុលគណិតវិទ្យាទេ វាមានឈ្មោះផ្សេងគ្នាគឺ _pow_ ។ សូមជម្រាបថា ៖
 
 ```py
 asabeneh@Asabeneh:~$ python
 Python 3.9.6 (default, Jun 28 2021, 15:26:21)
 [Clang 11.0.0 (clang-1100.0.33.8)] on darwin
-Type "help", "copyright", "credits" or "license" for more information.
+សរសេរ "help", "copyright", "credits" or "license" សម្រាប់ព័ត៌មានបន្ថែម។
 >>> from math import power
-Traceback (most recent call last):
+កំណត់ត្រា (ការហៅចុងក្រោយបំផុត):
   File "<stdin>", line 1, in <module>
-ImportError: cannot import name 'power' from 'math'
+ImportError: មិនអាចនាំចូលឈ្មោះ 'power' from 'math'
 >>> from math import pow
 >>> pow(2,3)
 8.0
@@ -321,15 +321,15 @@ ImportError: cannot import name 'power' from 'math'
 asabeneh@Asabeneh:~$ python
 Python 3.9.6 (default, Jun 28 2021, 15:26:21)
 [Clang 11.0.0 (clang-1100.0.33.8)] on darwin
-Type "help", "copyright", "credits" or "license" for more information.
+សរសេរ "help", "copyright", "credits" or "license" សម្រាប់ព័ត៌មានបន្ថែម។
 >>> int('12a')
-Traceback (most recent call last):
+កំណត់ត្រា (ការហៅចុងក្រោយបំផុត):
   File "<stdin>", line 1, in <module>
-ValueError: invalid literal for int() with base 10: '12a'
+ValueError: អក្សរមិនត្រឹមត្រូវសម្រាប់ int() with base 10: '12a'
 >>>
 ```
 
-In this case we cannot change the given string to a number, because of the 'a' letter in it.
+ក្នុងករណីនេះយើងមិនអាចប្ដូរ string ទៅជាលេខបានទេ ព្រោះមានអក្សរ 'a' នៅក្នុងវា
 
 ### ZeroDivisionError
 
@@ -337,25 +337,25 @@ In this case we cannot change the given string to a number, because of the 'a' l
 asabeneh@Asabeneh:~$ python
 Python 3.9.6 (default, Jun 28 2021, 15:26:21)
 [Clang 11.0.0 (clang-1100.0.33.8)] on darwin
-Type "help", "copyright", "credits" or "license" for more information.
+សរសេរ "help", "copyright", "credits" or "license" សម្រាប់ព័ត៌មានបន្ថែម។
 >>> 1/0
-Traceback (most recent call last):
+កំណត់ត្រា (ការហៅចុងក្រោយបំផុត):
   File "<stdin>", line 1, in <module>
-ZeroDivisionError: division by zero
+ZeroDivisionError: ការបែងចែកដោយសូន្យ
 >>>
 ```
 
-We cannot divide a number by zero.
+យើងមិនអាចបែងចែកលេខដោយសូន្យបានទេ។
 
-We have covered some of the python error types, if you want to check more about it check the python documentation about python error types.
-If you are good at reading the error types then you will be able to fix your bugs fast and you will also become a better programmer.
+យើងបានពិនិត្យមើលប្រភេទកំហុស Python មួយចំនួន ប្រសិនបើអ្នកចង់ពិនិត្យបន្ថែមអំពីវា សូមមើលឯកសារ Python អំពីប្រភេទកំហុស Python ។
+ប្រសិនបើអ្នកចេះអានប្រភេទកំហុសនោះ អ្នកនឹងអាចដោះស្រាយកំហុសរបស់អ្នកបានលឿនហើយ អ្នកក៏នឹងក្លាយជាអ្នក រៀបចំ កម្មវិធីល្អជាង ។
 
-🌕 You are excelling. You made it to half way to your way to greatness. Now do some exercises for your brain and for your muscle.
+🌕 អ្នកពិតជាអស្ចារ្យណាស់ អ្នកបានធ្វើវាដល់ពាក់កណ្តាលនៃផ្លូវរបស់អ្នកទៅរកភាពធំធេង។ ឥឡូវធ្វើ លំ ហាត់ប្រាណ ខ្លះសម្រាប់ខួរក្បាលនិងសាច់ដុំរបស់អ្នក ។
 
 ## 💻 Exercises: Day 15
 
-1. Open you python interactive shell and try all the examples covered in this section.
+1. បើក Python Interactive Shell របស់អ្នក ហើយសាកល្បងឧទាហរណ៍ទាំងអស់ដែលពាក់ព័ន្ធនឹងផ្នែកនេះ។
 
-🎉 CONGRATULATIONS ! 🎉
+🎉 សូមអបអរសាទរ ! 🎉
 
 [<< Day 14](../14_Day_Higher_order_functions/14_higher_order_functions.md) | [Day 16 >>](../16_Day_Python_date_time/16_python_datetime.md)
