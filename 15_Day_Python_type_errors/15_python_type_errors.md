@@ -34,9 +34,9 @@
 
 ## Python Error Types
 
-When we write code it is common that we make a typo or some other common error. If our code fails to run, the Python interpreter will display a message, containing feedback with information on where the problem occurs and the type of an error. It will also sometimes gives us suggestions on a possible fix. Understanding different types of errors in programming languages will help us to debug our code quickly and also it makes us better at what we do.
+ពេល​យើង​សរសេរ​កូដ វា​ជា​រឿង​ធម្មតា​ដែល​យើង​ធ្វើ​ការ​វាយ​អក្សរ ឬ​កំហុស​ទូទៅ​មួយ​ចំនួន​ផ្សេង​ទៀត។ ប្រសិនបើកូដរបស់យើងមិនអាចដំណើរការបានទេ អ្នកបកប្រែ Python នឹងបង្ហាញសារមួយដែលមានមតិកែលម្អជាមួយនឹងព័ត៌មានអំពីកន្លែងដែលបញ្ហាកើតឡើង និងប្រភេទនៃកំហុស។ ពេលខ្លះ វាក៏នឹងផ្តល់ឱ្យយើងនូវការណែនាំអំពីការជួសជុលដែលអាចកើតមានផងដែរ។ ការយល់ដឹងអំពីប្រភេទផ្សេងៗនៃកំហុសនៅក្នុងភាសាសរសេរកម្មវិធីនឹងជួយយើងក្នុងការបំបាត់កំហុសកូដរបស់យើងបានយ៉ាងឆាប់រហ័ស ហើយវាក៏ធ្វើឱ្យយើងកាន់តែប្រសើរឡើងចំពោះអ្វីដែលយើងធ្វើផងដែរ។
 
-Let us see the most common error types one by one. First let us open our Python interactive shell. Go to your you computer terminal and write 'python'. The python interactive shell will be opened.
+អនុញ្ញាតឱ្យយើងមើលប្រភេទកំហុសទូទៅបំផុតម្តងមួយៗ។ ដំបូងអនុញ្ញាតឱ្យយើងបើកសែលអន្តរកម្ម Python របស់យើង។ ចូលទៅកាន់ស្ថានីយកុំព្យូទ័ររបស់អ្នក ហើយសរសេរ 'python' ។ សែលអន្តរកម្ម python នឹងត្រូវបានបើក។
 
 ### SyntaxError
 
@@ -55,7 +55,7 @@ SyntaxError: Missing parentheses in call to 'print'. Did you mean print('hello w
 >>>
 ```
 
-As you can see we made a syntax error because we forgot to enclose the string with parenthesis and Python already suggests the solution. Let us fix it.
+ដូចដែលអ្នកអាចឃើញ យើងបានធ្វើឱ្យមានកំហុសវាក្យសម្ព័ន្ធមួយ ដោយសារតែយើងភ្លេចបិទខ្សែអក្សរជាមួយនឹងវង់ក្រចក ហើយ Python បានណែនាំដំណោះស្រាយរួចហើយ។ អនុញ្ញាតឱ្យយើងជួសជុលវា។
 
 ```py
 asabeneh@Asabeneh:~$ python
@@ -72,7 +72,7 @@ hello world
 >>>
 ```
 
-The error was a _SyntaxError_. After the fix our code was executed without a hitch. Let see more error types.
+កំហុសគឺ _SyntaxError_ ។ បន្ទាប់ពីការជួសជុលកូដរបស់យើងត្រូវបានប្រតិបត្តិដោយគ្មានបញ្ហា។ អនុញ្ញាតឱ្យមើលប្រភេទកំហុសជាច្រើនទៀត។
 
 ### NameError
 
@@ -90,7 +90,7 @@ NameError: name 'age' is not defined
 >>>
 ```
 
-As you can see from the message above, name age is not defined. Yes, it is true that we did not define an age variable but we were trying to print it out as if we had had declared it. Now, lets fix this by declaring it and assigning with a value.
+ដូចដែលអ្នកអាចឃើញពីសារខាងលើ អាយុឈ្មោះមិនត្រូវបានកំណត់ទេ។ បាទ វាជាការពិតដែលយើងមិនបានកំណត់អថេរអាយុទេ ប៉ុន្តែយើងកំពុងព្យាយាមបោះពុម្ពវាចេញ ហាក់ដូចជាយើងបានប្រកាសវា។ ឥឡូវនេះ សូមជួសជុលវាដោយប្រកាសវា និងកំណត់តម្លៃ។
 
 ```py
 asabeneh@Asabeneh:~$ python
@@ -107,7 +107,7 @@ NameError: name 'age' is not defined
 >>>
 ```
 
-The type of error was a _NameError_. We debugged the error by defining the variable name.
+ប្រភេទនៃកំហុសគឺ _NameError_ ។ យើងបានបំបាត់កំហុសដោយកំណត់ឈ្មោះអថេរ។
 
 ### IndexError
 
@@ -126,7 +126,7 @@ IndexError: list index out of range
 >>>
 ```
 
-In the example above, Python raised an _IndexError_, because the list has only indexes from 0 to 4 , so it was out of range.
+ក្នុងឧទាហរណ៍ខាងលើ Python បានលើកឡើង _IndexError_ ពីព្រោះបញ្ជីមានតែសន្ទស្សន៍ពី 0 ដល់ 4 ដូច្នេះវានៅក្រៅជួរ។
 
 ### ModuleNotFoundError
 
@@ -144,7 +144,7 @@ ModuleNotFoundError: No module named 'maths'
 >>>
 ```
 
-In the example above, I added an extra s to math deliberately and _ModuleNotFoundError_ was raised. Lets fix it by removing the extra s from math.
+ក្នុងឧទាហរណ៍ខាងលើ ខ្ញុំបានបន្ថែម s បន្ថែមទៅគណិតវិទ្យាដោយចេតនា ហើយ _ModuleNotFoundError_ ត្រូវបានលើកឡើង។ អនុញ្ញាតឱ្យជួសជុលវាដោយយក s បន្ថែមចេញពីគណិតវិទ្យា។
 
 ```py
 asabeneh@Asabeneh:~$ python
@@ -159,7 +159,7 @@ ModuleNotFoundError: No module named 'maths'
 >>>
 ```
 
-We fixed it, so let's use some of the functions from the math module.
+យើងបានជួសជុលវា ដូច្នេះ ចូរយើងប្រើមុខងារមួយចំនួនពីម៉ូឌុលគណិតវិទ្យា។
 
 ### AttributeError
 
@@ -182,7 +182,7 @@ AttributeError: module 'math' has no attribute 'PI'
 >>>
 ```
 
-As you can see, I made a mistake again! Instead of pi, I tried to call a PI function from maths module. It raised an attribute error, it means, that the function does not exist in the module. Lets fix it by changing from PI to pi.
+ដូច​អ្នក​ឃើញ​ហើយ ខ្ញុំ​បាន​ធ្វើ​ខុស​ម្ដង​ទៀត! ជំនួសឱ្យ pi ខ្ញុំបានព្យាយាមហៅមុខងារ PI ពីម៉ូឌុលគណិតវិទ្យា។ វាលើកឡើងនូវកំហុសគុណលក្ខណៈ វាមានន័យថាមុខងារមិនមាននៅក្នុងម៉ូឌុលទេ។ អនុញ្ញាតឱ្យជួសជុលវាដោយការផ្លាស់ប្តូរពី PI ទៅ pi ។
 
 ```py
 asabeneh@Asabeneh:~$ python
@@ -203,7 +203,7 @@ AttributeError: module 'math' has no attribute 'PI'
 >>>
 ```
 
-Now, when we call pi from the math module we got the result.
+ឥឡូវនេះនៅពេលដែលយើងហៅ pi ពីម៉ូឌុលគណិតវិទ្យាយើងទទួលបានលទ្ធផល។
 
 ### KeyError
 
@@ -224,7 +224,7 @@ KeyError: 'county'
 >>>
 ```
 
-As you can see, there was a typo in the key used to get the dictionary value. so, this is a key error and the fix is quite straight forward. Let's do this!
+ដូចដែលអ្នកអាចឃើញមានការវាយអក្សរនៅក្នុងសោដែលប្រើដើម្បីទទួលបានតម្លៃវចនានុក្រម។ ដូច្នេះ នេះ​ជា​កំហុស​សំខាន់ ហើយ​ការ​ជួសជុល​គឺ​ត្រង់​ទៅ​មុខ។ តោះ​នាំ​គ្នា​ធ្វើ!
 
 ```py
 asabeneh@Asabeneh:~$ python
@@ -243,7 +243,7 @@ KeyError: 'county'
 >>>
 ```
 
-We debugged the error, our code ran and we got the value.
+យើងបានបំបាត់កំហុស លេខកូដរបស់យើងដំណើរការ ហើយយើងទទួលបានតម្លៃ។
 
 ### TypeError
 
@@ -261,7 +261,7 @@ TypeError: unsupported operand type(s) for +: 'int' and 'str'
 >>>
 ```
 
-In the example above, a TypeError is raised because we cannot add a number to a string. First solution would be to convert the string to int or float. Another solution would be converting the number to a string (the result then would be '43'). Let us follow the first fix.
+ក្នុងឧទាហរណ៍ខាងលើ TypeError ត្រូវបានលើកឡើង ពីព្រោះយើងមិនអាចបន្ថែមលេខទៅខ្សែអក្សរបានទេ។ ដំណោះស្រាយដំបូងគឺការបំប្លែងខ្សែអក្សរទៅជា int ឬ float ។ ដំណោះ​ស្រាយ​មួយ​ទៀត​នឹង​ត្រូវ​បំប្លែង​លេខ​ទៅ​ជា​ខ្សែ​អក្សរ (លទ្ធផល​បន្ទាប់​មក​នឹង​ជា '43')។ ចូរយើងធ្វើតាមការកែតម្រូវដំបូង។
 
 ```py
 asabeneh@Asabeneh:~$ python
@@ -279,7 +279,7 @@ TypeError: unsupported operand type(s) for +: 'int' and 'str'
 >>>
 ```
 
-Error removed and we got the result we expected.
+កំហុសត្រូវបានដកចេញ ហើយយើងទទួលបានលទ្ធផលដែលយើងរំពឹងទុក។
 
 ### ImportError
 
@@ -297,7 +297,7 @@ ImportError: cannot import name 'power' from 'math'
 >>>
 ```
 
-There is no function called power in the math module, it goes with a different name: _pow_. Let's correct it:
+មិនមានមុខងារហៅថាថាមពលនៅក្នុងម៉ូឌុលគណិតវិទ្យាទេ វាមានឈ្មោះផ្សេង៖ _pow_។ តោះកែវា៖
 
 ```py
 asabeneh@Asabeneh:~$ python
@@ -328,7 +328,7 @@ ValueError: invalid literal for int() with base 10: '12a'
 >>>
 ```
 
-In this case we cannot change the given string to a number, because of the 'a' letter in it.
+ក្នុង​ករណី​នេះ យើង​មិន​អាច​ប្ដូរ​ខ្សែ​ដែល​បាន​ផ្ដល់​ទៅ​ជា​លេខ​បាន​ទេ ដោយសារ​អក្សរ 'a' នៅ​ក្នុង​វា។
 
 ### ZeroDivisionError
 
@@ -344,11 +344,10 @@ ZeroDivisionError: division by zero
 >>>
 ```
 
-We cannot divide a number by zero.
+យើងមិនអាចចែកលេខដោយសូន្យបានទេ។
 
-We have covered some of the python error types, if you want to check more about it check the python documentation about python error types.
-If you are good at reading the error types then you will be able to fix your bugs fast and you will also become a better programmer.
-
+យើងបានគ្របដណ្តប់មួយចំនួននៃប្រភេទកំហុស python ប្រសិនបើអ្នកចង់ពិនិត្យមើលបន្ថែមទៀតអំពីវា សូមពិនិត្យមើលឯកសារ python អំពីប្រភេទកំហុស python ។
+ប្រសិនបើអ្នកពូកែអានប្រភេទ error នោះអ្នកនឹងអាចជួសជុល bugs របស់អ្នកបានលឿន ហើយអ្នកក៏នឹងក្លាយជា programmer ល្អជាងមុនផងដែរ។
 
 
 🎉 CONGRATULATIONS ! 🎉
