@@ -233,6 +233,7 @@ print(challenge.split()) # ['thirty', 'days', 'of', 'python']
 challenge = 'thirty days of python'
 print(challenge.title()) # Thirty Days Of Python
 
+
 # swapcase(): Checks if String Starts with the Specified String
   
 challenge = 'thirty days of python'
