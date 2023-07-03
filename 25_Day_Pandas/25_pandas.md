@@ -20,62 +20,63 @@
 
 - [📘 Day 25](#-day-25)
   - [Pandas](#pandas)
-    - [Installing Pandas](#installing-pandas)
-    - [Importing Pandas](#importing-pandas)
-    - [Creating Pandas Series with Default Index](#creating-pandas-series-with-default-index)
-    - [Creating  Pandas Series with custom index](#creating--pandas-series-with-custom-index)
-    - [Creating Pandas Series from a Dictionary](#creating-pandas-series-from-a-dictionary)
-    - [Creating a Constant Pandas Series](#creating-a-constant-pandas-series)
-    - [Creating a  Pandas Series Using Linspace](#creating-a--pandas-series-using-linspace)
+    - [ការដំឡើង Pandas](#installing-pandas)
+    - [ការនាំចូល Pandas](#importing-pandas)
+    - [ការបង្កើតស៊េរី "Pandas" ជាមួយសន្ទស្សន៍លំនាំដើម](#creating-pandas-series-with-default-index)
+    - [ការបង្កើតស៊េរី "Pandas" ជាមួយនឹងសន្ទស្សន៍ផ្ទាល់ខ្លួន](#creating--pandas-series-with-custom-index)
+    - [ការបង្កើតស៊េរី "Pandas" ពីវចនានុក្រម](#creating-pandas-series-from-a-dictionary)
+    - [ការបង្កើតស៊េរី "Pandas" ថេរ](#creating-a-constant-pandas-series)
+    - [ការបង្កើតស៊េរី "Pandas" ដោយប្រើ Linspace](#creating-a--pandas-series-using-linspace)
   - [DataFrames](#dataframes)
-    - [Creating DataFrames from List of Lists](#creating-dataframes-from-list-of-lists)
-    - [Creating DataFrame Using Dictionary](#creating-dataframe-using-dictionary)
-    - [Creating DataFrames from a List of Dictionaries](#creating-dataframes-from-a-list-of-dictionaries)
-  - [Reading CSV File Using Pandas](#reading-csv-file-using-pandas)
-    - [Data Exploration](#data-exploration)
-  - [Modifying a DataFrame](#modifying-a-dataframe)
-    - [Creating a DataFrame](#creating-a-dataframe)
-    - [Adding a New Column](#adding-a-new-column)
-    - [Modifying column values](#modifying-column-values)
-    - [Formating DataFrame columns](#formating-dataframe-columns)
-  - [Checking data types of Column values](#checking-data-types-of-column-values)
-    - [Boolean Indexing](#boolean-indexing)
+    - [ការបង្កើត "DataFrames" ពីបញ្ជីបញ្ជី](#creating-dataframes-from-list-of-lists)
+    - [ការបង្កើត "DataFrames" ដោយប្រើវចនានុក្រម](#creating-dataframe-using-dictionary)
+    - [ការបង្កើត DataFrames ពីបញ្ជីវចនានុក្រម](#creating-dataframes-from-a-list-of-dictionaries)
+  - [ការអានឯកសារ CSV ដោយប្រើ Pandas](#reading-csv-file-using-pandas)
+    - [ការរុករកទិន្នន័យ](#data-exploration)
+  - [ការកែប្រែ DataFrame](#modifying-a-dataframe)
+    - [ការបង្កើត DataFrame](#creating-a-dataframe)
+    - [ការបន្ថែមជួរឈរថ្មី។](#adding-a-new-column)
+    - [ការកែប្រែតម្លៃជួរឈរ](#modifying-column-values)
+    - [ការធ្វើទ្រង់ទ្រាយជួរឈរ DataFrame](#formating-dataframe-columns)
+  - [ពិនិត្យមើលប្រភេទទិន្នន័យនៃតម្លៃជួរឈរ](#checking-data-types-of-column-values)
+    - [សន្ទស្សន៍ប៊ូលីន](#boolean-indexing)
   - [Exercises: Day 25](#exercises-day-25)
   
 # 📘 Day 25
 
 ## Pandas
 
-Pandas is an open source, high-performance, easy-to-use data structures and data analysis tools for the Python programming language.
-Pandas adds data structures and tools designed to work with table-like data which is *Series* and *Data Frames*.
-Pandas provides tools for data manipulation: 
+Pandas គឺជាប្រភពបើកចំហ ដំណើរការខ្ពស់ ងាយស្រួលប្រើ រចនាសម្ព័ន្ធទិន្នន័យ និងឧបករណ៍វិភាគទិន្នន័យសម្រាប់ភាសាសរសេរកម្មវិធី Python ។
+Pandas បន្ថែមរចនាសម្ព័ន្ធទិន្នន័យ និងឧបករណ៍ដែលត្រូវបានរចនាឡើងដើម្បីធ្វើការជាមួយទិន្នន័យដូចតារាងដែលជា *ស៊េរី* និង *ស៊ុមទិន្នន័យ*។
+Pandas ផ្តល់ឧបករណ៍សម្រាប់រៀបចំទិន្នន័យ៖
 
-- reshaping
-- merging
-- sorting
-- slicing
-- aggregation
-- imputation.
-If you are using anaconda, you do not have install pandas.
+- កែទម្រង់
+- ការរួមបញ្ចូលគ្នា
+- តម្រៀប
+- ចំណិត
+- ការប្រមូលផ្តុំ
+- ការកាត់ទោស។
 
-### Installing Pandas
+ប្រសិនបើអ្នកកំពុងប្រើ anaconda អ្នកមិនមានដំឡើង pandas ទេ។
 
-For Mac:
+### ការដំឡើង Pandas
+
+សម្រាប់ Mac:
 ```py
 pip install conda
 conda install pandas
 ```
 
-For Windows:
+សម្រាប់ Windows:
 ```py
 pip install conda
 pip install pandas
 ```
 
-Pandas data structure is based on *Series* and *DataFrames*. 
+រចនាសម្ព័ន្ធទិន្នន័យ Pandas គឺផ្អែកលើ *ស៊េរី* និង *DataFrames*។
 
-A *series* is a *column* and a DataFrame is a *multidimensional table* made up of collection of *series*. In order to create a pandas series we should use numpy to create a one dimensional arrays or a python list.
-Let us see an example of a series:
+A *series* គឺជា *column* ហើយ DataFrame គឺជា *តារាងពហុវិមាត្រ* ដែលបង្កើតឡើងដោយបណ្តុំនៃ *series*។ ដើម្បីបង្កើតស៊េរីផេនដា យើងគួរប្រើ numpy ដើម្បីបង្កើតអារេវិមាត្រមួយ ឬបញ្ជី python ។
+តោះមើលឧទាហរណ៍នៃស៊េរី៖
 
 Names Pandas Series
 
@@ -89,26 +90,26 @@ Cities Series
 
 ![pandas series](../images/pandas-series-3.png)
 
-As you can see, pandas series is just one column of data. If we want to have multiple columns we use data frames. The example below shows pandas DataFrames.
+ដូចដែលអ្នកអាចឃើញស៊េរីផេនដាគឺគ្រាន់តែជាជួរឈរមួយនៃទិន្នន័យប៉ុណ្ណោះ។ ប្រសិនបើយើងចង់មានជួរឈរច្រើន យើងប្រើស៊ុមទិន្នន័យ។ ឧទាហរណ៍ខាងក្រោមបង្ហាញពីផេនដា DataFrames ។
 
-Let us see, an example of a pandas data frame:
+តោះមើលឧទាហរណ៍នៃស៊ុមទិន្នន័យខ្លាឃ្មុំផេនដា៖
 
 ![Pandas data frame](../images/pandas-dataframe-1.png)
 
-Data frame is a collection of rows and columns. Look at the table below; it has many more columns than the example above:
+ស៊ុមទិន្នន័យគឺជាបណ្តុំនៃជួរដេក និងជួរឈរ។ សូមមើលតារាងខាងក្រោម; វាមានជួរឈរច្រើនលើសពីឧទាហរណ៍ខាងលើ៖
 
 ![Pandas data frame](../images/pandas-dataframe-2.png)
 
-Next, we will see how to import pandas and how to create Series and DataFrames using pandas
+បន្ទាប់ យើងនឹងឃើញពីរបៀបនាំចូលផេនដា និងរបៀបបង្កើត Series និង DataFrames ដោយប្រើផេនដា
 
-### Importing Pandas
+### ការនាំចូល Pandas
 
 ```python
 import pandas as pd # importing pandas as pd
 import numpy  as np # importing numpy as np
 ```
 
-### Creating Pandas Series with Default Index
+### ការបង្កើតស៊េរី Pandas ជាមួយសន្ទស្សន៍លំនាំដើម
 
 ```python
 nums = [1, 2, 3, 4,5]
@@ -125,7 +126,7 @@ print(s)
     dtype: int64
 ```
 
-### Creating  Pandas Series with custom index
+### ការបង្កើតស៊េរី Pandas ជាមួយនឹងសន្ទស្សន៍ផ្ទាល់ខ្លួន
 
 ```python
 nums = [1, 2, 3, 4, 5]
@@ -155,7 +156,7 @@ print(fruits)
     dtype: object
 ```
 
-### Creating Pandas Series from a Dictionary
+### ការបង្កើតស៊េរី Pandas ពីវចនានុក្រម
 
 ```python
 dct = {'name':'Asabeneh','country':'Finland','city':'Helsinki'}
@@ -173,7 +174,7 @@ print(s)
     dtype: object
 ```
 
-### Creating a Constant Pandas Series
+### ការបង្កើតស៊េរី Pandas ថេរ
 
 ```python
 s = pd.Series(10, index = [1, 2, 3])
@@ -187,7 +188,7 @@ print(s)
     dtype: int64
 ```
 
-### Creating a  Pandas Series Using Linspace
+### ការបង្កើតស៊េរី Pandas ដោយប្រើ Linspace
 
 ```python
 s = pd.Series(np.linspace(5, 20, 10)) # linspace(starting, end, items)
@@ -210,9 +211,9 @@ print(s)
 
 ## DataFrames
 
-Pandas data frames can be created in different ways.
+ស៊ុមទិន្នន័យ Pandas អាចត្រូវបានបង្កើតតាមវិធីផ្សេងៗគ្នា។
 
-### Creating DataFrames from List of Lists
+### ការបង្កើត DataFrames ពីបញ្ជីរាយនាម
 
 ```python
 data = [
@@ -255,7 +256,7 @@ print(df)
   </tbody>
 </table>
 
-### Creating DataFrame Using Dictionary
+### ការបង្កើត DataFrame ដោយប្រើវចនានុក្រម
 
 ```python
 data = {'Name': ['Asabeneh', 'David', 'John'], 'Country':[
@@ -295,7 +296,7 @@ print(df)
   </tbody>
 </table>
 
-### Creating DataFrames from a List of Dictionaries
+### ការបង្កើត DataFrames ពីបញ្ជីវចនានុក្រម
 
 ```python
 data = [
@@ -337,15 +338,15 @@ print(df)
   </tbody>
 </table>
 
-## Reading CSV File Using Pandas
+## ការអានឯកសារ CSV ដោយប្រើ Pandas
 
-To download the CSV file, what is needed in this example, console/command line is enough:
+ដើម្បីទាញយកឯកសារ CSV អ្វីដែលត្រូវការក្នុងឧទាហរណ៍នេះ កុងសូល/បន្ទាត់ពាក្យបញ្ជាគឺគ្រប់គ្រាន់ហើយ៖
 
 ```sh
 curl -O https://raw.githubusercontent.com/Asabeneh/30-Days-Of-Python/master/data/weight-height.csv
 ```
 
-Put the downloaded file in your working directory.
+ដាក់ឯកសារដែលបានទាញយកនៅក្នុងថតការងាររបស់អ្នក។
 
 ```python
 import pandas as pd
@@ -356,7 +357,7 @@ print(df)
 
 ### Data Exploration
 
-Let us read only the first 5 rows using head()
+អនុញ្ញាតឱ្យយើងអានតែ 5 ជួរដំបូងដោយប្រើ head()
 
 ```python
 print(df.head()) # give five rows we can increase the number of rows by passing argument to the head() method
@@ -406,10 +407,10 @@ print(df.head()) # give five rows we can increase the number of rows by passing 
   </tbody>
 </table>
 
-Let us also explore the last recordings of the dataframe using the tail() methods.
+អនុញ្ញាតឱ្យយើងរុករកផងដែរនូវការកត់ត្រាចុងក្រោយនៃស៊ុមទិន្នន័យដោយប្រើវិធី tail() ។
 
 ```python
-print(df.tail()) # tails give the last five rows, we can increase the rows by passing argument to tail method
+print(df.tail()) # tails ផ្តល់ឱ្យប្រាំជួរចុងក្រោយ យើងអាចបង្កើនជួរដេកដោយឆ្លងកាត់អាគុយម៉ង់ទៅវិធីសាស្ត្រ "tail"
 ```
 
 <table border="1" class="dataframe">
@@ -455,15 +456,15 @@ print(df.tail()) # tails give the last five rows, we can increase the rows by pa
   </tbody>
 </table>
 
-As you can see the csv file has three rows: Gender, Height and Weight. If the DataFrame would have a long rows, it would be hard to know all the columns. Therefore, we should use a method to know the colums.  we do not know the number of rows. Let's use shape meathod.
+ដូចដែលអ្នកអាចឃើញឯកសារ csv មានបីជួរ៖ ភេទ កម្ពស់ និងទម្ងន់។ ប្រសិនបើ DataFrame នឹងមានជួរវែង វានឹងពិបាកក្នុងការដឹងពីជួរឈរទាំងអស់។ ដូច្នេះ​ហើយ យើង​គួរ​ប្រើ​វិធី​ដើម្បី​ស្គាល់​កូឡុំ។ យើងមិនដឹងចំនួនជួរដេកទេ។ តោះប្រើសាច់ក្រករាង។
 
 ```python
-print(df.shape) # as you can see 10000 rows and three columns
+print(df.shape) # ដូចដែលអ្នកអាចមើលឃើញ 10000 ជួរនិងជួរឈរបី
 ```
 
     (10000, 3)
 
-Let us get all the columns using columns.
+អនុញ្ញាតឱ្យយើងទទួលបានជួរឈរទាំងអស់ដោយប្រើជួរឈរ។
 
 ```python
 print(df.columns)
@@ -471,10 +472,10 @@ print(df.columns)
 
     Index(['Gender', 'Height', 'Weight'], dtype='object')
 
-Now, let us get a specific column using the column key
+ឥឡូវនេះ អនុញ្ញាតឱ្យយើងទទួលបានជួរឈរជាក់លាក់មួយដោយប្រើគ្រាប់ចុចជួរឈរ
 
 ```python
-heights = df['Height'] # this is now a series
+heights = df['Height'] # ឥឡូវនេះនេះគឺជាស៊េរី
 ```
 
 ```python
@@ -497,7 +498,7 @@ print(heights)
 ```
 
 ```python
-weights = df['Weight'] # this is now a series
+weights = df['Weight'] # ឥឡូវនេះនេះគឺជាស៊េរី
 ```
 
 ```python
@@ -525,11 +526,10 @@ print(len(heights) == len(weights))
 
     True
 
-The describe() method provides a descriptive statistical values of a dataset.
+វិធីសាស្ត្រ describe() ផ្តល់នូវតម្លៃស្ថិតិពិពណ៌នានៃសំណុំទិន្នន័យ។
 
 ```python
-print(heights.describe()) # give statisical information about height data
-```
+print(heights.describe()) # ផ្តល់ព័ត៌មានស្ថិតិអំពីទិន្នន័យកម្ពស់
 
 ```sh
     count    10000.000000
@@ -560,7 +560,7 @@ print(weights.describe())
 ```
 
 ```python
-print(df.describe())  # describe can also give statistical information from a dataFrame
+print(df.describe())  # ពិពណ៌នាក៏អាចផ្តល់ព័ត៌មានស្ថិតិពី dataFrame ផងដែរ។
 ```
 
 <table border="1" class="dataframe">
@@ -615,20 +615,20 @@ print(df.describe())  # describe can also give statistical information from a da
   </tbody>
 </table>
 
-Similar to describe(), the info() method also give information about the dataset.
+ស្រដៀងនឹង describe() វិធីសាស្ត្រ info() ក៏ផ្តល់ព័ត៌មានអំពីសំណុំទិន្នន័យផងដែរ។
 
 ## Modifying a DataFrame
 
-Modifying a DataFrame:
-    * We can create a new DataFrame
-    * We can create a new column and add it to the DataFrame, 
-    * we can remove an existing column from a DataFrame, 
-    * we can modify an existing column in a DataFrame, 
-    * we can change the data type of column values in the DataFrame
+ការកែប្រែ DataFrame៖
+     * យើងអាចបង្កើត DataFrame ថ្មី។
+     * យើងអាចបង្កើតជួរឈរថ្មី ហើយបន្ថែមវាទៅ DataFrame,
+     * យើងអាចដកជួរឈរដែលមានស្រាប់ចេញពី DataFrame,
+     * យើងអាចកែប្រែជួរឈរដែលមានស្រាប់នៅក្នុង DataFrame,
+     * យើងអាចផ្លាស់ប្តូរប្រភេទទិន្នន័យនៃតម្លៃជួរឈរក្នុង DataFrame
 
 ### Creating a DataFrame
 
-As always, first we import the necessary packages. Now, lets import pandas and numpy, two best friends ever.
+ដូចរាល់ដង ជាដំបូងយើងនាំចូលកញ្ចប់ចាំបាច់។ ឥលូវនេះសូមនាំផេនដា និង នឹមភី ដែលជាមិត្តភ័ក្តិល្អពីរនាក់ដែលធ្លាប់មាន។
 
 ```python
 import pandas as pd
@@ -672,13 +672,13 @@ print(df)
   </tbody>
 </table>
 
-Adding a column to a DataFrame is like adding a key to a dictionary.
+ការបន្ថែមជួរឈរទៅ DataFrame គឺដូចជាការបន្ថែមកូនសោទៅវចនានុក្រម។
 
-First let's use the previous example to create a DataFrame. After we create the DataFrame, we will start modifying the columns and column values.
+ជាដំបូង ចូរយើងប្រើឧទាហរណ៍មុនដើម្បីបង្កើត DataFrame ។ បន្ទាប់ពីយើងបង្កើត DataFrame យើងនឹងចាប់ផ្តើមកែប្រែតម្លៃជួរឈរ និងតម្លៃជួរឈរ។
 
 ### Adding a New Column
 
-Let's add a weight column in the DataFrame
+ចូរយើងបន្ថែមជួរឈរទម្ងន់នៅក្នុង DataFrame
 
 ```python
 weights = [74, 78, 69]
@@ -721,7 +721,7 @@ df
   </tbody>
 </table>
 
-Let's add a height column into the DataFrame aswell
+ចូរបន្ថែមជួរឈរកម្ពស់ទៅក្នុង DataFrame ផងដែរ។
 
 ```python
 heights = [173, 175, 169]
@@ -768,11 +768,11 @@ print(df)
   </tbody>
 </table>
 
-As you can see in the DataFrame above, we did add new columns, Weight and Height. Let's add one additional column called BMI(Body Mass Index) by calculating their BMI using thier mass and height. BMI is mass divided by height squared (in meters) - Weight/Height * Height.
+ដូចដែលអ្នកអាចឃើញនៅក្នុង DataFrame ខាងលើ យើងបានបន្ថែមជួរឈរថ្មី ទម្ងន់ និងកម្ពស់។ ចូរបន្ថែមជួរឈរមួយបន្ថែមទៀតដែលហៅថា BMI (សន្ទស្សន៍ម៉ាសរាងកាយ) ដោយគណនា BMI របស់ពួកគេដោយប្រើម៉ាស់ និងកម្ពស់។ BMI ត្រូវបានបែងចែកដោយកម្ពស់ការ៉េ (គិតជាម៉ែត្រ) - ទំងន់ / កម្ពស់ * កម្ពស់។
 
-As you can see, the height is in centimeters, so we shoud change it to meters. Let's modify the height row.
+ដូចដែលអ្នកអាចឃើញកម្ពស់គិតជាសង់ទីម៉ែត្រដូច្នេះយើងគួរតែប្តូរវាទៅជាម៉ែត្រ។ តោះកែប្រែជួរកម្ពស់។
 
-### Modifying column values
+### ការកែប្រែតម្លៃជួរឈរ
 
 ```python
 df['Height'] = df['Height'] * 0.01
@@ -819,7 +819,7 @@ df
 </table>
 
 ```python
-# Using functions makes our code clean, but you can calculate the bmi without one
+# ការប្រើប្រាស់មុខងារធ្វើឱ្យកូដរបស់យើងស្អាត ប៉ុន្តែអ្នកអាចគណនា bmi ដោយគ្មានលេខ
 def calculate_bmi ():
     weights = df['Weight']
     heights = df['Height']
@@ -882,9 +882,9 @@ df
   </tbody>
 </table>
 
-### Formating DataFrame columns
+### ការធ្វើទ្រង់ទ្រាយជួរឈរ DataFrame
 
-The BMI column values of the DataFrame are float with many significant digits after decimal. Let's change it to one significant digit after point.
+តម្លៃជួរឈរ BMI នៃ DataFrame គឺអណ្តែតដោយមានខ្ទង់សំខាន់ៗជាច្រើនបន្ទាប់ពីទសភាគ។ ចូរប្តូរវាទៅជាខ្ទង់សំខាន់មួយបន្ទាប់ពីចំនុច។
 
 ```python
 df['BMI'] = round(df['BMI'], 1)
@@ -934,7 +934,7 @@ print(df)
   </tbody>
 </table>
 
-The information in the DataFrame seems not yet complete, let's add birth year and current year columns.
+ព័ត៌មាននៅក្នុង DataFrame ហាក់ដូចជាមិនទាន់ពេញលេញនៅឡើយ សូមបន្ថែមឆ្នាំកំណើត និងជួរឈរឆ្នាំបច្ចុប្បន្ន។
 
 ```python
 birth_year = ['1769', '1985', '1990']
@@ -995,7 +995,7 @@ df
   </tbody>
 </table>
 
-## Checking data types of Column values
+## កំពុងពិនិត្យមើលប្រភេទទិន្នន័យនៃតម្លៃជួរឈរ
 
 ```python
 print(df.Weight.dtype)
@@ -1006,20 +1006,19 @@ print(df.Weight.dtype)
 ```
 
 ```python
-df['Birth Year'].dtype # it gives string object , we should change this to number
-
+df['Birth Year'].dtype # វាផ្តល់ឱ្យ string object យើងគួរតែប្តូរវាទៅជាលេខ
 ```
 
 ```python
 df['Birth Year'] = df['Birth Year'].astype('int')
-print(df['Birth Year'].dtype) # let's check the data type now
+print(df['Birth Year'].dtype) # សូមពិនិត្យមើលប្រភេទទិន្នន័យឥឡូវនេះ
 ```
 
 ```sh
     dtype('int32')
 ```
 
-Now same for the current year:
+ឥឡូវនេះដូចគ្នាសម្រាប់ឆ្នាំបច្ចុប្បន្ន៖
 
 ```python
 df['Current Year'] = df['Current Year'].astype('int')
@@ -1030,7 +1029,7 @@ df['Current Year'].dtype
     dtype('int32')
 ```
 
-Now, the column values of birth year and current year are integers. We can calculate the age.
+ឥឡូវនេះ តម្លៃជួរឈរនៃឆ្នាំកំណើត និងឆ្នាំបច្ចុប្បន្នគឺជាចំនួនគត់។ យើងអាចគណនាអាយុបាន។
 
 ```python
 ages = df['Current Year'] - df['Birth Year']
@@ -1102,13 +1101,13 @@ print(df)
   </tbody>
 </table>
 
-The person in the first row lived so far for 251 years. It is unlikely for someone to live so long. Either it is a typo or the data is cooked. So lets fill that data with average of the columns without including outlier. 
+អ្នក​នៅ​ជួរ​ទី​មួយ​បាន​រស់​នៅ​រហូត​មក​ដល់​ពេល​នេះ​អស់​រយៈ​ពេល ២៥១ ឆ្នាំ។ វាមិនទំនងសម្រាប់នរណាម្នាក់រស់នៅបានយូរនោះទេ។ ទាំងវាជាកំហុស ឬទិន្នន័យត្រូវបានចម្អិន។ ដូច្នេះអនុញ្ញាតឱ្យបំពេញទិន្នន័យនោះជាមួយនឹងមធ្យមនៃជួរឈរដោយមិនរាប់បញ្ចូលខាងក្រៅ។
 
 mean = (35 + 30)/ 2
 
 ```python
 mean = (35 + 30)/ 2
-print('Mean: ',mean)	#it is good to add some description to the output, so we know what is what
+print('Mean: ',mean)	#វាជាការល្អក្នុងការបន្ថែមការពិពណ៌នាខ្លះទៅលទ្ធផល ដូច្នេះយើងដឹងថាអ្វីជាអ្វី
 ```
 
 ```sh
@@ -1202,14 +1201,14 @@ print(df[df['Ages'] < 120])
 
 ## Exercises: Day 25
 
-1. Read the hacker_news.csv file from data directory 
-1. Get the first five rows
-1. Get the last five rows
-1. Get the title column as pandas series
-1. Count the number of rows and columns
-    - Filter the titles which contain python
-    - Filter the titles which contain JavaScript
-    - Explore the data and make sense of it
+1. អានឯកសារ hacker_news.csv ពីថតទិន្នន័យ
+1. ទទួលបានប្រាំជួរដំបូង
+1. ទទួលបានប្រាំជួរចុងក្រោយ
+1. ទទួលបានជួរឈរចំណងជើងជាស៊េរីផេនដា
+1. រាប់ចំនួនជួរដេកនិងជួរឈរ
+     - ត្រងចំណងជើងដែលមាន python
+     - ត្រងចំណងជើងដែលមាន JavaScript
+     - រុករកទិន្នន័យ និងធ្វើឱ្យយល់អំពីវា។
 
 🎉 CONGRATULATIONS ! 🎉
 
