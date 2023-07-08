@@ -46,7 +46,6 @@ print(food_stuff_lt[3:7])
 
 del food_stuff_lt
 
-
 nordic_countries = ('Denmark', 'Finland','Iceland', 'Norway', 'Sweden')
 estcheck = 'Estonia' in nordic_countries
 icecheck = 'Iceland' in nordic_countries
