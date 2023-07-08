@@ -70,7 +70,7 @@ fb = it_companies[0]
 google = it_companies[1]
 
 print(google)
-print(fb)
+print(other)
 
 
 front_end = ['HTML', 'CSS', 'JS', 'React', 'Redux']
@@ -102,4 +102,3 @@ total  = 0
 for i in ages:
     total += i
 print(total)    
-
