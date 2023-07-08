@@ -59,11 +59,11 @@ import re
 
 To find a pattern we use different set of *re* character sets that allows to search for a match in a string.
 
-* *re.match()*: searches only in the beginning of the first line of the string and returns matched objects if  found, else returns None. 
-* *re.search*: Returns a match object if there is one anywhere in the string, including multiline strings.
-* *re.findall*: Returns a list containing all matches
-* *re.split*:	Takes a string, splits it at the match points, returns a list
-* *re.sub*:  Replaces one or many matches within a string
+- *re.match()*: searches only in the beginning of the first line of the string and returns matched objects if  found, else returns None.
+- *re.search*: Returns a match object if there is one anywhere in the string, including multiline strings.
+- *re.findall*: Returns a list containing all matches
+- *re.split*: Takes a string, splits it at the match points, returns a list
+- *re.sub*:  Replaces one or many matches within a string
 
 #### Match
 
@@ -129,7 +129,7 @@ substring = txt[start:end]
 print(substring)       # first
 ```
 
-As you can see, search is much better than match because it can look for the pattern throughout the text. Search returns a match object with a first match that was found, otherwise it returns _None_. A much better *re* function is *findall*. This function checks for the pattern through the whole string and returns all the matches as a list.
+As you can see, search is much better than match because it can look for the pattern throughout the text. Search returns a match object with a first match that was found, otherwise it returns *None*. A much better *re* function is *findall*. This function checks for the pattern through the whole string and returns all the matches as a list.
 
 #### Searching for All Matches Using *findall*
 
@@ -240,38 +240,39 @@ matches = re.findall(regex_pattern, txt)
 print(matches)  # ['Apple', 'apple']
 
 ```
+
 * []:  A set of characters
-  * [a-c] means, a or b or c
-  * [a-z] means, any letter from a to z
-  * [A-Z] means, any character from A to Z
-  * [0-3] means, 0 or 1 or 2 or 3
-  * [0-9] means any number from 0 to 9
-  * [A-Za-z0-9] any single character, that is a to z, A to Z or 0 to 9
-* \\:  uses to escape special characters
-  * \d means: match where the string contains digits (numbers from 0-9)
-  * \D means: match where the string does not contain digits
-* . : any character except new line character(\n)
-* ^: starts with
-  * r'^substring' eg r'^love', a sentence that starts with a word love
-  * r'[^abc] means not a, not b, not c.
-* $: ends with
-  * r'substring$' eg r'love$', sentence  that ends with a word love
-* *: zero or more times
-  * r'[a]*' means a optional or it can occur many times.
-* +: one or more times
-  * r'[a]+' means at least once (or more)
-* ?: zero or one time
-  *  r'[a]?' means zero times or once
-* {3}: Exactly 3 characters
-* {3,}: At least 3 characters
-* {3,8}: 3 to 8 characters
-* |: Either or
-  * r'apple|banana' means either apple or a banana
-* (): Capture and group
+  - [a-c] means, a or b or c
+  - [a-z] means, any letter from a to z
+  - [A-Z] means, any character from A to Z
+  - [0-3] means, 0 or 1 or 2 or 3
+  - [0-9] means any number from 0 to 9
+  - [A-Za-z0-9] any single character, that is a to z, A to Z or 0 to 9
+- \\:  uses to escape special characters
+  - \d means: match where the string contains digits (numbers from 0-9)
+  - \D means: match where the string does not contain digits
+- . : any character except new line character(\n)
+- ^: starts with
+  - r'^substring' eg r'^love', a sentence that starts with a word love
+  - r'[^abc] means not a, not b, not c.
+- $: ends with
+  - r'substring$' eg r'love$', sentence  that ends with a word love
+- *: zero or more times
+  - r'[a]*' means a optional or it can occur many times.
+- +: one or more times
+  - r'[a]+' means at least once (or more)
+- ?: zero or one time
+  - r'[a]?' means zero times or once
+- {3}: Exactly 3 characters
+- {3,}: At least 3 characters
+- {3,8}: 3 to 8 characters
+- |: Either or
+  - r'apple|banana' means either apple or a banana
+- (): Capture and group
 
 ![Regular Expression cheat sheet](../images/regex.png)
 
-Let us use examples to clarify the meta characters above 
+Let us use examples to clarify the meta characters above
 
 ### Square Bracket
 
@@ -367,7 +368,7 @@ print(matches)  # ['6', '2019', '8', '2021']
 
 ### Cart ^
 
-* Starts with
+- Starts with
   
 ```py
 txt = 'This regular expression example was made on December 6,  2019 and revised on July 8, 2021'
@@ -376,7 +377,7 @@ matches = re.findall(regex_pattern, txt)
 print(matches)  # ['This']
 ```
 
-* Negation
+- Negation
 
 ```py
 txt = 'This regular expression example was made on December 6,  2019 and revised on July 8, 2021'
@@ -388,7 +389,9 @@ print(matches)  # ['6,', '2019', '8', '2021']
 ## 💻 Exercises: Day 18
 
 ### Exercises: Level 1
+
  1. What is the most frequent word in the following paragraph?
+
 ```py
     paragraph = 'I love teaching. If you do not love teaching what else can you love. I love Python if you do not love something which can give you all the capabilities to develop an application what else can you love.
 ```
@@ -423,9 +426,9 @@ print(matches)  # ['6,', '2019', '8', '2021']
 2. The position of some particles on the horizontal x-axis are -12, -4, -3 and -1 in the negative direction, 0 at origin, 4 and 8 in the positive direction. Extract these numbers from this whole text and find the distance between the two furthest particles.
 
 ```py
-points = ['-1', '2', '-4', '-3', '-1', '0', '4', '8']
-sorted_points =  [-4, -3, -1, -1, 0, 2, 4, 8]
-distance = 8 -(-4) # 12
+points = ['-12', '-4', '-3', '-1', '0', '4', '8']
+sorted_points =  [-12, -4, -3, -1, -1, 0, 2, 4, 8]
+distance = 8 -(-12) # 20
 ```
 
 ### Exercises: Level 2

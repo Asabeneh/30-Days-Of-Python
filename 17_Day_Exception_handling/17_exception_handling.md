@@ -16,6 +16,7 @@
 [<< Day 16](../16_Day_Python_date_time/16_python_datetime.md) | [Day 18 >>](../18_Day_Regular_expressions/18_regular_expressions.md)
 
 ![30DaysOfPython](../images/30DaysOfPython_banner3@2x.png)
+
 - [📘 Day 17](#-day-17)
   - [Exception Handling](#exception-handling)
   - [Packing and Unpacking Arguments in Python](#packing-and-unpacking-arguments-in-python)
@@ -128,6 +129,7 @@ I alway run.
 ```
 
 It is also shorten the above code as follows:
+
 ```py
 try:
     name = input('Enter your name:')
@@ -223,9 +225,9 @@ print(sum_all(1, 2, 3, 4, 5, 6, 7)) # 28
 def packing_person_info(**kwargs):
     # check the type of kwargs and it is a dict type
     # print(type(kwargs))
-	# Printing dictionary items
+    # Printing dictionary items
     for key in kwargs:
-        print("{key} = {kwargs[key]}")
+        print(f"{key} = {kwargs[key]}")
     return kwargs
 
 print(packing_person_info(name="Asabeneh",
@@ -247,7 +249,7 @@ Like in JavaScript, spreading is possible in Python. Let us check it in an examp
 ```py
 lst_one = [1, 2, 3]
 lst_two = [4, 5, 6, 7]
-lst = [0, *list_one, *list_two]
+lst = [0, *lst_one, *lst_two]
 print(lst)          # [0, 1, 2, 3, 4, 5, 6, 7]
 country_lst_one = ['Finland', 'Sweden', 'Norway']
 country_lst_two = ['Denmark', 'Iceland']
@@ -257,7 +259,7 @@ print(nordic_countries)  # ['Finland', 'Sweden', 'Norway', 'Denmark', 'Iceland']
 
 ## Enumerate
 
-If we are interested in an index of a list, we use *enumerate* built-in function to get the index of each item in the list.
+If we are interested in an index of a list, we use _enumerate_ built-in function to get the index of each item in the list.
 
 ```py
 for index, item in enumerate([20, 30, 40]):

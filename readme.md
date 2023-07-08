@@ -1,4 +1,4 @@
-# 🐍 30 Days Of Python 
+# 🐍 30 Days Of Python
 
 |# Day | Topics                                                    |
 |------|:---------------------------------------------------------:|
@@ -15,11 +15,11 @@
 | 11  |  [Functions](./11_Day_Functions/11_functions.md)|
 | 12  |  [Modules](./12_Day_Modules/12_modules.md)|
 | 13  |  [List Comprehension](./13_Day_List_comprehension/13_list_comprehension.md)|
-| 14  |  [Higher Order Functions](./14_Day_Higher_order_functions/14_higher_order_functions.md)|     
-| 15  |  [Python Type Errors](./15_Day_Python_type_errors/15_python_type_errors.md)| 
-| 16 |  [Python Date time](./16_Day_Python_date_time/16_python_datetime.md) |     
-| 17 |  [Exception Handling](./17_Day_Exception_handling/17_exception_handling.md)|    
-| 18 |  [Regular Expressions](./18_Day_Regular_expressions/18_regular_expressions.md)|    
+| 14  |  [Higher Order Functions](./14_Day_Higher_order_functions/14_higher_order_functions.md)|
+| 15  |  [Python Type Errors](./15_Day_Python_type_errors/15_python_type_errors.md)|
+| 16 |  [Python Date time](./16_Day_Python_date_time/16_python_datetime.md) |
+| 17 |  [Exception Handling](./17_Day_Exception_handling/17_exception_handling.md)|
+| 18 |  [Regular Expressions](./18_Day_Regular_expressions/18_regular_expressions.md)|
 | 19 |  [File Handling](./19_Day_File_handling/19_file_handling.md)|
 | 20 |  [Python Package Manager](./20_Day_Python_package_manager/20_python_package_manager.md)|
 | 21 |  [Classes and Objects](./21_Day_Classes_and_objects/21_classes_and_objects.md)|
@@ -54,7 +54,6 @@
   <small> Second Edition: July, 2021</small>
   </sub>
 </div>
-
 
 [Day 2 >>](./02_Day_Variables_builtin_functions/02_variables_builtin_functions.md)
 
@@ -99,11 +98,11 @@ If you would like to actively engage in the challenge, you may join the [30DaysO
 
 ## Introduction
 
-Python is a high-level programming language for general-purpose programming. It is an open source, interpreted, objected-oriented programming language. Python was created by a Dutch programmer, Guido van Rossum. The name of Python programming language was derived from a British sketch comedy series, *Month Python's Flying Circus*.  The first version was released on February 20, 1991. This 30 days of Python challenge will help you learn the latest version of Python, Python 3 step by step. The topics are broken down into 30 days, where each day contains several topics with easy-to-understand explanations, real-world examples, many hands on exercises and projects.
+Python is a high-level programming language for general-purpose programming. It is an open source, interpreted, objected-oriented programming language. Python was created by a Dutch programmer, Guido van Rossum. The name of Python programming language was derived from a British sketch comedy series, _Monty Python's Flying Circus_.  The first version was released on February 20, 1991. This 30 days of Python challenge will help you learn the latest version of Python, Python 3 step by step. The topics are broken down into 30 days, where each day contains several topics with easy-to-understand explanations, real-world examples, many hands on exercises and projects.
 
 This challenge is designed for beginners and professionals who want to learn python programming language. It may take 30 to 100 days to complete the challenge, people who actively participate on the telegram group have a high probability of completing the challenge.
 
-This challenge is easy to read, written in conversational English, engaging, motivating and at the same time, it is very demanding. You need to allocate much time to finish this challenge. If you are a visual learner, you may get the video lesson on <a href="https://www.youtube.com/channel/UC7PNRuno1rzYPb1xLa4yktw"> Washera</a> YouTube channel. You may start from [Python for Absolute Beginners video](https://youtu.be/OCCWZheOesI). Subscribe the channel, comment and ask questions on YouTube vidoes and be proactive, the author will eventually notice you. 
+This challenge is easy to read, written in conversational English, engaging, motivating and at the same time, it is very demanding. You need to allocate much time to finish this challenge. If you are a visual learner, you may get the video lesson on <a href="https://www.youtube.com/channel/UC7PNRuno1rzYPb1xLa4yktw"> Washera</a> YouTube channel. You may start from [Python for Absolute Beginners video](https://youtu.be/OCCWZheOesI). Subscribe the channel, comment and ask questions on YouTube vidoes and be proactive, the author will eventually notice you.
 
 The author likes to hear your opinion about the challenge, share the author by expressing your thoughts about the 30DaysOfPython challenge. You can leave your testimonial on this [link](https://testimonial-vdzd.onrender.com/)
 
@@ -166,11 +165,11 @@ Python will give you results if you write scripts that Python understands, if no
 
 As you can see from the returned error, Python is so clever that it knows the mistake we made and which was _Syntax Error: invalid syntax_. Using x as multiplication in Python is a syntax error because (x) is not a valid syntax in Python. Instead of (**x**) we use asterisk (*) for multiplication. The returned error clearly shows what to fix.
 
-The process of identifying and removing errors from a program is called *debugging*. Let us debug it by putting * in place of **x**.
+The process of identifying and removing errors from a program is called _debugging_. Let us debug it by putting * in place of **x**.
 
 ![Fixing Syntax Error](./images/fixing_syntax_error.png)
 
-Our bug was fixed, the code ran and we got a result we were expecting. As a programmer you will see such kind of errors on daily basis. It is good to know how to debug. To be good at debugging you should understand what kind of errors you are facing. Some of the Python errors you may encounter are *SyntaxError*, *IndexError*, *NameError*, *ModuleNotFoundError*, *KeyError*, *ImportError*, *AttributeError*, *TypeError*, *ValueError*, *ZeroDivisionError* etc. We will see more about different Python **_error types_** in later sections.
+Our bug was fixed, the code ran and we got a result we were expecting. As a programmer you will see such kind of errors on daily basis. It is good to know how to debug. To be good at debugging you should understand what kind of errors you are facing. Some of the Python errors you may encounter are _SyntaxError_, _IndexError_, _NameError_, _ModuleNotFoundError_, _KeyError_, _ImportError_, _AttributeError_, _TypeError_, _ValueError_, _ZeroDivisionError_ etc. We will see more about different Python **_error types_** in later sections.
 
 Let us practice more how to use Python interactive shell. Go to your terminal or command prompt and write the word **python**.
 
@@ -180,11 +179,11 @@ The Python interactive shell is opened. Let us do some basic mathematical operat
 
 Let us do some maths first before we write any Python code:
 
-- 2 + 3 = 5
-- 3 - 2 = 1
-- 3 \* 2 = 6
-- 3 / 2 = 1.5
-- 3 ^ 2 = 3 x 3 = 9
+- 2 + 3 is 5
+- 3 - 2 is 1
+- 3 \* 2 is 6
+- 3 / 2 is 1.5
+- 3 ** 2 is the same as 3 * 3
 
 In python we have the following additional operations:
 
@@ -330,7 +329,7 @@ Python list is an ordered collection which allows to store different data type i
 
 #### Dictionary
 
-A Python dictionary object is an unordered collection of data in a key value pair format. 
+A Python dictionary object is an unordered collection of data in a key value pair format.
 
 **Example:**
 
@@ -382,7 +381,7 @@ To check the data type of certain data/variable we use the **type** function. In
 
 First open your project folder, 30DaysOfPython. If you don't have this folder, create a folder name called 30DaysOfPython. Inside this folder, create a file called helloworld.py. Now, let's do what we did on python interactive shell using visual studio code.
 
-The Python interactive shell was printing without using **print** but on visual studio code to see our result we should use a built in function *print(). The *print()* built-in function takes one or more arguments as follows *print('arument1', 'argument2', 'argument3')*. See the examples below.
+The Python interactive shell was printing without using **print** but on visual studio code to see our result we should use a built in function _print(). The _print()_ built-in function takes one or more arguments as follows _print('arument1', 'argument2', 'argument3')_. See the examples below.
 
 **Example:**
 
@@ -410,7 +409,7 @@ print(type({9.8, 3.14, 2.7}))    # Set
 print(type((9.8, 3.14, 2.7)))    # Tuple
 ```
 
-To run the python file check the image below. You can run the python file either by running the green button on Visual Studio Code or by typing *python helloworld.py* in the terminal .
+To run the python file check the image below. You can run the python file either by running the green button on Visual Studio Code or by typing _python helloworld.py_ in the terminal .
 
 ![Running python script](./images/running_python_script.png)
 
