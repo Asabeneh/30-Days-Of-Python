@@ -97,7 +97,7 @@ MarkupSafe==1.1.1
 Werkzeug==0.16.0
 ```
 
-When you finish you should dactivate active project using _deactivate_.
+When you finish you should deactivate active project using _deactivate_.
 
 ```sh
 (venv) asabeneh@Asabeneh:~/Desktop/30DaysOfPython$ deactivate
