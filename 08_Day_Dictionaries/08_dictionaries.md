@@ -184,6 +184,57 @@ person['skills'].append('HTML')
 print(person)
 ```
 
+### Merging Two or More Dictionaries
+
+We can merge two or more dictionaries
+
+```py 
+# Syntax
+dict1.update(dict2)
+```
+**Example:**
+
+```py
+dict1 = {
+  "Fruit": "Apple",
+  "Color": "Red"
+}
+dict2 = {
+  "Car": "Sedan",
+  "Manufacturer": "Volvo"
+}
+dict1.update(dict2) # Updating the dict1 itself
+print(dict1)
+```
+
+### Shorthand for merging two or more dictionaries
+
+Python has a shorthand operator(**) for merging dictionaries 
+
+```py
+# Syntax
+output_dict = {**dict1, **dict2, .... **dictn} # Can be used to merge 'n' number of dictionaries
+```
+
+**Example:**
+
+```py
+dict1 = {
+  "Fruit": "Apple",
+  "Color": "Red"
+}
+dict2 = {
+  "Animal": "Dog",
+  "Breed": "Pug"
+}
+dict3 = {
+  "Device": "Smartphone",
+  "Brand": "Samsung"
+}
+final_dict = {**dict1, **dict2, **dict3}
+print(final_dict)
+```
+
 ### Modifying Items in a Dictionary
 
 We can modify items in a dictionary
