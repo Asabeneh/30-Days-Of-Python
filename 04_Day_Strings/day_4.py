@@ -9,7 +9,7 @@ print(len(greeting))        # 13
 sentence = "I hope you are enjoying 30 days of python challenge"
 print(sentence)
 
-# Multiline String
+# Multiline String are an easier way to add docstring to python code
 multiline_string = '''I am a teacher and enjoy teaching.
 I didn't find anything as rewarding as empowering people.
 That is why I created 30 days of python.'''
@@ -52,15 +52,16 @@ last_index = len(language) - 1
 last_letter = language[last_index]
 print(last_letter) # n
 
-# If we want to start from right end we can use negative indexing. -1 is the last index
+# If we want to start from right end we can use negative indexing -1 is used to represent the last index 
 language = 'Python'
 last_letter = language[-1]
 print(last_letter) # n
 second_last = language[-2]
 print(second_last) # o
 
-# Slicing
-
+# Slicing is used to separate a certain piece from a string where the first argument is start and another is stop
+# Start argument represent where to begin slicing including it
+# Stop represent where to end but not including it
 language = 'Python'
 first_three = language[0:3] # starts at zero index and up to 3 but not include 3
 last_three = language[3:6]
@@ -72,12 +73,13 @@ last_three = language[3:]
 print(last_three)   # hon
 
 # Skipping character while splitting Python strings
+# Here the slicing works by [start:stop:step] where step show how much to jump
 language = 'Python'
 pto = language[0:6:2] # 
 print(pto) # pto
 
 # Escape sequence
-print('I hope every one enjoying the python challenge.\nDo you ?') # line break
+print('I hope every one enjoying the python challenge.\nDo you ?') # line break \n represent newline
 print('Days\tTopics\tExercises')
 print('Day 1\t3\t5')
 print('Day 2\t3\t5')
@@ -122,12 +124,12 @@ first_name = 'Asabeneh'
 last_name = 'Yetayeh'
 job = 'teacher'
 country = 'Finland'
-sentence = 'I am {} {}. I am a {}. I live in {}.'.format(first_name, last_name, job, country)
+sentence = 'I am {} {}. I am a {}. I live in {}.'.format(first_name, last_name, job, country) #Arrange it according to the position
 print(sentence) # I am Asabeneh Yetayeh. I am a teacher. I live in Finland.
 
 radius = 10
 pi = 3.14
-area = pi # radius ## 2
+area = pi * (radius**2)  
 result = 'The area of circle with {} is {}'.format(str(radius), str(area))
 print(result) # The area of circle with 10 is 314.0
 
@@ -168,7 +170,7 @@ print(challenge.find('th')) # 0
 challenge = 'Thirty'
 print(challenge.isdigit()) # False
 challenge = '30'
-print(challenge.digit())   # True
+print(challenge.isdigit())   # True
 
 # isdecimal():Checks decimal characters
 
@@ -218,7 +220,7 @@ print(result) # 'HTML# CSS# JavaScript# React'
 challenge = ' thirty days of python '
 print(challenge.strip('y')) # 5
 
-# replace(): Replaces substring inside
+# replace(): Replaces substring inside (to be replaced,to replaced with)
 
 challenge = 'thirty days of python'
 print(challenge.replace('python', 'coding')) # 'thirty days of coding'
