@@ -91,7 +91,7 @@ To check if python is installed write the following command on your device termi
 python --version
 ```
 
-![Python Version](./images/python_versio.png)
+![Python Version](./images/python_version.png)
 
 As you can see from the terminal, I am using _python 3.7.5_ version at the moment. If you mange to see the python version, well done. Python has been installed on your machine. Continue to the next section.
 
