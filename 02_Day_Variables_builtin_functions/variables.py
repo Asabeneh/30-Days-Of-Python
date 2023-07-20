@@ -1,14 +1,14 @@
 
 # Variables in Python
 
-first_name = 'Asabeneh'
-last_name = 'Yetayeh'
-country = 'Finland'
-city = 'Helsinki'
-age = 250
-is_married = True
-skills = ['HTML', 'CSS', 'JS', 'React', 'Python']
-person_info = {
+first_name = 'Asabeneh' #Character variable
+last_name = 'Yetayeh' #Character variable
+country = 'Finland' #Character variable
+city = 'Helsinki' #Character variable
+age = 250 #Integer 
+is_married = True #Boolean
+skills = ['HTML', 'CSS', 'JS', 'React', 'Python'] #List
+person_info = {                     #Dictionary
     'firstname':'Asabeneh', 
     'lastname':'Yetayeh', 
     'country':'Finland',
