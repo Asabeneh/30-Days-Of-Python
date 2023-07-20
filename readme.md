@@ -119,10 +119,11 @@ To run a python script you need to install python. Let's [download](https://www.
 If your are a windows user. Click the button encircled in red.
 
 [![installing on Windows](./images/installing_on_windows.png)](https://www.python.org/)
+*During Windows installation, be sure to click the checkbox labeled "Add Python 3.x to PATH" in order to follow along in the Windows terminal*
 
 If you are a macOS user. Click the button encircled in red.
 
-[![installing on Windows](./images/installing_on_macOS.png)](https://www.python.org/)
+[![installing on macOS](./images/installing_on_macOS.png)](https://www.python.org/)
 
 To check if python is installed write the following command on your device terminal.
 
