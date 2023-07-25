@@ -427,7 +427,11 @@ print(matches)  # ['6,', '2019', '8', '2021']
 
 ```py
 points = ['-12', '-4', '-3', '-1', '0', '4', '8']
+<<<<<<< HEAD
 sorted_points =  [-12, -4, -3, -1, -1, 0, 2, 4, 8]
+=======
+sorted_points =  [-12, -4, -3, -1, 0, 4, 8]
+>>>>>>> 975a6f7 (Fix for an issue with day 18 exercise level 1 Q2)
 distance = 8 -(-12) # 20
 ```
 
