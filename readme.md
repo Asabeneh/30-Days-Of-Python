@@ -34,6 +34,7 @@
 | 30 |  [Conclusions](./30_Day_Conclusions/30_conclusions.md)|
 
 🧡🧡🧡 HAPPY CODING 🧡🧡🧡
+🧡🧡🧡 HAPPY CODING 🧡🧡🧡It's me ,Adam Hong is comming back!
 
 <div>
 <small>Support the <strong>author</strong> to create more educational materials</small> <br />  
