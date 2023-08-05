@@ -1,4 +1,7 @@
+'''
+变量，内置函数
 
+'''
 # Variables in Python
 
 first_name = 'Asabeneh'
@@ -9,11 +12,11 @@ age = 250
 is_married = True
 skills = ['HTML', 'CSS', 'JS', 'React', 'Python']
 person_info = {
-    'firstname':'Asabeneh', 
-    'lastname':'Yetayeh', 
-    'country':'Finland',
-    'city':'Helsinki'
-    }
+    'firstname': 'Asabeneh',
+    'lastname': 'Yetayeh',
+    'country': 'Finland',
+    'city': 'Helsinki'
+}
 
 # Printing the values stored in the variables
 
@@ -38,3 +41,11 @@ print('Last name: ', last_name)
 print('Country: ', country)
 print('Age: ', age)
 print('Married: ', is_married)
+
+
+#list turple dict set
+list_example = [3,"dkdkdk","love",4.5,(3,4)]
+print(list_example.index(3))
+# list_example.remove((3,4))
+list_example.append("hfdsaij;ladfs")
+print(list_example[3])
