@@ -17,7 +17,7 @@ person_info = {
 
 # Printing the values stored in the variables
 
-print('First name:', first_name)
+print(f"First name: {first_name}") 
 print('First name length:', len(first_name))
 print('Last name: ', last_name)
 print('Last name length: ', len(last_name))
