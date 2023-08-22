@@ -46,3 +46,4 @@ p2 = np.array((10, 8))
 dist = np.linalg.norm(p1 - p2)
 
 print(dist)
+
