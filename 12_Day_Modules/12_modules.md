@@ -231,6 +231,7 @@ A string module is a useful module for many purposes. The example below shows so
 ```py
 import string
 print(string.ascii_letters) # abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ
+print(string.ascii_lowercase) & print(string.upper_case) #We can print the lowercase only and uppercase only respectively 
 print(string.digits)        # 0123456789
 print(string.punctuation)   # !"#$%&'()*+,-./:;<=>?@[\]^_`{|}~
 ```
