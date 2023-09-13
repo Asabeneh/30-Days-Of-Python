@@ -184,7 +184,7 @@ def split_string_decorator(function):
 @uppercase_decorator     # order with decorators is important in this case - .upper() function does not work with lists
 def greeting():
     return 'Welcome to Python'
-print(greeting())   # WELCOME TO PYTHON
+print(greeting())   # ['WELCOME', 'TO', 'PYTHON']
 ```
 
 ### Accepting Parameters in Decorator Functions
