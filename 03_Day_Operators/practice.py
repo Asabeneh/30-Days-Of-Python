@@ -141,11 +141,11 @@ complex=1+4j
 # c=str(b)
 # print(type(c))
 #Even numbers are divisible by 2 and the remainder is zero. How do you check if a number is even or not using python?
-# a=int(input("Enter a number:"))
-# if a%2==0:
-#     print(f"The number {a} is an even number")
-# else:
-#     print(f"{a} is not an even number")
+a=int(input("Enter a number:"))
+if a%2==0:
+    print(f"The number {a} is an even number")
+else:
+    print(f"{a} is not an even number")
 #Check if the floor division of 7 by 3 is equal to the int converted value of 2.7.
 # a=7
 # b=3
