@@ -53,14 +53,14 @@ complex=1+4j
 
 #Slope is (m = y2-y1/x2-x1). Find the slope and Euclidean distance between point (2, 2) and point (6,10)
 
-# import math
-# x1, y1=2, 2
-# x2, y2=6, 10
-# m=y2-y1/x2-x1
-# print("The slope value for task2 is:",m)
-#d=sqrt((x2-x1)^2+(y2-y1)^2)
-# d=math.sqrt((x2-x1)**2+(y2-y1)**2)
-# print("The distance between the two points is:",d)
+import math
+x1, y1=2, 2
+x2, y2=6, 10
+m=y2-y1/x2-x1
+print("The slope value for task2 is:",m)
+# d=sqrt((x2-x1)^2+(y2-y1)^2)
+d=math.sqrt((x2-x1)**2+(y2-y1)**2)
+print("The distance between the two points is:",d)
 
 #Compare the slopes in the above two tasks
 # if slope==m:
