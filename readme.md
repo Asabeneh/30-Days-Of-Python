@@ -153,7 +153,7 @@ Let us write our very first script on the Python scripting shell.
 ![Python script on Python shell](./images/adding_on_python_shell.png)
 
 Well done, you wrote your first Python script on Python interactive shell. How do we close the Python interactive shell ?
-To close the shell, next to this symbol >> write **exit()** command and press Enter.
+To close the shell, next to this symbol >>> write **exit()** command and press Enter.
 
 ![Exit from python shell](./images/exit_from_shell.png)
 
