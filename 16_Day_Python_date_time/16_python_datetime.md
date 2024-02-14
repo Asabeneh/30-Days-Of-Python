@@ -105,7 +105,7 @@ Here are all the _strftime_ symbols we use to format time. An example of all the
 ![strftime](../images/strftime.png)
 
 ### String to Time Using *strptime*
-Here is a [documentation](https://www.programiz.com/python-programming/datetime/strptimet) hat helps to understand the format. 
+Here is a [documentation](https://www.programiz.com/python-programming/datetime/strptime) hat helps to understand the format. 
 
 ```py
 from datetime import datetime
