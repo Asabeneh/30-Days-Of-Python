@@ -93,7 +93,7 @@ len(tpl)
   first_fruit = fruits[0]
   second_fruit = fruits[1]
   last_index =len(fruits) - 1
-  last_fruit = fruits[las_index]
+  last_fruit = fruits[last_index]
   ```
 
 - Negative indexing
