@@ -81,6 +81,18 @@ In the following example, it will handle the error and will also tell us the kin
 
 ```py
 try:
+    a = input('Enter the value of A')
+    b = input('Enter the value of B')
+    print(f'Answer of A divide by B is {a/b}')
+except ZeroDivisionError:
+    print('zero division error occured')
+
+```
+
+
+
+```py
+try:
     name = input('Enter your name:')
     year_born = input('Year you were born:')
     age = 2019 - year_born

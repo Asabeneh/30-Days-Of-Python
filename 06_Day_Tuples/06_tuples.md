@@ -93,7 +93,7 @@ len(tpl)
   first_fruit = fruits[0]
   second_fruit = fruits[1]
   last_index =len(fruits) - 1
-  last_fruit = fruits[las_index]
+  last_fruit = fruits[last_index]
   ```
 
 - Negative indexing
@@ -151,6 +151,13 @@ We can slice out a sub-tuple by specifying a range of indexes where to start and
   orange_mango = fruits[-3:-1]  # doesn't include item at index 3
   orange_to_the_rest = fruits[-3:]
   ```
+  ```py
+  fruits = ('mercedes', 'bmw', 'ferrari', 'buggati')
+  all_fruits = fruits[-4:]    # all items
+  orange_mango = fruits[-3:-1]  # doesn't include item at index 3
+  orange_to_the_rest = fruits[-3:]
+  ```
+
 
 ### Changing Tuples to Lists
 
