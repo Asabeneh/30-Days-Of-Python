@@ -151,6 +151,13 @@ We can slice out a sub-tuple by specifying a range of indexes where to start and
   orange_mango = fruits[-3:-1]  # doesn't include item at index 3
   orange_to_the_rest = fruits[-3:]
   ```
+  ```py
+  fruits = ('mercedes', 'bmw', 'ferrari', 'buggati')
+  all_fruits = fruits[-4:]    # all items
+  orange_mango = fruits[-3:-1]  # doesn't include item at index 3
+  orange_to_the_rest = fruits[-3:]
+  ```
+
 
 ### Changing Tuples to Lists
 
