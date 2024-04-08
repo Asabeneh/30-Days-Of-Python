@@ -92,7 +92,7 @@
 
 ## Welcome
 
-**Congratulations** for deciding to participate in a _30 days of Python_ programming challenge . In this challenge you will learn everything you need to be a python programmer and the whole concept of programming. In the end of the challenge you will get a _30DaysOfPython_ programming challenge certificate.
+**Congratulations** for deciding to participate in a _30 days of Python_ programming challenge. In this challenge, you will learn everything you need to be a python programmer and the whole concept of programming. In the end of the challenge you will get a _30DaysOfPython_ programming challenge certificate.
 
 If you would like to actively engage in the challenge, you may join the [30DaysOfPython challenge](https://t.me/ThirtyDaysOfPython) telegram group.  
 
@@ -116,11 +116,11 @@ Python is used by various industries and companies (including Google). It has be
 ### Installing Python
 
 To run a python script you need to install python. Let's [download](https://www.python.org/) python.
-If your are a windows user. Click the button encircled in red.
+If your are a windows user, click the button encircled in red.
 
 [![installing on Windows](./images/installing_on_windows.png)](https://www.python.org/)
 
-If you are a macOS user. Click the button encircled in red.
+If you are a macOS user, click the button encircled in red.
 
 [![installing on Windows](./images/installing_on_macOS.png)](https://www.python.org/)
 
@@ -152,7 +152,7 @@ Let us write our very first script on the Python scripting shell.
 
 ![Python script on Python shell](./images/adding_on_python_shell.png)
 
-Well done, you wrote your first Python script on Python interactive shell. How do we close the Python interactive shell ?
+Well done, you wrote your first Python script on Python interactive shell. How do we close the Python interactive shell?
 To close the shell, next to this symbol >> write **exit()** command and press Enter.
 
 ![Exit from python shell](./images/exit_from_shell.png)
@@ -175,7 +175,7 @@ Let us practice more how to use Python interactive shell. Go to your terminal or
 
 ![Python Scripting Shell](./images/opening_python_shell.png)
 
-The Python interactive shell is opened. Let us do some basic mathematical operations (addition, subtraction, multiplication, division, modulus,  exponential).
+The Python interactive shell is opened. Let us do some basic mathematical operations (addition, subtraction, multiplication, division, modulus,  exponentiation).
 
 Let us do some maths first before we write any Python code:
 
@@ -185,7 +185,7 @@ Let us do some maths first before we write any Python code:
 - 3 / 2 is 1.5
 - 3 ** 2 is the same as 3 * 3
 
-In python we have the following additional operations:
+In python, we have the following additional operations:
 
 - 3 % 2 = 1 => which means finding the remainder
 - 3 // 2 = 1 => which means removing the remainder
@@ -208,7 +208,7 @@ Before we move on to the next section, let us practice more on the Python intera
 
 ### Installing Visual Studio Code
 
-The Python interactive shell is good to try and test small script codes but it will not be for a big project. In real work environment, developers use different code editors to write codes. In this 30 days of Python programming challenge we will use visual studio code. Visual studio code is a very popular open source text editor. I am a fan of vscode and I would recommend to [download](https://code.visualstudio.com/) visual studio code, but if you are in favor of other editors, feel free to follow with what you have.
+The Python interactive shell is good to try and test small script codes but it will not be for a big project. In real work environment, developers use different code editors to write codes. In this 30 days of Python programming challenge, we will use Visual Studio Code. Visual Studio Code is a very popular open source text editor. I am a fan of vscode and I would recommend to [download](https://code.visualstudio.com/) visual studio code, but if you are in favor of other editors, feel free to follow with what you have.
 
 [![Visual Studio Code](./images/vscode.png)](https://code.visualstudio.com/)
 
@@ -227,7 +227,7 @@ Create a folder named 30DaysOfPython on your desktop. Then open it using visual 
 
 ![Opening a project](./images/opening_project.png)
 
-After opening it you will see shortcuts for creating files and folders inside of 30DaysOfPython project's directory. As you can see below, I have created the very first file, helloworld.py. You can do the same.
+After opening it, you will see shortcuts for creating files and folders inside of 30DaysOfPython project's directory. As you can see below, I have created the very first file, `helloworld.py`. You can do the same.
 
 ![Creating a python file](./images/helloworld.png)
 
@@ -381,11 +381,11 @@ To check the data type of certain data/variable we use the **type** function. In
 
 First open your project folder, 30DaysOfPython. If you don't have this folder, create a folder name called 30DaysOfPython. Inside this folder, create a file called helloworld.py. Now, let's do what we did on python interactive shell using visual studio code.
 
-The Python interactive shell was printing without using **print** but on visual studio code to see our result we should use a built in function _print(). The _print()_ built-in function takes one or more arguments as follows _print('arument1', 'argument2', 'argument3')_. See the examples below.
+The Python interactive shell was printing without using **print** but on visual studio code to see our result we should use a built in function _print()_. The _print()_ built-in function takes one or more arguments as follows _print('arument1', 'argument2', 'argument3')_. See the examples below.
 
 **Example:**
 
-The file name is helloworld.py
+The file name is `helloworld.py`
 
 ```py
 # Day 1 - 30DaysOfPython Challenge
