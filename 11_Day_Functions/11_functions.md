@@ -251,7 +251,7 @@ print(add_two_numbers(2, 3))
 
 def calculate_age (current_year, birth_year):
     age = current_year - birth_year
-    return age;
+    return age
 print('Age: ', calculate_age(2019, 1819))
 ```
 
