@@ -34,7 +34,7 @@
     - [Checking Subset and Super Set](#checking-subset-and-super-set)
     - [Checking the Difference Between Two Sets](#checking-the-difference-between-two-sets)
     - [Finding Symmetric Difference Between Two Sets](#finding-symmetric-difference-between-two-sets)
-    - [Joining Sets](#joining-sets-1)
+    - [Checking disjoint Sets](#checking-disjoint-sets)
   - [💻 Exercises: Day 7](#-exercises-day-7)
     - [Exercises: Level 1](#exercises-level-1)
     - [Exercises: Level 2](#exercises-level-2)
@@ -365,7 +365,7 @@ dragon = {'d', 'r', 'a', 'g', 'o','n'}
 python.symmetric_difference(dragon)  # {'r', 't', 'p', 'y', 'g', 'a', 'd', 'h'}
 ```
 
-### Joining Sets
+### Checking disjoint Sets
 
 If two sets do not have a common item or items we call them disjoint sets. We can check if two sets are joint or disjoint using _isdisjoint()_ method.
 
@@ -380,7 +380,7 @@ st2.isdisjoint(st1) # False
 
 ```py
 even_numbers = {0, 2, 4 ,6, 8}
-even_numbers = {1, 3, 5, 7, 9}
+odd_numbers = {1, 3, 5, 7, 9}
 even_numbers.isdisjoint(odd_numbers) # True, because no common item
 
 python = {'p', 'y', 't', 'h', 'o','n'}
