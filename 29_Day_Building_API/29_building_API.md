@@ -270,7 +270,7 @@ db = client['thirty_days_of_python'] # accessing the database
 @app.route('/api/v1.0/students', methods = ['GET'])
 def students ():
     students = list(db.students.find())
-    return Response(dumps(student), mimetype='application/json')
+    return Response(dumps(students), mimetype='application/json')
 @app.route('/api/v1.0/students/<id>', methods = ['GET'])
 def single_student (id):
     student = db.students.find({'_id':ObjectId(id)})
