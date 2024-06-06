@@ -204,7 +204,6 @@ http://localhost:5000/api/v1.0/students/5df68a21f106fe2d315bbc8b
 from flask import Flask,  Response
 import json
 from bson.objectid import ObjectId
-import json
 from bson.json_util import dumps
 import pymongo
 
@@ -218,8 +217,8 @@ db = client['thirty_days_of_python'] # accessing the database
 
 @app.route('/api/v1.0/students', methods = ['GET'])
 def students ():
-
-    return Response(json.dumps(student), mimetype='application/json')
+    students = list(db.students.find())
+    return Response(dumps(student), mimetype='application/json')
 @app.route('/api/v1.0/students/<id>', methods = ['GET'])
 def single_student (id):
     student = db.students.find({'_id':ObjectId(id)})
@@ -256,7 +255,6 @@ We use the POST request method to create data
 from flask import Flask,  Response
 import json
 from bson.objectid import ObjectId
-import json
 from bson.json_util import dumps
 import pymongo
 from datetime import datetime
@@ -271,8 +269,8 @@ db = client['thirty_days_of_python'] # accessing the database
 
 @app.route('/api/v1.0/students', methods = ['GET'])
 def students ():
-
-    return Response(json.dumps(student), mimetype='application/json')
+    students = list(db.students.find())
+    return Response(dumps(student), mimetype='application/json')
 @app.route('/api/v1.0/students/<id>', methods = ['GET'])
 def single_student (id):
     student = db.students.find({'_id':ObjectId(id)})
@@ -297,8 +295,8 @@ def create_student ():
 
     }
     db.students.insert_one(student)
-    return ;
-def update_student (id):
+    return Response(dumps({"result":"a new student has been created"}), mimetype='application/json')
+
 if __name__ == '__main__':
     # for deployment
     # to make it work for both production and development
