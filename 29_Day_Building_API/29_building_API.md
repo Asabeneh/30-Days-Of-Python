@@ -134,6 +134,7 @@ In stead of displaying dummy data let us connect the flask application with Mong
 # let's import the flask
 
 from flask import Flask,  Response
+from bson.json_util import dumps
 import json
 import pymongo
 
@@ -147,8 +148,8 @@ db = client['thirty_days_of_python'] # accessing the database
 
 @app.route('/api/v1.0/students', methods = ['GET'])
 def students ():
-
-    return Response(json.dumps(student), mimetype='application/json')
+    students = list(db.students.find())
+    return Response(dumps(student), mimetype='application/json')
 
 
 if __name__ == '__main__':
