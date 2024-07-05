@@ -33,6 +33,7 @@
 | 29 |  [Building API](./29_Day_Building_API/29_building_API.md)|
 | 30 |  [Conclusions](./30_Day_Conclusions/30_conclusions.md)|
 
+
 🧡🧡🧡 HAPPY CODING 🧡🧡🧡
 
 <div>
@@ -55,6 +56,7 @@
   </sub>
 </div>
 
+🇧🇷 [Portuguese](./Portuguese/README.md)
 [Day 2 >>](./02_Day_Variables_builtin_functions/02_variables_builtin_functions.md)
 
 ![30DaysOfPython](./images/30DaysOfPython_banner3@2x.png)
