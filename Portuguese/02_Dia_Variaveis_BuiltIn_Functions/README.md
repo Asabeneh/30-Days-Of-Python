@@ -29,7 +29,7 @@
     - [Exercicios: Level 1](#Exercicios-level-1)
     - [Exercicios: Level 2](#Exercicios-level-2)
 
-# 📘 Day 2
+# 📘 Dia 2
 
 ## Built in functions
 
