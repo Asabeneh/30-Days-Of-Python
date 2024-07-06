@@ -283,7 +283,7 @@ Numeros e tipos de dados em python:
 1. Declare 5 como num_one e 4 como num_two
     1. Adicione num_one e num_two e atribua o valor a uma variável total
     2. Subtraia num_two de num_one e atribua o valor a uma variável diff
-    3. Multiplique num_dois e num_um e atribua o valor a um produto variável
+    3. Multiplique num_two e num_one e atribua o valor a um produto variável
     4. Divida num_one por num_two e atribua o valor a uma divisão variável
     5. Use a divisão de módulo para encontrar num_dois dividido por num_um e atribua o valor a uma variável restante
     6. Calcule num_one elevado a num_two e atribua o valor a uma variável exp
