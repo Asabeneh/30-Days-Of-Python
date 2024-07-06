@@ -14,26 +14,26 @@
 
 </div>
 
-[<< Day 1](../README.md) | [Day 3 >>](../03_Day_Operators/03_operators.md)
+[<< Dia 1](../README.md) | [Dia 3 >>](../03_Day_Operators/03_operators.md)
 
-![30DaysOfPython](../.././images/30DaysOfPython_banner3@2x.png)
+![30DiasDePython](../.././images/30DaysOfPython_banner3@2x.png)
 
 - [📘 Dia 2](#-dia-2)
   - [Built in functions](#built-in-functions)
-  - [Variaveis](#variables)
-    - [Declarando múltiplas váriaveis em uma linha](#declaring-multiple-variable-in-a-line)
-  - [Tipos de dados](#data-types)
-  - [Checando tipos de dados e type Casting](#checking-data-types-and-casting)
-  - [Numeros](#numbers)
-  - [💻 Exercicios - Dia 2](#-exercises---day-2)
-    - [Exercicios: Level 1](#exercises-level-1)
-    - [Exercicios: Level 2](#exercises-level-2)
+  - [Variaveis](#Variaveis)
+    - [Declarando múltiplas váriaveis em uma linha](#Declarando-múltiplas-variaveis-em-uma-linha)
+  - [Tipos de dados](#Tipos-de-Dados)
+  - [Checando tipos de dados e type Casting](#Checando-tipos-de-dados-e-Casting)
+  - [Numeros](#Numeros)
+  - [💻 Exercicios - Dia 2](#-Exercicios---Dia-2)
+    - [Exercicios: Level 1](#Exercicios-level-1)
+    - [Exercicios: Level 2](#Exercicios-level-2)
 
 # 📘 Day 2
 
 ## Built in functions
 
-Em Python, temos muitas built-in functions. As built-in functions estão disponíveis globalmente para seu uso, o que significa que você pode fazer uso das built-in functions sem importar ou configurar. Algumas das built-in functions do Python mais comumente usadas são as seguintes: _print()_, _len()_, _type()_, _int()_, _float()_, _str()_, _input()_, _list()_, _dict()_, _min()_, _max()_, _sum()_, _sorted()_, _open()_, _file()_, _help()_ e _dir()_ . Na tabela a seguir, você verá uma lista exaustiva de funções do Python retiradas da [documentação do python](https://docs.python.org/3.9/library/functions.html).
+Em Python, temos muitas built-in functions. As built-in functions estão disponíveis globalmente para seu uso, o que significa que você pode fazer uso das built-in functions sem importar ou configurar. Algumas das built-in functions do Python mais usadas são as seguintes: _print()_, _len()_, _type()_, _int()_, _float()_, _str()_, _input()_, _list()_, _dict()_, _min()_, _max()_, _sum()_, _sorted()_, _open()_, _file()_, _help()_ e _dir()_ . Na tabela a seguir, você verá uma lista gigantesca de funções do Python retiradas da [documentação do python](https://docs.python.org/3.9/library/functions.html).
 ![Built-in Functions](../.././images/builtin-functions.png)
 
 Vamos abrir o shell do Python e começar a usar algumas built-in functions.
@@ -44,7 +44,7 @@ Vamos praticar mais usando diferentes built-in functions
 
 ![Help and Dir Built in Functions](../.././images/help_and_dir_builtin.png)
 
-Como você pode ver no terminal acima, Python possui palavras reservadas. Não usamos palavras reservadas para declarar variáveis ​​ou funções. Abordaremos as variáveis ​​na próxima seção.
+Como você pode ver no terminal acima, O Python possui palavras reservadas. Não usamos palavras reservadas para declarar variáveis ​​ou funções. Abordaremos as variáveis ​​na próxima seção.
 
 Acredito que agora você já esteja familiarizado com as built-in functions. Vamos fazer mais uma prática de built-in functions e passaremos para a próxima seção.
 
@@ -53,13 +53,13 @@ Acredito que agora você já esteja familiarizado com as built-in functions. Vam
 ## Variaveis
 
 As variáveis ​​armazenam dados na memória do computador. Variáveis ​​mnemônicas são recomendadas para uso em muitas linguagens de programação. Uma variável mnemônica é um nome de variável que pode ser facilmente lembrado e associado. Uma variável refere-se a um endereço de memória no qual os dados são armazenados.
-Número no início, caractere especial e hífen não são permitidos ao nomear uma variável. Uma variável pode ter um nome curto (como x, y, z), mas um nome mais descritivo (nome, sobrenome, idade, país) é altamente recomendado.
+Número no início, caractere especial e hífen não são permitidos ao nomear uma variável. Uma variável pode ter um nome curto (como x, y, z), mas um nome mais descritivo tipo (nome, sobrenome, idade, país) é altamente recomendado.
 
 Regras da nomeclatura de variáveis no ​​​​Python
 
-- O nome de uma variável deve começar com uma letra ou sublinhado
+- O nome de uma variável deve começar com uma letra ou underline
 - O nome de uma variável não pode começar com um número
-- Um nome de variável só pode conter caracteres alfanuméricos e sublinhados (A-z, 0-9 e \_ )
+- Um nome de variável só pode conter caracteres alfanuméricos e underlines (A-z, 0-9 e \_ )
 - O interpretador Python ​​diferencia maiúsculas de minúsculas (nome, nome, nome e PRIMEIRO NOME) são variáveis ​​diferentes) então tome cuidado com isso. 
 
 Aqui estão alguns exemplos de nomes de variáveis ​​válidos:
@@ -115,7 +115,7 @@ person_info = {
    }
 ```
 
-Vamos usar as funções _print()_ e _len()_. A função de impressão aceita um número ilimitado de argumentos. Um argumento é um valor que podemos passar ou colocar entre parênteses de função, veja o exemplo abaixo.
+Vamos usar as funções _print()_ e _len()_. A função de impressão aceita um número ilimitado de argumentos. Um argumento é um valor que podemos passar ou colocar entre parênteses, veja o exemplo abaixo.
 
 **Exemplo:**
 
@@ -161,7 +161,7 @@ print('Age: ', age)
 print('Married: ', is_married)
 ```
 
-Podemos obter a entrada do usuário usando a função integrada _input()_. Vamos atribuir os dados que obtemos de um usuário às variáveis ​​first_name e age.
+Podemos obter a entrada do usuário usando a função _input()_. Vamos atribuir os dados que obtemos de um usuário às variáveis ​​first_name e age.
 
 **Exemplo:**
 
@@ -175,7 +175,7 @@ print(age)
 
 ## Tipos de Dados
 
-Existem vários tipos de dados no Python. Para identificar o tipo de dados, usamos a função integrada _type_. Gostaria de pedir que você se concentrasse em compreender muito bem os diferentes tipos de dados. Quando se trata de programação, tudo se resume a tipos de dados. Introduzi os tipos de dados logo no início e depois veremos de novo, porque cada tópico está relacionado aos tipos de dados. Abordaremos os tipos de dados com mais detalhes em suas respectivas seções.
+Existem vários tipos de dados no Python. Para identificar o tipo de dados, usamos a função _type_. Gostaria de pedir que você se concentrasse em compreender muito bem os diferentes tipos de dados. Quando se trata de programação, tudo se resume a tipos de dados. Introduzi os tipos de dados logo no início e depois veremos de novo, porque cada tópico está relacionado aos tipos de dados. Abordaremos os tipos de dados com mais detalhes em suas respectivas seções.
 
 ## Checando tipos de dados e Casting
 
@@ -261,7 +261,7 @@ Numeros e tipos de dados em python:
 
 ### Exercicios: Level 1
 
-1. Dentro de 30DiasDePython crie uma pasta chamada day_2. Dentro desta pasta crie um arquivo chamado variáveis.py
+1. Dentro de 30DiasDePython crie uma pasta chamada dia_2. Dentro desta pasta crie um arquivo chamado variáveis.py
 2. Escreva um comentário em python dizendo: 'Dia 2/30 dias de programação em python'
 3. Declare uma variável de primeiro nome e atribua um valor a ela
 4. Declare uma variavel de sobrenome e atribua um valor a ela
