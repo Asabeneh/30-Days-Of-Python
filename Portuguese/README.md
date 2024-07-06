@@ -3,7 +3,7 @@
 |# Day | Topics                                                    |
 |------|:---------------------------------------------------------:|
 | 01  |  [Introdução](./readme.md)|
-| 02  |  [Variaveis, Built-in Functions](./02_Day_Variables_builtin_functions/02_variables_builtin_functions.md)|
+| 02  |  [Variaveis, Built-in Functions](./02_Dia_Variaveis_BuiltIn_Functions/README.md)|
 | 03  |  [Operadores](./03_Day_Operators/03_operators.md)|
 | 04  |  [Strings](./04_Day_Strings/04_strings.md)|
 | 05  |  [Listas](./05_Day_Lists/05_lists.md)|
@@ -55,7 +55,7 @@
   </sub>
 </div>
 
-[Dia 2 >>](./02_Day_Variables_builtin_functions/02_variables_builtin_functions.md)
+[Dia 2 >>](./02_Dia_Variaveis_BuiltIn_Functions/README.md)
 
 ![30DaysOfPython](.././images/30DaysOfPython_banner3@2x.png)
 
@@ -449,8 +449,8 @@ Para executar o arquivo python verifique a imagem abaixo. Você pode executar o 
 ### Exercicio: Level 3
 
 1. Escreva um exemplo para diferentes tipos de dados Python, como Número (Inteiro, Flutuante, Complex), Strings, Booleanos, Listas, Tuplas, Set e Dicionário.
-2. Ache em [Euclidian distance](https://en.wikipedia.org/wiki/Euclidean_distance#:~:text=In%20mathematics%2C%20the%20Euclidean%20distance,being%20called%20the%20Pythagorean%20distance.) entre (2, 3) e (10, 8)
+2. Ache a [Distancia Euclidiana](https://en.wikipedia.org/wiki/Euclidean_distance#:~:text=In%20mathematics%2C%20the%20Euclidean%20distance,being%20called%20the%20Pythagorean%20distance.) entre (2, 3) e (10, 8)
 
 🎉 PARABÉNS ! 🎉
 
-[Day 2 >>](./02_Day_Variables_builtin_functions/02_variables_builtin_functions.md)
+[Day 2 >>](./02_Dia_Variaveis_BuiltIn_Functions/README.md)
