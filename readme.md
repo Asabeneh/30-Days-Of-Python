@@ -57,6 +57,7 @@
 </div>
 
 🇧🇷 [Portuguese](./Portuguese/README.md)
+🇨🇳 [中文](./Chinese/README.md)
 
 [Day 2 >>](./02_Day_Variables_builtin_functions/02_variables_builtin_functions.md)
 
