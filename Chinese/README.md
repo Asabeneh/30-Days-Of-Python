@@ -3,10 +3,10 @@
 | # 天数 |                                           主题                                           |
 | ------ | :--------------------------------------------------------------------------------------: |
 | 01     |                                   [介绍](./readme.md)                                    |
-| 02     | [变量，内置函数](./02_Day_Variables_builtin_functions/02_variables_builtin_functions.md) |
-| 03     |                       [运算符](./03_Day_Operators/03_operators.md)                       |
-| 04     |                         [字符串](./04_Day_Strings/04_strings.md)                         |
-| 05     |                            [列表](./05_Day_Lists/05_lists.md)                            |
+| 02     | [变量，内置函数](./02_variables_builtin_functions.md) |
+| 03     |                       [运算符](./03_operators.md)                       |
+| 04     |                         [字符串](./04_strings.md)                         |
+| 05     |                            [列表](./05_lists.md)                            |
 | 06     |                           [元组](./06_Day_Tuples/06_tuples.md)                           |
 | 07     |                             [集合](./07_Day_Sets/07_sets.md)                             |
 | 08     |                     [字典](./08_Day_Dictionaries/08_dictionaries.md)                     |
@@ -133,7 +133,7 @@ Python 被各行各业和公司（包括 Google）使用。它被用于开发 We
 python --version
 ```
 
-![Python Version](./images/python_versio.png)
+![Python Version](../images/python_versio.png)
 
 如你所见，在终端中，我当前使用的版本是 Python 3.7.5。你的 Python 版本可能与我的不同，但应为 3.6 或更高版本。如果你能看到 Python 版本，很好。Python 已安装在你的机器上。继续下一部分。
 
@@ -148,35 +148,35 @@ Python Shell 等待用户的 Python 代码。当输入代码时，它会解释�
 python
 ```
 
-![Python Scripting Shell](./images/opening_python_shell.png)
+![Python Scripting Shell](../images/opening_python_shell.png)
 
 Python 交互式 Shell 已打开，等待你在该符号 >>> 旁边编写 Python 代码（Python 脚本）。编写第一个脚本并点击 Enter。
 让我们在 Python 脚本 Shell 中编写第一个脚本。
 
-![Python script on Python shell](./images/adding_on_python_shell.png)
+![Python script on Python shell](../images/adding_on_python_shell.png)
 
 非常好，你已经在 Python 交互式 Shell 中编写了第一个 Python 脚本。如何关闭 Python 交互式 Shell？
 要关闭 Shell，请在该符号 >>> 旁边输入命令 **exit()** 并按 Enter。
 
-![Exit from python shell](./images/exit_from_shell.png)
+![Exit from python shell](../images/exit_from_shell.png)
 
 现在你知道如何打开 Python 交互式 Shell 以及如何退出它。
 
 Python 将在你编写 Python 可理解的脚本时提供结果；否则，它将返回错误。让我们故意犯一个错误，看看 Python 返回什么。
 
-![Invalid Syntax Error](./images/invalid_syntax_error.png)
+![Invalid Syntax Error](../images/invalid_syntax_error.png)
 
 如你所见，返回的错误表明 Python 非常智能，它知道我们犯了语法错误：Syntax Error: Invalid Syntax。在 Python 中使用 x 作为乘法是语法错误，因为 (x) 不是 Python 中的有效语法。我们用星号 (\*) 来表示乘法而不是 (x)。返回的错误明确显示了需要修正的地方。
 
 识别和删除程序中的错误的过程称为调试。让我们通过将 \* 替换为 x 来调试它。
 
-![Fixing Syntax Error](./images/fixing_syntax_error.png)
+![Fixing Syntax Error](../images/fixing_syntax_error.png)
 
 我们的错误已修复，代码已执行，并得到了我们期望的结果。作为程序员，你每天都会看到这种类型的错误。了解如何调试是很重要的。为了擅长调试，你必须了解所遇到的错误类型。你可能会遇到的 Python 错误类型有 _SyntaxError_, _IndexError_, _NameError_, _ModuleNotFoundError_, _KeyError_, _ImportError_, _AttributeError_, _TypeError_, _ValueError_, _ZeroDivisionError_ 等等。我们将在后面的部分详细了解不同类型的 Python 错误！
 
 让我们更多地练习如何使用 Python 交互式 Shell。转到终端或命令提示符并输入单词 python。
 
-![Python Scripting Shell](./images/opening_python_shell.png)
+![Python Scripting Shell](../images/opening_python_shell.png)
 
 Python 交互式 Shell 已打开。让我们做一些基本的数学运算（加法、减法、乘法、除法、取模、指数运算）。
 
@@ -203,7 +203,7 @@ A _comment_ 是代码中未被 Python 执行的一部分，注释被 Python 解�
 # 这是一个python注释，因为它以（#）符号开头
 ```
 
-![Maths on python shell](./images/maths_on_python_shell.png)
+![Maths on python shell](../images/maths_on_python_shell.png)
 
 在进入下一部分之前，让我们更多地练习 Python 交互式 Shell。通过在 Shell 中输入 _exit()_ 关闭已打开的 Shell，然后再次打开它，让我们练习如何在 Python Shell 中编写文本。
 
@@ -213,7 +213,7 @@ A _comment_ 是代码中未被 Python 执行的一部分，注释被 Python 解�
 
 Python 交互式 Shell 非常适合测试小的脚本代码，但对于大型项目来说并不适用。在实际的工作环境中，开发人员使用不同的代码编辑器来编写代码。在这个 30 天的 Python 编程挑战中，我们将使用 Visual Studio Code。Visual Studio Code 是一个非常流行的开源文本编辑器。我是 vscode 的粉丝，并推荐下载 Visual Studio Code，但如果你喜欢其他编辑器，可以随意使用。
 
-[![Visual Studio Code](./images/vscode.png)](https://code.visualstudio.com/)
+[![Visual Studio Code](../images/vscode.png)](https://code.visualstudio.com/)
 
 如果你已安装 Visual Studio Code，让我们看看如何使用它。
 如果你喜欢视频教程，你可以观看安装和配置 Visual Studio Code 以用于 Python 的[视频教程](https://www.youtube.com/watch?v=bn7Cx4z-vSo)
@@ -222,21 +222,21 @@ Python 交互式 Shell 非常适合测试小的脚本代码，但对于大型项
 
 通过双击 Visual Studio 图标打开 Visual Studio Code。打开后，你会看到类似的界面。尝试与标注的图标进行交互。
 
-![Visual studio Code](./images/vscode_ui.png)
+![Visual studio Code](../images/vscode_ui.png)
 
 在桌面上创建一个名为 30DaysOfPython 的文件夹。然后使用 Visual Studio Code 打开它。
 
-![Opening Project on Visual studio](./images/how_to_open_project_on_vscode.png)
+![Opening Project on Visual studio](../images/how_to_open_project_on_vscode.png)
 
-![Opening a project](./images/opening_project.png)
+![Opening a project](../images/opening_project.png)
 
 打开后，你会看到在 30DaysOfPython 项目目录中创建文件和文件夹的快捷方式。如下所示，我创建了第一个文件 helloworld.py。你也可以这样做。
 
-![Creating a python file](./images/helloworld.png)
+![Creating a python file](../images/helloworld.png)
 
 经过长时间的编码，你想关闭你的代码编辑器，对吗？这是你关闭已打开项目的方法。
 
-![Closing project](./images/closing_opened_project.png)
+![Closing project](../images/closing_opened_project.png)
 
 恭喜你，完成了开发环境的设置。让我们开始编码。
 
@@ -250,7 +250,7 @@ Python 脚本可以在 Python 交互式 Shell 或代码编辑器中编写。Pyth
 
 缩进是文本中的空白。在许多语言中，缩进用于提高代码的可读性，但 Python 使用缩进来创建代码块。在其他编程语言中，使用大括号来创建代码块，而不是缩进。在 Python 中编写代码时，一个常见的错误是缩进错误。
 
-![Indentation Error](./images/indentation.png)
+![Indentation Error](../images/indentation.png)
 
 ### 注释
 
@@ -378,7 +378,7 @@ Python 字典对象是以键值对格式存储的无序集合。
 
 要检查某个数据/变量的数据类型，我们使用 **type** 函数。在以下终端中，你将看到不同的 Python 数据类型：
 
-![Checking Data types](./images/checking_data_types.png)
+![Checking Data types](../images/checking_data_types.png)
 
 ### Python 文件
 
@@ -414,7 +414,7 @@ print(type((9.8, 3.14, 2.7)))    # 元组
 
 要运行 Python 文件，请查看下图。你可以通过在 Visual Studio Code 中点击绿色按钮或在终端中输入 _python helloworld.py_ 来运行 Python 文件。
 
-![Running python script](./images/running_python_script.png)
+![Running python script](../images/running_python_script.png)
 
 🌕 你很棒。你刚刚完成了第 1 天的挑战，你正在迈向伟大。现在做一些练习来锻练你的大脑和肌肉。
 
@@ -457,4 +457,4 @@ print(type((9.8, 3.14, 2.7)))    # 元组
 
 🎉 恭喜 ! 🎉
 
-[第 2 天 >>](./02_Day_Variables_builtin_functions/02_variables_builtin_functions.md)
+[第 2 天 >>](./02_variables_builtin_functions.md)
