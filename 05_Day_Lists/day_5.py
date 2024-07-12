@@ -177,3 +177,72 @@ ages.sort()
 print(ages) 
 ages.sort(reverse=True)
 print(ages) 
+
+
+Certainly! Here are a few more examples of list operations in Python:
+
+### Sorting Lists
+Sorting a list can be done using the `sort()` method:
+
+```python
+fruits = ['banana', 'orange', 'mango', 'lemon']
+fruits.sort()
+print(fruits)  # ['banana', 'lemon', 'mango', 'orange']
+
+fruits.sort(reverse=True)
+print(fruits)  # ['orange', 'mango', 'lemon', 'banana']
+
+ages = [22, 19, 24, 25, 26, 24, 25, 24]
+ages.sort()
+print(ages)    # [19, 22, 24, 24, 24, 25, 25, 26]
+
+ages.sort(reverse=True)
+print(ages)    # [26, 25, 25, 24, 24, 24, 22, 19]
+```
+
+### Checking List Membership
+You can check if an item exists in a list using the `in` keyword:
+
+```python
+fruits = ['banana', 'orange', 'mango', 'lemon']
+print('banana' in fruits)  # True
+print('apple' in fruits)   # False
+```
+
+### Reversing a List
+To reverse the order of elements in a list, use the `reverse()` method:
+
+```python
+fruits = ['banana', 'orange', 'mango', 'lemon']
+fruits.reverse()
+print(fruits)  # ['lemon', 'mango', 'orange', 'banana']
+
+ages = [22, 19, 24, 25, 26, 24, 25, 24]
+ages.reverse()
+print(ages)    # [24, 25, 24, 26, 25, 24, 19, 22]
+```
+
+### Additional List Methods
+#### Counting Occurrences:
+The `count()` method counts occurrences of an element in a list:
+
+```python
+fruits = ['banana', 'orange', 'mango', 'lemon']
+print(fruits.count('orange'))   # 1
+
+ages = [22, 19, 24, 25, 26, 24, 25, 24]
+print(ages.count(24))           # 3
+```
+
+#### Finding Index:
+The `index()` method returns the index of the first occurrence of an element:
+
+```python
+fruits = ['banana', 'orange', 'mango', 'lemon']
+print(fruits.index('orange'))   # 1
+
+ages = [22, 19, 24, 25, 26, 24, 25, 24]
+print(ages.index(24))           # 2
+```
+
+These examples should help you further understand how to manipulate and work with lists in Python effectively!
