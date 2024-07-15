@@ -28,8 +28,8 @@ for element in set1:
     print(element)
 
 # Checking membership
-if 3 in set1:
-    print("3 is in the set")
+if 2 in set1:
+    print("2 is in the set")
 ```
 
 ### 3. Methods and Operations
