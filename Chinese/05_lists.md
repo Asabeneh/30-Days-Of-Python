@@ -14,7 +14,7 @@
 
 </div>
 
-[<< 第四天](./04_strings.md) | [第六天 >>](../06_Day_Tuples/06_tuples.md)
+[<< 第四天](./04_strings.md) | [第六天 >>](./06_tuples.md)
 
 ![30DaysOfPython](../images/30DaysOfPython_banner3@2x.png)
 
@@ -593,4 +593,4 @@ ages = [19, 22, 19, 24, 20, 25, 26, 24, 25, 24]
 
 🎉 恭喜 ! 🎉
 
-[<< 第四天](./04_strings.md) | [第六天 >>](../06_Day_Tuples/06_tuples.md)
+[<< 第四天](./04_strings.md) | [第六天 >>](./06_tuples.md)
