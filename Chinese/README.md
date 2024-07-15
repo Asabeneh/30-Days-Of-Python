@@ -7,8 +7,8 @@
 | 03     |                       [运算符](./03_operators.md)                       |
 | 04     |                         [字符串](./04_strings.md)                         |
 | 05     |                            [列表](./05_lists.md)                            |
-| 06     |                           [元组](./06_Day_Tuples/06_tuples.md)                           |
-| 07     |                             [集合](./07_Day_Sets/07_sets.md)                             |
+| 06     |                           [元组](./06_tuples.md)                           |
+| 07     |                             [集合](./07_sets.md)                             |
 | 08     |                     [字典](./08_Day_Dictionaries/08_dictionaries.md)                     |
 | 09     |                     [条件](./09_Day_Conditionals/09_conditionals.md)                     |
 | 10     |                            [循环](./10_Day_Loops/10_loops.md)                            |
