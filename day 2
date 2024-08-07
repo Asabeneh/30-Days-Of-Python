@@ -1,0 +1,15 @@
+#Day 2: 30 Days of python programing
+
+first_name = 'Abdel Rahman'
+last_name = 'Ahmed'
+full_name = 'Abdel Rahman Elfatih Abdel Rahman Ahmed'
+country = 'Sudan'
+City = 'Khartom'
+age = 19
+year = 2024
+is_married = False
+is_true = True
+is_light_on = True
+
+
+num , name , pie , complex , is_false = 20 , 'Abdul' , 3.14 , 1 + 3j , False 
