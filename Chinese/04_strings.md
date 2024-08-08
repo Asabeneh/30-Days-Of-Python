@@ -577,7 +577,7 @@ print(challenge.startswith('thirty')) # False
     I am enjoying this challenge.
     I just wonder what is next.
     ```
-34. 使用制表符专业序列输出以下内容。
+34. 使用制表符转义序列输出以下内容。
     ```py
     Name      Age     Country   City
     Asabeneh  250     Finland   Helsinki
