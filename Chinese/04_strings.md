@@ -485,7 +485,7 @@ result = '# '.join(web_tech)
 print(result) # 'HTML# CSS# JavaScript# React'
 ```
 
-- strip(): 删除从字符串开头到结尾的所有给定字符
+- strip(): 删除字符串开头和结尾的所有给定字符
 
 ```py
 challenge = 'thirty days of pythoonnn'
