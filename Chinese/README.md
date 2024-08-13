@@ -1,37 +1,37 @@
 # 🐍 30 天 Python
 
-| # 天数 |                                           主题                                           |
-| ------ | :--------------------------------------------------------------------------------------: |
-| 01     |                                   [介绍](./readme.md)                                    |
-| 02     | [变量，内置函数](./02_variables_builtin_functions.md) |
-| 03     |                       [运算符](./03_operators.md)                       |
-| 04     |                         [字符串](./04_strings.md)                         |
+| # 天数 |                                    主题                                     |
+| ------ | :-------------------------------------------------------------------------: |
+| 01     |                             [介绍](./readme.md)                             |
+| 02     |            [变量，内置函数](./02_variables_builtin_functions.md)            |
+| 03     |                         [运算符](./03_operators.md)                         |
+| 04     |                          [字符串](./04_strings.md)                          |
 | 05     |                            [列表](./05_lists.md)                            |
-| 06     |                           [元组](./06_tuples.md)                           |
-| 07     |                             [集合](./07_sets.md)                             |
-| 08     |                     [字典](./08_Day_Dictionaries/08_dictionaries.md)                     |
-| 09     |                     [条件](./09_Day_Conditionals/09_conditionals.md)                     |
-| 10     |                            [循环](./10_Day_Loops/10_loops.md)                            |
-| 11     |                        [函数](./11_Day_Functions/11_functions.md)                        |
-| 12     |                          [模块](./12_Day_Modules/12_modules.md)                          |
-| 13     |             [列表解析](./13_Day_List_comprehension/13_list_comprehension.md)             |
-| 14     |         [高阶函数](./14_Day_Higher_order_functions/14_higher_order_functions.md)         |
-| 15     |             [类型错误](./15_Day_Python_type_errors/15_python_type_errors.md)             |
-| 16     |            [Python 日期时间](./16_Day_Python_date_time/16_python_datetime.md)            |
-| 17     |             [异常处理](./17_Day_Exception_handling/17_exception_handling.md)             |
-| 18     |           [正则表达式](./18_Day_Regular_expressions/18_regular_expressions.md)           |
-| 19     |                  [文件处理](./19_Day_File_handling/19_file_handling.md)                  |
-| 20     |         [包管理器](./20_Day_Python_package_manager/20_python_package_manager.md)         |
-| 21     |            [类和对象](./21_Day_Classes_and_objects/21_classes_and_objects.md)            |
-| 22     |                   [网页抓取](./22_Day_Web_scraping/22_web_scraping.md)                   |
-| 23     |            [虚拟环境](./23_Day_Virtual_environment/23_virtual_environment.md)            |
-| 24     |                       [统计](./24_Day_Statistics/24_statistics.md)                       |
-| 25     |                          [Pandas](./25_Day_Pandas/25_pandas.md)                          |
-| 26     |                   [Python 网页](./26_Day_Python_web/26_python_web.md)                    |
-| 27     |       [Python 与 MongoDB](./27_Day_Python_with_mongodb/27_python_with_mongodb.md)        |
-| 28     |                              [API](./28_Day_API/28_API.md)                               |
-| 29     |                   [构建 API](./29_Day_Building_API/29_building_API.md)                   |
-| 30     |                      [结论](./30_Day_Conclusions/30_conclusions.md)                      |
+| 06     |                           [元组](./06_tuples.md)                            |
+| 07     |                            [集合](./07_sets.md)                             |
+| 08     |              [字典](./08_Day_Dictionaries/08_dictionaries.md)               |
+| 09     |              [条件](./09_Day_Conditionals/09_conditionals.md)               |
+| 10     |                     [循环](./10_Day_Loops/10_loops.md)                      |
+| 11     |                 [函数](./11_Day_Functions/11_functions.md)                  |
+| 12     |                           [模块](./12_modules.md)                           |
+| 13     |      [列表解析](./13_Day_List_comprehension/13_list_comprehension.md)       |
+| 14     |  [高阶函数](./14_Day_Higher_order_functions/14_higher_order_functions.md)   |
+| 15     |      [类型错误](./15_Day_Python_type_errors/15_python_type_errors.md)       |
+| 16     |     [Python 日期时间](./16_Day_Python_date_time/16_python_datetime.md)      |
+| 17     |      [异常处理](./17_Day_Exception_handling/17_exception_handling.md)       |
+| 18     |    [正则表达式](./18_Day_Regular_expressions/18_regular_expressions.md)     |
+| 19     |           [文件处理](./19_Day_File_handling/19_file_handling.md)            |
+| 20     |  [包管理器](./20_Day_Python_package_manager/20_python_package_manager.md)   |
+| 21     |     [类和对象](./21_Day_Classes_and_objects/21_classes_and_objects.md)      |
+| 22     |            [网页抓取](./22_Day_Web_scraping/22_web_scraping.md)             |
+| 23     |     [虚拟环境](./23_Day_Virtual_environment/23_virtual_environment.md)      |
+| 24     |                [统计](./24_Day_Statistics/24_statistics.md)                 |
+| 25     |                   [Pandas](./25_Day_Pandas/25_pandas.md)                    |
+| 26     |             [Python 网页](./26_Day_Python_web/26_python_web.md)             |
+| 27     | [Python 与 MongoDB](./27_Day_Python_with_mongodb/27_python_with_mongodb.md) |
+| 28     |                        [API](./28_Day_API/28_API.md)                        |
+| 29     |            [构建 API](./29_Day_Building_API/29_building_API.md)             |
+| 30     |               [结论](./30_Day_Conclusions/30_conclusions.md)                |
 
 🧡🧡🧡 快乐编码 🧡🧡🧡
 
@@ -60,34 +60,34 @@
 
 ![30DaysOfPython](.././images/30DaysOfPython_banner3@2x.png)
 
-- [🐍 30 天 Python](#-30-天-python)
-- [📘 第 1 天](#第-1-天)
-  - [欢迎](#欢迎)
-  - [介绍](#介绍)
-  - [为什么选择 Python?](#为什么选择-python)
-  - [环境设置](#环境设置)
-    - [安装 Python](#安装-python)
-    - [Python Shell](#python-shell)
-    - [安装 Visual Studio Code](#安装-visual-studio-code)
-      - [如何使用 Visual Studio Code](#如何使用-visual-studio-code)
-  - [Python 基础](#python-基础)
-    - [Python 语法](#python-语法)
-    - [Python 缩进](#python-缩进)
-    - [注释](#注释)
-    - [数据类型](#数据类型)
-      - [数字](#数字)
-      - [字符串](#字符串)
-      - [布尔值](#布尔值)
-      - [列表](#列表)
-      - [字典](#字典)
-      - [元组](#元组)
-      - [集合](#集合)
-    - [检查数据类型](#检查数据类型)
-    - [Python 文件](#python-文件)
-  - [💻 练习 - 第 1 天](#-练习-第-1-天)
-    - [练习：等级 1](#练习等级-1)
-    - [练习：等级 2](#练习等级-2)
-    - [练习：等级 3](#练习等级-3)
+-   [🐍 30 天 Python](#-30-天-python)
+-   [📘 第 1 天](#第-1-天)
+    -   [欢迎](#欢迎)
+    -   [介绍](#介绍)
+    -   [为什么选择 Python?](#为什么选择-python)
+    -   [环境设置](#环境设置)
+        -   [安装 Python](#安装-python)
+        -   [Python Shell](#python-shell)
+        -   [安装 Visual Studio Code](#安装-visual-studio-code)
+            -   [如何使用 Visual Studio Code](#如何使用-visual-studio-code)
+    -   [Python 基础](#python-基础)
+        -   [Python 语法](#python-语法)
+        -   [Python 缩进](#python-缩进)
+        -   [注释](#注释)
+        -   [数据类型](#数据类型)
+            -   [数字](#数字)
+            -   [字符串](#字符串)
+            -   [布尔值](#布尔值)
+            -   [列表](#列表)
+            -   [字典](#字典)
+            -   [元组](#元组)
+            -   [集合](#集合)
+        -   [检查数据类型](#检查数据类型)
+        -   [Python 文件](#python-文件)
+    -   [💻 练习 - 第 1 天](#-练习-第-1-天)
+        -   [练习：等级 1](#练习等级-1)
+        -   [练习：等级 2](#练习等级-2)
+        -   [练习：等级 3](#练习等级-3)
 
 # 📘 第 1 天
 
@@ -182,16 +182,16 @@ Python 交互式 Shell 已打开。让我们做一些基本的数学运算（加
 
 在编写任何 Python 代码之前，让我们做一些数学运算：
 
-- 2 + 3 是 5
-- 3 - 2 是 1
-- 3 \* 2 是 6
-- 3 / 2 是 1.5
-- 3 \*_ 2 相当于 3 _ 3
+-   2 + 3 是 5
+-   3 - 2 是 1
+-   3 \* 2 是 6
+-   3 / 2 是 1.5
+-   3 \*_ 2 相当于 3 _ 3
 
 在 Python 中，我们有以下附加运算：
 
-- 3 % 2 = 1 => 这意味着找到余数或（除法的模数）
-- 3 // 2 = 1 => 这意味着删除除法的余数
+-   3 % 2 = 1 => 这意味着找到余数或（除法的模数）
+-   3 // 2 = 1 => 这意味着删除除法的余数
 
 让我们将上述数学表达式转换为 Python 代码。已打开 Python Shell，让我们在 Shell 的开头编写一个注释。
 
@@ -282,15 +282,15 @@ Python 中有多种数据类型。让我们从最常见的开始。不同的数�
 
 #### 数字
 
-- 整数：它被认为是整数（负数、零和正数）
-  示例：
-  ... -3, -2, -1, 0, 1, 2, 3 ...
-- 浮点数：小数
-  示例：
-  ... -3.5, -2.25, -1.0, 0.0, 1.1, 2.2, 3.5 ...
-- 复数
-  示例：
-  1 + j, 2 + 4j
+-   整数：它被认为是整数（负数、零和正数）
+    示例：
+    ... -3, -2, -1, 0, 1, 2, 3 ...
+-   浮点数：小数
+    示例：
+    ... -3.5, -2.25, -1.0, 0.0, 1.1, 2.2, 3.5 ...
+-   复数
+    示例：
+    1 + j, 2 + 4j
 
 #### 字符串
 
@@ -424,27 +424,27 @@ print(type((9.8, 3.14, 2.7)))    # 元组
 
 1. 检查你使用的 Python 版本
 2. 打开 Python 交互式 Shell 并执行以下操作。操作数是 3 和 4。
-   - 加法(+)
-   - 减法(-)
-   - 乘法(\*)
-   - 取模(%)
-   - 除法(/)
-   - 指数(\*\*)
-   - 整除(//)
+    - 加法(+)
+    - 减法(-)
+    - 乘法(\*)
+    - 取模(%)
+    - 除法(/)
+    - 指数(\*\*)
+    - 整除(//)
 3. 在 Python 交互式 Shell 中编写字符串。字符串如下：
-   - 你的名字
-   - 你的姓氏
-   - 你的国家
-   - 我正在享受 30 天的 Python
+    - 你的名字
+    - 你的姓氏
+    - 你的国家
+    - 我正在享受 30 天的 Python
 4. 检查以下数据的数据类型：
-   - 10
-   - 9.8
-   - 3.14
-   - 4 - 4j
-   - ['Asabeneh', 'Python', 'Finland']
-   - 你的名字
-   - 你的姓氏
-   - 你的国家
+    - 10
+    - 9.8
+    - 3.14
+    - 4 - 4j
+    - ['Asabeneh', 'Python', 'Finland']
+    - 你的名字
+    - 你的姓氏
+    - 你的国家
 
 ### 练习：等级 2
 
