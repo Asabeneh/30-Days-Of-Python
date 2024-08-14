@@ -31,6 +31,7 @@
     - [Arbitrary Number of Arguments](#arbitrary-number-of-arguments)
     - [Default and Arbitrary Number of Parameters in Functions](#default-and-arbitrary-number-of-parameters-in-functions)
     - [Function as a Parameter of Another Function](#function-as-a-parameter-of-another-function)
+  - [Testimony](#testimony)
   - [💻 Exercises: Day 11](#-exercises-day-11)
     - [Exercises: Level 1](#exercises-level-1)
     - [Exercises: Level 2](#exercises-level-2)
@@ -181,7 +182,7 @@ print('Sum of two numbers: ', sum_two_numbers(1, 9))
 
 def calculate_age (current_year, birth_year):
     age = current_year - birth_year
-    return age;
+    return age
 
 print('Age: ', calculate_age(2021, 1819))
 
@@ -251,7 +252,7 @@ print(add_two_numbers(2, 3))
 
 def calculate_age (current_year, birth_year):
     age = current_year - birth_year
-    return age;
+    return age
 print('Age: ', calculate_age(2019, 1819))
 ```
 
@@ -315,7 +316,7 @@ print(generate_full_name('David','Smith'))
 
 def calculate_age (birth_year,current_year = 2021):
     age = current_year - birth_year
-    return age;
+    return age
 print('Age: ', calculate_age(1821))
 
 def weight_of_object (mass, gravity = 9.81):
@@ -384,7 +385,7 @@ Now it is time to express your thoughts about the Author and 30DaysOfPython. You
 2. Area of a circle is calculated as follows: area = π x r x r. Write a function that calculates _area_of_circle_.
 3. Write a function called add_all_nums which takes arbitrary number of arguments and sums all the arguments. Check if all the list items are number types. If not do give a reasonable feedback.
 4. Temperature in °C can be converted to °F using this formula: °F = (°C x 9/5) + 32. Write a function which converts °C to °F, _convert_celsius_to-fahrenheit_.
-5. Write a function called check-season, it takes a month parameter and returns the season: Autumn, Winter, Spring or Summer.
+5. Write a function called check_season, it takes a month parameter and returns the season: Autumn, Winter, Spring or Summer.
 6. Write a function called calculate_slope which return the slope of a linear equation
 7. Quadratic equation is calculated as follows: ax² + bx + c = 0. Write a function which calculates solution set of a quadratic equation, _solve_quadratic_eqn_.
 8. Declare a function named print_list. It takes a list as a parameter and it prints out each element of the list.
@@ -401,18 +402,18 @@ print(reverse_list1(["A", "B", "C"]))
 11. Declare a function named add_item. It takes a list and an item parameters. It returns a list with the item added at the end.
 
 ```py
-food_staff = ['Potato', 'Tomato', 'Mango', 'Milk'];
-print(add_item(food_staff, 'Meat'))     # ['Potato', 'Tomato', 'Mango', 'Milk','Meat'];
-numbers = [2, 3, 7, 9];
+food_staff = ['Potato', 'Tomato', 'Mango', 'Milk']
+print(add_item(food_staff, 'Meat'))     # ['Potato', 'Tomato', 'Mango', 'Milk','Meat']
+numbers = [2, 3, 7, 9]
 print(add_item(numbers, 5))      [2, 3, 7, 9, 5]
 ```
 
 12. Declare a function named remove_item. It takes a list and an item parameters. It returns a list with the item removed from it.
 
 ```py
-food_staff = ['Potato', 'Tomato', 'Mango', 'Milk'];
-print(remove_item(food_staff, 'Mango'))  # ['Potato', 'Tomato', 'Milk'];
-numbers = [2, 3, 7, 9];
+food_staff = ['Potato', 'Tomato', 'Mango', 'Milk']
+print(remove_item(food_staff, 'Mango'))  # ['Potato', 'Tomato', 'Milk']
+numbers = [2, 3, 7, 9]
 print(remove_item(numbers, 3))  # [2, 7, 9]
 ```
 
