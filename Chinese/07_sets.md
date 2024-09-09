@@ -71,7 +71,7 @@ st = {'item1', 'item2', 'item3', 'item4'}
 fruits = {'banana', 'orange', 'mango', 'lemon'}
 ```
 
-### 获取设置的长度
+### 获取集合长度
 
 我们使用**len()**方法来查找集合的长度。
 
