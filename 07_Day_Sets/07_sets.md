@@ -48,14 +48,12 @@ Set is a collection of items. Let me take you back to your elementary or high sc
 
 ### Creating a Set
 
-We use curly brackets, {} to create a set or the *set()* built-in function.
+We use the _set()_ built-in function.
 
 - Creating an empty set
 
 ```py
 # syntax
-st = {}
-# or
 st = set()
 ```
 
@@ -80,7 +78,7 @@ We use **len()** method to find the length of a set.
 ```py
 # syntax
 st = {'item1', 'item2', 'item3', 'item4'}
-len(set)
+len(st)
 ```
 
 **Example:**
@@ -131,7 +129,7 @@ fruits.add('lime')
 ```
 
 - Add multiple items using _update()_
-  The *update()* allows to add multiple items to a set. The *update()* takes a list argument.
+  The _update()_ allows to add multiple items to a set. The _update()_ takes a list argument.
 
 ```py
 # syntax
@@ -173,7 +171,6 @@ If we are interested in the removed item.
 fruits = {'banana', 'orange', 'mango', 'lemon'}
 removed_item = fruits.pop() 
 ```
-
 
 ### Clearing Items in a Set
 
@@ -426,7 +423,6 @@ age = [22, 19, 24, 25, 26, 24, 25, 24]
 1. Convert the ages to a set and compare the length of the list and the set, which one is bigger?
 1. Explain the difference between the following data types: string, list, tuple and set
 2. _I am a teacher and I love to inspire and teach people._ How many unique words have been used in the sentence? Use the split methods and set to get the unique words.
-
 
 🎉 CONGRATULATIONS ! 🎉
 

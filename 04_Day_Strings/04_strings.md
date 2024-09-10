@@ -102,10 +102,10 @@ Now, let us see the use of the above escape sequences with examples.
 ```py
 print('I hope everyone is enjoying the Python Challenge.\nAre you ?') # line break
 print('Days\tTopics\tExercises') # adding tab space or 4 spaces 
-print('Day 1\t3\t5')
-print('Day 2\t3\t5')
-print('Day 3\t3\t5')
-print('Day 4\t3\t5')
+print('Day 1\t5\t5')
+print('Day 2\t6\t20')
+print('Day 3\t5\t23')
+print('Day 4\t1\t35')
 print('This is a backslash  symbol (\\)') # To write a backslash
 print('In every programming language it starts with \"Hello, World!\"') # to write a double quote inside a single quote
 
@@ -328,16 +328,16 @@ print(challenge.expandtabs(10)) # 'thirty    days      of        python'
 
 ```py
 challenge = 'thirty days of python'
-print(challenge.find('y'))  # 16
-print(challenge.find('th')) # 17
+print(challenge.find('y'))  # 5
+print(challenge.find('th')) # 0
 ```
 
 - rfind(): Returns the index of the last occurrence of a substring, if not found returns -1
 
 ```py
 challenge = 'thirty days of python'
-print(challenge.rfind('y'))  # 5
-print(challenge.rfind('th')) # 1
+print(challenge.rfind('y'))  # 16
+print(challenge.rfind('th')) # 17
 ```
 
 - format(): formats string into a nicer output  

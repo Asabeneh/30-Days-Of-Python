@@ -16,7 +16,7 @@
 
 [<< Day 4](../04_Day_Strings/04_strings.md) | [Day 6 >>](../06_Day_Tuples/06_tuples.md)
 
-![30DaysOfPython](../images/30DaysOfPython_banner3@2x.png)
+![30DaysOfPython](../../images/30DaysOfPython_banner3@2x.png)
 
 - [Day 5](#day-5)
   - [Lists](#lists)
@@ -47,20 +47,20 @@
 
 ## Lists
 
-There are four collection data types in Python :
+파이썬에는 네 가지 컬렉션 자료형이 있습니다.
 
-- List: is a collection which is ordered and changeable(modifiable). Allows duplicate members.
-- Tuple: is a collection which is ordered and unchangeable or unmodifiable(immutable). Allows duplicate members.
-- Set: is a collection which is unordered, un-indexed and unmodifiable, but we can add new items to the set. Duplicate members are not allowed.
-- Dictionary: is a collection which is unordered, changeable(modifiable) and indexed. No duplicate members.
+- List: 정렬되고 변경 가능(수정 가능)한 컬렉션입니다. 중복 값을 허용합니다.
+- Tuple: 정렬되고 변경 불가능하거나 수정 불가능한(불변) 컬렉션입니다. 중복 값을 허용합니다.
+- Set: 순서가 지정되지 않고 인덱스가 없고 수정할 수 없는 컬렉션이지만 새 아이템을 추가할 수 있습니다. 중복 값은 허용되지 않습니다.
+- Dictionary: 정렬되지 않고 변경 가능(수정 가능)하며 인덱스가 있는 컬렉션입니다. 중복 값이 없습니다.
 
-A list is collection of different data types which is ordered and modifiable(mutable). A list can be empty or it may have different data type items.
+리스트는 정렬되고 수정(변경) 가능한 다양한 자료형의 컬렉션입니다. 목록은 비어 있거나 다른 자료형 아이템을 가질 수 있습니다.
 
 ### How to Create a List
 
-In Python we can create lists in two ways:
+파이썬에서 리스트는 두가지 방법으로 생성할 수 있습니다:
 
-- Using list built-in function
+- list 내장 함수를 사용
 
 ```py
 # syntax
@@ -68,11 +68,11 @@ lst = list()
 ```
 
 ```py
-empty_list = list() # this is an empty list, no item in the list
+empty_list = list() # 이건 빈 리스트 입니다, 리스트 안에 아무 값도 없습니다
 print(len(empty_list)) # 0
 ```
 
-- Using square brackets, []
+- 대괄호 사용, []
 
 ```py
 # syntax
@@ -80,11 +80,11 @@ lst = []
 ```
 
 ```py
-empty_list = [] # this is an empty list, no item in the list
+empty_list = [] # 이건 빈 리스트 입니다, 리스트 안에 아무 값도 없습니다
 print(len(empty_list)) # 0
 ```
 
-Lists with initial values. We use _len()_ to find the length of a list.
+초기 값이 있는 리스트입니다. _len()_ 을 사용하여 리스트의 길이를 찾습니다.
 
 ```py
 fruits = ['banana', 'orange', 'mango', 'lemon']                     # list of fruits
@@ -120,20 +120,20 @@ Countries: ['Finland', 'Estonia', 'Denmark', 'Sweden', 'Norway']
 Number of countries: 5
 ```
 
-- Lists can have items of different data types
+- 리스트는 서로 다른 자료형의 아이템을 가질 수 있습니다.
 
 ```py
- lst = ['Asabeneh', 250, True, {'country':'Finland', 'city':'Helsinki'}] # list containing different data types
+ lst = ['Asabeneh', 250, True, {'country':'Finland', 'city':'Helsinki'}] # 다른 자료형을 가진 리스트
 ```
 
 ### Accessing List Items Using Positive Indexing
 
-We access each item in a list using their index. A list index starts from 0. The picture below shows clearly where the index starts
-![List index](../images/list_index.png)
+인덱스를 사용하여 리스트의 각 아이템에 액세스합니다. 리스트 인덱스는 0부터 시작합니다. 아래 그림은 인덱스가 시작되는 위치를 명확하게 보여줍니다.
+![List index](../../images/list_index.png)
 
 ```py
 fruits = ['banana', 'orange', 'mango', 'lemon']
-first_fruit = fruits[0] # we are accessing the first item using its index
+first_fruit = fruits[0] # 인덱스를 사용해 첫번째 아이템에 접근합니다
 print(first_fruit)      # banana
 second_fruit = fruits[1]
 print(second_fruit)     # orange
@@ -146,9 +146,9 @@ last_fruit = fruits[last_index]
 
 ### Accessing List Items Using Negative Indexing
 
-Negative indexing means beginning from the end, -1 refers to the last item, -2 refers to the second last item.
+음수 인덱스는 끝에서 시작하는 것을 의미하며 -1은 마지막 아이템을, -2는 마지막에서 두번쨰 아이템을 의미합니다.
 
-![List negative indexing](../images/list_negative_indexing.png)
+![List negative indexing](../../images/list_negative_indexing.png)
 
 ```py
 fruits = ['banana', 'orange', 'mango', 'lemon']
@@ -163,7 +163,7 @@ print(second_last)      # mango
 ### Unpacking List Items
 
 ```py
-lst = ['item1','item2','item3', 'item4', 'item5']
+lst = ['item','item2','item3', 'item4', 'item5']
 first_item, second_item, third_item, *rest = lst
 print(first_item)     # item1
 print(second_item)    # item2
@@ -175,7 +175,7 @@ print(rest)           # ['item4', 'item5']
 ```py
 # First Example
 fruits = ['banana', 'orange', 'mango', 'lemon','lime','apple']
-first_fruit, second_fruit, third_fruit, *rest = fruits 
+first_fruit, second_fruit, third_fruit, *rest = lst
 print(first_fruit)     # banana
 print(second_fruit)    # orange
 print(third_fruit)     # mango
@@ -200,31 +200,31 @@ print(es)
 
 ### Slicing Items from a List
 
-- Positive Indexing: We can specify a range of positive indexes by specifying the start, end and step, the return value will be a new list. (default values for start = 0, end = len(lst) - 1 (last item), step = 1)
+- 양수 인덱싱: start, end 및 step을 지정하여 양수 인덱스 범위를 지정할 수 있습니다. 반환 값은 새 리스트가 됩니다. (start의 디폴트값 = 0, end = len(lst) - 1 (마지막 아이템), step = 1)
 
 ```py
 fruits = ['banana', 'orange', 'mango', 'lemon']
-all_fruits = fruits[0:4] # it returns all the fruits
-# this will also give the same result as the one above
-all_fruits = fruits[0:] # if we don't set where to stop it takes all the rest
-orange_and_mango = fruits[1:3] # it does not include the first index
+all_fruits = fruits[0:4] # 모든 fruits를 반환합니다
+# 이것또한 위와 같은 값을 반환합니다
+all_fruits = fruits[0:] # 우리가 어디서 멈출 지 설정하지 않으면, 모든 것을 포함합니다
+orange_and_mango = fruits[1:3] # 첫번째 인덱스를 포함하지 않습니다
 orange_mango_lemon = fruits[1:]
-orange_and_lemon = fruits[::2] # here we used a 3rd argument, step. It will take every 2cnd item - ['banana', 'mango']
+orange_and_lemon = fruits[::2] # 여기서 세번째 인자인 step을 사용했습니다. 모든 두번째 아이템을 포함합니다 - ['banana', 'mango']
 ```
 
-- Negative Indexing: We can specify a range of negative indexes by specifying the start, end and step, the return value will be a new list.
+- 음수 인덱싱: start, end 및 step을 지정하여 음수 인덱스의 범위를 지정할 수 있습니다. 반환 값은 새 리스트가 됩니다.
 
 ```py
 fruits = ['banana', 'orange', 'mango', 'lemon']
-all_fruits = fruits[-4:] # it returns all the fruits
-orange_and_mango = fruits[-3:-1] # it does not include the last index,['orange', 'mango']
-orange_mango_lemon = fruits[-3:] # this will give starting from -3 to the end,['orange', 'mango', 'lemon']
-reverse_fruits = fruits[::-1] # a negative step will take the list in reverse order,['lemon', 'mango', 'orange', 'banana']
+all_fruits = fruits[-4:] # 모든 fruits를 반환합니다
+orange_and_mango = fruits[-3:-1] # 마지막 인덱스를 포함하지 않습니다,['orange', 'mango']
+orange_mango_lemon = fruits[-3:] # 이것은 -3 부터 시작하여 끝까지의 값을 줍니다,['orange', 'mango', 'lemon']
+reverse_fruits = fruits[::-1] # 음수의 step은 리스트를 역순으로 가집니다,['lemon', 'mango', 'orange', 'banana']
 ```
 
 ### Modifying Lists
 
-List is a mutable or modifiable ordered collection of items. Lets modify the fruit list.
+리스트는 변경 가능하거나 수정 가능한 순서가 있는 아이템들의 컬렉션입니다. 과일 리스트를 수정해봅시다.
 
 ```py
 fruits = ['banana', 'orange', 'mango', 'lemon']
@@ -239,7 +239,7 @@ print(fruits)        #  ['avocado', 'apple', 'mango', 'lime']
 
 ### Checking Items in a List
 
-Checking an item if it is a member of a list using *in* operator. See the example below.
+*in* 연산자를 사용하여 아이템이 리스트의 구성원인지 확인합니다. 아래 예시를 봅시다.
 
 ```py
 fruits = ['banana', 'orange', 'mango', 'lemon']
@@ -251,7 +251,7 @@ print(does_exist)  # False
 
 ### Adding Items to a List
 
-To add item to the end of an existing list we use the method *append()*.
+기존 리스트의 끝에 아이템을 추가하려면 *append()* 메서드를 사용합니다.
 
 ```py
 # syntax
@@ -269,7 +269,7 @@ print(fruits)
 
 ### Inserting Items into a List
 
-We can use *insert()* method to insert a single item at a specified index in a list. Note that other items are shifted to the right. The *insert()* methods takes two arguments:index and an item to insert.
+*insert()* 메서드를 사용하여 목록의 지정된 인덱스에 하나의 아이템을 삽입할 수 있습니다. 다른 아이템들은 오른쪽으로 이동한다는 것에 주의합시다. *insert()* 메서드는 인덱스와 삽입할 아이템이라는 두 가지 인자를 가집니다.
 
 ```py
 # syntax
@@ -279,7 +279,7 @@ lst.insert(index, item)
 
 ```py
 fruits = ['banana', 'orange', 'mango', 'lemon']
-fruits.insert(2, 'apple') # insert apple between orange and mango
+fruits.insert(2, 'apple') # orange와 mango 사이에 apple을 삽입
 print(fruits)           # ['banana', 'orange', 'apple', 'mango', 'lemon']
 fruits.insert(3, 'lime')   # ['banana', 'orange', 'apple', 'lime', 'mango', 'lemon']
 print(fruits)
@@ -287,7 +287,7 @@ print(fruits)
 
 ### Removing Items from a List
 
-The remove method removes a specified item from a list
+remove 메서드는 리스트에서 지정된 아이템을 삭제합니다.
 
 ```py
 # syntax
@@ -298,19 +298,19 @@ lst.remove(item)
 ```py
 fruits = ['banana', 'orange', 'mango', 'lemon', 'banana']
 fruits.remove('banana')
-print(fruits)  # ['orange', 'mango', 'lemon', 'banana'] - this method removes the first occurrence of the item in the list
+print(fruits)  # ['orange', 'mango', 'lemon', 'banana'] - 이 메서드는 리스트에서 첫번째로 존재하는 아이템을 삭제합니다
 fruits.remove('lemon')
 print(fruits)  # ['orange', 'mango', 'banana']
 ```
 
 ### Removing Items Using Pop
 
-The *pop()* method removes the specified index, (or the last item if index is not specified):
+*pop()* 메서드는 지정된 인덱스를 제거합니다(또는 인덱스가 지정되지 않은 경우 마지막 아이템):
 
 ```py
 # syntax
 lst = ['item1', 'item2']
-lst.pop()       # last item
+lst.pop()       # 마지막 아이템
 lst.pop(index)
 ```
 
@@ -325,13 +325,13 @@ print(fruits)       # ['orange', 'mango']
 
 ### Removing Items Using Del
 
-The *del* keyword removes the specified index and it can also be used to delete items within index range. It can also delete the list completely
+*del* 키워드는 지정된 인덱스를 삭제하며 인덱스 범위 내의 아이템을 삭제하는 데도 사용할 수 있습니다. 또한 리스트를 완전히 삭제할 수도 있습니다.
 
 ```py
 # syntax
 lst = ['item1', 'item2']
-del lst[index] # only a single item
-del lst        # to delete the list completely
+del lst[index] # 하니의 아이템
+del lst        # 리스트를 완전히 삭제
 ```
 
 ```py
@@ -340,15 +340,15 @@ del fruits[0]
 print(fruits)       # ['orange', 'mango', 'lemon', 'kiwi', 'lime']
 del fruits[1]
 print(fruits)       # ['orange', 'lemon', 'kiwi', 'lime']
-del fruits[1:3]     # this deletes items between given indexes, so it does not delete the item with index 3!
+del fruits[1:3]     # 이것은 주어진 인덱스 사이의 아이템을 삭제합니다, 그러므로 인덱스가 3인 아이템은 삭제되지 않습니다!
 print(fruits)       # ['orange', 'lime']
 del fruits
-print(fruits)       # This should give: NameError: name 'fruits' is not defined
+print(fruits)       # NameError: name 'fruits' is not defined 가 발생해야합니다
 ```
 
 ### Clearing List Items
 
-The *clear()* method empties the list:
+*clear()* 메서드를 사용해 리스트 비우기:
 
 ```py
 # syntax
@@ -364,7 +364,7 @@ print(fruits)       # []
 
 ### Copying a List
 
-It is possible to copy a list by reassigning it to a new variable in the following way: list2 = list1. Now, list2 is a reference of list1, any changes we make in list2 will also modify the original, list1. But there are lots of case in which we do not like to modify the original instead we like to have a different copy. One of way of avoiding the problem above is using _copy()_.
+다음의 방법으로 새 변수에 재할당하여 리스트를 복사할 수 있습니다:list2 = list1. 이제 list2는 list1의 참조이며, list2에서 변경한 내용은 원본 list1도 수정합니다. 하지만 원본을 수정하고 싶지 않고 다른 사본을 갖고 싶어하는 경우가 많습니다. 위의 문제를 피하는 한 가지 방법은 _copy()_ 를 사용하는 것입니다.
 
 ```py
 # syntax
@@ -380,9 +380,9 @@ print(fruits_copy)       # ['banana', 'orange', 'mango', 'lemon']
 
 ### Joining Lists
 
-There are several ways to join, or concatenate, two or more lists in Python.
+파이썬에서 두 개 이상의 목록을 결합하거나 연결하는 방법은 여러 가지가 있습니다.
 
-- Plus Operator (+)
+- 플러스 연산자 (+)
 
 ```py
 # syntax
@@ -401,8 +401,8 @@ fruits_and_vegetables = fruits + vegetables
 print(fruits_and_vegetables ) # ['banana', 'orange', 'mango', 'lemon', 'Tomato', 'Potato', 'Cabbage', 'Onion', 'Carrot']
 ```
 
-- Joining using extend() method
-  The *extend()* method allows to append list in a list. See the example below.
+- extend() 메서드를 사용하여 연결
+  *extend()* 메서드를 사용하면 리스트에 리스트를 추가할 수 있습니다. 아래 예를 참조합시다.
 
 ```py
 # syntax
@@ -431,7 +431,7 @@ print('Fruits and vegetables:', fruits ) # Fruits and vegetables: ['banana', 'or
 
 ### Counting Items in a List
 
-The *count()* method returns the number of times an item appears in a list:
+*count()* 메서드는 리스트에 아이템이 나타나는 횟수를 반환합니다:
 
 ```py
 # syntax
@@ -448,7 +448,7 @@ print(ages.count(24))           # 3
 
 ### Finding Index of an Item
 
-The *index()* method returns the index of an item in the list:
+*index()* 메서드는 리스트에 있는 아이템의 인덱스를 반환합니다:
 
 ```py
 # syntax
@@ -460,12 +460,12 @@ lst.index(item)
 fruits = ['banana', 'orange', 'mango', 'lemon']
 print(fruits.index('orange'))   # 1
 ages = [22, 19, 24, 25, 26, 24, 25, 24]
-print(ages.index(24))           # 2, the first occurrence
+print(ages.index(24))           # 2, 처음 만난 것
 ```
 
 ### Reversing a List
 
-The *reverse()* method reverses the order of a list.
+*reverse()* 메서드는 리스트의 순서를 거꾸로 합니다.
 
 ```py
 # syntax
@@ -485,15 +485,15 @@ print(ages) # [24, 25, 24, 26, 25, 24, 19, 22]
 
 ### Sorting List Items
 
-To sort lists we can use _sort()_ method or _sorted()_ built-in functions. The _sort()_ method reorders the list items in ascending order and modifies the original list. If an argument of _sort()_ method reverse is equal to true, it will arrange the list in descending order.
+리스트를 정렬하려면 _sort()_ 메서드 또는 _sorted()_ 내장 함수를 사용할 수 있습니다. _sort()_ 메서드는 리스트 아이템을 오름차순으로 정렬하고 원래 리스트를 수정합니다. 만약 _sort()_ 메서드의 reverse의 인자가 true라면, 그것은 목록을 내림차순으로 배열할 것입니다.
 
-- sort(): this method modifies the original list
+- sort(): 이 메서드는 원래 리스트를 수정합니다
 
   ```py
   # syntax
   lst = ['item1', 'item2']
-  lst.sort()                # ascending
-  lst.sort(reverse=True)    # descending
+  lst.sort()                # 오름차순
+  lst.sort(reverse=True)    # 내림차순
   ```
 
   **Example:**
@@ -501,7 +501,7 @@ To sort lists we can use _sort()_ method or _sorted()_ built-in functions. The _
   ```py
   fruits = ['banana', 'orange', 'mango', 'lemon']
   fruits.sort()
-  print(fruits)             # sorted in alphabetical order, ['banana', 'lemon', 'mango', 'orange']
+  print(fruits)             # 알파벳순으로 정렬, ['banana', 'lemon', 'mango', 'orange']
   fruits.sort(reverse=True)
   print(fruits) # ['orange', 'mango', 'lemon', 'banana']
   ages = [22, 19, 24, 25, 26, 24, 25, 24]
@@ -512,76 +512,76 @@ To sort lists we can use _sort()_ method or _sorted()_ built-in functions. The _
   print(ages) #  [26, 25, 25, 24, 24, 24, 22, 19]
   ```
 
-  sorted(): returns the ordered list without modifying the original list
+  sorted(): 원래 리스트를 수정하지 않고 정렬된 리스트를 반환합니다
   **Example:**
 
   ```py
   fruits = ['banana', 'orange', 'mango', 'lemon']
   print(sorted(fruits))   # ['banana', 'lemon', 'mango', 'orange']
-  # Reverse order
+  # 역순
   fruits = ['banana', 'orange', 'mango', 'lemon']
   fruits = sorted(fruits,reverse=True)
   print(fruits)     # ['orange', 'mango', 'lemon', 'banana']
   ```
 
-🌕 You are diligent and you have already achieved quite a lot. You have just completed day 5 challenges and you are 5 steps a head in to your way to greatness. Now do some exercises for your brain and muscles.
+🌕 당신은 성실하고 이미 많은 것을 성취했습니다. 여러분은 이제 막 5일차 도전을 마쳤고 위대함을 향한 5걸음 앞에 있습니다. 이제 여러분의 뇌와 근육을 위한 운동을 하세요.
 
 ## 💻 Exercises: Day 5
 
 ### Exercises: Level 1
 
-1. Declare an empty list
-2. Declare a list with more than 5 items
-3. Find the length of your list
-4. Get the first item, the middle item and the last item of the list
-5. Declare a list called mixed_data_types, put your(name, age, height, marital status, address)
-6. Declare a list variable named it_companies and assign initial values Facebook, Google, Microsoft, Apple, IBM, Oracle and Amazon.
-7. Print the list using _print()_
-8. Print the number of companies in the list
-9. Print the first, middle and last company
-10. Print the list after modifying one of the companies
-11. Add an IT company to it_companies
-12. Insert an IT company in the middle of the companies list
-13. Change one of the it_companies names to uppercase (IBM excluded!)
-14. Join the it_companies with a string '#;&nbsp; '
-15. Check if a certain company exists in the it_companies list.
-16. Sort the list using sort() method
-17. Reverse the list in descending order using reverse() method
-18. Slice out the first 3 companies from the list
-19. Slice out the last 3 companies from the list
-20. Slice out the middle IT company or companies from the list
-21. Remove the first IT company from the list
-22. Remove the middle IT company or companies from the list
-23. Remove the last IT company from the list
-24. Remove all IT companies from the list
-25. Destroy the IT companies list
-26. Join the following lists:
+1. 빈 리스트를 선언합니다
+2. 5개 이상의 아이템을 갖는 리스트를 선언합니다
+3. 당신의 리스트의 길이를 알아봅니다
+4. 리스트의 첫번째, 중간의, 마지막 아이템을 얻어봅니다
+5. mixed_data_types 라는 리스트를 선언하고, 당신의 이름, 나이, 키, 결혼 여부, 주소를 넣어봅시다
+6. it_companies 라는 이름의 목록 변수를 선언하고 초기 값에 Facebook, Google, Microsoft, Apple, IBM, Oracle 및 Amazon을 할당합니다
+7. _print()_ 를 사용하여 리스트를 프린트 합니다
+8. 리스트에 있는 기업 수를 프린트 합니다
+9. 첫번째, 중간, 마지막 기업을 프린트 합니다
+10. 기업 중 하나를 수정하고 리스트를 프린트 합니다
+11. it_companies 에 하나의 IT 기업을 추가합니다
+12. 회사 리스트 중간에 IT 기업을 추가합니다
+13. it_companies 이름 중 하나를 대문자로 변경합니다 (IBM 제외!)
+14. '#;&nbsp; ' 라는 문자열로 it_companies 에 연결합니다
+15. it_companies 리스트에 특정 기업이 존재하는 지 확인합니다
+16. sort() 메서드를 사용해 리스트를 정렬합니다
+17. reverse() 메서드를 사용하여 리스트를 내림차순으로 반전합니다
+18. 리스트에서 처음 3개의 기업을 잘라냅니다
+19. 리스트에서 마지막 3개의 기업을 잘라냅니다
+20. 리스트에서 중간의 IT 기업 또는 기업들을 잘라냅니다
+21. 리스트에서 첫번째 IT 기업을 삭제합니다
+22. 리스트에서 중간의 IT 기업 또는 기업들을 삭제합니다
+23. 리스트에서 마지막 IT 기업을 삭제합니다
+24. 리스트에서 모든 IT 기업을 삭제합니다
+25. IT 기업 리스트를 완전히 제거합니다
+26. 다음 리스트를 연결합니다:
 
     ```py
     front_end = ['HTML', 'CSS', 'JS', 'React', 'Redux']
     back_end = ['Node','Express', 'MongoDB']
     ```
 
-27. After joining the lists in question 26. Copy the joined list and assign it to a variable full_stack. Then insert Python and SQL after Redux.
+27. 26번 문제의 리스트를 연결한 후, 연결된 리스트를 복사해 full_stack 변수에 할당합니다. 그리고 Python, SQL, Redux를 삽입합니다.
 
 ### Exercises: Level 2
 
-1. The following is a list of 10 students ages:
+1. 다음은 10명의 학생의 나이 리스트입니다:
 
 ```sh
 ages = [19, 22, 19, 24, 20, 25, 26, 24, 25, 24]
 ```
 
-- Sort the list and find the min and max age
-- Add the min age and the max age again to the list
-- Find the median age (one middle item or two middle items divided by two)
-- Find the average age (sum of all items divided by their number )
-- Find the range of the ages (max minus min)
-- Compare the value of (min - average) and (max - average), use _abs()_ method
+- 리스트를 정렬하고 최소값 및 최대값 찾습니다
+- 리스트에 최소값 및 최대값을 다시 추가합니다
+- 나이의 중위값을 찾습니다(중간 아이템 하나 또는 중간 아이템 두 개를 2로 나눈 값)
+- 평균 나이를 구합니다(모든 아이템의 합을 개수로 나눈 값)
+- 나이의 범위를 구합니다(최대값 빼기 최소값)
+-  (최소값 - 평균)과 (최대값 - 평균)의 값을 비교하고 _abs()_ 메서드를 사용합니다.
 
-1. Find the middle country(ies) in the [countries list](https://github.com/Asabeneh/30-Days-Of-Python/tree/master/data/countries.py)
-1. Divide the countries list into two equal lists if it is even if not one more country for the first half.
-1. ['China', 'Russia', 'USA', 'Finland', 'Sweden', 'Norway', 'Denmark']. Unpack the first three countries and the rest as scandic countries.
+1. [국가 목록](https://github.com/Asabeneh/30-Days-Of-Python/tree/master/data/countries.py) 에서 중간 국가를 찾습니다.
+1. 국가 리스트를 두개의 리스트로 나눕니다. 짝수라면 두개의 리스트의 크기가 갖게, 아니라면 앞의 리스트가 하나의 국가를 더 갖도록 합니다.
+1. ['China', 'Russia', 'USA', 'Finland', 'Sweden', 'Norway', 'Denmark']. 앞의 세개 국가와 나머지를 scandic countries로 unpack합니다.
 
 🎉 CONGRATULATIONS ! 🎉
 
