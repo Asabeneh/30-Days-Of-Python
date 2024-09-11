@@ -1,0 +1,9 @@
+version: '3'
+
+services:
+  python:
+    build: .
+    volumes:
+      - .:/usr/src/app
+    working_dir: /usr/src/app
+    command: python 01_Day_Introduction/helloworld.py
