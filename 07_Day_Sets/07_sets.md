@@ -343,7 +343,7 @@ dragon.difference(python)     # {'d', 'r', 'a', 'g'}
 
 ### Finding Symmetric Difference Between Two Sets
 
-It returns the the symmetric difference between two sets. It means that it returns a set that contains all items from both sets, except items that are present in both sets, mathematically: (A\B) ∪ (B\A)
+It returns the symmetric difference between two sets. It means that it returns a set that contains all items from both sets, except items that are present in both sets, mathematically: (A\B) ∪ (B\A)
 
 ```py
 # syntax
@@ -380,7 +380,7 @@ st2.isdisjoint(st1) # False
 
 ```py
 even_numbers = {0, 2, 4 ,6, 8}
-even_numbers = {1, 3, 5, 7, 9}
+odd_numbers = {1, 3, 5, 7, 9}
 even_numbers.isdisjoint(odd_numbers) # True, because no common item
 
 python = {'p', 'y', 't', 'h', 'o','n'}

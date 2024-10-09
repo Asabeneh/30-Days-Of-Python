@@ -1218,7 +1218,7 @@ plt.show()
 
 ![png](../test_files/test_143_0.png)
 
-# Summery
+# Summary
 
 To summarize, the main differences with python lists are:
 

@@ -29,6 +29,8 @@
     - [If and Or Logical Operators](#if-and-or-logical-operators)
   - [💻 Exercises: Day 9](#-exercises-day-9)
     - [Exercises: Level 1](#exercises-level-1)
+    - [Exercises: Level 2](#exercises-level-2)
+    - [Exercises: Level 3](#exercises-level-3)
 
 # 📘 Day 9
 
@@ -72,7 +74,7 @@ else:
      this part of code runs for false conditions
 ```
 
-**Example: **
+**Example:**
 
 ```py
 a = 3
@@ -82,7 +84,7 @@ else:
     print('A is a positive number')
 ```
 
-The condition above proves false, therefore the else block was executed. How about if our condition is more than two? We could use _ elif_.
+The condition above proves false, therefore the else block was executed. How about if our condition is more than two? We could use _elif_.
 
 ### If Elif Else
 
@@ -99,7 +101,7 @@ else:
 
 ```
 
-**Example: **
+**Example:**
 
 ```py
 a = 0
@@ -118,7 +120,7 @@ else:
 code if condition else code
 ```
 
-**Example: **
+**Example:**
 
 ```py
 a = 3
@@ -137,7 +139,7 @@ if condition:
     code
 ```
 
-**Example: **
+**Example:**
 
 ```py
 a = 0
@@ -163,7 +165,7 @@ if condition and condition:
     code
 ```
 
-**Example: **
+**Example:**
 
 ```py
 a = 0
@@ -185,7 +187,7 @@ if condition or condition:
     code
 ```
 
-**Example: **
+**Example:**
 
 ```py
 user = 'James'
@@ -202,7 +204,8 @@ else:
 
 ### Exercises: Level 1
 
-1.  Get user input using input(“Enter your age: ”). If user is 18 or older, give feedback: You are old enough to drive. If below 18 give feedback to wait for the missing amount of years. Output:
+1. Get user input using input(“Enter your age: ”). If user is 18 or older, give feedback: You are old enough to drive. If below 18 give feedback to wait for the missing amount of years. Output:
+
     ```sh
     Enter your age: 30
     You are old enough to learn to drive.
@@ -210,12 +213,15 @@ else:
     Enter your age: 15
     You need 3 more years to learn to drive.
     ```
-2.  Compare the values of my_age and your_age using if … else. Who is older (me or you)? Use input(“Enter your age: ”) to get the age as input. You can use a nested condition to print 'year' for 1 year difference in age, 'years' for bigger differences, and a custom text if my_age = your_age. Output:
+
+2. Compare the values of my_age and your_age using if … else. Who is older (me or you)? Use input(“Enter your age: ”) to get the age as input. You can use a nested condition to print 'year' for 1 year difference in age, 'years' for bigger differences, and a custom text if my_age = your_age. Output:
+
     ```sh
     Enter your age: 30
     You are 5 years older than me.
     ```
-3.  Get two numbers from the user using input prompt. If a is greater than b return a is greater than b, if a is less b return a is smaller than b, else a is equal to b. Output:
+
+3. Get two numbers from the user using input prompt. If a is greater than b return a is greater than b, if a is less b return a is smaller than b, else a is equal to b. Output:
 
 ```sh
 Enter number one: 4
@@ -223,10 +229,10 @@ Enter number two: 3
 4 is greater than 3
 ```
 
-    ### Exercises: Level 2
+### Exercises: Level 2
 
    1. Write a code which gives grade to students according to theirs scores:
-   
+
         ```sh
         80-100, A
         70-89, B
@@ -234,21 +240,24 @@ Enter number two: 3
         50-59, D
         0-49, F
         ```
-1. Check if the season is Autumn, Winter, Spring or Summer. If the user input is:
+
+   1. Check if the season is Autumn, Winter, Spring or Summer. If the user input is:
     September, October or November, the season is Autumn.
     December, January or February, the season is Winter.
     March, April or May, the season is Spring
     June, July or August, the season is Summer
-2.  The following list contains some fruits:
+   2. The following list contains some fruits:
+
     ```sh
     fruits = ['banana', 'orange', 'mango', 'lemon']
     ```
-    If a fruit doesn't exist in the list add the fruit to the list and print the modified list. If the fruit exists print('That fruit already exist in the list') 
 
-    ### Exercises: Level 3
+    If a fruit doesn't exist in the list add the fruit to the list and print the modified list. If the fruit exists print('That fruit already exist in the list')
+
+### Exercises: Level 3
 
    1. Here we have a person dictionary. Feel free to modify it!
-   
+
 ```py
         person={
     'first_name': 'Asabeneh',

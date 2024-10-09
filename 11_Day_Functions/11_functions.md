@@ -31,6 +31,7 @@
     - [Arbitrary Number of Arguments](#arbitrary-number-of-arguments)
     - [Default and Arbitrary Number of Parameters in Functions](#default-and-arbitrary-number-of-parameters-in-functions)
     - [Function as a Parameter of Another Function](#function-as-a-parameter-of-another-function)
+  - [Testimony](#testimony)
   - [💻 Exercises: Day 11](#-exercises-day-11)
     - [Exercises: Level 1](#exercises-level-1)
     - [Exercises: Level 2](#exercises-level-2)
@@ -48,7 +49,7 @@ A function is a reusable block of code or programming statements designed to per
 
 ### Declaring and Calling a Function
 
-When we make a function, we call it declaring a function. When we start using the it,  we call it *calling* or *invoking* a function. Function can be declared with or without parameters.
+When we make a function, we call it declaring a function. When we start using the it,  we call it _calling_ or _invoking_ a function. Function can be declared with or without parameters.
 
 ```py
 # syntax
@@ -374,7 +375,8 @@ print(do_something(square_number, 3)) # 27
 🌕 You achieved quite a lot so far.  Keep going! You have just completed day 11 challenges and you are 11 steps a head in to your way to greatness. Now do some exercises for your brain and muscles.
 
 ## Testimony
-Now it is time to express your thoughts about the Author and 30DaysOfPython. You can leave your testimonial on this [link](https://testimonify.herokuapp.com/)
+
+Now it is time to express your thoughts about the Author and 30DaysOfPython. You can leave your testimonial on this [link](https://testimonial-s3sw.onrender.com/)
 
 ## 💻 Exercises: Day 11
 
@@ -401,18 +403,18 @@ print(reverse_list1(["A", "B", "C"]))
 11. Declare a function named add_item. It takes a list and an item parameters. It returns a list with the item added at the end.
 
 ```py
-food_staff = ['Potato', 'Tomato', 'Mango', 'Milk'];
-print(add_item(food_staff, 'Meat'))     # ['Potato', 'Tomato', 'Mango', 'Milk','Meat'];
-numbers = [2, 3, 7, 9];
+food_staff = ['Potato', 'Tomato', 'Mango', 'Milk']
+print(add_item(food_staff, 'Meat'))     # ['Potato', 'Tomato', 'Mango', 'Milk','Meat']
+numbers = [2, 3, 7, 9]
 print(add_item(numbers, 5))      [2, 3, 7, 9, 5]
 ```
 
 12. Declare a function named remove_item. It takes a list and an item parameters. It returns a list with the item removed from it.
 
 ```py
-food_staff = ['Potato', 'Tomato', 'Mango', 'Milk'];
+food_staff = ['Potato', 'Tomato', 'Mango', 'Milk']
 print(remove_item(food_staff, 'Mango'))  # ['Potato', 'Tomato', 'Milk'];
-numbers = [2, 3, 7, 9];
+numbers = [2, 3, 7, 9]
 print(remove_item(numbers, 3))  # [2, 7, 9]
 ```
 
@@ -420,8 +422,8 @@ print(remove_item(numbers, 3))  # [2, 7, 9]
 
 ```py
 print(sum_of_numbers(5))  # 15
-print(sum_all_numbers(10)) # 55
-print(sum_all_numbers(100)) # 5050
+print(sum_of_numbers(10)) # 55
+print(sum_of_numbers(100)) # 5050
 ```
 
 14. Declare a function named sum_of_odds. It takes a number parameter and it adds all the odd numbers in that range.
@@ -429,7 +431,7 @@ print(sum_all_numbers(100)) # 5050
 
 ### Exercises: Level 2
 
-1.  Declare a function named evens_and_odds . It takes a positive integer as parameter and it counts number of evens and odds in the number.
+1. Declare a function named evens_and_odds . It takes a positive integer as parameter and it counts number of evens and odds in the number.
 
 ```py
     print(evens_and_odds(100))

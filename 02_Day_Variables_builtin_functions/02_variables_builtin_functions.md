@@ -180,7 +180,7 @@ There are several data types in Python. To identify the data type we use the _ty
 ## Checking Data types and Casting
 
 - Check Data types: To check the data type of certain data/variable we use the _type_
-  **Example:**
+  **Examples:**
 
 ```py
 # Different python data types
@@ -193,22 +193,22 @@ city= 'Helsinki'            # str
 age = 250                   # int, it is not my real age, don't worry about it
 
 # Printing out types
-print(type('Asabeneh'))     # str
-print(type(first_name))     # str
-print(type(10))             # int
-print(type(3.14))           # float
-print(type(1 + 1j))         # complex
-print(type(True))           # bool
-print(type([1, 2, 3, 4]))     # list
-print(type({'name':'Asabeneh','age':250, 'is_married':250}))    # dict
-print(type((1,2)))                                              # tuple
-print(type(zip([1,2],[3,4])))                                   # set
+print(type('Asabeneh'))          # str
+print(type(first_name))          # str
+print(type(10))                  # int
+print(type(3.14))                # float
+print(type(1 + 1j))              # complex
+print(type(True))                # bool
+print(type([1, 2, 3, 4]))        # list
+print(type({'name':'Asabeneh'})) # dict
+print(type((1,2)))               # tuple
+print(type(zip([1,2],[3,4])))    # zip
 ```
 
 - Casting: Converting one data type to another data type. We use _int()_, _float()_, _str()_, _list_, _set_
   When we do arithmetic operations string numbers should be first converted to int or float otherwise it will return an error. If we concatenate a number with a string, the number should be first converted to a string. We will talk about concatenation in String section.
 
-  **Example:**
+  **Examples:**
 
 ```py
 # int to float
@@ -229,8 +229,10 @@ print(num_str)                  # '10'
 
 # str to int or float
 num_str = '10.6'
-print('num_int', int(num_str))      # 10
+num_float = float(num_str)
 print('num_float', float(num_str))  # 10.6
+num_int = int(num_float)
+print('num_int', int(num_int))      # 10
 
 # str to list
 first_name = 'Asabeneh'
@@ -281,13 +283,13 @@ Number data types in Python:
 1. Using the _len()_ built-in function, find the length of your first name
 1. Compare the length of your first name and your last name
 1. Declare 5 as num_one and 4 as num_two
-    1. Add num_one and num_two and assign the value to a variable total
-    2. Subtract num_two from num_one and assign the value to a variable diff
-    3. Multiply num_two and num_one and assign the value to a variable product
-    4. Divide num_one by num_two and assign the value to a variable division
-    5. Use modulus division to find num_two divided by num_one and assign the value to a variable remainder
-    6. Calculate num_one to the power of num_two and assign the value to a variable exp
-    7. Find floor division of num_one by num_two and assign the value to a variable floor_division
+1. Add num_one and num_two and assign the value to a variable total
+1. Subtract num_two from num_one and assign the value to a variable diff
+1. Multiply num_two and num_one and assign the value to a variable product
+1. Divide num_one by num_two and assign the value to a variable division
+1. Use modulus division to find num_two divided by num_one and assign the value to a variable remainder
+1. Calculate num_one to the power of num_two and assign the value to a variable exp
+1. Find floor division of num_one by num_two and assign the value to a variable floor_division
 1. The radius of a circle is 30 meters.
     1. Calculate the area of a circle and assign the value to a variable name of _area_of_circle_
     2. Calculate the circumference of a circle and assign the value to a variable name of _circum_of_circle_
