@@ -24,7 +24,8 @@ fruits = ['banana', 'orange', 'mango', 'lemon']
 first_fruit = fruits[0] # we are accessing the first item using its index
 print(first_fruit)      # banana
 second_fruit = fruits[1]
-print(second_fruit)     # orange
+print(second_fruit)
+print()     # orange
 last_fruit = fruits[3]
 print(last_fruit) # lemon
 # Last index
@@ -40,14 +41,19 @@ print(second_last)      # mango
 
 # Slicing items
 fruits = ['banana', 'orange', 'mango', 'lemon'] 
-all_fruits = fruits[0:4] # it returns all the fruits
+all_fruits = fruits[0:4] 
+print(all_fruits)# it returns all the fruits
 # this is also give the same result as the above
-all_fruits = fruits[0:] # if we don't set where to stop it takes all the rest
-orange_and_mango = fruits[1:3] # it does not include the end index
+all_fruits = fruits[0:]
+print(all_fruits) # if we don't set where to stop it takes all the rest
+orange_and_mango = fruits[1:3]
+print(orange_and_mango) # it does not include the end index
 orange_mango_lemon = fruits[1:]
+print(orange_and_mango)
 
 fruits = ['banana', 'orange', 'mango', 'lemon'] 
-all_fruits = fruits[-4:] # it returns all the fruits
+all_fruits = fruits[-3:]
+print(all_fruits) # it returns all the fruits
 # this is also give the same result as the above
 orange_and_mango = fruits[-3:-1] # it does not include the end index
 orange_mango_lemon = fruits[-3:]
@@ -105,8 +111,11 @@ print(fruits)       # ['orange', 'mango', 'lemon']
 
 del fruits[1]     
 print(fruits)       # ['orange', 'lemon']
-del fruits
-print(fruits)       # This should give: NameError: name 'fruits' is not defined
+try:
+    del fruits
+    print(fruits)
+except(NameError):
+    print("The variable fruits is deleted is not exixting")    # This should give: NameError: name 'fruits' is not defined
 
 # clear
 fruits = ['banana', 'orange', 'mango', 'lemon']
