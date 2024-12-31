@@ -121,7 +121,7 @@ print('a * b = ', product)
 print('a / b = ', division)
 print('a % b = ', remainder)
 print('a // b = ', floor_division)
-print('a ** b = ', exponentiation)
+print('a ** b = ', exponential)
 ```
 
 **Example:**
@@ -174,7 +174,7 @@ print(weight, 'N')                         # Adding unit to the weight
 mass = 75 # in Kg
 volume = 0.075 # in cubic meter
 density = mass / volume # 1000 Kg/m^3
-
+print(density)
 ```
 
 ### Comparison Operators

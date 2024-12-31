@@ -79,7 +79,7 @@ len(tpl)
 
 - Positive Indexing
   Similar to the list data type we use positive or negative indexing to access tuple items.
-  ![Accessing tuple items](../images/tuples_index.png)
+  ![Accessing tuple items](../images/tuples_incdex.png)
 
   ```py
   # Syntax
@@ -93,7 +93,7 @@ len(tpl)
   first_fruit = fruits[0]
   second_fruit = fruits[1]
   last_index =len(fruits) - 1
-  last_fruit = fruits[las_index]
+  last_fruit = fruits[last_index] 
   ```
 
 - Negative indexing
