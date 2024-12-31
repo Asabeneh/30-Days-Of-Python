@@ -12,7 +12,7 @@
   <small> First Edition: Nov 22 - Dec 22, 2019</small>
   </sub>
 </div>
-</div>
+
 
 [<< Day 17](../17_Day_Exception_handling/17_exception_handling.md) | [Day 19>>](../19_Day_File_handling/19_file_handling.md)
 
@@ -85,7 +85,7 @@ span = match.span()
 print(span)     # (0, 15)
 # Lets find the start and stop position from the span
 start, end = span
-print(start, end)  # 0, 15
+print(start, end)  # 0 15
 substring = txt[start:end]
 print(substring)       # I love to teach
 ```
@@ -179,10 +179,10 @@ txt = '''Python is the most beautiful language that a human being has ever creat
 I recommend python for a first programming language'''
 
 match_replaced = re.sub('Python|python', 'JavaScript', txt, re.I)
-print(match_replaced)  # JavaScript is the most beautiful language that a human being has ever created.
+print(match_replaced)  # JavaScript is the most beautiful language that a human being has ever created.I recommend python for a first programming language
 # OR
 match_replaced = re.sub('[Pp]ython', 'JavaScript', txt, re.I)
-print(match_replaced)  # JavaScript is the most beautiful language that a human being has ever created.
+print(match_replaced)  # JavaScript is the most beautiful language that a human being has ever created.I recommend python for a first programming language
 ```
 
 Let us add one more example. The following string is really hard to read unless we remove the % symbol. Replacing the % with an empty string will clean the text.
@@ -361,9 +361,9 @@ matches = re.findall(regex_pattern, txt)
 print(matches)  # ['2019', '2021']
 
 txt = 'This regular expression example was made on December 6,  2019 and revised on July 8, 2021'
-regex_pattern = r'\d{1, 4}'   # 1 to 4
+regex_pattern = r'\d{1,4}'
 matches = re.findall(regex_pattern, txt)
-print(matches)  # ['6', '2019', '8', '2021']
+print(matches)  # ['6', '2019', '8', '2021'] 
 ```
 
 ### Cart ^

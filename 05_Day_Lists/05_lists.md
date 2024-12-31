@@ -91,7 +91,7 @@ fruits = ['banana', 'orange', 'mango', 'lemon']                     # list of fr
 vegetables = ['Tomato', 'Potato', 'Cabbage','Onion', 'Carrot']      # list of vegetables
 animal_products = ['milk', 'meat', 'butter', 'yoghurt']             # list of animal products
 web_techs = ['HTML', 'CSS', 'JS', 'React','Redux', 'Node', 'MongDB'] # list of web technologies
-countries = ['Finland', 'Estonia', 'Denmark', 'Sweden', 'Norway']
+countries = ['Finland', 'Estonia', 'Denmark', 'Sweden', 'Norway'] 
 
 # Print the lists and its length
 print('Fruits:', fruits)
@@ -190,7 +190,7 @@ print(tenth)          # 10
 # Third Example about unpacking list
 countries = ['Germany', 'France','Belgium','Sweden','Denmark','Finland','Norway','Iceland','Estonia']
 gr, fr, bg, sw, *scandic, es = countries
-print(gr)
+print(gr) 
 print(fr)
 print(bg)
 print(sw)
