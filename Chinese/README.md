@@ -61,10 +61,10 @@
 ![30DaysOfPython](.././images/30DaysOfPython_banner3@2x.png)
 
 - [🐍 30 天 Python](#-30-天-python)
-- [📘 第 1 天](#第-1-天)
-  - [欢迎](#欢迎)
+- [📘 第 1 天](#-第-1-天)
+  - [欢迎！](#欢迎)
   - [介绍](#介绍)
-  - [为什么选择 Python?](#为什么选择-python)
+  - [为什么选择 Python？](#为什么选择-python)
   - [环境设置](#环境设置)
     - [安装 Python](#安装-python)
     - [Python Shell](#python-shell)
@@ -74,6 +74,8 @@
     - [Python 语法](#python-语法)
     - [Python 缩进](#python-缩进)
     - [注释](#注释)
+- [示例：单行注释](#示例单行注释)
+- [示例：多行注释，称为文档字符串](#示例多行注释称为文档字符串)
     - [数据类型](#数据类型)
       - [数字](#数字)
       - [字符串](#字符串)
@@ -84,7 +86,7 @@
       - [集合](#集合)
     - [检查数据类型](#检查数据类型)
     - [Python 文件](#python-文件)
-  - [💻 练习 - 第 1 天](#-练习-第-1-天)
+  - [💻 练习 - 第 1 天](#-练习---第-1-天)
     - [练习：等级 1](#练习等级-1)
     - [练习：等级 2](#练习等级-2)
     - [练习：等级 3](#练习等级-3)
@@ -106,7 +108,7 @@ Python 是一种高级编程语言，适用于通用编程。它是一种开源�
 本挑战易于阅读，最初以通俗英语编写，并翻译成中文，既具有吸引力、激励性，又具有很高的挑战性。你需要投入大量时间来完成这个挑战。如果你是通过观看学习效果更好的人，可以观看视频教程，访问 <a href="https://www.youtube.com/channel/UC7PNRuno1rzYPb1xLa4yktw">
 Washera YouTube 频道</a> 你可以从 [Python 对绝对初学者的视频](https://youtu.be/OCCWZheOesI) 开始。订阅频道，在 YouTube 视频中评论你的问题，并积极主动，作者最终会注意到你。
 
-作者喜欢听取你对挑战的意见，分享文章并反馈你对 30DaysOfPython 挑战的看法。你可以在此处留下对文章的反馈：[link](https://testimonial-vdzd.onrender.com/)
+作者喜欢听取你对挑战的意见，分享文章并反馈你对 30DaysOfPython 挑战的看法。你可以在此处留下对文章的反馈：[link](https://www.asabeneh.com/testimonials)
 
 ## 为什么选择 Python？
 
