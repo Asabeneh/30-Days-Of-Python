@@ -26,7 +26,9 @@ print('City: ', city)
 print('Age: ', age)
 print('Married: ', is_married)
 print('Skills: ', skills)
-print('Person information: ', person_info)
+print('Person information: ')
+for i in person_info:
+    print(f"{i} : {person_info.get(i)}")
 
 # Declaring multiple variables in one line
 
