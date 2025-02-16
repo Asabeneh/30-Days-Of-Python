@@ -226,7 +226,7 @@ fruits = set(fruits) # {'mango', 'lemon', 'banana', 'orange'}
 
 ### Joining Sets
 
-We can join two sets using the _union()_ or _update()_ method.
+We can join two sets using the _union()_ or _update()_ method or _|_ symbol .
 
 - Union
   This method returns a new set
@@ -235,7 +235,7 @@ We can join two sets using the _union()_ or _update()_ method.
 # syntax
 st1 = {'item1', 'item2', 'item3', 'item4'}
 st2 = {'item5', 'item6', 'item7', 'item8'}
-st3 = st1.union(st2)
+st3 = st1.union(st2) #st3 = st1 | st2
 ```
 
 **Example:**
@@ -244,6 +244,7 @@ st3 = st1.union(st2)
 fruits = {'banana', 'orange', 'mango', 'lemon'}
 vegetables = {'tomato', 'potato', 'cabbage','onion', 'carrot'}
 print(fruits.union(vegetables)) # {'lemon', 'carrot', 'tomato', 'banana', 'mango', 'orange', 'cabbage', 'potato', 'onion'}
+# or using this : print(fruits | vegetables)
 ```
 
 - Update
@@ -267,13 +268,14 @@ print(fruits) # {'lemon', 'carrot', 'tomato', 'banana', 'mango', 'orange', 'cabb
 
 ### Finding Intersection Items
 
-Intersection returns a set of items which are in both the sets. See the example
+Intersection returns a set of items which are in both the sets or using _&_ symbol. See the example
 
 ```py
 # syntax
 st1 = {'item1', 'item2', 'item3', 'item4'}
 st2 = {'item3', 'item2'}
 st1.intersection(st2) # {'item3', 'item2'}
+# or using thia : st1 & st2
 ```
 
 **Example:**
@@ -286,6 +288,7 @@ whole_numbers.intersection(even_numbers) # {0, 2, 4, 6, 8, 10}
 python = {'p', 'y', 't', 'h', 'o','n'}
 dragon = {'d', 'r', 'a', 'g', 'o','n'}
 python.intersection(dragon)     # {'o', 'n'}
+# python & dragon
 ```
 
 ### Checking Subset and Super Set
@@ -318,14 +321,14 @@ python.issubset(dragon)     # False
 
 ### Checking the Difference Between Two Sets
 
-It returns the difference between two sets.
+It returns the difference between two sets or using _-_ symbol .
 
 ```py
 # syntax
 st1 = {'item1', 'item2', 'item3', 'item4'}
 st2 = {'item2', 'item3'}
-st2.difference(st1) # set()
-st1.difference(st2) # {'item1', 'item4'} => st1\st2
+st2.difference(st1) # set() : st2 - st1
+st1.difference(st2) # {'item1', 'item4'} => st1\st2  : st2 - st1
 ```
 
 **Example:**
@@ -338,19 +341,21 @@ whole_numbers.difference(even_numbers) # {1, 3, 5, 7, 9}
 python = {'p', 'y', 't', 'o','n'}
 dragon = {'d', 'r', 'a', 'g', 'o','n'}
 python.difference(dragon)     # {'p', 'y', 't'}  - the result is unordered (characteristic of sets)
+# python - dragon
 dragon.difference(python)     # {'d', 'r', 'a', 'g'}
+# dragon - python
 ```
 
 ### Finding Symmetric Difference Between Two Sets
 
-It returns the symmetric difference between two sets. It means that it returns a set that contains all items from both sets, except items that are present in both sets, mathematically: (A\B) ∪ (B\A)
+It returns the symmetric difference between two sets. It means that it returns a set that contains all items from both sets, except items that are present in both sets, mathematically: (A\B) ∪ (B\A) or using _^_ symbol
 
 ```py
 # syntax
 st1 = {'item1', 'item2', 'item3', 'item4'}
 st2 = {'item2', 'item3'}
 # it means (A\B)∪(B\A)
-st2.symmetric_difference(st1) # {'item1', 'item4'}
+st2.symmetric_difference(st1) # {'item1', 'item4'} : st2 ^ st1
 ```
 
 **Example:**
@@ -363,6 +368,7 @@ whole_numbers.symmetric_difference(some_numbers) # {0, 6, 7, 8, 9, 10}
 python = {'p', 'y', 't', 'h', 'o','n'}
 dragon = {'d', 'r', 'a', 'g', 'o','n'}
 python.symmetric_difference(dragon)  # {'r', 't', 'p', 'y', 'g', 'a', 'd', 'h'}
+# python ^ dragon
 ```
 
 ### Joining Sets

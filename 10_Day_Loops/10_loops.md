@@ -302,6 +302,10 @@ lst = list(range(0,11,2))
 print(lst) # [0, 2, 4, 6, 8, 10]
 st = set(range(0,11,2))
 print(st) #  {0, 2, 4, 6, 8, 10}
+
+# for backward from start to end 
+lst = list(range(11,0,-2))
+print(lst) # [11,9,7,5,3,1]
 ```
 
 ```py
