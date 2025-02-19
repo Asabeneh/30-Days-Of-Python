@@ -180,11 +180,12 @@ def split_string_decorator(function):
 
     return wrapper
 
+#Decorators will be executed from bottom to top
 @split_string_decorator
 @uppercase_decorator     # order with decorators is important in this case - .upper() function does not work with lists
 def greeting():
     return 'Welcome to Python'
-print(greeting())   # WELCOME TO PYTHON
+print(greeting())   # ['WELCOME', 'TO', 'PYTHON']
 ```
 
 ### Accepting Parameters in Decorator Functions
