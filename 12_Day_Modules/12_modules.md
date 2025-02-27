@@ -201,7 +201,7 @@ print(sqrt(2))            # 1.4142135623730951
 print(pow(2, 3))          # 8.0
 print(floor(9.81))        # 9
 print(ceil(9.81))         # 10
-print(math.log10(100))    # 2
+print(log10(100))    # 2
 
 ```
 
@@ -214,7 +214,7 @@ print(sqrt(2))             # 1.4142135623730951, square root
 print(pow(2, 3))           # 8.0, exponential
 print(floor(9.81))         # 9, rounding to the lowest
 print(ceil(9.81))          # 10, rounding to the highest
-print(math.log10(100))     # 2
+print(log10(100))     # 2
 ```
 
 When we import we can also rename the name of the function.
@@ -251,7 +251,7 @@ print(randint(5, 20)) # it returns a random integer number between [5, 20] inclu
 
 ### Exercises: Level 1
 
-1. Writ a function which generates a six digit/character random_user_id.
+1. Write a function which generates a six digit/character random_user_id.
    ```py
      print(random_user_id());
      '1ee33d'
