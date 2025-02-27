@@ -41,7 +41,7 @@
 
 So far we have seen different Python data types. We usually store our data in different file formats. In addition to handling files, we will also see different file formats(.txt, .json, .xml, .csv, .tsv, .excel) in this section. First, let us get familiar with handling files with common file format(.txt).
 
-File handling is an import part of programming which allows us to create, read, update and delete files. In Python to handle data we use _open()_ built-in function.
+File handling is an important part of programming which allows us to create, read, update and delete files. In Python to handle data we use _open()_ built-in function.
 
 ```py
 # Syntax
