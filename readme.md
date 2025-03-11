@@ -1,5 +1,7 @@
 # 🐍 30 Days Of Python
 
+The last day I studied was 20 or something. Should double check.
+
   <strong>Learn with Asabeneh by joining the upcoming [<em>CODING BOOTCAMP</em>](https://docs.google.com/forms/d/e/1FAIpQLSf0oNIYR9XU1DCctfl-pY36KbWse-SQX5aQaUgetqSinFYnmQ/viewform) </strong>
 
 |# Day | Topics                                                    |
