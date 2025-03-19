@@ -94,4 +94,4 @@ Werkzeug==0.16.0
 
 🎉 恭喜！🎉
 
-[<< 第22天](../22_Day_Web_scraping/22_web_scraping_cn.md) | [第24天 >>](../24_Day_Statistics/24_statistics_cn.md) 
+[<< 第22天](./22_Day_Web_scraping/22_web_scraping_cn.md) | [第24天 >>](./24_Day_Statistics/24_statistics_cn.md) 

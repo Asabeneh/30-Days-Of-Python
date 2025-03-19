@@ -416,4 +416,4 @@ juice: orange
 
 🎉 恭喜！🎉
 
-[<< 第20天](../20_Day_Python_package_manager/20_python_package_manager_cn.md) | [第22天 >>](../22_Day_Web_scraping/22_web_scraping_cn.md) 
+[<< 第20天](./20_Day_Python_package_manager/20_python_package_manager_cn.md) | [第22天 >>](./22_Day_Web_scraping/22_web_scraping_cn.md) 

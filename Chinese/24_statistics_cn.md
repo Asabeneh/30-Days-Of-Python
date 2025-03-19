@@ -586,4 +586,4 @@ print('平均值：', numpy_array_from_list.mean())
 
 🎉 恭喜！🎉
 
-[<< 第23天](../23_Day_Virtual_environment/23_virtual_environment_cn.md) | [第25天 >>](../25_Day_Pandas/25_pandas_cn.md) 
+[<< 第23天](./23_Day_Virtual_environment/23_virtual_environment_cn.md) | [第25天 >>](./25_Day_Pandas/25_pandas_cn.md) 

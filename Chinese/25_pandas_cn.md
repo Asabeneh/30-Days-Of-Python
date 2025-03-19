@@ -548,4 +548,4 @@ print(df[(df['age'] > 20) & (df['在职'] == True)])
 
 🎉 恭喜！🎉
 
-[<< 第24天](../24_Day_Statistics/24_statistics_cn.md) | [第26天 >>](../26_Day_Python_web/26_python_web_cn.md) 
+[<< 第24天](./24_Day_Statistics/24_statistics_cn.md) | [第26天 >>](./26_Day_Python_web/26_python_web_cn.md) 
