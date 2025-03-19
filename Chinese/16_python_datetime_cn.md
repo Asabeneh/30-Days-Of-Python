@@ -189,4 +189,4 @@ t3 = 86 days, 22:56:50
 
 🎉 恭喜！🎉
 
-[<< 第15天](../15_Day_Python_type_errors/15_python_type_errors_cn.md) | [第17天 >>](../17_Day_Exception_handling/17_exception_handling_cn.md) 
+[<< 第15天](./15_Day_Python_type_errors/15_python_type_errors_cn.md) | [第17天 >>](./17_Day_Exception_handling/17_exception_handling_cn.md) 

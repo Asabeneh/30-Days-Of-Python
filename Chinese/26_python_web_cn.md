@@ -814,4 +814,4 @@ asabeneh@Asabeneh:~/Desktop/python_for_web$
 
 🎉 恭喜！🎉
 
-[<< 第25天](../25_Day_Pandas/25_pandas_cn.md) | [第27天 >>](../27_Day_Python_with_mongodb/27_python_with_mongodb_cn.md) 
+[<< 第25天](./25_Day_Pandas/25_pandas_cn.md) | [第27天 >>](./27_Day_Python_with_mongodb/27_python_with_mongodb_cn.md) 
