@@ -7,14 +7,14 @@ print('Multiplication: ', 2 * 3)
 print ('Division: ', 4 / 2)                         # Division in python gives floating number
 print('Division: ', 6 / 2)
 print('Division: ', 7 / 2)
-print('Division without the remainder: ', 7 // 2)   # gives without the floating number or without the remaining
+print('Division in whole number: ', 7 // 2)   # gives without the floating number or without the remaining
 print('Modulus: ', 3 % 2)                           # Gives the remainder
-print ('Division without the remainder: ', 7 // 3)
+print ('Division  in whole number: ', 7 // 3)
 print('Exponential: ', 3 ** 2)                     # it means 3 * 3
 
 # Floating numbers
-print('Floating Number,PI', 3.14)
-print('Floating Number, gravity', 9.81)
+print('Floating Number PI', 3.14)
+print('Floating Number gravity', 9.81)
 
 # Complex numbers
 print('Complex number: ', 1 + 1j)
