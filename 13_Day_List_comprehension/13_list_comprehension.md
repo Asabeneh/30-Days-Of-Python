@@ -108,7 +108,7 @@ To create a lambda function we use _lambda_ keyword followed by a parameter(s), 
 
 ```py
 # syntax
-x = lambda param1, param2, param3: param1 + param2 + param2
+x = lambda param1, param2, param3: param1 + param2 + param3
 print(x(arg1, arg2, arg3))
 ```
 
