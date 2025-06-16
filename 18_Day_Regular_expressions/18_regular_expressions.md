@@ -106,7 +106,7 @@ The string does not string with *I like to teach*, therefore there was no match 
 
 ```py
 # syntax
-re.match(substring, string, re.I)
+re.search(substring, string, re.I)
 # substring is a pattern, string is the text we look for a pattern , re.I is case ignore flag
 ```
 
