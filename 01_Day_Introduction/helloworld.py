@@ -8,7 +8,7 @@ print(3 / 2)   # division(/)
 print(3 ** 2)  # exponential(**)
 print(3 % 2)   # modulus(%)
 print(3 // 2)  # Floor division operator(//)
-
+print (4 % 5)  # modulus(%)2.0
 # Checking data types
 
 print(type(10))                  # Int
