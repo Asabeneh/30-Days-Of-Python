@@ -293,7 +293,9 @@ python.intersection(dragon)     # {'o', 'n'}
 A set can be a subset or super set of other sets:
 
 - Subset: _issubset()_
-- Super set: _issuperset_
+- Super set: _issuperset()_
+
+A superset returns True if a set has every elements of another set 
 
 ```py
 # syntax
