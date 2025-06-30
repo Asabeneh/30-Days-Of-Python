@@ -167,7 +167,7 @@ print(challenge.find('th')) # 0
 challenge = 'Thirty'
 print(challenge.isdigit()) # False
 challenge = '30'
-print(challenge.isdigit())   # True
+print(challenge.digit())   # True
 
 # isdecimal():Checks decimal characters
 

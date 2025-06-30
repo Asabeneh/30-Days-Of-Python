@@ -215,7 +215,7 @@ print(result) # 'HTML# CSS# JavaScript# React'
 # strip(): Removes both leading and trailing characters
 
 challenge = ' thirty days of python '
-print(challenge.strip('y')) # 5
+print("he",challenge.strip('y')) # 5
 
 # replace(): Replaces substring inside
 

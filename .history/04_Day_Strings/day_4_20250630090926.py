@@ -235,7 +235,7 @@ print(challenge.title()) # Thirty Days Of Python
 # swapcase(): Checks if String Starts with the Specified String
   
 challenge = 'thirty days of python'
-print(challenge.swapcase())   # THIRTY DAYS OF PYTHON
+print("ed",challenge.swapcase())   # THIRTY DAYS OF PYTHON
 challenge = 'Thirty Days Of Python'
 print(challenge.swapcase())  # tHIRTY dAYS oF pYTHON
 
