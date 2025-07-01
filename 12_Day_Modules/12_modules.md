@@ -251,7 +251,7 @@ print(randint(5, 20)) # it returns a random integer number between [5, 20] inclu
 
 ### Exercises: Level 1
 
-1. Writ a function which generates a six digit/character random_user_id.
+1. Write a function which generates a six digit/character random_user_id.
    ```py
      print(random_user_id());
      '1ee33d'
