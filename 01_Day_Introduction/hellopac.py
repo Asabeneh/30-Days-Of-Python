@@ -2,12 +2,12 @@
 # Day 1 of a 30 day Python challenge
 # Exercise #2
 
-# question 1
+# Question 1
 import sys
 print(("You are using Python version ") + (str(sys.version_info.major)) + "." +(str(sys.version_info.minor)))   # first question
 print()
 
-# start 2nd question
+# Question 2
 print("3 + 4 = " + str((3 + 4)))        
 print("3 - 4 = " + str((3 - 4)))
 print("3 * 4 = " + str((3 * 4))) 
