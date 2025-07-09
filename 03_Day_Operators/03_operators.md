@@ -287,7 +287,7 @@ The perimeter of the triangle is 12
 18. Check if the floor division of 7 by 3 is equal to the int converted value of 2.7.
 19. Check if type of '10' is equal to type of 10
 20. Check if int('9.8') is equal to 10
-21. Writ a script that prompts the user to enter hours and rate per hour. Calculate pay of the person?
+21. Write a script that prompts the user to enter hours and rate per hour. Calculate pay of the person?
 
 ```py
 Enter hours: 40
