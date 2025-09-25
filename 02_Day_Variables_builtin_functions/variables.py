@@ -1,4 +1,4 @@
-
+#Day 2 of Python 30days
 # Variables in Python
 
 first_name = 'Asabeneh'
