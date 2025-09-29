@@ -65,6 +65,7 @@ Our amazing sponsors for supporting my open-source contribution and the **30 Day
   <h3>Dictation that understands code</h3>
   <p><em>Ship 4x faster with developer-first dictation that works in every app.</em></p>
 </div>
+
 ---
 
 ### 🙌 Become a Sponsor
@@ -100,7 +101,6 @@ Every contribution, big or small, makes a huge difference. Thank you for your su
 - [🐍 30 Days Of Python](#-30-days-of-python)
   - [💖 Sponsors](#-sponsors)
     - [Current Sponsor](#current-sponsor)
-  - [](#)
     - [🙌 Become a Sponsor](#-become-a-sponsor)
 - [📘 Day 1](#-day-1)
   - [Welcome](#welcome)
