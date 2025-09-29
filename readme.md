@@ -1,7 +1,5 @@
 # 🐍 30 Days Of Python
 
-  <strong>Learn with Asabeneh by joining the upcoming [<em>CODING BOOTCAMP</em>](https://docs.google.com/forms/d/e/1FAIpQLSf0oNIYR9XU1DCctfl-pY36KbWse-SQX5aQaUgetqSinFYnmQ/viewform) </strong>
-
 |# Day | Topics                                                    |
 |------|:---------------------------------------------------------:|
 | 01  |  [Introduction](./readme.md)|
@@ -35,14 +33,34 @@
 | 29 |  [Building API](./29_Day_Building_API/29_building_API.md)|
 | 30 |  [Conclusions](./30_Day_Conclusions/30_conclusions.md)|
 
-  <strong>Learn with Asabeneh by joining the upcoming [<em>CODING BOOTCAMP</em>](https://docs.google.com/forms/d/e/1FAIpQLSf0oNIYR9XU1DCctfl-pY36KbWse-SQX5aQaUgetqSinFYnmQ/viewform) </strong>
+<small>🧡🧡🧡 HAPPY CODING 🧡🧡🧡</small>
 
-🧡🧡🧡 HAPPY CODING 🧡🧡🧡
+## 💖 Sponsors
 
-<div>
-<small>Support the <strong>author</strong> to create more educational materials</small> <br />  
-<a href = "https://www.paypal.me/asabeneh"><img src='./images/paypal_lg.png' alt='Paypal Logo' style="width:10%"/></a>
-</div>
+Our amazing sponsors for supporting my open-source contribution and the **30 Days of Challenge** series!
+
+### Current Sponsor
+
+<p align="center">
+  <a href="https://ref.wisprflow.ai/MPMzRGE" target="_blank">
+    <img src="./images/wispr_flow_logo.svg" alt="Wispr Flow Logo"  title = "Wispr Flow" />
+  </a>
+</p>
+
+<h3 align="center">Dictation that understands code</h3>
+<em align="center" style="text-align:center;">
+  Ship 4x faster with developer-first dictation that works in every app.
+</em>
+
+---
+
+### 🙌 Become a Sponsor
+
+You can support this project by becoming a sponsor on **[GitHub Sponsors](https://github.com/sponsors/asabeneh)** or through [PayPal](https://www.paypal.me/asabeneh).
+
+Every contribution, big or small, makes a huge difference. Thank you for your support! 🌟
+
+---
 
 <div align="center">
   <h1> 30 Days Of Python: Day 1 - Introduction</h1>
@@ -67,6 +85,9 @@
 ![30DaysOfPython](./images/30DaysOfPython_banner3@2x.png)
 
 - [🐍 30 Days Of Python](#-30-days-of-python)
+  - [💖 Sponsors](#-sponsors)
+    - [Current Sponsor](#current-sponsor)
+    - [🙌 Become a Sponsor](#-become-a-sponsor)
 - [📘 Day 1](#-day-1)
   - [Welcome](#welcome)
   - [Introduction](#introduction)
@@ -105,7 +126,7 @@ If you would like to actively engage in the challenge, you may join the [30DaysO
 
 ## Introduction
 
-Python is a high-level programming language for general-purpose programming. It is an open source, interpreted, objected-oriented programming language. Python was created by a Dutch programmer, Guido van Rossum. The name of the Python programming language was derived from a British sketch comedy series, *Monty Python's Flying Circus*.  The first version was released on February 20, 1991. This 30 days of Python challenge will help you learn the latest version of Python, Python 3 step by step. The topics are broken down into 30 days, where each day contains several topics with easy-to-understand explanations, real-world examples, and many hands on exercises and projects.
+Python is a high-level programming language for general-purpose programming. It is an open source, interpreted, objected-oriented programming language. Python was created by a Dutch programmer, Guido van Rossum. The name of the Python programming language was derived from a British sketch comedy series, _Monty Python's Flying Circus_.  The first version was released on February 20, 1991. This 30 days of Python challenge will help you learn the latest version of Python, Python 3 step by step. The topics are broken down into 30 days, where each day contains several topics with easy-to-understand explanations, real-world examples, and many hands on exercises and projects.
 
 This challenge is designed for beginners and professionals who want to learn python programming language. It may take 30 to 100 days to complete the challenge. People who actively participate in the telegram group have a high probability of completing the challenge.
 
