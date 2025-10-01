@@ -35,12 +35,6 @@
 
 <small>🧡🧡🧡 HAPPY CODING 🧡🧡🧡</small>
 
-## 💖 Sponsors
-
-Our amazing sponsors for supporting my open-source contribution and the **30 Days of Challenge** series!
-
-### Current Sponsor
-
 ---
 <div>
 <h2>💖 Sponsors</h2>
@@ -99,8 +93,6 @@ Every contribution, big or small, makes a huge difference. Thank you for your su
 ![30DaysOfPython](./images/30DaysOfPython_banner3@2x.png)
 
 - [🐍 30 Days Of Python](#-30-days-of-python)
-  - [💖 Sponsors](#-sponsors)
-    - [Current Sponsor](#current-sponsor)
     - [🙌 Become a Sponsor](#-become-a-sponsor)
 - [📘 Day 1](#-day-1)
   - [Welcome](#welcome)
