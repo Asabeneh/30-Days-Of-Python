@@ -1,5 +1,5 @@
 
-# Single line comment
+# Single line String
 letter = 'P'                # A string could be a single character or a bunch of texts
 print(letter)               # P
 print(len(letter))          # 1
@@ -164,11 +164,10 @@ print(challenge.find('y'))  # 5
 print(challenge.find('th')) # 0
 
 # isdigit(): Checks Digit Characters
-
 challenge = 'Thirty'
 print(challenge.isdigit()) # False
 challenge = '30'
-print(challenge.digit())   # True
+print(challenge.isdigit())   # True
 
 # isdecimal():Checks decimal characters
 
