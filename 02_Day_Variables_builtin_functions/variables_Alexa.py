@@ -11,6 +11,8 @@ year = 2025
 is_married = False
 is_true = True
 is_light_on = True
-demographics = { 'full_name',
-'country',
-'city' }
+demographics = {
+    'full_name': full_name,
+    'country': country,
+    'city': city
+}
