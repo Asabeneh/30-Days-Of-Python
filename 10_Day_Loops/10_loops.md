@@ -126,14 +126,15 @@ while condition:
 ```py
 count = 0
 while count < 5:
+    count = count + 1
     if count == 3:
         count = count + 1
         continue
     print(count)
-    count = count + 1
+    
 ```
 
-The above while loop only prints 0, 1, 2 and 4 (skips 3).
+The above while loop only prints 1, 2, 4 and 5 (skips 3).
 
 ### For Loop
 
