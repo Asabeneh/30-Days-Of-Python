@@ -45,3 +45,10 @@ print(is_light_on) #bool has no len
 
 print(demographics)
 print(len(demographics))
+
+#assigning int values to find sum
+num_one = 5
+num_two = 4
+total_sum = num_one + num_two
+diff = num_one - num_two
+product = num_one * num_two
