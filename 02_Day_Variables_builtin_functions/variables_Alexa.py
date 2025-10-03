@@ -8,3 +8,9 @@ country = 'United States'
 city = 'Salt Lake City'
 age = 37
 year = 2025
+is_married = False
+is_true = True
+is_light_on = True
+demographics = { 'full_name',
+'country',
+'city' }
