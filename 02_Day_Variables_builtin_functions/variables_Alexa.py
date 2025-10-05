@@ -1,6 +1,7 @@
 #Day 2: 30 days of python programming 
 
 import math
+import keyword
 
 first_name = 'Alexa'
 last_name = 'Garcia'
@@ -80,7 +81,7 @@ user_country = input("Country")
 user_age = int(input("Age"))
 
 #Run help('keywords') in Python shell or in your file to check for the Python reserved words or keywords
-import keyword
+
 print(keyword.kwlist)
 #['False', 'None', 'True', 'and', 'as', 'assert', 'async', 'await', 'break', 
 'class', 'continue', 'def', 'del', 'elif', 'else', 'except', 'finally', 'for', 
