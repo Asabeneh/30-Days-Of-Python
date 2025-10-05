@@ -3,6 +3,7 @@
 import math
 import keyword
 
+
 first_name = 'Alexa'
 last_name = 'Garcia'
 full_name = first_name + " " + last_name
@@ -62,28 +63,28 @@ floor_division = num_one // num_two
 
 #Calculate the area of a circle and assign the value to a variable name of area_of_circle
 radius = 30
-area_of_circle = math.pi (radius ** 2)
+area_of_circle = math.pi * (radius ** 2)
 #Calculate the circumference of a circle and assign the value to a variable name of circum_of_circle
 circum_of_circle = 2 * math.pi * radius
 
 ##Take radius as user input and calculate the area
 # Get radius as user input
-radius = float(input("Enter the radius of the circle: "))
+radius = float(input("Enter the radius of the circle:" + " "))
 # Calculate the area
 area = math.pi * (radius ** 2)
 # Display the result
 print(f"The area of the circle with radius {radius} is: {area}")
 
 #Use the built-in input function to get first name, last name, country and age from a user and store the value to their corresponding variable names
-user_first_name = input("First Name")
-user_last_name = input("Last Name)
-user_country = input("Country")
-user_age = int(input("Age"))
+user_first_name = input("First Name:" + " ")
+user_last_name = input("Last Name:" + " ")
+user_country = input("Country:" + " ")
+user_age = int(input("Age:" + " "))
 
 #Run help('keywords') in Python shell or in your file to check for the Python reserved words or keywords
 
 print(keyword.kwlist)
 #['False', 'None', 'True', 'and', 'as', 'assert', 'async', 'await', 'break', 
-'class', 'continue', 'def', 'del', 'elif', 'else', 'except', 'finally', 'for', 
-'from', 'global', 'if', 'import', 'in', 'is', 'lambda', 'nonlocal', 'not', 'or', 
-'pass', 'raise', 'return', 'try', 'while', 'with', 'yield']
+#'class', 'continue', 'def', 'del', 'elif', 'else', 'except', 'finally', 'for', 
+#'from', 'global', 'if', 'import', 'in', 'is', 'lambda', 'nonlocal', 'not', 'or', 
+#'pass', 'raise', 'return', 'try', 'while', 'with', 'yield']
