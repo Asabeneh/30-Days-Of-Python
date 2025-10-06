@@ -32,6 +32,7 @@ print(j)
 
 #Complex
 k = (5 - 5j)
+print(k)
 
 #String
 l = "What a wounderful world"
@@ -51,6 +52,9 @@ print(o)
 
 #Set
 p = {'jason', 23, 5 == 5}
+print(p)
     
 #Dictionary data type
 q_dict = {"k": (5 - 5j), "l": "What a wonderful world"}
+print(q_dict)
+
