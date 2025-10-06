@@ -1,18 +1,56 @@
-#Check the data types of the following data:
-10
-9.8
-3.14
-4 - 4j
-['Asabeneh', 'Python', 'Finland']
-Your name
-Your family name
-Your country
+a = type(10)
+print(a)
 
+b = type(9.8)
+print(b)
 
-#Exercise: Level 2
-Create a folder named day_1 inside 30DaysOfPython folder. Inside day_1 folder, create a python file helloworld.py and repeat questions 1, 2, 3 and 4. Remember to use print() when you are working on a python file. Navigate to the directory where you have saved your file, and run it.
+c = type(3.14)
+print(c)
 
-  
-#Exercise: Level 3
-Write an example for different Python data types such as Number(Integer, Float, Complex), String, Boolean, List, Tuple, Set and Dictionary.
-Find an Euclidian distance between (2, 3) and (10, 8)
+d = type(4 - 4j)
+print(d)
+
+e = type(['Asabeneh', 'Python', 'Finland'])
+print(e)
+
+f = type('Your name')
+print(f)
+
+g = type('Your family name')
+print(g)
+
+h = type('Your country')
+print(h)
+
+#Integer
+i = 30
+print(i)
+
+#Float
+j = 5.5
+print(j)
+
+#Complex
+k = (5 - 5j)
+
+#String
+l = "What a wounderful world"
+print(l)
+
+#Boolean
+m = 5 < 4
+print(m)
+
+#List
+n = ['Alexa', 'Giraffe', 300]
+print(n)
+
+#Tuple
+o = ('banana', 'kiwi', 'strawberry')
+print(o)
+
+#Set
+p = {'jason', 23, 5 == 5}
+    
+#Dictionary data type
+q_dict = {"k": (5 - 5j), "l": "What a wounderful world"}
