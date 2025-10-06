@@ -53,4 +53,4 @@ print(o)
 p = {'jason', 23, 5 == 5}
     
 #Dictionary data type
-q_dict = {"k": (5 - 5j), "l": "What a wounderful world"}
+q_dict = {"k": (5 - 5j), "l": "What a wonderful world"}
