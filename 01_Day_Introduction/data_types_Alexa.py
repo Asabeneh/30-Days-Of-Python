@@ -58,3 +58,16 @@ print(p)
 q_dict = {"k": (5 - 5j), "l": "What a wonderful world"}
 print(q_dict)
 
+#Find an Euclidian distance between (2, 3) and (10, 8)
+
+import math
+
+# Define the two points (p and q) as lists of coordinates
+p = [2, 3]    # Represents the point (2, 3)
+q = [10, 8]   # Represents the point (10, 8)
+
+# Calculate the Euclidean distance
+distance = math.dist(p, q)
+
+# Print the result
+print(distance)
