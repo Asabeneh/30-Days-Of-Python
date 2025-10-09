@@ -1,13 +1,54 @@
 #Concatenate the string 'Thirty', 'Days', 'Of', 'Python' to a single string, 'Thirty Days Of Python'.
+words = ['Thirty', 'Days', 'Of', 'Python']
+result = " ".join(words)
+print(result)
+
+
 #Concatenate the string 'Coding', 'For' , 'All' to a single string, 'Coding For All'.
+words = ['Coding', 'For' , 'All']
+result = " ".join(words)
+print(result)
+
+
 Declare a variable named company and assign it to an initial value "Coding For All".
-Print the variable company using print().
-Print the length of the company string using len() method and print().
-Change all the characters to uppercase letters using upper() method.
-Change all the characters to lowercase letters using lower() method.
-Use capitalize(), title(), swapcase() methods to format the value of the string Coding For All.
-Cut(slice) out the first word of Coding For All string.
-Check if Coding For All string contains a word Coding using the method index, find or other methods.
+company = 'Coding For All'
+print (company),
+print len(company),
+print upper (company),
+print lower(company),
+company = text.capitalization
+print (company)
+company = text.title
+print (company)
+company = text.swapcase
+
+
+#Cut(slice) out the first word of Coding For All string.
+###text = "Python Programming"
+
+# Slice from index 0 to 6 (excluding 6)
+      #print(text[0:6])  # Output: Python
+
+# Slice from index 7 to end
+      #print(text[7:])   # Output: Programming
+
+# Slice with step
+      #print(text[::2])  # Output: Pto rgamn
+
+# Reverse the string
+      #print(text[::-1]) # Output: gnimmargorP nohtyP
+###
+text = 'Coding for all'
+Slice from index 0 to 6
+ptint(text[0:6]
+
+
+#Check if Coding For All string contains a word Coding using the method index, find or other methods.
+text = 'Coding For All'
+if 'Coding' in text:
+    print("Found using 'in'")
+
+  
 Replace the word coding in the string 'Coding For All' to Python.
 Change Python for Everyone to Python for All using the replace method or other methods.
 Split the string 'Coding For All' using space as the separator (split()) .
