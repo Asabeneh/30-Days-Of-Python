@@ -341,4 +341,4 @@ ZeroDivisionError: division by zero
 
 🎉 恭喜！🎉
 
-[<< 第14天](./14_higher_order_functions.md) | [第16天 >>](./16_python_datetime_cn.md) 
+[<< 第 14 天](./14_higher_order_functions.md) | [第 16 天 >>](./16_python_datetime_cn.md) 

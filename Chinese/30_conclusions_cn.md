@@ -19,4 +19,4 @@ http://thirtydayofpython-api.herokuapp.com/feedback
 
 🎉 恭喜！🎉
 
-[<< 第29天](./29_Day_Building_API/29_building_API_cn.md) 
+[<< 第 29 天](./29_building_API_cn.md) 
