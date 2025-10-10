@@ -49,9 +49,20 @@ if 'Coding' in text:
     print("Found using 'in'")
 
   
-Replace the word coding in the string 'Coding For All' to Python.
+#Replace the word coding in the string 'Coding For All' to Python.
+text 'Coding for all'
+replace_text = text.replace ('Coding', 'Python')
+print(replace_text)
+
+
 Change Python for Everyone to Python for All using the replace method or other methods.
+text 'Python for Everyone'
+replace_python = text.replace ('Python', 'All')
+print(replace_python
+
 Split the string 'Coding For All' using space as the separator (split()) .
+
+
 "Facebook, Google, Microsoft, Apple, IBM, Oracle, Amazon" split the string at the comma.
 What is the character at index 0 in the string Coding For All.
 What is the last index of the string Coding For All.
