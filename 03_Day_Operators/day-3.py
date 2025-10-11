@@ -126,3 +126,5 @@ print(not not False) # False
 
 sample = 3;
 print(sample ** sample);
+
+print(3 > 2 and 4 > 3)
