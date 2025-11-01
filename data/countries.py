@@ -193,3 +193,9 @@ countries = [
   'Zambia',
   'Zimbabwe',
 ];
+mylist= []
+for x in countries :
+  if "land" in x:
+    mylist.append(x)
+print(x)
+  
