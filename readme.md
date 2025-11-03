@@ -44,7 +44,7 @@
 <h3>Current Sponsor</h3>
 <hr />
 <div align="center">
-  <a href="https://ref.wisprflow.ai/MPMzRGE" target="_blank">
+  <a href="https://ref.wisprflow.ai/MPMzRGE" target="_blank" rel="noopener noreferrer">
     <picture>
       <!-- Dark mode -->
       <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Asabeneh/asabeneh/master/images/Wispr_Flow-Logo-white.png" />
@@ -56,8 +56,17 @@
     </picture>
   </a>
 
-  <h3>Dictation that understands code</h3>
-  <p><em>Ship 4x faster with developer-first dictation that works in every app.</em></p>
+  <h1>
+    <a href="https://ref.wisprflow.ai/MPMzRGE" target="_blank" rel="noopener noreferrer">
+      Talk to code, stay in the Flow.
+    </a>
+  </h1>
+
+  <h2>
+    <a href="https://ref.wisprflow.ai/MPMzRGE" target="_blank" rel="noopener noreferrer">
+      Flow is built for devs who live in their tools. Speak and give more context, get better results.
+    </a>
+  </h2>
 </div>
 
 ---
