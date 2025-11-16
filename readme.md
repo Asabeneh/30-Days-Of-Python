@@ -250,7 +250,7 @@ Let us do some maths first before we write any Python code:
 
 - 2 + 3 is 5
 - 3 - 2 is 1
-- 3 \* 2 is 6
+- 3 * 2 is 6  
 - 3 / 2 is 1.5
 - 3 ** 2 is the same as 3 * 3
 

@@ -12,7 +12,7 @@
 <small> Second Edition: July, 2021</small>
 </sub>
 
-</div>
+
 </div>
 
 [<< Day 12](../12_Day_Modules/12_modules.md) | [Day 14>>](../14_Day_Higher_order_functions/14_higher_order_functions.md)
