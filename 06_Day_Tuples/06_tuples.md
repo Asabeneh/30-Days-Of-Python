@@ -79,7 +79,7 @@ len(tpl)
 
 - Positive Indexing
   Similar to the list data type we use positive or negative indexing to access tuple items.
-  ![Accessing tuple items](../images/tuples_incdex.png)
+  ![Accessing tuple items](../images/tuples_index.png)
 
   ```py
   # Syntax
