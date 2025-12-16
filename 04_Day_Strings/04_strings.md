@@ -1,3 +1,16 @@
+---
+jupyter:
+  jupytext:
+    cell_metadata_filter: -all
+    custom_cell_magics: kql
+    main_language: sh
+    text_representation:
+      extension: .md
+      format_name: markdown
+      format_version: '1.3'
+      jupytext_version: 1.11.2
+---
+
 <div align="center">
   <h1> 30 Days Of Python: Day 4 - Strings</h1>
   <a class="header-badge" target="_blank" href="https://www.linkedin.com/in/asabeneh/">
