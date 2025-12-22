@@ -1,0 +1,1 @@
+select 1*2 as product :
