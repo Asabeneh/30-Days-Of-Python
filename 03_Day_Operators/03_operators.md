@@ -174,6 +174,7 @@ print(weight, 'N')                         # Adding unit to the weight
 mass = 75 # in Kg
 volume = 0.075 # in cubic meter
 density = mass / volume # 1000 Kg/m^3
+print(density, 'Kg/m^3') # Adding unit to the density
 
 ```
 
