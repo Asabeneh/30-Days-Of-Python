@@ -99,8 +99,8 @@ print(numpy_array_from_list) # array([1, 2, 3, 4, 5])
 # Python列表
 python_list = [1,2,3,4,5]
 
-numy_array_from_list2 = np.array(python_list, dtype=float)
-print(numy_array_from_list2) # array([1., 2., 3., 4., 5.])
+numpy_array_from_list2 = np.array(python_list, dtype=float)
+print(numpy_array_from_list2) # array([1., 2., 3., 4., 5.])
 ```
 
 ### 创建布尔型NumPy数组
