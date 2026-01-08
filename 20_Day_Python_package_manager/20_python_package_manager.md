@@ -29,7 +29,6 @@
     - [Reading from URL](#reading-from-url)
     - [Creating a Package](#creating-a-package)
     - [Further Information About Packages](#further-information-about-packages)
-  - [Exercises: Day 20](#exercises-day-20)
 
 # 📘 Day 20
 
@@ -37,20 +36,19 @@
 
 ### What is PIP ?
 
-PIP stands for Preferred installer program. We use _pip_ to install different Python packages.
-Package is a Python module that can contain one or more modules or other packages. A module or modules that we can install to our application is a package.
-In programming, we do not have to write every utility program, instead we install packages and import them to our applications.
+PIP មានន័យថា កម្មវិធី Installer Preferred ។ យើងប្រើ _pip_ ដើម្បីដំឡើងកម្មវិធី Python ផ្សេងៗ
+Package គឺជាម៉ូឌុល Python ដែលអាចមានមួយឬច្រើនម៉ូឌុលឬឯកសារផ្សេងទៀត។ ម៉ូឌុល ឬ ម៉ូឌុល ដែល យើង អាច ដំឡើង ទៅលើ កម្មវិធី របស់ យើង គឺជា កញ្ចប់ ។
+ក្នុងការរៀបចំកម្មវិធី យើងមិនចាំបាច់សរសេរកម្មវិធី Utility ទាំងអស់ទេ ជំនួសវិញយើងបានដំឡើង Package និងimportវាទៅក្នុងកម្មវិធីរបស់យើង
 
 ### Installing PIP
 
-If you did not install pip, let us install it now. Go to your terminal or command prompt and copy and paste this:
+បើសិនជាអ្នកមិនបានដំឡើង pip សូមឲ្យយើងដំឡើងវាឥឡូវនេះ ចូលទៅក្នុង Terminal ឬ Command Prompt របស់អ្នក ហើយ Copy និង paste នេះ:
 
 ```sh
 asabeneh@Asabeneh:~$ pip install pip
 ```
 
-Check if pip is installed by writing
-
+ត្រួតពិនិត្យថា pip ត្រូវបានដំឡើងដោយសរសេរ
 ```sh
 pip --version
 ```
@@ -60,19 +58,19 @@ asabeneh@Asabeneh:~$ pip --version
 pip 21.1.3 from /usr/local/lib/python3.7/site-packages/pip (python 3.9.6)
 ```
 
-As you can see, I am using pip version 21.1.3, if you see some number a bit below or above that, means you have pip installed.
+ដូច ដែល អ្នក អាច មើល បាន ខ្ញុំ កំពុង ប្រើ Pip Version 21.1.3 ប្រសិន បើ អ្នក ឃើញ ចំនួន ណាមួយ នៅ ខាង ក្រោម ឬ ខាង លើ នោះ មាន ន័យ ថា អ្នក មាន Pip បាន ដំឡើង
 
-Let us check some of the packages used in the Python community for different purposes. Just to let you know that there are lots of packages available for use with different applications.
+សូមយើងពិនិត្យមើលនូវ Package មួយចំនួនដែលត្រូវបានប្រើនៅក្នុងសហគមន៍ Python សម្រាប់គោលដៅផ្សេងៗ គ្រាន់តែអោយអ្នកដឹងថា មានច្រើននូវកម្មវិធីសម្រាប់ប្រើជាមួយកម្មវិធីផ្សេងៗ
 
 ### Installing packages using pip
 
-Let us try to install _numpy_, called numeric python. It is one of the most popular packages in machine learning and data science community.
+សូមព្យាយាមដំឡើង _numpy_ ហៅថា numeric python វាគឺជាកម្មវិធីមួយដែលពេញនិយមបំផុតនៅក្នុងការសិក្សាពីម៉ាស៊ីន និងសហគមន៍វិទ្យាសាស្ត្រទិន្នន័យ។
 
-- NumPy is the fundamental package for scientific computing with Python. It contains among other things:
-  - a powerful N-dimensional array object
-  - sophisticated (broadcasting) functions
-  - tools for integrating C/C++ and Fortran code
-  - useful linear algebra, Fourier transform, and random number capabilities
+- NumPy គឺជាកញ្ចប់មូលដ្ឋានសម្រាប់គណនេយ្យវិទ្យា ជាមួយ Python ។ ក្នុងនោះរួមមាន៖
+- a powerful N-dimensional array object
+- មុខងារ (ការផ្សាយ) ដែលមានលក្ខណៈខ្ពស់
+- ឧបករណ៍សម្រាប់បញ្ចូលកូដ C/C++ និង Fortran
+- algebra linear ដែលមានប្រសិទ្ធភាព ប្តូរ Fourier និងសមត្ថភាពចំនួនលេចលឺ
 
 ```sh
 asabeneh@Asabeneh:~$ pip install numpy
@@ -101,7 +99,7 @@ array([3, 4, 5, 6, 7])
 >>>
 ```
 
-Pandas is an open source, BSD-licensed library providing high-performance, easy-to-use data structures and data analysis tools for the Python programming language. Let us install the big brother of numpy, _pandas_:
+Pandas គឺជាបណ្ណាល័យដែលមានលិខិតអនុញ្ញាតដោយ BSD ដែលមានប្រភពបើកទូលាយ ដែលផ្តល់នូវលក្ខណៈសម្បត្តិខ្ពស់ និងងាយស្រួលក្នុងការប្រើប្រាស់ និងឧបករណ៍វិភាគទិន្នន័យសម្រាប់ភាសា Python ។ សូមឲ្យយើងដំឡើងបងធំរបស់ Numpy, _pandas_:
 
 ```sh
 asabeneh@Asabeneh:~$ pip install pandas
@@ -114,10 +112,9 @@ Python 3.9.6 (default, Jun 28 2021, 15:26:21)
 Type "help", "copyright", "credits" or "license" for more information.
 >>> import pandas
 ```
+ផ្នែកនេះមិនមែនជាអំពី numpy ឬ pandas ទេយើងកំពុងតែព្យាយាមរៀនសូត្រអំពីរបៀបដំឡើងឯកសារ និងរបៀបនាំចូលវា។ ប្រសិនបើ វា ត្រូវការ យើង នឹង និយាយ អំពី កញ្ចប់ ផ្សេងគ្នា នៅក្នុង ផ្នែក ផ្សេងទៀត ។
 
-This section is not about numpy nor pandas, here we are trying to learn how to install packages and how to import them. If it is needed, we will talk about different packages in other sections.
-
-Let us import a web browser module, which can help us to open any website. We do not need to install this module, it is already installed by default with Python 3. For instance if you like to open any number of websites at any time or if you like to schedule something, this _webbrowser_ module can be used.
+សូមយើងនាំចូលម៉ូឌុល Browser ដែលអាចជួយយើងបើកគេហទំព័រណាមួយ។ យើងមិនចាំបាច់ដំឡើងម៉ូឌុលនេះទេ វាត្រូវបានដំឡើងដោយ default ជាមួយ Python 3 ។ ឧទាហរណ៍ ប្រសិនបើអ្នកចង់បើកគេហទំព័រចំនួនណាមួយក្នុងពេលណាមួយ ឬប្រសិនបើអ្នកចង់កំណត់ពេលអ្វីមួយនេះ _webbrowser_ module អាចត្រូវបានប្រើ។
 
 ```py
 import webbrowser # web browser module to open websites
@@ -137,7 +134,7 @@ for url in url_lists:
 
 ### Uninstalling Packages
 
-If you do not like to keep the installed packages, you can remove them using the following command.
+ប្រសិនបើលោកអ្នកមិនចង់រក្សាឯកសារដែលបានដំឡើងនោះទេ លោកអ្នកអាចលុបវាដោយប្រើបញ្ជាខាងក្រោម។
 
 ```sh
 pip uninstall packagename
@@ -145,7 +142,7 @@ pip uninstall packagename
 
 ### List of Packages
 
-To see the installed packages on our machine. We can use pip followed by list.
+ដើម្បីមើលឯកសារដែលបានដំឡើងនៅលើម៉ាស៊ីនរបស់យើង។ យើងអាចប្រើ pip តាមដានដោយបញ្ជី
 
 ```sh
 pip list
@@ -153,8 +150,7 @@ pip list
 
 ### Show Package
 
-To show information about a package
-
+ដើម្បីបង្ហាញព័ត៌មានអំពីកញ្ចប់
 ```sh
 pip show packagename
 ```
@@ -173,8 +169,7 @@ Requires: python-dateutil, pytz, numpy
 Required-by:
 ```
 
-If we want even more details, just add --verbose
-
+ប្រសិនបើយើងចង់បានព័ត៌មានបន្ថែមទៀត សូមបន្ថែម --verbose
 ```sh
 asabeneh@Asabeneh:~$ pip show --verbose pandas
 Name: pandas
@@ -209,7 +204,7 @@ Entry-points:
 
 ### PIP Freeze
 
-Generate installed Python packages with their version and the output is suitable to use it in a requirements file. A requirements.txt file is a file that should contain all the installed Python packages in a Python project.
+បង្កើតឯកសារ Python ដែលបានដំឡើង ជាមួយនឹងវីសេរីរបស់វា ហើយ output គឺសមស្របសម្រាប់ប្រើវានៅក្នុងឯកសារតម្រូវការ។ ឯកសារ requirements.txt គឺជាឯកសារដែលត្រូវមានឯកសារ Python ទាំងអស់ដែលបានដំឡើងនៅក្នុងគម្រោង Python ។
 
 ```sh
 asabeneh@Asabeneh:~$ pip freeze
@@ -223,9 +218,8 @@ Sphinx==1.2.2
 The pip freeze gave us the packages used, installed and their version. We use it with requirements.txt file for deployment.
 
 ### Reading from URL
-
-By now you are familiar with how to read or write on a file located on you local machine. Sometimes, we would like to read from a website using url or from an API.
-API stands for Application Program Interface. It is a means to exchange structured data between servers primarily as json data. To open a network connection, we need a package called _requests_ - it allows to open a network connection and to implement CRUD(create, read, update and delete) operations. In this section, we will cover only reading ore getting part of a CRUD.
+ឥឡូវនេះអ្នកបានស្គាល់អំពីរបៀបអានឬសរសេរទៅលើឯកសារដែលស្ថិតនៅលើម៉ាស៊ីនក្នុងស្រុករបស់អ្នក។ ពេលខ្លះយើងចង់អានពីគេហទំព័រមួយ ដោយប្រើ url ឬពី API
+API មានន័យថា Application Program Interface (ប្រព័ន្ធប្រតិបត្តិការកម្មវិធី) ។ វាគឺជាមធ្យោបាយមួយដើម្បីផ្លាស់ប្តូរទិន្នន័យដែលមានលក្ខណៈរចនាសម្ព័ន្ធរវាង server ជាពិសេសជាទិន្នន័យ json ។ ដើម្បីបើកការភ្ជាប់ប្រព័ន្ធប្រតិបត្តិការ, យើងត្រូវការឯកសារមួយដែលហៅថា _requests_ - វាអនុញ្ញាតឱ្យបើកការភ្ជាប់ប្រព័ន្ធប្រតិបត្តិការនិងអនុវត្ត CRUD (បង្កើត, អាន, បច្ចុប្បន្នភាពនិងលុប) ប្រតិបត្តិការ។ នៅក្នុងផ្នែកនេះយើងនឹងពិនិត្យមើលតែការអានដែកដែលទទួលបានផ្នែកនៃ CRUD ។
 
 Let us install _requests_:
 
@@ -233,12 +227,14 @@ Let us install _requests_:
 asabeneh@Asabeneh:~$ pip install requests
 ```
 
-We will see _get_, _status_code_, _headers_, _text_ and _json_ methods in _requests_ module:
-  - _get()_: to open a network and fetch data from url - it returns a response object
-  - _status_code_: After we fetched data, we can check the status of the operation (success, error, etc)
-  - _headers_: To check the header types
-  - _text_: to extract the text from the fetched response object 
-  - _json_: to extract json data
+យើងនឹងឃើញ _get_, _status_code_, _headers_, _text_ និង _json_ វិធីសាស្ត្រនៅក្នុង _requests_ module:
+
+- _get()_: ដើម្បីបើកបណ្តាញនិងទាញយកទិន្នន័យពី url - វាត្រឡប់មកវិញ Reply Object
+- _status_code_: បន្ទាប់ពីយើងបានទាញយកទិន្នន័យ, យើងអាចពិនិត្យស្ថានភាពនៃប្រតិបត្តិការ (ជោគជ័យ, កំហុស, ជាដើម)
+- _headers_: ដើម្បីពិនិត្យប្រភេទ headers
+- _text_: ដើម្បីទាញយកអត្ថបទពី object ប្រតិកម្មទាញយក
+- _json_: ដើម្បីទាញយកទិន្នន័យ json
+- 
 Let's read a txt file from this website, https://www.w3.org/TR/PNG/iso_8859-1.txt.
 
 ```py
@@ -259,7 +255,7 @@ print(response.text) # gives all the text from the page
 {'date': 'Sun, 08 Dec 2019 18:00:31 GMT', 'last-modified': 'Fri, 07 Nov 2003 05:51:11 GMT', 'etag': '"17e9-3cb82080711c0;50c0b26855880-gzip"', 'accept-ranges': 'bytes', 'cache-control': 'max-age=31536000', 'expires': 'Mon, 07 Dec 2020 18:00:31 GMT', 'vary': 'Accept-Encoding', 'content-encoding': 'gzip', 'access-control-allow-origin': '*', 'content-length': '1616', 'content-type': 'text/plain', 'strict-transport-security': 'max-age=15552000; includeSubdomains; preload', 'content-security-policy': 'upgrade-insecure-requests'}
 ```
 
-- Let us read from an API. API stands for Application Program Interface. It is a means to exchange structure data between servers primarily a json data. An example of an API:https://restcountries.eu/rest/v2/all. Let us read this API using _requests_ module.
+- សូមឱ្យយើងអានពី API ។ API មានន័យថា Application Program Interface (ប្រព័ន្ធប្រតិបត្តិការកម្មវិធី) ។ វាជាមធ្យោបាយដើម្បីផ្លាស់ប្តូរទិន្នន័យរចនាសម្ព័ន្ធរវាង server ជាពិសេសទិន្នន័យ json ។ ឧទាហរណ៍នៃ API:<https://restcountries.eu/rest/v2/all> សូមយើងអាន API នេះដោយប្រើម៉ូឌុល _requests_
 
 ```py
 import requests
@@ -323,15 +319,15 @@ print(countries[:1])  # we sliced only the first country, remove the slicing to 
                    'pt': 'Afeganistão'}}]
 ```
 
-We use _json()_ method from response object, if the we are fetching JSON data. For txt, html, xml and other file formats we can use _text_.
+យើងប្រើវិធីសាស្ត្រ _json()_ ពី Reply Object ប្រសិនបើយើងកំពុងទាញយកទិន្នន័យ JSON ។ សម្រាប់ txt, html, xml និងឯកសារផ្សេងទៀតយើងអាចប្រើ _text_ ។
 
 ### Creating a Package
 
-We organize a large number of files in different folders and sub-folders based on some criteria, so that we can find and manage them easily. As you know, a module can contain multiple objects, such as classes, functions, etc. A package can contain one or more relevant modules. A package is actually a folder containing one or more module files. Let us create a package named mypackage, using the following steps:
+យើង រៀបចំ ឯកសារ ជាច្រើន នៅក្នុង ក្រដាស និង ក្រដាស អនុ ផ្សេងគ្នា ដោយ ផ្អែកលើ លក្ខខណ្ឌ មួយចំនួន ដើម្បី យើង អាច រក និង គ្រប់គ្រង វា បាន ដោយ ងាយស្រួល ។ ដូចដែលអ្នកដឹងម៉ូដល័រអាចមានច្រើនប្រភេទដូចជា Class, Function ជាដើម។ កញ្ចប់មួយអាចមានមួយឬច្រើនម៉ូឌុលដែលមានសារៈសំខាន់។ Package គឺជា folder ដែលមានឯកសារ module មួយ ឬច្រើន។ សូមយើងបង្កើតឯកសារដែលមានឈ្មោះ mypackage ដោយប្រើជំហានដូចខាងក្រោម:
 
-Create a new folder named mypacakge inside 30DaysOfPython folder
-Create an empty **__init__**.py file in the mypackage folder.
-Create modules arithmetic.py and greet.py with following code:
+បង្កើត folder ថ្មីដែលមានឈ្មោះ mypacakge នៅក្នុង folder 30DaysOfPython
+បង្កើតឯកសារ ****init****.py ដែលគ្មាននៅក្នុង folder mypackage ។
+បង្កើតម៉ូឌុល arithmetic.py និង greet.py ជាមួយនឹងកូដដូចខាងក្រោម:
 
 ```py
 # mypackage/arithmetics.py
@@ -370,8 +366,7 @@ def greet_person(firstname, lastname):
     return f'{firstname} {lastname}, welcome to 30DaysOfPython Challenge!'
 ```
 
-The folder structure of your package should look like this:
-
+រចនាសម្ព័ន្ធ folder របស់ package របស់អ្នកគួរមើលទៅដូចនេះ:
 ```sh
 ─ mypackage
     ├── __init__.py
@@ -379,7 +374,7 @@ The folder structure of your package should look like this:
     └── greet.py
 ```
 
-Now let's open the python interactive shell and try the package we have created:
+ឥឡូវនេះយើងត្រូវបើក shell interactive python ហើយសាកល្បងកម្មវិធីដែលយើងបានបង្កើត:
 
 ```sh
 asabeneh@Asabeneh:~/Desktop/30DaysOfPython$ python
@@ -405,8 +400,9 @@ Type "help", "copyright", "credits" or "license" for more information.
 >>>
 ```
 
-As you can see our package works perfectly. The package folder contains a special file called **__init__**.py - it stores the package's content. If we put **__init__**.py in the package folder, python start recognizes it as a package.
-The **__init__**.py exposes specified resources from its modules to be imported to other python files. An empty **__init__**.py file makes all functions available when a package is imported. The **__init__**.py is essential for the folder to be recognized by Python as a package.
+ដូចដែលអ្នកអាចមើលឃើញបាន កញ្ចប់របស់យើងដំណើរការយ៉ាងល្អ។ ក្រដាសកញ្ចប់មានឯកសារពិសេសដែលមានឈ្មោះថា ****init****.py - វារក្សាទុកផ្ទុករបស់កញ្ចប់។ ប្រសិនបើយើងដាក់ ****init****.py នៅក្នុង folder package, python start នឹងស្គាល់វាជា package ។
+
+****init****.py បង្ហាញធនធានដែលបានកំណត់ពីម៉ូឌុលរបស់វាដើម្បីនាំចូលទៅក្នុងឯកសារ Python ផ្សេងទៀត។ ឯកសារ ****init****.py ដែលសុទ្ធសឹងតែសុទ្ធសឹងតែសុទ្ធសឹងតែសុទ្ធសឹងតែសុទ្ធសឹងតែសុទ្ធសឹងតែសុទ្ធសឹងតែសុទ្ធសឹងតែសុទ្ធសឹងតែសុទ្ធសឹងតែសុទ្ធសឹងតែសុទ្ធសឹងតែ ****init****.py គឺមានសារៈសំខាន់សម្រាប់ folder ដែល Python អាចទទួលស្គាល់ថាជា packages ។
 
 ### Further Information About Packages
 
@@ -439,20 +435,7 @@ The **__init__**.py exposes specified resources from its modules to be imported 
   - requests: is a package which we can use to send requests to a server(GET, POST, DELETE, PUT)
     - _pip install requests_
 
-🌕 You are always progressing and you are a head of 20 steps to your way to greatness. Now do some exercises for your brain and muscles.
 
-## Exercises: Day 20
-
-1. Read this url and find the 10 most frequent words. romeo_and_juliet = 'http://www.gutenberg.org/files/1112/1112.txt'
-2. Read the cats API and cats_api = 'https://api.thecatapi.com/v1/breeds' and find :
-   1. the min, max, mean, median, standard deviation of cats' weight in metric units.
-   2. the min, max, mean, median, standard deviation of cats' lifespan in years.
-   3. Create a frequency table of country and breed of cats
-3. Read the [countries API](https://restcountries.eu/rest/v2/all) and find
-   1. the 10 largest countries
-   2. the 10 most spoken languages
-   3. the total number of languages in the countries API
-4. UCI is one of the most common places to get data sets for data science and machine learning. Read the content of UCL (https://archive.ics.uci.edu/ml/datasets.php). Without additional libraries it will be difficult, so you may try it with BeautifulSoup4
 
 🎉 CONGRATULATIONS ! 🎉
 
