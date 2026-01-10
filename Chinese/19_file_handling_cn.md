@@ -205,7 +205,7 @@ person_dct= {
     "name":"Asabeneh",
     "country":"Finland",
     "city":"Helsinki",
-    "skills":["JavaScrip", "React","Python"]
+    "skills":["JavaScript", "React","Python"]
 }
 # JSON: 字典的字符串形式
 person_json = "{'name': 'Asabeneh', 'country': 'Finland', 'city': 'Helsinki', 'skills': ['JavaScrip', 'React', 'Python']}"
@@ -215,7 +215,7 @@ person_json = '''{
     "name":"Asabeneh",
     "country":"Finland",
     "city":"Helsinki",
-    "skills":["JavaScrip", "React","Python"]
+    "skills":["JavaScript", "React","Python"]
 }'''
 ```
 
@@ -230,7 +230,7 @@ person_json = '''{
     "name": "Asabeneh",
     "country": "Finland",
     "city": "Helsinki",
-    "skills": ["JavaScrip", "React", "Python"]
+    "skills": ["JavaScript", "React", "Python"]
 }'''
 # 将JSON字符串更改为字典
 person_dct = json.loads(person_json)
@@ -257,7 +257,7 @@ person = {
     "name": "Asabeneh",
     "country": "Finland",
     "city": "Helsinki",
-    "skills": ["JavaScrip", "React", "Python"]
+    "skills": ["JavaScript", "React", "Python"]
 }
 # 将字典转换为JSON字符串
 person_json = json.dumps(person, indent=4) # indent可以是2, 4, 8. 它漂亮地打印了。
@@ -273,7 +273,7 @@ print(person_json)
     "country": "Finland",
     "city": "Helsinki",
     "skills": [
-        "JavaScrip",
+        "JavaScript",
         "React",
         "Python"
     ]
@@ -291,7 +291,7 @@ person = {
     "name": "Asabeneh",
     "country": "Finland",
     "city": "Helsinki",
-    "skills": ["JavaScrip", "React", "Python"]
+    "skills": ["JavaScript", "React", "Python"]
 }
 with open('./files/json_example.json', 'w', encoding='utf-8') as f:
     json.dump(person, f, ensure_ascii=False, indent=4)
@@ -546,4 +546,4 @@ Python
 
 🎉 恭喜！🎉
 
-[<< 第18天](./18_Day_Regular_expressions/18_regular_expressions_cn.md) | [第20天 >>](./20_Day_Python_package_manager/20_python_package_manager_cn.md) 
+[<< 第 18 天](./18_regular_expressions_cn.md) | [第 20 天 >>](./20_python_package_manager_cn.md) 

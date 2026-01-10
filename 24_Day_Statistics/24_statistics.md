@@ -930,7 +930,7 @@ Numpy is equipped with the robust statistical function as listed below
   - Max np.max()
   - Mean np.mean()
   - Median np.median()
-  - Varience
+  - Variance
   - Percentile
   - Standard deviation np.std()
 
@@ -1203,7 +1203,7 @@ plt.show()
 
 ![png](../test_files/test_141_0.png)
 
-To draw the Gaussian normal distribution using numpy. As you can see below, the numpy can generate random numbers. To create random sample, we need the mean(mu), sigma(standard deviation), mumber of data points.
+To draw the Gaussian normal distribution using numpy. As you can see below, the numpy can generate random numbers. To create random sample, we need the mean(mu), sigma(standard deviation), number of data points.
 
 ```python
 mu = 28
