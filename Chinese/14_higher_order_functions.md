@@ -14,7 +14,7 @@
 
 </div>
 
-[<< 第 13 天](../13_Day_List_comprehension/13_list_comprehension.md) | [第 15 天>>](../15_Day_Python_type_errors/15_python_type_errors.md)
+[<< 第 13 天](./13_list_comprehension.md) | [第 15 天 >>](./15_python_type_errors_cn.md)
 
 ![30DaysOfPython](../images/30DaysOfPython_banner3@2x.png)
 
@@ -365,4 +365,4 @@ numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
 🎉 恭喜你！ 🎉
 
-[<< 第 13 天](../13_Day_List_comprehension/13_list_comprehension.md) | [第 15 天>>](../15_Day_Python_type_errors/15_python_type_errors.md)
+[<< 第 13 天](./13_list_comprehension.md) | [第 15 天 >>](./15_python_type_errors_cn.md)

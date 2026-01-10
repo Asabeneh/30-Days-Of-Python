@@ -152,8 +152,8 @@ print(challenge.isalnum()) # False
 
 # isalpha(): Checks if all characters are alphabets
 
-challenge = 'thirty days of python' # space is not in alphabet
-print(challenge.isalpha()) # False 
+challenge = 'thirty days of python'
+print(challenge.isalpha()) # False
 num = '123'
 print(num.isalpha())      # False
 

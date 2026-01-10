@@ -68,7 +68,7 @@ To find a pattern we use different set of *re* character sets that allows to sea
 #### Match
 
 ```py
-# syntac
+# syntax
 re.match(substring, string, re.I)
 # substring is a string or a pattern, string is the text we look for a pattern , re.I is case ignore
 ```
@@ -189,9 +189,9 @@ Let us add one more example. The following string is really hard to read unless 
 
 ```py
 
-txt = '''%I a%m te%%a%%che%r% a%n%d %% I l%o%ve te%ach%ing. 
+txt = '''%I a%m te%%a%%che%r% a%n%d %% I l%o%ve te%ach%ing.
 T%he%re i%s n%o%th%ing as r%ewarding a%s e%duc%at%i%ng a%n%d e%m%p%ow%er%ing p%e%o%ple.
-I fo%und te%a%ching m%ore i%n%t%er%%es%ting t%h%an any other %jobs. 
+I fo%und te%a%ching m%ore i%n%t%er%%es%ting t%h%an any other %jobs.
 D%o%es thi%s m%ot%iv%a%te %y%o%u to b%e a t%e%a%cher?'''
 
 matches = re.sub('%', '', txt)
@@ -200,7 +200,7 @@ print(matches)
 
 ```sh
 I am teacher and I love teaching.
-There is nothing as rewarding as educating and empowering people. 
+There is nothing as rewarding as educating and empowering people.
 I found teaching more interesting than any other jobs. Does this motivate you to be a teacher?
 ```
 
@@ -221,7 +221,7 @@ print(re.split('\n', txt)) # splitting using \n - end of line symbol
 ## Writing RegEx Patterns
 
 To declare a string variable we use a single or double quote. To declare RegEx variable *r''*.
-The following pattern only identifies apple with lowercase, to make it case insensitive either we should rewrite our pattern or we should add a flag.  
+The following pattern only identifies apple with lowercase, to make it case insensitive either we should rewrite our pattern or we should add a flag.
 
 ```py
 import re
@@ -322,7 +322,7 @@ txt = '''Apple and banana are fruits'''
 matches = re.findall(regex_pattern, txt)
 print(matches)  # ['an', 'an', 'an', 'a ', 'ar']
 
-regex_pattern = r'[a].+'  # . any character, + any character one or more times 
+regex_pattern = r'[a].+'  # . any character, + any character one or more times
 matches = re.findall(regex_pattern, txt)
 print(matches)  # ['and banana are fruits']
 ```
@@ -332,7 +332,7 @@ print(matches)  # ['and banana are fruits']
 Zero or many times. The pattern could may not occur or it can occur many times.
 
 ```py
-regex_pattern = r'[a].*'  # . any character, * any character zero or more times 
+regex_pattern = r'[a].*'  # . any character, * any character zero or more times
 txt = '''Apple and banana are fruits'''
 matches = re.findall(regex_pattern, txt)
 print(matches)  # ['and banana are fruits']
@@ -369,7 +369,7 @@ print(matches)  # ['6', '2019', '8', '2021']
 ### Cart ^
 
 - Starts with
-  
+
 ```py
 txt = 'This regular expression example was made on December 6,  2019 and revised on July 8, 2021'
 regex_pattern = r'^This'  # ^ means starts with

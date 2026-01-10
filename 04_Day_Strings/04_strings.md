@@ -154,7 +154,7 @@ print(formated_string) # "The following are python libraries:['Django', 'Flask',
 
 #### New Style String Formatting (str.format)
 
-This formatting is introduced in Python version 3.
+This format was introduced in Python version 3.
 
 ```py
 
@@ -349,7 +349,7 @@ last_name = 'Yetayeh'
 age = 250
 job = 'teacher'
 country = 'Finland'
-sentence = 'I am {} {}. I am {} years old. I am a {}. I live in {}.'.format(first_name, last_name, age, job, country) 
+sentence = 'I am {} {}. I am a {}. I am {} years old. I live in {}.'.format(first_name, last_name, job, age, country)
 print(sentence) # I am Asabeneh Yetayeh. I am 250 years old. I am a teacher. I live in Finland.
 
 radius = 10
