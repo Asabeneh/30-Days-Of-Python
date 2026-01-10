@@ -91,7 +91,7 @@ fruits = ['banana', 'orange', 'mango', 'lemon']                     # list of fr
 vegetables = ['Tomato', 'Potato', 'Cabbage','Onion', 'Carrot']      # list of vegetables
 animal_products = ['milk', 'meat', 'butter', 'yoghurt']             # list of animal products
 web_techs = ['HTML', 'CSS', 'JS', 'React','Redux', 'Node', 'MongDB'] # list of web technologies
-countries = ['Finland', 'Estonia', 'Denmark', 'Sweden', 'Norway']
+countries = ['Finland', 'Estonia', 'Denmark', 'Sweden', 'Norway'] 
 
 # Print the lists and its length
 print('Fruits:', fruits)
@@ -190,7 +190,7 @@ print(tenth)          # 10
 # Third Example about unpacking list
 countries = ['Germany', 'France','Belgium','Sweden','Denmark','Finland','Norway','Iceland','Estonia']
 gr, fr, bg, sw, *scandic, es = countries
-print(gr)
+print(gr) 
 print(fr)
 print(bg)
 print(sw)
@@ -562,7 +562,7 @@ To sort lists we can use _sort()_ method or _sorted()_ built-in functions. The _
     back_end = ['Node','Express', 'MongoDB']
     ```
 
-27. After joining the lists in question 26. Copy the joined list and assign it to a variable full_stack. Then insert Python and SQL after Redux.
+27. After joining the lists in question 26. Copy the joined list and assign it to a variable full_stack, then insert Python and SQL after Redux.
 
 ### Exercises: Level 2
 
