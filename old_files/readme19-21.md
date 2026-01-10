@@ -1,15 +1,15 @@
 ![30DaysOfPython](./images/30DaysOfPython_banner3@2x.png)
 
-🧳 [Part 1: Day 1 - 3](https://github.com/Asabeneh/30-Days-Of-Python)  
-🧳 [Part 2: Day 4 - 6](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/readme4-6.md)  
-🧳 [Part 3: Day 7 - 9](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/readme7-9.md)  
-🧳 [Part 4: Day 10 - 12](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/readme10-12.md)  
-🧳 [Part 5: Day 13 - 15](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/readme13-15.md)  
-🧳 [Part 6: Day 16 - 18](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/readme16-18.md)  
-🧳 [Part 7: Day 19 - 21](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/readme19-21.md)  
-🧳 [Part 8: Day 22 - 24](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/readme22-24.md)  
-🧳 [Part 9: Day 25 - 27](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/readme25-27.md)  
-🧳 [Part 10: Day 28 - 30](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/readme28-30.md)  
+🧳 [Part 1: Day 1 - 3](https://github.com/Asabeneh/30-Days-Of-Python)
+🧳 [Part 2: Day 4 - 6](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/readme4-6.md)
+🧳 [Part 3: Day 7 - 9](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/readme7-9.md)
+🧳 [Part 4: Day 10 - 12](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/readme10-12.md)
+🧳 [Part 5: Day 13 - 15](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/readme13-15.md)
+🧳 [Part 6: Day 16 - 18](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/readme16-18.md)
+🧳 [Part 7: Day 19 - 21](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/readme19-21.md)
+🧳 [Part 8: Day 22 - 24](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/readme22-24.md)
+🧳 [Part 9: Day 25 - 27](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/readme25-27.md)
+🧳 [Part 10: Day 28 - 30](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/readme28-30.md)
 
 ---
 
@@ -856,7 +856,7 @@ The folder structure of your package should look like this:
 Now let's open the python interactive shell and try the package we have created:
 ```sh
 asabeneh@Asabeneh:~/Desktop/30DaysOfPython$ python
-Python 3.7.5 (default, Nov  1 2019, 02:16:32) 
+Python 3.7.5 (default, Nov  1 2019, 02:16:32)
 [Clang 11.0.0 (clang-1100.0.33.8)] on darwin
 Type "help", "copyright", "credits" or "license" for more information.
 >>> from mypackage import arithmetics
@@ -875,10 +875,10 @@ Type "help", "copyright", "credits" or "license" for more information.
 >>> from mypackage import greet
 >>> greet.greet_person('Asabeneh', 'Yetayeh')
 'Asabeneh Yetayeh, welcome to 30DaysOfPython Challenge!'
->>> 
+>>>
 ```
 As you can see our package works perfect. The package folder contains a special file called __init__.py which stores the package's content. If we put  __init__.py in the package folder, python start recognizes it as a package.
-The __init__.py exposes specified resources from its modules to be imported to other python files. An empty __init__.py file makes all functions available when a package is imported. The __init__.py is essential for the folder to be recognized by Python as a package. 
+The __init__.py exposes specified resources from its modules to be imported to other python files. An empty __init__.py file makes all functions available when a package is imported. The __init__.py is essential for the folder to be recognized by Python as a package.
 
 ### Further information about packages
 
@@ -930,8 +930,6 @@ Let's check if everything in python is class:
 
 ```py
 Last login: Tue Dec 10 09:35:28 on console
-asabeneh@Asabeneh:~$ pyhton
--bash: pyhton: command not found
 asabeneh@Asabeneh:~$ python
 Python 3.7.5 (default, Nov  1 2019, 02:16:32)
 [Clang 11.0.0 (clang-1100.0.33.8)] on darwin
@@ -1167,7 +1165,7 @@ Lidiya Teklemariam is 28 year old. He lives in Espoo, Finland.
 ['Organizing', 'Marketing', 'Digital Marketing']
 ```
 
-We didn't call the _**init**()_ constructor in the child class. If we didn't call it we can access all the properties but if we call it once we access the parent properties by calling _super_.  
+We didn't call the _**init**()_ constructor in the child class. If we didn't call it we can access all the properties but if we call it once we access the parent properties by calling _super_.
 We can write add a new method to the child or we can overwrite the parent class by creating the same method name in the child class. When we add the **init**() function, the child class will no longer inherit the parent's **init**() function.
 
 ### Overriding parent method
@@ -1242,7 +1240,7 @@ Standard Deviation:  4.2
 Frequency Distribution: [(20.0, 26), (16.0, 27), (12.0, 32), (8.0, 37), (8.0, 34), (8.0, 33), (8.0, 31), (8.0, 24), (4.0, 38), (4.0, 29), (4.0, 25)]
 ```
 1. Create a class called PersonAccount. It has firstname, lastname, incomes, expenses properties and it has total_income, total_expense, account_info,add_income, add_expense and account_balance methods. Incomes is a set of incomes and its description and the same goes for expenses.
-   
+
 [<< Part 6 ](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/readme16-18.md) | [Part 8 >>](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/readme22-24.md)
 
 ---
