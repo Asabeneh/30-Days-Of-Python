@@ -34,7 +34,7 @@ List comprehension in Python is a compact way of creating a list from a sequence
 
 ```py
 # syntax
-[i for i in iterable if expression]
+[expression for i in iterable if condition]
 ```
 
 **Example:1**
