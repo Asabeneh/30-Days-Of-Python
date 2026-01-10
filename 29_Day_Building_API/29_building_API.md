@@ -194,7 +194,7 @@ By connecting the flask, we can fetch students collection data from the thirty_d
 
 ### Getting a document by id
 
-We can access signle document using an id, let's access Asabeneh using his id.
+We can access single document using an id, let's access Asabeneh using his id.
 http://localhost:5000/api/v1.0/students/5df68a21f106fe2d315bbc8b
 
 ```py

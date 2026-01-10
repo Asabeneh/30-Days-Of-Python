@@ -41,7 +41,7 @@ A tuple is a collection of different data types which is ordered and unchangeabl
 - tuple(): to create an empty tuple
 - count(): to count the number of a specified item in a tuple
 - index(): to find the index of a specified item in a tuple
-- + operator: to join two or more tuples and to create a new tuple
+- `+` operator: to join two or more tuples and to create a new tuple
 
 ### Creating a Tuple
 
@@ -93,7 +93,7 @@ len(tpl)
   first_fruit = fruits[0]
   second_fruit = fruits[1]
   last_index =len(fruits) - 1
-  last_fruit = fruits[las_index]
+  last_fruit = fruits[last_index]
   ```
 
 - Negative indexing
@@ -239,8 +239,8 @@ del fruits
 1. Create fruits, vegetables and animal products tuples. Join the three tuples and assign it to a variable called food_stuff_tp.
 1. Change the about food_stuff_tp  tuple to a food_stuff_lt list
 1. Slice out the middle item or items from the food_stuff_tp tuple or food_stuff_lt list.
-1. Slice out the first three items and the last three items from food_staff_lt list
-1. Delete the food_staff_tp tuple completely
+1. Slice out the first three items and the last three items from food_stuff_lt list
+1. Delete the food_stuff_tp tuple completely
 1. Check if an item exists in  tuple:
 
 - Check if 'Estonia' is a nordic country
