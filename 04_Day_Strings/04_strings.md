@@ -154,7 +154,7 @@ print(formated_string) # "The following are python libraries:['Django', 'Flask',
 
 #### New Style String Formatting (str.format)
 
-This formatting is introduced in Python version 3.
+This format was introduced in Python version 3.
 
 ```py
 
