@@ -30,7 +30,7 @@ print(full_name) # Asabeneh Yetayeh
 print(len(first_name))  # 8
 print(len(last_name))   # 7
 print(len(first_name) > len(last_name)) # True
-print(len(full_name)) # 15
+print(len(full_name)) # 16 
 
 #### Unpacking characters 
 language = 'Python'
@@ -153,7 +153,7 @@ print(challenge.isalnum()) # False
 # isalpha(): Checks if all characters are alphabets
 
 challenge = 'thirty days of python'
-print(challenge.isalpha()) # True
+print(challenge.isalpha()) # False
 num = '123'
 print(num.isalpha())      # False
 
@@ -168,7 +168,7 @@ print(challenge.find('th')) # 0
 challenge = 'Thirty'
 print(challenge.isdigit()) # False
 challenge = '30'
-print(challenge.digit())   # True
+print(challenge.isdigit())   # True 
 
 # isdecimal():Checks decimal characters
 
@@ -210,13 +210,13 @@ print('ten'.isnumeric())    # False
 # join(): Returns a concatenated string
 
 web_tech = ['HTML', 'CSS', 'JavaScript', 'React']
-result = '#, '.join(web_tech)
-print(result) # 'HTML# CSS# JavaScript# React'
+result = '# '.join(web_tech) 
+print(result) # 'HTML# CSS# JavaScript# React' 
 
 # strip(): Removes both leading and trailing characters
 
 challenge = ' thirty days of python '
-print(challenge.strip('y')) # 5
+print(challenge.strip()) # 'thirty days of python'
 
 # replace(): Replaces substring inside
 
