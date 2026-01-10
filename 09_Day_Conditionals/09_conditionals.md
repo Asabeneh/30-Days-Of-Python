@@ -241,12 +241,12 @@ Enter number two: 3
     0-59, F
     ```
 
-   1. Check if the season is Autumn, Winter, Spring or Summer. If the user input is:
+   2. Get the month from user input then check if the season is Autumn, Winter, Spring or Summer. If the user input is:
     September, October or November, the season is Autumn.
     December, January or February, the season is Winter.
     March, April or May, the season is Spring
     June, July or August, the season is Summer
-   2. The following list contains some fruits:
+   3. The following list contains some fruits:
 
     ```sh
     fruits = ['banana', 'orange', 'mango', 'lemon']

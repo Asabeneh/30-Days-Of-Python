@@ -149,7 +149,7 @@ def sum_of_numbers(n):
     total = 0
     for i in range(n+1):
         total+=i
-    print(total)
+    return total
 print(sum_of_numbers(10)) # 55
 print(sum_of_numbers(100)) # 5050
 ```
@@ -182,7 +182,7 @@ print('Sum of two numbers: ', sum_two_numbers(1, 9))
 
 def calculate_age (current_year, birth_year):
     age = current_year - birth_year
-    return age;
+    return age 
 
 print('Age: ', calculate_age(2021, 1819))
 
@@ -213,12 +213,12 @@ def print_fullname(firstname, lastname):
     space = ' '
     full_name = firstname  + space + lastname
     print(full_name)
-print(print_fullname(firstname = 'Asabeneh', lastname = 'Yetayeh'))
+print_fullname(firstname = 'Asabeneh', lastname = 'Yetayeh')
 
 def add_two_numbers (num1, num2):
     total = num1 + num2
-    print(total)
-print(add_two_numbers(num2 = 3, num1 = 2)) # Order does not matter
+    return total
+print(add_two_numbers(num2 = 3, num1 = 2)) # Order does not matter 
 ```
 
 ### Function Returning a Value - Part 2
@@ -252,7 +252,7 @@ print(add_two_numbers(2, 3))
 
 def calculate_age (current_year, birth_year):
     age = current_year - birth_year
-    return age;
+    return age 
 print('Age: ', calculate_age(2019, 1819))
 ```
 
@@ -262,7 +262,6 @@ print('Age: ', calculate_age(2019, 1819))
 ```py
 def is_even (n):
     if n % 2 == 0:
-        print('even')
         return True    # return stops further execution of the function, similar to break 
     return False
 print(is_even(10)) # True
@@ -316,7 +315,7 @@ print(generate_full_name('David','Smith'))
 
 def calculate_age (birth_year,current_year = 2021):
     age = current_year - birth_year
-    return age;
+    return age 
 print('Age: ', calculate_age(1821))
 
 def weight_of_object (mass, gravity = 9.81):
@@ -357,8 +356,8 @@ print(sum_all_nums(2, 3, 5)) # 10
 def generate_groups (team,*args):
     print(team)
     for i in args:
-        print(i)
-print(generate_groups('Team-1','Asabeneh','Brook','David','Eyob'))
+        print(i) 
+generate_groups('Team-1','Asabeneh','Brook','David','Eyob')
 ```
 
 ### Function as a Parameter of Another Function
@@ -395,7 +394,7 @@ Now it is time to express your thoughts about the Author and 30DaysOfPython. You
 ```py
 print(reverse_list([1, 2, 3, 4, 5]))
 # [5, 4, 3, 2, 1]
-print(reverse_list1(["A", "B", "C"]))
+print(reverse_list(["A", "B", "C"])) 
 # ["C", "B", "A"]
 ```
 
@@ -406,7 +405,7 @@ print(reverse_list1(["A", "B", "C"]))
 food_staff = ['Potato', 'Tomato', 'Mango', 'Milk']
 print(add_item(food_staff, 'Meat'))     # ['Potato', 'Tomato', 'Mango', 'Milk','Meat']
 numbers = [2, 3, 7, 9]
-print(add_item(numbers, 5))      [2, 3, 7, 9, 5]
+print(add_item(numbers, 5))     # [2, 3, 7, 9, 5] 
 ```
 
 12. Declare a function named remove_item. It takes a list and an item parameters. It returns a list with the item removed from it.

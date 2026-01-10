@@ -92,7 +92,7 @@ print(len(full_name)) # 16
 In Python and other programming languages \ followed by a character is an escape sequence. Let us see the most common escape characters:
 
 - \n: new line
-- \t: Tab means(8 spaces)
+- \t: Tab means(8 spaces) 
 - \\\\: Back slash
 - \\': Single quote (')
 - \\": Double quote (")
@@ -101,7 +101,7 @@ Now, let us see the use of the above escape sequences with examples.
 
 ```py
 print('I hope everyone is enjoying the Python Challenge.\nAre you ?') # line break
-print('Days\tTopics\tExercises') # adding tab space or 4 spaces 
+print('Days\tTopics\tExercises') # adding tab space or 4 spaces
 print('Day 1\t5\t5')
 print('Day 2\t6\t20')
 print('Day 3\t5\t23')
@@ -112,7 +112,7 @@ print('In every programming language it starts with \"Hello, World!\"') # to wri
 # output
 I hope every one is enjoying the Python Challenge.
 Are you ?
-Days	Topics	Exercises
+Days  Topics  Exercises
 Day 1	5	    5
 Day 2	6	    20
 Day 3	5	    23
@@ -413,7 +413,7 @@ print(challenge.isdecimal())  # False
 challenge = '123'
 print(challenge.isdecimal())  # True
 challenge = '\u00B2'
-print(challenge.isdigit())   # False
+print(challenge.isdigit())   # True 
 challenge = '12 3'
 print(challenge.isdecimal())  # False, space not allowed
 ```
@@ -545,7 +545,7 @@ print(challenge.startswith('thirty')) # False
 9. Cut(slice) out the first word of _Coding For All_ string.
 10. Check if _Coding For All_ string contains a word Coding using the method index, find or other methods.
 11. Replace the word coding in the string 'Coding For All' to Python.
-12. Change Python for Everyone to Python for All using the replace method or other methods.
+12. Change "Python for Everyone" to "Python for All" using the replace method or other methods. 
 13. Split the string 'Coding For All' using space as the separator (split()) .
 14. "Facebook, Google, Microsoft, Apple, IBM, Oracle, Amazon" split the string at the comma.
 15. What is the character at index 0 in the string _Coding For All_.
@@ -561,7 +561,7 @@ print(challenge.startswith('thirty')) # False
 25. Slice out the phrase 'because because because' in the following sentence: 'You cannot end a sentence with because because because is a conjunction'
 26. Find the position of the first occurrence of the word 'because' in the following sentence: 'You cannot end a sentence with because because because is a conjunction'
 27. Slice out the phrase 'because because because' in the following sentence: 'You cannot end a sentence with because because because is a conjunction'
-28. Does '\'Coding For All' start with a substring _Coding_?
+28. Does 'Coding For All' start with a substring _Coding_?
 29. Does 'Coding For All' end with a substring _coding_?
 30. '&nbsp;&nbsp; Coding For All &nbsp;&nbsp;&nbsp; &nbsp;' &nbsp;, remove the left and right trailing spaces in the given string.
 31. Which one of the following variables return True when we use the method isidentifier():
