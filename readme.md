@@ -105,20 +105,31 @@ Every contribution, big or small, makes a huge difference. Thank you for your su
 
 ---
 
-<div align="center">
-  <h1> 30 Days Of Python: Day 1 - Introduction</h1>
-  <a class="header-badge" target="_blank" href="https://www.linkedin.com/in/asabeneh/">
-  <img src="https://img.shields.io/badge/style--5eba00.svg?label=LinkedIn&logo=linkedin&style=social">
-  </a>
-  <a class="header-badge" target="_blank" href="https://twitter.com/Asabeneh">
-  <img alt="Twitter Follow" src="https://img.shields.io/twitter/follow/asabeneh?style=social">
-  </a>
+# 🐍 30 Days Of Python - My Journey 🚀
 
-  <sub>Author:
-  <a href="https://www.linkedin.com/in/asabeneh/" target="_blank">Asabeneh Yetayeh</a><br>
-  <small> Second Edition: July, 2021</small>
-  </sub>
-</div>
+Welcome to my personal progress repository for the 30 Days of Python challenge! 
+I am **BilolTJ**, and I am documenting my coding journey here.
+
+---
+
+## 👤 About Me
+* 👨‍💻 **Username:** BilolTJ
+* 🎯 **Goal:** Master Python in 30 Days
+* 🛠️ **Tools:** VS Code, Git, Python 3
+* 🌍 **Location:** Tajikistan 🇹🇯
+
+---
+
+## 📅 My Progress Table
+| Day | Topic | Status |
+|:---:|:---|:---:|
+| 01 | [Introduction](./day_1/helloworld.py) | ✅ Completed |
+| 02 | Variables | 🏗️ In Progress |
+
+---
+
+### 🔗 Connect with Me
+[GitHub Profile](https://github.com/BilolTJ) | [LinkedIn](#) | [Twitter](#)
 
 🇧🇷 [Portuguese](./Portuguese/README.md)
 🇨🇳 [中文](./Chinese/README.md)
