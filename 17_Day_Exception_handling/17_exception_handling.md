@@ -107,7 +107,7 @@ try:
     name = input('Enter your name:')
     year_born = input('Year you born:')
     age = 2019 - int(year_born)
-    print('You are {name}. And your age is {age}.')
+    print(f'You are {name}. And your age is {age}.')
 except TypeError:
     print('Type error occur')
 except ValueError:
@@ -135,7 +135,7 @@ try:
     name = input('Enter your name:')
     year_born = input('Year you born:')
     age = 2019 - int(year_born)
-    print('You are {name}. And your age is {age}.')
+    print(f'You are {name}. And your age is {age}.')
 except Exception as e:
     print(e)
 
@@ -270,7 +270,7 @@ for index, item in enumerate([20, 30, 40]):
 for index, i in enumerate(countries):
     print('hi')
     if i == 'Finland':
-        print('The country {i} has been found at index {index}')
+        print(f'The country {i} has been found at index {index}')
 ```
 
 ```sh
@@ -300,6 +300,7 @@ print(fruits_and_veges)
 ## Exercises: Day 17
 
 1. names = ['Finland', 'Sweden', 'Norway','Denmark','Iceland', 'Estonia','Russia']. Unpack the first five countries and store them in a variable nordic_countries, store Estonia and Russia in es, and ru respectively.
+
 
 🎉 CONGRATULATIONS ! 🎉
 
