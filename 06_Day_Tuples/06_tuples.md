@@ -41,7 +41,7 @@ A tuple is a collection of different data types which is ordered and unchangeabl
 - tuple(): to create an empty tuple
 - count(): to count the number of a specified item in a tuple
 - index(): to find the index of a specified item in a tuple
-- + operator: to join two or more tuples and to create a new tuple
+- `+` operator: to join two or more tuples and to create a new tuple
 
 ### Creating a Tuple
 
