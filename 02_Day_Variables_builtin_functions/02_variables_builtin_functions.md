@@ -1,15 +1,15 @@
-<div align="center">
+<div lign="center">
   <h1> 30 Days Of Python: Day 2 - Variables, Builtin Functions</h1>
-  <a class="header-badge" target="_blank" href="https://www.linkedin.com/in/asabeneh/">
+  <a class="header-badge" target="_blank" href="https://www.linkedin.com/in/bilol-orzu-b64ab0387/">
   <img src="https://img.shields.io/badge/style--5eba00.svg?label=LinkedIn&logo=linkedin&style=social">
   </a>
-  <a class="header-badge" target="_blank" href="https://twitter.com/Asabeneh">
-  <img alt="Twitter Follow" src="https://img.shields.io/twitter/follow/asabeneh?style=social">
+  <a class="header-badge" target="_blank" href="https://www.youtube.com/@arzykulovbilol_official">
+  <img alt="Youtube Follow" src="image.png" width="40 px" height = "20px">
   </a>
 
 <sub>Author:
-<a href="https://www.linkedin.com/in/asabeneh/" target="_blank">Asabeneh Yetayeh</a><br>
-<small> Second Edition: July, 2021</small>
+<a href="https://www.linkedin.com/in/bilol-orzu-b64ab0387/" target="_blank">Bilol Orzu</a><br>
+<small> New Edition: January, 2026</small>
 </sub>
 
 </div>
@@ -101,18 +101,17 @@ _Example:_
 
 ```py
 # Variables in Python
-first_name = 'Asabeneh'
-last_name = 'Yetayeh'
-country = 'Finland'
-city = 'Helsinki'
+first_name = 'Bilol'
+last_name = 'Arzykulov'
+country = 'Tajikistan'
+city = 'Dushanbe'
 age = 250
-is_married = True
 skills = ['HTML', 'CSS', 'JS', 'React', 'Python']
 person_info = {
-   'firstname':'Asabeneh',
-   'lastname':'Yetayeh',
-   'country':'Finland',
-   'city':'Helsinki'
+   'firstname':'Bilol',
+   'lastname':'Arzykulov',
+   'country':'Tajikistan',
+   'city':'Dushnabe'
    }
 ```
 
@@ -152,14 +151,14 @@ Multiple variables can also be declared in one line:
 **Example:**
 
 ```py
-first_name, last_name, country, age, is_married = 'Asabeneh', 'Yetayeh', 'Helsink', 250, True
+first_name, last_name, country, age,  = 'Bilol', 'Arzykulov', 'Dushanbe', 250
 
-print(first_name, last_name, country, age, is_married)
+print(first_name, last_name, country, age)
 print('First name:', first_name)
 print('Last name: ', last_name)
 print('Country: ', country)
 print('Age: ', age)
-print('Married: ', is_married)
+
 ```
 
 Getting user input using the _input()_ built-in function. Let us assign the data we get from a user into first_name and age variables.
@@ -186,21 +185,21 @@ There are several data types in Python. To identify the data type we use the _ty
 # Different python data types
 # Let's declare variables with various data types
 
-first_name = 'Asabeneh'     # str
-last_name = 'Yetayeh'       # str
-country = 'Finland'         # str
-city= 'Helsinki'            # str
+first_name = 'Bilol'     # str
+last_name = 'Arzykulov'       # str
+country = 'Tajikistan'         # str
+city= 'Dushanbe'            # str
 age = 250                   # int, it is not my real age, don't worry about it
 
 # Printing out types
-print(type('Asabeneh'))          # str
+print(type('Bilol'))          # str
 print(type(first_name))          # str
 print(type(10))                  # int
 print(type(3.14))                # float
 print(type(1 + 1j))              # complex
 print(type(True))                # bool
 print(type([1, 2, 3, 4]))        # list
-print(type({'name':'Asabeneh'})) # dict
+print(type({'name':'Bilol'})) # dict
 print(type((1,2)))               # tuple
 print(type(zip([1,2],[3,4])))    # zip
 ```
@@ -235,8 +234,8 @@ num_int = int(num_float)
 print('num_int', int(num_int))      # 10
 
 # str to list
-first_name = 'Asabeneh'
-print(first_name)               # 'Asabeneh'
+first_name = 'Bilol'
+print(first_name)               # 'Bilol'
 first_name_to_list = list(first_name)
 print(first_name_to_list)            # ['A', 's', 'a', 'b', 'e', 'n', 'e', 'h']
 ```
