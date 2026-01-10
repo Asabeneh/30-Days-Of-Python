@@ -148,7 +148,7 @@ print('division: ', div)
 print('remainder: ', remainder)
 ```
 
-Let us start start connecting the dots and start making use of what we already know to calculate (area, volume,density,  weight, perimeter, distance, force).
+Let us start connecting the dots and start making use of what we already know to calculate (area, volume,density,  weight, perimeter, distance, force).
 
 **Example:**
 
