@@ -49,7 +49,7 @@ A function is a reusable block of code or programming statements designed to per
 
 ### Declaring and Calling a Function
 
-When we make a function, we call it declaring a function. When we start using the it,  we call it _calling_ or _invoking_ a function. Function can be declared with or without parameters.
+When we make a function, we call it declaring a function. When we start using the it,  we call it _calling_ or _invoking_ a function. Functions can be declared with or without parameters.
 
 ```py
 # syntax
@@ -86,7 +86,7 @@ add_two_numbers()
 
 ### Function Returning a Value - Part 1
 
-Function can also return values, if a function does not have a return statement, the value of the function is None. Let us rewrite the above functions using return. From now on, we get a value from a function when we call the function and print it.
+Functions return values using the _return_ statement. If a function has no return statement, it returns None. Let us rewrite the above functions using return. From now on, we get a value from a function when we call the function and print it.
 
 ```py
 def generate_full_name ():
@@ -107,7 +107,7 @@ print(add_two_numbers())
 
 ### Function with Parameters
 
-In a function we can pass different data types(number, string, boolean, list, tuple, dictionary or set) as a parameter
+In a function we can pass different data types(number, string, boolean, list, tuple, dictionary or set) as parameters.
 
 - Single Parameter: If our function takes a parameter we should call our function with an argument
 
@@ -359,6 +359,44 @@ def generate_groups (team,*args):
         print(i) 
 generate_groups('Team-1','Asabeneh','Brook','David','Eyob')
 ```
+### Dictionary unpacking
+
+You can call a function which has named arguments using a dictionary with matching key names. You do so using ``**``.
+
+```py
+# Define a function that takes two arguments: 'name' and 'location'
+def greet(name, location):
+    # Print a greeting message using the provided arguments
+    print("Hi there", name, "how is the weather in", location)
+
+# Call the function using keyword arguments
+greet(name="Alice", location="New York")  
+# Output: Hi there Alice how is the weather in New York
+
+# Create a dictionary with keys matching the function's parameter names
+my_dict = {"name": "Alice", "location": "New York"}
+
+# Call the function using dictionary unpacking
+greet(**my_dict)  
+# The ** operator unpacks the dictionary, passing its key-value pairs 
+# as keyword arguments to the function.
+# Output: Hi there Alice how is the weather in New York
+```
+
+### Arbitrary Number of Named Arguments
+
+You can also define a function to accept an arbitrary number of named arguments.
+
+```py
+def arbitrary_named_args(**args):
+    print("I received an arbitrary number of arguments, totaling", len(args))
+    print("They are provided as a dictionary in my function:", type(args))
+    print("Let's print them:")
+    for k, v in args.items():
+        print(" * key:", k, "value:", v)
+```
+
+Generally avoid this unless required as it makes it harder to understand what the function accepts and does.
 
 ### Function as a Parameter of Another Function
 
@@ -441,6 +479,22 @@ print(sum_of_numbers(100)) # 5050
 1. Call your function factorial, it takes a whole number as a parameter and it return a factorial of the number
 1. Call your function _is_empty_, it takes a parameter and it checks if it is empty or not
 1. Write different functions which take lists. They should calculate_mean, calculate_median, calculate_mode, calculate_range, calculate_variance, calculate_std (standard deviation).
+1. Write a function called _greet_ which takes a default argument, _name_. If no argument is supplied it should print "Hello, Guest!", otherwise it should greet the person by name.
+
+```py
+    greet()
+    # "Hello, Guest!
+    greet("Alice")
+    # "Hello, Alice!"
+```
+1. Create a function called _show_args_ to take an arbitrary number of named arguments and print their names and values.
+   ```py
+   show_args(name="Alice", age=30, city="New York")
+   # Received: name: Alice, age: 30, city: New York
+   show_args(name="Bob", pet="Fluffy, the bunny")
+   # Received: name: Bob, pet: Fluffy, the bunny
+   ```
+
 
 ### Exercises: Level 3
 
