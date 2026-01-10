@@ -1,0 +1,330 @@
+/**
+ * Forge of Legions - Paint Studio Styles
+ * Styles for the unit painting/customization system
+ */
+
+/* Paint Studio Layout */
+.painting-content {
+    display: flex;
+    flex: 1;
+    gap: var(--spacing-lg);
+    padding: var(--spacing-lg);
+    overflow: hidden;
+}
+
+/* Unit Preview */
+.unit-preview {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--bg-card);
+    border-radius: var(--radius-lg);
+    min-height: 400px;
+}
+
+#paint-canvas {
+    background: linear-gradient(135deg, #2a2a4a 0%, #1a1a2e 100%);
+    border-radius: var(--radius-md);
+    box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.5);
+}
+
+/* Painting Tools */
+.painting-tools {
+    width: 320px;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-lg);
+    overflow-y: auto;
+}
+
+/* Unit Selector */
+.unit-selector h3,
+.color-palette h3,
+.paint-parts h3 {
+    color: var(--primary-color);
+    font-size: 0.875rem;
+    margin-bottom: var(--spacing-md);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+#paint-unit-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--spacing-sm);
+}
+
+.paint-unit-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: var(--spacing-sm);
+    background: var(--bg-card);
+    border: 2px solid transparent;
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.paint-unit-btn:hover {
+    border-color: var(--text-muted);
+}
+
+.paint-unit-btn.selected {
+    border-color: var(--primary-color);
+    background: var(--bg-card-hover);
+}
+
+.paint-unit-btn .unit-symbol {
+    font-size: 1.5rem;
+    margin-bottom: var(--spacing-xs);
+}
+
+.paint-unit-btn .unit-name {
+    font-size: 0.625rem;
+    color: var(--text-secondary);
+    text-align: center;
+}
+
+/* Color Palette */
+.color-palette {
+    background: var(--bg-card);
+    padding: var(--spacing-md);
+    border-radius: var(--radius-md);
+}
+
+#color-swatches {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: var(--spacing-sm);
+    margin-bottom: var(--spacing-md);
+}
+
+.color-swatch {
+    width: 100%;
+    aspect-ratio: 1;
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: all var(--transition-fast);
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.1);
+}
+
+.color-swatch:hover {
+    transform: scale(1.1);
+}
+
+.color-swatch.selected {
+    border-color: white;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+#custom-color {
+    width: 100%;
+    height: 40px;
+    border: none;
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    background: transparent;
+}
+
+#custom-color::-webkit-color-swatch-wrapper {
+    padding: 0;
+}
+
+#custom-color::-webkit-color-swatch {
+    border: 2px solid var(--text-muted);
+    border-radius: var(--radius-sm);
+}
+
+/* Part Selector */
+.paint-parts {
+    background: var(--bg-card);
+    padding: var(--spacing-md);
+    border-radius: var(--radius-md);
+    flex: 1;
+}
+
+#part-selector {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+}
+
+.paint-part-btn {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+    padding: var(--spacing-sm) var(--spacing-md);
+    background: var(--bg-darker);
+    border: 2px solid transparent;
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    text-align: left;
+}
+
+.paint-part-btn:hover {
+    border-color: var(--text-muted);
+}
+
+.paint-part-btn.selected {
+    border-color: var(--primary-color);
+    background: var(--bg-card-hover);
+}
+
+.paint-part-btn .part-color {
+    width: 24px;
+    height: 24px;
+    border-radius: var(--radius-sm);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.paint-part-btn .part-name {
+    flex: 1;
+    font-size: 0.875rem;
+    color: var(--text-primary);
+}
+
+/* Save Scheme Button */
+.btn-save-scheme {
+    padding: var(--spacing-md);
+    background: var(--primary-color);
+    border: none;
+    border-radius: var(--radius-md);
+    color: var(--bg-darker);
+    font-weight: bold;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.btn-save-scheme:hover {
+    transform: scale(1.02);
+}
+
+/* Paint Color Categories */
+.color-category {
+    margin-bottom: var(--spacing-md);
+}
+
+.color-category-title {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    margin-bottom: var(--spacing-xs);
+    text-transform: uppercase;
+}
+
+/* Metallic Colors */
+.color-swatch.metallic {
+    background-image: linear-gradient(135deg,
+        rgba(255, 255, 255, 0.3) 0%,
+        transparent 50%,
+        rgba(0, 0, 0, 0.3) 100%
+    );
+}
+
+/* Paint Preview Info */
+.paint-preview-info {
+    position: absolute;
+    bottom: var(--spacing-md);
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--bg-darker);
+    padding: var(--spacing-sm) var(--spacing-md);
+    border-radius: var(--radius-md);
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+}
+
+/* Color Picker Tooltip */
+.color-tooltip {
+    position: absolute;
+    background: var(--bg-darker);
+    padding: var(--spacing-sm);
+    border-radius: var(--radius-sm);
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+    pointer-events: none;
+    z-index: 100;
+}
+
+/* Preset Schemes */
+.preset-schemes {
+    margin-top: var(--spacing-md);
+}
+
+.preset-schemes h4 {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    margin-bottom: var(--spacing-sm);
+}
+
+.preset-list {
+    display: flex;
+    gap: var(--spacing-sm);
+    flex-wrap: wrap;
+}
+
+.preset-btn {
+    padding: var(--spacing-xs) var(--spacing-sm);
+    background: var(--bg-darker);
+    border: 1px solid var(--text-muted);
+    border-radius: var(--radius-sm);
+    color: var(--text-secondary);
+    font-size: 0.75rem;
+    cursor: pointer;
+}
+
+.preset-btn:hover {
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .painting-content {
+        flex-direction: column;
+    }
+
+    .unit-preview {
+        min-height: 300px;
+    }
+
+    #paint-canvas {
+        width: 100%;
+        max-width: 300px;
+        height: auto;
+    }
+
+    .painting-tools {
+        width: 100%;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .unit-selector,
+    .color-palette,
+    .paint-parts {
+        flex: 1;
+        min-width: 200px;
+    }
+
+    #paint-unit-list {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    #color-swatches {
+        grid-template-columns: repeat(8, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    #paint-unit-list {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    #color-swatches {
+        grid-template-columns: repeat(5, 1fr);
+    }
+}

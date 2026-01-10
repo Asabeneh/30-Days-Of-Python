@@ -1,0 +1,68 @@
+{
+    "name": "Forge of Legions",
+    "short_name": "Forge",
+    "description": "A tactical miniature wargame. Build armies, paint units, conquer realms!",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#0f0f1a",
+    "theme_color": "#DAA520",
+    "orientation": "any",
+    "icons": [
+        {
+            "src": "src/assets/images/icon-72.png",
+            "sizes": "72x72",
+            "type": "image/png"
+        },
+        {
+            "src": "src/assets/images/icon-96.png",
+            "sizes": "96x96",
+            "type": "image/png"
+        },
+        {
+            "src": "src/assets/images/icon-128.png",
+            "sizes": "128x128",
+            "type": "image/png"
+        },
+        {
+            "src": "src/assets/images/icon-144.png",
+            "sizes": "144x144",
+            "type": "image/png"
+        },
+        {
+            "src": "src/assets/images/icon-152.png",
+            "sizes": "152x152",
+            "type": "image/png"
+        },
+        {
+            "src": "src/assets/images/icon-192.png",
+            "sizes": "192x192",
+            "type": "image/png",
+            "purpose": "any maskable"
+        },
+        {
+            "src": "src/assets/images/icon-384.png",
+            "sizes": "384x384",
+            "type": "image/png"
+        },
+        {
+            "src": "src/assets/images/icon-512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ],
+    "categories": ["games", "strategy"],
+    "screenshots": [
+        {
+            "src": "src/assets/images/screenshot-battle.png",
+            "sizes": "1280x720",
+            "type": "image/png",
+            "label": "Epic tactical battles"
+        },
+        {
+            "src": "src/assets/images/screenshot-paint.png",
+            "sizes": "1280x720",
+            "type": "image/png",
+            "label": "Customize your units"
+        }
+    ]
+}
