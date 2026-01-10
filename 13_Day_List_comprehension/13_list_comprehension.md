@@ -12,7 +12,7 @@
 <small> Second Edition: July, 2021</small>
 </sub>
 
-</div>
+
 </div>
 
 [<< Day 12](../12_Day_Modules/12_modules.md) | [Day 14>>](../14_Day_Higher_order_functions/14_higher_order_functions.md)
@@ -90,7 +90,7 @@ print(odd_numbers)                      # [1, 3, 5, 7, 9, 11, 13, 15, 17, 19]
 # Filter numbers: let's filter out positive even numbers from the list below
 numbers = [-8, -7, -3, -1, 0, 1, 3, 4, 5, 7, 6, 8, 10]
 positive_even_numbers = [i for i in numbers if i % 2 == 0 and i > 0]
-print(positive_even_numbers)                    # [4, 6, 8, 10]
+print(positive_even_numbers)                    # [2, 4, 6, 8, 10, 12, 14, 16, 18, 20]
 
 # Flattening a three dimensional array
 list_of_lists = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
@@ -108,7 +108,7 @@ To create a lambda function we use _lambda_ keyword followed by a parameter(s), 
 
 ```py
 # syntax
-x = lambda param1, param2, param3: param1 + param2 + param2
+x = lambda param1, param2, param3: param1 + param2 + param3
 print(x(arg1, arg2, arg3))
 ```
 

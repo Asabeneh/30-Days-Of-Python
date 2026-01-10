@@ -88,7 +88,7 @@ Select Python 3.6 or above driver
 
 ### Getting Connection String(MongoDB URI)
 
-Copy the connection string link and you will get something like this
+Copy the connection string link and you will get something like this:
 
 ```sh
 mongodb+srv://asabeneh:<password>@30daysofpython-twxkr.mongodb.net/test?retryWrites=true&w=majority
@@ -103,7 +103,7 @@ Let us replace the password placeholder with the password you used to add a user
 mongodb+srv://asabeneh:123123123@30daysofpython-twxkr.mongodb.net/test?retryWrites=true&w=majority
 ```
 
-Now, I replaced everything and the password is 123123 and the name of the database is thirty_days_python. This is just an example, your password must be a bit stronger than this.
+Now, I replaced everything and the password is 123123 and the name of the database is *thirty_days_python*. This is just an example, your password must be stronger than the example password.
 
 Python needs a mongoDB driver to access mongoDB database. We will use _pymongo_ with _dnspython_ to connect our application with mongoDB base . Inside your project directory install pymongo and dnspython.
 
@@ -140,8 +140,9 @@ When we run the above code we get the default mongoDB databases.
 
 ### Creating a database and collection
 
-Let us create a database, database and collection in mongoDB will be created if it doesn't exist. Let's create a data base name _thirty_days_of_python_ and _students_ collection.
-To create a database
+Let us create a database, database and collection in mongoDB will be created if it doesn't exist. Let's create a data base name *thirty_days_of_python* and *students* collection.
+
+To create a database:
 
 ```sh
 db = client.name_of_databse # we can create a database like this or the second way
