@@ -440,17 +440,18 @@ print(reverse_list(["A", "B", "C"]))
 11. Declare a function named add_item. It takes a list and an item parameters. It returns a list with the item added at the end.
 
 ```py
-food_staff = ['Potato', 'Tomato', 'Mango', 'Milk']
-print(add_item(food_staff, 'Meat'))     # ['Potato', 'Tomato', 'Mango', 'Milk','Meat']
-numbers = [2, 3, 7, 9]
-print(add_item(numbers, 5))     # [2, 3, 7, 9, 5] 
+food_stuff = ['Potato', 'Tomato', 'Mango', 'Milk'];
+print(add_item(food_stuff, 'Meat'))     # ['Potato', 'Tomato', 'Mango', 'Milk','Meat'];
+numbers = [2, 3, 7, 9];
+print(add_item(numbers, 5))      # [2, 3, 7, 9, 5]
+
 ```
 
 12. Declare a function named remove_item. It takes a list and an item parameters. It returns a list with the item removed from it.
 
 ```py
-food_staff = ['Potato', 'Tomato', 'Mango', 'Milk']
-print(remove_item(food_staff, 'Mango'))  # ['Potato', 'Tomato', 'Milk'];
+food_stuff = ['Potato', 'Tomato', 'Mango', 'Milk']
+print(remove_item(food_stuff, 'Mango'))  # ['Potato', 'Tomato', 'Milk'];
 numbers = [2, 3, 7, 9]
 print(remove_item(numbers, 3))  # [2, 7, 9]
 ```
