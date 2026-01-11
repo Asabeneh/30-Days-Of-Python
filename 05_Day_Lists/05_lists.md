@@ -91,7 +91,7 @@ fruits = ['banana', 'orange', 'mango', 'lemon']                     # list of fr
 vegetables = ['Tomato', 'Potato', 'Cabbage','Onion', 'Carrot']      # list of vegetables
 animal_products = ['milk', 'meat', 'butter', 'yoghurt']             # list of animal products
 web_techs = ['HTML', 'CSS', 'JS', 'React','Redux', 'Node', 'MongDB'] # list of web technologies
-countries = ['Finland', 'Estonia', 'Denmark', 'Sweden', 'Norway']
+countries = ['Finland', 'Estonia', 'Denmark', 'Sweden', 'Norway'] 
 
 # Print the lists and its length
 print('Fruits:', fruits)
@@ -163,7 +163,7 @@ print(second_last)      # mango
 ### Unpacking List Items
 
 ```py
-lst = ['item','item2','item3', 'item4', 'item5']
+lst = ['item1','item2','item3', 'item4', 'item5']
 first_item, second_item, third_item, *rest = lst
 print(first_item)     # item1
 print(second_item)    # item2
@@ -175,7 +175,7 @@ print(rest)           # ['item4', 'item5']
 ```py
 # First Example
 fruits = ['banana', 'orange', 'mango', 'lemon','lime','apple']
-first_fruit, second_fruit, third_fruit, *rest = lst
+first_fruit, second_fruit, third_fruit, *rest = fruits 
 print(first_fruit)     # banana
 print(second_fruit)    # orange
 print(third_fruit)     # mango
@@ -190,7 +190,7 @@ print(tenth)          # 10
 # Third Example about unpacking list
 countries = ['Germany', 'France','Belgium','Sweden','Denmark','Finland','Norway','Iceland','Estonia']
 gr, fr, bg, sw, *scandic, es = countries
-print(gr)
+print(gr) 
 print(fr)
 print(bg)
 print(sw)
@@ -364,7 +364,7 @@ print(fruits)       # []
 
 ### Copying a List
 
-It is possible to copy a list by reassigning it to a new variable in the following way: list2 = list1. Now, list2 is a reference of list1, any changes we make in list2 will also modify the original, list2. But there are lots of case in which we do not like to modify the original instead we like to have a different copy. One of way of avoiding the problem above is using _copy()_.
+It is possible to copy a list by reassigning it to a new variable in the following way: list2 = list1. Now, list2 is a reference of list1, any changes we make in list2 will also modify the original, list1. But there are lots of case in which we do not like to modify the original instead we like to have a different copy. One of way of avoiding the problem above is using _copy()_.
 
 ```py
 # syntax
@@ -408,7 +408,7 @@ print(fruits_and_vegetables ) # ['banana', 'orange', 'mango', 'lemon', 'Tomato',
 # syntax
 list1 = ['item1', 'item2']
 list2 = ['item3', 'item4', 'item5']
-list1.extend(list2)
+list1.extend(list2) # ['item1', 'item2', 'item3', 'item4', 'item5']
 ```
 
 ```py
@@ -562,7 +562,7 @@ To sort lists we can use _sort()_ method or _sorted()_ built-in functions. The _
     back_end = ['Node','Express', 'MongoDB']
     ```
 
-27. After joining the lists in question 26. Copy the joined list and assign it to a variable full_stack. Then insert Python and SQL after Redux.
+27. After joining the lists in question 26. Copy the joined list and assign it to a variable full_stack, then insert Python and SQL after Redux.
 
 ### Exercises: Level 2
 
