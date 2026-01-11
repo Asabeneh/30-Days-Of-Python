@@ -9,10 +9,9 @@
 
 <sub>Author:
 <a href="https://www.linkedin.com/in/asabeneh/" target="_blank">Asabeneh Yetayeh</a><br>
-<small> First Edition: Nov 22 - Dec 22, 2019</small>
+<small> Second Edition: July, 2021</small>
 </sub>
 
-</div>
 </div>
 
 [<< Day 26](../26_Day_Python_web/26_python_web.md) | [Day 28 >>](../28_Day_API/28_API.md)
@@ -41,23 +40,23 @@
 
 # Python with MongoDB
 
-Python is a backend technology and it can be connected with different data base applications such as MongoDB and SQL.
+Python is a backend technology and it can be connected with different data base applications. It can be connected to both SQL and noSQL databases. In this section, we connect Python with MongoDB database which is noSQL database. 
 
 ## MongoDB
 
-MongoDB is a NoSQL database. MongoDB stores data in a JSON like document which make MongoDB very flexible and scalable. Let's see the different terminologies of SQL and NoSQL databases. The following table will make the difference between SQL vs NoSQL databases.
+MongoDB is a NoSQL database. MongoDB stores data in a JSON like document which make MongoDB very flexible and scalable. Let us see the different terminologies of SQL and NoSQL databases. The following table will make the difference between SQL versus NoSQL databases.
 
 ### SQL versus NoSQL
 
 ![SQL versus NoSQL](../images/mongoDB/sql-vs-nosql.png)
 
-In this section we will focus on a NoSQL database MongoDB. Lets sign up on [mongoDB](https://www.mongodb.com/) by click on the sign in button then click register on the next page.
+In this section, we will focus on a NoSQL database MongoDB. Lets sign up on [mongoDB](https://www.mongodb.com/) by click on the sign in button then click register on the next page.
 
-![MongoDB Sign up pages](./images/mongoDB/mongodb-signup-page.png)
+![MongoDB Sign up pages](../images/mongoDB/mongodb-signup-page.png)
 
 Complete the fields and click continue
 
-![Mongodb register](./images/mongoDB/mongodb-register.png)
+![Mongodb register](../images/mongoDB/mongodb-register.png)
 
 Select the free plan
 
@@ -83,27 +82,28 @@ Create a mongoDB uri link
 
 ![Mongodb create uri](../images/mongoDB/mongodb-create-uri.png)
 
-Select python 3.6 or above driver
+Select Python 3.6 or above driver
 
 ![Mongodb python driver](../images/mongoDB/mongodb-python-driver.png)
 
 ### Getting Connection String(MongoDB URI)
 
-Copy the connection string only link and you get something like this
+Copy the connection string link and you will get something like this:
 
 ```sh
 mongodb+srv://asabeneh:<password>@30daysofpython-twxkr.mongodb.net/test?retryWrites=true&w=majority
 ```
 
-Don't worry about the url, it is a means to connect your application with mongoDB.
-Let's replace the password placeholder with the passed you use to add a user.
+Do not worry about the url, it is a means to connect your application with mongoDB.
+Let us replace the password placeholder with the password you used to add a user.
+
 **Example:**
 
 ```sh
 mongodb+srv://asabeneh:123123123@30daysofpython-twxkr.mongodb.net/test?retryWrites=true&w=majority
 ```
 
-Now, I replaced everything and the password is 123123 and the name of the database is thirty_days_python. This is just an example, your password must a bit strong than this.
+Now, I replaced everything and the password is 123123 and the name of the database is *thirty_days_python*. This is just an example, your password must be stronger than the example password.
 
 Python needs a mongoDB driver to access mongoDB database. We will use _pymongo_ with _dnspython_ to connect our application with mongoDB base . Inside your project directory install pymongo and dnspython.
 
@@ -140,8 +140,9 @@ When we run the above code we get the default mongoDB databases.
 
 ### Creating a database and collection
 
-Let's create a database, database and collection in mongoDB will be created if it doesn't exist. Let's create a data base name _thirty_days_of_python_ and _students_ collection.
-To create a database
+Let us create a database, database and collection in mongoDB will be created if it doesn't exist. Let's create a data base name *thirty_days_of_python* and *students* collection.
+
+To create a database:
 
 ```sh
 db = client.name_of_databse # we can create a database like this or the second way
@@ -168,8 +169,8 @@ if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0', port=port)
 ```
 
-After we create a database, we also created a students collection and we used _insert_one_ method to insert a document.
-Now, the data _thirty_days_of_python_ and _students_ collection have been created and the document has been inserted.
+After we create a database, we also created a students collection and we used *insert_one()* method to insert a document.
+Now, the database *thirty_days_of_python* and *students* collection have been created and the document has been inserted.
 Check your mongoDB cluster and you will see both the database and the collection. Inside the collection, there will be a document.
 
 ```sh
@@ -184,7 +185,7 @@ If you have seen on the figure, the document has been created with a long id whi
 
 ### Inserting many documents to collection
 
-The _insert_one()_ method inserts one item at a time if we want to insert many documents at once either we use _insert_many()_ method or for loop.
+The *insert_one()*  method inserts one item at a time if we want to insert many documents at once either we use *insert_many()* method or for loop.
 We can use for loop to inset many documents at once.
 
 ```py
@@ -213,8 +214,8 @@ if __name__ == '__main__':
 
 ### MongoDB Find
 
-The find and findOne methods common method to find data in a collection in mongoDB database. It is similar to the SELECT statement in a MySQL database.
-Let's use the _find_one()_ method to get documents in the database collection.
+The *find()* and *findOne()* methods are common method to find data in a collection in mongoDB database. It is similar to the SELECT statement in a MySQL database.
+Let us use the _find_one()_ method to get a document in a database collection.
 
 - \*find_one({"\_id": ObjectId("id"}): Gets the first occurrence if an id is not provided
 
@@ -242,7 +243,7 @@ if __name__ == '__main__':
 {'_id': ObjectId('5df68a21f106fe2d315bbc8b'), 'name': 'Asabeneh', 'country': 'Helsinki', 'city': 'Helsinki', 'age': 250}
 ```
 
-The above query returns the first entry but we can target specific document using specific \_id. Let's do one example, let's use David's id to get David object.
+The above query returns the first entry but we can target specific document using specific \_id. Let us do one example, use David's id to get David object.
 '\_id':ObjectId('5df68a23f106fe2d315bbc8c')
 
 ```py
@@ -293,7 +294,7 @@ if __name__ == '__main__':
 ```
 
 ```sh
-{'_id': ObjectId('5df68a21f106fe2d315bbc8b'), 'name': 'Asabeneh', 'country': 'Helsinki', 'city': 'Helsinki', 'age': 250}
+{'_id': ObjectId('5df68a21f106fe2d315bbc8b'), 'name': 'Asabeneh', 'country': 'Finland', 'city': 'Helsinki', 'age': 250}
 {'_id': ObjectId('5df68a23f106fe2d315bbc8c'), 'name': 'David', 'country': 'UK', 'city': 'London', 'age': 34}
 {'_id': ObjectId('5df68a23f106fe2d315bbc8d'), 'name': 'John', 'country': 'Sweden', 'city': 'Stockholm', 'age': 28}
 {'_id': ObjectId('5df68a23f106fe2d315bbc8e'), 'name': 'Sami', 'country': 'Finland', 'city': 'Helsinki', 'age': 25}
@@ -340,6 +341,10 @@ import os # importing operating system module
 MONGODB_URI = 'mongodb+srv://asabeneh:your_password_goes_here@30daysofpython-twxkr.mongodb.net/test?retryWrites=true&w=majority'
 client = pymongo.MongoClient(MONGODB_URI)
 db = client['thirty_days_of_python'] # accessing the database
+
+query = {
+    "country":"Finland"
+}
 students = db.students.find(query)
 
 for student in students:
@@ -365,12 +370,16 @@ Query with modifiers
 # let's import the flask
 from flask import Flask, render_template
 import os # importing operating system module
+import pymongo
 
 MONGODB_URI = 'mongodb+srv://asabeneh:your_password_goes_here@30daysofpython-twxkr.mongodb.net/test?retryWrites=true&w=majority'
 client = pymongo.MongoClient(MONGODB_URI)
 db = client['thirty_days_of_python'] # accessing the database
-students = db.students.find(query)
 
+query = {
+    "city":"Helsinki"
+}
+students = db.students.find(query)
 for student in students:
     print(student)
 
@@ -394,12 +403,16 @@ if __name__ == '__main__':
 # let's import the flask
 from flask import Flask, render_template
 import os # importing operating system module
+import pymongo
 
 MONGODB_URI = 'mongodb+srv://asabeneh:your_password_goes_here@30daysofpython-twxkr.mongodb.net/test?retryWrites=true&w=majority'
 client = pymongo.MongoClient(MONGODB_URI)
 db = client['thirty_days_of_python'] # accessing the database
+query = {
+    "country":"Finland",
+    "city":"Helsinki"
+}
 students = db.students.find(query)
-
 for student in students:
     print(student)
 
@@ -423,6 +436,7 @@ Query with modifiers
 # let's import the flask
 from flask import Flask, render_template
 import os # importing operating system module
+import pymongo
 
 MONGODB_URI = 'mongodb+srv://asabeneh:your_password_goes_here@30daysofpython-twxkr.mongodb.net/test?retryWrites=true&w=majority'
 client = pymongo.MongoClient(MONGODB_URI)
@@ -431,7 +445,6 @@ query = {"age":{"$gt":30}}
 students = db.students.find(query)
 for student in students:
     print(student)
-
 
 app = Flask(__name__)
 if __name__ == '__main__':
@@ -450,6 +463,7 @@ if __name__ == '__main__':
 # let's import the flask
 from flask import Flask, render_template
 import os # importing operating system module
+import pymongo
 
 MONGODB_URI = 'mongodb+srv://asabeneh:your_password_goes_here@30daysofpython-twxkr.mongodb.net/test?retryWrites=true&w=majority'
 client = pymongo.MongoClient(MONGODB_URI)
@@ -473,6 +487,7 @@ We can limit the number of documents we return using the _limit()_ method.
 # let's import the flask
 from flask import Flask, render_template
 import os # importing operating system module
+import pymongo
 
 MONGODB_URI = 'mongodb+srv://asabeneh:your_password_goes_here@30daysofpython-twxkr.mongodb.net/test?retryWrites=true&w=majority'
 client = pymongo.MongoClient(MONGODB_URI)
@@ -482,12 +497,13 @@ db.students.find().limit(3)
 
 ### Find with sort
 
-By default, sort is in ascending order. We can change to descending by adding -1 parameter.
+By default, sort is in ascending order. We can change the sorting to descending order by adding -1 parameter.
 
 ```py
 # let's import the flask
 from flask import Flask, render_template
 import os # importing operating system module
+import pymongo
 
 MONGODB_URI = 'mongodb+srv://asabeneh:your_password_goes_here@30daysofpython-twxkr.mongodb.net/test?retryWrites=true&w=majority'
 client = pymongo.MongoClient(MONGODB_URI)
@@ -537,13 +553,14 @@ Descending order
 
 ### Update with query
 
-We will use _update_one()_ method to update one item. It takes two object one is a qeury and the second is the new object.
-The first person, Asabeneh got a very implausible age. Let's update Asabeneh's age.
+We will use *update_one()* method to update one item. It takes two object one is a query and the second is the new object.
+The first person, Asabeneh got a very implausible age. Let us update Asabeneh's age.
 
 ```py
 # let's import the flask
 from flask import Flask, render_template
 import os # importing operating system module
+import pymongo
 
 MONGODB_URI = 'mongodb+srv://asabeneh:your_password_goes_here@30daysofpython-twxkr.mongodb.net/test?retryWrites=true&w=majority'
 client = pymongo.MongoClient(MONGODB_URI)
@@ -573,17 +590,18 @@ if __name__ == '__main__':
 {'_id': ObjectId('5df68a23f106fe2d315bbc8e'), 'name': 'Sami', 'country': 'Finland', 'city': 'Helsinki', 'age': 25}
 ```
 
-When we want to update many documents at once we use *upate_many()*method.
+When we want to update many documents at once we use *upate_many()* method.
 
 ### Delete Document
 
-The method _delete_one()_ delete one document.The _delete_one()_ take a query object parameter. It only removes the first occurrence.
-Let's remove one John from the collection.
+The method *delete_one()* deletes one document. The *delete_one()* takes a query object parameter. It only removes the first occurrence.
+Let us remove one John from the collection.
 
 ```py
 # let's import the flask
 from flask import Flask, render_template
 import os # importing operating system module
+import pymongo
 
 MONGODB_URI = 'mongodb+srv://asabeneh:your_password_goes_here@30daysofpython-twxkr.mongodb.net/test?retryWrites=true&w=majority'
 client = pymongo.MongoClient(MONGODB_URI)
@@ -613,9 +631,9 @@ if __name__ == '__main__':
 {'_id': ObjectId('5df68a23f106fe2d315bbc8e'), 'name': 'Sami', 'country': 'Finland', 'city': 'Helsinki', 'age': 25}
 ```
 
-As you can see John as been removed from the collection
+As you can see John has been removed from the collection.
 
-When we want to delete many documents we use _delete_many()_ method, it takes a query object. If we pass an empyt query object to _delete_many({})_ it will delete all the documents in the collection.
+When we want to delete many documents we use *delete_many()* method, it takes a query object. If we pass an empty query object to *delete_many({})* it will delete all the documents in the collection.
 
 ### Drop a collection
 
@@ -625,6 +643,7 @@ Using the _drop()_ method we can delete a collection from a database.
 # let's import the flask
 from flask import Flask, render_template
 import os # importing operating system module
+import pymongo
 
 MONGODB_URI = 'mongodb+srv://asabeneh:your_password_goes_here@30daysofpython-twxkr.mongodb.net/test?retryWrites=true&w=majority'
 client = pymongo.MongoClient(MONGODB_URI)

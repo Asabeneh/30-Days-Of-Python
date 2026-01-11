@@ -8,10 +8,8 @@
   </a>
 <sub>Author:
 <a href="https://www.linkedin.com/in/asabeneh/" target="_blank">Asabeneh Yetayeh</a><br>
-<small> First Edition: Nov 22 - Dec 22, 2019</small>
+<small>Second Edition: July, 2021</small>
 </sub>
-
-</div>
 </div>
 
 [<< Day 18](../18_Day_Regular_expressions/18_regular_expressions.md) | [Day 20 >>](../20_Day_Python_package_manager/20_python_package_manager.md)
@@ -33,21 +31,24 @@
     - [File with xlsx Extension](#file-with-xlsx-extension)
     - [File with xml Extension](#file-with-xml-extension)
   - [💻 Exercises: Day 19](#-exercises-day-19)
+    - [Exercises: Level 1](#exercises-level-1)
+    - [Exercises: Level 2](#exercises-level-2)
+    - [Exercises: Level 3](#exercises-level-3)
 
 # 📘 Day 19
 
 ## File Handling
 
-So far we have seen different python data types. We usually store our data in different file formats. In addition to handling files, we will also see different file formats(.txt, .json, .xml, .csv, .tsv, .excel) in this section. First, let's get familiar with handling files with common file format (.txt).
+So far we have seen different Python data types. We usually store our data in different file formats. In addition to handling files, we will also see different file formats(.txt, .json, .xml, .csv, .tsv, .excel) in this section. First, let us get familiar with handling files with common file format(.txt).
 
-File handling is an import part of programming which allows us to create, read, update and delete files. In python to handle data we use _open()_ built-in function.
+File handling is an import part of programming which allows us to create, read, update and delete files. In Python to handle data we use _open()_ built-in function.
 
 ```py
 # Syntax
 open('filename', mode) # mode(r, a, w, x, t,b)  could be to read, write, update
 ```
 
-- "r" - Read - Default value. Opens a file for reading, error if the file does not exist
+- "r" - Read - Default value. Opens a file for reading, it returns an error if the file does not exist
 - "a" - Append - Opens a file for appending, creates the file if it does not exist
 - "w" - Write - Opens a file for writing, creates the file if it does not exist
 - "x" - Create - Creates the specified file, returns an error if the file exists
@@ -56,16 +57,16 @@ open('filename', mode) # mode(r, a, w, x, t,b)  could be to read, write, update
 
 ### Opening Files for Reading
 
-The default mode of _open_ is reading, so we do not have to specify 'r' or 'rt'. I have created and saved a file named reading_file_example.txt in the files directory. Let's see how it is done:
+The default mode of _open_ is reading, so we do not have to specify 'r' or 'rt'. I have created and saved a file named reading_file_example.txt in the files directory. Let us see how it is done:
 
 ```py
 f = open('./files/reading_file_example.txt')
 print(f) # <_io.TextIOWrapper name='./files/reading_file_example.txt' mode='r' encoding='UTF-8'>
 ```
 
-As you can see in the example above, I printed the opened file and it gave me some information about it. Opened file has different reading methods: _read()_, _readline_, _readlines_. An opened file has to be closed with _close()_ method.
+As you can see in the example above, I printed the opened file and it gave  some information about it. Opened file has different reading methods: _read()_, _readline_, _readlines_. An opened file has to be closed with _close()_ method.
 
-- _read()_: read the whole text as string. If we want to limit the number of characters we read, we can limit it by passing int value to the methods.
+- _read()_: read the whole text as string. If we want to limit the number of characters we want to read, we can limit it by passing int value to the *read(number)* method.
 
 ```py
 f = open('./files/reading_file_example.txt')
@@ -146,7 +147,7 @@ f.close()
 ['This is an example to show how to open a file and read.', 'This is the second line of the text.']
 ```
 
-After we open a file, we should close it. There is a high tendency of forgetting to close them. There is a new way of opening files using _with_ - closes the files by itself. Let's rewrite the the previous example with the _with_ method:
+After we open a file, we should close it. There is a high tendency of forgetting to close them. There is a new way of opening files using _with_ - closes the files by itself. Let us rewrite the the previous example with the _with_ method:
 
 ```py
 with open('./files/reading_file_example.txt') as f:
@@ -165,10 +166,10 @@ with open('./files/reading_file_example.txt') as f:
 
 To write to an existing file, we must add a mode as parameter to the _open()_ function:
 
-- "a" - append - will append to the end of the file, if the file does not exist it raise FileNotFoundError.
+- "a" - append - will append to the end of the file, if the file does not exist it creates a new file.
 - "w" - write - will overwrite any existing content, if the file does not exist it creates.
 
-Let's append some text to the file we have been reading:
+Let us append some text to the file we have been reading:
 
 ```py
 with open('./files/reading_file_example.txt','a') as f:
@@ -196,21 +197,21 @@ If the file does not exist, the remove method will raise an error, so it is good
 
 ```py
 import os
-if os.path.exist('./files/example.txt'):
+if os.path.exists('./files/example.txt'):
     os.remove('./files/example.txt')
 else:
-    os.remove('The file does not exist')
+    print('The file does not exist')
 ```
 
 ## File Types
 
 ### File with txt Extension
 
-File with _txt_ extension is a very common form of data and we have covered it in the previous section. Let's move to the JSON file
+File with _txt_ extension is a very common form of data and we have covered it in the previous section. Let us move to the JSON file
 
 ### File with json Extension
 
-JSON stands for JavaScript Object Notation. Actually, it's a stringified JavaScript object.
+JSON stands for JavaScript Object Notation. Actually, it is a stringified JavaScript object or Python dictionary.
 
 _Example:_
 
@@ -249,12 +250,14 @@ person_json = '''{
 }'''
 # let's change JSON to dictionary
 person_dct = json.loads(person_json)
+print(type(person_dct))
 print(person_dct)
 print(person_dct['name'])
 ```
 
 ```sh
 # output
+<class 'dict'>
 {'name': 'Asabeneh', 'country': 'Finland', 'city': 'Helsinki', 'skills': ['JavaScrip', 'React', 'Python']}
 Asabeneh
 ```
@@ -297,7 +300,7 @@ print(person_json)
 
 ### Saving as JSON File
 
-We can also save our data as a json file. Let's save it as a json file using the following steps.
+We can also save our data as a json file. Let us save it as a json file using the following steps. For writing a json file, we use the json.dump() method, it can take dictionary, output file, ensure_ascii and indent.
 
 ```py
 import json
@@ -322,7 +325,7 @@ CSV stands for comma separated values. CSV is a simple file format used to store
 
 ```csv
 "name","country","city","skills"
-"Asabeneh","Finland","Helsinki","JavaScrip"
+"Asabeneh","Finland","Helsinki","JavaScript"
 ```
 
 **Example:**
@@ -330,7 +333,7 @@ CSV stands for comma separated values. CSV is a simple file format used to store
 ```py
 import csv
 with open('./files/csv_example.csv') as f:
-    csv_reader = csv.reader(f, delimiter=',') # w use, reader method to read csv
+    csv_reader = csv.reader(f, delimiter=',') # we use, reader method to read csv
     line_count = 0
     for row in csv_reader:
         if line_count == 0:
@@ -346,6 +349,7 @@ with open('./files/csv_example.csv') as f:
 ```sh
 # output:
 Column names are :name, country, city, skills
+Number of lines:  1
         Asabeneh is a teacher. He lives in Finland, Helsinki.
 Number of lines:  2
 ```
@@ -353,6 +357,13 @@ Number of lines:  2
 ### File with xlsx Extension
 
 To read excel files we need to install _xlrd_ package. We will cover this after we cover package installing using pip.
+
+```py
+import xlrd
+excel_book = xlrd.open_workbook('sample.xls')
+print(excel_book.nsheets)
+print(excel_book.sheet_names)
+```
 
 ### File with xml Extension
 
@@ -395,15 +406,17 @@ field: city
 field: skills
 ```
 
-🌕 You are making progress. Maintain your momentum, keep the good work. Now do some exercises for your brain and for your muscle.
+🌕 You are making a big progress. Maintain your momentum, keep the good work. Now do some exercises for your brain and muscles.
 
 ## 💻 Exercises: Day 19
 
+### Exercises: Level 1
+
 1. Write a function which count number of lines and number of words in a text. All the files are in the data the folder:
-   a) Read obama_speech.txt file and count number of lines and words
-   b) Read michelle_obama_speech.txt file and count number of lines and words
-   c) Read donald_speech.txt file and count number of lines and words
-   d) Read melina_trump_speech.txt file and count number of lines and words
+   1) Read obama_speech.txt file and count number of lines and words
+   2) Read michelle_obama_speech.txt file and count number of lines and words
+   3) Read donald_speech.txt file and count number of lines and words
+   4) Read melina_trump_speech.txt file and count number of lines and words
 2. Read the countries_data.json data file in data directory, create a function that finds the ten most spoken languages
 
    ```py
@@ -457,12 +470,13 @@ field: skills
    ]
    ```
 
-4. Extract all incoming email addresses as a list from the email_exchange_big.txt file.
-5. Find the most common words in the English language. Call the name of your function find_most_common_words, it will take two parameters - a string or a file and a positive integer, indicating the number of words. Your function will return an array of tuples in descending order. Check the output
+### Exercises: Level 2
+
+1. Extract all incoming email addresses as a list from the email_exchange_big.txt file.
+2. Find the most common words in the English language. Call the name of your function find_most_common_words, it will take two parameters - a string or a file and a positive integer, indicating the number of words. Your function will return an array of tuples in descending order. Check the output
 
 ```py
     # Your output should look like this
-
     print(find_most_common_words('sample.txt', 10))
     [(10, 'the'),
     (8, 'be'),
@@ -485,17 +499,17 @@ field: skills
     (5, 'and')]
 ```
 
-6. Use the function, find_most_frequent_words to find:
-   a) The ten most frequent words used in [Obama's speech](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/data/obama_speech.txt)
-   b) The ten most frequent words used in [Michelle's speech](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/data/michelle_obama_speech.txt)
-   c) The ten most frequent words used in [Trump's speech](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/data/donald_speech.txt)
-   d) The ten most frequent words used in [Melina's speech](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/data/melina_trump_speech.txt)
-7. Write a python application that checks similarity between two texts. It takes a file or a string as a parameter and it will evaluate the similarity of the two texts. For instance check the similarity between the transcripts of [Michelle's](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/data/michelle_obama_speech.txt) and [Melina's](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/data/melina_trump_speech.txt) speech. You may need a couple of functions, function to clean the text(clean_text), function to remove support words(remove_support_words) and finally to check the similarity(check_text_similarity). List of [stop words](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/data/stop_words.py) are in the data directory
-8. Find the 10 most repeated words in the romeo_and_juliet.txt
-9. Read the [hacker news csv](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/data/hacker_news.csv) file and find out:
-   a) Count the number of lines containing python or Python
-   b) Count the number lines containing JavaScript, javascript or Javascript
-   c) Count the number lines containing Java and not JavaScript
+3. Use the function, find_most_frequent_words to find:
+   1) The ten most frequent words used in [Obama's speech](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/data/obama_speech.txt)
+   2) The ten most frequent words used in [Michelle's speech](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/data/michelle_obama_speech.txt)
+   3) The ten most frequent words used in [Trump's speech](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/data/donald_speech.txt)
+   4) The ten most frequent words used in [Melina's speech](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/data/melina_trump_speech.txt)
+4. Write a python application that checks similarity between two texts. It takes a file or a string as a parameter and it will evaluate the similarity of the two texts. For instance check the similarity between the transcripts of [Michelle's](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/data/michelle_obama_speech.txt) and [Melina's](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/data/melina_trump_speech.txt) speech. You may need a couple of functions, function to clean the text(clean_text), function to remove support words(remove_support_words) and finally to check the similarity(check_text_similarity). List of [stop words](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/data/stop_words.py) are in the data directory
+5. Find the 10 most repeated words in the romeo_and_juliet.txt
+6. Read the [hacker news csv](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/data/hacker_news.csv) file and find out:
+   1) Count the number of lines containing python or Python
+   2) Count the number lines containing JavaScript, javascript or Javascript
+   3) Count the number lines containing Java and not JavaScript
 
 🎉 CONGRATULATIONS ! 🎉
 

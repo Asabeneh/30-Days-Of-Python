@@ -9,10 +9,9 @@
 
 <sub>Author:
 <a href="https://www.linkedin.com/in/asabeneh/" target="_blank">Asabeneh Yetayeh</a><br>
-<small> First Edition: Nov 22 - Dec 22, 2019</small>
+<small> Second Edition: July, 2021</small>
 </sub>
 
-</div>
 </div>
 
 [<< Day 7 ](../07_Day_Sets/07_sets.md) | [Day 9 >>](../09_Day_Conditionals/09_conditionals.md)
@@ -44,7 +43,7 @@ A dictionary is a collection of unordered, modifiable(mutable) paired (key: valu
 
 ### Creating a Dictionary
 
-To create a dictionary we use curly brackets, {}.
+To create a dictionary we use curly brackets, {} or the *dict()* built-in function.
 
 ```py
 # syntax
@@ -62,7 +61,7 @@ person = {
     'age':250,
     'country':'Finland',
     'is_marred':True,
-    'skills':['JavaScript', 'React', 'Node', 'MongoDB', 'Python']
+    'skills':['JavaScript', 'React', 'Node', 'MongoDB', 'Python'],
     'address':{
         'street':'Space street',
         'zipcode':'02210'
@@ -70,7 +69,7 @@ person = {
     }
 ```
 
-The dictionary above shows that a value could be any different data type:string, boolean, list, tuple, set or a dictionary.
+The dictionary above shows that a value could be any data types:string, boolean, list, tuple, set or a dictionary.
 
 ### Dictionary Length
 
@@ -90,7 +89,7 @@ person = {
     'last_name':'Yetayeh',
     'age':250,
     'country':'Finland',
-    'is_marred':True,
+    'is_married':True,
     'skills':['JavaScript', 'React', 'Node', 'MongoDB', 'Python'],
     'address':{
         'street':'Space street',
@@ -151,7 +150,7 @@ person = {
     }
 print(person.get('first_name')) # Asabeneh
 print(person.get('country'))    # Finland
-print(person.get('skills')) #['HTML','CSS','JavaScript', 'React', 'Node', 'MongoDB', 'Python']
+print(person.get('skills')) #['JavaScript', 'React', 'Node', 'MongoDB', 'Python']
 print(person.get('city'))   # None
 ```
 
@@ -211,7 +210,7 @@ person = {
     }
     }
 person['first_name'] = 'Eyob'
-person['age']
+person['age'] = 252
 ```
 
 ### Checking Keys in a Dictionary
@@ -322,7 +321,7 @@ values = dct.values()
 print(values)     # dict_values(['value1', 'value2', 'value3', 'value4'])
 ```
 
-🌕 You are astonishing. Now, you are super charged with the power of dictionaries. You have just completed day 8 challenges and you are 8 steps a head in to your way to greatness. Now do some exercises for your brain and for your muscle.
+🌕 You are astonishing. Now, you are super charged with the power of dictionaries. You have just completed day 8 challenges and you are 8 steps a head in to your way to greatness. Now do some exercises for your brain and  muscles.
 
 ## 💻 Exercises: Day 8
 
