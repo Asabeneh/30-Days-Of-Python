@@ -48,7 +48,7 @@ Set is a collection of items. Let me take you back to your elementary or high sc
 
 ### Creating a Set
 
-We use the _set()_ built-in function.
+To create an empty set, we use the set() function. Empty curly brackets {} will create a dictionary. 
 
 - Creating an empty set
 
