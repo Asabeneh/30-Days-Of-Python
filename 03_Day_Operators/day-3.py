@@ -9,16 +9,16 @@ print('Division: ', 6 / 2)
 print('Division: ', 7 / 2)
 print('Division without the remainder: ', 7 // 2)   # gives without the floating number or without the remaining
 print('Modulus: ', 3 % 2)                           # Gives the remainder
-print ('Division without the remainder: ',7 // 3)
-print('Exponential: ', 3 ** 2)                     # it means 3 * 3
+print ('Division without the remainder: ', 7 // 3)
+print('Exponential: ', 2 ** 3)                     # 8 it means 2 * 2 * 2
 
 # Floating numbers
 print('Floating Number,PI', 3.14)
 print('Floating Number, gravity', 9.81)
 
 # Complex numbers
-print('Complex number: ', 1+1j)
-print('Multiplying complex number: ',(1+1j) * (1-1j))
+print('Complex number: ', 1 + 1j)
+print('Multiplying complex number: ',(1 + 1j) * (1-1j))
 
 # Declaring the variable at the top first
 
@@ -109,7 +109,7 @@ print('A in Asabeneh', 'A' in 'Asabeneh') # True - A found in the string
 print('B in Asabeneh', 'B' in 'Asabeneh') # False -there is no uppercase B
 print('coding' in 'coding for all') # True - because coding for all has the word coding
 print('a in an:', 'a' in 'an')      # True
-print('4 is 2 ** 2:', 4 is 2 **2)   # True
+print('4 is 2 ** 2:', 4 is 2 ** 2)   # True
 
 print(3 > 2 and 4 > 3) # True - because both statements are true
 print(3 > 2 and 4 < 3) # False - because the second statement is false

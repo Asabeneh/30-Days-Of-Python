@@ -9,9 +9,8 @@
 
   <sub>Author:
   <a href="https://www.linkedin.com/in/asabeneh/" target="_blank">Asabeneh Yetayeh</a><br>
-  <small> First Edition: Nov 22 - Dec 22, 2019</small>
+  <small>Second Edition: July, 2021</small>
   </sub>
-</div>
 </div>
 
 [<< Day 15](../15_Day_Python_type_errors/15_python_type_errors.md) | [Day 17 >>](../17_Day_Exception_handling/17_exception_handling.md)
@@ -20,12 +19,12 @@
 - [📘 Day 16](#-day-16)
   - [Python *datetime*](#python-datetime)
     - [Getting *datetime* Information](#getting-datetime-information)
-    - [Formating Date Output Using *strftime*](#formating-date-output-using-strftime)
+    - [Formatting Date Output Using *strftime*](#formatting-date-output-using-strftime)
     - [String to Time Using *strptime*](#string-to-time-using-strptime)
     - [Using *date* from *datetime*](#using-date-from-datetime)
     - [Time Objects to Represent Time](#time-objects-to-represent-time)
     - [Difference Between Two Points in Time Using](#difference-between-two-points-in-time-using)
-    - [Difference Between Two Points in Time Using *timedelata*](#difference-between-two-points-in-time-using-timedelata)
+    - [Difference Between Two Points in Time Using *timedelta*](#difference-between-two-points-in-time-using-timedelta)
   - [💻 Exercises: Day 16](#-exercises-day-16)
 # 📘 Day 16
 
@@ -39,29 +38,29 @@ print(dir(datetime))
 ['MAXYEAR', 'MINYEAR', '__builtins__', '__cached__', '__doc__', '__file__', '__loader__', '__name__', '__package__', '__spec__', 'date', 'datetime', 'datetime_CAPI', 'sys', 'time', 'timedelta', 'timezone', 'tzinfo']
 ```
 
-With dir or help built-in commands it is possible to know the available functions in a certain module. As you can see, in the datetime module there are many functions, but we will focus on _date_, _datetime_, _time_ and _timedelta_. Let's see them one by one.
+With dir or help built-in commands it is possible to know the available functions in a certain module. As you can see, in the datetime module there are many functions, but we will focus on _date_, _datetime_, _time_ and _timedelta_. Let se see them one by one.
 
 ### Getting *datetime* Information
 
 ```py
 from datetime import datetime
 now = datetime.now()
-print(now)                      # 2019-12-04 23:34:46.549883
-day = now.day                   # 4
-month = now.month               # 12
-year = now.year                 # 2019
-hour = now.hour                 # 23
+print(now)                      # 2021-07-08 07:34:46.549883
+day = now.day                   # 8
+month = now.month               # 7
+year = now.year                 # 2021
+hour = now.hour                 # 7
 minute = now.minute             # 38
 second = now.second
 timestamp = now.timestamp()
 print(day, month, year, hour, minute)
 print('timestamp', timestamp)
-print(f'{day}/{month}/{year}, {hour}:{minute}')  # 4/12/2019, 23:38
+print(f'{day}/{month}/{year}, {hour}:{minute}')  # 8/7/2021, 7:38
 ```
 
 Timestamp or Unix timestamp is the number of seconds elapsed from 1st of January 1970 UTC.
 
-### Formating Date Output Using *strftime*
+### Formatting Date Output Using *strftime*
 
 ```py
 from datetime import datetime
@@ -78,20 +77,20 @@ print(f'{day}/{month}/{year}, {hour}:{minute}')  # 1/1/2020, 0:0
 
 ```
 
-Time formating
+Formatting date time using *strftime* method and the documentation can be found [here](https://strftime.org/).
 
 ```py
 from datetime import datetime
 # current date and time
 now = datetime.now()
 t = now.strftime("%H:%M:%S")
-print("time:", t)
+print("time:", t)           # time: 18:21:40
 time_one = now.strftime("%m/%d/%Y, %H:%M:%S")
 # mm/dd/YY H:M:S format
-print("time one:", time_one)
+print("time one:", time_one)        # time one: 06/28/2022, 18:21:40
 time_two = now.strftime("%d/%m/%Y, %H:%M:%S")
 # dd/mm/YY H:M:S format
-print("time two:", time_two)
+print("time two:", time_two)        # time two: 28/06/2022, 18:21:40
 ```
 
 ```sh
@@ -102,16 +101,17 @@ time two: 05/12/2019, 01:05:01
 
 Here are all the _strftime_ symbols we use to format time. An example of all the formats for this module.
 
-![strftime](./images/strftime.png)
+![strftime](../images/strftime.png)
 
 ### String to Time Using *strptime*
+Here is a [documentation](https://www.programiz.com/python-programming/datetime/strptime) hat helps to understand the format. 
 
 ```py
 from datetime import datetime
 date_string = "5 December, 2019"
-print("date_string =", date_string)
+print("date_string =", date_string)     # date_string = 5 December, 2019
 date_object = datetime.strptime(date_string, "%d %B, %Y")
-print("date_object =", date_object)
+print("date_object =", date_object)     # date_object = 2019-12-05 00:00:00
 ```
 
 ```sh
@@ -124,7 +124,7 @@ date_object = 2019-12-05 00:00:00
 ```py
 from datetime import date
 d = date(2020, 1, 1)
-print(d)
+print(d)        # 2020-01-01
 print('Current date:', d.today())    # 2019-12-05
 # date object of today's date
 today = date.today()
@@ -139,16 +139,16 @@ print("Current day:", today.day)     # 5
 from datetime import time
 # time(hour = 0, minute = 0, second = 0)
 a = time()
-print("a =", a)
+print("a =", a)     # a = 00:00:00
 # time(hour, minute and second)
 b = time(10, 30, 50)
-print("b =", b)
+print("b =", b)     # b = 10:30:50
 # time(hour, minute and second)
 c = time(hour=10, minute=30, second=50)
-print("c =", c)
+print("c =", c)     # c = 10:30:50
 # time(hour, minute, second, microsecond)
 d = time(10, 30, 50, 200555)
-print("d =", d)
+print("d =", d)     # d = 10:30:50.200555
 ```
 
 output  
@@ -160,11 +160,12 @@ d = 10:30:50.200555
 ### Difference Between Two Points in Time Using
 
 ```py
+from datetime import date, datetime
 today = date(year=2019, month=12, day=5)
 new_year = date(year=2020, month=1, day=1)
 time_left_for_newyear = new_year - today
 # Time left for new year:  27 days, 0:00:00
-print('Time left for new year: ', time_left_for_newyear)
+print('Time left for new year: ', time_left_for_newyear)  # Time left for new year:  27 days, 0:00:00
 
 t1 = datetime(year = 2019, month = 12, day = 5, hour = 0, minute = 59, second = 0)
 t2 = datetime(year = 2020, month = 1, day = 1, hour = 0, minute = 0, second = 0)
@@ -172,7 +173,7 @@ diff = t2 - t1
 print('Time left for new year:', diff) # Time left for new year: 26 days, 23: 01: 00
 ```
 
-### Difference Between Two Points in Time Using *timedelata*
+### Difference Between Two Points in Time Using *timedelta*
 
 ```py
 from datetime import timedelta
@@ -188,16 +189,16 @@ print("t3 =", t3)
     t3 = 86 days, 22:56:50
 ```
 
-🌕 You are extraordinary. You are 16 steps a head to your way to greatness. Now do some exercises for your brain and for your muscle.
+🌕 You are an extraordinary. You are 16 steps a head to your way to greatness. Now do some exercises for your brain and muscles.
 
 ## 💻 Exercises: Day 16
 
 1. Get the current day, month, year, hour, minute and timestamp from datetime module
-1. Format the current date using this format: "%m/%d/%Y, %H:%M:%S")
-1. Today is 5 December, 2019. Change this time string to time.
-1. Calculate the time difference between now and new year.
-1. Calculate the time difference between 1 January 1970 and now.
-1. Think, what can you use the datetime module for? Examples:
+2. Format the current date using this format: "%m/%d/%Y, %H:%M:%S")
+3. Today is 5 December, 2019. Change this time string to time.
+4. Calculate the time difference between now and new year.
+5. Calculate the time difference between 1 January 1970 and now.
+6. Think, what can you use the datetime module for? Examples:
    - Time series analysis
    - To get a timestamp of any activities in an application
    - Adding posts on a blog 
