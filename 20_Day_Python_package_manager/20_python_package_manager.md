@@ -245,7 +245,7 @@ Let's read a txt file from this website, https://www.w3.org/TR/PNG/iso_8859-1.tx
 import requests # importing the request module
 
 url = 'https://www.w3.org/TR/PNG/iso_8859-1.txt' # text from a website
-
+# Please change the url, is not working at all
 response = requests.get(url) # opening a network and fetching a data
 print(response)
 print(response.status_code) # status code, success:200
@@ -259,7 +259,7 @@ print(response.text) # gives all the text from the page
 {'date': 'Sun, 08 Dec 2019 18:00:31 GMT', 'last-modified': 'Fri, 07 Nov 2003 05:51:11 GMT', 'etag': '"17e9-3cb82080711c0;50c0b26855880-gzip"', 'accept-ranges': 'bytes', 'cache-control': 'max-age=31536000', 'expires': 'Mon, 07 Dec 2020 18:00:31 GMT', 'vary': 'Accept-Encoding', 'content-encoding': 'gzip', 'access-control-allow-origin': '*', 'content-length': '1616', 'content-type': 'text/plain', 'strict-transport-security': 'max-age=15552000; includeSubdomains; preload', 'content-security-policy': 'upgrade-insecure-requests'}
 ```
 
-- Let us read from an API. API stands for Application Program Interface. It is a means to exchange structure data between servers primarily a json data. An example of an API:https://restcountries.eu/rest/v2/all. Let us read this API using _requests_ module.
+- Let us read from an API. API stands for Application Program Interface. It is a means to exchange structure data between servers primarily a json data. An example of an API:https://restcountries.eu/rest/v2/all.(This is not working) Let us read this API using _requests_ module.
 
 ```py
 import requests
