@@ -233,20 +233,20 @@ Enter number two: 3
 
    1. Write a code which gives grade to students according to theirs scores:
 
-        ```sh
-        80-100, A
-        70-89, B
-        60-69, C
-        50-59, D
-        0-49, F
-        ```
+    ```sh
+    90-100, A
+    80-89, B
+    70-79, C
+    60-69, D
+    0-59, F
+    ```
 
-   1. Check if the season is Autumn, Winter, Spring or Summer. If the user input is:
+   2. Get the month from user input then check if the season is Autumn, Winter, Spring or Summer. If the user input is:
     September, October or November, the season is Autumn.
     December, January or February, the season is Winter.
     March, April or May, the season is Spring
     June, July or August, the season is Summer
-   2. The following list contains some fruits:
+   3. The following list contains some fruits:
 
     ```sh
     fruits = ['banana', 'orange', 'mango', 'lemon']
@@ -264,7 +264,7 @@ Enter number two: 3
     'last_name': 'Yetayeh',
     'age': 250,
     'country': 'Finland',
-    'is_marred': True,
+    'is_married': True,
     'skills': ['JavaScript', 'React', 'Node', 'MongoDB', 'Python'],
     'address': {
         'street': 'Space street',

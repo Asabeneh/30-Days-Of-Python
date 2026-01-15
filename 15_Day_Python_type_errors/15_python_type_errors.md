@@ -11,7 +11,7 @@
   <a href="https://www.linkedin.com/in/asabeneh/" target="_blank">Asabeneh Yetayeh</a><br>
   <small> Second Edition: July, 2021</small>
   </sub>
-</div>
+
 </div>
 
 [<< Day 14](../14_Day_Higher_order_functions/14_higher_order_functions.md) | [Day 16 >>](../16_Day_Python_date_time/16_python_datetime.md)
@@ -183,7 +183,7 @@ AttributeError: module 'math' has no attribute 'PI'
 >>>
 ```
 
-As you can see, I made a mistake again! Instead of pi, I tried to call a PI function from maths module. It raised an attribute error, it means, that the function does not exist in the module. Lets fix it by changing from PI to pi.
+As you can see, I made a mistake again! Instead of pi, I tried to call a PI constant from maths module. It raised an attribute error, it means, that the attribute does not exist in the module. Lets fix it by changing from PI to pi.
 
 ```py
 asabeneh@Asabeneh:~$ python
@@ -348,7 +348,7 @@ ZeroDivisionError: division by zero
 We cannot divide a number by zero.
 
 We have covered some of the python error types, if you want to check more about it check the python documentation about python error types.
-If you are good at reading the error types then you will be able to fix your bugs fast and you will also become a better programmer.
+If you are good at reading the error types, then you will be able to fix your bugs fast and you will also become a better programmer.
 
 🌕 You are excelling. You made it to half way to your way to greatness. Now do some exercises for your brain and for your muscle.
 

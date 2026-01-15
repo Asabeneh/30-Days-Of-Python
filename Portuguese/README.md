@@ -17,21 +17,21 @@
 | 13  |  [Compreensão de Listas](./13_Day_List_comprehension/13_list_comprehension.md)|
 | 14  |  [Higher Order Functions](./14_Day_Higher_order_functions/14_higher_order_functions.md)|
 | 15  |  [Tripos de Erros](./15_Day_Python_type_errors/15_python_type_errors.md)|
-| 16 |  [Python Date time](./16_Day_Python_date_time/16_python_datetime.md) |
-| 17 |  [Manipulação de Excessão](./17_Day_Exception_handling/17_exception_handling.md)|
-| 18 |  [Regex (Expressões Regulares)](./18_Day_Regular_expressions/18_regular_expressions.md)|
-| 19 |  [Manipulação De Arquivos](./19_Day_File_handling/19_file_handling.md)|
-| 20 |  [Gerenciador De Pacotes](./20_Day_Python_package_manager/20_python_package_manager.md)|
-| 21 |  [Classes e Objetos](./21_Day_Classes_and_objects/21_classes_and_objects.md)|
-| 22 |  [Web Scraping](./22_Day_Web_scraping/22_web_scraping.md)|
-| 23 |  [Ambiente Virtual](./23_Day_Virtual_environment/23_virtual_environment.md)|
-| 24 |  [Estatisticas](./24_Day_Statistics/24_statistics.md)|
-| 25 |  [Pandas](./25_Day_Pandas/25_pandas.md)|
-| 26 |  [Python web](./26_Day_Python_web/26_python_web.md)|
-| 27 |  [Python com MongoDB](./27_Day_Python_with_mongodb/27_python_with_mongodb.md)|
-| 28 |  [API](./28_Day_API/28_API.md)|
-| 29 |  [Construindo API's](./29_Day_Building_API/29_building_API.md)|
-| 30 |  [Conclusão](./30_Day_Conclusions/30_conclusions.md)|
+| 16  |  [Python Date time](./16_Day_Python_date_time/16_python_datetime.md) |
+| 17  |  [Manipulação de Excessão](./17_Day_Exception_handling/17_exception_handling.md)|
+| 18  |  [Regex (Expressões Regulares)](./18_Day_Regular_expressions/18_regular_expressions.md)|
+| 19  |  [Manipulação De Arquivos](./19_Day_File_handling/19_file_handling.md)|
+| 20  |  [Gerenciador De Pacotes](./20_Day_Python_package_manager/20_python_package_manager.md)|
+| 21  |  [Classes e Objetos](./21_Day_Classes_and_objects/21_classes_and_objects.md)|
+| 22  |  [Web Scraping](./22_Day_Web_scraping/22_web_scraping.md)|
+| 23  |  [Ambiente Virtual](./23_Day_Virtual_environment/23_virtual_environment.md)|
+| 24  |  [Estatisticas](./24_Day_Statistics/24_statistics.md)|
+| 25  |  [Pandas](./25_Day_Pandas/25_pandas.md)|
+| 26  |  [Python web](./26_Day_Python_web/26_python_web.md)|
+| 27  |  [Python com MongoDB](./27_Day_Python_with_mongodb/27_python_with_mongodb.md)|
+| 28  |  [API](./28_Day_API/28_API.md)|
+| 29  |  [Construindo API's](./29_Day_Building_API/29_building_API.md)|
+| 30  |  [Conclusão](./30_Day_Conclusions/30_conclusions.md)|
 
 🧡🧡🧡 CODANDO FELIZ 🧡🧡🧡
 
@@ -59,31 +59,31 @@
 
 ![30DaysOfPython](.././images/30DaysOfPython_banner3@2x.png)
 
-- [🐍 30 Dias De Python](#-30-dias-de-python)
-- [📘 Dia 1](#Dia-1)
-  - [Bem Vindo](#welcome)
+- [🐍 30 Dias de python](#-30-dias-de-python)
+- [📘 Dia 1](#-dia-1)
+  - [Bem Vindo!](#bem-vindo)
   - [Introdução](#introdução)
-  - [Por quê Python ?](#Por-quê-python)
-  - [Setup do ambiente](#Setup-do-ambiente)
+  - [Por quê Python?](#por-quê-python)
+  - [Setup do ambiente](#setup-do-ambiente)
     - [Instalando o Python](#instalando-o-python)
     - [Python Shell](#python-shell)
     - [Instalando o Visual Studio Code](#instalando-o-visual-studio-code)
-      - [Como usar o visual studio code](#como-usar-o-visual-studio-code)
+      - [Como usar o Visual Studio Code](#como-usar-o-visual-studio-code)
   - [Basico de Python](#basico-de-python)
-    - [Sintaxe do Python](#Sintaxe-do-python)
-    - [Indentação do Python](#indentaçao-do-python)
-    - [Comentários](#comentarios)
+    - [Sintaxe do Python](#sintaxe-do-python)
+    - [Identação do Python](#identação-do-python)
+    - [Comentários](#comentários)
     - [Tipos de dados](#tipos-de-dados)
-      - [Numeros](#numeros)
+      - [Números](#números)
       - [Strings](#strings)
       - [Booleanos](#booleanos)
       - [Listas](#listas)
-      - [Dicionários](#dicionarios)
-      - [Tuplas](#tupla)
+      - [Dicionário](#dicionário)
+      - [Tupla](#tupla)
       - [Set](#set)
-    - [Checando tipos de dados](#checando-tipos-de-dados)
+    - [Checando Tipos de Dados](#checando-tipos-de-dados)
     - [Arquivo Python](#arquivo-python)
-  - [💻 Exercicios - Dia 1](#-exercicios-dia-1)
+  - [💻 Exercicios - Dia 1](#-exercicios---dia-1)
     - [Exercicio: Level 1](#exercicio-level-1)
     - [Exercicio: Level 2](#exercicio-level-2)
     - [Exercicio: Level 3](#exercicio-level-3)
@@ -105,7 +105,7 @@ Este desafio foi desenvolvido para iniciantes e profissionais que desejam aprend
 Este desafio é fácil de ler, escrito originalmente em inglês coloquial e traduzido para um português, envolvente, motivador e ao mesmo tempo muito exigente. Você precisa destinar muito tempo para terminar este desafio. Se você é um dos que aprendem melhor vendo, você pode assistir às vídeo-aulas em <a href="https://www.youtube.com/channel/UC7PNRuno1rzYPb1xLa4yktw"> 
 Canal do Youtube do Washera</a> Você pode começar pelo [Video de Python para iniciantes absolutos](https://youtu.be/OCCWZheOesI). Se inscreva no canal, comente suas dúvidas nos vídeos do YouTube e seja proativo, o autor eventualmente notará você.
 
-O autor gosta de ouvir sua opinião sobre o desafio, compartilhe o artigo do autor dando um feedback com sua opinião sobre o desafio 30DiasDePython. E você pode deixar seu feedback sobre o artigo em: [link](https://testimonial-vdzd.onrender.com/)
+O autor gosta de ouvir sua opinião sobre o desafio, compartilhe o artigo do autor dando um feedback com sua opinião sobre o desafio 30DiasDePython. E você pode deixar seu feedback sobre o artigo em: [link](https://www.asabeneh.com/testimonials)
 
 ## Por quê Python?
 
