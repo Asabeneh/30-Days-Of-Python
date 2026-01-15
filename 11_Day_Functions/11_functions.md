@@ -9,10 +9,9 @@
 
 <sub>Author:
 <a href="https://www.linkedin.com/in/asabeneh/" target="_blank">Asabeneh Yetayeh</a><br>
-<small> First Edition: Nov 22 - Dec 22, 2019</small>
+<small> Second Edition: July, 2021</small>
 </sub>
 
-</div>
 </div>
 
 [<< Day 10](../10_Day_Loops/10_loops.md) | [Day 12 >>](../12_Day_Modules/12_modules.md)
@@ -33,20 +32,23 @@
     - [Default and Arbitrary Number of Parameters in Functions](#default-and-arbitrary-number-of-parameters-in-functions)
     - [Function as a Parameter of Another Function](#function-as-a-parameter-of-another-function)
   - [💻 Exercises: Day 11](#-exercises-day-11)
+    - [Exercises: Level 1](#exercises-level-1)
+    - [Exercises: Level 2](#exercises-level-2)
+    - [Exercises: Level 3](#exercises-level-3)
 
 # 📘 Day 11
 
 ## Functions
 
-So far we have seen many built-in python functions. In this section, we will focus on custom functions. What is a function? Before we start making functions, lets learn what a function is and why we need them?
+So far we have seen many built-in Python functions. In this section, we will focus on custom functions. What is a function? Before we start making functions, let us learn what a function is and why we need them?
 
 ### Defining a Function
 
-A function is a reusable block of code or programming statements designed to perform a certain task. To define a function, Python provides the _def_ keyword. The following is the syntax for defining a function. The function block of code is executed only if we call it.
+A function is a reusable block of code or programming statements designed to perform a certain task. To define or declare a function, Python provides the _def_ keyword. The following is the syntax for defining a function. The function block of code is executed only if the function is called or invoked.
 
 ### Declaring and Calling a Function
 
-When we make a function we call it declaring a function. When we start using the it we call it calling or invoking a function. Function can be declared with or without parameters.
+When we make a function, we call it declaring a function. When we start using the it,  we call it *calling* or *invoking* a function. Function can be declared with or without parameters.
 
 ```py
 # syntax
@@ -83,7 +85,7 @@ add_two_numbers()
 
 ### Function Returning a Value - Part 1
 
-Function can also return values, if a function does not return any, the value of the function is None. Lets rewrite the above functions using return. From now on, we get a value when calling the function, instead of printing it.
+Function can also return values, if a function does not have a return statement, the value of the function is None. Let us rewrite the above functions using return. From now on, we get a value from a function when we call the function and print it.
 
 ```py
 def generate_full_name ():
@@ -115,7 +117,7 @@ In a function we can pass different data types(number, string, boolean, list, tu
     codes
     codes
   # Calling function
-  function_name(parameter)
+  print(function_name(argument))
 ```
 
 **Example:**
@@ -147,11 +149,11 @@ def sum_of_numbers(n):
     for i in range(n+1):
         total+=i
     print(total)
-sum_of_numbers(10) # 55
-sum_of_numbers(100) # 5050
+print(sum_of_numbers(10)) # 55
+print(sum_of_numbers(100)) # 5050
 ```
 
-- Two Parameter: A function may or may not have a parameter or parameters. A function may have two or more parameters. If our function takes parameters we should call it with arguments. Let's check a function with two parameters:
+- Two Parameter: A function may or may not have a parameter or parameters. A function may also have two or more parameters. If our function takes parameters we should call it with arguments. Let us check a function with two parameters:
 
 ```py
   # syntax
@@ -160,7 +162,7 @@ sum_of_numbers(100) # 5050
     codes
     codes
   # Calling function
-  function_name(arg1, arg2)
+  print(function_name(arg1, arg2))
 ```
 
 **Example:**
@@ -181,7 +183,7 @@ def calculate_age (current_year, birth_year):
     age = current_year - birth_year
     return age;
 
-print('Age: ', calculate_age(2019, 1819))
+print('Age: ', calculate_age(2021, 1819))
 
 def weight_of_object (mass, gravity):
     weight = str(mass * gravity)+ ' N' # the value has to be changed to a string first
@@ -200,7 +202,7 @@ def function_name(para1, para2):
     codes
     codes
 # Calling function
-function_name(para1='John', para2='Doe') # the order of arguments does not matter here
+print(function_name(para1 = 'John', para2 = 'Doe')) # the order of arguments does not matter here
 ```
 
 **Example:**
@@ -210,12 +212,12 @@ def print_fullname(firstname, lastname):
     space = ' '
     full_name = firstname  + space + lastname
     print(full_name)
-print_fullname(firstname='Asabeneh', lastname='Yetayeh')
+print(print_fullname(firstname = 'Asabeneh', lastname = 'Yetayeh'))
 
 def add_two_numbers (num1, num2):
     total = num1 + num2
     print(total)
-add_two_numbers(num2=3, num1=2) # Order does not matter
+print(add_two_numbers(num2 = 3, num1 = 2)) # Order does not matter
 ```
 
 ### Function Returning a Value - Part 2
@@ -272,7 +274,7 @@ print(is_even(7)) # False
 ```py
 def find_even_numbers(n):
     evens = []
-    for i in range(n+1):
+    for i in range(n + 1):
         if i % 2 == 0:
             evens.append(i)
     return evens
@@ -311,10 +313,10 @@ def generate_full_name (first_name = 'Asabeneh', last_name = 'Yetayeh'):
 print(generate_full_name())
 print(generate_full_name('David','Smith'))
 
-def calculate_age (birth_year,current_year = 2019):
+def calculate_age (birth_year,current_year = 2021):
     age = current_year - birth_year
     return age;
-print('Age: ', calculate_age(1819))
+print('Age: ', calculate_age(1821))
 
 def weight_of_object (mass, gravity = 9.81):
     weight = str(mass * gravity)+ ' N' # the value has to be changed to string first
@@ -345,7 +347,7 @@ def sum_all_nums(*nums):
     for num in nums:
         total += num     # same as total = total + num 
     return total
-print(sum_all_nums(2, 3, 5))
+print(sum_all_nums(2, 3, 5)) # 10
 ```
 
 ### Default and Arbitrary Number of Parameters in Functions
@@ -355,7 +357,7 @@ def generate_groups (team,*args):
     print(team)
     for i in args:
         print(i)
-generate_groups('Team-1','Asabeneh','Brook','David','Eyob')
+print(generate_groups('Team-1','Asabeneh','Brook','David','Eyob'))
 ```
 
 ### Function as a Parameter of Another Function
@@ -366,17 +368,22 @@ def square_number (n):
     return n * n
 def do_something(f, x):
     return f(x)
-print(do_something(square_number, 3))
+print(do_something(square_number, 3)) # 27
 ```
 
-🌕 You achieved quite a lot so far.  Keep going! You have just completed day 11 challenges and you are 11 steps a head in to your way to greatness. Now do some exercises for your brain and for your muscle.
+🌕 You achieved quite a lot so far.  Keep going! You have just completed day 11 challenges and you are 11 steps a head in to your way to greatness. Now do some exercises for your brain and muscles.
+
+## Testimony
+Now it is time to express your thoughts about the Author and 30DaysOfPython. You can leave your testimonial on this [link](https://testimonify.herokuapp.com/)
 
 ## 💻 Exercises: Day 11
+
+### Exercises: Level 1
 
 1. Declare a function _add_two_numbers_. It takes two parameters and it returns a sum.
 2. Area of a circle is calculated as follows: area = π x r x r. Write a function that calculates _area_of_circle_.
 3. Write a function called add_all_nums which takes arbitrary number of arguments and sums all the arguments. Check if all the list items are number types. If not do give a reasonable feedback.
-4. Temperature in °C can be converted to °F using this formula: °F = (°C x 9/5) + 32. Write a function which converts °C to °F, _convert_celcius_to-fahrenheit_.
+4. Temperature in °C can be converted to °F using this formula: °F = (°C x 9/5) + 32. Write a function which converts °C to °F, _convert_celsius_to-fahrenheit_.
 5. Write a function called check-season, it takes a month parameter and returns the season: Autumn, Winter, Spring or Summer.
 6. Write a function called calculate_slope which return the slope of a linear equation
 7. Quadratic equation is calculated as follows: ax² + bx + c = 0. Write a function which calculates solution set of a quadratic equation, _solve_quadratic_eqn_.
@@ -395,7 +402,7 @@ print(reverse_list1(["A", "B", "C"]))
 
 ```py
 food_staff = ['Potato', 'Tomato', 'Mango', 'Milk'];
-print(  add_item(food_staff, 'Meat'))     # ['Potato', 'Tomato', 'Mango', 'Milk','Meat'];
+print(add_item(food_staff, 'Meat'))     # ['Potato', 'Tomato', 'Mango', 'Milk','Meat'];
 numbers = [2, 3, 7, 9];
 print(add_item(numbers, 5))      [2, 3, 7, 9, 5]
 ```
@@ -409,19 +416,20 @@ numbers = [2, 3, 7, 9];
 print(remove_item(numbers, 3))  # [2, 7, 9]
 ```
 
-13.  Declare a function named sum_of_numbers. It takes a number parameter and it adds all the numbers in that range.
+13. Declare a function named sum_of_numbers. It takes a number parameter and it adds all the numbers in that range.
 
 ```py
 print(sum_of_numbers(5))  # 15
 print(sum_all_numbers(10)) # 55
 print(sum_all_numbers(100)) # 5050
-
-
 ```
 
-14.  Declare a function named sum_of_odds. It takes a number parameter and it adds all the odd numbers in that range.
-15.  Declare a function named sum_of_even. It takes a number parameter and it adds all the even numbers in that - range.
-16.  Declare a function named evens_and_odds . It takes a positive integer as parameter and it counts number of evens and odds in the number.
+14. Declare a function named sum_of_odds. It takes a number parameter and it adds all the odd numbers in that range.
+15. Declare a function named sum_of_even. It takes a number parameter and it adds all the even numbers in that - range.
+
+### Exercises: Level 2
+
+1.  Declare a function named evens_and_odds . It takes a positive integer as parameter and it counts number of evens and odds in the number.
 
 ```py
     print(evens_and_odds(100))
@@ -429,14 +437,17 @@ print(sum_all_numbers(100)) # 5050
     # The number of evens are 51.
 ```
 
-17. Call your function factorial, it takes a whole number as a parameter and it return a factorial of the number
-18. Call your function _is_empty_, it takes a parameter and it checks if it is empty or not
-19. Write different functions which take lists. They should calculate_mean, calculate_median, calculate_mode, calculate_range, calculate_variance, calculate_std (standard deviation).
-20. Write a function called is_prime, which checks if a number is prime.
-21. Write a functions which checks if all items are unique in the list.
-22. Write a function which checks if all the items of the list are of the same data type.
-23. Write a function which check if provided variable is a valid python variable
-24. Go to the data folder and access the countries-data.py file.
+1. Call your function factorial, it takes a whole number as a parameter and it return a factorial of the number
+1. Call your function _is_empty_, it takes a parameter and it checks if it is empty or not
+1. Write different functions which take lists. They should calculate_mean, calculate_median, calculate_mode, calculate_range, calculate_variance, calculate_std (standard deviation).
+
+### Exercises: Level 3
+
+1. Write a function called is_prime, which checks if a number is prime.
+1. Write a functions which checks if all items are unique in the list.
+1. Write a function which checks if all the items of the list are of the same data type.
+1. Write a function which check if provided variable is a valid python variable
+1. Go to the data folder and access the countries-data.py file.
 
 - Create a function called the most_spoken_languages in the world. It should return 10 or 20 most spoken languages in the world in descending order
 - Create a function called the most_populated_countries. It should return 10 or 20 most populated countries in descending order.

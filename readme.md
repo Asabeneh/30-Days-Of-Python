@@ -14,7 +14,7 @@
 | 10  |  [Loops](./10_Day_Loops/10_loops.md)|
 | 11  |  [Functions](./11_Day_Functions/11_functions.md)|
 | 12  |  [Modules](./12_Day_Modules/12_modules.md)|
-| 13  |  [List Comprehension](../13_Day_List_comprehension/13_list_comprehension.md)|
+| 13  |  [List Comprehension](./13_Day_List_comprehension/13_list_comprehension.md)|
 | 14  |  [Higher Order Functions](./14_Day_Higher_order_functions/14_higher_order_functions.md)|     
 | 15  |  [Python Type Errors](./15_Day_Python_type_errors/15_python_type_errors.md)| 
 | 16 |  [Python Date time](./16_Day_Python_date_time/16_python_datetime.md) |     
@@ -51,7 +51,7 @@
 
   <sub>Author:
   <a href="https://www.linkedin.com/in/asabeneh/" target="_blank">Asabeneh Yetayeh</a><br>
-  <small> First Edition: Nov 22 - Dec 22, 2019</small>
+  <small> Second Edition: July, 2021</small>
   </sub>
 </div>
 
@@ -95,8 +95,7 @@
 
 **Congratulations** for deciding to participate in a _30 days of Python_ programming challenge . In this challenge you will learn everything you need to be a python programmer and the whole concept of programming. In the end of the challenge you will get a _30DaysOfPython_ programming challenge certificate.
 
-If you would like to actively engage in the challenge, you may join the 30DaysOfPython
-[30DaysOfPython challenge](https://t.me/ThirtyDaysOfPython) telegram group.  
+If you would like to actively engage in the challenge, you may join the [30DaysOfPython challenge](https://t.me/ThirtyDaysOfPython) telegram group.  
 
 ## Introduction
 

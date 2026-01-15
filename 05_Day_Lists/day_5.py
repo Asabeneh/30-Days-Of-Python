@@ -31,7 +31,7 @@ print(last_fruit) # lemon
 last_index = len(fruits) - 1
 last_fruit = fruits[last_index]
 
-# Accessing itmes
+# Accessing items
 fruits = ['banana', 'orange', 'mango', 'lemon'] 
 last_fruit = fruits[-1]
 second_last = fruits[-2]
@@ -58,7 +58,7 @@ fruits[0] = 'Avocado'
 print(fruits)       #  ['avocado', 'orange', 'mango', 'lemon']
 fruits[1] = 'apple'
 print(fruits)       #  ['avocado', 'apple', 'mango', 'lemon']
-last_index = len(fruits)
+last_index = len(fruits) - 1
 fruits[last_index] = 'lime'
 print(fruits)        #  ['avocado', 'apple', 'mango', 'lime']
 
@@ -80,7 +80,7 @@ print(fruits)
 fruits = ['banana', 'orange', 'mango', 'lemon']
 fruits.insert(2, 'apple') # insert apple between orange and mango
 print(fruits)           # ['banana', 'orange', 'apple', 'mango', 'lemon']
-fruits.list(3, 'lime')   # ['banana', 'orange', 'apple', 'mango', 'lime','lemon',]
+fruits.insert(3, 'lime')   # ['banana', 'orange', 'apple', 'mango', 'lime','lemon',]
 print(fruits)
 
 # remove
@@ -92,10 +92,10 @@ print(fruits)  # ['orange', 'mango']
 
 # pop
 fruits = ['banana', 'orange', 'mango', 'lemon']
-fruits.remove()     
+fruits.pop()     
 print(fruits)       # ['banana', 'orange', 'mango']
 
-fruits.remove(0)     
+fruits.pop(0)     
 print(fruits)       # ['orange', 'mango'] 
 
 # del 
@@ -161,10 +161,10 @@ print(ages.index(24))
 # Reverse
 fruits = ['banana', 'orange', 'mango', 'lemon']
 fruits.reverse()
-print(fruits.reverse())  
+print(fruits)  
 ages = [22, 19, 24, 25, 26, 24, 25, 24]
 ages.reverse()
-print(ages.reverse()) 
+print(ages) 
 
 # sort
 fruits = ['banana', 'orange', 'mango', 'lemon']

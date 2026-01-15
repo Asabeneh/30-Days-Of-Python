@@ -9,7 +9,7 @@
 
 <sub>Author:
 <a href="https://www.linkedin.com/in/asabeneh/" target="_blank">Asabeneh Yetayeh</a><br>
-<small> First Edition: Nov 22 - Dec 22, 2019</small>
+<small> Second Edition: July, 2021</small>
 </sub>
 
 </div>
@@ -34,6 +34,9 @@
     - [String Module](#string-module)
     - [Random Module](#random-module)
   - [💻 Exercises: Day 12](#-exercises-day-12)
+    - [Exercises: Level 1](#exercises-level-1)
+    - [Exercises: Level 2](#exercises-level-2)
+    - [Exercises: Level 3](#exercises-level-3)
 
 # 📘 Day 12
 
@@ -41,18 +44,16 @@
 
 ### What is a Module
 
-A module is a file containing a set of codes or a set of functions which can be included to an application. A module could be a file containing a single variable, or a function, a big code base.
+A module is a file containing a set of codes or a set of functions which can be included to an application. A module could be a file containing a single variable, a function or a big code base.
 
 ### Creating a Module
 
-To create a module we write our codes in a python script and we save it as a .py file. Create a file named mymodule.py inside your project folder. Let write some code in this file.
+To create a module we write our codes in a python script and we save it as a .py file. Create a file named mymodule.py inside your project folder. Let us write some code in this file.
 
 ```py
 # mymodule.py file
 def generate_full_name(firstname, lastname):
-    space = ' '
-    fullname = firstname + space + lastname
-    return fullname
+    return firstname + ' ' + lastname
 ```
 
 Create main.py file in your project directory and import the mymodule.py file.
@@ -64,7 +65,7 @@ To import the file we use the _import_ keyword and the name of the file only.
 ```py
 # main.py file
 import mymodule
-print(mymodule.generate_full_name('Asabeneh', 'Yetayeh'))
+print(mymodule.generate_full_name('Asabeneh', 'Yetayeh')) # Asabeneh Yetayeh
 ```
 
 ### Import Functions from a Module
@@ -74,7 +75,7 @@ We can have many functions in a file and we can import all the functions differe
 ```py
 # main.py file
 from mymodule import generate_full_name, sum_two_nums, person, gravity
-print(generate_full_name('Asabneh','Yetay'))
+print(generate_full_name('Asabneh','Yetayeh'))
 print(sum_two_nums(1,9))
 mass = 100;
 weight = mass * gravity
@@ -90,7 +91,7 @@ During importing we can rename the name of the module.
 # main.py file
 from mymodule import generate_full_name as fullname, sum_two_nums as total, person as p, gravity as g
 print(fullname('Asabneh','Yetayeh'))
-print(total(1,9))
+print(total(1, 9))
 mass = 100;
 weight = mass * g
 print(weight)
@@ -162,7 +163,7 @@ The statistics module provides functions for mathematical statistics of numeric 
 
 ```py
 from statistics import * # importing all the statistics modules
-ages = [20,20,24,24,25,22,26,20,23,22,26]
+ages = [20, 20, 4, 24, 25, 22, 26, 20, 23, 22, 26]
 print(mean(ages))       # ~22.9
 print(median(ages))     # 23
 print(mode(ages))       # 20
@@ -180,10 +181,10 @@ print(math.sqrt(2))      # 1.4142135623730951, square root
 print(math.pow(2, 3))    # 8.0, exponential function
 print(math.floor(9.81))  # 9, rounding to the lowest
 print(math.ceil(9.81))   # 10, rounding to the highest
-print(math.log10(100))   # 2, logarithim with 10 as base
+print(math.log10(100))   # 2, logarithm with 10 as base
 ```
 
-Now, we have imported the math module which contains lots of function whichs can help us to perform mathematical calculations. To check what functions the module has got, you can use _help(math)_, or _dir(math)_. This will display the available functions in the module. If we want to import only a specific function from the module we import it as follows:
+Now, we have imported the *math* module which contains lots of function which can help us to perform mathematical calculations. To check what functions the module has got, we can use _help(math)_, or _dir(math)_. This will display the available functions in the module. If we want to import only a specific function from the module we import it as follows:
 
 ```py
 from math import pi
@@ -225,7 +226,7 @@ print(PI) # 3.141592653589793
 
 ### String Module
 
-A useful module for many purposes. Below an example of strings we can get from it.
+A string module is a useful module for many purposes. The example below shows some use of the string module.
 
 ```py
 import string
@@ -236,17 +237,19 @@ print(string.punctuation)   # !"#$%&'()*+,-./:;<=>?@[\]^_`{|}~
 
 ### Random Module
 
-By now you are familiar with importing modules. Let's do one more import to get very familiar with it. Let's import _random_ module which gives us a random number between 0 and 0.9999.... The _random_ module has lots of functions but in this section we will only use _random_ and _randint_.
+By now you are familiar with importing modules. Let us do one more import to get very familiar with it. Let us import _random_ module which gives us a random number between 0 and 0.9999.... The _random_ module has lots of functions but in this section we will only use _random_ and _randint_.
 
 ```py
 from random import random, randint
 print(random())   # it doesn't take any arguments; it returns a value between 0 and 0.9999
-print(randint(5, 20)) # it returns a random integer number between 5 and 20
+print(randint(5, 20)) # it returns a random integer number between [5, 20] inclusive
 ```
 
-🌕 You are going far. Keep going! You have just completed day 12 challenges and you are 12 steps a head in to your way to greatness. Now do some exercises for your brain and for your muscle.
+🌕 You are going far. Keep going! You have just completed day 12 challenges and you are 12 steps a head in to your way to greatness. Now do some exercises for your brain and muscles.
 
 ## 💻 Exercises: Day 12
+
+### Exercises: Level 1
 
 1. Writ a function which generates a six digit/character random_user_id.
    ```py
@@ -254,8 +257,9 @@ print(randint(5, 20)) # it returns a random integer number between 5 and 20
      '1ee33d'
    ```
 2. Modify the previous task. Declare a function named user_id_gen_by_user. It doesn’t take any parameters but it takes two inputs using input(). One of the inputs is the number of characters and the second input is the number of IDs which are supposed to be generated.
-   ```py
-user_id_gen_by_user() # user input: 5 5
+   
+```py
+print(user_id_gen_by_user()) # user input: 5 5
 #output:
 #kcsy2
 #SMFYb
@@ -263,30 +267,38 @@ user_id_gen_by_user() # user input: 5 5
 #ZXOYh
 #2Rgxf
    
-user_id_gen_by_user() # 16 5
+print(user_id_gen_by_user()) # 16 5
 #1GCSgPLMaBAVQZ26
 #YD7eFwNQKNs7qXaT
 #ycArC5yrRupyG00S
 #UbGxOFI7UXSWAyKN
 #dIV0SSUTgAdKwStr
+```
 
-   ```
 3. Write a function named rgb_color_gen. It will generate rgb colors (3 values ranging from 0 to 255 each).
-   ```py
+   
+```py
 print(rgb_color_gen())
 # rgb(125,244,255) - the output should be in this form
+```
+
+### Exercises: Level 2
+
+1. Write a function list_of_hexa_colors which returns any number of hexadecimal colors in an array (six hexadecimal numbers written after #. Hexadecimal numeral system is made out of 16 symbols, 0-9 and first 6 letters of the alphabet, a-f. Check the task 6 for output examples).
+1. Write a function list_of_rgb_colors which returns any number of RGB colors in an array.
+1. Write a function generate_colors which can generate any number of hexa or rgb colors.
+
+```py
+   generate_colors('hexa', 3) # ['#a3e12f','#03ed55','#eb3d2b'] 
+   generate_colors('hexa', 1) # ['#b334ef']
+   generate_colors('rgb', 3)  # ['rgb(5, 55, 175','rgb(50, 105, 100','rgb(15, 26, 80'] 
+   generate_colors('rgb', 1)  # ['rgb(33,79, 176)']
    ```
-4. Write a function list_of_hexa_colors which returns any number of hexadecimal colors in an array (six hexadecimal numbers written after #. Hexadecimal numeral system is made out of 16 symbols, 0-9 and first 6 letters of the alphabet, a-f. Check the task 6 for output examples).
-5. Write a function list_of_rgb_colors which returns any number of RGB colors in an array.
-6. Write a function generate_colors which can generate any number of hexa or rgb colors.
-   ```py
-    generate_colors('hexa', 3) # ['#a3e12f','#03ed55','#eb3d2b'] 
-    generate_colors('hexa', 1) # ['#b334ef']
-    generate_colors('rgb', 3)  # ['rgb(5, 55, 175','rgb(50, 105, 100','rgb(15, 26, 80'] 
-    generate_colors('rgb', 1)  # ['rgb(33,79, 176)']
-    ```
-7. Call your function shuffle_list, it takes a list as a parameter and it returns a shuffled list
-8. Write a function which returns an array of seven random numbers in a range of 0-9. All the numbers must be unique.
+
+### Exercises: Level 3
+
+1. Call your function shuffle_list, it takes a list as a parameter and it returns a shuffled list
+1. Write a function which returns an array of seven random numbers in a range of 0-9. All the numbers must be unique.
 
 🎉 CONGRATULATIONS ! 🎉
 

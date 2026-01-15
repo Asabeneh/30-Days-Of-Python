@@ -9,9 +9,9 @@
 
   <sub>Author:
   <a href="https://www.linkedin.com/in/asabeneh/" target="_blank">Asabeneh Yetayeh</a><br>
-  <small> First Edition: Nov 22 - Dec 22, 2019</small>
+  <small>Second Edition: July, 2021</small>
   </sub>
-</div>
+
 </div>
 
 [<< Day 15](../15_Day_Python_type_errors/15_python_type_errors.md) | [Day 17 >>](../17_Day_Exception_handling/17_exception_handling.md)
@@ -20,7 +20,7 @@
 - [📘 Day 16](#-day-16)
   - [Python *datetime*](#python-datetime)
     - [Getting *datetime* Information](#getting-datetime-information)
-    - [Formating Date Output Using *strftime*](#formating-date-output-using-strftime)
+    - [Formatting Date Output Using *strftime*](#formatting-date-output-using-strftime)
     - [String to Time Using *strptime*](#string-to-time-using-strptime)
     - [Using *date* from *datetime*](#using-date-from-datetime)
     - [Time Objects to Represent Time](#time-objects-to-represent-time)
@@ -39,29 +39,29 @@ print(dir(datetime))
 ['MAXYEAR', 'MINYEAR', '__builtins__', '__cached__', '__doc__', '__file__', '__loader__', '__name__', '__package__', '__spec__', 'date', 'datetime', 'datetime_CAPI', 'sys', 'time', 'timedelta', 'timezone', 'tzinfo']
 ```
 
-With dir or help built-in commands it is possible to know the available functions in a certain module. As you can see, in the datetime module there are many functions, but we will focus on _date_, _datetime_, _time_ and _timedelta_. Let's see them one by one.
+With dir or help built-in commands it is possible to know the available functions in a certain module. As you can see, in the datetime module there are many functions, but we will focus on _date_, _datetime_, _time_ and _timedelta_. Let se see them one by one.
 
 ### Getting *datetime* Information
 
 ```py
 from datetime import datetime
 now = datetime.now()
-print(now)                      # 2019-12-04 23:34:46.549883
-day = now.day                   # 4
-month = now.month               # 12
-year = now.year                 # 2019
-hour = now.hour                 # 23
+print(now)                      # 2021-07-08 07:34:46.549883
+day = now.day                   # 8
+month = now.month               # 7
+year = now.year                 # 2021
+hour = now.hour                 # 7
 minute = now.minute             # 38
 second = now.second
 timestamp = now.timestamp()
 print(day, month, year, hour, minute)
 print('timestamp', timestamp)
-print(f'{day}/{month}/{year}, {hour}:{minute}')  # 4/12/2019, 23:38
+print(f'{day}/{month}/{year}, {hour}:{minute}')  # 8/7/2021, 7:38
 ```
 
 Timestamp or Unix timestamp is the number of seconds elapsed from 1st of January 1970 UTC.
 
-### Formating Date Output Using *strftime*
+### Formatting Date Output Using *strftime*
 
 ```py
 from datetime import datetime
@@ -78,7 +78,7 @@ print(f'{day}/{month}/{year}, {hour}:{minute}')  # 1/1/2020, 0:0
 
 ```
 
-Time formating
+Formatting date time using *strftime* method and the documentation can be found [here](https://strftime.org/).
 
 ```py
 from datetime import datetime
@@ -102,9 +102,10 @@ time two: 05/12/2019, 01:05:01
 
 Here are all the _strftime_ symbols we use to format time. An example of all the formats for this module.
 
-![strftime](./images/strftime.png)
+![strftime](../images/strftime.png)
 
 ### String to Time Using *strptime*
+Here is a [documentation](https://www.programiz.com/python-programming/datetime/strptimet) hat helps to understand the format. 
 
 ```py
 from datetime import datetime
@@ -188,7 +189,7 @@ print("t3 =", t3)
     t3 = 86 days, 22:56:50
 ```
 
-🌕 You are extraordinary. You are 16 steps a head to your way to greatness. Now do some exercises for your brain and for your muscle.
+🌕 You are an extraordinary. You are 16 steps a head to your way to greatness. Now do some exercises for your brain and muscles.
 
 ## 💻 Exercises: Day 16
 
