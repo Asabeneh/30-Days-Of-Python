@@ -9,10 +9,10 @@
 
 <sub>Author:
 <a href="https://www.linkedin.com/in/asabeneh/" target="_blank">Asabeneh Yetayeh</a><br>
-<small> First Edition: Nov 22 - Dec 22, 2019</small>
+<small> Second Edition: July, 2021</small>
 </sub>
 
-</div>
+
 </div>
 
 [<< Day 12](../12_Day_Modules/12_modules.md) | [Day 14>>](../14_Day_Higher_order_functions/14_higher_order_functions.md)
@@ -34,7 +34,7 @@ List comprehension in Python is a compact way of creating a list from a sequence
 
 ```py
 # syntax
-[i for i in iterable if expression]
+[expression for i in iterable if condition]
 ```
 
 **Example:1**
@@ -89,12 +89,12 @@ odd_numbers = [i for i in range(21) if i % 2 != 0]  # to generate odd numbers in
 print(odd_numbers)                      # [1, 3, 5, 7, 9, 11, 13, 15, 17, 19]
 # Filter numbers: let's filter out positive even numbers from the list below
 numbers = [-8, -7, -3, -1, 0, 1, 3, 4, 5, 7, 6, 8, 10]
-positive_even_numbers = [i for i in range(21) if i % 2 == 0 and i > 0]
+positive_even_numbers = [i for i in numbers if i % 2 == 0 and i > 0]
 print(positive_even_numbers)                    # [2, 4, 6, 8, 10, 12, 14, 16, 18, 20]
 
-# Flattening a three dimensional array
-three_dimen_list = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
-flattened_list = [ number for row in three_dimen_list for number in row]
+# Flattening a two dimensional array
+list_of_lists = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+flattened_list = [ number for row in list_of_lists for number in row]
 print(flattened_list)    # [1, 2, 3, 4, 5, 6, 7, 8, 9]
 ```
 
@@ -108,7 +108,7 @@ To create a lambda function we use _lambda_ keyword followed by a parameter(s), 
 
 ```py
 # syntax
-x = lambda param1, param2, param3: param1 + param2 + param2
+x = lambda param1, param2, param3: param1 + param2 + param3
 print(x(arg1, arg2, arg3))
 ```
 
@@ -119,7 +119,7 @@ print(x(arg1, arg2, arg3))
 def add_two_nums(a, b):
     return a + b
 
-print(2, 3)     # 5
+print(add_two_nums(2, 3))     # 5
 # Lets change the above function to a lambda function
 add_two_nums = lambda a, b: a + b
 print(add_two_nums(2,3))    # 5
@@ -134,7 +134,7 @@ print(cube(3))    # 27
 
 # Multiple variables
 multiple_variable = lambda a, b, c: a ** 2 - 3 * b + 4 * c
-print(multiple_variable(5, 5, 3))
+print(multiple_variable(5, 5, 3)) # 22
 ```
 
 ### Lambda Function Inside Another Function
@@ -151,7 +151,7 @@ two_power_of_five = power(2)(5)
 print(two_power_of_five)  # 32
 ```
 
-🌕 Keep up the good work. Keep pushing, the sky is the limit! You have just completed day 13 challenges and you are 13 steps a head in to your way to greatness. Now do some exercises for your brain and for your muscle.
+🌕 Keep up the good work. Keep the momentum going, the sky is the limit! You have just completed day 13 challenges and you are 13 steps a head in to your way to greatness. Now do some exercises for your brain and muscles.
 
 ## 💻 Exercises: Day 13
 
@@ -162,7 +162,7 @@ print(two_power_of_five)  # 32
 2. Flatten the following list of lists of lists to a one dimensional list :
 
    ```py
-   list_of_lists =[[[1, 2, 3]], [[4, 5, 6]], [[7, 8, 9]]]
+   list_of_lists =[[1, 2, 3], [4, 5, 6], [7, 8, 9]]
 
    output
    [1, 2, 3, 4, 5, 6, 7, 8, 9]
@@ -186,7 +186,7 @@ print(two_power_of_five)  # 32
    ```py
    countries = [[('Finland', 'Helsinki')], [('Sweden', 'Stockholm')], [('Norway', 'Oslo')]]
    output:
-   ['FINLAND', 'HELSINKI', 'SWEDEN', 'STOCKHOLM', 'NORWAY', 'OSLO']
+   [['FINLAND','FIN', 'HELSINKI'], ['SWEDEN', 'SWE', 'STOCKHOLM'], ['NORWAY', 'NOR', 'OSLO']]
    ```
 5. Change the following list to a list of dictionaries:
    ```py
@@ -198,7 +198,7 @@ print(two_power_of_five)  # 32
    ```
 6. Change the following list of lists to a list of concatenated strings:
    ```py
-   names = [[('Asabeneh', 'Yetaeyeh')], [('David', 'Smith')], [('Donald', 'Trump')], [('Bill', 'Gates')]]
+   names = [[('Asabeneh', 'Yetayeh')], [('David', 'Smith')], [('Donald', 'Trump')], [('Bill', 'Gates')]]
    output
    ['Asabeneh Yetaeyeh', 'David Smith', 'Donald Trump', 'Bill Gates']
    ```

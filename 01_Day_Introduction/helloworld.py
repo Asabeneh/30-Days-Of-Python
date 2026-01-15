@@ -1,9 +1,14 @@
 # Introduction
 # Day 1 - 30DaysOfPython Challenge
 
+print("Hello World!")   # print hello world
+
 print(2 + 3)   # addition(+)
 print(3 - 1)   # subtraction(-)
 print(2 * 3)   # multiplication(*)
+print(3 + 2)   # addition(+)
+print(3 - 2)   # subtraction(-)
+print(3 * 2)   # multiplication(*)
 print(3 / 2)   # division(/)
 print(3 ** 2)  # exponential(**)
 print(3 % 2)   # modulus(%)

@@ -12,7 +12,7 @@
   <small> First Edition: Nov 22 - Dec 22, 2019</small>
   </sub>
 </div>
-</div>
+
 
 [<< Day 17](../17_Day_Exception_handling/17_exception_handling.md) | [Day 19>>](../19_Day_File_handling/19_file_handling.md)
 
@@ -21,7 +21,7 @@
 - [📘 Day 18](#-day-18)
   - [Regular Expressions](#regular-expressions)
     - [The *re* Module](#the-re-module)
-    - [Functions in *re* Module](#functions-in-re-module)
+    - [Methods in *re* Module](#methods-in-re-module)
       - [Match](#match)
       - [Search](#search)
       - [Searching for All Matches Using *findall*](#searching-for-all-matches-using-findall)
@@ -37,6 +37,9 @@
     - [Quantifier in RegEx](#quantifier-in-regex)
     - [Cart ^](#cart-)
   - [💻 Exercises: Day 18](#-exercises-day-18)
+    - [Exercises: Level 1](#exercises-level-1)
+    - [Exercises: Level 2](#exercises-level-2)
+    - [Exercises: Level 3](#exercises-level-3)
 
 # 📘 Day 18
 
@@ -52,20 +55,20 @@ After importing the module we can use it to detect or find patterns.
 import re
 ```
 
-### Functions in *re* Module
+### Methods in *re* Module
 
 To find a pattern we use different set of *re* character sets that allows to search for a match in a string.
 
-* *re.match()*: searches only in the beginning of the first line of the string and returns matched objects if found, else returns none. 
-* *re.search*: Returns a match object if there is one anywhere in the string, including multiline strings.
-* *re.findall*: Returns a list containing all matches
-* *re.split*:	Takes a string, splits it at the match points, returns a list
-* *re.sub*:  Replaces one or many matches within a string
+- *re.match()*: searches only in the beginning of the first line of the string and returns matched objects if  found, else returns None.
+- *re.search*: Returns a match object if there is one anywhere in the string, including multiline strings.
+- *re.findall*: Returns a list containing all matches
+- *re.split*: Takes a string, splits it at the match points, returns a list
+- *re.sub*:  Replaces one or many matches within a string
 
 #### Match
 
 ```py
-# syntac
+# syntax
 re.match(substring, string, re.I)
 # substring is a string or a pattern, string is the text we look for a pattern , re.I is case ignore
 ```
@@ -82,18 +85,28 @@ span = match.span()
 print(span)     # (0, 15)
 # Lets find the start and stop position from the span
 start, end = span
-print(start, end)  # 0, 15
+print(start, end)  # 0 15
 substring = txt[start:end]
 print(substring)       # I love to teach
 ```
 
 As you can see from the example above, the pattern we are looking for (or the substring we are looking for) is *I love to teach*. The match function returns an object **only** if the text starts with the pattern.
 
+```py
+import re
+
+txt = 'I love to teach python and javaScript'
+match = re.match('I like to teach', txt, re.I)
+print(match)  # None
+```
+
+The string does not string with *I like to teach*, therefore there was no match and the match method returned None.
+
 #### Search
 
 ```py
 # syntax
-re.match(substring, string, re.I)
+re.search(substring, string, re.I)
 # substring is a pattern, string is the text we look for a pattern , re.I is case ignore flag
 ```
 
@@ -116,7 +129,7 @@ substring = txt[start:end]
 print(substring)       # first
 ```
 
-As you can see, search is much better than match because it can look for the pattern throughout the text. Search returns a match object with a first match that was found, otherwise it returns _None_. A much better *re* function is *findall*. This function checks for the pattern through the whole string and returns all the matches as a list.
+As you can see, search is much better than match because it can look for the pattern throughout the text. Search returns a match object with a first match that was found, otherwise it returns *None*. A much better *re* function is *findall*. This function checks for the pattern through the whole string and returns all the matches as a list.
 
 #### Searching for All Matches Using *findall*
 
@@ -129,10 +142,9 @@ I recommend python for a first programming language'''
 # It return a list
 matches = re.findall('language', txt, re.I)
 print(matches)  # ['language', 'language']
-
 ```
 
-As you can see, the word language was found two times in the string. Let's practice some more.
+As you can see, the word *language* was found two times in the string. Let us practice some more.
 Now we will look for both Python and python words in the string:
 
 ```py
@@ -145,7 +157,7 @@ print(matches)  # ['Python', 'python']
 
 ```
 
-Since we are using *re.I* both lowercase and uppercase letters are included. If we don't have that flag, then we will have to write our pattern differently. Let's check it out:
+Since we are using *re.I* both lowercase and uppercase letters are included. If we do not have the re.I flag, then we will have to write our pattern differently. Let us check it out:
 
 ```py
 txt = '''Python is the most beautiful language that a human being has ever created.
@@ -167,13 +179,13 @@ txt = '''Python is the most beautiful language that a human being has ever creat
 I recommend python for a first programming language'''
 
 match_replaced = re.sub('Python|python', 'JavaScript', txt, re.I)
-print(match_replaced)  # JavaScript is the most beautiful language that a human being has ever created.
+print(match_replaced)  # JavaScript is the most beautiful language that a human being has ever created.I recommend python for a first programming language
 # OR
 match_replaced = re.sub('[Pp]ython', 'JavaScript', txt, re.I)
-print(match_replaced)  # JavaScript is the most beautiful language that a human being has ever created.
+print(match_replaced)  # JavaScript is the most beautiful language that a human being has ever created.I recommend python for a first programming language
 ```
 
-Let's add one more example. The following string is really hard to read unless we remove the % symbol. Replacing the % with an empty string will clean the text.
+Let us add one more example. The following string is really hard to read unless we remove the % symbol. Replacing the % with an empty string will clean the text.
 
 ```py
 
@@ -187,10 +199,9 @@ print(matches)
 ```
 
 ```sh
-I am teacher and  I love teaching.
+I am teacher and I love teaching.
 There is nothing as rewarding as educating and empowering people.
-I found teaching more interesting than any other jobs.
-Does this motivate you to be a teacher?
+I found teaching more interesting than any other jobs. Does this motivate you to be a teacher?
 ```
 
 ## Splitting Text Using RegEx Split
@@ -210,7 +221,7 @@ print(re.split('\n', txt)) # splitting using \n - end of line symbol
 ## Writing RegEx Patterns
 
 To declare a string variable we use a single or double quote. To declare RegEx variable *r''*.
-The following pattern only identifies apple with lowercase, to make it case insensitive either we should rewrite our pattern or we should add a flag.  
+The following pattern only identifies apple with lowercase, to make it case insensitive either we should rewrite our pattern or we should add a flag.
 
 ```py
 import re
@@ -229,46 +240,47 @@ matches = re.findall(regex_pattern, txt)
 print(matches)  # ['Apple', 'apple']
 
 ```
+
 * []:  A set of characters
-  * [a-c] means, a or b or c
-  * [a-z] means, any letter from a to z
-  * [A-Z] means, any character from A to Z
-  * [0-3] means, 0 or 1 or 2 or 3
-  * [0-9] means any number from 0 to 9
-  * [A-Za-z0-9] any single character, that is a to z, A to Z or 0 to 9
-* \\:  uses to escape special characters
-  * \d means: match where the string contains digits (numbers from 0-9)
-  * \D means: match where the string does not contain digits
-* . : any character except new line character(\n)
-* ^: starts with
-  * r'^substring' eg r'^love', a sentence that starts with a word love
-  * r'[^abc] means not a, not b, not c.
-* $: ends with
-  * r'substring$' eg r'love$', sentence  that ends with a word love
-* *: zero or more times
-  * r'[a]*' means a optional or it can occur many times.
-* +: one or more times
-  * r'[a]+' means at least once (or more)
-* ?: zero or one time
-  *  r'[a]?' means zero times or once
-* {3}: Exactly 3 characters
-* {3,}: At least 3 characters
-* {3,8}: 3 to 8 characters
-* |: Either or
-  * r'apple|banana' means either apple or a banana
-* (): Capture and group
+  - [a-c] means, a or b or c
+  - [a-z] means, any letter from a to z
+  - [A-Z] means, any character from A to Z
+  - [0-3] means, 0 or 1 or 2 or 3
+  - [0-9] means any number from 0 to 9
+  - [A-Za-z0-9] any single character, that is a to z, A to Z or 0 to 9
+- \\:  uses to escape special characters
+  - \d means: match where the string contains digits (numbers from 0-9)
+  - \D means: match where the string does not contain digits
+- . : any character except new line character(\n)
+- ^: starts with
+  - r'^substring' eg r'^love', a sentence that starts with a word love
+  - r'[^abc] means not a, not b, not c.
+- $: ends with
+  - r'substring$' eg r'love$', sentence  that ends with a word love
+- *: zero or more times
+  - r'[a]*' means a optional or it can occur many times.
+- +: one or more times
+  - r'[a]+' means at least once (or more)
+- ?: zero or one time
+  - r'[a]?' means zero times or once
+- {3}: Exactly 3 characters
+- {3,}: At least 3 characters
+- {3,8}: 3 to 8 characters
+- |: Either or
+  - r'apple|banana' means either apple or a banana
+- (): Capture and group
 
 ![Regular Expression cheat sheet](../images/regex.png)
 
-Let's use examples to clarify the meta characters above 
+Let us use examples to clarify the meta characters above
 
 ### Square Bracket
 
-Let's use square bracket to include lower and upper case
+Let us use square bracket to include lower and upper case
 
 ```py
 regex_pattern = r'[Aa]pple' # this square bracket mean either A or a
-txt = 'Apple and banana are fruits. An old cliche says an apple a day a doctor way has been replaced by a banana a day keeps the doctor far far away. '
+txt = 'Apple and banana are fruits. An old cliche says an apple a day a doctor way has been replaced by a banana a day keeps the doctor far far away.'
 matches = re.findall(regex_pattern, txt)
 print(matches)  # ['Apple', 'apple']
 ```
@@ -277,7 +289,7 @@ If we want to look for the banana, we write the pattern as follows:
 
 ```py
 regex_pattern = r'[Aa]pple|[Bb]anana' # this square bracket means either A or a
-txt = 'Apple and banana are fruits. An old cliche says an apple a day a doctor way has been replaced by a banana a day keeps the doctor far far away. '
+txt = 'Apple and banana are fruits. An old cliche says an apple a day a doctor way has been replaced by a banana a day keeps the doctor far far away.'
 matches = re.findall(regex_pattern, txt)
 print(matches)  # ['Apple', 'banana', 'apple', 'banana']
 ```
@@ -288,18 +300,18 @@ Using the square bracket and or operator , we manage to extract Apple, apple, Ba
 
 ```py
 regex_pattern = r'\d'  # d is a special character which means digits
-txt = 'This regular expression example was made on December 6,  2019.'
+txt = 'This regular expression example was made on December 6,  2019 and revised on July 8, 2021'
 matches = re.findall(regex_pattern, txt)
-print(matches)  # ['6', '2', '0', '1', '9'], this is not what we want
+print(matches)  # ['6', '2', '0', '1', '9', '8', '2', '0', '2', '1'], this is not what we want
 ```
 
 ### One or more times(+)
 
 ```py
 regex_pattern = r'\d+'  # d is a special character which means digits, + mean one or more times
-txt = 'This regular expression example was made on December 6,  2019.'
+txt = 'This regular expression example was made on December 6,  2019 and revised on July 8, 2021'
 matches = re.findall(regex_pattern, txt)
-print(matches)  # ['6', '2019'] - now, this is better!
+print(matches)  # ['6', '2019', '8', '2021'] - now, this is better!
 ```
 
 ### Period(.)
@@ -310,7 +322,7 @@ txt = '''Apple and banana are fruits'''
 matches = re.findall(regex_pattern, txt)
 print(matches)  # ['an', 'an', 'an', 'a ', 'ar']
 
-regex_pattern = r'[a].+'  # . any character, + any character one or more times 
+regex_pattern = r'[a].+'  # . any character, + any character one or more times
 matches = re.findall(regex_pattern, txt)
 print(matches)  # ['and banana are fruits']
 ```
@@ -320,7 +332,7 @@ print(matches)  # ['and banana are fruits']
 Zero or many times. The pattern could may not occur or it can occur many times.
 
 ```py
-regex_pattern = r'[a].*'  # . any character, * any character zero or more times 
+regex_pattern = r'[a].*'  # . any character, * any character zero or more times
 txt = '''Apple and banana are fruits'''
 matches = re.findall(regex_pattern, txt)
 print(matches)  # ['and banana are fruits']
@@ -332,7 +344,7 @@ Zero or one time. The pattern may not occur or it may occur once.
 
 ```py
 txt = '''I am not sure if there is a convention how to write the word e-mail.
-Some people write it email others may write it as Email or E-mail.'''
+Some people write it as email others may write it as Email or E-mail.'''
 regex_pattern = r'[Ee]-?mail'  # ? means here that '-' is optional
 matches = re.findall(regex_pattern, txt)
 print(matches)  # ['e-mail', 'email', 'Email', 'E-mail']
@@ -340,49 +352,53 @@ print(matches)  # ['e-mail', 'email', 'Email', 'E-mail']
 
 ### Quantifier in RegEx
 
-We can specify the length of the substring we are looking for in a text, using a curly bracket. Lets imagine, we are interested in a substring with a length of 4 characters:
+We can specify the length of the substring we are looking for in a text, using a curly bracket. Let us imagine, we are interested in a substring with a length of 4 characters:
 
 ```py
-txt = 'This regular expression example was made on December 6,  2019.'
+txt = 'This regular expression example was made on December 6,  2019 and revised on July 8, 2021'
 regex_pattern = r'\d{4}'  # exactly four times
 matches = re.findall(regex_pattern, txt)
-print(matches)  # ['2019']
+print(matches)  # ['2019', '2021']
 
-txt = 'This regular expression example was made on December 6,  2019.'
-regex_pattern = r'\d{1, 4}'   # 1 to 4
+txt = 'This regular expression example was made on December 6,  2019 and revised on July 8, 2021'
+regex_pattern = r'\d{1,4}'
 matches = re.findall(regex_pattern, txt)
-print(matches)  # ['6', '2019']
+print(matches)  # ['6', '2019', '8', '2021'] 
 ```
 
 ### Cart ^
 
-* Starts with
-  
+- Starts with
+
 ```py
-txt = 'This regular expression example was made on December 6,  2019.'
+txt = 'This regular expression example was made on December 6,  2019 and revised on July 8, 2021'
 regex_pattern = r'^This'  # ^ means starts with
 matches = re.findall(regex_pattern, txt)
 print(matches)  # ['This']
 ```
 
-* Negation
+- Negation
 
 ```py
-txt = 'This regular expression example was made on December 6,  2019.'
+txt = 'This regular expression example was made on December 6,  2019 and revised on July 8, 2021'
 regex_pattern = r'[^A-Za-z ]+'  # ^ in set character means negation, not A to Z, not a to z, no space
 matches = re.findall(regex_pattern, txt)
-print(matches)  # ['6,', '2019.']
+print(matches)  # ['6,', '2019', '8', '2021']
 ```
 
 ## 💻 Exercises: Day 18
 
-  1. What is the most frequent word in the following paragraph?
+### Exercises: Level 1
+
+ 1. What is the most frequent word in the following paragraph?
+
 ```py
     paragraph = 'I love teaching. If you do not love teaching what else can you love. I love Python if you do not love something which can give you all the capabilities to develop an application what else can you love.
 ```
 
 ```sh
-    [(6, 'love'),
+    [
+    (6, 'love'),
     (5, 'you'),
     (3, 'can'),
     (2, 'what'),
@@ -403,18 +419,21 @@ print(matches)  # ['6,', '2019.']
     (1, 'an'),
     (1, 'all'),
     (1, 'Python'),
-    (1, 'If')]
+    (1, 'If')
+    ]
 ```
 
-2. The position of some particles on the horizontal x-axis -12, -4, -3 and -1 in the negative direction, 0 at origin, 4 and 8 in the positive direction. Extract these numbers from this whole text and find the distance between the two furthest particles.
+2. The position of some particles on the horizontal x-axis are -12, -4, -3 and -1 in the negative direction, 0 at origin, 4 and 8 in the positive direction. Extract these numbers from this whole text and find the distance between the two furthest particles.
 
 ```py
-points = ['-1', '2', '-4', '-3', '-1', '0', '4', '8']
-sorted_points =  [-4, -3, -1, -1, 0, 2, 4, 8]
-distance = 12
+points = ['-12', '-4', '-3', '-1', '0', '4', '8']
+sorted_points =  [-12, -4, -3, -1, -1, 0, 2, 4, 8]
+distance = 8 -(-12) # 20
 ```
 
-3. Write a pattern which identifies if a string is a valid python variable
+### Exercises: Level 2
+
+1. Write a pattern which identifies if a string is a valid python variable
 
     ```sh
     is_valid_variable('first_name') # True
@@ -423,7 +442,9 @@ distance = 12
     is_valid_variable('firstname') # True
     ```
 
-4. Clean the following text. After cleaning, count three most frequent words in the string.
+### Exercises: Level 3
+
+1. Clean the following text. After cleaning, count three most frequent words in the string.
 
     ```py
     sentence = '''%I $am@% a %tea@cher%, &and& I lo%#ve %tea@ching%;. There $is nothing; &as& mo@re rewarding as educa@ting &and& @emp%o@wering peo@ple. ;I found tea@ching m%o@re interesting tha@n any other %jo@bs. %Do@es thi%s mo@tivate yo@u to be a tea@cher!?'''
