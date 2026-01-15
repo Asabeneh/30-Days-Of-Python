@@ -139,7 +139,7 @@ The above while loop only prints 0, 1, 2 and 4 (skips 3).
 
 A _for_ keyword is used to make a for loop, similar with other programming languages, but with some syntax differences. Loop is used for iterating over a sequence (that is either a list, a tuple, a dictionary, a set, or a string).
 
-- For loop with list
+-Using For loop on list
 
 ```py
 # syntax
@@ -155,7 +155,7 @@ for number in numbers: # number is temporary name to refer to the list's items, 
     print(number)       # the numbers will be printed line by line, from 0 to 5
 ```
 
-- For loop with string
+-Using For loop on string
 
 ```py
 # syntax
@@ -175,7 +175,7 @@ for i in range(len(language)):
     print(language[i])
 ```
 
-- For loop with tuple
+-Using For loop on tuple
 
 ```py
 # syntax
@@ -222,7 +222,7 @@ for key, value in person.items():
     print(key, value) # this way we get both keys and values printed out
 ```
 
-- Loops in set
+-Using For Loop in set
 
 ```py
 # syntax
@@ -241,7 +241,7 @@ for company in it_companies:
 ### Break and Continue - Part 2
 
 Short reminder:
-_Break_: We use break when we like to stop our loop before it is completed.
+_Break_: We use break when we want to stop our loop before it is completed.
 
 ```py
 # syntax
@@ -263,7 +263,7 @@ for number in numbers:
 
 In the above example, the loop stops when it reaches 3.
 
-Continue: We use continue when we like to skip some of the steps in the iteration of the loop.
+Continue: We use continue when we want to skip some of the steps in the iteration of the loop.
 
 ```py
   # syntax
@@ -289,7 +289,12 @@ In the example above, if the number equals 3, the step *after* the condition (bu
 
 ### The Range Function
 
-The _range()_ function is used list of numbers. The _range(start, end, step)_ takes three parameters: starting, ending and increment. By default it starts from 0 and the increment is 1. The range sequence needs at least 1 argument (end).
+The _range()_ function is used to loop through a set of code a certain number of times. The _range(start,end, step)_ takes three parameters: starting, ending and increment. 
+  start: integer starting from which the sequence of integers is to be returned
+  stop: integer before which the sequence of integers is to be returned.
+         The range of integers end at stop – 1.
+  step: integer value which determines the increment between each integer in the sequence
+By default it starts from 0 and the increment is 1. The range sequence needs at least 1 argument (end).
 Creating sequences using range
 
 ```py
@@ -302,6 +307,10 @@ lst = list(range(0,11,2))
 print(lst) # [0, 2, 4, 6, 8, 10]
 st = set(range(0,11,2))
 print(st) #  {0, 2, 4, 6, 8, 10}
+
+# for backward from start to end 
+lst = list(range(11,0,-2))
+print(lst) # [11,9,7,5,3,1]
 ```
 
 ```py
@@ -441,7 +450,7 @@ for number in range(6):
    The sum of all numbers is 5050.
    ```
 
-1. Use for loop to iterate from 0 to 100 and print the sum of all evens and the sum of all odds.
+2. Use for loop to iterate from 0 to 100 and print the sum of all evens and the sum of all odds.
 
     ```sh
     The sum of all evens is 2550. And the sum of all odds is 2500.
@@ -450,8 +459,8 @@ for number in range(6):
 ### Exercises: Level 3
 
 1. Go to the data folder and use the [countries.py](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/data/countries.py) file. Loop through the countries and extract all the countries containing the word _land_.
-1. This is a fruit list, ['banana', 'orange', 'mango', 'lemon'] reverse the order using loop.
-2. Go to the data folder and use the [countries_data.py](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/data/countries-data.py) file. 
+2. This is a fruit list, ['banana', 'orange', 'mango', 'lemon'] reverse the order using loop.
+3. Go to the data folder and use the [countries_data.py](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/data/countries-data.py) file. 
    1. What are the total number of languages in the data
    2. Find the ten most spoken languages from the data
    3. Find the 10 most populated countries in the world

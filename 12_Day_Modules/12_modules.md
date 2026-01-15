@@ -12,7 +12,7 @@
 <small> Second Edition: July, 2021</small>
 </sub>
 
-</div>
+
 </div>
 
 [<< Day 11](../11_Day_Functions/11_functions.md) | [Day 13>>](../13_Day_List_comprehension/13_list_comprehension.md)
@@ -77,7 +77,7 @@ We can have many functions in a file and we can import all the functions differe
 from mymodule import generate_full_name, sum_two_nums, person, gravity
 print(generate_full_name('Asabneh','Yetayeh'))
 print(sum_two_nums(1,9))
-mass = 100;
+mass = 100
 weight = mass * gravity
 print(weight)
 print(person['firstname'])
@@ -92,7 +92,7 @@ During importing we can rename the name of the module.
 from mymodule import generate_full_name as fullname, sum_two_nums as total, person as p, gravity as g
 print(fullname('Asabneh','Yetayeh'))
 print(total(1, 9))
-mass = 100;
+mass = 100 
 weight = mass * g
 print(weight)
 print(p)
@@ -251,9 +251,9 @@ print(randint(5, 20)) # it returns a random integer number between [5, 20] inclu
 
 ### Exercises: Level 1
 
-1. Writ a function which generates a six digit/character random_user_id.
+1. Write a function which generates a six digit/character random_user_id. 
    ```py
-     print(random_user_id());
+     print(random_user_id()) 
      '1ee33d'
    ```
 2. Modify the previous task. Declare a function named user_id_gen_by_user. It doesn’t take any parameters but it takes two inputs using input(). One of the inputs is the number of characters and the second input is the number of IDs which are supposed to be generated.

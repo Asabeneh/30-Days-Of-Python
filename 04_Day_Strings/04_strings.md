@@ -92,7 +92,7 @@ print(len(full_name)) # 16
 In Python and other programming languages \ followed by a character is an escape sequence. Let us see the most common escape characters:
 
 - \n: new line
-- \t: Tab means(8 spaces)
+- \t: Tab means(8 spaces) 
 - \\\\: Back slash
 - \\': Single quote (')
 - \\": Double quote (")
@@ -101,18 +101,18 @@ Now, let us see the use of the above escape sequences with examples.
 
 ```py
 print('I hope everyone is enjoying the Python Challenge.\nAre you ?') # line break
-print('Days\tTopics\tExercises') # adding tab space or 4 spaces 
-print('Day 1\t3\t5')
-print('Day 2\t3\t5')
-print('Day 3\t3\t5')
-print('Day 4\t3\t5')
+print('Days\tTopics\tExercises') # adding tab space or 4 spaces
+print('Day 1\t5\t5')
+print('Day 2\t6\t20')
+print('Day 3\t5\t23')
+print('Day 4\t1\t35')
 print('This is a backslash  symbol (\\)') # To write a backslash
 print('In every programming language it starts with \"Hello, World!\"') # to write a double quote inside a single quote
 
 # output
 I hope every one is enjoying the Python Challenge.
 Are you ?
-Days	Topics	Exercises
+Days  Topics  Exercises
 Day 1	5	    5
 Day 2	6	    20
 Day 3	5	    23
@@ -154,7 +154,7 @@ print(formated_string) # "The following are python libraries:['Django', 'Flask',
 
 #### New Style String Formatting (str.format)
 
-This formatting is introduced in Python version 3.
+This format was introduced in Python version 3.
 
 ```py
 
@@ -328,16 +328,16 @@ print(challenge.expandtabs(10)) # 'thirty    days      of        python'
 
 ```py
 challenge = 'thirty days of python'
-print(challenge.find('y'))  # 16
-print(challenge.find('th')) # 17
+print(challenge.find('y'))  # 5
+print(challenge.find('th')) # 0
 ```
 
 - rfind(): Returns the index of the last occurrence of a substring, if not found returns -1
 
 ```py
 challenge = 'thirty days of python'
-print(challenge.rfind('y'))  # 5
-print(challenge.rfind('th')) # 1
+print(challenge.rfind('y'))  # 16
+print(challenge.rfind('th')) # 17
 ```
 
 - format(): formats string into a nicer output  
@@ -349,7 +349,7 @@ last_name = 'Yetayeh'
 age = 250
 job = 'teacher'
 country = 'Finland'
-sentence = 'I am {} {}. I am a {}. I am {} years old. I live in {}.'.format(first_name, last_name, age, job, country)
+sentence = 'I am {} {}. I am a {}. I am {} years old. I live in {}.'.format(first_name, last_name, job, age, country)
 print(sentence) # I am Asabeneh Yetayeh. I am 250 years old. I am a teacher. I live in Finland.
 
 radius = 10
@@ -373,8 +373,9 @@ print(challenge.index(sub_string, 9)) # error
 ```py
 challenge = 'thirty days of python'
 sub_string = 'da'
-print(challenge.rindex(sub_string))  # 8
+print(challenge.rindex(sub_string))  # 7
 print(challenge.rindex(sub_string, 9)) # error
+print(challenge.rindex('on', 8)) # 19
 ```
 
 - isalnum(): Checks alphanumeric character
@@ -412,7 +413,7 @@ print(challenge.isdecimal())  # False
 challenge = '123'
 print(challenge.isdecimal())  # True
 challenge = '\u00B2'
-print(challenge.isdigit())   # False
+print(challenge.isdigit())   # True 
 challenge = '12 3'
 print(challenge.isdecimal())  # False, space not allowed
 ```
@@ -544,7 +545,7 @@ print(challenge.startswith('thirty')) # False
 9. Cut(slice) out the first word of _Coding For All_ string.
 10. Check if _Coding For All_ string contains a word Coding using the method index, find or other methods.
 11. Replace the word coding in the string 'Coding For All' to Python.
-12. Change Python for Everyone to Python for All using the replace method or other methods.
+12. Change "Python for Everyone" to "Python for All" using the replace method or other methods. 
 13. Split the string 'Coding For All' using space as the separator (split()) .
 14. "Facebook, Google, Microsoft, Apple, IBM, Oracle, Amazon" split the string at the comma.
 15. What is the character at index 0 in the string _Coding For All_.
@@ -560,7 +561,7 @@ print(challenge.startswith('thirty')) # False
 25. Slice out the phrase 'because because because' in the following sentence: 'You cannot end a sentence with because because because is a conjunction'
 26. Find the position of the first occurrence of the word 'because' in the following sentence: 'You cannot end a sentence with because because because is a conjunction'
 27. Slice out the phrase 'because because because' in the following sentence: 'You cannot end a sentence with because because because is a conjunction'
-28. Does '\'Coding For All' start with a substring _Coding_?
+28. Does 'Coding For All' start with a substring _Coding_?
 29. Does 'Coding For All' end with a substring _coding_?
 30. '&nbsp;&nbsp; Coding For All &nbsp;&nbsp;&nbsp; &nbsp;' &nbsp;, remove the left and right trailing spaces in the given string.
 31. Which one of the following variables return True when we use the method isidentifier():
@@ -600,3 +601,5 @@ The area of a circle with radius 10 is 314 meters square.
 🎉 CONGRATULATIONS ! 🎉
 
 [<< Day 3](../03_Day_Operators/03_operators.md) | [Day 5 >>](../05_Day_Lists/05_lists.md)
+
+
