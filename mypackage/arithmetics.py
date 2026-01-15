@@ -23,6 +23,3 @@ def remainder(a, b):
 
 def power(a, b):
     return a ** b
-
-
-

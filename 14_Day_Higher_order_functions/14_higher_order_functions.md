@@ -11,8 +11,8 @@
   <a href="https://www.linkedin.com/in/asabeneh/" target="_blank">Asabeneh Yetayeh</a><br>
   <small>Second Edition: July, 2021</small>
   </sub>
-</div>
-</div>
+
+</div> 
 
 [<< Day 13](../13_Day_List_comprehension/13_list_comprehension.md) | [Day 15>>](../15_Day_Python_type_errors/15_python_type_errors.md)
 
@@ -177,7 +177,6 @@ def split_string_decorator(function):
         func = function()
         splitted_string = func.split()
         return splitted_string
-
     return wrapper
 
 #Decorators will be executed from bottom to top
@@ -202,7 +201,7 @@ def decorator_with_parameters(function):
 @decorator_with_parameters
 def print_full_name(first_name, last_name, country):
     print("I am {} {}. I love to teach.".format(
-        first_name, last_name, country))
+        first_name, last_name))
 
 print_full_name("Asabeneh", "Yetayeh",'Finland')
 ```
