@@ -172,12 +172,15 @@ The shape method provide the shape of the array as a tuple. The first is the row
     nums = np.array([1, 2, 3, 4, 5])
     print(nums)
     print('shape of nums: ', nums.shape)
+    numpy_two_dimensional_list = np.array([[0,1,2],[3,4,5],[6,7,8]])
     print(numpy_two_dimensional_list)
     print('shape of numpy_two_dimensional_list: ', numpy_two_dimensional_list.shape)
     three_by_four_array = np.array([[0, 1, 2, 3],
         [4,5,6,7],
-        [8,9,10, 11]])
-    print(three_by_four_array.shape)
+        [8,9,10,11]]
+    print(three_by_four_array)
+    print('shape of three_by_four_array: ', three_by_four_array.shape)
+
 ```
 
 ```sh
@@ -930,7 +933,7 @@ Numpy is equipped with the robust statistical function as listed below
   - Max np.max()
   - Mean np.mean()
   - Median np.median()
-  - Varience
+  - Variance
   - Percentile
   - Standard deviation np.std()
 
@@ -1203,7 +1206,7 @@ plt.show()
 
 ![png](../test_files/test_141_0.png)
 
-To draw the Gaussian normal distribution using numpy. As you can see below, the numpy can generate random numbers. To create random sample, we need the mean(mu), sigma(standard deviation), mumber of data points.
+To draw the Gaussian normal distribution using numpy. As you can see below, the numpy can generate random numbers. To create random sample, we need the mean(mu), sigma(standard deviation), number of data points.
 
 ```python
 mu = 28
@@ -1218,7 +1221,7 @@ plt.show()
 
 ![png](../test_files/test_143_0.png)
 
-# Summery
+# Summary
 
 To summarize, the main differences with python lists are:
 

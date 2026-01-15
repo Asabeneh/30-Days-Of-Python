@@ -11,6 +11,7 @@
 <a href="https://www.linkedin.com/in/asabeneh/" target="_blank">Asabeneh Yetayeh</a><br>
 <small> Second Edition: July, 2021</small>
 </sub>
+
 </div>
 
 [<< Day 9](../09_Day_Conditionals/09_conditionals.md) | [Day 11 >>](../11_Day_Functions/11_functions.md)
@@ -85,7 +86,6 @@ else:
 
 The above loop condition will be false when count is 5 and the loop stops, and execution starts the else statement. As a result 5 will be printed.
 
-
 ### Break and Continue - Part 1
 
 - Break: We use break when we like to get out of or stop the loop.
@@ -127,6 +127,7 @@ while condition:
 count = 0
 while count < 5:
     if count == 3:
+        count += 1
         continue
     print(count)
     count = count + 1
@@ -138,7 +139,7 @@ The above while loop only prints 0, 1, 2 and 4 (skips 3).
 
 A _for_ keyword is used to make a for loop, similar with other programming languages, but with some syntax differences. Loop is used for iterating over a sequence (that is either a list, a tuple, a dictionary, a set, or a string).
 
-- For loop with list
+-Using For loop on list
 
 ```py
 # syntax
@@ -154,7 +155,7 @@ for number in numbers: # number is temporary name to refer to the list's items, 
     print(number)       # the numbers will be printed line by line, from 0 to 5
 ```
 
-- For loop with string
+-Using For loop on string
 
 ```py
 # syntax
@@ -174,7 +175,7 @@ for i in range(len(language)):
     print(language[i])
 ```
 
-- For loop with tuple
+-Using For loop on tuple
 
 ```py
 # syntax
@@ -221,7 +222,7 @@ for key, value in person.items():
     print(key, value) # this way we get both keys and values printed out
 ```
 
-- Loops in set
+-Using For Loop in set
 
 ```py
 # syntax
@@ -240,7 +241,7 @@ for company in it_companies:
 ### Break and Continue - Part 2
 
 Short reminder:
-_Break_: We use break when we like to stop our loop before it is completed.
+_Break_: We use break when we want to stop our loop before it is completed.
 
 ```py
 # syntax
@@ -262,7 +263,7 @@ for number in numbers:
 
 In the above example, the loop stops when it reaches 3.
 
-Continue: We use continue when we like to skip some of the steps in the iteration of the loop.
+Continue: We use continue when we want to skip some of the steps in the iteration of the loop.
 
 ```py
   # syntax
@@ -284,15 +285,15 @@ for number in numbers:
 print('outside the loop')
 ```
 
-In the example above, if the number equals 3, the step *after* the condition (but inside the loop) is skipped and the execution of the loop continues if there are any iterations left.
+In the example above, if the number equals 3, the step _after_ the condition (but inside the loop) is skipped and the execution of the loop continues if there are any iterations left.
 
 ### The Range Function
 
-The _range()_ function is used list of numbers. The _range(start, end, step)_ takes three parameters: starting, ending and increment. By default it starts from 0 and the increment is 1. The range sequence needs at least 1 argument (end).
+The _range()_ function is used to return a list of numbers. The _range(start, end, step)_ takes three parameters: starting, ending and increment. By default it starts from 0 and the increment is 1. The range sequence needs at least 1 argument (end).
 Creating sequences using range
 
 ```py
-lst = list(range(11)) 
+lst = list(range(11))
 print(lst) # [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 st = set(range(1, 11))    # 2 arguments indicate start and end of the sequence, step set to default 1
 print(st) # {1, 2, 3, 4, 5, 6, 7, 8, 9, 10}
@@ -301,6 +302,10 @@ lst = list(range(0,11,2))
 print(lst) # [0, 2, 4, 6, 8, 10]
 st = set(range(0,11,2))
 print(st) #  {0, 2, 4, 6, 8, 10}
+
+# for backward from start to end 
+lst = list(range(11,0,-2))
+print(lst) # [11,9,7,5,3,1]
 ```
 
 ```py
@@ -431,26 +436,26 @@ for number in range(6):
 6. Iterate through the list, ['Python', 'Numpy','Pandas','Django', 'Flask'] using a for loop and print out the items.
 7. Use for loop to iterate from 0 to 100 and print only even numbers
 8. Use for loop to iterate from 0 to 100 and print only odd numbers
-   
+
 ### Exercises: Level 2
-    
+
 1.  Use for loop to iterate from 0 to 100 and print the sum of all numbers.
 
+```sh
+The sum of all numbers is 5050.
+```
+
+2. Use for loop to iterate from 0 to 100 and print the sum of all evens and the sum of all odds.
+
    ```sh
-   The sum of all numbers is 5050.
+   The sum of all evens is 2550. And the sum of all odds is 2500.
    ```
-
-1. Use for loop to iterate from 0 to 100 and print the sum of all evens and the sum of all odds.
-
-    ```sh
-    The sum of all evens is 2550. And the sum of all odds is 2500.
-    ```
 
 ### Exercises: Level 3
 
 1. Go to the data folder and use the [countries.py](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/data/countries.py) file. Loop through the countries and extract all the countries containing the word _land_.
 1. This is a fruit list, ['banana', 'orange', 'mango', 'lemon'] reverse the order using loop.
-2. Go to the data folder and use the [countries_data.py](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/data/countries-data.py) file. 
+1. Go to the data folder and use the [countries_data.py](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/data/countries-data.py) file.
    1. What are the total number of languages in the data
    2. Find the ten most spoken languages from the data
    3. Find the 10 most populated countries in the world

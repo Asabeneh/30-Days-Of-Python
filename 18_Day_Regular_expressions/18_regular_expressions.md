@@ -12,7 +12,7 @@
   <small> First Edition: Nov 22 - Dec 22, 2019</small>
   </sub>
 </div>
-</div>
+
 
 [<< Day 17](../17_Day_Exception_handling/17_exception_handling.md) | [Day 19>>](../19_Day_File_handling/19_file_handling.md)
 
@@ -59,16 +59,16 @@ import re
 
 To find a pattern we use different set of *re* character sets that allows to search for a match in a string.
 
-* *re.match()*: searches only in the beginning of the first line of the string and returns matched objects if  found, else returns None. 
-* *re.search*: Returns a match object if there is one anywhere in the string, including multiline strings.
-* *re.findall*: Returns a list containing all matches
-* *re.split*:	Takes a string, splits it at the match points, returns a list
-* *re.sub*:  Replaces one or many matches within a string
+- *re.match()*: searches only in the beginning of the first line of the string and returns matched objects if  found, else returns None.
+- *re.search*: Returns a match object if there is one anywhere in the string, including multiline strings.
+- *re.findall*: Returns a list containing all matches
+- *re.split*: Takes a string, splits it at the match points, returns a list
+- *re.sub*:  Replaces one or many matches within a string
 
 #### Match
 
 ```py
-# syntac
+# syntax
 re.match(substring, string, re.I)
 # substring is a string or a pattern, string is the text we look for a pattern , re.I is case ignore
 ```
@@ -85,7 +85,7 @@ span = match.span()
 print(span)     # (0, 15)
 # Lets find the start and stop position from the span
 start, end = span
-print(start, end)  # 0, 15
+print(start, end)  # 0 15
 substring = txt[start:end]
 print(substring)       # I love to teach
 ```
@@ -106,7 +106,7 @@ The string does not string with *I like to teach*, therefore there was no match 
 
 ```py
 # syntax
-re.match(substring, string, re.I)
+re.search(substring, string, re.I)
 # substring is a pattern, string is the text we look for a pattern , re.I is case ignore flag
 ```
 
@@ -129,7 +129,7 @@ substring = txt[start:end]
 print(substring)       # first
 ```
 
-As you can see, search is much better than match because it can look for the pattern throughout the text. Search returns a match object with a first match that was found, otherwise it returns _None_. A much better *re* function is *findall*. This function checks for the pattern through the whole string and returns all the matches as a list.
+As you can see, search is much better than match because it can look for the pattern throughout the text. Search returns a match object with a first match that was found, otherwise it returns *None*. A much better *re* function is *findall*. This function checks for the pattern through the whole string and returns all the matches as a list.
 
 #### Searching for All Matches Using *findall*
 
@@ -179,19 +179,19 @@ txt = '''Python is the most beautiful language that a human being has ever creat
 I recommend python for a first programming language'''
 
 match_replaced = re.sub('Python|python', 'JavaScript', txt, re.I)
-print(match_replaced)  # JavaScript is the most beautiful language that a human being has ever created.
+print(match_replaced)  # JavaScript is the most beautiful language that a human being has ever created.I recommend python for a first programming language
 # OR
 match_replaced = re.sub('[Pp]ython', 'JavaScript', txt, re.I)
-print(match_replaced)  # JavaScript is the most beautiful language that a human being has ever created.
+print(match_replaced)  # JavaScript is the most beautiful language that a human being has ever created.I recommend python for a first programming language
 ```
 
 Let us add one more example. The following string is really hard to read unless we remove the % symbol. Replacing the % with an empty string will clean the text.
 
 ```py
 
-txt = '''%I a%m te%%a%%che%r% a%n%d %% I l%o%ve te%ach%ing. 
+txt = '''%I a%m te%%a%%che%r% a%n%d %% I l%o%ve te%ach%ing.
 T%he%re i%s n%o%th%ing as r%ewarding a%s e%duc%at%i%ng a%n%d e%m%p%ow%er%ing p%e%o%ple.
-I fo%und te%a%ching m%ore i%n%t%er%%es%ting t%h%an any other %jobs. 
+I fo%und te%a%ching m%ore i%n%t%er%%es%ting t%h%an any other %jobs.
 D%o%es thi%s m%ot%iv%a%te %y%o%u to b%e a t%e%a%cher?'''
 
 matches = re.sub('%', '', txt)
@@ -200,7 +200,7 @@ print(matches)
 
 ```sh
 I am teacher and I love teaching.
-There is nothing as rewarding as educating and empowering people. 
+There is nothing as rewarding as educating and empowering people.
 I found teaching more interesting than any other jobs. Does this motivate you to be a teacher?
 ```
 
@@ -221,7 +221,7 @@ print(re.split('\n', txt)) # splitting using \n - end of line symbol
 ## Writing RegEx Patterns
 
 To declare a string variable we use a single or double quote. To declare RegEx variable *r''*.
-The following pattern only identifies apple with lowercase, to make it case insensitive either we should rewrite our pattern or we should add a flag.  
+The following pattern only identifies apple with lowercase, to make it case insensitive either we should rewrite our pattern or we should add a flag.
 
 ```py
 import re
@@ -240,38 +240,39 @@ matches = re.findall(regex_pattern, txt)
 print(matches)  # ['Apple', 'apple']
 
 ```
+
 * []:  A set of characters
-  * [a-c] means, a or b or c
-  * [a-z] means, any letter from a to z
-  * [A-Z] means, any character from A to Z
-  * [0-3] means, 0 or 1 or 2 or 3
-  * [0-9] means any number from 0 to 9
-  * [A-Za-z0-9] any single character, that is a to z, A to Z or 0 to 9
-* \\:  uses to escape special characters
-  * \d means: match where the string contains digits (numbers from 0-9)
-  * \D means: match where the string does not contain digits
-* . : any character except new line character(\n)
-* ^: starts with
-  * r'^substring' eg r'^love', a sentence that starts with a word love
-  * r'[^abc] means not a, not b, not c.
-* $: ends with
-  * r'substring$' eg r'love$', sentence  that ends with a word love
-* *: zero or more times
-  * r'[a]*' means a optional or it can occur many times.
-* +: one or more times
-  * r'[a]+' means at least once (or more)
-* ?: zero or one time
-  *  r'[a]?' means zero times or once
-* {3}: Exactly 3 characters
-* {3,}: At least 3 characters
-* {3,8}: 3 to 8 characters
-* |: Either or
-  * r'apple|banana' means either apple or a banana
-* (): Capture and group
+  - [a-c] means, a or b or c
+  - [a-z] means, any letter from a to z
+  - [A-Z] means, any character from A to Z
+  - [0-3] means, 0 or 1 or 2 or 3
+  - [0-9] means any number from 0 to 9
+  - [A-Za-z0-9] any single character, that is a to z, A to Z or 0 to 9
+- \\:  uses to escape special characters
+  - \d means: match where the string contains digits (numbers from 0-9)
+  - \D means: match where the string does not contain digits
+- . : any character except new line character(\n)
+- ^: starts with
+  - r'^substring' eg r'^love', a sentence that starts with a word love
+  - r'[^abc] means not a, not b, not c.
+- $: ends with
+  - r'substring$' eg r'love$', sentence  that ends with a word love
+- *: zero or more times
+  - r'[a]*' means a optional or it can occur many times.
+- +: one or more times
+  - r'[a]+' means at least once (or more)
+- ?: zero or one time
+  - r'[a]?' means zero times or once
+- {3}: Exactly 3 characters
+- {3,}: At least 3 characters
+- {3,8}: 3 to 8 characters
+- |: Either or
+  - r'apple|banana' means either apple or a banana
+- (): Capture and group
 
 ![Regular Expression cheat sheet](../images/regex.png)
 
-Let us use examples to clarify the meta characters above 
+Let us use examples to clarify the meta characters above
 
 ### Square Bracket
 
@@ -321,7 +322,7 @@ txt = '''Apple and banana are fruits'''
 matches = re.findall(regex_pattern, txt)
 print(matches)  # ['an', 'an', 'an', 'a ', 'ar']
 
-regex_pattern = r'[a].+'  # . any character, + any character one or more times 
+regex_pattern = r'[a].+'  # . any character, + any character one or more times
 matches = re.findall(regex_pattern, txt)
 print(matches)  # ['and banana are fruits']
 ```
@@ -331,7 +332,7 @@ print(matches)  # ['and banana are fruits']
 Zero or many times. The pattern could may not occur or it can occur many times.
 
 ```py
-regex_pattern = r'[a].*'  # . any character, * any character zero or more times 
+regex_pattern = r'[a].*'  # . any character, * any character zero or more times
 txt = '''Apple and banana are fruits'''
 matches = re.findall(regex_pattern, txt)
 print(matches)  # ['and banana are fruits']
@@ -360,15 +361,15 @@ matches = re.findall(regex_pattern, txt)
 print(matches)  # ['2019', '2021']
 
 txt = 'This regular expression example was made on December 6,  2019 and revised on July 8, 2021'
-regex_pattern = r'\d{1, 4}'   # 1 to 4
+regex_pattern = r'\d{1,4}'
 matches = re.findall(regex_pattern, txt)
-print(matches)  # ['6', '2019', '8', '2021']
+print(matches)  # ['6', '2019', '8', '2021'] 
 ```
 
 ### Cart ^
 
-* Starts with
-  
+- Starts with
+
 ```py
 txt = 'This regular expression example was made on December 6,  2019 and revised on July 8, 2021'
 regex_pattern = r'^This'  # ^ means starts with
@@ -376,7 +377,7 @@ matches = re.findall(regex_pattern, txt)
 print(matches)  # ['This']
 ```
 
-* Negation
+- Negation
 
 ```py
 txt = 'This regular expression example was made on December 6,  2019 and revised on July 8, 2021'
@@ -388,7 +389,9 @@ print(matches)  # ['6,', '2019', '8', '2021']
 ## 💻 Exercises: Day 18
 
 ### Exercises: Level 1
+
  1. What is the most frequent word in the following paragraph?
+
 ```py
     paragraph = 'I love teaching. If you do not love teaching what else can you love. I love Python if you do not love something which can give you all the capabilities to develop an application what else can you love.
 ```
@@ -423,9 +426,9 @@ print(matches)  # ['6,', '2019', '8', '2021']
 2. The position of some particles on the horizontal x-axis are -12, -4, -3 and -1 in the negative direction, 0 at origin, 4 and 8 in the positive direction. Extract these numbers from this whole text and find the distance between the two furthest particles.
 
 ```py
-points = ['-1', '2', '-4', '-3', '-1', '0', '4', '8']
-sorted_points =  [-4, -3, -1, -1, 0, 2, 4, 8]
-distance = 8 -(-4) # 12
+points = ['-12', '-4', '-3', '-1', '0', '4', '8']
+sorted_points =  [-12, -4, -3, -1, -1, 0, 2, 4, 8]
+distance = 8 -(-12) # 20
 ```
 
 ### Exercises: Level 2
