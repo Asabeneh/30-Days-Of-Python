@@ -348,7 +348,7 @@ ZeroDivisionError: division by zero
 We cannot divide a number by zero.
 
 We have covered some of the python error types, if you want to check more about it check the python documentation about python error types.
-If you are good at reading the error types then you will be able to fix your bugs fast and you will also become a better programmer.
+If you are good at reading the error types, then you will be able to fix your bugs fast and you will also become a better programmer.
 
 🌕 You are excelling. You made it to half way to your way to greatness. Now do some exercises for your brain and for your muscle.
 
