@@ -127,6 +127,7 @@ while condition:
 count = 0
 while count < 5:
     if count == 3:
+        count += 1
         continue
     print(count)
     count = count + 1
@@ -138,7 +139,7 @@ The above while loop only prints 0, 1, 2 and 4 (skips 3).
 
 A _for_ keyword is used to make a for loop, similar with other programming languages, but with some syntax differences. Loop is used for iterating over a sequence (that is either a list, a tuple, a dictionary, a set, or a string).
 
-- For loop with list
+-Using For loop on list
 
 ```py
 # syntax
@@ -154,7 +155,7 @@ for number in numbers: # number is temporary name to refer to the list's items, 
     print(number)       # the numbers will be printed line by line, from 0 to 5
 ```
 
-- For loop with string
+-Using For loop on string
 
 ```py
 # syntax
@@ -174,7 +175,7 @@ for i in range(len(language)):
     print(language[i])
 ```
 
-- For loop with tuple
+-Using For loop on tuple
 
 ```py
 # syntax
@@ -221,7 +222,7 @@ for key, value in person.items():
     print(key, value) # this way we get both keys and values printed out
 ```
 
-- Loops in set
+-Using For Loop in set
 
 ```py
 # syntax
@@ -240,7 +241,7 @@ for company in it_companies:
 ### Break and Continue - Part 2
 
 Short reminder:
-_Break_: We use break when we like to stop our loop before it is completed.
+_Break_: We use break when we want to stop our loop before it is completed.
 
 ```py
 # syntax
@@ -262,7 +263,7 @@ for number in numbers:
 
 In the above example, the loop stops when it reaches 3.
 
-Continue: We use continue when we like to skip some of the steps in the iteration of the loop.
+Continue: We use continue when we want to skip some of the steps in the iteration of the loop.
 
 ```py
   # syntax
@@ -301,6 +302,10 @@ lst = list(range(0,11,2))
 print(lst) # [0, 2, 4, 6, 8, 10]
 st = set(range(0,11,2))
 print(st) #  {0, 2, 4, 6, 8, 10}
+
+# for backward from start to end 
+lst = list(range(11,0,-2))
+print(lst) # [11,9,7,5,3,1]
 ```
 
 ```py
@@ -440,7 +445,7 @@ for number in range(6):
 The sum of all numbers is 5050.
 ```
 
-1. Use for loop to iterate from 0 to 100 and print the sum of all evens and the sum of all odds.
+2. Use for loop to iterate from 0 to 100 and print the sum of all evens and the sum of all odds.
 
    ```sh
    The sum of all evens is 2550. And the sum of all odds is 2500.

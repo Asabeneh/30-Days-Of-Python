@@ -180,7 +180,7 @@ Asabeneh Yetayeh is 250 years old. He lives in Helsinki, Finland
 
 ### Object Default Methods
 
-Sometimes, you may want to have a default values for your object methods. If we give default values for the parameters in the constructor, we can avoid errors when we call or instantiate our class without parameters. Let's see how it looks:
+Sometimes, you may want to have default values for your object methods. If we give default values for the parameters in the constructor, we can avoid errors when we call or instantiate our class without parameters. Let's see how it looks:
 
 **Example:**
 
@@ -333,7 +333,7 @@ print('Count:', data.count()) # 25
 print('Sum: ', data.sum()) # 744
 print('Min: ', data.min()) # 24
 print('Max: ', data.max()) # 38
-print('Range: ', data.range() # 14
+print('Range: ', data.range()) # 14
 print('Mean: ', data.mean()) # 30
 print('Median: ', data.median()) # 29
 print('Mode: ', data.mode()) # {'mode': 26, 'count': 5}
@@ -360,10 +360,7 @@ Frequency Distribution: [(20.0, 26), (16.0, 27), (12.0, 32), (8.0, 37), (8.0, 34
 
 ### Exercises: Level 2
 
-1. Create a class called PersonAccount. It has firstname, lastname, incomes, expenses properties and it has total_income, total_expense, account_info, add_income, add_expense and account_balance methods. Incomes is a set of incomes and its description. The same goes for expenses.
-
-### Exercises: Level 3
-
+1. Create a class called PersonAccount. It has firstname, lastname, incomes, expenses properties and it has total_income, total_expense, account_info, add_income, add_expense and account_balance methods. Incomes is a set of incomes and its description. The same goes for expenses. 
 
 🎉 CONGRATULATIONS ! 🎉
 

@@ -31,6 +31,7 @@
     - [Arbitrary Number of Arguments](#arbitrary-number-of-arguments)
     - [Default and Arbitrary Number of Parameters in Functions](#default-and-arbitrary-number-of-parameters-in-functions)
     - [Function as a Parameter of Another Function](#function-as-a-parameter-of-another-function)
+  - [Testimony](#testimony)
   - [💻 Exercises: Day 11](#-exercises-day-11)
     - [Exercises: Level 1](#exercises-level-1)
     - [Exercises: Level 2](#exercises-level-2)
@@ -48,7 +49,7 @@ A function is a reusable block of code or programming statements designed to per
 
 ### Declaring and Calling a Function
 
-When we make a function, we call it declaring a function. When we start using the it,  we call it *calling* or *invoking* a function. Function can be declared with or without parameters.
+When we make a function, we call it declaring a function. When we start using the it,  we call it _calling_ or _invoking_ a function. Functions can be declared with or without parameters.
 
 ```py
 # syntax
@@ -85,7 +86,7 @@ add_two_numbers()
 
 ### Function Returning a Value - Part 1
 
-Function can also return values, if a function does not have a return statement, the value of the function is None. Let us rewrite the above functions using return. From now on, we get a value from a function when we call the function and print it.
+Functions return values using the _return_ statement. If a function has no return statement, it returns None. Let us rewrite the above functions using return. From now on, we get a value from a function when we call the function and print it.
 
 ```py
 def generate_full_name ():
@@ -106,7 +107,7 @@ print(add_two_numbers())
 
 ### Function with Parameters
 
-In a function we can pass different data types(number, string, boolean, list, tuple, dictionary or set) as a parameter
+In a function we can pass different data types(number, string, boolean, list, tuple, dictionary or set) as parameters.
 
 - Single Parameter: If our function takes a parameter we should call our function with an argument
 
@@ -148,7 +149,7 @@ def sum_of_numbers(n):
     total = 0
     for i in range(n+1):
         total+=i
-    print(total)
+    return total
 print(sum_of_numbers(10)) # 55
 print(sum_of_numbers(100)) # 5050
 ```
@@ -181,7 +182,7 @@ print('Sum of two numbers: ', sum_two_numbers(1, 9))
 
 def calculate_age (current_year, birth_year):
     age = current_year - birth_year
-    return age;
+    return age 
 
 print('Age: ', calculate_age(2021, 1819))
 
@@ -212,12 +213,12 @@ def print_fullname(firstname, lastname):
     space = ' '
     full_name = firstname  + space + lastname
     print(full_name)
-print(print_fullname(firstname = 'Asabeneh', lastname = 'Yetayeh'))
+print_fullname(firstname = 'Asabeneh', lastname = 'Yetayeh')
 
 def add_two_numbers (num1, num2):
     total = num1 + num2
-    print(total)
-print(add_two_numbers(num2 = 3, num1 = 2)) # Order does not matter
+    return total
+print(add_two_numbers(num2 = 3, num1 = 2)) # Order does not matter 
 ```
 
 ### Function Returning a Value - Part 2
@@ -251,7 +252,7 @@ print(add_two_numbers(2, 3))
 
 def calculate_age (current_year, birth_year):
     age = current_year - birth_year
-    return age;
+    return age
 print('Age: ', calculate_age(2019, 1819))
 ```
 
@@ -261,7 +262,6 @@ print('Age: ', calculate_age(2019, 1819))
 ```py
 def is_even (n):
     if n % 2 == 0:
-        print('even')
         return True    # return stops further execution of the function, similar to break 
     return False
 print(is_even(10)) # True
@@ -315,7 +315,7 @@ print(generate_full_name('David','Smith'))
 
 def calculate_age (birth_year,current_year = 2021):
     age = current_year - birth_year
-    return age;
+    return age 
 print('Age: ', calculate_age(1821))
 
 def weight_of_object (mass, gravity = 9.81):
@@ -356,25 +356,64 @@ print(sum_all_nums(2, 3, 5)) # 10
 def generate_groups (team,*args):
     print(team)
     for i in args:
-        print(i)
-print(generate_groups('Team-1','Asabeneh','Brook','David','Eyob'))
+        print(i) 
+generate_groups('Team-1','Asabeneh','Brook','David','Eyob')
 ```
+### Dictionary unpacking
+
+You can call a function which has named arguments using a dictionary with matching key names. You do so using ``**``.
+
+```py
+# Define a function that takes two arguments: 'name' and 'location'
+def greet(name, location):
+    # Print a greeting message using the provided arguments
+    print("Hi there", name, "how is the weather in", location)
+
+# Call the function using keyword arguments
+greet(name="Alice", location="New York")  
+# Output: Hi there Alice how is the weather in New York
+
+# Create a dictionary with keys matching the function's parameter names
+my_dict = {"name": "Alice", "location": "New York"}
+
+# Call the function using dictionary unpacking
+greet(**my_dict)  
+# The ** operator unpacks the dictionary, passing its key-value pairs 
+# as keyword arguments to the function.
+# Output: Hi there Alice how is the weather in New York
+```
+
+### Arbitrary Number of Named Arguments
+
+You can also define a function to accept an arbitrary number of named arguments.
+
+```py
+def arbitrary_named_args(**args):
+    print("I received an arbitrary number of arguments, totaling", len(args))
+    print("They are provided as a dictionary in my function:", type(args))
+    print("Let's print them:")
+    for k, v in args.items():
+        print(" * key:", k, "value:", v)
+```
+
+Generally avoid this unless required as it makes it harder to understand what the function accepts and does.
 
 ### Function as a Parameter of Another Function
 
 ```py
 #You can pass functions around as parameters
 def square_number (n):
-    return n * n
+    return n ** n
 def do_something(f, x):
     return f(x)
-print(do_something(square_number, 3)) # 27
+print(do_something(square_number, 3)) # 9
 ```
 
 🌕 You achieved quite a lot so far.  Keep going! You have just completed day 11 challenges and you are 11 steps a head in to your way to greatness. Now do some exercises for your brain and muscles.
 
 ## Testimony
-Now it is time to express your thoughts about the Author and 30DaysOfPython. You can leave your testimonial on this [link](https://testimonify.herokuapp.com/)
+
+Now it is time to express your thoughts about the Author and 30DaysOfPython. You can leave your testimonial on this [link](https://testimonial-s3sw.onrender.com/)
 
 ## 💻 Exercises: Day 11
 
@@ -393,7 +432,7 @@ Now it is time to express your thoughts about the Author and 30DaysOfPython. You
 ```py
 print(reverse_list([1, 2, 3, 4, 5]))
 # [5, 4, 3, 2, 1]
-print(reverse_list1(["A", "B", "C"]))
+print(reverse_list(["A", "B", "C"])) 
 # ["C", "B", "A"]
 ```
 
@@ -401,18 +440,19 @@ print(reverse_list1(["A", "B", "C"]))
 11. Declare a function named add_item. It takes a list and an item parameters. It returns a list with the item added at the end.
 
 ```py
-food_staff = ['Potato', 'Tomato', 'Mango', 'Milk'];
-print(add_item(food_staff, 'Meat'))     # ['Potato', 'Tomato', 'Mango', 'Milk','Meat'];
+food_stuff = ['Potato', 'Tomato', 'Mango', 'Milk'];
+print(add_item(food_stuff, 'Meat'))     # ['Potato', 'Tomato', 'Mango', 'Milk','Meat'];
 numbers = [2, 3, 7, 9];
-print(add_item(numbers, 5))      [2, 3, 7, 9, 5]
+print(add_item(numbers, 5))      # [2, 3, 7, 9, 5]
+
 ```
 
 12. Declare a function named remove_item. It takes a list and an item parameters. It returns a list with the item removed from it.
 
 ```py
-food_staff = ['Potato', 'Tomato', 'Mango', 'Milk'];
-print(remove_item(food_staff, 'Mango'))  # ['Potato', 'Tomato', 'Milk'];
-numbers = [2, 3, 7, 9];
+food_stuff = ['Potato', 'Tomato', 'Mango', 'Milk']
+print(remove_item(food_stuff, 'Mango'))  # ['Potato', 'Tomato', 'Milk'];
+numbers = [2, 3, 7, 9]
 print(remove_item(numbers, 3))  # [2, 7, 9]
 ```
 
@@ -420,8 +460,8 @@ print(remove_item(numbers, 3))  # [2, 7, 9]
 
 ```py
 print(sum_of_numbers(5))  # 15
-print(sum_all_numbers(10)) # 55
-print(sum_all_numbers(100)) # 5050
+print(sum_of_numbers(10)) # 55
+print(sum_of_numbers(100)) # 5050
 ```
 
 14. Declare a function named sum_of_odds. It takes a number parameter and it adds all the odd numbers in that range.
@@ -429,7 +469,7 @@ print(sum_all_numbers(100)) # 5050
 
 ### Exercises: Level 2
 
-1.  Declare a function named evens_and_odds . It takes a positive integer as parameter and it counts number of evens and odds in the number.
+1. Declare a function named evens_and_odds . It takes a positive integer as parameter and it counts number of evens and odds in the number.
 
 ```py
     print(evens_and_odds(100))
@@ -440,6 +480,22 @@ print(sum_all_numbers(100)) # 5050
 1. Call your function factorial, it takes a whole number as a parameter and it return a factorial of the number
 1. Call your function _is_empty_, it takes a parameter and it checks if it is empty or not
 1. Write different functions which take lists. They should calculate_mean, calculate_median, calculate_mode, calculate_range, calculate_variance, calculate_std (standard deviation).
+1. Write a function called _greet_ which takes a default argument, _name_. If no argument is supplied it should print "Hello, Guest!", otherwise it should greet the person by name.
+
+```py
+    greet()
+    # "Hello, Guest!
+    greet("Alice")
+    # "Hello, Alice!"
+```
+1. Create a function called _show_args_ to take an arbitrary number of named arguments and print their names and values.
+   ```py
+   show_args(name="Alice", age=30, city="New York")
+   # Received: name: Alice, age: 30, city: New York
+   show_args(name="Bob", pet="Fluffy, the bunny")
+   # Received: name: Bob, pet: Fluffy, the bunny
+   ```
+
 
 ### Exercises: Level 3
 
