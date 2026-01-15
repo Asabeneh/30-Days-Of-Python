@@ -162,7 +162,7 @@ print(two_power_of_five)  # 32
 2. Flatten the following list of lists of lists to a one dimensional list :
 
    ```py
-   list_of_lists =[[[1, 2, 3]], [[4, 5, 6]], [[7, 8, 9]]]
+   list_of_lists =[[1, 2, 3], [4, 5, 6], [7, 8, 9]]
 
    output
    [1, 2, 3, 4, 5, 6, 7, 8, 9]
