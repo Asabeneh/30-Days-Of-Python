@@ -1,1 +1,5 @@
-select 1*2 as product :
+select count(*)
+from Employees
+;
+select *
+from Employees ;
