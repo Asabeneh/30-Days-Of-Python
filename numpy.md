@@ -256,7 +256,7 @@ print('The size:', two_dimensional_list.size)  # 3
 
 ## Mathematical Operation using numpy
 
-Numpy array is not like exactly like python list. To do mathematical operation in pyhton list we have to loop through the items but numpy can allow to do any mathematical operation without looping.
+Numpy array is not like exactly like python list. To do mathematical operation in python list we have to loop through the items but numpy can allow to do any mathematical operation without looping.
 Mathematical Operation:
 
 - Addition (+)

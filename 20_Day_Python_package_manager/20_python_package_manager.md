@@ -329,7 +329,7 @@ We use _json()_ method from response object, if the we are fetching JSON data. F
 
 We organize a large number of files in different folders and sub-folders based on some criteria, so that we can find and manage them easily. As you know, a module can contain multiple objects, such as classes, functions, etc. A package can contain one or more relevant modules. A package is actually a folder containing one or more module files. Let us create a package named mypackage, using the following steps:
 
-Create a new folder named mypacakge inside 30DaysOfPython folder
+Create a new folder named mypackage inside 30DaysOfPython folder
 Create an empty **__init__**.py file in the mypackage folder.
 Create modules arithmetic.py and greet.py with following code:
 

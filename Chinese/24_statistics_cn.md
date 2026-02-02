@@ -99,8 +99,8 @@ print(numpy_array_from_list) # array([1, 2, 3, 4, 5])
 # Python列表
 python_list = [1,2,3,4,5]
 
-numy_array_from_list2 = np.array(python_list, dtype=float)
-print(numy_array_from_list2) # array([1., 2., 3., 4., 5.])
+numpy_array_from_list2 = np.array(python_list, dtype=float)
+print(numpy_array_from_list2) # array([1., 2., 3., 4., 5.])
 ```
 
 ### 创建布尔型NumPy数组
@@ -586,4 +586,4 @@ print('平均值：', numpy_array_from_list.mean())
 
 🎉 恭喜！🎉
 
-[<< 第23天](./23_Day_Virtual_environment/23_virtual_environment_cn.md) | [第25天 >>](./25_Day_Pandas/25_pandas_cn.md) 
+[<< 第 23 天](./23_virtual_environment_cn.md) | [第 25 天 >>](./25_pandas_cn.md) 

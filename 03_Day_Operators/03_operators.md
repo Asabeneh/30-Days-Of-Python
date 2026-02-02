@@ -75,7 +75,7 @@ print('Division: ', 7 / 2)        # 3.5
 print('Division without the remainder: ', 7 // 2)   # 3,  gives without the floating number or without the remaining
 print ('Division without the remainder: ',7 // 3)   # 2
 print('Modulus: ', 3 % 2)         # 1, Gives the remainder
-print('Exponentiation: ', 2 ** 3) # 9 it means 2 * 2 * 2
+print('Exponentiation: ', 2 ** 3) # 8 it means 2 * 2 * 2
 ```
 
 **Example:Floats**
@@ -121,7 +121,7 @@ print('a * b = ', product)
 print('a / b = ', division)
 print('a % b = ', remainder)
 print('a // b = ', floor_division)
-print('a ** b = ', exponentiation)
+print('a ** b = ', exponential)
 ```
 
 **Example:**
@@ -148,7 +148,7 @@ print('division: ', div)
 print('remainder: ', remainder)
 ```
 
-Let us start start connecting the dots and start making use of what we already know to calculate (area, volume,density,  weight, perimeter, distance, force).
+Let us start connecting the dots and start making use of what we already know to calculate (area, volume,density,  weight, perimeter, distance, force).
 
 **Example:**
 
@@ -174,6 +174,7 @@ print(weight, 'N')                         # Adding unit to the weight
 mass = 75 # in Kg
 volume = 0.075 # in cubic meter
 density = mass / volume # 1000 Kg/m^3
+print(density, 'Kg/m^3') # Adding unit to the density
 
 ```
 
@@ -213,13 +214,13 @@ In addition to the above comparison operator Python uses:
 - _is_: Returns true if both variables are the same object(x is y)
 - _is not_: Returns true if both variables are not the same object(x is not y)
 - _in_: Returns True if the queried list contains a certain item(x in y)
-- _not in_: Returns True if the queried list doesn't have a certain item(x in y)
+- _not in_: Returns True if the queried list doesn't have a certain item(x not in y)
 
 ```py
 print('1 is 1', 1 is 1)                   # True - because the data values are the same
 print('1 is not 2', 1 is not 2)           # True - because 1 is not 2
 print('A in Asabeneh', 'A' in 'Asabeneh') # True - A found in the string
-print('B in Asabeneh', 'B' in 'Asabeneh') # False - there is no uppercase B
+print('B not in Asabeneh', 'B' in 'Asabeneh') # False - there is no uppercase B
 print('coding' in 'coding for all') # True - because coding for all has the word coding
 print('a in an:', 'a' in 'an')      # True
 print('4 is 2 ** 2:', 4 is 2 ** 2)   # True
@@ -287,7 +288,7 @@ The perimeter of the triangle is 12
 18. Check if the floor division of 7 by 3 is equal to the int converted value of 2.7.
 19. Check if type of '10' is equal to type of 10
 20. Check if int('9.8') is equal to 10
-21. Writ a script that prompts the user to enter hours and rate per hour. Calculate pay of the person?
+21. Write a script that prompts the user to enter hours and rate per hour. Calculate pay of the person?
 
 ```py
 Enter hours: 40

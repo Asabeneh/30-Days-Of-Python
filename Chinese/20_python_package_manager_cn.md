@@ -349,4 +349,4 @@ print(greet.greet_person('张', '三'))
 
 🎉 恭喜！🎉
 
-[<< 第19天](./19_Day_File_handling/19_file_handling_cn.md) | [第21天 >>](./21_Day_Classes_and_objects/21_classes_and_objects_cn.md) 
+[<< 第 19 天](./19_file_handling_cn.md) | [第 21 天 >>](./21_classes_and_objects_cn.md) 

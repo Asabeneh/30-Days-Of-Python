@@ -14,7 +14,7 @@
 
 </div>
 
-[<<第九天](../Chinese/09_conditionals.md) | [第十一天>>](../Chinese/11_functions.md)
+[<< 第 9 天](./09_conditionals.md) | [第 11 天 >>](./11_functions.md)
 
 ![30DaysOfPython](../images/30DaysOfPython_banner3@2x.png)
 
@@ -448,4 +448,4 @@ for number in range(6):
 
 🎉 恭喜！ 🎉
 
-[<< Day 9](./09_conditionals.md) | [Day 11 >>](./11_functions.md)
+[<< 第 9 天](./09_conditionals.md) | [第 11 天 >>](./11_functions.md)

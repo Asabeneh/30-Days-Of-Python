@@ -11,7 +11,6 @@
   <a href="https://www.linkedin.com/in/asabeneh/" target="_blank">Asabeneh Yetayeh</a><br>
   <small>Second Edition: July, 2021</small>
   </sub>
-
 </div>
 
 [<< Day 15](../15_Day_Python_type_errors/15_python_type_errors.md) | [Day 17 >>](../17_Day_Exception_handling/17_exception_handling.md)
@@ -85,13 +84,13 @@ from datetime import datetime
 # current date and time
 now = datetime.now()
 t = now.strftime("%H:%M:%S")
-print("time:", t)
+print("time:", t)           # time: 18:21:40
 time_one = now.strftime("%m/%d/%Y, %H:%M:%S")
 # mm/dd/YY H:M:S format
-print("time one:", time_one)
+print("time one:", time_one)        # time one: 06/28/2022, 18:21:40
 time_two = now.strftime("%d/%m/%Y, %H:%M:%S")
 # dd/mm/YY H:M:S format
-print("time two:", time_two)
+print("time two:", time_two)        # time two: 28/06/2022, 18:21:40
 ```
 
 ```sh
@@ -105,14 +104,14 @@ Here are all the _strftime_ symbols we use to format time. An example of all the
 ![strftime](../images/strftime.png)
 
 ### String to Time Using *strptime*
-Here is a [documentation](https://www.programiz.com/python-programming/datetime/strptimet) hat helps to understand the format. 
+Here is a [documentation](https://www.programiz.com/python-programming/datetime/strptime) hat helps to understand the format. 
 
 ```py
 from datetime import datetime
 date_string = "5 December, 2019"
-print("date_string =", date_string)
+print("date_string =", date_string)     # date_string = 5 December, 2019
 date_object = datetime.strptime(date_string, "%d %B, %Y")
-print("date_object =", date_object)
+print("date_object =", date_object)     # date_object = 2019-12-05 00:00:00
 ```
 
 ```sh
@@ -125,7 +124,7 @@ date_object = 2019-12-05 00:00:00
 ```py
 from datetime import date
 d = date(2020, 1, 1)
-print(d)
+print(d)        # 2020-01-01
 print('Current date:', d.today())    # 2019-12-05
 # date object of today's date
 today = date.today()
@@ -140,16 +139,16 @@ print("Current day:", today.day)     # 5
 from datetime import time
 # time(hour = 0, minute = 0, second = 0)
 a = time()
-print("a =", a)
+print("a =", a)     # a = 00:00:00
 # time(hour, minute and second)
 b = time(10, 30, 50)
-print("b =", b)
+print("b =", b)     # b = 10:30:50
 # time(hour, minute and second)
 c = time(hour=10, minute=30, second=50)
-print("c =", c)
+print("c =", c)     # c = 10:30:50
 # time(hour, minute, second, microsecond)
 d = time(10, 30, 50, 200555)
-print("d =", d)
+print("d =", d)     # d = 10:30:50.200555
 ```
 
 output  
@@ -161,11 +160,12 @@ d = 10:30:50.200555
 ### Difference Between Two Points in Time Using
 
 ```py
+from datetime import date, datetime
 today = date(year=2019, month=12, day=5)
 new_year = date(year=2020, month=1, day=1)
 time_left_for_newyear = new_year - today
 # Time left for new year:  27 days, 0:00:00
-print('Time left for new year: ', time_left_for_newyear)
+print('Time left for new year: ', time_left_for_newyear)  # Time left for new year:  27 days, 0:00:00
 
 t1 = datetime(year = 2019, month = 12, day = 5, hour = 0, minute = 59, second = 0)
 t2 = datetime(year = 2020, month = 1, day = 1, hour = 0, minute = 0, second = 0)
@@ -194,11 +194,11 @@ print("t3 =", t3)
 ## 💻 Exercises: Day 16
 
 1. Get the current day, month, year, hour, minute and timestamp from datetime module
-1. Format the current date using this format: "%m/%d/%Y, %H:%M:%S")
-1. Today is 5 December, 2019. Change this time string to time.
-1. Calculate the time difference between now and new year.
-1. Calculate the time difference between 1 January 1970 and now.
-1. Think, what can you use the datetime module for? Examples:
+2. Format the current date using this format: "%m/%d/%Y, %H:%M:%S")
+3. Today is 5 December, 2019. Change this time string to time.
+4. Calculate the time difference between now and new year.
+5. Calculate the time difference between 1 January 1970 and now.
+6. Think, what can you use the datetime module for? Examples:
    - Time series analysis
    - To get a timestamp of any activities in an application
    - Adding posts on a blog 

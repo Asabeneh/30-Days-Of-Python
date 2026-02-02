@@ -17,21 +17,21 @@
 | 13  |  [Compreensão de Listas](./13_Day_List_comprehension/13_list_comprehension.md)|
 | 14  |  [Higher Order Functions](./14_Day_Higher_order_functions/14_higher_order_functions.md)|
 | 15  |  [Tripos de Erros](./15_Day_Python_type_errors/15_python_type_errors.md)|
-| 16 |  [Python Date time](./16_Day_Python_date_time/16_python_datetime.md) |
-| 17 |  [Manipulação de Excessão](./17_Day_Exception_handling/17_exception_handling.md)|
-| 18 |  [Regex (Expressões Regulares)](./18_Day_Regular_expressions/18_regular_expressions.md)|
-| 19 |  [Manipulação De Arquivos](./19_Day_File_handling/19_file_handling.md)|
-| 20 |  [Gerenciador De Pacotes](./20_Day_Python_package_manager/20_python_package_manager.md)|
-| 21 |  [Classes e Objetos](./21_Day_Classes_and_objects/21_classes_and_objects.md)|
-| 22 |  [Web Scraping](./22_Day_Web_scraping/22_web_scraping.md)|
-| 23 |  [Ambiente Virtual](./23_Day_Virtual_environment/23_virtual_environment.md)|
-| 24 |  [Estatisticas](./24_Day_Statistics/24_statistics.md)|
-| 25 |  [Pandas](./25_Day_Pandas/25_pandas.md)|
-| 26 |  [Python web](./26_Day_Python_web/26_python_web.md)|
-| 27 |  [Python com MongoDB](./27_Day_Python_with_mongodb/27_python_with_mongodb.md)|
-| 28 |  [API](./28_Day_API/28_API.md)|
-| 29 |  [Construindo API's](./29_Day_Building_API/29_building_API.md)|
-| 30 |  [Conclusão](./30_Day_Conclusions/30_conclusions.md)|
+| 16  |  [Python Date time](./16_Day_Python_date_time/16_python_datetime.md) |
+| 17  |  [Manipulação de Excessão](./17_Day_Exception_handling/17_exception_handling.md)|
+| 18  |  [Regex (Expressões Regulares)](./18_Day_Regular_expressions/18_regular_expressions.md)|
+| 19  |  [Manipulação De Arquivos](./19_Day_File_handling/19_file_handling.md)|
+| 20  |  [Gerenciador De Pacotes](./20_Day_Python_package_manager/20_python_package_manager.md)|
+| 21  |  [Classes e Objetos](./21_Day_Classes_and_objects/21_classes_and_objects.md)|
+| 22  |  [Web Scraping](./22_Day_Web_scraping/22_web_scraping.md)|
+| 23  |  [Ambiente Virtual](./23_Day_Virtual_environment/23_virtual_environment.md)|
+| 24  |  [Estatisticas](./24_Day_Statistics/24_statistics.md)|
+| 25  |  [Pandas](./25_Day_Pandas/25_pandas.md)|
+| 26  |  [Python web](./26_Day_Python_web/26_python_web.md)|
+| 27  |  [Python com MongoDB](./27_Day_Python_with_mongodb/27_python_with_mongodb.md)|
+| 28  |  [API](./28_Day_API/28_API.md)|
+| 29  |  [Construindo API's](./29_Day_Building_API/29_building_API.md)|
+| 30  |  [Conclusão](./30_Day_Conclusions/30_conclusions.md)|
 
 🧡🧡🧡 CODANDO FELIZ 🧡🧡🧡
 

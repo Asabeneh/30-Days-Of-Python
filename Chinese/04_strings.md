@@ -485,7 +485,7 @@ result = '# '.join(web_tech)
 print(result) # 'HTML# CSS# JavaScript# React'
 ```
 
-- strip(): 删除从字符串开头到结尾的所有给定字符
+- strip(): 删除字符串开头和结尾的所有给定字符
 
 ```py
 challenge = 'thirty days of pythoonnn'
@@ -577,7 +577,7 @@ print(challenge.startswith('thirty')) # False
     I am enjoying this challenge.
     I just wonder what is next.
     ```
-34. 使用制表符专业序列输出以下内容。
+34. 使用制表符转义序列输出以下内容。
     ```py
     Name      Age     Country   City
     Asabeneh  250     Finland   Helsinki

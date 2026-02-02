@@ -267,14 +267,14 @@ for index, item in enumerate([20, 30, 40]):
 ```
 
 ```py
+countries = ['Finland', 'Sweden', 'Norway', 'Denmark', 'Iceland']
 for index, i in enumerate(countries):
-    print('hi')
     if i == 'Finland':
-        print('The country {i} has been found at index {index}')
+        print(f'The country {i} has been found at index {index}')
 ```
 
 ```sh
-The country Finland has been found at index 1.
+The country Finland has been found at index 0.
 ```
 
 ## Zip
@@ -300,6 +300,7 @@ print(fruits_and_veges)
 ## Exercises: Day 17
 
 1. names = ['Finland', 'Sweden', 'Norway','Denmark','Iceland', 'Estonia','Russia']. Unpack the first five countries and store them in a variable nordic_countries, store Estonia and Russia in es, and ru respectively.
+
 
 🎉 CONGRATULATIONS ! 🎉
 

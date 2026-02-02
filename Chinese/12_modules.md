@@ -15,7 +15,7 @@
 </div>
 </div>
 
-[<< 第 11 天](../11_Day_Functions/11_functions.md) | [第 13 天>>](../13_Day_List_comprehension/13_list_comprehension.md)
+[<< 第 11 天](./11_functions.md) | [第 13 天 >>](./13_list_comprehension.md)
 
 ![30DaysOfPython](../images/30DaysOfPython_banner3@2x.png)
 
@@ -300,4 +300,4 @@ print(rgb_color_gen())
 
 🎉 恭喜！ 🎉
 
-[<< 第 11 天](../11_Day_Functions/11_functions.md) | [第 13 天>>](../13_Day_List_comprehension/13_list_comprehension.md)
+[<< 第 11 天](./11_functions.md) | [第 13 天 >>](./13_list_comprehension.md)

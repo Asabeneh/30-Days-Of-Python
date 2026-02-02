@@ -1,4 +1,4 @@
-# 🐍 30 Days Of Python 
+# 🐍 30 Days Of Python
 
 |# Day | Topics                                                    |
 |------|:---------------------------------------------------------:|
@@ -15,11 +15,11 @@
 | 11  |  [Functions](../11_Day_Functions/11_functions.md)|
 | 12  |  [Modules](../12_Day_Modules/12_modules.md)|
 | 13  |  [List Comprehension](../13_Day_List_comprehension/13_list_comprehension.md)|
-| 14  |  [Higher Order Functions](../14_Day_Higher_order_functions/14_higher_order_functions.md)|     
-| 15  |  [Python Type Errors](../15_Day_Python_type_errors/15_python_type_errors.md)| 
-| 16 |  [Python Date time](../16_Day_Python_date_time/16_python_datetime.md) |     
-| 17 |  [Exception Handling](../17_Day_Exception_handling/17_exception_handling.md)|    
-| 18 |  [Regular Expressions](../18_Day_Regular_expressions/18_regular_expressions.md)|    
+| 14  |  [Higher Order Functions](../14_Day_Higher_order_functions/14_higher_order_functions.md)|
+| 15  |  [Python Type Errors](../15_Day_Python_type_errors/15_python_type_errors.md)|
+| 16 |  [Python Date time](../16_Day_Python_date_time/16_python_datetime.md) |
+| 17 |  [Exception Handling](../17_Day_Exception_handling/17_exception_handling.md)|
+| 18 |  [Regular Expressions](../18_Day_Regular_expressions/18_regular_expressions.md)|
 | 19 |  [File Handling](../19_Day_File_handling/19_file_handling.md)|
 | 20 |  [Python Package Manager](../20_Day_Python_package_manager/20_python_package_manager.md)|
 | 21 |  [Classes and Objects](../21_Day_Classes_and_objects/21_classes_and_objects.md)|
@@ -36,7 +36,7 @@
 🧡🧡🧡 HAPPY CODING 🧡🧡🧡
 
 <div>
-<small>Support the <strong>author</strong> to create more educational materials</small> <br />  
+<small>Support the <strong>author</strong> to create more educational materials</small> <br />
 <a href = "https://www.paypal.me/asabeneh"><img src='../images/paypal_lg.png' alt='Paypal Logo' style="width:10%"/></a>
 </div>
 
@@ -95,7 +95,7 @@
 
 _30 days of Python_에 참여하기로 결정하신 것을 **축하드립니다**. 이 챌린지에서는 Python 프로그래머가 되기 위해 필요한 모든 것과 프로그래밍의 전체 개념을 배우게 됩니다. 챌린지가 끝나면 _30DaysOfPython_프로그래밍 챌린지 인증서를 받게 됩니다.
 
-챌린지에 적극적으로 참여하고 싶다면 [30DaysOfPython challenge](https://t.me/ThirtyDaysOfPython) 텔레그램 그룹에 가입할 수 있습니다. 
+챌린지에 적극적으로 참여하고 싶다면 [30DaysOfPython challenge](https://t.me/ThirtyDaysOfPython) 텔레그램 그룹에 가입할 수 있습니다.
 
 ## 소개
 
@@ -334,8 +334,8 @@ Python 사전 개체는 키 값 쌍 형식의 정렬되지 않은 데이터 모�
 {
 'first_name':'Asabeneh',
 'last_name':'Yetayeh',
-'country':'Finland', 
-'age':250, 
+'country':'Finland',
+'age':250,
 'is_married':True,
 'skills':['JS', 'React', 'Node', 'Python']
 }
@@ -447,7 +447,7 @@ Python 파일을 실행하려면 아래 이미지를 확인하세요. Visual Stu
 ### Exercise: Level 3
 
 1. Number(Integer, Float, Complex), String, Boolean, List, Tuple, Set 및 Dictionary와 같은 다양한 Python 데이터 유형에 대한 예제를 작성합니다.
-2. 참고 [Euclidian distance](https://en.wikipedia.org/wiki/Euclidean_distance#:~:text=In%20mathematics%2C%20the%20Euclidean%20distance,being%20called%20the%20Pythagorean%20distance.) (2, 3) 과 (10, 8) 사이
+2. 참고 [Euclidean distance](https://en.wikipedia.org/wiki/Euclidean_distance#:~:text=In%20mathematics%2C%20the%20Euclidean%20distance,being%20called%20the%20Pythagorean%20distance.) (2, 3) 과 (10, 8) 사이
 
 🎉 축하합니다 ! 🎉
 

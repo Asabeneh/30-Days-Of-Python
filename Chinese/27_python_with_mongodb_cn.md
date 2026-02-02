@@ -629,4 +629,4 @@ db.students.drop()
 
 🎉 恭喜！🎉
 
-[<< 第26天](./26_Day_Python_web/26_python_web_cn.md) | [第28天 >>](./28_Day_API/28_API_cn.md) 
+[<< 第 26 天](./26_python_web_cn.md) | [第 28 天 >>](./28_API_cn.md) 

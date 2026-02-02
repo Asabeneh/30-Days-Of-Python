@@ -48,7 +48,7 @@ Set is a collection of items. Let me take you back to your elementary or high sc
 
 ### Creating a Set
 
-We use the _set()_ built-in function.
+To create an empty set, we use the set() function. Empty curly brackets {} will create a dictionary. 
 
 - Creating an empty set
 
@@ -226,7 +226,7 @@ fruits = set(fruits) # {'mango', 'lemon', 'banana', 'orange'}
 
 ### Joining Sets
 
-We can join two sets using the _union()_ or _update()_ method.
+We can join two sets using the _union()_ or _update()_ method or _|_ symbol .
 
 - Union
   This method returns a new set
@@ -235,7 +235,7 @@ We can join two sets using the _union()_ or _update()_ method.
 # syntax
 st1 = {'item1', 'item2', 'item3', 'item4'}
 st2 = {'item5', 'item6', 'item7', 'item8'}
-st3 = st1.union(st2)
+st3 = st1.union(st2) #st3 = st1 | st2
 ```
 
 **Example:**
@@ -244,6 +244,7 @@ st3 = st1.union(st2)
 fruits = {'banana', 'orange', 'mango', 'lemon'}
 vegetables = {'tomato', 'potato', 'cabbage','onion', 'carrot'}
 print(fruits.union(vegetables)) # {'lemon', 'carrot', 'tomato', 'banana', 'mango', 'orange', 'cabbage', 'potato', 'onion'}
+# or using this : print(fruits | vegetables)
 ```
 
 - Update
@@ -267,13 +268,14 @@ print(fruits) # {'lemon', 'carrot', 'tomato', 'banana', 'mango', 'orange', 'cabb
 
 ### Finding Intersection Items
 
-Intersection returns a set of items which are in both the sets. See the example
+Intersection returns a set of items which are in both the sets or using _&_ symbol. See the example
 
 ```py
 # syntax
 st1 = {'item1', 'item2', 'item3', 'item4'}
 st2 = {'item3', 'item2'}
 st1.intersection(st2) # {'item3', 'item2'}
+# or using thia : st1 & st2
 ```
 
 **Example:**
@@ -286,6 +288,7 @@ whole_numbers.intersection(even_numbers) # {0, 2, 4, 6, 8, 10}
 python = {'p', 'y', 't', 'h', 'o','n'}
 dragon = {'d', 'r', 'a', 'g', 'o','n'}
 python.intersection(dragon)     # {'o', 'n'}
+# python & dragon
 ```
 
 ### Checking Subset and Super Set
@@ -318,14 +321,14 @@ python.issubset(dragon)     # False
 
 ### Checking the Difference Between Two Sets
 
-It returns the difference between two sets.
+It returns the difference between two sets or using _-_ symbol .
 
 ```py
 # syntax
 st1 = {'item1', 'item2', 'item3', 'item4'}
 st2 = {'item2', 'item3'}
-st2.difference(st1) # set()
-st1.difference(st2) # {'item1', 'item4'} => st1\st2
+st2.difference(st1) # set() : st2 - st1
+st1.difference(st2) # {'item1', 'item4'} => st1\st2  : st2 - st1
 ```
 
 **Example:**
@@ -338,7 +341,9 @@ whole_numbers.difference(even_numbers) # {1, 3, 5, 7, 9}
 python = {'p', 'y', 't', 'o','n'}
 dragon = {'d', 'r', 'a', 'g', 'o','n'}
 python.difference(dragon)     # {'p', 'y', 't'}  - the result is unordered (characteristic of sets)
+# python - dragon
 dragon.difference(python)     # {'d', 'r', 'a', 'g'}
+# dragon - python
 ```
 
 ### Finding Symmetric Difference Between Two Sets
@@ -350,7 +355,7 @@ It returns the symmetric difference between two sets. It means that it returns a
 st1 = {'item1', 'item2', 'item3', 'item4'}
 st2 = {'item2', 'item3'}
 # it means (A\B)∪(B\A)
-st2.symmetric_difference(st1) # {'item1', 'item4'}
+st2.symmetric_difference(st1) # {'item1', 'item4'} : st2 ^ st1
 ```
 
 **Example:**
@@ -363,6 +368,7 @@ whole_numbers.symmetric_difference(some_numbers) # {0, 6, 7, 8, 9, 10}
 python = {'p', 'y', 't', 'h', 'o','n'}
 dragon = {'d', 'r', 'a', 'g', 'o','n'}
 python.symmetric_difference(dragon)  # {'r', 't', 'p', 'y', 'g', 'a', 'd', 'h'}
+# python ^ dragon
 ```
 
 ### Joining Sets
@@ -411,18 +417,18 @@ age = [22, 19, 24, 25, 26, 24, 25, 24]
 ### Exercises: Level 2
 
 1. Join A and B
-1. Find A intersection B
-1. Is A subset of B
-1. Are A and B disjoint sets
-1. Join A with B and B with A
-1. What is the symmetric difference between A and B
-1. Delete the sets completely
+2. Find A intersection B
+3. Is A subset of B
+4. Are A and B disjoint sets
+5. Join A with B and B with A
+6. What is the symmetric difference between A and B
+7. Delete the sets completely
 
 ### Exercises: Level 3
 
 1. Convert the ages to a set and compare the length of the list and the set, which one is bigger?
-1. Explain the difference between the following data types: string, list, tuple and set
-2. _I am a teacher and I love to inspire and teach people._ How many unique words have been used in the sentence? Use the split methods and set to get the unique words.
+2. Explain the difference between the following data types: string, list, tuple and set
+3. _I am a teacher and I love to inspire and teach people._ How many unique words have been used in the sentence? Use the split methods and set to get the unique words.
 
 🎉 CONGRATULATIONS ! 🎉
 

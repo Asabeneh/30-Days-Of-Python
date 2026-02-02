@@ -1,15 +1,15 @@
 ![30DaysOfPython](./images/30DaysOfPython_banner3@2x.png)
 
-🧳 [Part 1: Day 1 - 3](https://github.com/Asabeneh/30-Days-Of-Python)  
-🧳 [Part 2: Day 4 - 6](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/readme4-6.md)  
-🧳 [Part 3: Day 7 - 9](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/readme7-9.md)  
-🧳 [Part 4: Day 10 - 12](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/readme10-12.md)  
-🧳 [Part 5: Day 13 - 15](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/readme13-15.md)  
-🧳 [Part 6: Day 16 - 18](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/readme16-18.md)  
-🧳 [Part 7: Day 19 - 21](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/readme19-21.md)  
-🧳 [Part 8: Day 22 - 24](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/readme22-24.md)  
-🧳 [Part 9: Day 25 - 27](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/readme25-27.md)  
-🧳 [Part 10: Day 28 - 30](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/readme28-30.md)  
+🧳 [Part 1: Day 1 - 3](https://github.com/Asabeneh/30-Days-Of-Python)
+🧳 [Part 2: Day 4 - 6](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/readme4-6.md)
+🧳 [Part 3: Day 7 - 9](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/readme7-9.md)
+🧳 [Part 4: Day 10 - 12](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/readme10-12.md)
+🧳 [Part 5: Day 13 - 15](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/readme13-15.md)
+🧳 [Part 6: Day 16 - 18](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/readme16-18.md)
+🧳 [Part 7: Day 19 - 21](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/readme19-21.md)
+🧳 [Part 8: Day 22 - 24](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/readme22-24.md)
+🧳 [Part 9: Day 25 - 27](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/readme25-27.md)
+🧳 [Part 10: Day 28 - 30](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/readme28-30.md)
 
 - [📘 Day 25](#%f0%9f%93%98-day-25)
   - [Pandas](#pandas)
@@ -83,11 +83,11 @@ Let's see an example of a series:
 
 Names pandas Series
 
-![pandas series](images/pandas-series-1.png) 
+![pandas series](images/pandas-series-1.png)
 
 Countries Series
 
-![pandas series](images/pandas-series-2.png) 
+![pandas series](images/pandas-series-2.png)
 
 Cities Series
 
@@ -249,7 +249,7 @@ Pandas data frames can be created in different ways.
 
 ```python
 data = [
-    ['Asabeneh', 'Finland', 'Helsink'], 
+    ['Asabeneh', 'Finland', 'Helsink'],
     ['David', 'UK', 'London'],
     ['John', 'Sweden', 'Stockholm']
 ]
@@ -638,7 +638,7 @@ heights
     2       74.110105
     3       71.730978
     4       69.881796
-              ...    
+              ...
     9995    66.172652
     9996    67.067155
     9997    63.867992
@@ -666,7 +666,7 @@ weights
     2       212.740856
     3       220.042470
     4       206.349801
-               ...    
+               ...
     9995    136.777454
     9996    170.867906
     9997    128.475319
@@ -690,7 +690,7 @@ len(heights) == len(weights)
 
 
 ```python
-heights.describe() # give statisical information about height data
+heights.describe() # give statistical information about height data
 ```
 
 
@@ -811,9 +811,9 @@ df.describe()  # describe can also give statistical information from a datafrom
 
 Modifying a DataFrame
     * We can create a new DataFrame
-    * We can create a new column and add to DataFrame, 
-    * we can remove an existing column from DataFrame, 
-    * we can modify an existing column from DataFrame, 
+    * We can create a new column and add to DataFrame,
+    * we can remove an existing column from DataFrame,
+    * we can modify an existing column from DataFrame,
     * we can change the data type of column values from DataFrame
 
 ### Create a DataFrame
@@ -1102,7 +1102,7 @@ def calculate_bmi ():
         b = w/(h*h)
         bmi.append(b)
     return bmi
-    
+
 bmi = calculate_bmi()
 
 ```
@@ -1483,7 +1483,7 @@ df
 
 
 
-The person in the first row lives 250 years. It is unlikely for someone to live 250 years. Either it is a typo or the data is cooked. So lets fill that data with average of the columns without including outlier. 
+The person in the first row lives 250 years. It is unlikely for someone to live 250 years. Either it is a typo or the data is cooked. So lets fill that data with average of the columns without including outlier.
 
 mean = (34 + 29)/ 2
 
@@ -1629,12 +1629,12 @@ df[df['Ages'] < 120]
 
 ```python
 df['Ages']  = df[df['Ages'] > 120]
-        
-        
+
+
 ```
 
 ## Exercises: Day 25
-1. Read the hacker_ness.csv file from data directory 
+1. Read the hacker_ness.csv file from data directory
 1. Get the first five rows
 1. Get the last five rows
 1. Get the title column as pandas series
@@ -2194,7 +2194,7 @@ Select the free plan
 
 ![Mongodb free plan](./images/mongoDB/mongodb-free.png)
 
-Choose the proximate free region and give any name for you cluster. 
+Choose the proximate free region and give any name for you cluster.
 
 ![Mongodb cluster name](./images/mongoDB/mongodb-cluster-name.png)
 
@@ -2768,4 +2768,3 @@ Now, we have deleted the students collection from the database.
 [<< Part 8 ](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/readme22-24.md) | [Part 10 >>](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/readme28-30.md)
 
 ---
-

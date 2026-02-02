@@ -14,7 +14,7 @@
 
 </div>
 
-[<< 第 10 天](../10_Day_Loops/10_loops.md) | [第 12 天 >>](../12_Day_Modules/12_modules.md)
+[<< 第 10 天](./10_loops.md) | [第 12 天 >>](./12_modules.md)
 
 ![30DaysOfPython](../images/30DaysOfPython_banner3@2x.png)
 
@@ -455,4 +455,4 @@ print(sum_all_numbers(100)) # 5050
 
 🎉 恭喜! 🎉
 
-[<< 第 10 天](../10_Day_Loops/10_loops.md) | [第 12 天 >>](../12_Day_Modules/12_modules.md)
+[<< 第 10 天](./10_loops.md) | [第 12 天 >>](./12_modules.md)

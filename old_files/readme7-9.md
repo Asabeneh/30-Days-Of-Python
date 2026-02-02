@@ -760,11 +760,11 @@ else:
     ```
 1. Write a code which give grade to students according to theirs scores:
     ```sh
-    80-100, A
-    70-89, B
-    60-69, C
-    50-59, D
-    0 -49, F
+    90-100, A
+    80-89, B
+    70-79, C
+    60-69, D
+    0-59, F
     ```
 1. Check if the season is Autumn, Winter, Spring or Summer. If the user input is:
 September, October or November, the season is Autumn.

@@ -37,18 +37,18 @@
     - [Creating a DataFrame](#creating-a-dataframe)
     - [Adding a New Column](#adding-a-new-column)
     - [Modifying column values](#modifying-column-values)
-    - [Formating DataFrame columns](#formating-dataframe-columns)
+    - [Formatting DataFrame columns](#formatting-dataframe-columns)
   - [Checking data types of Column values](#checking-data-types-of-column-values)
     - [Boolean Indexing](#boolean-indexing)
   - [Exercises: Day 25](#exercises-day-25)
-  
+
 # 📘 Day 25
 
 ## Pandas
 
 Pandas is an open source, high-performance, easy-to-use data structures and data analysis tools for the Python programming language.
 Pandas adds data structures and tools designed to work with table-like data which is *Series* and *Data Frames*.
-Pandas provides tools for data manipulation: 
+Pandas provides tools for data manipulation:
 
 - reshaping
 - merging
@@ -72,18 +72,18 @@ pip install conda
 pip install pandas
 ```
 
-Pandas data structure is based on *Series* and *DataFrames*. 
+Pandas data structure is based on *Series* and *DataFrames*.
 
 A *series* is a *column* and a DataFrame is a *multidimensional table* made up of collection of *series*. In order to create a pandas series we should use numpy to create a one dimensional arrays or a python list.
 Let us see an example of a series:
 
 Names Pandas Series
 
-![pandas series](../images/pandas-series-1.png) 
+![pandas series](../images/pandas-series-1.png)
 
 Countries Series
 
-![pandas series](../images/pandas-series-2.png) 
+![pandas series](../images/pandas-series-2.png)
 
 Cities Series
 
@@ -216,7 +216,7 @@ Pandas data frames can be created in different ways.
 
 ```python
 data = [
-    ['Asabeneh', 'Finland', 'Helsink'], 
+    ['Asabeneh', 'Finland', 'Helsink'],
     ['David', 'UK', 'London'],
     ['John', 'Sweden', 'Stockholm']
 ]
@@ -455,7 +455,7 @@ print(df.tail()) # tails give the last five rows, we can increase the rows by pa
   </tbody>
 </table>
 
-As you can see the csv file has three rows: Gender, Height and Weight. If the DataFrame would have a long rows, it would be hard to know all the columns. Therefore, we should use a method to know the colums.  we do not know the number of rows. Let's use shape meathod.
+As you can see the csv file has three rows: Gender, Height and Weight. If the DataFrame would have a long rows, it would be hard to know all the columns. Therefore, we should use a method to know the columns.  we do not know the number of rows. Let's use shape method.
 
 ```python
 print(df.shape) # as you can see 10000 rows and three columns
@@ -487,7 +487,7 @@ print(heights)
     2       74.110105
     3       71.730978
     4       69.881796
-              ...    
+              ...
     9995    66.172652
     9996    67.067155
     9997    63.867992
@@ -510,7 +510,7 @@ print(weights)
     2       212.740856
     3       220.042470
     4       206.349801
-               ...    
+               ...
     9995    136.777454
     9996    170.867906
     9997    128.475319
@@ -528,7 +528,7 @@ print(len(heights) == len(weights))
 The describe() method provides a descriptive statistical values of a dataset.
 
 ```python
-print(heights.describe()) # give statisical information about height data
+print(heights.describe()) # give statistical information about height data
 ```
 
 ```sh
@@ -621,9 +621,9 @@ Similar to describe(), the info() method also give information about the dataset
 
 Modifying a DataFrame:
     * We can create a new DataFrame
-    * We can create a new column and add it to the DataFrame, 
-    * we can remove an existing column from a DataFrame, 
-    * we can modify an existing column in a DataFrame, 
+    * We can create a new column and add it to the DataFrame,
+    * we can remove an existing column from a DataFrame,
+    * we can modify an existing column in a DataFrame,
     * we can change the data type of column values in the DataFrame
 
 ### Creating a DataFrame
@@ -828,7 +828,7 @@ def calculate_bmi ():
         b = w/(h*h)
         bmi.append(b)
     return bmi
-    
+
 bmi = calculate_bmi()
 
 ```
@@ -882,7 +882,7 @@ df
   </tbody>
 </table>
 
-### Formating DataFrame columns
+### Formatting DataFrame columns
 
 The BMI column values of the DataFrame are float with many significant digits after decimal. Let's change it to one significant digit after point.
 
@@ -1102,7 +1102,7 @@ print(df)
   </tbody>
 </table>
 
-The person in the first row lived so far for 251 years. It is unlikely for someone to live so long. Either it is a typo or the data is cooked. So lets fill that data with average of the columns without including outlier. 
+The person in the first row lived so far for 251 years. It is unlikely for someone to live so long. Either it is a typo or the data is cooked. So lets fill that data with average of the columns without including outlier.
 
 mean = (35 + 30)/ 2
 
@@ -1202,7 +1202,7 @@ print(df[df['Ages'] < 120])
 
 ## Exercises: Day 25
 
-1. Read the hacker_news.csv file from data directory 
+1. Read the hacker_news.csv file from data directory
 1. Get the first five rows
 1. Get the last five rows
 1. Get the title column as pandas series

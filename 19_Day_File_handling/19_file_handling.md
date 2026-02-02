@@ -166,7 +166,7 @@ with open('./files/reading_file_example.txt') as f:
 
 To write to an existing file, we must add a mode as parameter to the _open()_ function:
 
-- "a" - append - will append to the end of the file, if the file does not it creates a new file.
+- "a" - append - will append to the end of the file, if the file does not exist it creates a new file.
 - "w" - write - will overwrite any existing content, if the file does not exist it creates.
 
 Let us append some text to the file we have been reading:
@@ -333,7 +333,7 @@ CSV stands for comma separated values. CSV is a simple file format used to store
 ```py
 import csv
 with open('./files/csv_example.csv') as f:
-    csv_reader = csv.reader(f, delimiter=',') # w use, reader method to read csv
+    csv_reader = csv.reader(f, delimiter=',') # we use, reader method to read csv
     line_count = 0
     for row in csv_reader:
         if line_count == 0:
@@ -349,6 +349,7 @@ with open('./files/csv_example.csv') as f:
 ```sh
 # output:
 Column names are :name, country, city, skills
+Number of lines:  1
         Asabeneh is a teacher. He lives in Finland, Helsinki.
 Number of lines:  2
 ```
@@ -359,7 +360,7 @@ To read excel files we need to install _xlrd_ package. We will cover this after 
 
 ```py
 import xlrd
-excel_book = xlrd.open_workbook('sample.xls)
+excel_book = xlrd.open_workbook('sample.xls')
 print(excel_book.nsheets)
 print(excel_book.sheet_names)
 ```
@@ -412,10 +413,10 @@ field: skills
 ### Exercises: Level 1
 
 1. Write a function which count number of lines and number of words in a text. All the files are in the data the folder:
-   a) Read obama_speech.txt file and count number of lines and words
-   b) Read michelle_obama_speech.txt file and count number of lines and words
-   c) Read donald_speech.txt file and count number of lines and words
-   d) Read melina_trump_speech.txt file and count number of lines and words
+   1) Read obama_speech.txt file and count number of lines and words
+   2) Read michelle_obama_speech.txt file and count number of lines and words
+   3) Read donald_speech.txt file and count number of lines and words
+   4) Read melina_trump_speech.txt file and count number of lines and words
 2. Read the countries_data.json data file in data directory, create a function that finds the ten most spoken languages
 
    ```py
@@ -471,8 +472,8 @@ field: skills
 
 ### Exercises: Level 2
 
-4. Extract all incoming email addresses as a list from the email_exchange_big.txt file.
-5. Find the most common words in the English language. Call the name of your function find_most_common_words, it will take two parameters - a string or a file and a positive integer, indicating the number of words. Your function will return an array of tuples in descending order. Check the output
+1. Extract all incoming email addresses as a list from the email_exchange_big.txt file.
+2. Find the most common words in the English language. Call the name of your function find_most_common_words, it will take two parameters - a string or a file and a positive integer, indicating the number of words. Your function will return an array of tuples in descending order. Check the output
 
 ```py
     # Your output should look like this
@@ -498,19 +499,17 @@ field: skills
     (5, 'and')]
 ```
 
-6. Use the function, find_most_frequent_words to find:
-   a) The ten most frequent words used in [Obama's speech](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/data/obama_speech.txt)
-   b) The ten most frequent words used in [Michelle's speech](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/data/michelle_obama_speech.txt)
-   c) The ten most frequent words used in [Trump's speech](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/data/donald_speech.txt)
-   d) The ten most frequent words used in [Melina's speech](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/data/melina_trump_speech.txt)
-7. Write a python application that checks similarity between two texts. It takes a file or a string as a parameter and it will evaluate the similarity of the two texts. For instance check the similarity between the transcripts of [Michelle's](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/data/michelle_obama_speech.txt) and [Melina's](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/data/melina_trump_speech.txt) speech. You may need a couple of functions, function to clean the text(clean_text), function to remove support words(remove_support_words) and finally to check the similarity(check_text_similarity). List of [stop words](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/data/stop_words.py) are in the data directory
-8. Find the 10 most repeated words in the romeo_and_juliet.txt
-9. Read the [hacker news csv](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/data/hacker_news.csv) file and find out:
-   a) Count the number of lines containing python or Python
-   b) Count the number lines containing JavaScript, javascript or Javascript
-   c) Count the number lines containing Java and not JavaScript
-
-### Exercises: Level 3
+3. Use the function, find_most_frequent_words to find:
+   1) The ten most frequent words used in [Obama's speech](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/data/obama_speech.txt)
+   2) The ten most frequent words used in [Michelle's speech](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/data/michelle_obama_speech.txt)
+   3) The ten most frequent words used in [Trump's speech](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/data/donald_speech.txt)
+   4) The ten most frequent words used in [Melina's speech](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/data/melina_trump_speech.txt)
+4. Write a python application that checks similarity between two texts. It takes a file or a string as a parameter and it will evaluate the similarity of the two texts. For instance check the similarity between the transcripts of [Michelle's](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/data/michelle_obama_speech.txt) and [Melina's](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/data/melina_trump_speech.txt) speech. You may need a couple of functions, function to clean the text(clean_text), function to remove support words(remove_support_words) and finally to check the similarity(check_text_similarity). List of [stop words](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/data/stop_words.py) are in the data directory
+5. Find the 10 most repeated words in the romeo_and_juliet.txt
+6. Read the [hacker news csv](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/data/hacker_news.csv) file and find out:
+   1) Count the number of lines containing python or Python
+   2) Count the number lines containing JavaScript, javascript or Javascript
+   3) Count the number lines containing Java and not JavaScript
 
 🎉 CONGRATULATIONS ! 🎉
 
