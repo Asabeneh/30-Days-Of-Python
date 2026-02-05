@@ -227,7 +227,7 @@ print(num_int)                  # 10
 num_str = str(num_int)
 print(num_str)                  # '10'
 
-# str to int or float
+# str to float to int 
 num_str = '10.6'
 num_float = float(num_str)  # Convert the string to a float first
 num_int = int(num_float)    # Then convert the float to an integer
