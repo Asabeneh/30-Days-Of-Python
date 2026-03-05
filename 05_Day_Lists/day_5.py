@@ -133,7 +133,7 @@ ave_min = abs(min(ages) - ave)
 ave_max = abs(max(ages) - ave)
 
 # 1. Find the middle country(ies) in the [countries list](https://github.com/Asabeneh/30-Days-Of-Python/tree/master/data/countries.py)
-countries = https://github.com/Asabeneh/30-Days-Of-Python/tree/master/data/countries.py
+countries = "https://github.com/Asabeneh/30-Days-Of-Python/tree/master/data/countries.py"
 a = len(countries)/2
 middle_countries = [countries[int(a)], countries[int(a+1)]]
 
