@@ -46,22 +46,62 @@ it_companies = ["The Facebook", "Google", "Microsoft", "Apple", "IBM", "Oracle",
 it_companies[3] = "APPLE"
 
 # 14. Join the it_companies with a string '#;  '
+it_companies = ["The Facebook", "Google", "Microsoft", "Apple", "IBM", "Oracle", "Amazon"]
+it_companies = "#;  ".join(it_companies)
+
 # 15. Check if a certain company exists in the it_companies list.
+it_companies = ["The Facebook", "Google", "Microsoft", "Apple", "IBM", "Oracle", "Amazon"]
+exists = "IBM" in it_companies
+
 # 16. Sort the list using sort() method
+it_companies = ["The Facebook", "Google", "Microsoft", "Apple", "IBM", "Oracle", "Amazon"]
+it_companies.sort()
+
 # 17. Reverse the list in descending order using reverse() method
+it_companies = ["The Facebook", "Google", "Microsoft", "Apple", "IBM", "Oracle", "Amazon"]
+it_companies.reverse()
+
 # 18. Slice out the first 3 companies from the list
+it_companies = ["The Facebook", "Google", "Microsoft", "Apple", "IBM", "Oracle", "Amazon"]
+it_companies[3:]
+
 # 19. Slice out the last 3 companies from the list
+it_companies = ["The Facebook", "Google", "Microsoft", "Apple", "IBM", "Oracle", "Amazon"]
+it_companies[:-3]
+
 # 20. Slice out the middle IT company or companies from the list
+it_companies = ["The Facebook", "Google", "Microsoft", "Apple", "IBM", "Oracle", "Amazon"]
+new_list = it_companies[:3] + it_companies[-3:]
+
 # 21. Remove the first IT company from the list
+it_companies = ["The Facebook", "Google", "Microsoft", "Apple", "IBM", "Oracle", "Amazon"]
+it_companies.remove("The Facebook")
+
 # 22. Remove the middle IT company or companies from the list
+it_companies = ["The Facebook", "Google", "Microsoft", "Apple", "IBM", "Oracle", "Amazon"]
+it_companies.remove("Apple")
+
 # 23. Remove the last IT company from the list
+it_companies = ["The Facebook", "Google", "Microsoft", "Apple", "IBM", "Oracle", "Amazon"]
+it_companies.pop()
+
 # 24. Remove all IT companies from the list
+it_companies = ["The Facebook", "Google", "Microsoft", "Apple", "IBM", "Oracle", "Amazon"]
+it_companies.clear()
+
 # 25. Destroy the IT companies list
+it_companies = ["The Facebook", "Google", "Microsoft", "Apple", "IBM", "Oracle", "Amazon"]
+del it_companies
+
 # 26. Join the following lists:
-# front_end = ['HTML', 'CSS', 'JS', 'React', 'Redux']
-# back_end = ['Node','Express', 'MongoDB']
+front_end = ['HTML', 'CSS', 'JS', 'React', 'Redux']
+back_end = ['Node','Express', 'MongoDB']
+full_stack = front_end + back_end
 
 # 27. After joining the lists in question 26. Copy the joined list and assign it to a variable full_stack, then insert Python and SQL after Redux.
+full_stack = ['HTML', 'CSS', 'JS', 'React', 'Redux', 'Node', 'Express', 'MongoDB']
+full_stack.insert(5, 'Python')
+full_stack.insert(6, 'SQL')
 
 ### Exercises: Level 2
 
@@ -69,12 +109,38 @@ it_companies[3] = "APPLE"
 ages = [19, 22, 19, 24, 20, 25, 26, 24, 25, 24]
 
 # - Sort the list and find the min and max age
+ages.sort()
+min_age = min(ages)
+max_age = max(ages)
+
 # - Add the min age and the max age again to the list
+add_age = [min(ages)] + [max(ages)]
+ages.extend(add_age)
+
 # - Find the median age (one middle item or two middle items divided by two)
+ages.sort()
+mean = (ages[4] + ages[5]) / 2
+
 # - Find the average age (sum of all items divided by their number )
+ave = sum(ages) / len(ages)
+
 # - Find the range of the ages (max minus min)
-# - Compare the value of (min - average) and (max - average), use _abs()_ method
+ages_range = max(ages) - min(ages)
+
+# - Compare the value of (min - average) and (max - average), use abs() method
+ave = sum(ages) / len(ages)
+ave_min = abs(min(ages) - ave)
+ave_max = abs(max(ages) - ave)
 
 # 1. Find the middle country(ies) in the [countries list](https://github.com/Asabeneh/30-Days-Of-Python/tree/master/data/countries.py)
-# 1. Divide the countries list into two equal lists if it is even if not one more country for the first half.
-# 1. ['China', 'Russia', 'USA', 'Finland', 'Sweden', 'Norway', 'Denmark']. Unpack the first three countries and the rest as scandic countries.
+countries = "https://github.com/Asabeneh/30-Days-Of-Python/tree/master/data/countries.py"
+a = len(countries)/2
+middle_countries = [countries[int(a)], countries[int(a+1)]]
+
+# 2. Divide the countries list into two equal lists if it is even if not one more country for the first half.
+first_half = len(countries[:98])
+second_half = len(countries[-97:])
+
+# 3. ['China', 'Russia', 'USA', 'Finland', 'Sweden', 'Norway', 'Denmark']. Unpack the first three countries and the rest as scandic countries.
+countries = ['China', 'Russia', 'USA', 'Finland', 'Sweden', 'Norway', 'Denmark']
+first, second, third, *scandic_countries = countries
