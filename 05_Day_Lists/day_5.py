@@ -133,5 +133,14 @@ ave_min = abs(min(ages) - ave)
 ave_max = abs(max(ages) - ave)
 
 # 1. Find the middle country(ies) in the [countries list](https://github.com/Asabeneh/30-Days-Of-Python/tree/master/data/countries.py)
+countries = https://github.com/Asabeneh/30-Days-Of-Python/tree/master/data/countries.py
+a = len(countries)/2
+middle_countries = [countries[int(a)], countries[int(a+1)]]
+
 # 2. Divide the countries list into two equal lists if it is even if not one more country for the first half.
+first_half = len(countries[:98])
+second_half = len(countries[-97:])
+
 # 3. ['China', 'Russia', 'USA', 'Finland', 'Sweden', 'Norway', 'Denmark']. Unpack the first three countries and the rest as scandic countries.
+countries = ['China', 'Russia', 'USA', 'Finland', 'Sweden', 'Norway', 'Denmark']
+first, second, third, *scandic_countries = countries
