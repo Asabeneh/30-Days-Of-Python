@@ -1,7 +1,8 @@
 ## 💻 Exercises: Day 5
 
+# ---------------------
 ### Exercises: Level 1
-
+# ---------------------
 # 1. Declare an empty list
 empty_list = []
 
@@ -103,8 +104,9 @@ full_stack = ['HTML', 'CSS', 'JS', 'React', 'Redux', 'Node', 'Express', 'MongoDB
 full_stack.insert(5, 'Python')
 full_stack.insert(6, 'SQL')
 
+# ---------------------
 ### Exercises: Level 2
-
+# ---------------------
 # 1. The following is a list of 10 students ages:
 ages = [19, 22, 19, 24, 20, 25, 26, 24, 25, 24]
 
