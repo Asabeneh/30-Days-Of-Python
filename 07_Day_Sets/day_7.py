@@ -10,10 +10,22 @@ age = [22, 19, 24, 25, 26, 24, 25, 24]
 ### Exercises: Level 1
 # ---------------------
 # 1. Find the length of the set it_companies
+length = len(it_companies)
+
 # 2. Add 'Twitter' to it_companies
+it_companies.add('Twitter')
+
 # 3. Insert multiple IT companies at once to the set it_companies
+it_companies.update(['Twitter', 'Instagram'])
+
 # 4. Remove one of the companies from the set it_companies
+it_companies.remove('Instagram')
+
 # 5. What is the difference between remove and discard
+it_companies.remove('HP')
+#--- If the item to remove does not exist, remove() will raise an error.
+it_companies.discard('HP')
+#--- If the item to remove does not exist, discard() will NOT raise an error.
 
 # ---------------------
 ### Exercises: Level 2
