@@ -31,12 +31,27 @@ it_companies.discard('HP')
 ### Exercises: Level 2
 # ---------------------
 # 1. Join A and B
+C = A | B
+
 # 2. Find A intersection B
+C = A.intersection(B)
+
 # 3. Is A subset of B
+D = A.issubset(B)       # True
+
 # 4. Are A and B disjoint sets
+E = A.isdisjoint(B)     # False
+
 # 5. Join A with B and B with A
+C = A | B
+D = B | A
+
 # 6. What is the symmetric difference between A and B
+C = A.symmetric_difference(B)
+
 # 7. Delete the sets completely
+del A
+del B
 
 # ---------------------
 ### Exercises: Level 3
