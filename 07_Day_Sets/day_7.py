@@ -57,5 +57,17 @@ del B
 ### Exercises: Level 3
 # ---------------------
 # 1. Convert the ages to a set and compare the length of the list and the set, which one is bigger?
+age_set = set(age)
+list_length = len(age)                  # 8
+set_length = len(age_set)               # 5
+
 # 2. Explain the difference between the following data types: string, list, tuple and set
+string = "any data type written as text and under single, double or triple quotes"
+list = "list of items that is mutable"
+tuple = "list of items that is immutable"
+set = "list of unique items that is immutable"
+
 # 3. _I am a teacher and I love to inspire and teach people._ How many unique words have been used in the sentence? Use the split methods and set to get the unique words.
+sentence = "I am a teacher and I love to inspire and teach people."
+sen_list = sentence.split()
+unique_words = set(sen_list)
