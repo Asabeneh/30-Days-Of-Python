@@ -48,8 +48,14 @@ Each folder corresponds to a specific day in the challenge:
 30-Days-Of-Python/
 │
 ├── 01_Day_Introduction/
+│   ├──01_introduction.md                           # lesson/instructions
+│   └──day_1.py                                     # exercise file
 ├── 02_Day_Variables_builtin_functions/
+│   ├──02_variables_builtin_functions.md            # lesson/instructions
+│   └──day_2.py                                     # exercise file
 ├── 03_Day_Operators/
+│   ├──03_operators.md                              # lesson/instructions
+│   └──day_3.py                                     # exercise file
 ├── ...
 └── 30_Day_Conclusions/
 ```
