@@ -143,5 +143,3 @@ If you're currently doing the challenge, try solving the exercises yourself befo
 </div>
 
 <small>🧡🧡🧡 HAPPY CODING 🧡🧡🧡</small>
-
----
