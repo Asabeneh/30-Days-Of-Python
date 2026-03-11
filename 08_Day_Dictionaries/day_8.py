@@ -30,8 +30,19 @@ skills_value = student['skills']
 data_type = type(student['skills'])
 
 # 6. Modify the skills values by adding one or two skills
+student['skills'] = student['skills'] + ['Python', 'MuleSoft']
+
 # 7. Get the dictionary keys as a list
+keys = student.keys()
+
 # 8. Get the dictionary values as a list
+values = student.values()
+
 # 9. Change the dictionary to a list of tuples using _items()_ method
+list_of_tuples = student.items()
+
 # 10. Delete one of the items in the dictionary
+student.pop('gender')
+
 # 11. Delete one of the dictionaries
+del dog
