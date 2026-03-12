@@ -578,6 +578,8 @@ print(challenge.startswith('thirty')) # False
     Name      Age     Country   City
     Asabeneh  250     Finland   Helsinki
     ```
+    Note: The exact spacing may vary depending on the terminal or editor because \t moves the cursor to the next tab stop.
+    
 35. Use the string formatting method to display the following:
 
 ```sh
