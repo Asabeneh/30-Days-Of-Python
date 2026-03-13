@@ -576,8 +576,11 @@ print(num_str)                  # '10'
 
 # str to int
 num_str = '10.6'
-print('num_int', int(num_str))      # 10
-print('num_float', float(num_str))  # 10.6
+num_float = float(num_str)
+num_int = int(num_float)
+
+print('num_int', num_int)     #10
+print('num_float', num_float) #10.6
 
 # str to list
 first = 'Asabeneh'
