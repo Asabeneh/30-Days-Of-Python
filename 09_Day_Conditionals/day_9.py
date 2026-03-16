@@ -15,17 +15,32 @@
 #     ```
 a = int(input("Enter your age: "))
 if a >= 18:
-	print("You are old enough to learn to drive.")
+ 	print("You are old enough to learn to drive.")
 else:
-	print(f"You need {18 - a} more years to learn to drive.")
+ 	print(f"You need {18 - a} more years to learn to drive.")
 	
 # 2. Compare the values of my_age and your_age using if … else. Who is older (me or you)? Use input(“Enter your age: ”) to get the age as input. You can use a nested condition to print 'year' for 1 year difference in age, 'years' for bigger differences, and a custom text if my_age = your_age. Output:
 #     ```sh
 #     Enter your age: 30
 #     You are 5 years older than me.
 #     ```
-my_age = int(input("Enter your age: "))
+my_age = int(input("Enter my age: "))
+your_age = int(input("Enter your age: "))
+      
+age_diff = abs(my_age - your_age)
 
+if my_age > your_age:
+    if age_diff > 1:
+        print(f"You are {age_diff} years younger than me.")
+    else:
+        print(f"You are {age_diff} year younger than me.")
+elif my_age < your_age:
+    if age_diff > 1:
+        print(f"You are {age_diff} years older than me.")
+    else:
+        print(f"You are {age_diff} year older than me.")
+else:
+    print("Yay! We're the same age.")
 
 # 3. Get two numbers from the user using input prompt. If a is greater than b return a is greater than b, if a is less b return a is smaller than b, else a is equal to b. Output:
 #   ```sh
@@ -33,6 +48,15 @@ my_age = int(input("Enter your age: "))
 #   Enter number two: 3
 #   4 is greater than 3
 #   ```
+numb_a = int(input("Enter number one: "))
+numb_b = int(input("Enter number two: "))
+
+if numb_a > numb_b:
+    print(f"{numb_a} is greater than {numb_b}")
+elif numb_a < numb_b:
+    print(f"{numb_a} is smaller than {numb_b}")
+else:
+    print(f"{numb_a} is equal {numb_b}")
 
 # ─────────────────────────────────────────────
 ### Exercises: Level 2
