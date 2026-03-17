@@ -69,24 +69,62 @@ else:
 #     60-69, D
 #     0-59, F
 #     ```
+grade = int(input("Enter your grade: "))
+if grade >= 0 and grade < 60:
+    print("You got an F")
+elif grade >= 60 and grade < 70:
+    print("You got a D")
+elif grade >= 70 and grade < 80:
+    print("You got a C")
+elif grade >= 80 and grade < 90:
+    print("You got a B")
+elif grade >= 90 and grade <= 100:
+    print("You got an A")
+else:
+    print("Invalid number, Valid Grade is between 0 and 100")
 
-#    2. Get the month from user input then check if the season is Autumn, Winter, Spring or Summer. If the user input is:
+# 2. Get the month from user input then check if the season is Autumn, Winter, Spring or Summer. If the user input is:
 #     September, October or November, the season is Autumn.
 #     December, January or February, the season is Winter.
 #     March, April or May, the season is Spring
 #     June, July or August, the season is Summer
+month = input("Enter month: ").title()
 
-#    3. The following list contains some fruits:
+autum = ["September", "October", "November"]
+winter = ["December", "January", "February"]
+spring = ["March", "April", "May"]
+summer = ["June", "July", "August"]
+
+if month in autum:
+	print("The season is Autumn.")
+elif month in winter:
+	print("The season is Winter.")
+elif month in spring:
+	print("The season is Spring.")
+elif month in summer: 
+	print("The season is Summer.")
+else: 
+	print("Please enter a Month of the Year")
+
+# 3. The following list contains some fruits:
 #     ```sh
 #     fruits = ['banana', 'orange', 'mango', 'lemon']
 #     ```
 #     If a fruit doesn't exist in the list add the fruit to the list and print the modified list. If the fruit exists print('That fruit already exist in the list')
+check_fruit = input('Enter fruit: ').lower()
 
+fruits = ['banana', 'orange', 'mango', 'lemon']
+
+if check_fruit in fruits:
+	print('That fruit already exist in the list')
+else: 
+	fruits.append(check_fruit)
+	print(fruits)
 
 # ─────────────────────────────────────────────
 ### Exercises: Level 3
 # ─────────────────────────────────────────────
-#    1. Here we have a person dictionary. Feel free to modify it!
+# 1. Here we have a person dictionary. Feel free to modify it!
 #         person={
 #     'first_name': 'Asabeneh',
 #     'last_name': 'Yetayeh',
