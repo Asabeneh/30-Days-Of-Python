@@ -51,6 +51,13 @@ while len(pyramid) < 8:
 #    # # # # # # # #
 #    # # # # # # # #
 #    ```
+num = 0
+hashes = '# # # # # # # #'
+while True:
+	print(hashes)
+	num = num + 1
+	if num == 9:
+		break
 
 # 5. Print the following pattern:
 #    ```sh
@@ -66,9 +73,15 @@ while len(pyramid) < 8:
 #    9 x 9 = 81
 #    10 x 10 = 100
 #    ```
+count = range(11)
+for i in count:
+    print(f'{i} x {i} = {i*i}')
 
 # 6. Iterate through the list, ['Python', 'Numpy','Pandas','Django', 'Flask'] using a for loop and print out the items.
-
+languages = ['Python', 'Numpy','Pandas','Django', 'Flask']
+for lang in languages:
+    print(lang)
+	
 # 7. Use for loop to iterate from 0 to 100 and print only even numbers
 
 # 8. Use for loop to iterate from 0 to 100 and print only odd numbers
