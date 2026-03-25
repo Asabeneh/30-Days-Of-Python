@@ -83,9 +83,17 @@ for lang in languages:
     print(lang)
 	
 # 7. Use for loop to iterate from 0 to 100 and print only even numbers
+for i in range(101):
+	remain = i % 2
+	if remain == 0:
+		print(i)
 
 # 8. Use for loop to iterate from 0 to 100 and print only odd numbers
-   
+for i in range(101):
+	remain = i % 2
+	if remain == 1:
+		print(i)
+		
 # ─────────────────────────────────────────────
 ### Exercises: Level 2
 # ─────────────────────────────────────────────
