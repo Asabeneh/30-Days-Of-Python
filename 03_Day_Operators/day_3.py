@@ -79,6 +79,9 @@ print("on in dragon:", "on" not in "dragon")
 print(str(float(len("python"))))
 
 # 17. Even numbers are divisible by 2 and the remainder is zero. How do you check if a number is even or not using python?
+number = int(input("Enter number: ")) 
+is_even = number % 2 == 0
+print(is_even)
 
 # 18. Check if the floor division of 7 by 3 is equal to the int converted value of 2.7.
 print(7//3 == int(float(2.7)))
