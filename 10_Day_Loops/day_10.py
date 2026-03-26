@@ -128,9 +128,22 @@ print(f'The sum of all Odd Numbers is: {odd_sum}.')
 ### Exercises: Level 3
 # ─────────────────────────────────────────────
 # 1. Go to the data folder and use the [countries.py](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/data/countries.py) file. Loop through the countries and extract all the countries containing the word _land_.
+from data.countries import countries
 
+for country in countries:
+	if country.endswith('land'):
+		print(country)
 
 # 2. This is a fruit list, ['banana', 'orange', 'mango', 'lemon'] reverse the order using loop.
+fruit_list = ['banana', 'orange', 'mango', 'lemon']
+reverse_list = []
+start = len(fruit_list) - 1
+    
+for fruit in fruit_list:
+	reverse_list.append(fruit_list[start])
+	start = start - 1
+    
+print(reverse_list)
 
 # 3. Go to the data folder and use the [countries_data.py](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/data/countries-data.py) file. 
 #    1. What are the total number of languages in the data
