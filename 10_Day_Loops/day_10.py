@@ -147,5 +147,32 @@ print(reverse_list)
 
 # 3. Go to the data folder and use the [countries_data.py](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/data/countries-data.py) file. 
 #    1. What are the total number of languages in the data
+langs = []
+for i in countries:
+	for n in i["languages"]:
+		langs.append(n)
+
+unique_langs = set(langs)				# unique languages
+print(len(unique_langs))
+
 #    2. Find the ten most spoken languages from the data
+language_count = {}
+
+for country in countries:
+    for lang in country["languages"]:
+        if lang in language_count:
+            language_count[lang] += 1
+        else:
+            language_count[lang] = 1
+            
+sorted_languages = sorted(language_count.items(), key=lambda item: item[1], reverse=True)
+spoken_languages = sorted_languages[:10]
+
 #    3. Find the 10 most populated countries in the world
+population_count = {}
+
+for country in countries:
+	population_count[country["name"]] = country["population"]
+        
+sorted_countries = sorted(population_count.items(), key=lambda item: item[1], reverse=True)
+most_populated = sorted_countries[:10]
