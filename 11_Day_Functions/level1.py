@@ -16,9 +16,40 @@ def area_of_circle(radius):
 area_of_circle(5)
 
 # 3. Write a function called add_all_nums which takes arbitrary number of arguments and sums all the arguments. Check if all the list items are number types. If not do give a reasonable feedback.
+def add_all_nums(*nums):
+	total = 0
+	for num in nums:
+		if type(num) != int and type(num) != float:
+			return  f"Error: '{num}' is not a number."       
+		total += num
+	return total
+add_all_nums(4, 12, 35)
 
 # 4. Temperature in °C can be converted to °F using this formula: °F = (°C x 9/5) + 32. Write a function which converts °C to °F, _convert_celsius_to-fahrenheit_.
+def convert_celsius_to_fahrenheit(cel):
+	f = (cel * 9/5) + 32
+	return f
+convert_celsius_to_fahrenheit(26)
+
 # 5. Write a function called check-season, it takes a month parameter and returns the season: Autumn, Winter, Spring or Summer.
+def check_season(month):
+	autum = ["March", "April", "May"]
+	winter = ["June", "July", "August"] 
+	spring = ["September", "October", "November"]
+	summer = ["December", "January", "February"]
+
+	if month in autum:
+		return "Autumn"
+	elif month in winter:
+		return "Winter"
+	elif month in spring:
+		return "Spring"
+	elif month in summer: 
+		return "Summer"
+	else: 
+		return "Please enter a Month of the Year"
+check_season("May")
+
 # 6. Write a function called calculate_slope which return the slope of a linear equation
 # 7. Quadratic equation is calculated as follows: ax² + bx + c = 0. Write a function which calculates solution set of a quadratic equation, _solve_quadratic_eqn_.
 # 8. Declare a function named print_list. It takes a list as a parameter and it prints out each element of the list.
