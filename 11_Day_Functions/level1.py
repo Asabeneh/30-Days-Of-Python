@@ -51,8 +51,38 @@ def check_season(month):
 check_season("May")
 
 # 6. Write a function called calculate_slope which return the slope of a linear equation
+def calculate_slope(pos1, pos2):
+    slope = (pos2[1] - pos1[1]) / (pos2[0] - pos1[0])
+    return slope
+pos1 = (-3, -2)
+pos2 = (2,2)
+print("Slope : ", calculate_slope(pos1, pos2))
+
 # 7. Quadratic equation is calculated as follows: ax² + bx + c = 0. Write a function which calculates solution set of a quadratic equation, _solve_quadratic_eqn_.
+def solve_quadratic_eqn(a,b,c):   
+	if a > 0:
+		D = b**2 - 4*a*c
+		if D < 0:
+			return f"No real solutions"
+		elif D == 0:
+			return [(-b) / (2*a)]      # one real solution
+		else:
+			x1 = (-b + D**0.5) / (2*a)
+			x2 = (-b - D**0.5) / (2*a)
+			return f"x = {x1} or x = {x2}"
+# 5x²+−8x+5=0
+a = 1
+b = -8 
+c = 5
+print(solve_quadratic_eqn(a,b,c))
+
 # 8. Declare a function named print_list. It takes a list as a parameter and it prints out each element of the list.
+def print_list(mylist):
+    for item in mylist:
+        print(item)
+mylist = ["January", "February", "March", "April", "May", "June", "July", "August","September", "October", "November", "December"]
+print_list(mylist)
+
 # 9. Declare a function named reverse_list. It takes an array as a parameter and it returns the reverse of the array (use loops).
 
 # ```py
