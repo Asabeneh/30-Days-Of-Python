@@ -106,9 +106,9 @@ print(capitalize_list_items(['banana', 'orange', 'mango', 'lemon']))
 
 # 11. Declare a function named add_item. It takes a list and an item parameters. It returns a list with the item added at the end.
 # food_stuff = ['Potato', 'Tomato', 'Mango', 'Milk'];
-# print(add_item(food_stuff, 'Meat'))     # ['Potato', 'Tomato', 'Mango', 'Milk','Meat'];
+# print(add_item(food_stuff, 'Meat'))       # ['Potato', 'Tomato', 'Mango', 'Milk','Meat'];
 # numbers = [2, 3, 7, 9];
-# print(add_item(numbers, 5))      # [2, 3, 7, 9, 5]
+# print(add_item(numbers, 5))               # [2, 3, 7, 9, 5]
 def add_item(mylist, item):
     mylist.append(item)
     return mylist
@@ -126,7 +126,24 @@ def remove_item(mylist, item):
 # print(sum_of_numbers(5))          # 15
 # print(sum_of_numbers(10))         # 55
 # print(sum_of_numbers(100))        # 5050
-
+def sum_of_numbers(num):
+    total = num*(num+1)/2
+    return int(total)
 
 # 14. Declare a function named sum_of_odds. It takes a number parameter and it adds all the odd numbers in that range.
+def sum_of_odds(num):
+    odd_sum = 0
+    for i in range(num+1):
+        remain = i % 2
+        if remain == 1:
+            odd_sum = odd_sum + i
+    return odd_sum
+
 # 15. Declare a function named sum_of_even. It takes a number parameter and it adds all the even numbers in that - range.
+def sum_of_even(num):
+    even_sum = 0
+    for i in range(num+1):
+        remain = i % 2
+        if remain == 0:
+            even_sum = even_sum + i
+    return even_sum 
