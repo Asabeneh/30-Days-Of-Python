@@ -84,41 +84,49 @@ mylist = ["January", "February", "March", "April", "May", "June", "July", "Augus
 print_list(mylist)
 
 # 9. Declare a function named reverse_list. It takes an array as a parameter and it returns the reverse of the array (use loops).
-
-# ```py
 # print(reverse_list([1, 2, 3, 4, 5]))
-# # [5, 4, 3, 2, 1]
+# [5, 4, 3, 2, 1]
 # print(reverse_list(["A", "B", "C"])) 
-# # ["C", "B", "A"]
-# ```
+# ["C", "B", "A"]
+def reverse_list(mylist):
+    leng = len(mylist)
+    new_list = []
+    while leng > 0:
+        leng = leng - 1
+        new_list.append(mylist[leng])
+    return new_list
 
 # 10. Declare a function named capitalize_list_items. It takes a list as a parameter and it returns a capitalized list of items
-# 11. Declare a function named add_item. It takes a list and an item parameters. It returns a list with the item added at the end.
+def capitalize_list_items(mylist):
+    new_list = []
+    for item in mylist:
+        new_list.append(item.capitalize())
+    return new_list
+print(capitalize_list_items(['banana', 'orange', 'mango', 'lemon']))
 
-# ```py
+# 11. Declare a function named add_item. It takes a list and an item parameters. It returns a list with the item added at the end.
 # food_stuff = ['Potato', 'Tomato', 'Mango', 'Milk'];
 # print(add_item(food_stuff, 'Meat'))     # ['Potato', 'Tomato', 'Mango', 'Milk','Meat'];
 # numbers = [2, 3, 7, 9];
 # print(add_item(numbers, 5))      # [2, 3, 7, 9, 5]
-
-# ```
+def add_item(mylist, item):
+    mylist.append(item)
+    return mylist
 
 # 12. Declare a function named remove_item. It takes a list and an item parameters. It returns a list with the item removed from it.
-
-# ```py
 # food_stuff = ['Potato', 'Tomato', 'Mango', 'Milk']
-# print(remove_item(food_stuff, 'Mango'))  # ['Potato', 'Tomato', 'Milk'];
+# print(remove_item(food_stuff, 'Mango'))   # ['Potato', 'Tomato', 'Milk'];
 # numbers = [2, 3, 7, 9]
-# print(remove_item(numbers, 3))  # [2, 7, 9]
-# ```
+# print(remove_item(numbers, 3))            # [2, 7, 9]
+def remove_item(mylist, item):
+    mylist.remove(item)
+    return mylist
 
 # 13. Declare a function named sum_of_numbers. It takes a number parameter and it adds all the numbers in that range.
+# print(sum_of_numbers(5))          # 15
+# print(sum_of_numbers(10))         # 55
+# print(sum_of_numbers(100))        # 5050
 
-# ```py
-# print(sum_of_numbers(5))  # 15
-# print(sum_of_numbers(10)) # 55
-# print(sum_of_numbers(100)) # 5050
-# ```
 
 # 14. Declare a function named sum_of_odds. It takes a number parameter and it adds all the odd numbers in that range.
 # 15. Declare a function named sum_of_even. It takes a number parameter and it adds all the even numbers in that - range.
