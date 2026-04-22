@@ -70,6 +70,8 @@ print(calculate_median([5,1,1,2,4,3,7]))
 #    "Hello, Guest!
 #    greet("Alice")
 #    "Hello, Alice!"
+def greet(guest = "Guest"):
+    print(f"Hello, {guest}")
 
 # 6. Create a function called _show_args_ to take an arbitrary number of named arguments and print their names and values.
 #    show_args(name="Alice", age=30, city="New York")
