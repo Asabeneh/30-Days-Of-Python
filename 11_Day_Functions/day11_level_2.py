@@ -34,12 +34,44 @@ def factorial(n):
 print(factorial(6))
 
 # 3. Call your function _is_empty_, it takes a parameter and it checks if it is empty or not
+def is_empty(check):
+    empty = len(check)
+    if empty > 0:
+        return f'Not empty'
+    else:
+        return f'Empty'
+
+result = [1]
+
+print(is_empty(result))
+print(is_empty([]))
+print(is_empty([1,2,3,4]))
+print(is_empty(()))
+
 # 4. Write different functions which take lists. They should calculate_mean, calculate_median, calculate_mode, calculate_range, calculate_variance, calculate_std (standard deviation).
+def calculate_mean(nums):                   # Average
+    mean = sum(nums)/len(nums)
+    return mean
+
+def calculate_median(nums):                 # Middle number
+    mid = len(nums) % 2
+    if mid == 0:
+        num1 = int((len(nums)/2) - 1)
+        num2 = int((len(nums)/2))
+        return (nums[num1] + nums[num2])/2
+    else:
+        median = int(len(nums)/2)
+        return nums[median]
+print(calculate_median([5,1,1,2,4,3,7]))
+
+
 # 5. Write a function called _greet_ which takes a default argument, _name_. If no argument is supplied it should print "Hello, Guest!", otherwise it should greet the person by name.
 #    greet()
 #    "Hello, Guest!
 #    greet("Alice")
 #    "Hello, Alice!"
+def greet(guest = "Guest"):
+    print(f"Hello, {guest}")
 
 # 6. Create a function called _show_args_ to take an arbitrary number of named arguments and print their names and values.
 #    show_args(name="Alice", age=30, city="New York")
