@@ -81,6 +81,13 @@ def calculate_range(nums):
     return sorted_list[-1] - sorted_list[0]
 print(calculate_range([5,1,1,2,4,3,7]))
 
+def calculate_variance(nums):
+    mean = sum(nums)/len(nums)
+    squared_diff = 0
+    for i in nums:
+         squared_diff += (i - mean) ** 2
+    return squared_diff/(len(nums) - 1)
+
 # 5. Write a function called _greet_ which takes a default argument, _name_. If no argument is supplied it should print "Hello, Guest!", otherwise it should greet the person by name.
 #    greet()
 #    "Hello, Guest!
