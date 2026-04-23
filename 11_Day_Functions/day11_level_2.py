@@ -64,6 +64,22 @@ def calculate_median(nums):                 # Middle number
         return nums[median]
 print(calculate_median([5,1,1,2,4,3,7]))
 
+def calculate_mode(nums):
+    count = {}
+    for num in nums:
+        if num in count:
+            count[num] += 1
+        else:
+            count[num] = 1
+    sorted_by_key = dict(sorted(count.items()))
+    nums_sorted_list = list(sorted_by_key.keys())
+    return nums_sorted_list[0]
+print(calculate_mode([5,1,1,2,4,3,7]))
+
+def calculate_range(nums):
+    sorted_list = sorted(nums)
+    return sorted_list[-1] - sorted_list[0]
+print(calculate_range([5,1,1,2,4,3,7]))
 
 # 5. Write a function called _greet_ which takes a default argument, _name_. If no argument is supplied it should print "Hello, Guest!", otherwise it should greet the person by name.
 #    greet()
