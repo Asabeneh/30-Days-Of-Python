@@ -76,6 +76,11 @@ def calculate_mode(nums):
     return nums_sorted_list[0]
 print(calculate_mode([5,1,1,2,4,3,7]))
 
+def calculate_range(nums):
+    sorted_list = sorted(nums)
+    return sorted_list[-1] - sorted_list[0]
+print(calculate_range([5,1,1,2,4,3,7]))
+
 # 5. Write a function called _greet_ which takes a default argument, _name_. If no argument is supplied it should print "Hello, Guest!", otherwise it should greet the person by name.
 #    greet()
 #    "Hello, Guest!
