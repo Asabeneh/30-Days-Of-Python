@@ -88,6 +88,13 @@ def calculate_variance(nums):
          squared_diff += (i - mean) ** 2
     return squared_diff/(len(nums) - 1)
 
+def calculate_std(nums):
+    mean = sum(nums)/len(nums)
+    squared_diff = 0
+    for i in nums:
+         squared_diff += (i - mean) ** 2
+    return (squared_diff/(len(nums) - 1)) ** 0.5
+
 # 5. Write a function called _greet_ which takes a default argument, _name_. If no argument is supplied it should print "Hello, Guest!", otherwise it should greet the person by name.
 #    greet()
 #    "Hello, Guest!
