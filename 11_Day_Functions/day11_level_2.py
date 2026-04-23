@@ -64,7 +64,7 @@ def calculate_median(nums):                 # Middle number
         return nums[median]
 print(calculate_median([5,1,1,2,4,3,7]))
 
-def calculate_mode(nums):
+def calculate_mode(nums):                   # Number that appears the most
     count = {}
     for num in nums:
         if num in count:
@@ -94,3 +94,7 @@ def greet(guest = "Guest"):
 #    Received: name: Alice, age: 30, city: New York
 #    show_args(name="Bob", pet="Fluffy, the bunny")
 #    Received: name: Bob, pet: Fluffy, the bunny
+def show_args(**args):
+    print("Received:", end=" ")
+    for k, v in args.items():
+        print(f"{k}: {v}", end=" ")
