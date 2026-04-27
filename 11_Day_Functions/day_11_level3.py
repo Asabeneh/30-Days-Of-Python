@@ -23,6 +23,18 @@ def is_prime(number):
 print(is_prime(104728))      
 
 # 2. Write a functions which checks if all items are unique in the list.
+def unique(nums):
+    count = {}
+    for num in nums:
+        if num in count:
+            count[num] += 1
+        else:
+            count[num] = 1
+    for value in count.values():
+        if value > 1:
+            return f'Not Unique'
+    return f'All items are unique'
+
 # 3. Write a function which checks if all the items of the list are of the same data type.
 # 4. Write a function which check if provided variable is a valid python variable
 # 5. Go to the data folder and access the countries-data.py file.
