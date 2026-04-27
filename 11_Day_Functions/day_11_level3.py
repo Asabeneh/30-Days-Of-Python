@@ -45,7 +45,29 @@ def all_unique_types(nums):
 print(all_unique_types([2, 4, 6, 8, 10]))
 
 # 4. Write a function which check if provided variable is a valid python variable
+def is_variable(name):
+    result = f'{False} - \"{name}\" is not a valid variable name.'
+    keywords = [
+    "False", "None", "True", "and", "as", 
+    "assert", "async", "await", "break",
+    "class", "continue", "def", "del",
+    "elif", "else", "except", "finally", 
+    "for", "from", "global", "if", "import", 
+    "in", "is", "lambda", "nonlocal", "not",
+    "or", "pass", "raise", "return",
+    "try", "while", "with", "yield" ]
+                 
+    if type(name) != str:
+        return result
+    elif name[0].isdigit():
+        return result
+    elif name in keywords:
+        return result
+    elif not name.replace('_', '').isalnum():
+        return result
+    return f'{True} - \"{name}\" is a valid variable name.'
 
+print(is_variable("While"))
 
 # 5. Go to the data folder and access the countries-data.py file.
 # - Create a function called the most_spoken_languages in the world. It should return 10 or 20 most spoken languages in the world in descending order
