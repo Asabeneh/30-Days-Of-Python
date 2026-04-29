@@ -19,8 +19,7 @@ def is_prime(number):
         else:
             return f"Only positive numbers can be Prime"
     else:
-        return f"{type(number)} is not a Prime"
-#print(is_prime(104728))      
+        return f"{type(number)} is not a Prime"    
 
 # 2. Write a functions which checks if all items are unique in the list.
 def unique(nums):
@@ -42,7 +41,6 @@ def all_unique_types(nums):
         if type(item) != seen:
             return False
     return True
-#print(all_unique_types([2, 4, 6, 8, 10]))
 
 # 4. Write a function which check if provided variable is a valid python variable
 def is_variable(name):
@@ -67,7 +65,6 @@ def is_variable(name):
         return result
     return f'{True} - \"{name}\" is a valid variable name.'
 
-#print(is_variable("While"))
 
 # 5. Go to the data folder and access the countries-data.py file.
 # Used AI to access the countries-data.y
@@ -103,3 +100,14 @@ def top_ten(countries):
 # 10 most spoken languages in the world are: ['English', 'French', 'Arabic', 'Spanish', 'Portuguese', 'Russian', 'Dutch', 'German', 'Chinese', 'Serbian']
 
 # - Create a function called the most_populated_countries. It should return 10 or 20 most populated countries in descending order.
+def most_populated_countries(countries):
+    population_count = {}
+    for country in countries:
+        population_count[country["name"]] = country["population"]
+            
+    sorted_countries = sorted(population_count.items(), key=lambda item: item[1], reverse=True)
+    most_populated = []
+    for country, count in sorted_countries[:20]:
+        most_populated.append(country)
+    return f'20 most populated countries in descending order are: {most_populated}'
+# 20 most populated countries in descending order are: ['China', 'India', 'United States of America', 'Indonesia', 'Brazil', 'Pakistan', 'Nigeria', 'Bangladesh', 'Russian Federation', 'Japan', 'Mexico', 'Philippines', 'Viet Nam', 'Ethiopia', 'Egypt', 'Congo (Democratic Republic of the)', 'Germany', 'Iran (Islamic Republic of)', 'Turkey', 'France']
