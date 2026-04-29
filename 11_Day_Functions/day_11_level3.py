@@ -20,7 +20,7 @@ def is_prime(number):
             return f"Only positive numbers can be Prime"
     else:
         return f"{type(number)} is not a Prime"
-print(is_prime(104728))      
+#print(is_prime(104728))      
 
 # 2. Write a functions which checks if all items are unique in the list.
 def unique(nums):
@@ -42,7 +42,7 @@ def all_unique_types(nums):
         if type(item) != seen:
             return False
     return True
-print(all_unique_types([2, 4, 6, 8, 10]))
+#print(all_unique_types([2, 4, 6, 8, 10]))
 
 # 4. Write a function which check if provided variable is a valid python variable
 def is_variable(name):
@@ -67,8 +67,39 @@ def is_variable(name):
         return result
     return f'{True} - \"{name}\" is a valid variable name.'
 
-print(is_variable("While"))
+#print(is_variable("While"))
 
 # 5. Go to the data folder and access the countries-data.py file.
+# Used AI to access the countries-data.y
+import json
+import os
+
+file_path = os.path.join(
+    os.path.dirname(__file__),
+    "..",
+    "data",
+    "countries-data.py"
+)
+
+with open(file_path, "r", encoding="utf-8") as f:
+    countries = json.load(f)
+
 # - Create a function called the most_spoken_languages in the world. It should return 10 or 20 most spoken languages in the world in descending order
+def top_ten(countries):
+    language_count = {}
+    for country in countries:
+        for lang in country["languages"]:
+            if lang in language_count:
+                 language_count[lang] += 1
+            else:
+                 language_count[lang] = 1
+            
+    sorted_languages = sorted(language_count.items(), key=lambda item: item[1], reverse=True)
+    spoken_languages = sorted_languages[:10]
+    new_list = []								# List of countries without the count
+    for lang, count in spoken_languages:
+        new_list.append(lang)
+    return f'10 most spoken languages in the world are: {new_list}'  
+# 10 most spoken languages in the world are: ['English', 'French', 'Arabic', 'Spanish', 'Portuguese', 'Russian', 'Dutch', 'German', 'Chinese', 'Serbian']
+
 # - Create a function called the most_populated_countries. It should return 10 or 20 most populated countries in descending order.
