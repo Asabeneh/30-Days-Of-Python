@@ -234,7 +234,7 @@ fruits[1] = 'apple'
 print(fruits)       #  ['avocado', 'apple', 'mango', 'lemon']
 last_index = len(fruits) - 1
 fruits[last_index] = 'lime'
-print(fruits)        #  ['avocado', 'apple', 'mango', 'lime']
+print(fruits)        #  ['avocado', 'apple', 'mango', 'lemon']
 ```
 
 ### Checking Items in a List
