@@ -50,11 +50,8 @@ def user_id_gen_by_user():
             new += i
         numb_of_id.append(new)
     return "\n".join(numb_of_id)
-    
-print(user_id_gen_by_user())
 
 # 3. Write a function named rgb_color_gen. It will generate rgb colors (3 values ranging from 0 to 255 each).
-   
 # ```py
 # print(rgb_color_gen())
 #  rgb(125,244,255) - the output should be in this form
