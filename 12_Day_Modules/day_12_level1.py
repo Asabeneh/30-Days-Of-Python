@@ -11,6 +11,7 @@
 #      '1ee33d'
 #    ```
 import string
+from random import *
 import random
 
 def random_user_id():
@@ -19,9 +20,6 @@ def random_user_id():
     for i in random.choices(alpha_numeric, k=6):
         new += i
     return f"\'{new}\'"
-
-print(random_user_id())
-
 
 # 2. Modify the previous task. Declare a function named user_id_gen_by_user. It doesn’t take any parameters but it takes two inputs using input(). One of the inputs is the number of characters and the second input is the number of IDs which are supposed to be generated.
 # ```py
@@ -40,6 +38,20 @@ print(random_user_id())
 # #UbGxOFI7UXSWAyKN
 # #dIV0SSUTgAdKwStr
 # ```
+def user_id_gen_by_user():
+    alpha_numeric = string.ascii_letters + string.digits
+    id_chars = int(input("Enter user ID length: "))
+    user_ids = int(input("Enter number of IDs: "))
+    numb_of_id = []
+    while user_ids > 0:
+        user_ids -= 1
+        new = "#"
+        for i in random.choices(alpha_numeric, k=id_chars):
+            new += i
+        numb_of_id.append(new)
+    return "\n".join(numb_of_id)
+    
+print(user_id_gen_by_user())
 
 # 3. Write a function named rgb_color_gen. It will generate rgb colors (3 values ranging from 0 to 255 each).
    
