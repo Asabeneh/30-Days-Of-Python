@@ -11,7 +11,7 @@
 #      '1ee33d'
 #    ```
 import string
-from random import *
+#from random import *
 import random
 
 def random_user_id():
@@ -56,3 +56,8 @@ def user_id_gen_by_user():
 # print(rgb_color_gen())
 #  rgb(125,244,255) - the output should be in this form
 # ```
+def rgb_color_gen():
+    red = random.randint(0, 255)
+    green = random.randint(0, 255)
+    blue = random.randint(0, 255)
+    return f"rgb({red},{green},{blue})"
