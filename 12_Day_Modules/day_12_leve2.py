@@ -16,8 +16,17 @@ def random_user_id():
         new += i
     return new
 
-print(random_user_id())
 # 2. Write a function list_of_rgb_colors which returns any number of RGB colors in an array.
+def list_of_rgb_colors():
+    numb = int(input("Number of RGB colours: "))
+    rgb_colours = []
+    while numb > 0:
+        numb -= 1
+        rgb = f"rgb({random.randint(0, 255)},{random.randint(0, 255)},{random.randint(0, 255)})"
+        rgb_colours.append(rgb)
+    return rgb_colours
+
+print(list_of_rgb_colors())
 
 # 3. Write a function generate_colors which can generate any number of hexa or rgb colors.
 # ```py
