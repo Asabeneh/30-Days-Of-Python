@@ -58,4 +58,3 @@ def generate_colors(kind,number: int):
         return rgb_colours
     else:
         return f"{kind} is not a valid colour type."
-    
