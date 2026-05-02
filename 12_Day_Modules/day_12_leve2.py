@@ -26,8 +26,6 @@ def list_of_rgb_colors():
         rgb_colours.append(rgb)
     return rgb_colours
 
-print(list_of_rgb_colors())
-
 # 3. Write a function generate_colors which can generate any number of hexa or rgb colors.
 # ```py
 #    generate_colors('hexa', 3) # ['#a3e12f','#03ed55','#eb3d2b'] 
@@ -35,3 +33,24 @@ print(list_of_rgb_colors())
 #    generate_colors('rgb', 3)  # ['rgb(5, 55, 175','rgb(50, 105, 100','rgb(15, 26, 80'] 
 #    generate_colors('rgb', 1)  # ['rgb(33,79, 176)']
 # ```
+def generate_colors(kind,number):
+    if kind == "hexa":
+        hexa_colours = []
+        while number > 0:
+            number -= 1
+            alpha_numeric = "abcdef" + string.digits
+            new = "#"
+            for i in random.choices(alpha_numeric, k=6):
+                new += i
+            hexa_colours.append(new)
+        return hexa_colours
+    elif kind == "rgb":
+        rgb_colours = []
+        while number > 0:
+            number -= 1
+            rgb = f"rgb({random.randint(0, 255)},{random.randint(0, 255)},{random.randint(0, 255)})"
+            rgb_colours.append(rgb)
+        return rgb_colours
+    else:
+        return f"{kind} is not a valid colour type."
+    
