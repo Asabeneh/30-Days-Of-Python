@@ -9,12 +9,17 @@
 import string
 import random
 
-def random_user_id():
-    alpha_numeric = "abcdef" + string.digits
-    new = "#"
-    for i in random.choices(alpha_numeric, k=6):
-        new += i
-    return new
+def list_of_hexa_colors():
+    number = int(input("Number of hexa colours: "))
+    hexa_colours = []
+    while number > 0:
+        number -= 1
+        alpha_numeric = "abcdef" + string.digits
+        new = "#"
+        for i in random.choices(alpha_numeric, k=6):
+            new += i
+        hexa_colours.append(new)
+    return hexa_colours
 
 # 2. Write a function list_of_rgb_colors which returns any number of RGB colors in an array.
 def list_of_rgb_colors():
@@ -33,7 +38,7 @@ def list_of_rgb_colors():
 #    generate_colors('rgb', 3)  # ['rgb(5, 55, 175','rgb(50, 105, 100','rgb(15, 26, 80'] 
 #    generate_colors('rgb', 1)  # ['rgb(33,79, 176)']
 # ```
-def generate_colors(kind,number):
+def generate_colors(kind,number: int):
     if kind == "hexa":
         hexa_colours = []
         while number > 0:
