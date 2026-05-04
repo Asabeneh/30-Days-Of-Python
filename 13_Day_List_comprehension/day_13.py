@@ -8,13 +8,15 @@ below_zero =  [i for i in numbers if i <= 0]
 print(below_zero)
 
 # 2. Flatten the following list of lists of lists to a one dimensional list :
-
-#    ```py
-#    list_of_lists =[[[1, 2, 3]], [[4, 5, 6]], [[7, 8, 9]]]
-
+list_of_lists =[[[1, 2, 3]], [[4, 5, 6]], [[7, 8, 9]]]
 #    output
 #    [1, 2, 3, 4, 5, 6, 7, 8, 9]
-#    ```
+flat_list = [b for n in list_of_lists for i in n for b in i]
+print(flat_list)
+# for i in list_of_lists:
+#     for n in i:
+#         for b in n:
+#             return b
 
 # 3. Using list comprehension create the following list of tuples:
 #    ```py
