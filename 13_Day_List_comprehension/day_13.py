@@ -38,24 +38,27 @@ list_of_tups = [(i, i**0, i**1, i**2, i**3, i**4, i**5) for i in range(0,11)]
 countries = [[('Finland', 'Helsinki')], [('Sweden', 'Stockholm')], [('Norway', 'Oslo')]]
 #    output:
 #    [['FINLAND','FIN', 'HELSINKI'], ['SWEDEN', 'SWE', 'STOCKHOLM'], ['NORWAY', 'NOR', 'OSLO']]
-new_unt = [
+new_list = [
     [n[0].upper(), n[0][0:3].upper(), n[1].upper()]     # Changes tuple to list
     for i in countries
     for n in i
 ]
 
 # 5. Change the following list to a list of dictionaries:
-#    ```py
 #    countries = [[('Finland', 'Helsinki')], [('Sweden', 'Stockholm')], [('Norway', 'Oslo')]]
 #    output:
 #    [{'country': 'FINLAND', 'city': 'HELSINKI'},
 #    {'country': 'SWEDEN', 'city': 'STOCKHOLM'},
 #    {'country': 'NORWAY', 'city': 'OSLO'}]
-#    ```
+countries_dict = [
+    {"country": n[0], "city": n[1]}
+    for i in countries
+    for n in i
+]
+
 # 6. Change the following list of lists to a list of concatenated strings:
-#    ```py
-#    names = [[('Asabeneh', 'Yetayeh')], [('David', 'Smith')], [('Donald', 'Trump')], [('Bill', 'Gates')]]
+names = [[('Asabeneh', 'Yetayeh')], [('David', 'Smith')], [('Donald', 'Trump')], [('Bill', 'Gates')]]
 #    output
 #    ['Asabeneh Yetaeyeh', 'David Smith', 'Donald Trump', 'Bill Gates']
-#    ```
+
 # 7. Write a lambda function which can solve a slope or y-intercept of linear functions.
