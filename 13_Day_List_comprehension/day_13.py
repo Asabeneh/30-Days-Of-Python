@@ -5,21 +5,22 @@
 # 1. Filter only negative and zero in the list using list comprehension
 numbers = [-4, -3, -2, -1, 0, 2, 4, 6]
 below_zero =  [i for i in numbers if i <= 0]
-print(below_zero)
+#print(below_zero)
 
 # 2. Flatten the following list of lists of lists to a one dimensional list :
 list_of_lists =[[[1, 2, 3]], [[4, 5, 6]], [[7, 8, 9]]]
 #    output
 #    [1, 2, 3, 4, 5, 6, 7, 8, 9]
-flat_list = [b for n in list_of_lists for i in n for b in i]
-print(flat_list)
+flat_list = [b 
+             for n in list_of_lists 
+             for i in n 
+             for b in i]
 # for i in list_of_lists:
 #     for n in i:
 #         for b in n:
-#             return b
+#             b
 
 # 3. Using list comprehension create the following list of tuples:
-#    ```py
 #    [(0, 1, 0, 0, 0, 0, 0),
 #    (1, 1, 1, 1, 1, 1, 1),
 #    (2, 1, 2, 4, 8, 16, 32),
@@ -31,13 +32,18 @@ print(flat_list)
 #    (8, 1, 8, 64, 512, 4096, 32768),
 #    (9, 1, 9, 81, 729, 6561, 59049),
 #    (10, 1, 10, 100, 1000, 10000, 100000)]
-#    ```
+list_of_tups = [(i, i**0, i**1, i**2, i**3, i**4, i**5) for i in range(0,11)]
+
 # 4. Flatten the following list to a new list:
-#    ```py
-#    countries = [[('Finland', 'Helsinki')], [('Sweden', 'Stockholm')], [('Norway', 'Oslo')]]
+countries = [[('Finland', 'Helsinki')], [('Sweden', 'Stockholm')], [('Norway', 'Oslo')]]
 #    output:
 #    [['FINLAND','FIN', 'HELSINKI'], ['SWEDEN', 'SWE', 'STOCKHOLM'], ['NORWAY', 'NOR', 'OSLO']]
-#    ```
+new_unt = [
+    [n[0].upper(), n[0][0:3].upper(), n[1].upper()]     # Changes tuple to list
+    for i in countries
+    for n in i
+]
+
 # 5. Change the following list to a list of dictionaries:
 #    ```py
 #    countries = [[('Finland', 'Helsinki')], [('Sweden', 'Stockholm')], [('Norway', 'Oslo')]]
