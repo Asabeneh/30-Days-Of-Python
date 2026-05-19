@@ -27,7 +27,6 @@
     - [Changing Tuples to Lists](#changing-tuples-to-lists)
     - [Checking an Item in a Tuple](#checking-an-item-in-a-tuple)
     - [Joining Tuples](#joining-tuples)
-    - [count() and index()](#count-index-method-in-a-tuple)
     - [Deleting Tuples](#deleting-tuples)
   - [💻 Exercises: Day 6](#-exercises-day-6)
     - [Exercises: Level 1](#exercises-level-1)
@@ -37,7 +36,7 @@
 
 ## Tuples
 
-A tuple is a collection of different data types which is ordered and unchangeable (immutable). Tuples are written with round brackets, ().A tuple is immutable, which means the tuple itself cannot be modified after creation. However, if a tuple contains mutable objects like lists, those objects can still be changed. We cannot use add, insert, remove methods in a tuple because it is not modifiable (mutable). Unlike list, tuple has few methods. Methods related to tuples:
+A tuple is a collection of different data types which is ordered and unchangeable (immutable). Tuples are written with round brackets, (). Once a tuple is created, we cannot change its values. We cannot use add, insert, remove methods in a tuple because it is not modifiable (mutable). Unlike list, tuple has few methods. Methods related to tuples:
 
 - tuple(): to create an empty tuple
 - count(): to count the number of a specified item in a tuple
@@ -65,19 +64,10 @@ A tuple is a collection of different data types which is ordered and unchangeabl
   ```py
   fruits = ('banana', 'orange', 'mango', 'lemon')
   ```
-  ```py
-The comma defines the tuple, not the parentheses.
-single = ('apple')
-print(type(single))  # str
-
-single = ('apple',)
-print(type(single))  # tuple
-
-  ```
 
 ### Tuple length
 
-We use the built-in len() function to get the length of a tuple.
+We use the _len()_ method to get the length of a tuple.
 
 ```py
 # syntax
@@ -161,31 +151,15 @@ We can slice out a sub-tuple by specifying a range of indexes where to start and
   orange_mango = fruits[-3:-1]  # doesn't include item at index 3
   orange_to_the_rest = fruits[-3:]
   ```
-### Tuple Packing and Unpacking
 
-```py
-
-person = ('Ravi', 22, 'India')
-name, age, country = person
-print(name)
-print(age)
-print(country)
-numbers = (1, 2, 3, 4, 5)
-first, *middle, last = numbers
-
-```
 ### Changing Tuples to Lists
 
-We can change tuples to lists and lists to tuples. Since tuples are immutable, we must convert them to a list before modifying them.
+We can change tuples to lists and lists to tuples. Tuple is immutable if we want to modify a tuple we should change it to a list.
 
 ```py
 # Syntax
 tpl = ('item1', 'item2', 'item3','item4')
 lst = list(tpl)
-
-tpl = ([1, 2], [3, 4])
-tpl[0].append(5)
-print(tpl) # ([1, 2, 5], [3, 4])
 ```
 
 ```py
@@ -198,9 +172,8 @@ print(fruits)     # ('apple', 'orange', 'mango', 'lemon')
 ```
 
 ### Checking an Item in a Tuple
-Check whether an item exists in a tuple
-We can check if an item exists or not in a tuple using _in_, it returns a boolean.
 
+We can check if an item exists or not in a tuple using _in_, it returns a boolean.
 
 ```py
 # Syntax
@@ -231,14 +204,6 @@ fruits = ('banana', 'orange', 'mango', 'lemon')
 vegetables = ('Tomato', 'Potato', 'Cabbage','Onion', 'Carrot')
 fruits_and_vegetables = fruits + vegetables
 ```
-### count() and index() methods in tuple
-
-```py
-numbers = (1, 2, 3, 2, 2)
-
-print(numbers.count(2)) # return 3
-print(numbers.index(3)) # return 2
-```
 
 ### Deleting Tuples
 
@@ -256,7 +221,7 @@ fruits = ('banana', 'orange', 'mango', 'lemon')
 del fruits
 ```
 
-🌕 You are so brave, you made it to this far. You have just completed day 6 challenges and You are 6 steps ahead on your way to greatness. Now do some exercises for your brain and for your muscle.
+🌕 You are so brave, you made it to this far. You have just completed day 6 challenges and you are 6 steps a head in to your way to greatness. Now do some exercises for your brain and for your muscle.
 
 ## 💻 Exercises: Day 6
 
