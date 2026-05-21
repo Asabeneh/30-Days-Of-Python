@@ -84,7 +84,7 @@ empty_list = [] # une liste vide, sans élément
 print(len(empty_list)) # 0
 ```
 
-Listes avec valeurs initiales. On utilise `_len()` pour connaître la longueur d'une liste.
+Listes avec valeurs initiales. On utilise _len()_ pour connaître la longueur d'une liste.
 
 ```py
 fruits = ['banana', 'orange', 'mango', 'lemon']                     # liste de fruits
@@ -240,7 +240,7 @@ print(fruits)        #  ['avocado', 'apple', 'mango', 'lime']
 
 ### Vérifier la présence d'un élément
 
-On vérifie si un élément est membre d'une liste avec l'opérateur `*in*`.
+On vérifie si un élément est membre d'une liste avec l'opérateur *in*.
 
 ```py
 fruits = ['banana', 'orange', 'mango', 'lemon']
@@ -252,7 +252,7 @@ print(does_exist)  # False
 
 ### Ajouter des éléments à une liste
 
-Pour ajouter un élément à la fin d'une liste existante, on utilise la méthode `*append()*`.
+Pour ajouter un élément à la fin d'une liste existante, on utilise la méthode *append()*.
 
 ```py
 # syntaxe
@@ -270,7 +270,7 @@ print(fruits)
 
 ### Insérer des éléments dans une liste
 
-On peut utiliser la méthode `*insert()*` pour insérer un élément à un indice précis dans une liste. Les autres éléments sont décalés vers la droite. La méthode `*insert()*` prend deux arguments : l'indice et l'élément à insérer.
+On peut utiliser la méthode *insert()* pour insérer un élément à un indice précis dans une liste. Les autres éléments sont décalés vers la droite. La méthode *insert()* prend deux arguments : l'indice et l'élément à insérer.
 
 ```py
 # syntaxe
@@ -306,7 +306,7 @@ print(fruits)  # ['orange', 'mango', 'banana']
 
 ### Supprimer avec Pop
 
-La méthode `*pop()*` supprime l'élément à l'indice spécifié (ou le dernier élément si aucun indice n'est donné).
+La méthode *pop()* supprime l'élément à l'indice spécifié (ou le dernier élément si aucun indice n'est donné).
 
 ```py
 # syntaxe
@@ -326,7 +326,7 @@ print(fruits)       # ['orange', 'mango']
 
 ### Supprimer avec Del
 
-Le mot-clé `*del*` supprime l'élément à l'indice spécifié et peut aussi supprimer une plage d'éléments. Il peut aussi supprimer complètement la liste.
+Le mot-clé *del* supprime l'élément à l'indice spécifié et peut aussi supprimer une plage d'éléments. Il peut aussi supprimer complètement la liste.
 
 ```py
 # syntaxe
@@ -349,7 +349,7 @@ print(fruits)       # NameError: name 'fruits' is not defined
 
 ### Vider une liste
 
-La méthode `*clear()*` vide la liste.
+La méthode *clear()* vide la liste.
 
 ```py
 # syntaxe
@@ -365,7 +365,7 @@ print(fruits)       # []
 
 ### Copier une liste
 
-On peut copier une liste en la réaffectant à une nouvelle variable : `list2 = list1`. Mais `list2` est alors une référence de `list1` : toute modification dans `list2` modifie aussi `list1` d'origine. Pour éviter cela, on utilise `_copy()_`.
+On peut copier une liste en la réaffectant à une nouvelle variable : `list2 = list1`. Mais `list2` est alors une référence de `list1` : toute modification dans `list2` modifie aussi `list1` d'origine. Pour éviter cela, on utilise _copy()_.
 
 ```py
 # syntaxe
@@ -403,7 +403,7 @@ print(fruits_and_vegetables ) # ['banana', 'orange', 'mango', 'lemon', 'Tomato',
 ```
 
 - **Concaténation avec `extend()`**
-  La méthode `*extend()*` permet d'ajouter une liste à une autre.
+  La méthode *extend()* permet d'ajouter une liste à une autre.
 
 ```py
 # syntaxe
@@ -432,7 +432,7 @@ print('Fruits et légumes:', fruits ) # Fruits et légumes: ['banana', 'orange',
 
 ### Compter les occurrences
 
-La méthode `*count()*` renvoie le nombre de fois qu'un élément apparaît dans une liste.
+La méthode *count()* renvoie le nombre de fois qu'un élément apparaît dans une liste.
 
 ```py
 # syntaxe
@@ -449,7 +449,7 @@ print(ages.count(24))           # 3
 
 ### Trouver l'indice d'un élément
 
-La méthode `*index()*` renvoie l'indice d'un élément dans la liste.
+La méthode *index()* renvoie l'indice d'un élément dans la liste.
 
 ```py
 # syntaxe
@@ -466,7 +466,7 @@ print(ages.index(24))           # 2, la première occurrence
 
 ### Inverser une liste
 
-La méthode `*reverse()*` inverse l'ordre d'une liste.
+La méthode *reverse()* inverse l'ordre d'une liste.
 
 ```py
 # syntaxe
@@ -486,7 +486,7 @@ print(ages) # [24, 25, 24, 26, 25, 24, 19, 22]
 
 ### Trier une liste
 
-Pour trier une liste, on peut utiliser la méthode `_sort()_` ou la fonction intégrée `_sorted()_`. La méthode `_sort()_` réordonne les éléments de la liste en ordre croissant et modifie la liste d'origine. Si l'argument `reverse` de `_sort()_` est `true`, la liste est triée en ordre décroissant.
+Pour trier une liste, on peut utiliser la méthode _sort()_ ou la fonction intégrée _sorted()_. La méthode _sort()_ réordonne les éléments de la liste en ordre croissant et modifie la liste d'origine. Si l'argument reverse de _sort()_ est true, la liste est triée en ordre décroissant.
 
 - `sort()` : modifie la liste d'origine
 
@@ -537,7 +537,7 @@ Pour trier une liste, on peut utiliser la méthode `_sort()_` ou la fonction int
 4. Obtenez le premier élément, l'élément du milieu et le dernier élément de la liste.
 5. Déclarez une liste appelée `mixed_data_types` contenant (votre nom, âge, taille, situation matrimoniale, adresse).
 6. Déclarez une variable liste nommée `it_companies` et assignez-lui les valeurs initiales Facebook, Google, Microsoft, Apple, IBM, Oracle et Amazon.
-7. Affichez la liste en utilisant `_print()_`.
+7. Affichez la liste en utilisant _print()_.
 8. Affichez le nombre d'entreprises dans la liste.
 9. Affichez la première, celle du milieu et la dernière entreprise.
 10. Affichez la liste après avoir modifié l'une des entreprises.
@@ -578,7 +578,7 @@ ages = [19, 22, 19, 24, 20, 25, 26, 24, 25, 24]
 - Trouvez l'âge médian (un élément du milieu ou deux éléments du milieu divisés par deux).
 - Trouvez l'âge moyen (somme de tous les éléments divisée par leur nombre).
 - Trouvez l'étendue des âges (max moins min).
-- Comparez la valeur de (min - moyenne) et (max - moyenne), en utilisant `_abs()_`.
+- Comparez la valeur de (min - moyenne) et (max - moyenne), en utilisant _abs()_.
 
 2. Trouvez le(s) pays du milieu dans la [liste des pays](https://github.com/Asabeneh/30-Days-Of-Python/tree/master/data/countries.py).
 3. Divisez la liste des pays en deux listes égales ; si le nombre est impair, un pays de plus pour la première moitié.
