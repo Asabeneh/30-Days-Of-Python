@@ -34,7 +34,7 @@
     - [Checking Subset and Super Set](#checking-subset-and-super-set)
     - [Checking the Difference Between Two Sets](#checking-the-difference-between-two-sets)
     - [Finding Symmetric Difference Between Two Sets](#finding-symmetric-difference-between-two-sets)
-    - [Joining Sets](#joining-sets-1)
+    - [Disjoining Sets](#disjoining-sets-1)
   - [💻 Exercises: Day 7](#-exercises-day-7)
     - [Exercises: Level 1](#exercises-level-1)
     - [Exercises: Level 2](#exercises-level-2)
@@ -371,9 +371,9 @@ python.symmetric_difference(dragon)  # {'r', 't', 'p', 'y', 'g', 'a', 'd', 'h'}
 # python ^ dragon
 ```
 
-### Joining Sets
+### DisJoining Sets
 
-If two sets do not have a common item or items we call them disjoint sets. We can check if two sets are joint or disjoint using _isdisjoint()_ method.
+If two sets do not have a common item or items we call them disjoint sets or null sets. We can check if two sets are joint or disjoint using _isdisjoint()_ method.
 
 ```py
 # syntax
