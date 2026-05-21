@@ -1,3 +1,4 @@
+[<< Jour 1](./README_fr.md) | [Jour 3 >>](./03_operators_fr.md)
 <div align="center">
   <h1> 30 Days Of Python: Jour 2 - Variables, Fonctions intégrées</h1>
   <a class="header-badge" target="_blank" href="https://www.linkedin.com/in/asabeneh/">
