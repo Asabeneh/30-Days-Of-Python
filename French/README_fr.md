@@ -4,8 +4,8 @@
 | :---: | :---: |
 | 01 | [Introduction](./README_fr.md) |
 | 02 | [Variables et fonctions intégrées](./02_Day_Variables_builtin_functions/02_variables_builtin_functions_fr.md) |
-| 03 | [Opérateurs](./03_Day_Operators/03_operators_fr.md) |
-| 04 | [Chaînes de caractères](./04_Day_Strings/04_strings_fr.md) |
+| 03 | [Opérateurs](./03_operators_fr.md) |
+| 04 | [Chaînes de caractères](./04_strings_fr.md) |
 | 05 | [Listes](./05_Day_Lists/05_lists_fr.md) |
 | 06 | [Tuples](./06_Day_Tuples/06_tuples_fr.md) |
 | 07 | [Ensembles](./07_Day_Sets/07_sets_fr.md) |
