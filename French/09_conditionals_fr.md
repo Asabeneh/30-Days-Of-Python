@@ -278,7 +278,7 @@ Entrez le nombre deux : 3
 
     * Vérifiez si le dictionnaire person a une clé skills, si oui, affichez la compétence du milieu dans la liste skills.
     * Vérifiez si le dictionnaire person a une clé skills, si oui, vérifiez si la personne a la compétence 'Python' et affichez le résultat.
-    * Si la personne n'a que JavaScript et React dans ses compétences, affichez('He is a front end developer'), si la personne a Node, Python, MongoDB, affichez('He is a backend developer'), si la personne a React, Node et MongoDB, affichez('He is a fullstack developer'), sinon affichez('unknown title') - pour des résultats plus précis, vous pouvez imbriquer davantage de conditions !
+    * Si la personne n'a que JavaScript et React dans ses compétences, affichez 'He is a front end developer' avec print(), si la personne a Node, Python, MongoDB, affichez 'He is a backend developer' avec print(), si la personne a React, Node et MongoDB, affichez 'He is a fullstack developer' avec print(), sinon affichez 'unknown title' avec print() - pour des résultats plus précis, vous pouvez imbriquer davantage de conditions !
     * Si la personne est mariée et vit en Finlande, affichez les informations au format suivant :
 
 ```py

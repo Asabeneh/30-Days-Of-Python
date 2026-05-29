@@ -102,7 +102,7 @@ print(len(person)) # 7
 
 ### Accéder aux éléments d'un dictionnaire
 
-Nous pouvons accéder aux éléments d'un dictionnaire en faisant référence à son nom de clé.
+Nous pouvons accéder aux éléments d'un dictionnaire par son nom de clé.
 
 ```py
 # syntax
@@ -272,7 +272,7 @@ print(dct.items()) # dict_items([('key1', 'value1'), ('key2', 'value2'), ('key3'
 
 ### Vider un dictionnaire
 
-Si nous ne voulons plus des éléments d'un dictionnaire, nous pouvons les effacer avec la méthode _clear()_.
+Si nous souhaitons vider un dictionnaire, nous pouvons utiliser la méthode _clear()_.
 
 ```py
 # syntax
@@ -322,7 +322,7 @@ values = dct.values()
 print(values)     # dict_values(['value1', 'value2', 'value3', 'value4'])
 ```
 
-🌕 Vous êtes incroyable. Vous voilà super chargé avec le pouvoir des dictionnaires. Vous venez de terminer les défis du jour 8 et vous êtes 8 étapes plus loin vers l'excellence. Entraînez votre cerveau et vos muscles avec les exercices suivants.
+🌕 Vous êtes incroyable. Vous voilà paré du pouvoir des dictionnaires. Vous venez de terminer les défis du jour 8 et vous êtes 8 étapes plus loin vers l'excellence. Entraînez votre cerveau et vos muscles avec les exercices suivants.
 
 ## 💻 Exercices : Jour 8
 
