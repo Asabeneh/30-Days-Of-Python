@@ -200,7 +200,7 @@ print(two_power_of_five)  # 32
    ```py
    names = [[('Asabeneh', 'Yetayeh')], [('David', 'Smith')], [('Donald', 'Trump')], [('Bill', 'Gates')]]
    output
-   ['Asabeneh Yetaeyeh', 'David Smith', 'Donald Trump', 'Bill Gates']
+   ['Asabeneh Yetayeh', 'David Smith', 'Donald Trump', 'Bill Gates']
    ```
 7. Écrivez une fonction lambda qui peut calculer la pente ou l'ordonnée à l'origine de fonctions linéaires.
 

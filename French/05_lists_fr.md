@@ -18,7 +18,7 @@
 
 ![30DaysOfPython](../images/30DaysOfPython_banner3@2x.png)
 
-- [Jour 5](#jour-5)
+- [📘 Jour 5](#-jour-5)
   - [Listes](#listes)
     - [Comment créer une liste](#comment-créer-une-liste)
     - [Accéder aux éléments d'une liste par indice positif](#accéder-aux-éléments-dune-liste-par-indice-positif)
@@ -43,7 +43,7 @@
     - [Exercices : Niveau 1](#exercices--niveau-1)
     - [Exercices : Niveau 2](#exercices--niveau-2)
 
-# Jour 5
+# 📘 Jour 5
 
 ## Listes
 
@@ -54,7 +54,7 @@ Il existe quatre types de données de collection en Python :
 - **Ensemble (Set)** : une collection non ordonnée, non indexée et non modifiable, mais on peut y ajouter de nouveaux éléments. Les doublons ne sont pas autorisés.
 - **Dictionnaire (Dictionary)** : une collection non ordonnée, modifiable et indexée. Pas de doublons.
 
-Une liste est une collection de différents types de données, ordonnée et modifiable (muable). Une liste peut être vide ou contenir des éléments de différents types.
+Une liste est une collection de différents types de données, ordonnée et modifiable (mutable). Une liste peut être vide ou contenir des éléments de différents types.
 
 ### Comment créer une liste
 
@@ -225,7 +225,7 @@ reverse_fruits = fruits[::-1] # un pas négatif prend la liste en ordre inverse,
 
 ### Modifier une liste
 
-Une liste est une collection ordonnée d'éléments modifiable (muable). Modifions la liste de fruits.
+Une liste est une collection ordonnée d'éléments modifiable (mutable). Modifions la liste de fruits.
 
 ```py
 fruits = ['banana', 'orange', 'mango', 'lemon']
@@ -486,7 +486,7 @@ print(ages) # [24, 25, 24, 26, 25, 24, 19, 22]
 
 ### Trier une liste
 
-Pour trier une liste, on peut utiliser la méthode _sort()_ ou la fonction intégrée _sorted()_. La méthode _sort()_ réordonne les éléments de la liste en ordre croissant et modifie la liste d'origine. Si l'argument reverse de _sort()_ est true, la liste est triée en ordre décroissant.
+Pour trier une liste, on peut utiliser la méthode _sort()_ ou la fonction intégrée _sorted()_. La méthode _sort()_ réordonne les éléments de la liste dans l'ordre croissant et modifie la liste d'origine. Si l'argument reverse de _sort()_ est true, la liste est triée dans l'ordre décroissant.
 
 - `sort()` : modifie la liste d'origine
 
@@ -547,7 +547,7 @@ Pour trier une liste, on peut utiliser la méthode _sort()_ ou la fonction inté
 14. Joignez les `it_companies` avec une chaîne `'#;&nbsp; '`.
 15. Vérifiez si une certaine entreprise existe dans la liste `it_companies`.
 16. Triez la liste avec la méthode `sort()`.
-17. Inversez la liste en ordre décroissant avec la méthode `reverse()`.
+17. Inversez la liste dans l'ordre décroissant avec la méthode `reverse()`.
 18. Découpez les 3 premières entreprises de la liste.
 19. Découpez les 3 dernières entreprises de la liste.
 20. Découpez l'entreprise du milieu (ou les entreprises du milieu) de la liste.

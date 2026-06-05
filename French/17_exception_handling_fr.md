@@ -26,7 +26,7 @@
     - [Empaquetage](#empaquetage)
     - [Empaquetage de listes](#empaquetage-de-listes)
       - [Empaquetage de dictionnaires](#empaquetage-de-dictionnaires)
-  - [Dispersion en Python](#dispersion-en-python)
+  - [Décomposition en Python](#décomposition-en-python)
   - [Enumerate](#enumerate)
   - [Zip](#zip)
   - [Exercices : Jour 17](#exercices--jour-17)
@@ -77,26 +77,26 @@ Something went wrong
 
 Dans l'exemple ci-dessus, le bloc d'exception sera exécuté et nous ne savons pas exactement quel est le problème. Pour analyser le problème, nous pouvons utiliser les différents types d'erreurs avec except.
 
-Dans l'exemple suivant, l'erreur sera gérée et le type d'erreur levée nous sera également indiqué.
+Dans l'exemple suivant, l'erreur sera gérée et le type d'erreur levé nous sera également indiqué.
 
 ```py
 try:
-    name = input('Enter your name:')
-    year_born = input('Year you were born:')
+    name = input('Entrez votre nom : ')
+    year_born = input('Année de naissance : ')
     age = 2019 - year_born
-    print(f'You are {name}. And your age is {age}.')
+    print(f'Vous êtes {name}. Et vous avez {age} ans.')
 except TypeError:
-    print('Type error occured')
+    print('Une erreur de type s\'est produite')
 except ValueError:
-    print('Value error occured')
+    print('Une erreur de valeur s\'est produite')
 except ZeroDivisionError:
-    print('zero division error occured')
+    print('Une erreur de division par zéro s\'est produite')
 ```
 
 ```sh
-Enter your name:Asabeneh
-Year you born:1920
-Type error occured
+Entrez votre nom : Asabeneh
+Année de naissance : 1920
+Une erreur de type s'est produite
 ```
 
 Dans le code ci-dessus, la sortie sera _TypeError_.
@@ -104,28 +104,28 @@ Maintenant, ajoutons un bloc supplémentaire :
 
 ```py
 try:
-    name = input('Enter your name:')
-    year_born = input('Year you born:')
+    name = input('Entrez votre nom : ')
+    year_born = input('Année de naissance : ')
     age = 2019 - int(year_born)
-    print(f'You are {name}. And your age is {age}.')
+    print(f'Vous êtes {name}. Et vous avez {age} ans.')
 except TypeError:
-    print('Type error occur')
+    print('Une erreur de type s\'est produite')
 except ValueError:
-    print('Value error occur')
+    print('Une erreur de valeur s\'est produite')
 except ZeroDivisionError:
-    print('zero division error occur')
+    print('Une erreur de division par zéro s\'est produite')
 else:
-    print('I usually run with the try block')
+    print('Je m\'exécute généralement avec le bloc try')
 finally:
-    print('I alway run.')
+    print('Je m\'exécute toujours.')
 ```
 
 ```sh
-Enter your name:Asabeneh
-Year you born:1920
-You are Asabeneh. And your age is 99.
-I usually run with the try block
-I alway run.
+Entrez votre nom : Asabeneh
+Année de naissance : 1920
+Vous êtes Asabeneh. Et vous avez 99 ans.
+Je m'exécute généralement avec le bloc try
+Je m'exécute toujours.
 ```
 
 On peut aussi raccourcir le code ci-dessus comme suit :
@@ -198,9 +198,9 @@ print(one, middle, last)      #  1 [2, 3, 4, 5, 6] 7
 
 ```py
 def unpacking_person_info(name, country, city, age):
-    return f'{name} lives in {country}, {city}. He is {age} year old.'
+    return f'{name} vit en {country}, {city}. Il a {age} ans.'
 dct = {'name':'Asabeneh', 'country':'Finland', 'city':'Helsinki', 'age':250}
-print(unpacking_person_info(**dct)) # Asabeneh lives in Finland, Helsinki. He is 250 years old.
+print(unpacking_person_info(**dct)) # Asabeneh vit en Finlande, Helsinki. Il a 250 ans.
 ```
 
 ### Empaquetage
@@ -242,7 +242,7 @@ age = 250
 {'name': 'Asabeneh', 'country': 'Finland', 'city': 'Helsinki', 'age': 250}
 ```
 
-## Dispersion en Python
+## Décomposition en Python
 
 Comme en JavaScript, la dispersion (spreading) est possible en Python. Regardons un exemple ci-dessous :
 
@@ -270,11 +270,11 @@ for index, item in enumerate([20, 30, 40]):
 countries = ['Finland', 'Sweden', 'Norway', 'Denmark', 'Iceland']
 for index, i in enumerate(countries):
     if i == 'Finland':
-        print(f'The country {i} has been found at index {index}')
+        print(f'Le pays {i} a été trouvé à l\'index {index}')
 ```
 
 ```sh
-The country Finland has been found at index 0.
+Le pays Finland a été trouvé à l'index 0.
 ```
 
 ## Zip

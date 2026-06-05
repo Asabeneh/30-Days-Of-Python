@@ -103,7 +103,7 @@ Voici tous les symboles _strftime_ que nous utilisons pour formater l'heure. Un 
 
 ![strftime](../images/strftime.png)
 
-### Chaîne en heure avec *strptime*
+### Convertir une chaîne en objet datetime avec *strptime*
 Voici une [documentation](https://www.programiz.com/python-programming/datetime/strptime) qui aide à comprendre le format.
 
 ```py

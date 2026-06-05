@@ -421,7 +421,7 @@ Il est maintenant temps d'exprimer votre opinion sur l'auteur et 30DaysOfPython.
 ### Exercices : Niveau 1
 
 1. Déclarez une fonction _add_two_numbers_. Elle prend deux paramètres et retourne une somme.
-2. L'aire d'un cercle se calcule ainsi : area = π x r x r. Écrivez une fonction qui calcule _area_of_circle_.
+2. L'aire d'un cercle se calcule ainsi : aire = π x r x r. Écrivez une fonction qui calcule _area_of_circle_.
 3. Écrivez une fonction appelée add_all_nums qui prend un nombre arbitraire d'arguments et les additionne. Vérifiez si tous les éléments de la liste sont de type numérique. Sinon, donnez un retour approprié.
 4. La température en °C peut être convertie en °F avec cette formule : °F = (°C x 9/5) + 32. Écrivez une fonction qui convertit °C en °F, _convert_celsius_to_fahrenheit_.
 5. Écrivez une fonction appelée check_season, elle prend un paramètre month et retourne la saison : Automne, Hiver, Printemps ou Été.

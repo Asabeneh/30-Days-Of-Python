@@ -18,7 +18,7 @@
 
 ![30DaysOfPython](../images/30DaysOfPython_banner3@2x.png)
 
-- [Jour 6 :](#jour-6)
+- [📘 Jour 6](#-jour-6)
   - [Tuples](#tuples)
     - [Créer un tuple](#créer-un-tuple)
     - [Longueur d'un tuple](#longueur-dun-tuple)
@@ -32,11 +32,11 @@
     - [Exercices : Niveau 1](#exercices--niveau-1)
     - [Exercices : Niveau 2](#exercices--niveau-2)
 
-# Jour 6 :
+# 📘 Jour 6
 
 ## Tuples
 
-Un tuple est une collection ordonnée et non modifiable (immuable) de différents types de données. Les tuples s'écrivent entre parenthèses, (). Une fois qu'un tuple est créé, on ne peut pas modifier ses valeurs. On ne peut pas utiliser les méthodes add, insert, remove sur un tuple car il n'est pas modifiable (muable). Contrairement à la liste, le tuple a peu de méthodes. Méthodes liées aux tuples :
+Un tuple est une collection ordonnée et non modifiable (immuable) de différents types de données. Les tuples s'écrivent entre parenthèses, (). Une fois qu'un tuple est créé, on ne peut pas modifier ses valeurs. On ne peut pas utiliser les méthodes add, insert, remove sur un tuple car il n'est pas modifiable (mutable). Contrairement à la liste, le tuple a peu de méthodes. Méthodes liées aux tuples :
 
 - tuple() : créer un tuple vide
 - count() : compter le nombre d'occurrences d'un élément dans un tuple

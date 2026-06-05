@@ -113,7 +113,7 @@ remainder = a % b
 floor_division = a // b
 exponential = a ** b
 
-# J'aurais dû utiliser sum au lieu de total, mais sum est une fonction intégrée - essayez d'éviter de surcharger les fonctions intégrées
+# J'aurais dû utiliser sum au lieu de total, mais sum est une fonction intégrée - essayez d'éviter de masquer les fonctions intégrées
 print(total) # si vous n'étiquetez pas votre print avec une chaîne, vous ne savez jamais d'où vient le résultat
 print('a + b = ', total)
 print('a - b = ', diff)

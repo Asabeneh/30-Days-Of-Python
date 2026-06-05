@@ -119,7 +119,7 @@ print(closure_result(10))  # 20
 
 ## Décorateurs Python
 
-Un décorateur est un motif de conception en Python qui permet d'ajouter de nouvelles fonctionnalités à un objet existant sans modifier sa structure. Les décorateurs sont généralement appelés avant la définition de la fonction que vous souhaitez décorer.
+Un décorateur est un patron de conception en Python qui permet d'ajouter de nouvelles fonctionnalités à un objet existant sans modifier sa structure. Les décorateurs sont généralement appelés avant la définition de la fonction que vous souhaitez décorer.
 
 ### Créer des décorateurs
 
@@ -258,7 +258,7 @@ names_upper_cased = map(lambda name: name.upper(), names)
 print(list(names_upper_cased))    # ['ASABENEH', 'LIDIYA', 'ERMIAS', 'ABRAHAM']
 ```
 
-Ce que fait réellement map, c'est itérer sur une liste. Par exemple, il met les noms en majuscules et retourne une nouvelle liste.
+Ce que fait réellement map, c'est itérer sur une liste. Par exemple, elle met les noms en majuscules et retourne une nouvelle liste.
 
 ### Python - Fonction Filter
 
@@ -354,7 +354,7 @@ numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 8. Enchaînez deux itérateurs de liste ou plus (ex. arr.map(callback).filter(callback).reduce(callback)).
 9. Déclarez une fonction appelée get_string_lists qui prend une liste en paramètre et retourne une liste contenant uniquement les éléments de type chaîne.
 10. Utilisez reduce pour additionner tous les nombres de la liste numbers.
-11. Utilisez reduce pour concaténer tous les pays et produire cette phrase : Estonia, Finland, Sweden, Denmark, Norway, and Iceland are north European countries.
+11. Utilisez reduce pour concaténer tous les pays et produire cette phrase : Estonie, Finlande, Suède, Danemark, Norvège et Islande sont des pays d'Europe du Nord.
 12. Déclarez une fonction appelée categorize_countries qui retourne une liste de pays ayant un motif commun (vous pouvez trouver la [liste des pays](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/data/countries.py) dans ce dépôt sous countries.js (ex. 'land', 'ia', 'island', 'stan')).
 13. Créez une fonction retournant un dictionnaire, où les clés représentent les lettres de début des pays et les valeurs sont le nombre de noms de pays commençant par cette lettre.
 14. Déclarez une fonction get_first_ten_countries - elle retourne une liste des dix premiers pays de la liste countries.js dans le dossier data.

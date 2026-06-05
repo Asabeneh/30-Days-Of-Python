@@ -162,7 +162,7 @@ Python est un langage de programmation de haut niveau, polyvalent, open source, 
 
 Le défi convient aussi bien aux grands débutants qu'aux professionnels qui souhaitent acquérir des compétences en Python. Le terminer peut prendre de 30 à 100 jours ; les membres actifs du groupe Telegram ont statistiquement beaucoup plus de chances d'aller jusqu'au bout.
 
-Ce défi a été initialement rédigé en anglais simple, puis traduit en plusieurs langues. Il est conçu pour être motivant, accessible et exigeant. Il demande une réelle dévotion pour être accompli. Si vous apprenez mieux avec des vidéos, visitez la chaîne Washera sur YouTube : <a href="https://www.youtube.com/channel/UC7PNRuno1rzYPb1xLa4yktw">Washera YouTube channel</a>. Vous pouvez commencer par la vidéo [Python for absolute beginners](https://youtu.be/OCCWZheOesI). Abonnez-vous, posez vos questions dans les commentaires et soyez proactif ; l'auteur finit toujours par remarquer les étudiants impliqués.
+Ce défi a été initialement rédigé en anglais simple, puis traduit en plusieurs langues. Il est conçu pour être motivant, accessible et exigeant. Il demande un réel engagement pour être mené à bien. Si vous apprenez mieux avec des vidéos, visitez la chaîne Washera sur YouTube : <a href="https://www.youtube.com/channel/UC7PNRuno1rzYPb1xLa4yktw">Washera YouTube channel</a>. Vous pouvez commencer par la vidéo [Python for absolute beginners](https://youtu.be/OCCWZheOesI). Abonnez-vous, posez vos questions dans les commentaires et soyez proactif ; l'auteur finit toujours par remarquer les étudiants impliqués.
 
 L'auteur apprécie grandement vos retours et le partage de son contenu. Vous pouvez laisser votre témoignage ici : [link](https://www.asabeneh.com/testimonials)
 
@@ -219,7 +219,7 @@ Pour fermer le shell interactif, tapez simplement **exit()** juste après le sym
 
 Vous savez désormais comment ouvrir et fermer l'interpréteur interactif.
 
-Si vous écrivez du code syntaxiquement incorrect, Python lèvera une erreur. Faisons une erreur intentionnelle pour voir ce qu'il se passe :
+Si vous écrivez du code syntaxiquement incorrect, Python lèvera une erreur. Faisons une erreur intentionnelle pour voir ce qui se passe :
 
 ![Erreur de syntaxe invalide](../images/invalid_syntax_error.png)
 

@@ -18,7 +18,7 @@
 
 ![30DaysOfPython](../images/30DaysOfPython_banner3@2x.png)
 
-- [Jour 4](#jour-4)
+- [📘 Jour 4](#-jour-4)
   - [Chaînes de caractères](#chaînes-de-caractères)
     - [Créer une chaîne](#créer-une-chaîne)
     - [Concaténation de chaînes](#concaténation-de-chaînes)
@@ -36,7 +36,7 @@
     - [Méthodes de chaînes](#méthodes-de-chaînes)
   - [💻 Exercices - Jour 4](#-exercices---jour-4)
 
-# Jour 4
+# 📘 Jour 4
 
 ## Chaînes de caractères
 
@@ -537,8 +537,8 @@ print(challenge.startswith('thirty')) # False
 1. Concaténez les chaînes 'Thirty', 'Days', 'Of', 'Python' en une seule chaîne, 'Thirty Days Of Python'.
 2. Concaténez les chaînes 'Coding', 'For', 'All' en une seule chaîne, 'Coding For All'.
 3. Déclarez une variable nommée `company` et assignez-lui la valeur initiale `"Coding For All"`.
-4. Affichez la variable `company` en utilisant `_print()`.
-5. Affichez la longueur de la chaîne `company` avec `_len()` et `_print()`.
+4. Affichez la variable `company` en utilisant `print()`.
+5. Affichez la longueur de la chaîne `company` avec `len()` et `print()`.
 6. Convertissez tous les caractères en majuscules avec `upper()`.
 7. Convertissez tous les caractères en minuscules avec `lower()`.
 8. Utilisez les méthodes `capitalize()`, `title()`, `swapcase()` pour formater la valeur de la chaîne `Coding For All`.

@@ -44,7 +44,7 @@
 
 ## Ensembles
 
-Un ensemble est une collection d'éléments. Revenons à vos cours de mathématiques à l'école primaire ou secondaire. La définition mathématique d'un ensemble peut également s'appliquer en Python. Un ensemble est une collection d'éléments distincts, non ordonnés et non indexés. En Python, un ensemble est utilisé pour stocker des éléments uniques, et il est possible de trouver l'_union_, l'_intersection_, la _différence_, la _différence symétrique_, le _sous-ensemble_, le _sur-ensemble_ ainsi que les _ensembles conjoints_ et _disjoints_.
+Un ensemble est une collection d'éléments. Revenons à vos cours de mathématiques à l'école primaire ou secondaire. La définition mathématique d'un ensemble peut également s'appliquer en Python. Un ensemble est une collection d'éléments distincts, non ordonnés et non indexés. En Python, un ensemble est utilisé pour stocker des éléments uniques, et il est possible de trouver l'_union_, l'_intersection_, la _différence_, la _différence symétrique_, le _sous-ensemble_, le _sur-ensemble_ ainsi que les _ensembles non disjoints_ et _disjoints_.
 
 ### Créer un ensemble
 
@@ -373,7 +373,7 @@ python.symmetric_difference(dragon)  # {'r', 't', 'p', 'y', 'g', 'a', 'd', 'h'}
 
 ### Joindre des ensembles
 
-Si deux ensembles n'ont aucun élément commun, on les appelle des ensembles disjoints. Nous pouvons vérifier si deux ensembles sont conjoints ou disjoints en utilisant la méthode _isdisjoint()_.
+Si deux ensembles n'ont aucun élément commun, on les appelle des ensembles disjoints. Nous pouvons vérifier si deux ensembles sont non disjoints ou disjoints en utilisant la méthode _isdisjoint()_.
 
 ```py
 # syntax

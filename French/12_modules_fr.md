@@ -44,7 +44,7 @@
 
 ### Qu'est-ce qu'un module
 
-Un module est un fichier contenant un ensemble de codes ou de fonctions qui peuvent être inclus dans une application. Un module peut être un fichier contenant une seule variable, une fonction ou une grande base de code.
+Un module est un fichier contenant un ensemble de code ou de fonctions qui peuvent être inclus dans une application. Un module peut être un fichier contenant une seule variable, une fonction ou une grande base de code.
 
 ### Créer un module
 
@@ -141,7 +141,7 @@ python script.py Asabeneh 30DaysOfPython
 Le résultat :
 
 ```sh
-Welcome Asabeneh. Enjoy  30DayOfPython challenge! 
+Welcome Asabeneh. Enjoy 30DaysOfPython challenge! 
 ```
 
 Quelques commandes sys utiles :

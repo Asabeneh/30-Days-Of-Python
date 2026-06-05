@@ -1,6 +1,5 @@
-[<< Jour 1](./README_fr.md) | [Jour 3 >>](./03_operators_fr.md)
 <div align="center">
-  <h1> 30 Days Of Python: Jour 2 - Variables, Fonctions intégrées</h1>
+  <h1> 30 Jours de Python : Jour 2 - Variables, Fonctions intégrées</h1>
   <a class="header-badge" target="_blank" href="https://www.linkedin.com/in/asabeneh/">
   <img src="https://img.shields.io/badge/style--5eba00.svg?label=LinkedIn&logo=linkedin&style=social">
   </a>
@@ -15,7 +14,7 @@
 
 </div>
 
-[<< Jour 1](../readme.md) | [Jour 3 >>](../03_Day_Operators/03_operators.md)
+[<< Jour 1](./README_fr.md) | [Jour 3 >>](./03_operators_fr.md)
 
 ![30DaysOfPython](../images/30DaysOfPython_banner3@2x.png)
 
@@ -96,7 +95,7 @@ num-1
 
 Nous utiliserons la convention de nommage standard de Python adoptée par de nombreux développeurs Python. Les développeurs Python utilisent la convention de nommage snake_case. Nous utilisons un trait de soulignement après chaque mot pour une variable contenant plus d'un mot (ex. first_name, last_name, engine_rotation_speed). L'exemple ci-dessous illustre le nommage standard des variables ; le trait de soulignement est nécessaire lorsque le nom de la variable comporte plus d'un mot.
 
-Lorsque nous assignons un certain type de données à une variable, cela s'appelle une déclaration de variable. Par exemple, dans l'exemple ci-dessous, mon prénom est assigné à la variable first_name. Le signe égal est un opérateur d'assignation. Assigner signifie stocker des données dans la variable. Le signe égal en Python n'est pas une égalité mathématique.
+Lorsque nous assignons un certain type de données à une variable, cela s'appelle une déclaration de variable. Par exemple, dans l'exemple ci-dessous, mon prénom est affecté à la variable first_name. Le signe égal est un opérateur d'affectation. Affecter signifie stocker des données dans la variable. Le signe égal en Python n'est pas une égalité mathématique.
 
 _Exemple :_
 
@@ -153,7 +152,7 @@ Plusieurs variables peuvent également être déclarées sur une seule ligne :
 **Exemple :**
 
 ```py
-first_name, last_name, country, age, is_married = 'Asabeneh', 'Yetayeh', 'Helsink', 250, True
+first_name, last_name, country, age, is_married = 'Asabeneh', 'Yetayeh', 'Helsinki', 250, True
 
 print(first_name, last_name, country, age, is_married)
 print('First name:', first_name)
@@ -190,7 +189,7 @@ Il existe plusieurs types de données en Python. Pour identifier le type de donn
 first_name = 'Asabeneh'     # str (chaîne de caractères)
 last_name = 'Yetayeh'       # str
 country = 'Finland'         # str
-city= 'Helsinki'            # str
+city = 'Helsinki'            # str
 age = 250                   # int (entier), ce n'est pas mon vrai âge, ne vous inquiétez pas
 
 # Affichage des types
@@ -232,7 +231,7 @@ print(num_str)                  # '10'
 num_str = '10.6'
 num_float = float(num_str)  # Convertit d'abord la chaîne en float
 num_int = int(num_float)    # Ensuite convertit le float en int
-print('num_int', int(num_str))      # 10
+print('num_int', num_int)      # 10
 print('num_float', float(num_str))  # 10.6
 num_int = int(num_float)
 print('num_int', int(num_int))      # 10
@@ -302,4 +301,4 @@ Types de données numériques en Python :
 
 🎉 FÉLICITATIONS ! 🎉
 
-[<< Jour 1](../readme.md) | [Jour 3 >>](../03_Day_Operators/03_operators.md)
+[<< Jour 1](./README_fr.md) | [Jour 3 >>](./03_operators_fr.md)
