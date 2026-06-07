@@ -523,3 +523,7 @@ To run the python file check the image below. You can run the python file either
 🎉 CONGRATULATIONS ! 🎉
 
 [Day 2 >>](./02_Day_Variables_builtin_functions/02_variables_builtin_functions.md)
+
+## Additional Resources
+
+- Python Official Documentation: https://docs.python.org/3/
