@@ -1,6 +1,6 @@
 # Exercise: Level 1
 # 1. Check the python version you are using
-import sys 
+import sys # library to help us see the version we are using
 print(sys.version)
 
 # 2. Open the  python interactive shell and do the following operations. The operands are 3 and 4.
