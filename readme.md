@@ -33,7 +33,6 @@
 | 29 |  [Building API](./29_Day_Building_API/29_building_API.md)|
 | 30 |  [Conclusions](./30_Day_Conclusions/30_conclusions.md)|
 
-**🇫🇷 French translation** : [French](./French/README_fr.md)
 
 <small>🧡🧡🧡 HAPPY CODING 🧡🧡🧡</small>
 
@@ -124,7 +123,7 @@ Every contribution, big or small, makes a huge difference. Thank you for your su
 
 🇧🇷 [Portuguese](./Portuguese/README.md)
 🇨🇳 [中文](./Chinese/README.md)
-
+🇫🇷[French](./French/README_fr.md)
 [Day 2 >>](./02_Day_Variables_builtin_functions/02_variables_builtin_functions.md)
 
 ![30DaysOfPython](./images/30DaysOfPython_banner3@2x.png)
