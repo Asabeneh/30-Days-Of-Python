@@ -427,7 +427,7 @@ age = [22, 19, 24, 25, 26, 24, 25, 24]
 ### Exercices : Niveau 3
 
 1. Convertissez les âges en un ensemble et comparez la longueur de la liste et celle de l'ensemble. Laquelle est plus grande ?
-2. Expliquez la différence entre les types de données suivants : string, list, tuple et set
+2. Expliquez la différence entre les types de données suivants : chaîne, liste, tuple et ensemble
 3. _I am a teacher and I love to inspire and teach people._ Combien de mots uniques ont été utilisés dans cette phrase ? Utilisez les méthodes split et set pour obtenir les mots uniques.
 
 🎉 FÉLICITATIONS ! 🎉

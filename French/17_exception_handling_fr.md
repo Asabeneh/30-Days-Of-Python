@@ -54,7 +54,7 @@ except:
 try:
     print(10 + '5')
 except:
-    print('Something went wrong')
+    print('Quelque chose s\'est mal passé')
 ```
 
 Dans l'exemple ci-dessus, le second opérande est une chaîne. Nous pourrions le convertir en float ou int pour l'additionner au nombre et le faire fonctionner. Mais sans aucune modification, le second bloc, _except_, sera exécuté.
@@ -63,16 +63,16 @@ Dans l'exemple ci-dessus, le second opérande est une chaîne. Nous pourrions le
 
 ```py
 try:
-    name = input('Enter your name:')
-    year_born = input('Year you were born:')
+    name = input('Entrez votre nom : ')
+    year_born = input('Année de naissance : ')
     age = 2019 - year_born
-    print(f'You are {name}. And your age is {age}.')
+    print(f'Vous êtes {name}. Et vous avez {age} ans.')
 except:
-    print('Something went wrong')
+    print('Quelque chose s\'est mal passé')
 ```
 
 ```sh
-Something went wrong
+Quelque chose s'est mal passé
 ```
 
 Dans l'exemple ci-dessus, le bloc d'exception sera exécuté et nous ne savons pas exactement quel est le problème. Pour analyser le problème, nous pouvons utiliser les différents types d'erreurs avec except.
@@ -132,10 +132,10 @@ On peut aussi raccourcir le code ci-dessus comme suit :
 
 ```py
 try:
-    name = input('Enter your name:')
-    year_born = input('Year you born:')
+    name = input('Entrez votre nom : ')
+    year_born = input('Année de naissance : ')
     age = 2019 - int(year_born)
-    print(f'You are {name}. And your age is {age}.')
+    print(f'Vous êtes {name}. Et vous avez {age} ans.')
 except Exception as e:
     print(e)
 

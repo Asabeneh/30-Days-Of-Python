@@ -58,8 +58,8 @@ if condition:
 ```py
 a = 3
 if a > 0:
-    print('A is a positive number')
-# A is a positive number
+    print('A est un nombre positif')
+# A est un nombre positif
 ```
 
 Comme vous pouvez le voir dans l'exemple ci-dessus, 3 est plus grand que 0. La condition était vraie et le bloc de code a été exécuté. Cependant, si la condition est fausse, nous ne voyons pas le résultat. Pour voir le résultat quand la condition est fausse, il faut un autre bloc, qui sera _else_.
@@ -81,9 +81,9 @@ else:
 ```py
 a = 3
 if a < 0:
-    print('A is a negative number')
+    print('A est un nombre négatif')
 else:
-    print('A is a positive number')
+    print('A est un nombre positif')
 ```
 
 La condition ci-dessus est fausse, donc le bloc else s'exécute. Et si notre condition a plus de deux cas ? Nous pourrions utiliser _elif_.
@@ -108,11 +108,11 @@ else:
 ```py
 a = 0
 if a > 0:
-    print('A is a positive number')
+    print('A est un nombre positif')
 elif a < 0:
-    print('A is a negative number')
+    print('A est un nombre négatif')
 else:
-    print('A is zero')
+    print('A est zéro')
 ```
 
 ### Format raccourci
@@ -126,7 +126,7 @@ code if condition else code
 
 ```py
 a = 3
-print('A is positive') if a > 0 else print('A is negative') # première condition satisfaite, 'A is positive' sera affiché
+print('A est positif') if a > 0 else print('A est négatif') # première condition satisfaite, 'A est positif' sera affiché
 ```
 
 ### Conditions imbriquées
@@ -147,13 +147,13 @@ if condition:
 a = 0
 if a > 0:
     if a % 2 == 0:
-        print('A is a positive and even integer')
+        print('A est un entier positif et pair')
     else:
-        print('A is a positive number')
+        print('A est un nombre positif')
 elif a == 0:
-    print('A is zero')
+    print('A est zéro')
 else:
-    print('A is a negative number')
+    print('A est un nombre négatif')
 
 ```
 
@@ -172,13 +172,13 @@ if condition and condition:
 ```py
 a = 0
 if a > 0 and a % 2 == 0:
-        print('A is an even and positive integer')
+        print('A est un entier pair et positif')
 elif a > 0 and a % 2 !=  0:
-     print('A is a positive integer')
+     print('A est un entier positif')
 elif a == 0:
-    print('A is zero')
+    print('A est zéro')
 else:
-    print('A is negative')
+    print('A est négatif')
 ```
 
 ### If et opérateur logique Or
@@ -195,9 +195,9 @@ if condition or condition:
 user = 'James'
 access_level = 3
 if user == 'admin' or access_level >= 4:
-        print('Access granted!')
+        print('Accès accordé !')
 else:
-    print('Access denied!')
+    print('Accès refusé !')
 ```
 
 🌕 Vous faites un excellent travail. N'abandonnez jamais, car les grandes choses prennent du temps. Vous venez de terminer les défis du jour 9 et vous êtes 9 étapes plus loin vers l'excellence. Entraînez votre cerveau et vos muscles avec les exercices suivants.

@@ -129,7 +129,7 @@ Exemple d'un fichier script.py :
 ```py
 import sys
 #print(sys.argv[0], argv[1],sys.argv[2])  # cette ligne afficherait : nom_du_fichier argument1 argument2
-print('Welcome {}. Enjoy  {} challenge!'.format(sys.argv[1], sys.argv[2]))
+print('Bienvenue {}. Profitez du défi {} !'.format(sys.argv[1], sys.argv[2]))
 ```
 
 Pour vérifier le fonctionnement de ce script, j'ai écrit dans la ligne de commande :
@@ -201,7 +201,7 @@ print(sqrt(2))            # 1.4142135623730951
 print(pow(2, 3))          # 8.0
 print(floor(9.81))        # 9
 print(ceil(9.81))         # 10
-print(math.log10(100))    # 2
+print(log10(100))    # 2
 
 ```
 

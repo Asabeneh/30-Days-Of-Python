@@ -107,7 +107,7 @@ print(add_two_numbers())
 
 ### Fonction avec paramètres
 
-Dans une fonction, nous pouvons passer différents types de données (number, string, boolean, list, tuple, dictionary ou set) comme paramètres.
+Dans une fonction, nous pouvons passer différents types de données (nombre, chaîne, booléen, liste, tuple, dictionnaire ou ensemble) comme paramètres.
 
 - Paramètre unique : si notre fonction prend un paramètre, nous devons l'appeler avec un argument
 
@@ -171,25 +171,25 @@ print(sum_of_numbers(100)) # 5050
 ```py
 def generate_full_name (first_name, last_name):
     space = ' '
-      full_name = first_name + space + last_name
-      return full_name
-print('Full Name: ', generate_full_name('Asabeneh','Yetayeh'))
+    full_name = first_name + space + last_name
+    return full_name
+print('Nom complet : ', generate_full_name('Asabeneh','Yetayeh'))
 
 def sum_two_numbers (num_one, num_two):
     sum = num_one + num_two
     return sum
-print('Sum of two numbers: ', sum_two_numbers(1, 9))
+print('Somme de deux nombres : ', sum_two_numbers(1, 9))
 
 def calculate_age (current_year, birth_year):
     age = current_year - birth_year
     return age 
 
-print('Age: ', calculate_age(2021, 1819))
+print('Âge : ', calculate_age(2021, 1819))
 
 def weight_of_object (mass, gravity):
-    weight = str(mass * gravity)+ ' N' # la valeur doit d'abord être convertie en chaîne
+    weight = str(mass * gravity)+ ' N'
     return weight
-print('Weight of an object in Newtons: ', weight_of_object(100, 9.81))
+print('Poids d\'un objet en Newtons : ', weight_of_object(100, 9.81))
 ```
 
 ### Passer des arguments avec clé et valeur
@@ -253,7 +253,7 @@ print(add_two_numbers(2, 3))
 def calculate_age (current_year, birth_year):
     age = current_year - birth_year
     return age
-print('Age: ', calculate_age(2019, 1819))
+print('Âge : ', calculate_age(2019, 1819))
 ```
 
 - Retourner un booléen :
@@ -300,7 +300,7 @@ function_name(arg)
 
 ```py
 def greetings (name = 'Peter'):
-    message = name + ', welcome to Python for Everyone!'
+    message = name + ', bienvenue à Python pour tous !'
     return message
 print(greetings())
 print(greetings('Asabeneh'))
@@ -316,13 +316,13 @@ print(generate_full_name('David','Smith'))
 def calculate_age (birth_year,current_year = 2021):
     age = current_year - birth_year
     return age 
-print('Age: ', calculate_age(1821))
+print('Âge : ', calculate_age(1821))
 
 def weight_of_object (mass, gravity = 9.81):
     weight = str(mass * gravity)+ ' N' # la valeur doit d'abord être convertie en chaîne
     return weight
-print('Weight of an object in Newtons: ', weight_of_object(100)) # 9.81 - gravité moyenne à la surface de la Terre
-print('Weight of an object in Newtons: ', weight_of_object(100, 1.62)) # gravité à la surface de la Lune
+print('Poids d\'un objet en Newtons : ', weight_of_object(100)) # 9.81 - gravité moyenne à la surface de la Terre
+print('Poids d\'un objet en Newtons : ', weight_of_object(100, 1.62)) # gravité à la surface de la Lune
 ```
 
 ### Nombre arbitraire d'arguments
@@ -368,11 +368,11 @@ Vous pouvez appeler une fonction qui a des arguments nommés en utilisant un dic
 # Définissez une fonction qui prend deux arguments : 'name' et 'location'
 def greet(name, location):
     # Affiche un message de salutation utilisant les arguments fournis
-    print("Hi there", name, "how is the weather in", location)
+    print("Bonjour", name, "quel temps fait-il à", location)
 
 # Appelez la fonction en utilisant des arguments nommés
 greet(name="Alice", location="New York")  
-# Sortie : Hi there Alice how is the weather in New York
+# Sortie : Bonjour Alice quel temps fait-il à New York
 
 # Créez un dictionnaire avec des clés correspondant aux noms des paramètres de la fonction
 my_dict = {"name": "Alice", "location": "New York"}
@@ -381,7 +381,7 @@ my_dict = {"name": "Alice", "location": "New York"}
 greet(**my_dict)  
 # L'opérateur ** dépaquette le dictionnaire, passant ses paires clé-valeur
 # comme arguments nommés à la fonction.
-# Sortie : Hi there Alice how is the weather in New York
+# Sortie : Bonjour Alice quel temps fait-il à New York
 ```
 
 ### Nombre arbitraire d'arguments nommés
@@ -390,11 +390,11 @@ Vous pouvez également définir une fonction pour accepter un nombre arbitraire 
 
 ```py
 def arbitrary_named_args(**args):
-    print("I received an arbitrary number of arguments, totaling", len(args))
-    print("They are provided as a dictionary in my function:", type(args))
-    print("Let's print them:")
+    print("J'ai reçu un nombre arbitraire d'arguments, soit", len(args))
+    print("Ils sont fournis sous forme de dictionnaire dans ma fonction :", type(args))
+    print("Affichons-les :")
     for k, v in args.items():
-        print(" * key:", k, "value:", v)
+        print(" * clé :", k, "valeur :", v)
 ```
 
 Évitez généralement cela sauf si nécessaire, car cela rend plus difficile la compréhension de ce que la fonction accepte et fait.

@@ -133,16 +133,16 @@ Affichons et trouvons aussi la longueur des variables déclarées plus haut :
 ```py
 # Affichage des valeurs stockées dans les variables
 
-print('First name:', first_name)
-print('First name length:', len(first_name))
-print('Last name: ', last_name)
-print('Last name length: ', len(last_name))
-print('Country: ', country)
-print('City: ', city)
-print('Age: ', age)
-print('Married: ', is_married)
-print('Skills: ', skills)
-print('Person information: ', person_info)
+print('Prénom :', first_name)
+print('Longueur du prénom :', len(first_name))
+print('Nom : ', last_name)
+print('Longueur du nom : ', len(last_name))
+print('Pays : ', country)
+print('Ville : ', city)
+print('Âge : ', age)
+print('Marié : ', is_married)
+print('Compétences : ', skills)
+print('Infos personne : ', person_info)
 ```
 
 ### Déclaration de plusieurs variables sur une ligne
@@ -155,19 +155,19 @@ Plusieurs variables peuvent également être déclarées sur une seule ligne :
 first_name, last_name, country, age, is_married = 'Asabeneh', 'Yetayeh', 'Helsinki', 250, True
 
 print(first_name, last_name, country, age, is_married)
-print('First name:', first_name)
-print('Last name: ', last_name)
-print('Country: ', country)
-print('Age: ', age)
-print('Married: ', is_married)
+print('Prénom :', first_name)
+print('Nom : ', last_name)
+print('Pays : ', country)
+print('Âge : ', age)
+print('Marié : ', is_married)
 ```
 
 Obtenir une entrée utilisateur à l'aide de la fonction intégrée _input()_. Assignons les données obtenues d'un utilisateur aux variables first_name et age.
 **Exemple :**
 
 ```py
-first_name = input('What is your name: ')
-age = input('How old are you? ')
+first_name = input('Quel est votre nom : ')
+age = input('Quel âge avez-vous ? ')
 
 print(first_name)
 print(age)
@@ -247,7 +247,7 @@ print(first_name_to_list)            # ['A', 's', 'a', 'b', 'e', 'n', 'e', 'h']
 
 Types de données numériques en Python :
 
-1. Entiers (Integers) : nombres (négatifs, zéro et positifs)
+1. Entiers : nombres (négatifs, zéro et positifs)
    Exemple :
    ... -3, -2, -1, 0, 1, 2, 3 ...
 

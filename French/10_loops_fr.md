@@ -281,8 +281,8 @@ for number in numbers:
     print(number)
     if number == 3:
         continue
-    print('Next number should be ', number + 1) if number != 5 else print("loop's end") # pour le format raccourci, les instructions if et else sont toutes deux nécessaires
-print('outside the loop')
+    print('Le nombre suivant devrait être ', number + 1) if number != 5 else print("fin de la boucle") # pour le format raccourci, les instructions if et else sont toutes deux nécessaires
+print('en dehors de la boucle')
 ```
 
 Dans l'exemple ci-dessus, si le nombre est égal à 3, l'étape _après_ la condition (mais à l'intérieur de la boucle) est sautée et l'exécution de la boucle continue s'il reste des itérations.
@@ -361,7 +361,7 @@ Si nous voulons afficher un message lorsque la boucle se termine, nous utilisons
 for iterator in range(start, end, step):
     do something
 else:
-    print('The loop ended')
+    print('La boucle est terminée')
 ```
 
 **Exemple :**
@@ -370,7 +370,7 @@ else:
 for number in range(11):
     print(number)   # affiche de 0 à 10, 11 non inclus
 else:
-    print('The loop stops at', number)
+    print('La boucle s\'arrête à', number)
 ```
 
 ### Pass

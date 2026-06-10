@@ -3,35 +3,35 @@
 | # Jour | Sujet |
 | :---: | :---: |
 | 01 | [Introduction](./README_fr.md) |
-| 02 | [Variables et fonctions intégrées](./02_Day_Variables_builtin_functions/02_variables_builtin_functions_fr.md) |
+| 02 | [Variables et fonctions intégrées](./02_variables_builtin_functions_fr.md) |
 | 03 | [Opérateurs](./03_operators_fr.md) |
 | 04 | [Chaînes de caractères](./04_strings_fr.md) |
-| 05 | [Listes](./05_Day_Lists/05_lists_fr.md) |
-| 06 | [Tuples](./06_Day_Tuples/06_tuples_fr.md) |
-| 07 | [Ensembles](./07_Day_Sets/07_sets_fr.md) |
-| 08 | [Dictionnaires](./08_Day_Dictionaries/08_dictionaries_fr.md) |
-| 09 | [Conditionnelles](./09_Day_Conditionals/09_conditionals_fr.md) |
-| 10 | [Boucles](./10_Day_Loops/10_loops_fr.md) |
-| 11 | [Fonctions](./11_Day_Functions/11_functions_fr.md) |
-| 12 | [Modules](./12_Day_Modules/12_modules_fr.md) |
-| 13 | [Compréhension de listes](./13_Day_List_comprehension/13_list_comprehension_fr.md) |
-| 14 | [Fonctions d'ordre supérieur](./14_Day_Higher_order_functions/14_higher_order_functions_fr.md) |
-| 15 | [Types d'erreurs en Python](./15_Day_Python_type_errors/15_python_type_errors_fr.md) |
-| 16 | [Dates et heures en Python](./16_Day_Python_date_time/16_python_datetime_fr.md) |
-| 17 | [Gestion des exceptions](./17_Day_Exception_handling/17_exception_handling_fr.md) |
-| 18 | [Expressions régulières](./18_Day_Regular_expressions/18_regular_expressions_fr.md) |
-| 19 | [Gestion de fichiers](./19_Day_File_handling/19_file_handling_fr.md) |
-| 20 | [Gestionnaire de paquets](./20_Day_Python_package_manager/20_python_package_manager_fr.md) |
-| 21 | [Classes et objets](./21_Day_Classes_and_objects/21_classes_and_objects_fr.md) |
-| 22 | [Web scraping](./22_Day_Web_scraping/22_web_scraping_fr.md) |
-| 23 | [Environnements virtuels](./23_Day_Virtual_environment/23_virtual_environment_fr.md) |
-| 24 | [Statistiques](./24_Day_Statistics/24_statistics_fr.md) |
-| 25 | [Pandas](./25_Day_Pandas/25_pandas_fr.md) |
-| 26 | [Python sur le web](./26_Day_Python_web/26_python_web_fr.md) |
-| 27 | [Python et MongoDB](./27_Day_Python_with_mongodb/27_python_with_mongodb_fr.md) |
-| 28 | [API](./28_Day_API/28_API_fr.md) |
-| 29 | [Construire une API](./29_Day_Building_API/29_building_API_fr.md) |
-| 30 | [Conclusions](./30_Day_Conclusions/30_conclusions_fr.md) |
+| 05 | [Listes](./05_lists_fr.md) |
+| 06 | [Tuples](./06_tuples_fr.md) |
+| 07 | [Ensembles](./07_sets_fr.md) |
+| 08 | [Dictionnaires](./08_dictionaries_fr.md) |
+| 09 | [Conditionnelles](./09_conditionals_fr.md) |
+| 10 | [Boucles](./10_loops_fr.md) |
+| 11 | [Fonctions](./11_functions_fr.md) |
+| 12 | [Modules](./12_modules_fr.md) |
+| 13 | [Compréhension de listes](./13_list_comprehension_fr.md) |
+| 14 | [Fonctions d'ordre supérieur](./14_higher_order_functions_fr.md) |
+| 15 | [Types d'erreurs en Python](./15_python_type_errors_fr.md) |
+| 16 | [Dates et heures en Python](./16_python_datetime_fr.md) |
+| 17 | [Gestion des exceptions](./17_exception_handling_fr.md) |
+| 18 | [Expressions régulières](./18_regular_expressions_fr.md) |
+| 19 | [Gestion de fichiers](./19_file_handling_fr.md) |
+| 20 | [Gestionnaire de paquets](./20_python_package_manager_fr.md) |
+| 21 | [Classes et objets](./21_classes_and_objects_fr.md) |
+| 22 | [Web scraping](./22_web_scraping_fr.md) |
+| 23 | [Environnements virtuels](./23_virtual_environment_fr.md) |
+| 24 | [Statistiques](./24_statistics_fr.md) |
+| 25 | [Pandas](./25_pandas_fr.md) |
+| 26 | [Python sur le web](./26_python_web_fr.md) |
+| 27 | [Python et MongoDB](./27_python_with_mongodb_fr.md) |
+| 28 | [API](./28_API_fr.md) |
+| 29 | [Construire une API](./29_building_API_fr.md) |
+| 30 | [Conclusions](./30_conclusions_fr.md) |
 
 <small>🧡🧡🧡 BON CODAGE 🧡🧡🧡</small>
 
@@ -114,7 +114,7 @@ Chaque contribution, petite ou grande, fait une énorme différence. Merci pour 
 
 🇧🇷 [Portuguese](./Portuguese/README.md) | 🇨🇳 [中文](./Chinese/README.md)
 
-[Aller au Jour 2 >>](./02_Day_Variables_builtin_functions/02_variables_builtin_functions_fr.md)
+[Aller au Jour 2 >>](./02_variables_builtin_functions_fr.md)
 
 ![30DaysOfPython](.././images/30DaysOfPython_banner3@2x.png)
 
@@ -501,4 +501,4 @@ Vous êtes incroyable ! Vous venez de terminer le Jour 1. C'est un excellent dé
 
 🎉 FÉLICITATIONS ! 🎉
 
-[Aller au Jour 2 >>](./02_Day_Variables_builtin_functions/02_variables_builtin_functions_fr.md)
+[Aller au Jour 2 >>](./02_variables_builtin_functions_fr.md)

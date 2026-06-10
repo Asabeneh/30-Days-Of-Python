@@ -80,7 +80,7 @@ Jupyter notebook est disponible si vous préférez [jupyter notebook](https://gi
     python_list = [1,2,3,4,5]
 
     # Vérification des types de données
-    print('Type:', type (python_list)) # <class 'list'>
+    print('Type :', type (python_list)) # <class 'list'>
     #
     print(python_list) # [1, 2, 3, 4, 5]
 
@@ -964,7 +964,7 @@ sd :  18.913709183069525
 print(two_dimension_array)
 print('Colonne avec le minimum : ', np.amin(two_dimension_array,axis=0))
 print('Colonne avec le maximum : ', np.amax(two_dimension_array,axis=0))
-print('=== Ligne ==')
+print('=== Ligne ===')
 print('Ligne avec le minimum : ', np.amin(two_dimension_array,axis=1))
 print('Ligne avec le maximum : ', np.amax(two_dimension_array,axis=1))
 ```
@@ -984,10 +984,10 @@ print('Ligne avec le maximum : ', np.amax(two_dimension_array,axis=1))
 a = [1,2,3]
 
 # Répéter tout 'a' deux fois
-print('Tile :   ', np.tile(a, 2))
+print('Répétition :   ', np.tile(a, 2))
 
 # Répéter chaque élément de 'a' deux fois
-print('Repeat : ', np.repeat(a, 2))
+print('Répéter : ', np.repeat(a, 2))
 
 ```
 

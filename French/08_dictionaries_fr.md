@@ -69,7 +69,7 @@ person = {
     }
 ```
 
-Le dictionnaire ci-dessus montre qu'une valeur peut être de n'importe quel type de données : string, boolean, list, tuple, set ou un dictionnaire.
+Le dictionnaire ci-dessus montre qu'une valeur peut être de n'importe quel type de données : chaîne, booléen, liste, tuple, ensemble ou un dictionnaire.
 
 ### Longueur d'un dictionnaire
 
@@ -257,7 +257,7 @@ person = {
     }
 person.pop('first_name')        # Supprime l'élément first_name
 person.popitem()                # Supprime l'élément address
-del person['is_married']        # Supprime l'élément is_married
+del person['is_marred']        # Supprime l'élément is_marred
 ```
 
 ### Convertir un dictionnaire en une liste d'éléments

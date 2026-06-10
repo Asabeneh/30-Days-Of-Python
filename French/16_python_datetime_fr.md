@@ -26,6 +26,7 @@
     - [Différence entre deux instants avec](#différence-entre-deux-instants-avec)
     - [Différence entre deux instants avec *timedelta*](#différence-entre-deux-instants-avec-timedelta)
   - [💻 Exercices : Jour 16](#-exercices--jour-16)
+
 # 📘 Jour 16
 
 ## Datetime en Python
@@ -84,19 +85,19 @@ from datetime import datetime
 # date et heure actuelles
 now = datetime.now()
 t = now.strftime("%H:%M:%S")
-print("time:", t)           # time: 18:21:40
+print("heure :", t)           # heure : 18:21:40
 time_one = now.strftime("%m/%d/%Y, %H:%M:%S")
 # format mm/dd/YY H:M:S
-print("time one:", time_one)        # time one: 06/28/2022, 18:21:40
+print("heure une :", time_one)        # heure une : 06/28/2022, 18:21:40
 time_two = now.strftime("%d/%m/%Y, %H:%M:%S")
 # format dd/mm/YY H:M:S
-print("time two:", time_two)        # time two: 28/06/2022, 18:21:40
+print("heure deux :", time_two)        # heure deux : 28/06/2022, 18:21:40
 ```
 
 ```sh
-time: 01:05:01
-time one: 12/05/2019, 01:05:01
-time two: 05/12/2019, 01:05:01
+heure : 01:05:01
+heure une : 12/05/2019, 01:05:01
+heure deux : 05/12/2019, 01:05:01
 ```
 
 Voici tous les symboles _strftime_ que nous utilisons pour formater l'heure. Un exemple de tous les formats pour ce module.
@@ -109,14 +110,14 @@ Voici une [documentation](https://www.programiz.com/python-programming/datetime/
 ```py
 from datetime import datetime
 date_string = "5 December, 2019"
-print("date_string =", date_string)     # date_string = 5 December, 2019
+print("chaîne_date =", date_string)     # chaîne_date = 5 December, 2019
 date_object = datetime.strptime(date_string, "%d %B, %Y")
-print("date_object =", date_object)     # date_object = 2019-12-05 00:00:00
+print("objet_date =", date_object)     # objet_date = 2019-12-05 00:00:00
 ```
 
 ```sh
-date_string = 5 December, 2019
-date_object = 2019-12-05 00:00:00
+chaîne_date = 5 December, 2019
+objet_date = 2019-12-05 00:00:00
 ```
 
 ### Utiliser *date* depuis *datetime*
@@ -125,12 +126,12 @@ date_object = 2019-12-05 00:00:00
 from datetime import date
 d = date(2020, 1, 1)
 print(d)        # 2020-01-01
-print('Current date:', d.today())    # 2019-12-05
+print('Date actuelle :', d.today())    # 2019-12-05
 # objet date pour la date d'aujourd'hui
 today = date.today()
-print("Current year:", today.year)   # 2019
-print("Current month:", today.month) # 12
-print("Current day:", today.day)     # 5
+print("Année actuelle :", today.year)   # 2019
+print("Mois actuel :", today.month) # 12
+print("Jour actuel :", today.day)     # 5
 ```
 
 ### Objets Time pour représenter l'heure
@@ -165,12 +166,12 @@ today = date(year=2019, month=12, day=5)
 new_year = date(year=2020, month=1, day=1)
 time_left_for_newyear = new_year - today
 # Temps restant avant le nouvel an : 27 days, 0:00:00
-print('Time left for new year: ', time_left_for_newyear)  # Time left for new year:  27 days, 0:00:00
+print('Temps restant avant le nouvel an : ', time_left_for_newyear)  # Temps restant avant le nouvel an :  27 days, 0:00:00
 
 t1 = datetime(year = 2019, month = 12, day = 5, hour = 0, minute = 59, second = 0)
 t2 = datetime(year = 2020, month = 1, day = 1, hour = 0, minute = 0, second = 0)
 diff = t2 - t1
-print('Time left for new year:', diff) # Time left for new year: 26 days, 23: 01: 00
+print('Temps restant avant le nouvel an :', diff) # Temps restant avant le nouvel an : 26 days, 23: 01: 00
 ```
 
 ### Différence entre deux instants avec *timedelta*

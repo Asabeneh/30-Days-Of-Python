@@ -219,7 +219,7 @@ En plus des opérateurs de comparaison ci-dessus, Python utilise :
 print('1 is 1', 1 is 1)                   # True - car les valeurs de données sont identiques
 print('1 is not 2', 1 is not 2)           # True - car 1 n'est pas 2
 print('A in Asabeneh', 'A' in 'Asabeneh') # True - A trouvé dans la chaîne
-print('B not in Asabeneh', 'B' in 'Asabeneh') # False - il n'y a pas de B majuscule
+print('B in Asabeneh', 'B' in 'Asabeneh') # False - il n'y a pas de B majuscule
 print('coding' in 'coding for all') # True - car coding for all contient le mot coding
 print('a in an:', 'a' in 'an')      # True
 print('4 is 2 ** 2:', 4 is 2 ** 2)   # True

@@ -100,18 +100,18 @@ En Python et dans d'autres langages, `\` suivi d'un caractère forme une séquen
 Voyons maintenant leur utilisation avec des exemples.
 
 ```py
-print('I hope everyone is enjoying the Python Challenge.\nAre you ?') # saut de ligne
-print('Days\tTopics\tExercises') # tabulation ou 4 espaces
-print('Day 1\t5\t5')
-print('Day 2\t6\t20')
-print('Day 3\t5\t23')
-print('Day 4\t1\t35')
-print('This is a backslash  symbol (\\)') # Pour écrire un antislash
-print('In every programming language it starts with \"Hello, World!\"') # guillemet double dans une chaîne simple
+print('J\'espère que tout le monde apprécie le Python Challenge.\nEt vous ?') # saut de ligne
+print('Jours\tSujets\tExercices') # tabulation ou 4 espaces
+print('Jour 1\t5\t5')
+print('Jour 2\t6\t20')
+print('Jour 3\t5\t23')
+print('Jour 4\t1\t35')
+print('Ceci est un symbole antislash (\\)') # Pour écrire un antislash
+print('Dans tous les langages de programmation, on commence par \"Hello, World!\"') # guillemet double dans une chaîne simple
 
 # affichage
-I hope every one is enjoying the Python Challenge.
-Are you ?
+J'espère que tout le monde apprécie le Python Challenge.
+Et vous ?
 Days  Topics  Exercises
 Day 1	5	    5
 Day 2	6	    20
@@ -161,7 +161,7 @@ Ce format a été introduit dans Python 3.
 first_name = 'Asabeneh'
 last_name = 'Yetayeh'
 language = 'Python'
-formated_string = 'I am {} {}. I teach {}'.format(first_name, last_name, language)
+formated_string = 'Je suis {} {}. J\'enseigne {}'.format(first_name, last_name, language)
 print(formated_string)
 a = 4
 b = 3
@@ -187,7 +187,7 @@ print('{} ** {} = {}'.format(a, b, a ** b))
 radius = 10
 pi = 3.14
 area = pi * radius ** 2
-formated_string = 'The area of a circle with a radius {} is {:.2f}.'.format(radius, area) # 2 décimales
+formated_string = 'L\'aire d\'un cercle de rayon {} est {:.2f}.'.format(radius, area) # 2 décimales
 print(formated_string)
 
 ```
@@ -349,14 +349,14 @@ last_name = 'Yetayeh'
 age = 250
 job = 'teacher'
 country = 'Finland'
-sentence = 'I am {} {}. I am a {}. I am {} years old. I live in {}.'.format(first_name, last_name, job, age, country)
-print(sentence) # I am Asabeneh Yetayeh. I am 250 years old. I am a teacher. I live in Finland.
+sentence = 'Je suis {} {}. Je suis {}. J\'ai {} ans. J\'habite à {}.'.format(first_name, last_name, job, age, country)
+print(sentence) # Je suis Asabeneh Yetayeh. J'ai 250 ans. Je suis enseignant. J'habite en Finlande.
 
 radius = 10
 pi = 3.14
 area = pi * radius ** 2
-result = 'The area of a circle with radius {} is {}'.format(str(radius), str(area))
-print(result) # The area of a circle with radius 10 is 314
+result = 'L\'aire d\'un cercle de rayon {} est {}'.format(str(radius), str(area))
+print(result) # L'aire d'un cercle de rayon 10 est 314
 ```
 
 - index() : Renvoie le plus petit indice d'une sous-chaîne ; des arguments supplémentaires indiquent les indices de début et de fin (par défaut 0 et longueur - 1). Lève une ValueError si la sous-chaîne n'est pas trouvée.

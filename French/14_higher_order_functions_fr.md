@@ -130,7 +130,7 @@ Pour créer une fonction décoratrice, nous avons besoin d'une fonction externe 
 ```py
 # Fonction normale
 def greeting():
-    return 'Welcome to Python'
+    return 'Bienvenue à Python'
 def uppercase_decorator(function):
     def wrapper():
         func = function()
@@ -138,7 +138,7 @@ def uppercase_decorator(function):
         return make_uppercase
     return wrapper
 g = uppercase_decorator(greeting)
-print(g())          # WELCOME TO PYTHON
+print(g())          # BIENVENUE À PYTHON
 
 ## Implémentons l'exemple ci-dessus avec un décorateur
 
@@ -152,8 +152,8 @@ def uppercase_decorator(function):
     return wrapper
 @uppercase_decorator
 def greeting():
-    return 'Welcome to Python'
-print(greeting())   # WELCOME TO PYTHON
+    return 'Bienvenue à Python'
+print(greeting())   # BIENVENUE À PYTHON
 
 ```
 
@@ -184,8 +184,8 @@ def split_string_decorator(function):
 @split_string_decorator
 @uppercase_decorator     # l'ordre des décorateurs est important dans ce cas - .upper() ne fonctionne pas avec les listes
 def greeting():
-    return 'Welcome to Python'
-print(greeting())   # ['WELCOME', 'TO', 'PYTHON']
+    return 'Bienvenue à Python'
+print(greeting())   # ['BIENVENUE', 'À', 'PYTHON']
 ```
 
 ### Accepter des paramètres dans les fonctions décoratrices
@@ -196,12 +196,12 @@ La plupart du temps, nous avons besoin que nos fonctions prennent des paramètre
 def decorator_with_parameters(function):
     def wrapper_accepting_parameters(para1, para2, para3):
         function(para1, para2, para3)
-        print("I live in {}".format(para3))
+        print("Je vis à {}".format(para3))
     return wrapper_accepting_parameters
 
 @decorator_with_parameters
 def print_full_name(first_name, last_name, country):
-    print("I am {} {}. I love to teach.".format(
+    print("Je suis {} {}. J'aime enseigner.".format(
         first_name, last_name))
 
 print_full_name("Asabeneh", "Yetayeh",'Finland')
