@@ -15,7 +15,7 @@ person_info = {
     'city': 'Helsinki'
 }
 
-# Taking the user name as an input
+# Taking the user name and job role as an input
 input("Enter your name: ")
 input("Enter your job role: ")
 
