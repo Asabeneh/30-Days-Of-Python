@@ -17,6 +17,7 @@ person_info = {
 
 # Taking the user name as an input
 input("Enter your name: ")
+input("Enter your job role: ")
 
 # Printing the values stored in the variables
 
