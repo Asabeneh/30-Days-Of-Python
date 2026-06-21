@@ -15,6 +15,9 @@ person_info = {
     'city': 'Helsinki'
 }
 
+# Taking the user name as an input
+input("Enter your name: ")
+
 # Printing the values stored in the variables
 
 print('First name:', first_name)
