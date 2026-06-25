@@ -96,8 +96,9 @@ len(tpl)
   last_fruit = fruits[last_index]
   ```
 
-- Negative indexing
-  Negative indexing means beginning from the end, -1 refers to the last item, -2 refers to the second last and the negative of the list/tuple length refers to the first item.
+- Negative indexing 
+  means beginning from the end, -1 refers to the last item, -2 refers to the second last and the negative of the list/tuple length refers to the first item.
+  
   ![Tuple Negative indexing](../images/tuple_negative_indexing.png)
 
   ```py
