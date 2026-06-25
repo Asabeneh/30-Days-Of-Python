@@ -179,7 +179,7 @@ numbers = range(2, 7)  # normal call with separate arguments
 print(list(numbers)) # [2, 3, 4, 5, 6]
 args = [2, 7]
 numbers = range(*args)  # call with arguments unpacked from a list
-print(numbers)      # [2, 3, 4, 5,6]
+print(list(numbers))      # [2, 3, 4, 5, 6]
 
 ```
 
