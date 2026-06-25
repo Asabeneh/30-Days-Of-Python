@@ -448,7 +448,7 @@ The **__init__**.py exposes specified resources from its modules to be imported 
    1. the min, max, mean, median, standard deviation of cats' weight in metric units.
    2. the min, max, mean, median, standard deviation of cats' lifespan in years.
    3. Create a frequency table of country and breed of cats
-3. Read the [countries API](https://raw.githubusercontent.com/Asabeneh/30-Days-Of-Python/master/data/countries_data.json) and find
+3. Read the [countries API](https://restcountries.eu/rest/v2/all) and find
    1. the 10 largest countries
    2. the 10 most spoken languages
    3. the total number of languages in the countries API
