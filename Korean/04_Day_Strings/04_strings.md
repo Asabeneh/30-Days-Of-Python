@@ -6,7 +6,7 @@
 
 [&lt;&lt; Day 3](../03_Day_Operators/03_operators.md) | [Day 5 &gt;&gt;](../05_Day_Lists/05_lists.md)
 
-![30DaysOfPython](../images/30DaysOfPython_banner3@2x.png)
+![30DaysOfPython](../../images/30DaysOfPython_banner3@2x.png)
 
 - [Day 4](#day-4)
     - [문자열](#strings)
@@ -218,7 +218,7 @@ print(f) # n
 
 프로그래밍에서 카운팅은 0부터 시작합니다. 따라서 문자열의 첫 번째 문자는 인덱스가 0이고 문자열의 마지막 문자는 문자열의 길이에서 1을 뺀 값입니다.
 
-![String index](../images/string_index.png)
+![String index](../../images/string_index.png)
 
 ```py
 language = 'Python'

@@ -5,7 +5,7 @@
 
 [&lt;&lt; Day 6](../06_Day_Tuples/06_tuples.md) | [Day 8 &gt;&gt;](../08_Day_Dictionaries/08_dictionaries.md)
 
-![30DaysOfPython](../images/30DaysOfPython_banner3@2x.png)
+![30DaysOfPython](../../images/30DaysOfPython_banner3@2x.png)
 
 - [📘 Day 7](#-day-7)
     - [Sets](#sets)

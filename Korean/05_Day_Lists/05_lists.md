@@ -16,7 +16,7 @@
 
 [<< Day 4](../04_Day_Strings/04_strings.md) | [Day 6 >>](../06_Day_Tuples/06_tuples.md)
 
-![30DaysOfPython](../../images/30DaysOfPython_banner3@2x.png)
+![30DaysOfPython](../../../images/30DaysOfPython_banner3@2x.png)
 
 - [Day 5](#day-5)
   - [Lists](#lists)
@@ -129,7 +129,7 @@ Number of countries: 5
 ### Accessing List Items Using Positive Indexing
 
 인덱스를 사용하여 리스트의 각 아이템에 액세스합니다. 리스트 인덱스는 0부터 시작합니다. 아래 그림은 인덱스가 시작되는 위치를 명확하게 보여줍니다.
-![List index](../../images/list_index.png)
+![List index](../../../images/list_index.png)
 
 ```py
 fruits = ['banana', 'orange', 'mango', 'lemon']
@@ -148,7 +148,7 @@ last_fruit = fruits[last_index]
 
 음수 인덱스는 끝에서 시작하는 것을 의미하며 -1은 마지막 아이템을, -2는 마지막에서 두번쨰 아이템을 의미합니다.
 
-![List negative indexing](../../images/list_negative_indexing.png)
+![List negative indexing](../../../images/list_negative_indexing.png)
 
 ```py
 fruits = ['banana', 'orange', 'mango', 'lemon']

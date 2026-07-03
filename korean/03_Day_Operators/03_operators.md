@@ -15,7 +15,7 @@
 
 [<< Day 2](../02_Day_Variables_builtin_functions/02_variables_builtin_functions.md) | [Day 4 >>](../04_Day_Strings/04_strings.md)
 
-![30DaysOfPython](../images/30DaysOfPython_banner3@2x.png)
+![30DaysOfPython](../../images/30DaysOfPython_banner3@2x.png)
 
 - [📘 3일차](#-3일차)
   - [불리언](#불리언)
@@ -46,7 +46,7 @@ print(False)
 
 대입 연산자는 변수에 값을 대입할 때 사용됩니다. = 로 예시를 들어보겠습니다. 수학에서 등호란 두 값이 동일하다는 것을 의미하지만, 파이썬에서는 특정 변수가 값을 가지고 있으며, 이 변수에 값을 대입한다고 합니다. 아래 표는 [w3school](https://www.w3schools.com/python/python_operators.asp)에서 가져온 다양한 유형의 파이썬 할당 연산자를 보여줍니다.
 
-![대입 연산자](../images/assignment_operators.png)
+![대입 연산자](../../images/assignment_operators.png)
 
 ### 산술 연산자:
 
@@ -58,7 +58,7 @@ print(False)
 - 버림 나눗셈(//): a // b
 - 지수(**): a ** b
 
-![산술 연산자](../images/arithmetic_operators.png)
+![산술 연산자](../../images/arithmetic_operators.png)
 
 **예시: Integers**
 
@@ -181,7 +181,7 @@ density = mass / volume # 1000 Kg/m^3
 
 프로그래밍에서 우리는 비교 연산자를 사용하여 두 값을 비교합니다. 우리는 값이 다른 값보다 크거나 작거나 같은지 확인합니다. 다음 표는[w3shool](https://www.w3schools.com/python/python_operators.asp)에서 가져온 파이썬의 비교 연산자를 보여줍니다.
 
-![Comparison Operators](../images/comparison_operators.png)
+![Comparison Operators](../../images/comparison_operators.png)
 **Example: 비교 연산자**
 
 ```py
@@ -229,7 +229,7 @@ print('4 is 2 ** 2:', 4 is 2 ** 2)   # 참
 
 다른 프로그래밍 언어와 달리 파이썬은 논리 연산자를 위해 _and_, _or_, _not_ 키워드를 사용합니다. 논리 연산자는 다음과 같은 조건문을 결합하는 데 사용됩니다.
 
-![Logical Operators](../images/logical_operators.png)
+![Logical Operators](../../images/logical_operators.png)
 
 ```py
 print(3 > 2 and 4 > 3) # 참 - 두 개의 문장이 참이기 때문에 
