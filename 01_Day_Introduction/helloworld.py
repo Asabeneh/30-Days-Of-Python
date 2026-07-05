@@ -1,6 +1,6 @@
 # Introduction
 # Day 1 - 30DaysOfPython Challenge
-
+print("Hello World!")
 print("Hello World!")   # print hello world
 
 print(2 + 3)   # addition(+)
