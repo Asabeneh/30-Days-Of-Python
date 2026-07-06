@@ -51,7 +51,7 @@ import re
 
 ```py
 # 语法
-re.match(substring, string, re.I)
+re.search(substring, string, re.I)
 # substring是一个字符串或模式，string是我们查找模式的文本，re.I是忽略大小写
 ```
 
