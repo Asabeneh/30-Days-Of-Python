@@ -159,12 +159,6 @@ print(challenge.isalpha())  # True
 num = '123'
 print(num.isalpha())      # False
 
-# isdecimal(): Checks Decimal Characters
-
-challenge = 'thirty days of python'
-print(challenge.find('y'))  # 5
-print(challenge.find('th'))  # 0
-
 # isdigit(): Checks Digit Characters
 
 challenge = 'Thirty'
