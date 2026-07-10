@@ -11,6 +11,7 @@
 <a href="https://www.linkedin.com/in/asabeneh/" target="_blank">Asabeneh Yetayeh</a><br>
 <small> Second Edition: July, 2021</small>
 </sub>
+
 </div>
 
 [<< Day 2](../02_Day_Variables_builtin_functions/02_variables_builtin_functions.md) | [Day 4 >>](../04_Day_Strings/04_strings.md)
@@ -52,7 +53,7 @@ Assignment operators are used to assign values to variables. Let us take = as an
 
 - Addition(+): a + b
 - Subtraction(-): a - b
-- Multiplication(*): a * b
+- Multiplication(_): a _ b
 - Division(/): a / b
 - Modulus(%): a % b
 - Floor division(//): a // b
@@ -70,7 +71,7 @@ print('Addition: ', 1 + 2)        # 3
 print('Subtraction: ', 2 - 1)     # 1
 print('Multiplication: ', 2 * 3)  # 6
 print ('Division: ', 4 / 2)       # 2.0  Division in Python gives floating number
-print('Division: ', 6 / 2)        # 3.0         
+print('Division: ', 6 / 2)        # 3.0
 print('Division: ', 7 / 2)        # 3.5
 print('Division without the remainder: ', 7 // 2)   # 3,  gives without the floating number or without the remaining
 print ('Division without the remainder: ',7 // 3)   # 2
@@ -148,7 +149,7 @@ print('division: ', div)
 print('remainder: ', remainder)
 ```
 
-Let us start connecting the dots and start making use of what we already know to calculate (area, volume,density,  weight, perimeter, distance, force).
+Let us start connecting the dots and start making use of what we already know to calculate (area, volume,density, weight, perimeter, distance, force).
 
 **Example:**
 
@@ -220,7 +221,7 @@ In addition to the above comparison operator Python uses:
 print('1 is 1', 1 is 1)                   # True - because the data values are the same
 print('1 is not 2', 1 is not 2)           # True - because 1 is not 2
 print('A in Asabeneh', 'A' in 'Asabeneh') # True - A found in the string
-print('B not in Asabeneh', 'B' in 'Asabeneh') # False - there is no uppercase B
+print('B not in Asabeneh', 'B' not in 'Asabeneh') # True - there is no uppercase B
 print('coding' in 'coding for all') # True - because coding for all has the word coding
 print('a in an:', 'a' in 'an')      # True
 print('4 is 2 ** 2:', 4 is 2 ** 2)   # True
@@ -276,7 +277,7 @@ The perimeter of the triangle is 12
 6. Get length and width of a rectangle using prompt. Calculate its area (area = length x width) and perimeter (perimeter = 2 x (length + width))
 7. Get radius of a circle using prompt. Calculate the area (area = pi x r x r) and circumference (c = 2 x pi x r) where pi = 3.14.
 8. Calculate the slope, x-intercept and y-intercept of y = 2x -2
-9. Slope is (m = y2-y1/x2-x1). Find the slope and [Euclidean distance](https://en.wikipedia.org/wiki/Euclidean_distance#:~:text=In%20mathematics%2C%20the%20Euclidean%20distance,being%20called%20the%20Pythagorean%20distance.) between point (2, 2) and point (6,10) 
+9. Slope is (m = y2-y1/x2-x1). Find the slope and [Euclidean distance](https://en.wikipedia.org/wiki/Euclidean_distance#:~:text=In%20mathematics%2C%20the%20Euclidean%20distance,being%20called%20the%20Pythagorean%20distance.) between point (2, 2) and point (6,10)
 10. Compare the slopes in tasks 8 and 9.
 11. Calculate the value of y (y = x^2 + 6x + 9). Try to use different x values and figure out at what x value y is going to be 0.
 12. Find the length of 'python' and 'dragon' and make a falsy comparison statement.
