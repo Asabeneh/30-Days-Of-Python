@@ -1,4 +1,3 @@
-
 # Variables in Python
 
 first_name = 'Asabeneh'
