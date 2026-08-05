@@ -16,7 +16,7 @@
 
 [<< Dia 1](./README.md) | [Dia 3 >>](./03_operators_pt.md)
 
-![30DiasDePython](../images/30DaysOfPython_banner3@2x.png)
+![30DaysOfPython](../images/30DaysOfPython_banner3@2x.png)
 
 - [📘 Dia 2](#-dia-2)
   - [Funções integradas](#funções-integradas)

@@ -16,7 +16,7 @@
 
 [<< Dia 13](./13_list_comprehension_pt.md) | [Dia 15 >>](./15_python_type_errors_pt.md)
 
-![30DiasDePython](../images/30DaysOfPython_banner3@2x.png)
+![30DaysOfPython](../images/30DaysOfPython_banner3@2x.png)
 - [📘 Dia 14](#-dia-14)
   - [Funções de Ordem Superior](#funções-de-ordem-superior)
     - [Função como Parâmetro](#função-como-parâmetro)

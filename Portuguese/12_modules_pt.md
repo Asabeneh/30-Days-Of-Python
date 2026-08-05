@@ -17,7 +17,7 @@
 
 [<< Dia 11](./11_functions_pt.md) | [Dia 13 >>](./13_list_comprehension_pt.md)
 
-![30DiasDePython](../images/30DaysOfPython_banner3@2x.png)
+![30DaysOfPython](../images/30DaysOfPython_banner3@2x.png)
 
 - [📘 Dia 12](#-dia-12)
   - [Módulos](#módulos)

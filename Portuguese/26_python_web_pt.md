@@ -15,7 +15,7 @@
 
 [<< Dia 25](./25_pandas_pt.md) | [Dia 27 >>](./27_python_with_mongodb_pt.md)
 
-![30DiasDePython](../images/30DaysOfPython_banner3@2x.png)
+![30DaysOfPython](../images/30DaysOfPython_banner3@2x.png)
 
 - [📘 Dia 26](#-dia-26)
   - [Python para a web](#python-para-a-web)

@@ -15,7 +15,7 @@
 
 [<< Dia 15](./15_python_type_errors_pt.md) | [Dia 17 >>](./17_exception_handling_pt.md)
 
-![30DiasDePython](../images/30DaysOfPython_banner3@2x.png)
+![30DaysOfPython](../images/30DaysOfPython_banner3@2x.png)
 - [📘 Dia 16](#-dia-16)
   - [*datetime* em Python](#datetime-em-python)
     - [Obtendo Informações de *datetime*](#obtendo-informações-de-datetime)

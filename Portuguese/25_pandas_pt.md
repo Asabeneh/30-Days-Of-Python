@@ -16,7 +16,7 @@
 
 [<< Dia 24](./24_statistics_pt.md) | [Dia 26 >>](./26_python_web_pt.md)
 
-![30DiasDePython](../images/30DaysOfPython_banner3@2x.png)
+![30DaysOfPython](../images/30DaysOfPython_banner3@2x.png)
 
 - [📘 Dia 25](#-dia-25)
   - [Pandas](#pandas)

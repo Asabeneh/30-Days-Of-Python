@@ -98,7 +98,7 @@
 
 ## Bem Vindo!
 
-**Parabéns** por decidir participar do desafio de programação  _30 dias de Python_ . E nesse desafio você vai aprender tudo o que você precisa para se tornar um programador python e todo o conceito de programação. No final do desafio você receberá o certificado do desafio de programação _30DiasDePython_.
+**Parabéns** por decidir participar do desafio de programação  _30 dias de Python_ . E nesse desafio você vai aprender tudo o que você precisa para se tornar um programador python e todo o conceito de programação. No final do desafio você receberá o certificado do desafio de programação _30DaysOfPython_.
 
 Se você quiser se envolver ativamente no desafio, você pode se juntar ao grupo do telegram [30DaysOfPython challenge](https://t.me/ThirtyDaysOfPython).  
 
@@ -111,7 +111,7 @@ Este desafio foi desenvolvido para iniciantes e profissionais que desejam aprend
 Este desafio é fácil de ler, escrito originalmente em inglês coloquial e traduzido para um português, envolvente, motivador e ao mesmo tempo muito exigente. Você precisa destinar muito tempo para terminar este desafio. Se você é um dos que aprendem melhor vendo, você pode assistir às vídeo-aulas em <a href="https://www.youtube.com/channel/UC7PNRuno1rzYPb1xLa4yktw"> 
 Canal do Youtube do Washera</a> Você pode começar pelo [Video de Python para iniciantes absolutos](https://youtu.be/OCCWZheOesI). Se inscreva no canal, comente suas dúvidas nos vídeos do YouTube e seja proativo, o autor eventualmente notará você.
 
-O autor gosta de ouvir sua opinião sobre o desafio, compartilhe o artigo do autor dando um feedback com sua opinião sobre o desafio 30DiasDePython. E você pode deixar seu feedback sobre o artigo em: [link](https://www.asabeneh.com/testimonials)
+O autor gosta de ouvir sua opinião sobre o desafio, compartilhe o artigo do autor dando um feedback com sua opinião sobre o desafio 30DaysOfPython. E você pode deixar seu feedback sobre o artigo em: [link](https://www.asabeneh.com/testimonials)
 
 ## Por quê Python?
 
@@ -132,7 +132,7 @@ Se você for um usuário de MacOs. Clique no botão circulado em vermelho.
 
 Para verificar se o python está instalado, digite o seguinte comando no terminal do seu dispositivo.
 ```shell
-python --version
+python3 --version
 ```
 
 ![Versão do Python](.././images/python_versio.png)
@@ -226,13 +226,13 @@ Abra o visual studio code clicando duas vezes no ícone do visual studio. Ao abr
 
 ![Visual studio Code](.././images/vscode_ui.png)
 
-Crie uma pasta chamada 30DiasDePython no seu desktop. Em seguida, abra-a usando o visual studio code.
+Crie uma pasta chamada 30DaysOfPython no seu desktop. Em seguida, abra-a usando o visual studio code.
 
 ![Opening Project on Visual studio](.././images/how_to_open_project_on_vscode.png)
 
 ![Opening a project](.././images/opening_project.png)
 
-Após abri-lo você verá atalhos para criação de arquivos e pastas dentro do diretório do projeto 30DiasDePython. Como você pode ver abaixo, criei o primeiro arquivo, helloworld.py. Você pode fazer o mesmo.
+Após abri-lo você verá atalhos para criação de arquivos e pastas dentro do diretório do projeto 30DaysOfPython. Como você pode ver abaixo, criei o primeiro arquivo, helloworld.py. Você pode fazer o mesmo.
 
 ![Creating a python file](.././images/helloworld.png)
 
@@ -384,7 +384,7 @@ Para checar um determinado tipo de dado dados/variáveis, usamos a função **ty
 
 ### Arquivo Python
 
-Primeiro abra a pasta do seu projeto, 30DiasDePython. Se você não tiver essa pasta, crie um nome de pasta chamada 30DiasDePython. Dentro desta pasta, crie um arquivo chamado helloworld.py. Agora, vamos fazer o que fizemos no shell interativo python usando o visual studio code.
+Primeiro abra a pasta do seu projeto, 30DaysOfPython. Se você não tiver essa pasta, crie um nome de pasta chamada 30DaysOfPython. Dentro desta pasta, crie um arquivo chamado helloworld.py. Agora, vamos fazer o que fizemos no shell interativo python usando o visual studio code.
 
 O shell interativo do Python estava imprimindo sem usar **print** mas no visual studio code para ver nosso resultado deveríamos usar uma função integrada _print(). A função interna _print()_ recebe um ou mais argumentos da seguinte maneira _print('arument1', 'argument2', 'argument3')_. Veja os exemplos abaixo.
 
@@ -450,7 +450,7 @@ Para executar o arquivo python verifique a imagem abaixo. Você pode executar o 
 
 ### Exercicio: Level 2
 
-1. Crie uma pasta chamada dia_1 dentro da pasta 30DiasDePython. Dentro da pasta day_1, crie um arquivo python helloworld.py e repita as perguntas 1, 2, 3 e 4. Lembre-se de usar _print()_ quando estiver trabalhando em um arquivo python. Navegue até o diretório onde você salvou seu arquivo e execute-o.
+1. Crie uma pasta chamada day_1 dentro da pasta 30DaysOfPython. Dentro da pasta day_1, crie um arquivo python helloworld.py e repita as perguntas 1, 2, 3 e 4. Lembre-se de usar _print()_ quando estiver trabalhando em um arquivo python. Navegue até o diretório onde você salvou seu arquivo e execute-o.
 
 ### Exercicio: Level 3
 

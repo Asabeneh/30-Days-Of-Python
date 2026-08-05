@@ -15,7 +15,7 @@
 
 [<< Dia 21](./21_classes_and_objects_pt.md) | [Dia 23 >>](./23_virtual_environment_pt.md)
 
-![30DiasDePython](../images/30DaysOfPython_banner3@2x.png)
+![30DaysOfPython](../images/30DaysOfPython_banner3@2x.png)
 
 - [📘 Dia 22](#-dia-22)
   - [Web Scraping com Python](#web-scraping-com-python)

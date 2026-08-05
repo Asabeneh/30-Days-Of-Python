@@ -16,7 +16,7 @@
 
 [<< Dia 14](./14_higher_order_functions_pt.md) | [Dia 16 >>](./16_python_datetime_pt.md)
 
-![30DiasDePython](../images/30DaysOfPython_banner3@2x.png)
+![30DaysOfPython](../images/30DaysOfPython_banner3@2x.png)
 - [📘 Dia 15](#-dia-15)
   - [Tipos de Erros em Python](#tipos-de-erros-em-python)
     - [SyntaxError](#syntaxerror)

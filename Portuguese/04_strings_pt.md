@@ -16,7 +16,7 @@
 
 [<< Dia 3](./03_operators_pt.md) | [Dia 5 >>](./05_lists_pt.md)
 
-![30DiasDePython](../images/30DaysOfPython_banner3@2x.png)
+![30DaysOfPython](../images/30DaysOfPython_banner3@2x.png)
 
 - [Dia 4](#dia-4)
   - [Strings](#strings)

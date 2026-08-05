@@ -16,7 +16,7 @@
 
 [<< Dia 28](./28_API_pt.md) | [Dia 30 >>](./30_conclusions_pt.md)
 
-![30DiasDePython](../images/30DaysOfPython_banner3@2x.png)
+![30DaysOfPython](../images/30DaysOfPython_banner3@2x.png)
 
 - [Dia 29](#dia-29)
 - [Construindo uma API](#construindo-uma-api)

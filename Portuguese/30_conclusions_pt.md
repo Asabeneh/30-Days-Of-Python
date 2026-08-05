@@ -18,7 +18,7 @@
 
 [<< Dia 29](./29_building_API_pt.md)
 
-![30DiasDePython](../images/30DaysOfPython_banner3@2x.png)
+![30DaysOfPython](../images/30DaysOfPython_banner3@2x.png)
 
 - [Dia 30](#dia-30)
   - [Conclusões](#conclusões)

@@ -17,7 +17,7 @@
 
 [<< Dia 12](./12_modules_pt.md) | [Dia 14 >>](./14_higher_order_functions_pt.md)
 
-![30DiasDePython](../images/30DaysOfPython_banner3@2x.png)
+![30DaysOfPython](../images/30DaysOfPython_banner3@2x.png)
 
 - [📘 Dia 13](#-dia-13)
   - [List Comprehension](#list-comprehension)

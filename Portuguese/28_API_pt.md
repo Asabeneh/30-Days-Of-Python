@@ -16,7 +16,7 @@
 
 [<< Dia 27](./27_python_with_mongodb_pt.md) | [Dia 29 >>](./29_building_API_pt.md)
 
-![30DiasDePython](../images/30DaysOfPython_banner3@2x.png)
+![30DaysOfPython](../images/30DaysOfPython_banner3@2x.png)
 
 - [📘 Dia 28](#-dia-28)
 - [Interface de Programação de Aplicações (API)](#interface-de-programação-de-aplicações-api)

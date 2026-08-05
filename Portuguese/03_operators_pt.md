@@ -15,7 +15,7 @@
 
 [<< Dia 2](./02_variables_builtin_functions_pt.md) | [Dia 4 >>](./04_strings_pt.md)
 
-![30DiasDePython](../images/30DaysOfPython_banner3@2x.png)
+![30DaysOfPython](../images/30DaysOfPython_banner3@2x.png)
 
 - [📘 Dia 3](#-dia-3)
   - [Booleano](#booleano)

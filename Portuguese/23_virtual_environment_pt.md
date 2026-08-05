@@ -15,7 +15,7 @@
 
 [<< Dia 22](./22_web_scraping_pt.md) | [Dia 24 >>](./24_statistics_pt.md)
 
-![30DiasDePython](../images/30DaysOfPython_banner3@2x.png)
+![30DaysOfPython](../images/30DaysOfPython_banner3@2x.png)
 
 - [📘 Dia 23](#-dia-23)
   - [Configurando Ambientes Virtuais](#configurando-ambientes-virtuais)

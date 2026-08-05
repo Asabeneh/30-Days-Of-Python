@@ -16,7 +16,7 @@
 
 [<< Dia 10](./10_loops_pt.md) | [Dia 12 >>](./12_modules_pt.md)
 
-![30DiasDePython](../images/30DaysOfPython_banner3@2x.png)
+![30DaysOfPython](../images/30DaysOfPython_banner3@2x.png)
 
 - [📘 Dia 11](#-dia-11)
   - [Funções](#funções)

@@ -14,7 +14,7 @@
 
 [<< Dia 18](./18_regular_expressions_pt.md) | [Dia 20 >>](./20_python_package_manager_pt.md)
 
-![30DiasDePython](../images/30DaysOfPython_banner3@2x.png)
+![30DaysOfPython](../images/30DaysOfPython_banner3@2x.png)
 
 - [📘 Dia 19](#-dia-19)
   - [Manipulação de Arquivos](#manipulação-de-arquivos)

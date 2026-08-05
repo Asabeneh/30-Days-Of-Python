@@ -16,7 +16,7 @@
 
 [<< Dia 20](./20_python_package_manager_pt.md) | [Dia 22 >>](./22_web_scraping_pt.md)
 
-![30DiasDePython](../images/30DaysOfPython_banner3@2x.png)
+![30DaysOfPython](../images/30DaysOfPython_banner3@2x.png)
 
 - [📘 Dia 21](#-dia-21)
   - [Classes e Objetos](#classes-e-objetos)
