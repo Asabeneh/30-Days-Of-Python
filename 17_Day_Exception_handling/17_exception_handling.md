@@ -145,7 +145,7 @@ except Exception as e:
 
 We use two operators:
 
-- \* for tuples
+- \* for interables (such as tuple, list)
 - \*\* for dictionaries
 
 Let us take as an example below. It takes only arguments but we have list. We can unpack the list and changes to argument.
