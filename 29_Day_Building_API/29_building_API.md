@@ -41,7 +41,7 @@ The browser can handle only get request. Therefore, we have to have a tool which
 
 Examples of API
 
-- Countries API: https://restcountries.eu/rest/v2/all
+- Countries API: https://api.restcountries.com/countries/v5
 - Cats breed API: https://api.thecatapi.com/v1/breeds
 
 [Postman](https://www.getpostman.com/) is a very popular tool when it comes to API development. So, if you like to do this section you need to [download postman](https://www.getpostman.com/). An alternative of Postman is [Insomnia](https://insomnia.rest/download).
