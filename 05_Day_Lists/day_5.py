@@ -2,14 +2,15 @@ empty_list = list()  # this is an empty list, no item in the list
 print(len(empty_list))  # 0
 
 # list of fruits
-fruits = ['banana', 'orange', 'mango', 'lemon']
+fruits = ['banana', 'orange', 'mango', 'lemon'] #list of fruits
 vegetables = ['Tomato', 'Potato', 'Cabbage',
               'Onion', 'Carrot']      # list of vegetables
 animal_products = ['milk', 'meat', 'butter',
                    'yoghurt']             # list of animal products
 web_techs = ['HTML', 'CSS', 'JS', 'React', 'Redux',
              'Node', 'MongDB']  # list of web technologies
-countries = ['Finland', 'Estonia', 'Denmark', 'Sweden', 'Norway']
+countries = ['Finland', 'Estonia', 'Denmark', 'Sweden', 'Norway'] #list of countries
+liquors = ['Whiskey' , 'Beer' , 'Cognac' , 'Gin' , 'Scotch' , 'Vodka' , 'Rum'] #list of liquors
 
 # Print the lists and it length
 print('Fruits:', fruits)
@@ -23,7 +24,6 @@ print('Number of web technologies:', len(web_techs))
 print('Number of countries:', len(countries))
 
 # Modifying list
-
 fruits = ['banana', 'orange', 'mango', 'lemon']
 first_fruit = fruits[0]  # we are accessing the first item using its index
 print(first_fruit)      # banana
@@ -75,19 +75,20 @@ print(does_exist)  # False
 
 # Append
 fruits = ['banana', 'orange', 'mango', 'lemon']
-fruits.append('apple')
+fruits.append('apple')  #adding apple in the end of the list
 print(fruits)           # ['banana', 'orange', 'mango', 'lemon', 'apple']
-# ['banana', 'orange', 'mango', 'lemon', 'apple', 'lime]
 fruits.append('lime')
-print(fruits)
+print(fruits)           # ['banana', 'orange', 'mango', 'lemon', 'apple', 'lime']
+
+
 
 # insert
 fruits = ['banana', 'orange', 'mango', 'lemon']
 fruits.insert(2, 'apple')  # insert apple between orange and mango
-print(fruits)           # ['banana', 'orange', 'apple', 'mango', 'lemon']
-# ['banana', 'orange', 'apple', 'mango', 'lime','lemon',]
+print(fruits)              # ['banana', 'orange', 'apple', 'mango', 'lemon']
 fruits.list(3, 'lime')
-print(fruits)
+print(fruits)              # ['banana', 'orange', 'apple', 'mango', 'lime','lemon',]
+
 
 # remove
 fruits = ['banana', 'orange', 'mango', 'lemon']
@@ -164,6 +165,7 @@ fruits = ['banana', 'orange', 'mango', 'lemon']
 print(fruits.index('orange'))   # 1
 ages = [22, 19, 24, 25, 26, 24, 25, 24]
 print(ages.index(24))
+
 # Reverse
 fruits = ['banana', 'orange', 'mango', 'lemon']
 fruits.reverse()
