@@ -62,7 +62,7 @@ fruits[0] = 'Avocado'
 print(fruits)  # ['avocado', 'orange', 'mango', 'lemon']
 fruits[1] = 'apple'
 print(fruits)  # ['avocado', 'apple', 'mango', 'lemon']
-last_index = len(fruits)
+last_index = len(fruits) -1
 fruits[last_index] = 'lime'
 print(fruits)  # ['avocado', 'apple', 'mango', 'lime']
 
@@ -86,7 +86,7 @@ fruits = ['banana', 'orange', 'mango', 'lemon']
 fruits.insert(2, 'apple')  # insert apple between orange and mango
 print(fruits)           # ['banana', 'orange', 'apple', 'mango', 'lemon']
 # ['banana', 'orange', 'apple', 'mango', 'lime','lemon',]
-fruits.list(3, 'lime')
+fruits.insert(3, 'lime')
 print(fruits)
 
 # remove
@@ -98,10 +98,10 @@ print(fruits)  # ['orange', 'mango']
 
 # pop
 fruits = ['banana', 'orange', 'mango', 'lemon']
-fruits.remove()
+fruits.remove('lemon')
 print(fruits)       # ['banana', 'orange', 'mango']
 
-fruits.remove(0)
+fruits.remove('banana')
 print(fruits)       # ['orange', 'mango']
 
 # del
@@ -111,7 +111,7 @@ print(fruits)       # ['orange', 'mango', 'lemon']
 
 del fruits[1]
 print(fruits)       # ['orange', 'lemon']
-del fruits
+del fruits[0]
 print(fruits)       # This should give: NameError: name 'fruits' is not defined
 
 # clear
@@ -167,7 +167,7 @@ print(ages.index(24))
 # Reverse
 fruits = ['banana', 'orange', 'mango', 'lemon']
 fruits.reverse()
-print(fruits.reverse())
+print(fruits)
 ages = [22, 19, 24, 25, 26, 24, 25, 24]
 ages.reverse()
 print(ages.reverse())
@@ -183,3 +183,4 @@ ages.sort()
 print(ages)
 ages.sort(reverse=True)
 print(ages)
+

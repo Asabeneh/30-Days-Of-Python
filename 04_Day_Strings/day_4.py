@@ -8,6 +8,7 @@ print(greeting)             # Hello, World!
 print(len(greeting))        # 13
 sentence = "I hope you are enjoying 30 days of python challenge"
 print(sentence)
+print(len(sentence))
 
 # Multiline String
 multiline_string = '''I am a teacher and enjoy teaching.
@@ -26,6 +27,7 @@ last_name = 'Yetayeh'
 space = ' '
 full_name = first_name + space + last_name
 print(full_name)  # Asabeneh Yetayeh
+print(first_name +' '+ last_name)
 # Checking length of a string using len() builtin function
 print(len(first_name))  # 8
 print(len(last_name))   # 7
@@ -92,15 +94,17 @@ print('In every programming language it starts with \"Hello, World!\"')
 
 challenge = 'thirty days of python'
 print(challenge.capitalize())  # 'Thirty days of python'
+print(challenge.title())
 
 # count(): returns occurrences of substring in string, count(substring, start=.., end=..)
 
 challenge = 'thirty days of python'
 print(challenge.count('y'))  # 3
-print(challenge.count('y', 7, 14))  # 1
-print(challenge.count('th'))  # 2`
+print(challenge.count('y', 7, 14))  # 1 (7~13까지)
+print(challenge.count('th'))  # 2
 
 # endswith(): Checks if a string ends with a specified ending
+# endswith(): 문자열이 특정 문자나 문자열로 끝나는지 확인하는 함수.
 
 challenge = 'thirty days of python'
 print(challenge.endswith('on'))   # True
@@ -139,6 +143,7 @@ print(challenge.find('y'))  # 5
 print(challenge.find('th'))  # 0
 
 # isalnum(): Checks alphanumeric character
+# isalnum(): 문자열 + 숫자로만 이루어져있는지
 
 challenge = 'ThirtyDaysPython'
 print(challenge.isalnum())  # True
@@ -153,6 +158,7 @@ challenge = 'thirty days of python 2019'
 print(challenge.isalnum())  # False
 
 # isalpha(): Checks if all characters are alphabets
+# islapha(): 문자열만 있는지
 
 challenge = 'thirty days of python'
 print(challenge.isalpha())  # True
@@ -166,6 +172,7 @@ print(challenge.find('y'))  # 5
 print(challenge.find('th'))  # 0
 
 # isdigit(): Checks Digit Characters
+# isdigit(): 숫자로만 있는지
 
 challenge = 'Thirty'
 print(challenge.isdigit())  # False
