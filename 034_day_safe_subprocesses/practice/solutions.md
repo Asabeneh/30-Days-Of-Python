@@ -1,3 +1,3 @@
 # Solution route
 
-Compare your result with the scope and acceptance criteria. A strong solution makes permissions, resource use, failure, and cleanup visible.
+Use the exercise numbers in order. Compare your implementation with the requested artifact and acceptance behavior. A strong solution explains its input contract, keeps failure visible, includes a negative test, and states a limitation.

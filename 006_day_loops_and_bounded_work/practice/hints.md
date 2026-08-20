@@ -1,7 +1,3 @@
-# Day 6 Hints
+# Hints
 
-1. Re-read the outcome and write down the exact input and output types.
-2. Make the smallest working example before adding a loop, branch, or helper.
-3. Preserve raw input when you create a normalized or parsed value.
-4. Test a normal case, a boundary case, and an invalid case.
-5. If the task touches security, confirm that the data is synthetic and the scope is local.
+Use the exercise numbers in order. Start by running the starter. Name the input and expected output before writing code. Test a normal value, a boundary value, and an invalid value. Keep security work local, synthetic, bounded, and authorized.

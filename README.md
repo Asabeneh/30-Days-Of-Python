@@ -18,10 +18,11 @@ If you have never programmed before, follow these files in order:
 6. [Complete day index](DAY_INDEX.md) — jump directly to any of the 120 lessons.
 7. [LeetCode guide](LEETCODE_GUIDE.md) — build problem-solving fluency without confusing puzzles with security engineering.
 8. [Resources](RESOURCES.md) — use official documentation and authorized training labs effectively.
+9. [Video resources](VIDEO_RESOURCES.md) — use inline and optional YouTube segments with exact timestamps.
 
 ## The daily learning loop
 
-Every day follows the same evidence-based loop. Read the prerequisites and outcomes. Run the starter without changing it. Trace what happened. Change one small thing and predict the result before running again. Attempt the practice route from a blank file. Use hints only after a real attempt, and solutions only to compare decisions. Run the checks. Explain the mental model aloud or in writing. Record one edge case, failure mode, or security trade-off.
+Every day follows the same evidence-based loop. Read the prerequisites and outcomes. Run the starter without changing it. Trace what happened. Change one small thing and predict the result before running again. If the lesson includes a video, watch only the timestamped segment after attempting the local example, then return to the written practice. Answer the numbered exercises from a blank file where the question asks you to write code. Use hints only after a real attempt, and solutions only to compare decisions. Run the checks. Explain the mental model aloud or in writing. Record one edge case, failure mode, or security trade-off.
 
 ## Course map
 

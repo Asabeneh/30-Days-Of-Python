@@ -1,0 +1,132 @@
+{
+  "schema_version": "1.0",
+  "last_reviewed": "2026-08-20",
+  "resources": [
+    {
+      "video_id": "rfscVS0vtbw",
+      "title": "Learn Python - Full Course for Beginners [Tutorial]",
+      "channel": "freeCodeCamp.org",
+      "channel_url": "https://www.youtube.com/@freecodecamp",
+      "url": "https://www.youtube.com/watch?v=rfscVS0vtbw",
+      "placement": "phase_playlist",
+      "lessons": [1, 2, 3, 4, 5, 8, 9],
+      "purpose": "A second visual explanation of absolute Python fundamentals after the learner has attempted the local starter.",
+      "segments": [
+        {"start": 0, "end": 105, "label": "Introduction", "concept": "what the course covers"},
+        {"start": 105, "end": 400, "label": "Installing Python and PyCharm", "concept": "first installation"},
+        {"start": 400, "end": 623, "label": "Setup and Hello World", "concept": "first runnable program"},
+        {"start": 906, "end": 1623, "label": "Variables and Data Types", "concept": "values and names"},
+        {"start": 1623, "end": 2298, "label": "Working With Strings", "concept": "text values"},
+        {"start": 2298, "end": 2906, "label": "Working With Numbers", "concept": "numeric operations"},
+        {"start": 2906, "end": 3600, "label": "Getting Input From Users", "concept": "input is text at the boundary"}
+      ],
+      "transcript_or_alternative": "https://docs.python.org/3/tutorial/",
+      "safety_note": "Use the local course fixtures and never paste real credentials or private data into demonstrations.",
+      "verified_on": "2026-08-20",
+      "status": "active"
+    },
+    {
+      "video_id": "D2cwvpJSBX4",
+      "title": "Getting Started with Python in VS Code (Official Video)",
+      "channel": "Visual Studio Code",
+      "channel_url": "https://www.youtube.com/@code",
+      "url": "https://www.youtube.com/watch?v=D2cwvpJSBX4",
+      "placement": "inline",
+      "lessons": [1, 21],
+      "purpose": "Show the editor, Python extension, environment, navigation, and debugging workflow after the written setup instructions.",
+      "segments": [
+        {"start": 0, "end": 390, "label": "Python in VS Code setup", "concept": "editor, interpreter, and workspace"},
+        {"start": 390, "end": 507, "label": "Code navigation and debugging", "concept": "navigation and debugger"},
+        {"start": 507, "end": 619, "label": "Debugging", "concept": "breakpoints and stepping"}
+      ],
+      "transcript_or_alternative": "https://code.visualstudio.com/docs/python/python-tutorial",
+      "safety_note": "Keep debugging local. Do not expose a debug port to a network; use the course's local workflow.",
+      "verified_on": "2026-08-20",
+      "status": "active"
+    },
+    {
+      "video_id": "iwolPf6kN-k",
+      "title": "Introduction to Linux & Terminal Commands - Full Course for Beginners",
+      "channel": "Kunal Kushwaha",
+      "channel_url": "https://www.youtube.com/@KunalKushwaha",
+      "url": "https://www.youtube.com/watch?v=iwolPf6kN-k",
+      "placement": "inline",
+      "lessons": [31, 32, 33],
+      "purpose": "Provide a visual second explanation of the terminal, shell, and basic navigation after the learner has used the course commands.",
+      "segments": [
+        {"start": 0, "end": 97, "label": "Intro", "concept": "course orientation"},
+        {"start": 97, "end": 237, "label": "About the lecture", "concept": "why the terminal matters"},
+        {"start": 237, "end": 384, "label": "Terminal Emulator", "concept": "terminal window"},
+        {"start": 384, "end": 538, "label": "What is Shell", "concept": "shell versus terminal"},
+        {"start": 538, "end": 664, "label": "List commands", "concept": "listing and inspection"},
+        {"start": 664, "end": 744, "label": "ls", "concept": "list directory contents"},
+        {"start": 744, "end": 774, "label": "mkdir", "concept": "create a directory"},
+        {"start": 774, "end": 900, "label": "cd", "concept": "change directory"}
+      ],
+      "transcript_or_alternative": "https://ubuntu.com/tutorials/command-line-for-beginners",
+      "safety_note": "Run commands only in the course repository or a disposable local fixture. Confirm the current directory before file operations.",
+      "verified_on": "2026-08-20",
+      "status": "active"
+    },
+    {
+      "video_id": "AYgXr1dynKU",
+      "title": "Understanding the OSI Model - CompTIA Network+ N10-009 - 1.1",
+      "channel": "Professor Messer",
+      "channel_url": "https://www.youtube.com/@professormesser",
+      "url": "https://www.youtube.com/watch?v=AYgXr1dynKU",
+      "placement": "end_of_lesson",
+      "lessons": [41],
+      "purpose": "Optional visual review of layered network reasoning before Python socket work.",
+      "segments": [{"start": 0, "end": 831, "label": "Complete focused lesson", "concept": "OSI model"}],
+      "transcript_or_alternative": "https://www.professormesser.com/network-plus/n10-009/n10-009-video/n10-009-training-course/",
+      "safety_note": "This is conceptual review. Do not use it as permission to probe networks.",
+      "verified_on": "2026-08-20",
+      "status": "active"
+    },
+    {
+      "video_id": "ueth6WvFVMU",
+      "title": "Introduction to IP - CompTIA Network+ N10-009 - 1.4",
+      "channel": "Professor Messer",
+      "channel_url": "https://www.youtube.com/@professormesser",
+      "url": "https://www.youtube.com/watch?v=ueth6WvFVMU",
+      "placement": "inline",
+      "lessons": [44],
+      "purpose": "Clarify IP addressing before the learner writes bounded local network code.",
+      "segments": [{"start": 0, "end": 850, "label": "Complete focused lesson", "concept": "IP addressing"}],
+      "transcript_or_alternative": "https://docs.python.org/3/library/ipaddress.html",
+      "safety_note": "Use reserved documentation addresses and local fixtures; never scan addresses that are not explicitly in scope.",
+      "verified_on": "2026-08-20",
+      "status": "active"
+    },
+    {
+      "video_id": "ieqSi5Aicxc",
+      "title": "Logs and Monitoring - CompTIA Network+ N10-009 - 3.2",
+      "channel": "Professor Messer",
+      "channel_url": "https://www.youtube.com/@professormesser",
+      "url": "https://www.youtube.com/watch?v=ieqSi5Aicxc",
+      "placement": "end_of_lesson",
+      "lessons": [49, 71, 79],
+      "purpose": "Optional visual context for network telemetry, monitoring, and the difference between collection and interpretation.",
+      "segments": [{"start": 0, "end": 786, "label": "Complete focused lesson", "concept": "logs and monitoring"}],
+      "transcript_or_alternative": "https://www.nist.gov/cyberframework",
+      "safety_note": "Monitor only systems and fixtures that you own or are explicitly authorized to observe.",
+      "verified_on": "2026-08-20",
+      "status": "active"
+    },
+    {
+      "video_id": "51W4Fhds7DQ",
+      "title": "Security Concepts - CompTIA Network+ N10-009 - 4.1",
+      "channel": "Professor Messer",
+      "channel_url": "https://www.youtube.com/@professormesser",
+      "url": "https://www.youtube.com/watch?v=51W4Fhds7DQ",
+      "placement": "phase_playlist",
+      "lessons": [51, 61, 71],
+      "purpose": "Optional conceptual review of security vocabulary before threat models, services, and detection work.",
+      "segments": [{"start": 0, "end": 786, "label": "Complete focused lesson", "concept": "security concepts"}],
+      "transcript_or_alternative": "https://nvlpubs.nist.gov/nistpubs/CSWP/NIST.CSWP.29.pdf",
+      "safety_note": "Conceptual review does not authorize real-world testing or access attempts.",
+      "verified_on": "2026-08-20",
+      "status": "active"
+    }
+  ]
+}

@@ -72,21 +72,9 @@ Explicit models help reviewers see which claims a report contains. Avoid putting
 | Assuming a type hint is validation | Malformed runtime data still enters the function | Validate at the boundary and test rejection |
 | Optimizing before measuring | The code becomes harder to explain | Build the simplest correct version, then measure |
 
-## Practice
+## Exercises
 
-### Level 1 — Mechanical
-
-Run `python -m course_days.day018`. Predict one output, change one input, and explain the difference.
-
-### Level 2 — Applied
-
-Complete [practice/prompts.md](practice/prompts.md) using the supplied synthetic fixture. State the input contract and acceptance criteria before coding.
-
-### Level 3 — Synthesis
-
-Add one edge case, one negative test, and one paragraph distinguishing observation, inference, and residual risk.
-
-Review [practice/hints.md](practice/hints.md) only after a real attempt and [practice/solutions.md](practice/solutions.md) only to compare decisions.
+Complete the numbered questions in [practice/exercises.md](practice/exercises.md) in order. Run the requested commands, produce the requested artifact, and record the edge case or limitation asked for by the exercise. Use [hints](practice/hints.md) only after a real attempt and [solutions](practice/solutions.md) only to compare your reasoning.
 
 ## Mental model
 
@@ -94,4 +82,4 @@ Review [practice/hints.md](practice/hints.md) only after a real attempt and [pra
 
 ## Finish line
 
-Run the starter, pass the phase tests, complete Levels 1 and 2, and explain one edge case aloud or in writing.
+Run the starter, pass the relevant tests, complete the numbered exercises, and explain one edge case aloud or in writing.

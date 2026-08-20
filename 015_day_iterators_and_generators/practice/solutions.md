@@ -1,3 +1,3 @@
 # Solution route
 
-Compare your attempt with the acceptance criteria. A strong solution explains the input contract, keeps failure visible, tests a boundary, and documents a limitation. There is no requirement to match one exact implementation if your behavior and reasoning are correct.
+Use the exercise numbers in order. Compare your implementation with the requested artifact and acceptance behavior. A strong solution explains its input contract, keeps failure visible, includes a negative test, and states a limitation.

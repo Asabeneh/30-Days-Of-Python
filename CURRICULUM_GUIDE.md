@@ -1,6 +1,6 @@
 # Curriculum Guide
 
-This course is a learning system rather than a playlist. Every day is paired with runnable code, practice, tests, and evidence of understanding. Read the concept, run the starter, change one line, rebuild a smaller version from a blank file, complete the practice route, run the checks, and explain the result.
+This course is a learning system rather than a playlist. Every day is paired with runnable code, numbered exercises, tests, and evidence of understanding. Read the concept, run the starter, change one line, rebuild a smaller version from a blank file, complete the exercises in order, run the checks, and explain the result.
 
 ## The 120-day progression
 
@@ -42,7 +42,7 @@ After the core, choose the specialization that matches the type of questions you
 
 ## Proof before progress
 
-Do not mark a day complete because the page loaded or because a command produced output. A day is banked when you can explain the data flow, pass the relevant checks, make the starter behave differently by changing a controlled input, complete the core practice, and name at least one limitation or edge case.
+Do not mark a day complete because the page loaded or because a command produced output. A day is banked when you can explain the data flow, pass the relevant checks, make the starter behave differently by changing a controlled input, answer the numbered exercises, and name at least one limitation or edge case.
 
 ## Full blueprint
 

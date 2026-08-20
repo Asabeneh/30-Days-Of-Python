@@ -38,9 +38,9 @@ Use only the supplied synthetic data or a local fixture. Do not substitute publi
 
 Start with the smallest runnable example in `starter/main.py`. Trace the input, transformation, decision, and output. Then deliberately change one input and predict the result before running again. The full lesson expansion will add a visual data-flow diagram, a common-mistakes table, and an explanation of what the tool cannot conclude.
 
-## Practice
+## Exercises
 
-Complete [practice/prompts.md](practice/prompts.md) before opening [hints](practice/hints.md) or [solutions](practice/solutions.md). Level 1 builds mechanical fluency. Level 2 applies the idea to a security utility. Level 3 asks for an edge case, negative test, or design trade-off.
+Complete the numbered questions in [practice/exercises.md](practice/exercises.md) in order. Run the requested commands, produce the requested artifact, and record the edge case or limitation asked for by the exercise. Use [hints](practice/hints.md) only after a real attempt and [solutions](practice/solutions.md) only to compare your reasoning.
 
 ## Mental model
 
@@ -49,3 +49,14 @@ Complete [practice/prompts.md](practice/prompts.md) before opening [hints](pract
 ## Finish line
 
 Run the starter, pass the day tests when present, complete the core practice, and write one sentence naming an edge case and one sentence naming the lab boundary.
+
+
+<!-- video-resources:start -->
+## Video support
+
+**Optional recommendation:** [Logs and Monitoring - CompTIA Network+ N10-009 - 3.2](https://www.youtube.com/watch?v=ieqSi5Aicxc).
+
+- Watch [00:00–13:06: Complete focused lesson](https://www.youtube.com/watch?v=ieqSi5Aicxc&t=0s) for **logs and monitoring**. Then return to this lesson and run the local starter.
+
+Written alternative: [https://www.nist.gov/cyberframework](https://www.nist.gov/cyberframework).
+<!-- video-resources:end -->

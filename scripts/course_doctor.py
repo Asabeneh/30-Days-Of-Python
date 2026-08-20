@@ -21,6 +21,12 @@ REQUIRED_ROOT_FILES = {
     "CONTRIBUTING.md",
     "SECURITY.md",
     "GLOSSARY.md",
+    "EXERCISE_STANDARD.md",
+    "EXERCISE_REDESIGN_NOTES.md",
+    "VIDEO_RESOURCE_STANDARD.md",
+    "VIDEO_RESOURCES.md",
+    "VIDEO_RESEARCH_NOTES.md",
+    "video_resources.json",
     "pyproject.toml",
 }
 REQUIRED_DIRS = {"scripts", "tests", "shared", "projects", "specializations"}

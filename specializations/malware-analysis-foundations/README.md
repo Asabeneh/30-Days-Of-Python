@@ -24,3 +24,13 @@ Complete the core through Day 120, read [SAFETY_AND_LAB_RULES.md](../../SAFETY_A
 ## Exit artifact
 
 Finish with a README, threat model, setup instructions, tests, sample evidence, limitations, and a short retrospective. A specialization is a direction for continued supervised practice, not a claim of mastery.
+
+
+<!-- video-resources:start -->
+## Optional video route
+
+Use the [full timestamped catalog](../../VIDEO_RESOURCES.md) and watch these focused segments after completing the written track plan.
+
+- [00:00–13:06: Complete focused lesson](https://www.youtube.com/watch?v=51W4Fhds7DQ&t=0s) — Optional conceptual review of security vocabulary before threat models, services, and detection work.
+
+<!-- video-resources:end -->

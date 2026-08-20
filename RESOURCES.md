@@ -1,6 +1,6 @@
 # Learning Resources
 
-Use resources with a purpose. Read a narrow section, run a small example when possible, and write one observation or question. The links below are selected to support the course rather than replace it.
+Use resources with a purpose. Read a narrow section, run a small example when possible, and write one observation or question. The links below are selected to support the course rather than replace it. For visual explanations, use the [video-resource standard](VIDEO_RESOURCE_STANDARD.md) and the [timestamped video catalog](VIDEO_RESOURCES.md); every video has a written alternative.
 
 ## Python and engineering
 
@@ -13,6 +13,14 @@ Use resources with a purpose. Read a narrow section, run a small example when po
 | [pytest documentation](https://docs.pytest.org/) | Test discovery, fixtures, parametrization, and readable failures |
 | [Ruff documentation](https://docs.astral.sh/ruff/) | Formatting and lint feedback |
 | [mypy documentation](https://mypy.readthedocs.io/) | Optional static checking when type contracts clarify design |
+
+## Video learning routes
+
+| Resource | Use it for |
+| --- | --- |
+| [Timestamped video catalog](VIDEO_RESOURCES.md) | Exact YouTube segments mapped to course days, with inline or optional placement |
+| [Video-resource standard](VIDEO_RESOURCE_STANDARD.md) | Selection, accessibility, safety, timestamp, and maintenance rules |
+| [Machine-readable catalog](video_resources.json) | Maintainer metadata for IDs, segments, verification dates, and alternatives |
 
 ## Cybersecurity frameworks and primary guidance
 

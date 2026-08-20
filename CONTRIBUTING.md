@@ -4,7 +4,7 @@ Thank you for helping improve the course. Contributions should make the material
 
 ## Before opening a change
 
-Read [COURSE_QUALITY_STANDARD.md](COURSE_QUALITY_STANDARD.md) and [SAFETY_AND_LAB_RULES.md](SAFETY_AND_LAB_RULES.md). Check whether the lesson already has a starter, tests, practice prompts, hints, solutions, and a lab scope. Small, focused changes are easier to review than a large rewrite.
+Read [COURSE_QUALITY_STANDARD.md](COURSE_QUALITY_STANDARD.md) and [SAFETY_AND_LAB_RULES.md](SAFETY_AND_LAB_RULES.md). Check whether the lesson already has a starter, tests, numbered exercises, hints, solutions, and a lab scope. Small, focused changes are easier to review than a large rewrite.
 
 ## For lesson changes
 

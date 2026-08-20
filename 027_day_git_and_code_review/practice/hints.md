@@ -1,3 +1,3 @@
 # Hints
 
-Start with the smallest correct example. Keep raw input available. Make the boundary explicit. Test normal, boundary, and invalid values. Keep the exercise local and synthetic.
+Use the exercise numbers in order. Start by running the starter. Name the input and expected output before writing code. Test a normal value, a boundary value, and an invalid value. Keep security work local, synthetic, bounded, and authorized.

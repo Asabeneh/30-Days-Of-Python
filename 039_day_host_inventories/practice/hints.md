@@ -1,3 +1,3 @@
 # Hints
 
-Name the target. Bound the work. Preserve evidence. Test a normal, boundary, and invalid case. Never replace the local fixture with a public system.
+Use the exercise numbers in order. Start by running the starter. Name the input and expected output before writing code. Test a normal value, a boundary value, and an invalid value. Keep security work local, synthetic, bounded, and authorized.

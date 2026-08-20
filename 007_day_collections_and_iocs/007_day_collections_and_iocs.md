@@ -63,13 +63,9 @@ You can select a collection for its semantics, deduplicate an indicator, preserv
 
 The most useful debugging move is to reproduce the smallest failure, read the first error line, identify the value or assumption that differs from your expectation, and change one thing. Do not copy a large solution while the mental model is still unclear.
 
-## Practice
+## Exercises
 
-1. **Level 1 — mechanical:** Run the starter, predict one output, change one input, and explain the difference.
-2. **Level 2 — applied:** Complete the practice prompt using only concepts taught so far and the supplied synthetic fixture.
-3. **Level 3 — synthesis:** Add one edge case, one negative test, and one short note explaining a security limitation.
-
-Open [practice/prompts.md](practice/prompts.md) before [practice/hints.md](practice/hints.md). Review [practice/solutions.md](practice/solutions.md) only after a real attempt.
+Complete the numbered questions in [practice/exercises.md](practice/exercises.md) in order. Run the requested commands, produce the requested artifact, and record the edge case or limitation asked for by the exercise. Use [hints](practice/hints.md) only after a real attempt and [solutions](practice/solutions.md) only to compare your reasoning.
 
 ## Mental model
 

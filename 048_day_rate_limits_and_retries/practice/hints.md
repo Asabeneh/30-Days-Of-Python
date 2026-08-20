@@ -1,3 +1,3 @@
 # Hints
 
-Start with a tiny example. Name the input and output. Preserve raw data. Test a normal case, a boundary case, and an invalid case. Keep the lab local and bounded.
+Use the exercise numbers in order. Start by running the starter. Name the input and expected output before writing code. Test a normal value, a boundary value, and an invalid value. Keep security work local, synthetic, bounded, and authorized.

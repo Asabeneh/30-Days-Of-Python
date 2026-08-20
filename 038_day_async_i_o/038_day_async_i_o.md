@@ -61,21 +61,9 @@ Security connection: a high-concurrency collector can create load quickly. The l
 | Ignoring limits | A collector can run forever or consume memory | Add bounds, timeouts, and cancellation |
 | Treating differences as verdicts | A baseline change is called compromise | Report the difference and seek context |
 
-## Practice
+## Exercises
 
-### Level 1 — Mechanical
-
-Run the starter, predict one output, change one input, and explain the result.
-
-### Level 2 — Applied
-
-Build a local fixture utility with a documented maximum scope and at least one rejection test.
-
-### Level 3 — Synthesis
-
-Add a timeout, resource bound, or evidence limitation and explain how it changes the tool's safety.
-
-Use [practice/prompts.md](practice/prompts.md), then [hints](practice/hints.md), then [solutions](practice/solutions.md).
+Complete the numbered questions in [practice/exercises.md](practice/exercises.md) in order. Run the requested commands, produce the requested artifact, and record the edge case or limitation asked for by the exercise. Use [hints](practice/hints.md) only after a real attempt and [solutions](practice/solutions.md) only to compare your reasoning.
 
 ## Mental model
 
@@ -83,4 +71,4 @@ Use [practice/prompts.md](practice/prompts.md), then [hints](practice/hints.md),
 
 ## Finish line
 
-Run `python -m course_days.day038`, pass the phase tests, complete Levels 1 and 2, and write one edge-case note.
+Run the starter, pass the relevant tests, complete the numbered exercises, and explain one edge case aloud or in writing.

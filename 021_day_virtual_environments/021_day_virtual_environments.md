@@ -35,6 +35,18 @@ A security utility often fails at a boundary: installation, command-line input, 
 
 Use only synthetic data and local files. Do not add real credentials, private evidence, public targets, or network access to the starter. Stop if the exercise leaves its documented scope.
 
+<!-- video-resources:start -->
+## Video support
+
+**Inline recommendation:** [Getting Started with Python in VS Code (Official Video)](https://www.youtube.com/watch?v=D2cwvpJSBX4).
+
+- Watch [00:00–06:30: Python in VS Code setup](https://www.youtube.com/watch?v=D2cwvpJSBX4&t=0s) for **editor, interpreter, and workspace**. Then return to this lesson and run the local starter.
+- Watch [06:30–08:27: Code navigation and debugging](https://www.youtube.com/watch?v=D2cwvpJSBX4&t=390s) for **navigation and debugger**. Then return to this lesson and run the local starter.
+- Watch [08:27–10:19: Debugging](https://www.youtube.com/watch?v=D2cwvpJSBX4&t=507s) for **breakpoints and stepping**. Then return to this lesson and run the local starter.
+
+Written alternative: [https://code.visualstudio.com/docs/python/python-tutorial](https://code.visualstudio.com/docs/python/python-tutorial).
+<!-- video-resources:end -->
+
 ## Core lesson
 
 The interpreter used by a project is part of the project’s assumptions. A virtual environment creates a local place for packages and scripts, but it does not make untrusted packages safe automatically.
@@ -56,21 +68,9 @@ Security connection: isolation limits accidental coupling. It does not replace d
 | Logging everything | Secrets or private data appear in output | Minimize, redact, and test logging behavior |
 | Confusing a control with proof | A checklist is called “secure” | Name the test and the residual risk |
 
-## Practice
+## Exercises
 
-### Level 1 — Mechanical
-
-Run the starter, predict one output, change one value, and explain the result.
-
-### Level 2 — Applied
-
-Build a small local utility that uses today's idea with synthetic input. State its contract and acceptance criteria before coding.
-
-### Level 3 — Synthesis
-
-Add one failure case, one test, and a short threat-model note naming an asset, boundary, threat, control, and residual risk.
-
-Use [practice/prompts.md](practice/prompts.md), then progressive [hints](practice/hints.md), then explained [solutions](practice/solutions.md).
+Complete the numbered questions in [practice/exercises.md](practice/exercises.md) in order. Run the requested commands, produce the requested artifact, and record the edge case or limitation asked for by the exercise. Use [hints](practice/hints.md) only after a real attempt and [solutions](practice/solutions.md) only to compare your reasoning.
 
 ## Mental model
 
@@ -78,4 +78,4 @@ Use [practice/prompts.md](practice/prompts.md), then progressive [hints](practic
 
 ## Finish line
 
-Run `python -m course_days.day021`, pass the phase tests, complete Levels 1 and 2, and write one edge-case note.
+Run the starter, pass the relevant tests, complete the numbered exercises, and explain one edge case aloud or in writing.

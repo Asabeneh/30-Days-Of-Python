@@ -1,3 +1,3 @@
 # Solution route
 
-Compare your solution against the acceptance criteria, not against a particular spelling. A strong solution explains its contract, tests its failure path, and states what it cannot prove.
+Use the exercise numbers in order. Compare your implementation with the requested artifact and acceptance behavior. A strong solution explains its input contract, keeps failure visible, includes a negative test, and states a limitation.

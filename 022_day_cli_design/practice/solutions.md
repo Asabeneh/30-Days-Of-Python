@@ -1,3 +1,3 @@
 # Solution route
 
-Compare your attempt with the acceptance criteria and your threat-model note. A strong solution explains the decision, handles failure explicitly, and says what it cannot prove.
+Use the exercise numbers in order. Compare your implementation with the requested artifact and acceptance behavior. A strong solution explains its input contract, keeps failure visible, includes a negative test, and states a limitation.

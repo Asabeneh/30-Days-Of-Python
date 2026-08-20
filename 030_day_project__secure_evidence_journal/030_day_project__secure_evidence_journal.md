@@ -54,21 +54,9 @@ Security connection: the journal is a learning project, not a chain-of-custody s
 | Logging everything | Secrets or private data appear in output | Minimize, redact, and test logging behavior |
 | Confusing a control with proof | A checklist is called “secure” | Name the test and the residual risk |
 
-## Practice
+## Exercises
 
-### Level 1 — Mechanical
-
-Run the starter, predict one output, change one value, and explain the result.
-
-### Level 2 — Applied
-
-Build a small local utility that uses today's idea with synthetic input. State its contract and acceptance criteria before coding.
-
-### Level 3 — Synthesis
-
-Add one failure case, one test, and a short threat-model note naming an asset, boundary, threat, control, and residual risk.
-
-Use [practice/prompts.md](practice/prompts.md), then progressive [hints](practice/hints.md), then explained [solutions](practice/solutions.md).
+Complete the numbered questions in [practice/exercises.md](practice/exercises.md) in order. Run the requested commands, produce the requested artifact, and record the edge case or limitation asked for by the exercise. Use [hints](practice/hints.md) only after a real attempt and [solutions](practice/solutions.md) only to compare your reasoning.
 
 ## Mental model
 
@@ -76,4 +64,4 @@ Use [practice/prompts.md](practice/prompts.md), then progressive [hints](practic
 
 ## Finish line
 
-Run `python -m course_days.day030`, pass the phase tests, complete Levels 1 and 2, and write one edge-case note.
+Run the starter, pass the relevant tests, complete the numbered exercises, and explain one edge case aloud or in writing.

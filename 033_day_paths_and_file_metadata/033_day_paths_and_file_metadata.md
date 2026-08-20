@@ -35,6 +35,23 @@ Host automation can collect useful evidence or cause unexpected load and data ex
 
 Use only the repository and supplied synthetic fixtures. Do not inspect other users, services, university systems, employer systems, or public targets. Keep collection bounded and stop if scope changes.
 
+<!-- video-resources:start -->
+## Video support
+
+**Inline recommendation:** [Introduction to Linux & Terminal Commands - Full Course for Beginners](https://www.youtube.com/watch?v=iwolPf6kN-k).
+
+- Watch [00:00–01:37: Intro](https://www.youtube.com/watch?v=iwolPf6kN-k&t=0s) for **course orientation**. Then return to this lesson and run the local starter.
+- Watch [01:37–03:57: About the lecture](https://www.youtube.com/watch?v=iwolPf6kN-k&t=97s) for **why the terminal matters**. Then return to this lesson and run the local starter.
+- Watch [03:57–06:24: Terminal Emulator](https://www.youtube.com/watch?v=iwolPf6kN-k&t=237s) for **terminal window**. Then return to this lesson and run the local starter.
+- Watch [06:24–08:58: What is Shell](https://www.youtube.com/watch?v=iwolPf6kN-k&t=384s) for **shell versus terminal**. Then return to this lesson and run the local starter.
+- Watch [08:58–11:04: List commands](https://www.youtube.com/watch?v=iwolPf6kN-k&t=538s) for **listing and inspection**. Then return to this lesson and run the local starter.
+- Watch [11:04–12:24: ls](https://www.youtube.com/watch?v=iwolPf6kN-k&t=664s) for **list directory contents**. Then return to this lesson and run the local starter.
+- Watch [12:24–12:54: mkdir](https://www.youtube.com/watch?v=iwolPf6kN-k&t=744s) for **create a directory**. Then return to this lesson and run the local starter.
+- Watch [12:54–15:00: cd](https://www.youtube.com/watch?v=iwolPf6kN-k&t=774s) for **change directory**. Then return to this lesson and run the local starter.
+
+Written alternative: [https://ubuntu.com/tutorials/command-line-for-beginners](https://ubuntu.com/tutorials/command-line-for-beginners).
+<!-- video-resources:end -->
+
 ## Core lesson
 
 `Path` makes path operations explicit and portable. File metadata such as size and modification time is useful evidence, but it can change between collection and analysis.
@@ -60,21 +77,9 @@ Security connection: do not recursively collect a whole home directory when the 
 | Ignoring limits | A collector can run forever or consume memory | Add bounds, timeouts, and cancellation |
 | Treating differences as verdicts | A baseline change is called compromise | Report the difference and seek context |
 
-## Practice
+## Exercises
 
-### Level 1 — Mechanical
-
-Run the starter, predict one output, change one input, and explain the result.
-
-### Level 2 — Applied
-
-Build a local fixture utility with a documented maximum scope and at least one rejection test.
-
-### Level 3 — Synthesis
-
-Add a timeout, resource bound, or evidence limitation and explain how it changes the tool's safety.
-
-Use [practice/prompts.md](practice/prompts.md), then [hints](practice/hints.md), then [solutions](practice/solutions.md).
+Complete the numbered questions in [practice/exercises.md](practice/exercises.md) in order. Run the requested commands, produce the requested artifact, and record the edge case or limitation asked for by the exercise. Use [hints](practice/hints.md) only after a real attempt and [solutions](practice/solutions.md) only to compare your reasoning.
 
 ## Mental model
 
@@ -82,4 +87,4 @@ Use [practice/prompts.md](practice/prompts.md), then [hints](practice/hints.md),
 
 ## Finish line
 
-Run `python -m course_days.day033`, pass the phase tests, complete Levels 1 and 2, and write one edge-case note.
+Run the starter, pass the relevant tests, complete the numbered exercises, and explain one edge case aloud or in writing.

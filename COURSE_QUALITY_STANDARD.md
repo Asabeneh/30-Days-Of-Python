@@ -11,8 +11,8 @@ A lesson is not complete because it names a Python feature or a security tool. I
 5. A small runnable starter with expected output and an execution trace.
 6. Plain-language terminology followed by precise technical vocabulary.
 7. At least one common mistake, its symptom, and the smallest correction.
-8. Three practice levels: mechanical, applied, and creative or investigative synthesis.
-9. Separate `practice/hints.md` and `practice/solutions.md`; the reading flow must not reveal full answers.
+8. A numbered `practice/exercises.md` file with direct questions, coding tasks, expected outputs, edge cases, and a challenge when appropriate.
+9. Separate `practice/hints.md` and `practice/solutions.md` that follow the exercise numbers; the reading flow must not reveal full answers.
 10. A one-sentence mental model, a finish line, and a short proof section.
 
 ## Additional security requirements
@@ -21,7 +21,7 @@ Security-heavy lessons must also state the trust boundary, authorization and sco
 
 ## Practice standard
 
-Each exercise states the starting input or state, expected output or acceptance criterion, concepts already available, and a progressive hint route. A solution explains the decision, not only the final code. Level 1 practice builds fluency. Level 2 practice applies the concept to a security-relevant utility. Level 3 practice asks for design judgment, edge cases, evidence quality, or a stretch algorithm.
+Each numbered exercise states the starting input or state, expected output or acceptance criterion, concepts already available, and the artifact the learner must produce. A solution explains the decision, not only the final code. The sequence should move from trying the examples, to checking understanding, to writing code, to a security application, to an edge case or challenge when appropriate.
 
 ## Technical verification standard
 
@@ -35,7 +35,7 @@ Before a day is accepted:
 - its security lab has a scope and reset instruction where applicable;
 - no secret, private evidence, or destructive payload is included;
 - its Markdown is readable and its code is formatted;
-- its solution is not embedded in the practice prompt; and
+- its solution is not embedded in the learner-facing exercises; and
 - a beginner can identify what success looks like.
 
 ## Completion definition
