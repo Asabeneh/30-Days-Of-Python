@@ -2,7 +2,12 @@
 
 [← Day 35](../day_35_users_and_permissions/day_35_users_and_permissions.md) · [Day index](../DAY_INDEX.md) · [Day 37 →](../day_37_processes__threads__and_queues/day_37_processes__threads__and_queues.md)
 
-## Table of Contents
+
+
+
+
+
+## Table of contents
 
 - [Why this lesson exists](#why-this-lesson-exists)
 - [Prerequisites](#prerequisites)
@@ -10,13 +15,27 @@
 - [The problem](#the-problem)
 - [Security boundary](#security-boundary)
 - [Lesson](#lesson)
-- [Vocabulary](#vocabulary)
+  - [Vocabulary](#vocabulary)
 - [Worked examples](#worked-examples)
+  - [Example 1: Set a timeout](#example-1-set-a-timeout)
+  - [Example 2: Handle timeout](#example-2-handle-timeout)
+  - [Example 3: Bound bytes](#example-3-bound-bytes)
+  - [Example 4: Use a queue bound](#example-4-use-a-queue-bound)
+  - [Example 5: Choose a policy](#example-5-choose-a-policy)
+- [Read the first example line by line](#read-the-first-example-line-by-line)
 - [Execution trace](#execution-trace)
 - [Common mistakes](#common-mistakes)
 - [Security application](#security-application)
+- [Line-by-line walkthrough](#line-by-line-walkthrough)
+- [Prediction experiments](#prediction-experiments)
+- [Broken example and repair](#broken-example-and-repair)
+- [Guided practice walkthrough](#guided-practice-walkthrough)
+- [Bounded cybersecurity fixture walkthrough](#bounded-cybersecurity-fixture-walkthrough)
 - [Exercises](#exercises)
 - [Finish line](#finish-line)
+- [Mental model](#mental-model)
+- [Limitations](#limitations)
+- [References](#references)
 
 ## Why this lesson exists
 
@@ -122,6 +141,17 @@ print(result)
 
 The report says work was incomplete.
 
+## Read the first example line by line
+
+The first runnable example introduces **Timeouts, Resource Limits, and Backpressure**. Copy it into a new file and run it before changing anything. Then use this table to read the same code slowly. A line-by-line explanation does not replace practice: it shows you what to look for when a program behaves differently from your prediction.
+
+| Line | Code | What Python is doing |
+| ---: | --- | --- |
+| 1 | `import subprocess` | Import statement: the program asks for code from a module. |
+| 2 | `` | Blank line: it separates ideas for the human reader. |
+| 3 | `subprocess.run(["python", "-c", "print('ok')"], timeout=2)` | Output call: Python evaluates the argument and writes a representation to the terminal. |
+
+After the run, write down the value created by each assignment, the condition tested by each branch, and the output that appeared. Change one input only. If the result changes, identify the line that used that input. If the result does not change, explain why the input was not part of the decision. This is the same tracing habit used later when reviewing security automation.
 ## Execution trace
 
 The operation starts with finite time and output budgets; when a budget is reached, the tool records incomplete work and releases resources.

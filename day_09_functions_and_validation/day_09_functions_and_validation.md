@@ -2,6 +2,39 @@
 
 [← Day 8](../day_08_strings_and_canonicalization/day_08_strings_and_canonicalization.md) · [Day index](../DAY_INDEX.md) · [Day 10 →](../day_10_checkpoint_log_triage/day_10_checkpoint_log_triage.md)
 
+
+
+
+
+## Table of contents
+
+- [Welcome](#welcome)
+- [Prerequisites](#prerequisites)
+- [Outcomes](#outcomes)
+- [The problem](#the-problem)
+- [Security boundary](#security-boundary)
+- [Vocabulary](#vocabulary)
+- [Lesson](#lesson)
+- [1. A function packages one job](#1-a-function-packages-one-job)
+- [2. Parameters make a rule reusable](#2-parameters-make-a-rule-reusable)
+- [3. Validate at the boundary](#3-validate-at-the-boundary)
+- [4. Return values instead of hiding decisions in prints](#4-return-values-instead-of-hiding-decisions-in-prints)
+- [5. Scope determines where a name exists](#5-scope-determines-where-a-name-exists)
+- [Worked examples](#worked-examples)
+  - [Example 1: A first runnable case](#example-1-a-first-runnable-case)
+  - [Example 2: A boundary case](#example-2-a-boundary-case)
+  - [Example 3: A deliberate experiment](#example-3-a-deliberate-experiment)
+  - [Example 4: A bounded security fixture](#example-4-a-bounded-security-fixture)
+  - [Example 5: A function can reject an unsafe boundary](#example-5-a-function-can-reject-an-unsafe-boundary)
+- [Execution trace](#execution-trace)
+- [Common mistakes and repairs](#common-mistakes-and-repairs)
+- [Guided practice](#guided-practice)
+- [Security application](#security-application)
+- [Independent exercises](#independent-exercises)
+  - [Additional beginner checkpoint](#additional-beginner-checkpoint)
+- [Finish line](#finish-line)
+- [References](#references)
+
 ## Welcome
 
 Your programs are now long enough that copying blocks creates mistakes. A function gives a named job a boundary: it receives inputs, performs one responsibility, and returns a result. Today you will write small functions and state what each one promises.
@@ -106,6 +139,89 @@ This function returns text and does not write a file, contact a network, or modi
 
 A function contract should state edge cases. For `parse_severity`, decide what empty text means, whether spaces are accepted, and whether a plus sign such as `+7` is allowed. Python will have behavior even when you have not written a policy; your job is to decide whether that behavior matches the program's purpose.
 
+## 1. A function packages one job
+
+```python
+def add_one(value):
+    return value + 1
+
+
+answer = add_one(4)
+print(answer)
+```
+
+`def` starts a function definition. `value` is a parameter name. `return` sends a value back to the caller. `add_one(4)` calls the function with the argument `4`.
+
+## 2. Parameters make a rule reusable
+
+```python
+def is_high_severity(severity):
+    return severity >= 7
+
+
+print(is_high_severity(6))
+print(is_high_severity(7))
+```
+
+Output:
+
+```text
+False
+True
+```
+
+The function does not print a verdict about a real incident. It returns a Boolean about the value supplied by the caller.
+
+## 3. Validate at the boundary
+
+```python
+def parse_severity(text):
+    cleaned = text.strip()
+    value = int(cleaned)
+    if not 0 <= value <= 10:
+        raise ValueError("severity must be between 0 and 10")
+    return value
+```
+
+The contract is visible: text enters, an integer from 0 through 10 leaves, and malformed or out-of-range input raises an error. A function contract is not authorization; it is only a promise about program behavior.
+
+## 4. Return values instead of hiding decisions in prints
+
+```python
+def make_finding(label, reason):
+    return {"label": label, "reason": reason}
+
+
+finding = make_finding("review", "synthetic high severity")
+print(finding["label"])
+```
+
+Returning structured data makes a function easier to test. Printing inside every helper makes composition and testing harder.
+
+## 5. Scope determines where a name exists
+
+```python
+label = "outside"
+
+
+def show_label():
+    label = "inside"
+    print(label)
+
+
+show_label()
+print(label)
+```
+
+Output:
+
+```text
+inside
+outside
+```
+
+The function's local `label` is different from the outer `label`. Prefer passing values as parameters and returning results instead of depending on hidden global state.
+
 ## Worked examples
 
 Run the examples in order. Each one changes only a small part of the previous idea.
@@ -125,6 +241,20 @@ Make one controlled change, record the output, and compare it with your predicti
 ### Example 4: A bounded security fixture
 
 Apply the idea to the synthetic fixture in this lesson. The fixture is local, finite, and invented; it is not permission to inspect real systems.
+
+### Example 5: A function can reject an unsafe boundary
+
+```python
+def bounded_limit(value):
+    if not 1 <= value <= 100:
+        raise ValueError("limit must be from 1 through 100")
+    return value
+
+
+print(bounded_limit(10))
+```
+
+The successful call returns `10`. A call with `0` or `101` raises the documented error. The contract makes the resource boundary visible to every caller.
 
 ## Execution trace
 

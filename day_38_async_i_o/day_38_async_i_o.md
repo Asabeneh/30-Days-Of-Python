@@ -2,7 +2,12 @@
 
 [← Day 37](../day_37_processes__threads__and_queues/day_37_processes__threads__and_queues.md) · [Day index](../DAY_INDEX.md) · [Day 39 →](../day_39_host_inventories/day_39_host_inventories.md)
 
-## Table of Contents
+
+
+
+
+
+## Table of contents
 
 - [Why this lesson exists](#why-this-lesson-exists)
 - [Prerequisites](#prerequisites)
@@ -10,13 +15,27 @@
 - [The problem](#the-problem)
 - [Security boundary](#security-boundary)
 - [Lesson](#lesson)
-- [Vocabulary](#vocabulary)
+  - [Vocabulary](#vocabulary)
 - [Worked examples](#worked-examples)
+  - [Example 1: Define a coroutine](#example-1-define-a-coroutine)
+  - [Example 2: Gather tasks](#example-2-gather-tasks)
+  - [Example 3: Bound concurrency](#example-3-bound-concurrency)
+  - [Example 4: Handle cancellation](#example-4-handle-cancellation)
+  - [Example 5: Preserve result identity](#example-5-preserve-result-identity)
+- [Read the first example line by line](#read-the-first-example-line-by-line)
 - [Execution trace](#execution-trace)
 - [Common mistakes](#common-mistakes)
 - [Security application](#security-application)
+- [Line-by-line walkthrough](#line-by-line-walkthrough)
+- [Prediction experiments](#prediction-experiments)
+- [Broken example and repair](#broken-example-and-repair)
+- [Guided practice walkthrough](#guided-practice-walkthrough)
+- [Bounded cybersecurity fixture walkthrough](#bounded-cybersecurity-fixture-walkthrough)
 - [Exercises](#exercises)
 - [Finish line](#finish-line)
+- [Mental model](#mental-model)
+- [Limitations](#limitations)
+- [References](#references)
 
 ## Why this lesson exists
 
@@ -136,6 +155,23 @@ print(results)
 
 The caller can merge results deterministically.
 
+## Read the first example line by line
+
+The first runnable example introduces **Async I/O and Bounded Awaiting**. Copy it into a new file and run it before changing anything. Then use this table to read the same code slowly. A line-by-line explanation does not replace practice: it shows you what to look for when a program behaves differently from your prediction.
+
+| Line | Code | What Python is doing |
+| ---: | --- | --- |
+| 1 | `import asyncio` | Import statement: the program asks for code from a module. |
+| 2 | `` | Blank line: it separates ideas for the human reader. |
+| 3 | `` | Blank line: it separates ideas for the human reader. |
+| 4 | `async def label(value):` | Function call: Python evaluates the arguments and runs the named operation. |
+| 5 | `await asyncio.sleep(0)` | Function call: Python evaluates the arguments and runs the named operation. |
+| 6 | `return value.upper()` | Return statement: the function sends this value back to its caller. |
+| 7 | `` | Blank line: it separates ideas for the human reader. |
+| 8 | `` | Blank line: it separates ideas for the human reader. |
+| 9 | `print(asyncio.run(label("ok")))` | Output call: Python evaluates the argument and writes a representation to the terminal. |
+
+After the run, write down the value created by each assignment, the condition tested by each branch, and the output that appeared. Change one input only. If the result changes, identify the line that used that input. If the result does not change, explain why the input was not part of the decision. This is the same tracing habit used later when reviewing security automation.
 ## Execution trace
 
 The event loop schedules awaitable work; the semaphore limits concurrent operations; cancellation and exceptions become explicit result states.

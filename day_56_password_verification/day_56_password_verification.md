@@ -2,7 +2,12 @@
 
 [← Day 55](../day_55_secure_randomness/day_55_secure_randomness.md) · [Day index](../DAY_INDEX.md) · [Day 57 →](../day_57_symmetric_and_asymmetric_crypto/day_57_symmetric_and_asymmetric_crypto.md)
 
-## Table of Contents
+
+
+
+
+
+## Table of contents
 
 - [Why this lesson exists](#why-this-lesson-exists)
 - [Prerequisites](#prerequisites)
@@ -10,13 +15,27 @@
 - [The problem](#the-problem)
 - [Security boundary](#security-boundary)
 - [Lesson](#lesson)
-- [Vocabulary](#vocabulary)
+  - [Vocabulary](#vocabulary)
 - [Worked examples](#worked-examples)
+  - [Example 1: Use a salt conceptually](#example-1-use-a-salt-conceptually)
+  - [Example 2: Do not use a raw SHA](#example-2-do-not-use-a-raw-sha)
+  - [Example 3: Use a standard password library](#example-3-use-a-standard-password-library)
+  - [Example 4: Compare without logging](#example-4-compare-without-logging)
+  - [Example 5: Handle failure equally](#example-5-handle-failure-equally)
+- [Read the first example line by line](#read-the-first-example-line-by-line)
 - [Execution trace](#execution-trace)
 - [Common mistakes](#common-mistakes)
 - [Security application](#security-application)
+- [Line-by-line walkthrough](#line-by-line-walkthrough)
+- [Prediction experiments](#prediction-experiments)
+- [Broken example and repair](#broken-example-and-repair)
+- [Guided practice walkthrough](#guided-practice-walkthrough)
+- [Bounded cybersecurity fixture walkthrough](#bounded-cybersecurity-fixture-walkthrough)
 - [Exercises](#exercises)
 - [Finish line](#finish-line)
+- [Mental model](#mental-model)
+- [Limitations](#limitations)
+- [References](#references)
 
 ## Why this lesson exists
 
@@ -119,6 +138,17 @@ print({"authenticated": False, "reason": "generic"})
 
 The response avoids account enumeration.
 
+## Read the first example line by line
+
+The first runnable example introduces **Password Verification and Slow Derivation**. Copy it into a new file and run it before changing anything. Then use this table to read the same code slowly. A line-by-line explanation does not replace practice: it shows you what to look for when a program behaves differently from your prediction.
+
+| Line | Code | What Python is doing |
+| ---: | --- | --- |
+| 1 | `salt = b"training-salt"` | Assignment: Python evaluates the right side and stores the result under the name on the left. |
+| 2 | `password = b"example"` | Assignment: Python evaluates the right side and stores the result under the name on the left. |
+| 3 | `print(len(salt), len(password))` | Output call: Python evaluates the argument and writes a representation to the terminal. |
+
+After the run, write down the value created by each assignment, the condition tested by each branch, and the output that appeared. Change one input only. If the result changes, identify the line that used that input. If the result does not change, explain why the input was not part of the decision. This is the same tracing habit used later when reviewing security automation.
 ## Execution trace
 
 The system receives a candidate, applies the stored verifier’s salt and cost, compares the derived result, and returns a generic outcome. The password never enters a report or source file.

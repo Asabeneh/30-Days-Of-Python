@@ -8,6 +8,8 @@ The course may become more advanced as the days progress, but it must never assu
 
 ## What every lesson must teach
 
+Every lesson must begin with a persistent `## Table of contents` section. The contents must link to the lesson's major topics, worked examples, execution trace, mistakes and repairs, guided practice, cybersecurity application, exercises, finish line, and references. The table of contents is part of the teaching design: it gives a beginner a map of the page and makes it possible to return to a definition or example without searching through a long document.
+
 Each lesson must answer the following questions in ordinary language before asking the learner to work independently:
 
 | Teaching question | Required evidence |
@@ -54,6 +56,7 @@ A normal lesson must contain enough prose to teach, not merely enough headings t
 | Cybersecurity application | 1 concrete bounded application with limitations. |
 | Independent questions | 10 or more numbered questions, increasing in difficulty. |
 | References | Official Python documentation plus relevant security documentation or a written alternative. |
+| Persistent table of contents | One `## Table of contents` with working links to the lesson headings. |
 
 Project days may use a different balance, but they must teach the project’s architecture, demonstrate each major component, explain the code line by line at least once, and provide a staged build sequence. A project description alone is not a lesson.
 

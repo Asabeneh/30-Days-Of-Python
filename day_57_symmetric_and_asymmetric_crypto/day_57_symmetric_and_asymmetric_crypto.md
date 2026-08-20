@@ -2,7 +2,12 @@
 
 [← Day 56](../day_56_password_verification/day_56_password_verification.md) · [Day index](../DAY_INDEX.md) · [Day 58 →](../day_58_safe_serialization/day_58_safe_serialization.md)
 
-## Table of Contents
+
+
+
+
+
+## Table of contents
 
 - [Why this lesson exists](#why-this-lesson-exists)
 - [Prerequisites](#prerequisites)
@@ -10,13 +15,27 @@
 - [The problem](#the-problem)
 - [Security boundary](#security-boundary)
 - [Lesson](#lesson)
-- [Vocabulary](#vocabulary)
+  - [Vocabulary](#vocabulary)
 - [Worked examples](#worked-examples)
+  - [Example 1: Map the key roles](#example-1-map-the-key-roles)
+  - [Example 2: Symmetric key scope](#example-2-symmetric-key-scope)
+  - [Example 3: Public versus private](#example-3-public-versus-private)
+  - [Example 4: Authenticated encryption](#example-4-authenticated-encryption)
+  - [Example 5: Reject homemade crypto](#example-5-reject-homemade-crypto)
+- [Read the first example line by line](#read-the-first-example-line-by-line)
 - [Execution trace](#execution-trace)
 - [Common mistakes](#common-mistakes)
 - [Security application](#security-application)
+- [Line-by-line walkthrough](#line-by-line-walkthrough)
+- [Prediction experiments](#prediction-experiments)
+- [Broken example and repair](#broken-example-and-repair)
+- [Guided practice walkthrough](#guided-practice-walkthrough)
+- [Bounded cybersecurity fixture walkthrough](#bounded-cybersecurity-fixture-walkthrough)
 - [Exercises](#exercises)
 - [Finish line](#finish-line)
+- [Mental model](#mental-model)
+- [Limitations](#limitations)
+- [References](#references)
 
 ## Why this lesson exists
 
@@ -126,6 +145,21 @@ print(decision)
 
 The project avoids inventing primitives.
 
+## Read the first example line by line
+
+The first runnable example introduces **Symmetric and Asymmetric Cryptography**. Copy it into a new file and run it before changing anything. Then use this table to read the same code slowly. A line-by-line explanation does not replace practice: it shows you what to look for when a program behaves differently from your prediction.
+
+| Line | Code | What Python is doing |
+| ---: | --- | --- |
+| 1 | `roles = {` | Assignment: Python evaluates the right side and stores the result under the name on the left. |
+| 2 | `"encrypt_to_recipient": "recipient public key",` | Expression or data declaration: read the names, values, and operators and predict the result. |
+| 3 | `"decrypt": "recipient private key",` | Expression or data declaration: read the names, values, and operators and predict the result. |
+| 4 | `"sign": "sender private key",` | Expression or data declaration: read the names, values, and operators and predict the result. |
+| 5 | `"verify": "sender public key",` | Expression or data declaration: read the names, values, and operators and predict the result. |
+| 6 | `}` | Expression or data declaration: read the names, values, and operators and predict the result. |
+| 7 | `print(roles)` | Output call: Python evaluates the argument and writes a representation to the terminal. |
+
+After the run, write down the value created by each assignment, the condition tested by each branch, and the output that appeared. Change one input only. If the result changes, identify the line that used that input. If the result does not change, explain why the input was not part of the decision. This is the same tracing habit used later when reviewing security automation.
 ## Execution trace
 
 The design identifies parties and properties, chooses key roles, selects an approved construction, verifies before parsing, and documents key storage, rotation, and failure behavior.

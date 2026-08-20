@@ -2,7 +2,12 @@
 
 [← Day 53](../day_53_hashes_and_integrity/day_53_hashes_and_integrity.md) · [Day index](../DAY_INDEX.md) · [Day 55 →](../day_55_secure_randomness/day_55_secure_randomness.md)
 
-## Table of Contents
+
+
+
+
+
+## Table of contents
 
 - [Why this lesson exists](#why-this-lesson-exists)
 - [Prerequisites](#prerequisites)
@@ -10,13 +15,27 @@
 - [The problem](#the-problem)
 - [Security boundary](#security-boundary)
 - [Lesson](#lesson)
-- [Vocabulary](#vocabulary)
+  - [Vocabulary](#vocabulary)
 - [Worked examples](#worked-examples)
+  - [Example 1: Create a tag](#example-1-create-a-tag)
+  - [Example 2: Verify with compare_digest](#example-2-verify-with-comparedigest)
+  - [Example 3: Detect tampering](#example-3-detect-tampering)
+  - [Example 4: Verify before parse](#example-4-verify-before-parse)
+  - [Example 5: Name key scope](#example-5-name-key-scope)
+- [Read the first example line by line](#read-the-first-example-line-by-line)
 - [Execution trace](#execution-trace)
 - [Common mistakes](#common-mistakes)
 - [Security application](#security-application)
+- [Line-by-line walkthrough](#line-by-line-walkthrough)
+- [Prediction experiments](#prediction-experiments)
+- [Broken example and repair](#broken-example-and-repair)
+- [Guided practice walkthrough](#guided-practice-walkthrough)
+- [Bounded cybersecurity fixture walkthrough](#bounded-cybersecurity-fixture-walkthrough)
 - [Exercises](#exercises)
 - [Finish line](#finish-line)
+- [Mental model](#mental-model)
+- [Limitations](#limitations)
+- [References](#references)
 
 ## Why this lesson exists
 
@@ -127,6 +146,20 @@ print(key_policy)
 
 The key lifecycle is documented.
 
+## Read the first example line by line
+
+The first runnable example introduces **HMAC and Message Authenticity**. Copy it into a new file and run it before changing anything. Then use this table to read the same code slowly. A line-by-line explanation does not replace practice: it shows you what to look for when a program behaves differently from your prediction.
+
+| Line | Code | What Python is doing |
+| ---: | --- | --- |
+| 1 | `import hmac, hashlib` | Import statement: the program asks for code from a module. |
+| 2 | `` | Blank line: it separates ideas for the human reader. |
+| 3 | `key = b"training-key"` | Assignment: Python evaluates the right side and stores the result under the name on the left. |
+| 4 | `message = b"case=54"` | Assignment: Python evaluates the right side and stores the result under the name on the left. |
+| 5 | `tag = hmac.new(key, message, hashlib.sha256).hexdigest()` | Assignment: Python evaluates the right side and stores the result under the name on the left. |
+| 6 | `print(tag[:12])` | Output call: Python evaluates the argument and writes a representation to the terminal. |
+
+After the run, write down the value created by each assignment, the condition tested by each branch, and the output that appeared. Change one input only. If the result changes, identify the line that used that input. If the result does not change, explain why the input was not part of the decision. This is the same tracing habit used later when reviewing security automation.
 ## Execution trace
 
 The sender computes a tag over exact bytes; the receiver recomputes it with the expected key, compares safely, and only then parses or acts on the message.

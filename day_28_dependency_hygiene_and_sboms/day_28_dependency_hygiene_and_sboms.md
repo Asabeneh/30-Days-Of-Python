@@ -2,7 +2,12 @@
 
 [← Day 27](../day_27_git_and_code_review/day_27_git_and_code_review.md) · [Day index](../DAY_INDEX.md) · [Day 29 →](../day_29_threat_modeling/day_29_threat_modeling.md)
 
-## Table of Contents
+
+
+
+
+
+## Table of contents
 
 - [Why this lesson exists](#why-this-lesson-exists)
 - [Prerequisites](#prerequisites)
@@ -10,13 +15,27 @@
 - [The problem](#the-problem)
 - [Security boundary](#security-boundary)
 - [Lesson](#lesson)
-- [Vocabulary](#vocabulary)
+  - [Vocabulary](#vocabulary)
 - [Worked examples](#worked-examples)
+  - [Example 1: List dependencies](#example-1-list-dependencies)
+  - [Example 2: Record a version](#example-2-record-a-version)
+  - [Example 3: Separate runtime and development](#example-3-separate-runtime-and-development)
+  - [Example 4: Check a lock-like record](#example-4-check-a-lock-like-record)
+  - [Example 5: State provenance questions](#example-5-state-provenance-questions)
+- [Read the first example line by line](#read-the-first-example-line-by-line)
 - [Execution trace](#execution-trace)
 - [Common mistakes](#common-mistakes)
 - [Security application](#security-application)
+- [Line-by-line walkthrough](#line-by-line-walkthrough)
+- [Prediction experiments](#prediction-experiments)
+- [Broken example and repair](#broken-example-and-repair)
+- [Guided practice walkthrough](#guided-practice-walkthrough)
+- [Bounded cybersecurity fixture walkthrough](#bounded-cybersecurity-fixture-walkthrough)
 - [Exercises](#exercises)
 - [Finish line](#finish-line)
+- [Mental model](#mental-model)
+- [Limitations](#limitations)
+- [References](#references)
 
 ## Why this lesson exists
 
@@ -124,6 +143,17 @@ print(questions)
 
 The checklist prevents “it installed” from becoming “it is trusted.”
 
+## Read the first example line by line
+
+The first runnable example introduces **Dependency Hygiene and SBOM Thinking**. Copy it into a new file and run it before changing anything. Then use this table to read the same code slowly. A line-by-line explanation does not replace practice: it shows you what to look for when a program behaves differently from your prediction.
+
+| Line | Code | What Python is doing |
+| ---: | --- | --- |
+| 1 | `dependencies = ["pytest", "ruff", "mypy"]` | Assignment: Python evaluates the right side and stores the result under the name on the left. |
+| 2 | `for name in dependencies:` | Loop header: Python prepares to repeat the indented block. |
+| 3 | `print(name)` | Output call: Python evaluates the argument and writes a representation to the terminal. |
+
+After the run, write down the value created by each assignment, the condition tested by each branch, and the output that appeared. Change one input only. If the result changes, identify the line that used that input. If the result does not change, explain why the input was not part of the decision. This is the same tracing habit used later when reviewing security automation.
 ## Execution trace
 
 The project declares components, the environment reports installed components, and a review compares the two while recording provenance and purpose.

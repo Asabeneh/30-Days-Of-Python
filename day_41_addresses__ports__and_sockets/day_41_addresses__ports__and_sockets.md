@@ -2,7 +2,12 @@
 
 [← Day 40](../day_40_project__host_baseline_auditor/day_40_project__host_baseline_auditor.md) · [Day index](../DAY_INDEX.md) · [Day 42 →](../day_42_tcp_clients_and_servers/day_42_tcp_clients_and_servers.md)
 
-## Table of Contents
+
+
+
+
+
+## Table of contents
 
 - [Why this lesson exists](#why-this-lesson-exists)
 - [Prerequisites](#prerequisites)
@@ -10,13 +15,27 @@
 - [The problem](#the-problem)
 - [Security boundary](#security-boundary)
 - [Lesson](#lesson)
-- [Vocabulary](#vocabulary)
+  - [Vocabulary](#vocabulary)
 - [Worked examples](#worked-examples)
+  - [Example 1: Represent an endpoint](#example-1-represent-an-endpoint)
+  - [Example 2: Validate a port](#example-2-validate-a-port)
+  - [Example 3: Create a socket](#example-3-create-a-socket)
+  - [Example 4: Use a context manager](#example-4-use-a-context-manager)
+  - [Example 5: State scope](#example-5-state-scope)
+- [Read the first example line by line](#read-the-first-example-line-by-line)
 - [Execution trace](#execution-trace)
 - [Common mistakes](#common-mistakes)
 - [Security application](#security-application)
+- [Line-by-line walkthrough](#line-by-line-walkthrough)
+- [Prediction experiments](#prediction-experiments)
+- [Broken example and repair](#broken-example-and-repair)
+- [Guided practice walkthrough](#guided-practice-walkthrough)
+- [Bounded cybersecurity fixture walkthrough](#bounded-cybersecurity-fixture-walkthrough)
 - [Exercises](#exercises)
 - [Finish line](#finish-line)
+- [Mental model](#mental-model)
+- [Limitations](#limitations)
+- [References](#references)
 
 ## Why this lesson exists
 
@@ -132,6 +151,24 @@ print(scope)
 
 The scope is local and explicit.
 
+## Read the first example line by line
+
+The first runnable example introduces **Addresses, Ports, and Sockets**. Copy it into a new file and run it before changing anything. Then use this table to read the same code slowly. A line-by-line explanation does not replace practice: it shows you what to look for when a program behaves differently from your prediction.
+
+| Line | Code | What Python is doing |
+| ---: | --- | --- |
+| 1 | `from dataclasses import dataclass` | Import statement: the program asks for code from a module. |
+| 2 | `` | Blank line: it separates ideas for the human reader. |
+| 3 | `` | Blank line: it separates ideas for the human reader. |
+| 4 | `@dataclass(frozen=True)` | Assignment: Python evaluates the right side and stores the result under the name on the left. |
+| 5 | `class Endpoint:` | Expression or data declaration: read the names, values, and operators and predict the result. |
+| 6 | `host: str` | Expression or data declaration: read the names, values, and operators and predict the result. |
+| 7 | `port: int` | Expression or data declaration: read the names, values, and operators and predict the result. |
+| 8 | `` | Blank line: it separates ideas for the human reader. |
+| 9 | `` | Blank line: it separates ideas for the human reader. |
+| 10 | `print(Endpoint("127.0.0.1", 8000))` | Output call: Python evaluates the argument and writes a representation to the terminal. |
+
+After the run, write down the value created by each assignment, the condition tested by each branch, and the output that appeared. Change one input only. If the result changes, identify the line that used that input. If the result does not change, explain why the input was not part of the decision. This is the same tracing habit used later when reviewing security automation.
 ## Execution trace
 
 The endpoint is validated, the socket is created, options are set, and cleanup happens. No network operation occurs until a connect, bind, send, or receive call is made.

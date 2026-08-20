@@ -2,6 +2,37 @@
 
 [← Day 2](../day_02_values_names_and_input/day_02_values_names_and_input.md) · [Day index](../DAY_INDEX.md) · [Day 4 →](../day_04_operators_and_decisions/day_04_operators_and_decisions.md)
 
+
+
+
+
+## Table of contents
+
+- [Welcome](#welcome)
+- [Prerequisites](#prerequisites)
+- [Outcomes](#outcomes)
+- [The problem](#the-problem)
+- [Security boundary](#security-boundary)
+- [Vocabulary](#vocabulary)
+- [Lesson](#lesson)
+- [1. Read a value's type before choosing an operation](#1-read-a-values-type-before-choosing-an-operation)
+- [2. Convert first, validate second](#2-convert-first-validate-second)
+- [3. Boolean conversion is not language understanding](#3-boolean-conversion-is-not-language-understanding)
+- [4. Missing, malformed, and out-of-range are different](#4-missing-malformed-and-out-of-range-are-different)
+- [Worked examples](#worked-examples)
+  - [Example 1: A first runnable case](#example-1-a-first-runnable-case)
+  - [Example 2: A boundary case](#example-2-a-boundary-case)
+  - [Example 3: A deliberate experiment](#example-3-a-deliberate-experiment)
+  - [Example 4: A bounded security fixture](#example-4-a-bounded-security-fixture)
+  - [Example 5: A valid conversion can still fail policy](#example-5-a-valid-conversion-can-still-fail-policy)
+- [Execution trace](#execution-trace)
+- [Common mistakes and repairs](#common-mistakes-and-repairs)
+- [Guided practice](#guided-practice)
+- [Security application](#security-application)
+- [Independent exercises](#independent-exercises)
+- [Finish line](#finish-line)
+- [References](#references)
+
 ## Welcome
 
 Yesterday you stored values under names and learned that keyboard input begins as text. Today you will learn how to distinguish kinds of values and how to convert text deliberately. A parser is a small translator: it takes an outside representation and turns it into an internal value the program can reason about.
@@ -170,6 +201,110 @@ The mental model is a boundary table:
 
 Do not skip straight from raw text to a security decision. Each stage gives you evidence and a place to handle failure.
 
+## 1. Read a value's type before choosing an operation
+
+Start with five values that look different when Python displays them:
+
+```python
+samples = ["7", 7, 7.0, True, None]
+for sample in samples:
+    print(repr(sample), type(sample).__name__)
+```
+
+Expected output:
+
+```text
+'7' str
+7 int
+7.0 float
+True bool
+None NoneType
+```
+
+The quotation marks around `"7"` make it text. The absence of quotation marks around `7` makes it an integer. `None` is a special value meaning that a value is deliberately absent. It is not the same as the text `"None"`.
+
+Before you call a function such as `int`, `float`, or `str`, ask what meaning the result should have. `int("7")` creates the number seven. `str(7)` creates text containing the character seven. Conversion changes the type but does not prove that the input is honest or allowed.
+
+## 2. Convert first, validate second
+
+Conversion answers “Can Python interpret these characters as this type?” Validation answers “Is the resulting value allowed by this program?” Keep the questions separate:
+
+```python
+raw = "99"
+severity = int(raw)
+print(severity)
+print(0 <= severity <= 10)
+```
+
+Output:
+
+```text
+99
+False
+```
+
+The conversion succeeded. The policy check failed. If `raw` were `"high"`, conversion itself would fail with `ValueError`. These are different problems and should receive different explanations.
+
+A safe boundary function can make the policy visible:
+
+```python
+def parse_severity(raw):
+    cleaned = raw.strip()
+    value = int(cleaned)
+    if not 0 <= value <= 10:
+        raise ValueError("severity must be between 0 and 10")
+    return value
+```
+
+Do not catch an error merely to make the program look successful. Decide whether the caller should reject the record, ask again, or label the value unknown.
+
+## 3. Boolean conversion is not language understanding
+
+This surprising example is worth running:
+
+```python
+print(bool("false"))
+print(bool(""))
+print(bool(0))
+print(bool(1))
+```
+
+Output:
+
+```text
+True
+False
+False
+True
+```
+
+`bool` asks whether a value is truthy. It does not translate English words. The non-empty string `"false"` is truthy. If a program receives words, define the accepted words explicitly:
+
+```python
+def parse_yes_no(raw):
+    word = raw.strip().casefold()
+    if word in {"yes", "true", "1"}:
+        return True
+    if word in {"no", "false", "0"}:
+        return False
+    raise ValueError("expected an accepted yes/no value")
+```
+
+An allowlist is easier to review than a guess. It also gives malformed input a clear outcome.
+
+## 4. Missing, malformed, and out-of-range are different
+
+Use a small table to reason about inputs:
+
+| Input | Conversion | Policy result |
+| --- | --- | --- |
+| `""` | empty text | missing or rejected, by policy |
+| `"high"` | conversion fails | malformed |
+| `"99"` | produces integer 99 | out of range |
+| `"7"` | produces integer 7 | accepted for a 0–10 rule |
+
+Write a prediction for each before testing. In a security tool, these distinctions help a reviewer understand whether the source was incomplete, incorrectly formatted, or simply outside the documented range. None of the categories proves malicious intent.
+
 ## Worked examples
 
 Run the examples in order. Each one changes only a small part of the previous idea.
@@ -189,6 +324,17 @@ Make one controlled change, record the output, and compare it with your predicti
 ### Example 4: A bounded security fixture
 
 Apply the idea to the synthetic fixture in this lesson. The fixture is local, finite, and invented; it is not permission to inspect real systems.
+
+### Example 5: A valid conversion can still fail policy
+
+```python
+raw = "99"
+value = int(raw)
+print(value)
+print(0 <= value <= 10)
+```
+
+Conversion succeeds, but the range check is false. Keep conversion errors and policy errors separate so the final report explains what happened.
 
 ## Execution trace
 

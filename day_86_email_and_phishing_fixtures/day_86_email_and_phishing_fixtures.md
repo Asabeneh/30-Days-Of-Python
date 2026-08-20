@@ -2,7 +2,12 @@
 
 [← Day 85](../day_85_browser_and_document_artifacts/day_85_browser_and_document_artifacts.md) · [Day index](../DAY_INDEX.md) · [Day 87 →](../day_87_network_evidence/day_87_network_evidence.md)
 
-## Table of Contents
+
+
+
+
+
+## Table of contents
 
 - [Why this lesson exists](#why-this-lesson-exists)
 - [Prerequisites](#prerequisites)
@@ -10,13 +15,27 @@
 - [The problem](#the-problem)
 - [Security boundary](#security-boundary)
 - [Lesson](#lesson)
-- [Vocabulary](#vocabulary)
+  - [Vocabulary](#vocabulary)
 - [Worked examples](#worked-examples)
+  - [Example 1: Parse headers](#example-1-parse-headers)
+  - [Example 2: Extract a URL](#example-2-extract-a-url)
+  - [Example 3: Check domain policy](#example-3-check-domain-policy)
+  - [Example 4: Model attachment metadata](#example-4-model-attachment-metadata)
+  - [Example 5: Report uncertainty](#example-5-report-uncertainty)
+- [Read the first example line by line](#read-the-first-example-line-by-line)
 - [Execution trace](#execution-trace)
 - [Common mistakes](#common-mistakes)
 - [Security application](#security-application)
+- [Line-by-line walkthrough](#line-by-line-walkthrough)
+- [Prediction experiments](#prediction-experiments)
+- [Broken example and repair](#broken-example-and-repair)
+- [Guided practice walkthrough](#guided-practice-walkthrough)
+- [Bounded cybersecurity fixture walkthrough](#bounded-cybersecurity-fixture-walkthrough)
 - [Exercises](#exercises)
 - [Finish line](#finish-line)
+- [Mental model](#mental-model)
+- [Limitations](#limitations)
+- [References](#references)
 
 ## Why this lesson exists
 
@@ -116,6 +135,16 @@ print({"signals": ["urgent language"], "clicked": False, "compromise": "not asse
 
 The report distinguishes observation.
 
+## Read the first example line by line
+
+The first runnable example introduces **Email and Phishing Fixtures**. Copy it into a new file and run it before changing anything. Then use this table to read the same code slowly. A line-by-line explanation does not replace practice: it shows you what to look for when a program behaves differently from your prediction.
+
+| Line | Code | What Python is doing |
+| ---: | --- | --- |
+| 1 | `headers = {"From": "training@example.invalid", "Subject": "Review fixture"}` | Assignment: Python evaluates the right side and stores the result under the name on the left. |
+| 2 | `print(headers)` | Output call: Python evaluates the argument and writes a representation to the terminal. |
+
+After the run, write down the value created by each assignment, the condition tested by each branch, and the output that appeared. Change one input only. If the result changes, identify the line that used that input. If the result does not change, explain why the input was not part of the decision. This is the same tracing habit used later when reviewing security automation.
 ## Execution trace
 
 The parser reads a fixture, normalizes safe headers, extracts links without navigation, checks attachment metadata, and reports signals plus what was not observed.

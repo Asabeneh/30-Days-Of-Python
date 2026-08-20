@@ -2,7 +2,12 @@
 
 [← Day 75](../day_75_mitre_att_ck_mapping/day_75_mitre_att_ck_mapping.md) · [Day index](../DAY_INDEX.md) · [Day 77 →](../day_77_baselines_and_anomalies/day_77_baselines_and_anomalies.md)
 
-## Table of Contents
+
+
+
+
+
+## Table of contents
 
 - [Why this lesson exists](#why-this-lesson-exists)
 - [Prerequisites](#prerequisites)
@@ -10,13 +15,27 @@
 - [The problem](#the-problem)
 - [Security boundary](#security-boundary)
 - [Lesson](#lesson)
-- [Vocabulary](#vocabulary)
+  - [Vocabulary](#vocabulary)
 - [Worked examples](#worked-examples)
+  - [Example 1: Create an alert](#example-1-create-an-alert)
+  - [Example 2: Score separately](#example-2-score-separately)
+  - [Example 3: Choose a disposition](#example-3-choose-a-disposition)
+  - [Example 4: Record next step](#example-4-record-next-step)
+  - [Example 5: Close with reason](#example-5-close-with-reason)
+- [Read the first example line by line](#read-the-first-example-line-by-line)
 - [Execution trace](#execution-trace)
 - [Common mistakes](#common-mistakes)
 - [Security application](#security-application)
+- [Line-by-line walkthrough](#line-by-line-walkthrough)
+- [Prediction experiments](#prediction-experiments)
+- [Broken example and repair](#broken-example-and-repair)
+- [Guided practice walkthrough](#guided-practice-walkthrough)
+- [Bounded cybersecurity fixture walkthrough](#bounded-cybersecurity-fixture-walkthrough)
 - [Exercises](#exercises)
 - [Finish line](#finish-line)
+- [Mental model](#mental-model)
+- [Limitations](#limitations)
+- [References](#references)
 
 ## Why this lesson exists
 
@@ -117,6 +136,16 @@ print(alert)
 
 The outcome is explainable.
 
+## Read the first example line by line
+
+The first runnable example introduces **Alert Triage and Analyst Decisions**. Copy it into a new file and run it before changing anything. Then use this table to read the same code slowly. A line-by-line explanation does not replace practice: it shows you what to look for when a program behaves differently from your prediction.
+
+| Line | Code | What Python is doing |
+| ---: | --- | --- |
+| 1 | `alert = {"id": "alert-76", "rule": "failed-login-threshold", "evidence": ["fixture:4"]}` | Assignment: Python evaluates the right side and stores the result under the name on the left. |
+| 2 | `print(alert)` | Output call: Python evaluates the argument and writes a representation to the terminal. |
+
+After the run, write down the value created by each assignment, the condition tested by each branch, and the output that appeared. Change one input only. If the result changes, identify the line that used that input. If the result does not change, explain why the input was not part of the decision. This is the same tracing habit used later when reviewing security automation.
 ## Execution trace
 
 Triage reads the alert and evidence, separates severity from confidence, selects a state, records a bounded next step, and preserves a disposition and reviewer.

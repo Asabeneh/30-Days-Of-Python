@@ -2,7 +2,12 @@
 
 [← Day 22](../day_22_cli_design/day_22_cli_design.md) · [Day index](../DAY_INDEX.md) · [Day 24 →](../day_24_json__csv__and_sqlite/day_24_json__csv__and_sqlite.md)
 
-## Table of Contents
+
+
+
+
+
+## Table of contents
 
 - [Why this lesson exists](#why-this-lesson-exists)
 - [Prerequisites](#prerequisites)
@@ -10,13 +15,27 @@
 - [The problem](#the-problem)
 - [Security boundary](#security-boundary)
 - [Lesson](#lesson)
-- [Vocabulary](#vocabulary)
+  - [Vocabulary](#vocabulary)
 - [Worked examples](#worked-examples)
+  - [Example 1: Read a default](#example-1-read-a-default)
+  - [Example 2: Validate configuration](#example-2-validate-configuration)
+  - [Example 3: Detect a secret without printing it](#example-3-detect-a-secret-without-printing-it)
+  - [Example 4: Separate config from code](#example-4-separate-config-from-code)
+  - [Example 5: Fail closed for required secrets](#example-5-fail-closed-for-required-secrets)
+- [Read the first example line by line](#read-the-first-example-line-by-line)
 - [Execution trace](#execution-trace)
 - [Common mistakes](#common-mistakes)
 - [Security application](#security-application)
+- [Line-by-line walkthrough](#line-by-line-walkthrough)
+- [Prediction experiments](#prediction-experiments)
+- [Broken example and repair](#broken-example-and-repair)
+- [Guided practice walkthrough](#guided-practice-walkthrough)
+- [Bounded cybersecurity fixture walkthrough](#bounded-cybersecurity-fixture-walkthrough)
 - [Exercises](#exercises)
 - [Finish line](#finish-line)
+- [Mental model](#mental-model)
+- [Limitations](#limitations)
+- [References](#references)
 
 ## Why this lesson exists
 
@@ -124,6 +143,18 @@ if token is None and require_token:
 
 The caller receives an explicit setup failure.
 
+## Read the first example line by line
+
+The first runnable example introduces **Configuration, Environment Variables, and Secrets**. Copy it into a new file and run it before changing anything. Then use this table to read the same code slowly. A line-by-line explanation does not replace practice: it shows you what to look for when a program behaves differently from your prediction.
+
+| Line | Code | What Python is doing |
+| ---: | --- | --- |
+| 1 | `import os` | Import statement: the program asks for code from a module. |
+| 2 | `` | Blank line: it separates ideas for the human reader. |
+| 3 | `timeout = int(os.getenv("APP_TIMEOUT", "3"))` | Assignment: Python evaluates the right side and stores the result under the name on the left. |
+| 4 | `print(timeout)` | Output call: Python evaluates the argument and writes a representation to the terminal. |
+
+After the run, write down the value created by each assignment, the condition tested by each branch, and the output that appeared. Change one input only. If the result changes, identify the line that used that input. If the result does not change, explain why the input was not part of the decision. This is the same tracing habit used later when reviewing security automation.
 ## Execution trace
 
 The program reads environment text, converts it, enforces bounds, and stores a safe configuration object. Secret values remain outside logs, reports, and source control.

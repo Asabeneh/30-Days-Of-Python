@@ -2,7 +2,12 @@
 
 [← Day 107](../day_107_cloud_identity_concepts/day_107_cloud_identity_concepts.md) · [Day index](../DAY_INDEX.md) · [Day 109 →](../day_109_security_metrics/day_109_security_metrics.md)
 
-## Table of Contents
+
+
+
+
+
+## Table of contents
 
 - [Why this lesson exists](#why-this-lesson-exists)
 - [Prerequisites](#prerequisites)
@@ -10,13 +15,27 @@
 - [The problem](#the-problem)
 - [Security boundary](#security-boundary)
 - [Lesson](#lesson)
-- [Vocabulary](#vocabulary)
+  - [Vocabulary](#vocabulary)
 - [Worked examples](#worked-examples)
+  - [Example 1: Create a baseline](#example-1-create-a-baseline)
+  - [Example 2: Read runtime state](#example-2-read-runtime-state)
+  - [Example 3: Compare keys](#example-3-compare-keys)
+  - [Example 4: Classify severity](#example-4-classify-severity)
+  - [Example 5: Avoid auto-remediation](#example-5-avoid-auto-remediation)
+- [Read the first example line by line](#read-the-first-example-line-by-line)
 - [Execution trace](#execution-trace)
 - [Common mistakes](#common-mistakes)
 - [Security application](#security-application)
+- [Line-by-line walkthrough](#line-by-line-walkthrough)
+- [Prediction experiments](#prediction-experiments)
+- [Broken example and repair](#broken-example-and-repair)
+- [Guided practice walkthrough](#guided-practice-walkthrough)
+- [Bounded cybersecurity fixture walkthrough](#bounded-cybersecurity-fixture-walkthrough)
 - [Exercises](#exercises)
 - [Finish line](#finish-line)
+- [Mental model](#mental-model)
+- [Limitations](#limitations)
+- [References](#references)
 
 ## Why this lesson exists
 
@@ -118,6 +137,16 @@ print({"remediate": False, "next": "owner review"})
 
 The tool does not change the system.
 
+## Read the first example line by line
+
+The first runnable example introduces **Configuration Drift**. Copy it into a new file and run it before changing anything. Then use this table to read the same code slowly. A line-by-line explanation does not replace practice: it shows you what to look for when a program behaves differently from your prediction.
+
+| Line | Code | What Python is doing |
+| ---: | --- | --- |
+| 1 | `baseline = {"version": 2, "debug": False, "body_limit": 1000000, "owner": "course"}` | Assignment: Python evaluates the right side and stores the result under the name on the left. |
+| 2 | `print(baseline)` | Output call: Python evaluates the argument and writes a representation to the terminal. |
+
+After the run, write down the value created by each assignment, the condition tested by each branch, and the output that appeared. Change one input only. If the result changes, identify the line that used that input. If the result does not change, explain why the input was not part of the decision. This is the same tracing habit used later when reviewing security automation.
 ## Execution trace
 
 The auditor loads a versioned baseline, captures effective state, computes field-level differences, classifies impact, and sends a review item without silently changing configuration.

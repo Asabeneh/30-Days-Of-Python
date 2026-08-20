@@ -2,7 +2,12 @@
 
 [← Day 71](../day_71_telemetry_and_event_schemas/day_71_telemetry_and_event_schemas.md) · [Day index](../DAY_INDEX.md) · [Day 73 →](../day_73_ioc_enrichment/day_73_ioc_enrichment.md)
 
-## Table of Contents
+
+
+
+
+
+## Table of contents
 
 - [Why this lesson exists](#why-this-lesson-exists)
 - [Prerequisites](#prerequisites)
@@ -10,13 +15,27 @@
 - [The problem](#the-problem)
 - [Security boundary](#security-boundary)
 - [Lesson](#lesson)
-- [Vocabulary](#vocabulary)
+  - [Vocabulary](#vocabulary)
 - [Worked examples](#worked-examples)
+  - [Example 1: Parse key-value text](#example-1-parse-key-value-text)
+  - [Example 2: Map names](#example-2-map-names)
+  - [Example 3: Handle malformed pairs](#example-3-handle-malformed-pairs)
+  - [Example 4: Preserve raw id](#example-4-preserve-raw-id)
+  - [Example 5: Bound text](#example-5-bound-text)
+- [Read the first example line by line](#read-the-first-example-line-by-line)
 - [Execution trace](#execution-trace)
 - [Common mistakes](#common-mistakes)
 - [Security application](#security-application)
+- [Line-by-line walkthrough](#line-by-line-walkthrough)
+- [Prediction experiments](#prediction-experiments)
+- [Broken example and repair](#broken-example-and-repair)
+- [Guided practice walkthrough](#guided-practice-walkthrough)
+- [Bounded cybersecurity fixture walkthrough](#bounded-cybersecurity-fixture-walkthrough)
 - [Exercises](#exercises)
 - [Finish line](#finish-line)
+- [Mental model](#mental-model)
+- [Limitations](#limitations)
+- [References](#references)
 
 ## Why this lesson exists
 
@@ -122,6 +141,17 @@ print({"max_line": 2000, "max_fields": 50})
 
 The parser has finite limits.
 
+## Read the first example line by line
+
+The first runnable example introduces **Log Normalization**. Copy it into a new file and run it before changing anything. Then use this table to read the same code slowly. A line-by-line explanation does not replace practice: it shows you what to look for when a program behaves differently from your prediction.
+
+| Line | Code | What Python is doing |
+| ---: | --- | --- |
+| 1 | `line = "level=warning user=student event=login_failed"` | Assignment: Python evaluates the right side and stores the result under the name on the left. |
+| 2 | `fields = dict(item.split("=", 1) for item in line.split())` | Assignment: Python evaluates the right side and stores the result under the name on the left. |
+| 3 | `print(fields)` | Output call: Python evaluates the argument and writes a representation to the terminal. |
+
+After the run, write down the value created by each assignment, the condition tested by each branch, and the output that appeared. Change one input only. If the result changes, identify the line that used that input. If the result does not change, explain why the input was not part of the decision. This is the same tracing habit used later when reviewing security automation.
 ## Execution trace
 
 The normalizer bounds the line, extracts fields, maps names, converts types, records rejected tokens, and emits a versioned event with provenance.

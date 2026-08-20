@@ -2,7 +2,12 @@
 
 [← Day 116](../day_116_research_and_source_evaluation/day_116_research_and_source_evaluation.md) · [Day index](../DAY_INDEX.md) · [Day 118 →](../day_118_capstone_implementation/day_118_capstone_implementation.md)
 
-## Table of Contents
+
+
+
+
+
+## Table of contents
 
 - [Why this lesson exists](#why-this-lesson-exists)
 - [Prerequisites](#prerequisites)
@@ -10,13 +15,27 @@
 - [The problem](#the-problem)
 - [Security boundary](#security-boundary)
 - [Lesson](#lesson)
-- [Vocabulary](#vocabulary)
+  - [Vocabulary](#vocabulary)
 - [Worked examples](#worked-examples)
+  - [Example 1: Choose a problem](#example-1-choose-a-problem)
+  - [Example 2: Define milestones](#example-2-define-milestones)
+  - [Example 3: Choose architecture](#example-3-choose-architecture)
+  - [Example 4: Define done](#example-4-define-done)
+  - [Example 5: Record a trade-off](#example-5-record-a-trade-off)
+- [Read the first example line by line](#read-the-first-example-line-by-line)
 - [Execution trace](#execution-trace)
 - [Common mistakes](#common-mistakes)
 - [Security application](#security-application)
+- [Line-by-line walkthrough](#line-by-line-walkthrough)
+- [Prediction experiments](#prediction-experiments)
+- [Broken example and repair](#broken-example-and-repair)
+- [Guided practice walkthrough](#guided-practice-walkthrough)
+- [Bounded cybersecurity fixture walkthrough](#bounded-cybersecurity-fixture-walkthrough)
 - [Exercises](#exercises)
 - [Finish line](#finish-line)
+- [Mental model](#mental-model)
+- [Limitations](#limitations)
+- [References](#references)
 
 ## Why this lesson exists
 
@@ -125,6 +144,20 @@ print(decision)
 
 The trade-off is honest.
 
+## Read the first example line by line
+
+The first runnable example introduces **Capstone Planning**. Copy it into a new file and run it before changing anything. Then use this table to read the same code slowly. A line-by-line explanation does not replace practice: it shows you what to look for when a program behaves differently from your prediction.
+
+| Line | Code | What Python is doing |
+| ---: | --- | --- |
+| 1 | `problem = {` | Assignment: Python evaluates the right side and stores the result under the name on the left. |
+| 2 | `"user": "student analyst",` | Expression or data declaration: read the names, values, and operators and predict the result. |
+| 3 | `"asset": "synthetic events",` | Expression or data declaration: read the names, values, and operators and predict the result. |
+| 4 | `"boundary": "local fixtures",` | Expression or data declaration: read the names, values, and operators and predict the result. |
+| 5 | `}` | Expression or data declaration: read the names, values, and operators and predict the result. |
+| 6 | `print(problem)` | Output call: Python evaluates the argument and writes a representation to the terminal. |
+
+After the run, write down the value created by each assignment, the condition tested by each branch, and the output that appeared. Change one input only. If the result changes, identify the line that used that input. If the result does not change, explain why the input was not part of the decision. This is the same tracing habit used later when reviewing security automation.
 ## Execution trace
 
 The capstone moves from user/asset/boundary to milestones, architecture, evidence, and trade-offs. Scope is reduced until the learner can finish and explain it.

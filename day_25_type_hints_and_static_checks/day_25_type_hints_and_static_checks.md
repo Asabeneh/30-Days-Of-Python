@@ -2,7 +2,12 @@
 
 [← Day 24](../day_24_json__csv__and_sqlite/day_24_json__csv__and_sqlite.md) · [Day index](../DAY_INDEX.md) · [Day 26 →](../day_26_structured_logging/day_26_structured_logging.md)
 
-## Table of Contents
+
+
+
+
+
+## Table of contents
 
 - [Why this lesson exists](#why-this-lesson-exists)
 - [Prerequisites](#prerequisites)
@@ -10,13 +15,27 @@
 - [The problem](#the-problem)
 - [Security boundary](#security-boundary)
 - [Lesson](#lesson)
-- [Vocabulary](#vocabulary)
+  - [Vocabulary](#vocabulary)
 - [Worked examples](#worked-examples)
+  - [Example 1: Annotate a function](#example-1-annotate-a-function)
+  - [Example 2: Use a TypedDict](#example-2-use-a-typeddict)
+  - [Example 3: Optional values](#example-3-optional-values)
+  - [Example 4: Protocols by behavior](#example-4-protocols-by-behavior)
+  - [Example 5: Runtime validation still matters](#example-5-runtime-validation-still-matters)
+- [Read the first example line by line](#read-the-first-example-line-by-line)
 - [Execution trace](#execution-trace)
 - [Common mistakes](#common-mistakes)
 - [Security application](#security-application)
+- [Line-by-line walkthrough](#line-by-line-walkthrough)
+- [Prediction experiments](#prediction-experiments)
+- [Broken example and repair](#broken-example-and-repair)
+- [Guided practice walkthrough](#guided-practice-walkthrough)
+- [Bounded cybersecurity fixture walkthrough](#bounded-cybersecurity-fixture-walkthrough)
 - [Exercises](#exercises)
 - [Finish line](#finish-line)
+- [Mental model](#mental-model)
+- [Limitations](#limitations)
+- [References](#references)
 
 ## Why this lesson exists
 
@@ -125,6 +144,16 @@ raw: Event = {
 
 The annotation does not convert the string or reject it.
 
+## Read the first example line by line
+
+The first runnable example introduces **Type Hints and Static Checks**. Copy it into a new file and run it before changing anything. Then use this table to read the same code slowly. A line-by-line explanation does not replace practice: it shows you what to look for when a program behaves differently from your prediction.
+
+| Line | Code | What Python is doing |
+| ---: | --- | --- |
+| 1 | `def label(severity: int) -> str:` | Function definition: Python records a reusable block with this name. |
+| 2 | `return "high" if severity >= 7 else "normal"` | Return statement: the function sends this value back to its caller. |
+
+After the run, write down the value created by each assignment, the condition tested by each branch, and the output that appeared. Change one input only. If the result changes, identify the line that used that input. If the result does not change, explain why the input was not part of the decision. This is the same tracing habit used later when reviewing security automation.
 ## Execution trace
 
 Static analysis reads the declared contract, but external data crosses into Python at runtime. Validate first, then construct the typed internal record.

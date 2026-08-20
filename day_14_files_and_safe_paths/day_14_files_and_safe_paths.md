@@ -2,7 +2,12 @@
 
 [← Day 13](../day_13_exceptions_and_error_taxonomy/day_13_exceptions_and_error_taxonomy.md) · [Day index](../DAY_INDEX.md) · [Day 15 →](../day_15_iterators_and_generators/day_15_iterators_and_generators.md)
 
-## Table of Contents
+
+
+
+
+
+## Table of contents
 
 - [Why this lesson exists](#why-this-lesson-exists)
 - [Prerequisites](#prerequisites)
@@ -10,13 +15,27 @@
 - [The problem](#the-problem)
 - [Security boundary](#security-boundary)
 - [Lesson](#lesson)
-- [Vocabulary](#vocabulary)
+  - [Vocabulary](#vocabulary)
 - [Worked examples](#worked-examples)
+  - [Example 1: Build a path](#example-1-build-a-path)
+  - [Example 2: Resolve and constrain](#example-2-resolve-and-constrain)
+  - [Example 3: Read with an encoding](#example-3-read-with-an-encoding)
+  - [Example 4: Check size before reading](#example-4-check-size-before-reading)
+  - [Example 5: Write a controlled report](#example-5-write-a-controlled-report)
+- [Read the first example line by line](#read-the-first-example-line-by-line)
 - [Execution trace](#execution-trace)
 - [Common mistakes](#common-mistakes)
 - [Security application](#security-application)
+- [Line-by-line walkthrough](#line-by-line-walkthrough)
+- [Prediction experiments](#prediction-experiments)
+- [Broken example and repair](#broken-example-and-repair)
+- [Guided practice walkthrough](#guided-practice-walkthrough)
+- [Bounded cybersecurity fixture walkthrough](#bounded-cybersecurity-fixture-walkthrough)
 - [Exercises](#exercises)
 - [Finish line](#finish-line)
+- [Mental model](#mental-model)
+- [Limitations](#limitations)
+- [References](#references)
 
 ## Why this lesson exists
 
@@ -126,6 +145,19 @@ report_dir.mkdir(exist_ok=True)
 
 The output is local and resettable.
 
+## Read the first example line by line
+
+The first runnable example introduces **Files, Paths, and Safe Evidence Boundaries**. Copy it into a new file and run it before changing anything. Then use this table to read the same code slowly. A line-by-line explanation does not replace practice: it shows you what to look for when a program behaves differently from your prediction.
+
+| Line | Code | What Python is doing |
+| ---: | --- | --- |
+| 1 | `from pathlib import Path` | Import statement: the program asks for code from a module. |
+| 2 | `` | Blank line: it separates ideas for the human reader. |
+| 3 | `base = Path("training-fixtures")` | Assignment: Python evaluates the right side and stores the result under the name on the left. |
+| 4 | `path = base / "events.log"` | Assignment: Python evaluates the right side and stores the result under the name on the left. |
+| 5 | `print(path)` | Output call: Python evaluates the argument and writes a representation to the terminal. |
+
+After the run, write down the value created by each assignment, the condition tested by each branch, and the output that appeared. Change one input only. If the result changes, identify the line that used that input. If the result does not change, explain why the input was not part of the decision. This is the same tracing habit used later when reviewing security automation.
 ## Execution trace
 
 For base `/course/training-fixtures` and user value `../secret.txt`, the candidate resolves to `/course/secret.txt`. The candidate is not inside the resolved base, so the function raises before opening it.

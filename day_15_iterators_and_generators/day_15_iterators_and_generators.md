@@ -2,7 +2,12 @@
 
 [← Day 14](../day_14_files_and_safe_paths/day_14_files_and_safe_paths.md) · [Day index](../DAY_INDEX.md) · [Day 16 →](../day_16_regular_expressions/day_16_regular_expressions.md)
 
-## Table of Contents
+
+
+
+
+
+## Table of contents
 
 - [Why this lesson exists](#why-this-lesson-exists)
 - [Prerequisites](#prerequisites)
@@ -10,13 +15,27 @@
 - [The problem](#the-problem)
 - [Security boundary](#security-boundary)
 - [Lesson](#lesson)
-- [Vocabulary](#vocabulary)
+  - [Vocabulary](#vocabulary)
 - [Worked examples](#worked-examples)
+  - [Example 1: A generator function](#example-1-a-generator-function)
+  - [Example 2: Stream matching lines](#example-2-stream-matching-lines)
+  - [Example 3: Add a bound](#example-3-add-a-bound)
+  - [Example 4: Observe truncation](#example-4-observe-truncation)
+  - [Example 5: Generator exhaustion](#example-5-generator-exhaustion)
+- [Read the first example line by line](#read-the-first-example-line-by-line)
 - [Execution trace](#execution-trace)
 - [Common mistakes](#common-mistakes)
 - [Security application](#security-application)
+- [Line-by-line walkthrough](#line-by-line-walkthrough)
+- [Prediction experiments](#prediction-experiments)
+- [Broken example and repair](#broken-example-and-repair)
+- [Guided practice walkthrough](#guided-practice-walkthrough)
+- [Bounded cybersecurity fixture walkthrough](#bounded-cybersecurity-fixture-walkthrough)
 - [Exercises](#exercises)
 - [Finish line](#finish-line)
+- [Mental model](#mental-model)
+- [Limitations](#limitations)
+- [References](#references)
 
 ## Why this lesson exists
 
@@ -130,6 +149,22 @@ print(list(items))
 
 The first list has values; the second is empty.
 
+## Read the first example line by line
+
+The first runnable example introduces **Generators, Iterators, and Streaming Evidence**. Copy it into a new file and run it before changing anything. Then use this table to read the same code slowly. A line-by-line explanation does not replace practice: it shows you what to look for when a program behaves differently from your prediction.
+
+| Line | Code | What Python is doing |
+| ---: | --- | --- |
+| 1 | `def numbers():` | Function definition: Python records a reusable block with this name. |
+| 2 | `yield 1` | Expression or data declaration: read the names, values, and operators and predict the result. |
+| 3 | `yield 2` | Expression or data declaration: read the names, values, and operators and predict the result. |
+| 4 | `` | Blank line: it separates ideas for the human reader. |
+| 5 | `` | Blank line: it separates ideas for the human reader. |
+| 6 | `items = numbers()` | Assignment: Python evaluates the right side and stores the result under the name on the left. |
+| 7 | `print(next(items))` | Output call: Python evaluates the argument and writes a representation to the terminal. |
+| 8 | `print(next(items))` | Output call: Python evaluates the argument and writes a representation to the terminal. |
+
+After the run, write down the value created by each assignment, the condition tested by each branch, and the output that appeared. Change one input only. If the result changes, identify the line that used that input. If the result does not change, explain why the input was not part of the decision. This is the same tracing habit used later when reviewing security automation.
 ## Execution trace
 
 A generator enters its body only when `next` or a loop requests a value. After yielding the final item, the next request raises `StopIteration`, which a `for` loop handles for you.

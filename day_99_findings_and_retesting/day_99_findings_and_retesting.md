@@ -2,7 +2,12 @@
 
 [← Day 98](../day_98_bounded_fuzzing/day_98_bounded_fuzzing.md) · [Day index](../DAY_INDEX.md) · [Day 100 →](../day_100_project__authorized_local_assessment/day_100_project__authorized_local_assessment.md)
 
-## Table of Contents
+
+
+
+
+
+## Table of contents
 
 - [Why this lesson exists](#why-this-lesson-exists)
 - [Prerequisites](#prerequisites)
@@ -10,13 +15,27 @@
 - [The problem](#the-problem)
 - [Security boundary](#security-boundary)
 - [Lesson](#lesson)
-- [Vocabulary](#vocabulary)
+  - [Vocabulary](#vocabulary)
 - [Worked examples](#worked-examples)
+  - [Example 1: State a finding](#example-1-state-a-finding)
+  - [Example 2: Give reproduction](#example-2-give-reproduction)
+  - [Example 3: Assess impact](#example-3-assess-impact)
+  - [Example 4: Record remediation](#example-4-record-remediation)
+  - [Example 5: Retest](#example-5-retest)
+- [Read the first example line by line](#read-the-first-example-line-by-line)
 - [Execution trace](#execution-trace)
 - [Common mistakes](#common-mistakes)
 - [Security application](#security-application)
+- [Line-by-line walkthrough](#line-by-line-walkthrough)
+- [Prediction experiments](#prediction-experiments)
+- [Broken example and repair](#broken-example-and-repair)
+- [Guided practice walkthrough](#guided-practice-walkthrough)
+- [Bounded cybersecurity fixture walkthrough](#bounded-cybersecurity-fixture-walkthrough)
 - [Exercises](#exercises)
 - [Finish line](#finish-line)
+- [Mental model](#mental-model)
+- [Limitations](#limitations)
+- [References](#references)
 
 ## Why this lesson exists
 
@@ -121,6 +140,20 @@ print(retest)
 
 The fixed behavior is documented.
 
+## Read the first example line by line
+
+The first runnable example introduces **Findings and Retesting**. Copy it into a new file and run it before changing anything. Then use this table to read the same code slowly. A line-by-line explanation does not replace practice: it shows you what to look for when a program behaves differently from your prediction.
+
+| Line | Code | What Python is doing |
+| ---: | --- | --- |
+| 1 | `finding = {` | Assignment: Python evaluates the right side and stores the result under the name on the left. |
+| 2 | `"title": "training endpoint accepts invalid limit",` | Expression or data declaration: read the names, values, and operators and predict the result. |
+| 3 | `"route": "/cases",` | Expression or data declaration: read the names, values, and operators and predict the result. |
+| 4 | `"status": "open",` | Expression or data declaration: read the names, values, and operators and predict the result. |
+| 5 | `}` | Expression or data declaration: read the names, values, and operators and predict the result. |
+| 6 | `print(finding)` | Output call: Python evaluates the argument and writes a representation to the terminal. |
+
+After the run, write down the value created by each assignment, the condition tested by each branch, and the output that appeared. Change one input only. If the result changes, identify the line that used that input. If the result does not change, explain why the input was not part of the decision. This is the same tracing habit used later when reviewing security automation.
 ## Execution trace
 
 The finding records original evidence, remediation, and retest using the same bounded case. The status changes only when the expected behavior is observed.

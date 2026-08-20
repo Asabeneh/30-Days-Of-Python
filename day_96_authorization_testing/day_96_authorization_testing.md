@@ -2,7 +2,12 @@
 
 [← Day 95](../day_95_local_web_testing/day_95_local_web_testing.md) · [Day index](../DAY_INDEX.md) · [Day 97 →](../day_97_input_validation_testing/day_97_input_validation_testing.md)
 
-## Table of Contents
+
+
+
+
+
+## Table of contents
 
 - [Why this lesson exists](#why-this-lesson-exists)
 - [Prerequisites](#prerequisites)
@@ -10,13 +15,27 @@
 - [The problem](#the-problem)
 - [Security boundary](#security-boundary)
 - [Lesson](#lesson)
-- [Vocabulary](#vocabulary)
+  - [Vocabulary](#vocabulary)
 - [Worked examples](#worked-examples)
+  - [Example 1: Create identities](#example-1-create-identities)
+  - [Example 2: Create objects](#example-2-create-objects)
+  - [Example 3: Test an allow](#example-3-test-an-allow)
+  - [Example 4: Test horizontal denial](#example-4-test-horizontal-denial)
+  - [Example 5: Test action denial](#example-5-test-action-denial)
+- [Read the first example line by line](#read-the-first-example-line-by-line)
 - [Execution trace](#execution-trace)
 - [Common mistakes](#common-mistakes)
 - [Security application](#security-application)
+- [Line-by-line walkthrough](#line-by-line-walkthrough)
+- [Prediction experiments](#prediction-experiments)
+- [Broken example and repair](#broken-example-and-repair)
+- [Guided practice walkthrough](#guided-practice-walkthrough)
+- [Bounded cybersecurity fixture walkthrough](#bounded-cybersecurity-fixture-walkthrough)
 - [Exercises](#exercises)
 - [Finish line](#finish-line)
+- [Mental model](#mental-model)
+- [Limitations](#limitations)
+- [References](#references)
 
 ## Why this lesson exists
 
@@ -117,6 +136,16 @@ print("delete" in policy["viewer"])
 
 The action is denied.
 
+## Read the first example line by line
+
+The first runnable example introduces **Authorization Testing**. Copy it into a new file and run it before changing anything. Then use this table to read the same code slowly. A line-by-line explanation does not replace practice: it shows you what to look for when a program behaves differently from your prediction.
+
+| Line | Code | What Python is doing |
+| ---: | --- | --- |
+| 1 | `identities = {"alice": {"role": "analyst"}, "bob": {"role": "viewer"}}` | Assignment: Python evaluates the right side and stores the result under the name on the left. |
+| 2 | `print(identities)` | Output call: Python evaluates the argument and writes a representation to the terminal. |
+
+After the run, write down the value created by each assignment, the condition tested by each branch, and the output that appeared. Change one input only. If the result changes, identify the line that used that input. If the result does not change, explain why the input was not part of the decision. This is the same tracing habit used later when reviewing security automation.
 ## Execution trace
 
 The matrix supplies subject, role, action, and object; the service evaluates role and object scope; the test compares the result with expected allow/deny without using real authentication.

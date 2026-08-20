@@ -2,7 +2,12 @@
 
 [← Day 80](../day_80_project__mini_detection_pipeline/day_80_project__mini_detection_pipeline.md) · [Day index](../DAY_INDEX.md) · [Day 82 →](../day_82_evidence_integrity/day_82_evidence_integrity.md)
 
-## Table of Contents
+
+
+
+
+
+## Table of contents
 
 - [Why this lesson exists](#why-this-lesson-exists)
 - [Prerequisites](#prerequisites)
@@ -10,13 +15,27 @@
 - [The problem](#the-problem)
 - [Security boundary](#security-boundary)
 - [Lesson](#lesson)
-- [Vocabulary](#vocabulary)
+  - [Vocabulary](#vocabulary)
 - [Worked examples](#worked-examples)
+  - [Example 1: Define states](#example-1-define-states)
+  - [Example 2: Record an owner](#example-2-record-an-owner)
+  - [Example 3: Require authorization](#example-3-require-authorization)
+  - [Example 4: Preserve evidence](#example-4-preserve-evidence)
+  - [Example 5: Close with lessons](#example-5-close-with-lessons)
+- [Read the first example line by line](#read-the-first-example-line-by-line)
 - [Execution trace](#execution-trace)
 - [Common mistakes](#common-mistakes)
 - [Security application](#security-application)
+- [Line-by-line walkthrough](#line-by-line-walkthrough)
+- [Prediction experiments](#prediction-experiments)
+- [Broken example and repair](#broken-example-and-repair)
+- [Guided practice walkthrough](#guided-practice-walkthrough)
+- [Bounded cybersecurity fixture walkthrough](#bounded-cybersecurity-fixture-walkthrough)
 - [Exercises](#exercises)
 - [Finish line](#finish-line)
+- [Mental model](#mental-model)
+- [Limitations](#limitations)
+- [References](#references)
 
 ## Why this lesson exists
 
@@ -121,6 +140,16 @@ print(closure)
 
 The closeout is explainable.
 
+## Read the first example line by line
+
+The first runnable example introduces **The Response Lifecycle**. Copy it into a new file and run it before changing anything. Then use this table to read the same code slowly. A line-by-line explanation does not replace practice: it shows you what to look for when a program behaves differently from your prediction.
+
+| Line | Code | What Python is doing |
+| ---: | --- | --- |
+| 1 | `states = ["new", "triage", "contained", "recovered", "closed"]` | Assignment: Python evaluates the right side and stores the result under the name on the left. |
+| 2 | `print(states)` | Output call: Python evaluates the argument and writes a representation to the terminal. |
+
+After the run, write down the value created by each assignment, the condition tested by each branch, and the output that appeared. Change one input only. If the result changes, identify the line that used that input. If the result does not change, explain why the input was not part of the decision. This is the same tracing habit used later when reviewing security automation.
 ## Execution trace
 
 The case moves only through allowed states; every action has an owner, authority, evidence reference, and outcome. A signal does not automatically authorize containment.

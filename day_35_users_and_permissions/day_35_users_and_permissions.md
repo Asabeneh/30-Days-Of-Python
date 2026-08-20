@@ -2,7 +2,12 @@
 
 [← Day 34](../day_34_safe_subprocesses/day_34_safe_subprocesses.md) · [Day index](../DAY_INDEX.md) · [Day 36 →](../day_36_timeouts_and_resource_limits/day_36_timeouts_and_resource_limits.md)
 
-## Table of Contents
+
+
+
+
+
+## Table of contents
 
 - [Why this lesson exists](#why-this-lesson-exists)
 - [Prerequisites](#prerequisites)
@@ -10,13 +15,27 @@
 - [The problem](#the-problem)
 - [Security boundary](#security-boundary)
 - [Lesson](#lesson)
-- [Vocabulary](#vocabulary)
+  - [Vocabulary](#vocabulary)
 - [Worked examples](#worked-examples)
+  - [Example 1: Read the current user](#example-1-read-the-current-user)
+  - [Example 2: Inspect a mode](#example-2-inspect-a-mode)
+  - [Example 3: Check readability](#example-3-check-readability)
+  - [Example 4: Avoid privilege escalation](#example-4-avoid-privilege-escalation)
+  - [Example 5: Document permissions](#example-5-document-permissions)
+- [Read the first example line by line](#read-the-first-example-line-by-line)
 - [Execution trace](#execution-trace)
 - [Common mistakes](#common-mistakes)
 - [Security application](#security-application)
+- [Line-by-line walkthrough](#line-by-line-walkthrough)
+- [Prediction experiments](#prediction-experiments)
+- [Broken example and repair](#broken-example-and-repair)
+- [Guided practice walkthrough](#guided-practice-walkthrough)
+- [Bounded cybersecurity fixture walkthrough](#bounded-cybersecurity-fixture-walkthrough)
 - [Exercises](#exercises)
 - [Finish line](#finish-line)
+- [Mental model](#mental-model)
+- [Limitations](#limitations)
+- [References](#references)
 
 ## Why this lesson exists
 
@@ -120,6 +139,17 @@ print(requirements)
 
 The tool explicitly needs no administrator access.
 
+## Read the first example line by line
+
+The first runnable example introduces **Users, Permissions, and Least Privilege**. Copy it into a new file and run it before changing anything. Then use this table to read the same code slowly. A line-by-line explanation does not replace practice: it shows you what to look for when a program behaves differently from your prediction.
+
+| Line | Code | What Python is doing |
+| ---: | --- | --- |
+| 1 | `import getpass` | Import statement: the program asks for code from a module. |
+| 2 | `` | Blank line: it separates ideas for the human reader. |
+| 3 | `print(getpass.getuser())` | Output call: Python evaluates the argument and writes a representation to the terminal. |
+
+After the run, write down the value created by each assignment, the condition tested by each branch, and the output that appeared. Change one input only. If the result changes, identify the line that used that input. If the result does not change, explain why the input was not part of the decision. This is the same tracing habit used later when reviewing security automation.
 ## Execution trace
 
 The process identity is inherited from the launcher; the tool inspects capability, performs only the required operation, and reports a permission error instead of escalating.

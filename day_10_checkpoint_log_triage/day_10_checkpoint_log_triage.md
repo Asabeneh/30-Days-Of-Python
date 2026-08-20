@@ -2,6 +2,38 @@
 
 [← Day 9](../day_09_functions_and_validation/day_09_functions_and_validation.md) · [Day index](../DAY_INDEX.md) · [Day 11 →](../day_11_function_contracts/day_11_function_contracts.md)
 
+
+
+
+
+## Table of contents
+
+- [Welcome](#welcome)
+- [Prerequisites](#prerequisites)
+- [Outcomes](#outcomes)
+- [The problem](#the-problem)
+- [Security boundary](#security-boundary)
+- [Vocabulary](#vocabulary)
+- [Lesson](#lesson)
+- [1. A pipeline is a sequence of small stages](#1-a-pipeline-is-a-sequence-of-small-stages)
+- [2. Parse a simple key-value line](#2-parse-a-simple-key-value-line)
+- [3. Classify without making accusations](#3-classify-without-making-accusations)
+- [4. Count outcomes explicitly](#4-count-outcomes-explicitly)
+- [5. Report completeness](#5-report-completeness)
+- [Worked examples](#worked-examples)
+  - [Example 1: A first runnable case](#example-1-a-first-runnable-case)
+  - [Example 2: A boundary case](#example-2-a-boundary-case)
+  - [Example 3: A deliberate experiment](#example-3-a-deliberate-experiment)
+  - [Example 4: A bounded security fixture](#example-4-a-bounded-security-fixture)
+  - [Example 5: Invalid input remains visible in the summary](#example-5-invalid-input-remains-visible-in-the-summary)
+- [Execution trace](#execution-trace)
+- [Common mistakes and repairs](#common-mistakes-and-repairs)
+- [Guided practice](#guided-practice)
+- [Security application](#security-application)
+- [Independent exercises](#independent-exercises)
+- [Finish line](#finish-line)
+- [References](#references)
+
 ## Welcome
 
 Today you will combine the first nine days into one small program. This is not a leap into advanced security tooling. It is a controlled checkpoint that proves you can move from text to values, validate them, choose a label, count records, and report what happened without exposing sensitive-looking fields.
@@ -132,6 +164,96 @@ unknown-source=0
 
 The report says what the classifier did. It does not say that a real attack happened or that any person is dangerous.
 
+## 1. A pipeline is a sequence of small stages
+
+A log-triage program becomes easier to explain when it has separate stages:
+
+| Stage | Question |
+| --- | --- |
+| Read | Which local fixture is permitted? |
+| Parse | Can the text become fields? |
+| Convert | Can the severity become an integer? |
+| Validate | Is the value inside the allowed range? |
+| Classify | Which documented label applies? |
+| Report | What happened, and was processing complete? |
+
+Do not hide all six questions inside one giant function. A beginner can test one stage at a time, and a reviewer can identify where a failure occurred.
+
+## 2. Parse a simple key-value line
+
+```python
+line = "severity=8 source=training-auth event=login_failed"
+fields = {}
+for part in line.split():
+    key, value = part.split("=", 1)
+    fields[key] = value
+print(fields)
+```
+
+Output:
+
+```text
+{'severity': '8', 'source': 'training-auth', 'event': 'login_failed'}
+```
+
+Notice that severity is still text. Parsing fields and converting values are separate tasks. The `1` in `split("=", 1)` prevents a later equals sign from being split into too many pieces.
+
+## 3. Classify without making accusations
+
+```python
+def classify(severity_text, source, known_events, event):
+    try:
+        severity = int(severity_text)
+    except ValueError:
+        return "invalid"
+    if not 0 <= severity <= 10:
+        return "out-of-range"
+    if source == "":
+        return "missing-source"
+    if event not in known_events:
+        return "unknown-event"
+    if severity >= 7:
+        return "review"
+    return "routine"
+```
+
+The labels describe what the local rule found. They do not identify an attacker or prove compromise.
+
+## 4. Count outcomes explicitly
+
+```python
+counts = {"review": 0, "routine": 0, "invalid": 0}
+label = "review"
+counts[label] += 1
+print(counts)
+```
+
+Initialize every expected category so zero values remain visible. A report that omits `invalid=0` can be harder to compare with another run.
+
+## 5. Report completeness
+
+A finite limit is not the same as complete processing. If the fixture contains more records than the permitted limit, say so:
+
+```python
+limit = 2
+processed = 0
+complete = True
+for line in ["a", "b", "c"]:
+    if processed >= limit:
+        complete = False
+        break
+    processed += 1
+print(processed, complete)
+```
+
+Output:
+
+```text
+2 False
+```
+
+The safe report tells the reader what the program actually processed.
+
 ## Worked examples
 
 Run the examples in order. Each one changes only a small part of the previous idea.
@@ -151,6 +273,18 @@ Make one controlled change, record the output, and compare it with your predicti
 ### Example 4: A bounded security fixture
 
 Apply the idea to the synthetic fixture in this lesson. The fixture is local, finite, and invented; it is not permission to inspect real systems.
+
+### Example 5: Invalid input remains visible in the summary
+
+```python
+results = ["review", "routine", "invalid"]
+counts = {"review": 0, "routine": 0, "invalid": 0}
+for result in results:
+    counts[result] += 1
+print(counts)
+```
+
+The summary keeps `invalid` separate from `routine`. A malformed record should not silently become a reassuring result.
 
 ## Execution trace
 

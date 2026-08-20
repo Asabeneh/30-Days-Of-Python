@@ -2,7 +2,12 @@
 
 [← Day 42](../day_42_tcp_clients_and_servers/day_42_tcp_clients_and_servers.md) · [Day index](../DAY_INDEX.md) · [Day 44 →](../day_44_dns_concepts/day_44_dns_concepts.md)
 
-## Table of Contents
+
+
+
+
+
+## Table of contents
 
 - [Why this lesson exists](#why-this-lesson-exists)
 - [Prerequisites](#prerequisites)
@@ -10,13 +15,27 @@
 - [The problem](#the-problem)
 - [Security boundary](#security-boundary)
 - [Lesson](#lesson)
-- [Vocabulary](#vocabulary)
+  - [Vocabulary](#vocabulary)
 - [Worked examples](#worked-examples)
+  - [Example 1: Create a UDP socket](#example-1-create-a-udp-socket)
+  - [Example 2: Encode a datagram](#example-2-encode-a-datagram)
+  - [Example 3: Add a sequence number](#example-3-add-a-sequence-number)
+  - [Example 4: Bound a datagram](#example-4-bound-a-datagram)
+  - [Example 5: Describe uncertainty](#example-5-describe-uncertainty)
+- [Read the first example line by line](#read-the-first-example-line-by-line)
 - [Execution trace](#execution-trace)
 - [Common mistakes](#common-mistakes)
 - [Security application](#security-application)
+- [Line-by-line walkthrough](#line-by-line-walkthrough)
+- [Prediction experiments](#prediction-experiments)
+- [Broken example and repair](#broken-example-and-repair)
+- [Guided practice walkthrough](#guided-practice-walkthrough)
+- [Bounded cybersecurity fixture walkthrough](#bounded-cybersecurity-fixture-walkthrough)
 - [Exercises](#exercises)
 - [Finish line](#finish-line)
+- [Mental model](#mental-model)
+- [Limitations](#limitations)
+- [References](#references)
 
 ## Why this lesson exists
 
@@ -121,6 +140,19 @@ print(result)
 
 The report preserves uncertainty.
 
+## Read the first example line by line
+
+The first runnable example introduces **UDP and Message Framing**. Copy it into a new file and run it before changing anything. Then use this table to read the same code slowly. A line-by-line explanation does not replace practice: it shows you what to look for when a program behaves differently from your prediction.
+
+| Line | Code | What Python is doing |
+| ---: | --- | --- |
+| 1 | `import socket` | Import statement: the program asks for code from a module. |
+| 2 | `` | Blank line: it separates ideas for the human reader. |
+| 3 | `sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)` | Assignment: Python evaluates the right side and stores the result under the name on the left. |
+| 4 | `print(sock.type)` | Output call: Python evaluates the argument and writes a representation to the terminal. |
+| 5 | `sock.close()` | Function call: Python evaluates the arguments and runs the named operation. |
+
+After the run, write down the value created by each assignment, the condition tested by each branch, and the output that appeared. Change one input only. If the result changes, identify the line that used that input. If the result does not change, explain why the input was not part of the decision. This is the same tracing habit used later when reviewing security automation.
 ## Execution trace
 
 The sender creates a bounded byte payload; the receiver obtains one datagram or a timeout; the application validates framing, sequence, and schema before interpreting it.

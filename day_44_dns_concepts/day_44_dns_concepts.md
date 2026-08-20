@@ -2,7 +2,12 @@
 
 [← Day 43](../day_43_udp_and_framing/day_43_udp_and_framing.md) · [Day index](../DAY_INDEX.md) · [Day 45 →](../day_45_http_requests_and_responses/day_45_http_requests_and_responses.md)
 
-## Table of Contents
+
+
+
+
+
+## Table of contents
 
 - [Why this lesson exists](#why-this-lesson-exists)
 - [Prerequisites](#prerequisites)
@@ -10,13 +15,27 @@
 - [The problem](#the-problem)
 - [Security boundary](#security-boundary)
 - [Lesson](#lesson)
-- [Vocabulary](#vocabulary)
+  - [Vocabulary](#vocabulary)
 - [Worked examples](#worked-examples)
+  - [Example 1: Resolve a local name](#example-1-resolve-a-local-name)
+  - [Example 2: Inspect multiple results](#example-2-inspect-multiple-results)
+  - [Example 3: Preserve the name](#example-3-preserve-the-name)
+  - [Example 4: Bound a lookup](#example-4-bound-a-lookup)
+  - [Example 5: State time](#example-5-state-time)
+- [Read the first example line by line](#read-the-first-example-line-by-line)
 - [Execution trace](#execution-trace)
 - [Common mistakes](#common-mistakes)
 - [Security application](#security-application)
+- [Line-by-line walkthrough](#line-by-line-walkthrough)
+- [Prediction experiments](#prediction-experiments)
+- [Broken example and repair](#broken-example-and-repair)
+- [Guided practice walkthrough](#guided-practice-walkthrough)
+- [Bounded cybersecurity fixture walkthrough](#bounded-cybersecurity-fixture-walkthrough)
 - [Exercises](#exercises)
 - [Finish line](#finish-line)
+- [Mental model](#mental-model)
+- [Limitations](#limitations)
+- [References](#references)
 
 ## Why this lesson exists
 
@@ -118,6 +137,17 @@ print(datetime.now(timezone.utc).isoformat())
 
 An aware UTC timestamp.
 
+## Read the first example line by line
+
+The first runnable example introduces **DNS Concepts and Safe Resolution**. Copy it into a new file and run it before changing anything. Then use this table to read the same code slowly. A line-by-line explanation does not replace practice: it shows you what to look for when a program behaves differently from your prediction.
+
+| Line | Code | What Python is doing |
+| ---: | --- | --- |
+| 1 | `import socket` | Import statement: the program asks for code from a module. |
+| 2 | `` | Blank line: it separates ideas for the human reader. |
+| 3 | `print(socket.gethostbyname("localhost"))` | Output call: Python evaluates the argument and writes a representation to the terminal. |
+
+After the run, write down the value created by each assignment, the condition tested by each branch, and the output that appeared. Change one input only. If the result changes, identify the line that used that input. If the result does not change, explain why the input was not part of the decision. This is the same tracing habit used later when reviewing security automation.
 ## Execution trace
 
 The name is selected, policy checks it, the resolver returns records, and the tool records time and source. No connection follows automatically.

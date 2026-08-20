@@ -2,6 +2,39 @@
 
 [← Day 5](../day_05_branching_and_triage/day_05_branching_and_triage.md) · [Day index](../DAY_INDEX.md) · [Day 7 →](../day_07_collections_and_iocs/day_07_collections_and_iocs.md)
 
+
+
+
+
+## Table of contents
+
+- [Welcome](#welcome)
+- [Prerequisites](#prerequisites)
+- [Outcomes](#outcomes)
+- [The problem](#the-problem)
+- [Security boundary](#security-boundary)
+- [Vocabulary](#vocabulary)
+- [Lesson](#lesson)
+- [1. A `for` loop repeats a known sequence](#1-a-for-loop-repeats-a-known-sequence)
+- [2. `range` creates a predictable counting sequence](#2-range-creates-a-predictable-counting-sequence)
+- [3. A `while` loop needs a changing condition](#3-a-while-loop-needs-a-changing-condition)
+- [4. Bounds protect time and memory](#4-bounds-protect-time-and-memory)
+- [5. `break` and `continue` change the path](#5-break-and-continue-change-the-path)
+- [Worked examples](#worked-examples)
+  - [Example 1: A first runnable case](#example-1-a-first-runnable-case)
+  - [Example 2: A boundary case](#example-2-a-boundary-case)
+  - [Example 3: A deliberate experiment](#example-3-a-deliberate-experiment)
+  - [Example 4: A bounded security fixture](#example-4-a-bounded-security-fixture)
+  - [Example 5: A limit changes completeness, not truth](#example-5-a-limit-changes-completeness-not-truth)
+- [Execution trace](#execution-trace)
+- [Common mistakes and repairs](#common-mistakes-and-repairs)
+- [Guided practice](#guided-practice)
+- [Security application](#security-application)
+- [Independent exercises](#independent-exercises)
+  - [Additional beginner checkpoint](#additional-beginner-checkpoint)
+- [Finish line](#finish-line)
+- [References](#references)
+
 ## Welcome
 
 A loop repeats work. Repetition is powerful because security tools often process many records, but repetition is also a place where a beginner can accidentally create an infinite loop, read an unbounded file, or produce an enormous report. Today you will learn repetition with an explicit stopping rule.
@@ -100,6 +133,77 @@ The empty values are skipped. If you skip too much, your report may look clean b
 
 Nested loops multiply work. A loop over 100 files containing a loop over 1,000 lines may inspect 100,000 combinations. Before adding nesting, estimate the work and set a bound.
 
+## 1. A `for` loop repeats a known sequence
+
+A loop repeats work. Start with a short list:
+
+```python
+events = ["login_failed", "logout", "access_denied"]
+for event in events:
+    print(event)
+```
+
+Python takes the first item, stores it under `event`, runs the indented body, then repeats for the next item. The loop ends when the sequence has no more items.
+
+## 2. `range` creates a predictable counting sequence
+
+```python
+for record_number in range(1, 4):
+    print(record_number)
+```
+
+Output:
+
+```text
+1
+2
+3
+```
+
+The stop value `4` is not included. This “stop before” rule is common and worth testing with a tiny range before using a larger one.
+
+## 3. A `while` loop needs a changing condition
+
+```python
+attempt = 1
+while attempt <= 3:
+    print(attempt)
+    attempt += 1
+```
+
+The update `attempt += 1` is what allows the loop to finish. If you remove it, the condition remains true forever. Never test an unknown loop against a real large input until you have proved that the loop has a limit.
+
+## 4. Bounds protect time and memory
+
+A bound is a maximum amount of permitted work:
+
+```python
+items = ["a", "b", "c", "d"]
+limit = 3
+processed = 0
+for item in items:
+    if processed >= limit:
+        break
+    print(item)
+    processed += 1
+print(f"processed={processed}")
+```
+
+Output:
+
+```text
+a
+b
+c
+processed=3
+```
+
+The loop did not claim that the fourth item was safe or unsafe. It stopped because the exercise allowed only three records. In security automation, a bounded result should say whether processing was complete.
+
+## 5. `break` and `continue` change the path
+
+`break` ends the loop. `continue` skips the rest of the current iteration and moves to the next item. Use both only when the reason is clear. A hidden `continue` can accidentally skip evidence; a hidden `break` can make a report incomplete.
+
 ## Worked examples
 
 Run the examples in order. Each one changes only a small part of the previous idea.
@@ -119,6 +223,18 @@ Make one controlled change, record the output, and compare it with your predicti
 ### Example 4: A bounded security fixture
 
 Apply the idea to the synthetic fixture in this lesson. The fixture is local, finite, and invented; it is not permission to inspect real systems.
+
+### Example 5: A limit changes completeness, not truth
+
+```python
+items = ["a", "b", "c"]
+limit = 2
+processed = items[:limit]
+print(processed)
+print(len(processed) == len(items))
+```
+
+The program processed two items and reports that processing was not complete. A bounded result should never be described as a complete inspection when the limit stopped the work.
 
 ## Execution trace
 

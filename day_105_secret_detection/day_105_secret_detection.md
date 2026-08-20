@@ -2,7 +2,12 @@
 
 [← Day 104](../day_104_sbom_and_provenance/day_104_sbom_and_provenance.md) · [Day index](../DAY_INDEX.md) · [Day 106 →](../day_106_containers_and_isolation/day_106_containers_and_isolation.md)
 
-## Table of Contents
+
+
+
+
+
+## Table of contents
 
 - [Why this lesson exists](#why-this-lesson-exists)
 - [Prerequisites](#prerequisites)
@@ -10,13 +15,27 @@
 - [The problem](#the-problem)
 - [Security boundary](#security-boundary)
 - [Lesson](#lesson)
-- [Vocabulary](#vocabulary)
+  - [Vocabulary](#vocabulary)
 - [Worked examples](#worked-examples)
+  - [Example 1: Use a candidate pattern](#example-1-use-a-candidate-pattern)
+  - [Example 2: Redact the match](#example-2-redact-the-match)
+  - [Example 3: Record location](#example-3-record-location)
+  - [Example 4: Plan rotation](#example-4-plan-rotation)
+  - [Example 5: Handle false positives](#example-5-handle-false-positives)
+- [Read the first example line by line](#read-the-first-example-line-by-line)
 - [Execution trace](#execution-trace)
 - [Common mistakes](#common-mistakes)
 - [Security application](#security-application)
+- [Line-by-line walkthrough](#line-by-line-walkthrough)
+- [Prediction experiments](#prediction-experiments)
+- [Broken example and repair](#broken-example-and-repair)
+- [Guided practice walkthrough](#guided-practice-walkthrough)
+- [Bounded cybersecurity fixture walkthrough](#bounded-cybersecurity-fixture-walkthrough)
 - [Exercises](#exercises)
 - [Finish line](#finish-line)
+- [Mental model](#mental-model)
+- [Limitations](#limitations)
+- [References](#references)
 
 ## Why this lesson exists
 
@@ -118,6 +137,18 @@ print({"candidate": "training-secret", "confirmed": False, "review": True})
 
 The result is not overclaimed.
 
+## Read the first example line by line
+
+The first runnable example introduces **Secret Detection and Remediation**. Copy it into a new file and run it before changing anything. Then use this table to read the same code slowly. A line-by-line explanation does not replace practice: it shows you what to look for when a program behaves differently from your prediction.
+
+| Line | Code | What Python is doing |
+| ---: | --- | --- |
+| 1 | `import re` | Import statement: the program asks for code from a module. |
+| 2 | `` | Blank line: it separates ideas for the human reader. |
+| 3 | `pattern = re.compile(r"token=[^\s]+")` | Assignment: Python evaluates the right side and stores the result under the name on the left. |
+| 4 | `print(bool(pattern.search("token=training-secret")))` | Output call: Python evaluates the argument and writes a representation to the terminal. |
+
+After the run, write down the value created by each assignment, the condition tested by each branch, and the output that appeared. Change one input only. If the result changes, identify the line that used that input. If the result does not change, explain why the input was not part of the decision. This is the same tracing habit used later when reviewing security automation.
 ## Execution trace
 
 The scanner reads bounded files, identifies candidate patterns, redacts values before reporting, records location and confidence, and directs real secret response toward revocation and access review.

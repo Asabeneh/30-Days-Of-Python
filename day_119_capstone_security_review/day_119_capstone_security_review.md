@@ -2,7 +2,12 @@
 
 [← Day 118](../day_118_capstone_implementation/day_118_capstone_implementation.md) · [Day index](../DAY_INDEX.md) · [Day 120 →](../day_120_final_demonstration/day_120_final_demonstration.md)
 
-## Table of Contents
+
+
+
+
+
+## Table of contents
 
 - [Why this lesson exists](#why-this-lesson-exists)
 - [Prerequisites](#prerequisites)
@@ -10,13 +15,27 @@
 - [The problem](#the-problem)
 - [Security boundary](#security-boundary)
 - [Lesson](#lesson)
-- [Vocabulary](#vocabulary)
+  - [Vocabulary](#vocabulary)
 - [Worked examples](#worked-examples)
+  - [Example 1: Review inputs](#example-1-review-inputs)
+  - [Example 2: Review secrets](#example-2-review-secrets)
+  - [Example 3: Review authorization](#example-3-review-authorization)
+  - [Example 4: Review resources](#example-4-review-resources)
+  - [Example 5: Write residual risk](#example-5-write-residual-risk)
+- [Read the first example line by line](#read-the-first-example-line-by-line)
 - [Execution trace](#execution-trace)
 - [Common mistakes](#common-mistakes)
 - [Security application](#security-application)
+- [Line-by-line walkthrough](#line-by-line-walkthrough)
+- [Prediction experiments](#prediction-experiments)
+- [Broken example and repair](#broken-example-and-repair)
+- [Guided practice walkthrough](#guided-practice-walkthrough)
+- [Bounded cybersecurity fixture walkthrough](#bounded-cybersecurity-fixture-walkthrough)
 - [Exercises](#exercises)
 - [Finish line](#finish-line)
+- [Mental model](#mental-model)
+- [Limitations](#limitations)
+- [References](#references)
 
 ## Why this lesson exists
 
@@ -121,6 +140,16 @@ print(risk)
 
 The limitation is owned.
 
+## Read the first example line by line
+
+The first runnable example introduces **Capstone Security Review**. Copy it into a new file and run it before changing anything. Then use this table to read the same code slowly. A line-by-line explanation does not replace practice: it shows you what to look for when a program behaves differently from your prediction.
+
+| Line | Code | What Python is doing |
+| ---: | --- | --- |
+| 1 | `inputs = ["fixture path", "JSON record", "CLI limit"]` | Assignment: Python evaluates the right side and stores the result under the name on the left. |
+| 2 | `print(inputs)` | Output call: Python evaluates the argument and writes a representation to the terminal. |
+
+After the run, write down the value created by each assignment, the condition tested by each branch, and the output that appeared. Change one input only. If the result changes, identify the line that used that input. If the result does not change, explain why the input was not part of the decision. This is the same tracing habit used later when reviewing security automation.
 ## Execution trace
 
 The reviewer walks input to output, checks controls at boundaries, runs tests and negative cases, inspects artifacts and secrets, and records residual risks rather than declaring absolute security.

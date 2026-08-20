@@ -2,6 +2,39 @@
 
 [← Day 7](../day_07_collections_and_iocs/day_07_collections_and_iocs.md) · [Day index](../DAY_INDEX.md) · [Day 9 →](../day_09_functions_and_validation/day_09_functions_and_validation.md)
 
+
+
+
+
+## Table of contents
+
+- [Welcome](#welcome)
+- [Prerequisites](#prerequisites)
+- [Outcomes](#outcomes)
+- [The problem](#the-problem)
+- [Security boundary](#security-boundary)
+- [Vocabulary](#vocabulary)
+- [Lesson](#lesson)
+- [1. Strings are sequences of characters](#1-strings-are-sequences-of-characters)
+- [2. Use methods for deliberate transformations](#2-use-methods-for-deliberate-transformations)
+- [3. Slicing selects a portion](#3-slicing-selects-a-portion)
+- [4. Split and join have contracts](#4-split-and-join-have-contracts)
+- [5. Canonicalization can change meaning](#5-canonicalization-can-change-meaning)
+- [Worked examples](#worked-examples)
+  - [Example 1: A first runnable case](#example-1-a-first-runnable-case)
+  - [Example 2: A boundary case](#example-2-a-boundary-case)
+  - [Example 3: A deliberate experiment](#example-3-a-deliberate-experiment)
+  - [Example 4: A bounded security fixture](#example-4-a-bounded-security-fixture)
+  - [Example 5: Preserve raw text beside a comparison value](#example-5-preserve-raw-text-beside-a-comparison-value)
+- [Execution trace](#execution-trace)
+- [Common mistakes and repairs](#common-mistakes-and-repairs)
+- [Guided practice](#guided-practice)
+- [Security application](#security-application)
+- [Independent exercises](#independent-exercises)
+  - [Additional beginner checkpoint](#additional-beginner-checkpoint)
+- [Finish line](#finish-line)
+- [References](#references)
+
 ## Welcome
 
 Security data often arrives as text, but text is not one simple thing. Case, whitespace, Unicode, separators, and encoding can make two strings look similar while comparing differently. Today you will learn to normalize text deliberately without destroying the original evidence.
@@ -104,6 +137,76 @@ UTF-8 is a common encoding, but a decoder must use the encoding that matches the
 
 Never normalize paths, URLs, identifiers, or security tokens with a generic string function without understanding the context. A comparison form for labels is not automatically safe for a filesystem path or a URL.
 
+## 1. Strings are sequences of characters
+
+```python
+text = "Login-Failed"
+print(len(text))
+print(text[0])
+print(text[-1])
+```
+
+Output:
+
+```text
+12
+L
+d
+```
+
+Indexing starts at zero. A string is not a security verdict; it is text that needs a documented interpretation.
+
+## 2. Use methods for deliberate transformations
+
+```python
+raw = "  Login-Failed  "
+cleaned = raw.strip()
+comparison_value = cleaned.casefold()
+print(repr(raw))
+print(repr(comparison_value))
+```
+
+Output:
+
+```text
+'  Login-Failed  '
+'login-failed'
+```
+
+Keep the raw value when provenance matters. Create a normalized comparison value for matching. Do not overwrite the original automatically when an investigation may need to show what was received.
+
+## 3. Slicing selects a portion
+
+```python
+value = "training-001"
+print(value[:8])
+print(value[9:])
+```
+
+A slice creates a new string. Learn the start-inclusive, stop-exclusive rule with small examples. Never use slicing as a secret-redaction strategy unless you have proved the entire value format and the required protection.
+
+## 4. Split and join have contracts
+
+```python
+line = "severity=7 source=training-auth"
+parts = line.split()
+print(parts)
+print("|".join(parts))
+```
+
+Output:
+
+```text
+['severity=7', 'source=training-auth']
+severity=7|source=training-auth
+```
+
+Splitting is not validation. A malformed line may have too few parts, repeated keys, or unexpected separators. Check the result before using it.
+
+## 5. Canonicalization can change meaning
+
+Lowercasing an event label may be appropriate for a case-insensitive comparison. It may be wrong for a password, signature, encoded value, or evidence field where every character matters. Record which field was normalized and why.
+
 ## Worked examples
 
 Run the examples in order. Each one changes only a small part of the previous idea.
@@ -123,6 +226,17 @@ Make one controlled change, record the output, and compare it with your predicti
 ### Example 4: A bounded security fixture
 
 Apply the idea to the synthetic fixture in this lesson. The fixture is local, finite, and invented; it is not permission to inspect real systems.
+
+### Example 5: Preserve raw text beside a comparison value
+
+```python
+raw = " Login-Failed "
+comparison = raw.strip().casefold()
+print(repr(raw))
+print(comparison == "login-failed")
+```
+
+The raw string preserves what the fixture contained. The comparison value supports a deliberate match. Do not overwrite evidence merely because a normalized form is convenient.
 
 ## Execution trace
 

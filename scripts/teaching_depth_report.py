@@ -16,12 +16,12 @@ def status(text: str) -> str:
     required = [
         "## Execution trace",
         "## Common mistakes",
-        "## Exercises",
         "## Finish line",
     ]
-    has_sections = all(section in text for section in required)
+    has_exercises = "## Exercises" in text or "## Independent exercises" in text
+    has_sections = all(section in text for section in required) and has_exercises
     has_application = "## Worked examples" in text or "## Project requirements" in text
-    examples = len(re.findall(r"^### Example ", text, flags=re.MULTILINE))
+    examples = len(re.findall(r"^### (?:Example |[0-9]+\.)", text, flags=re.MULTILINE))
     words = len(text.split())
     if has_sections and has_application and examples >= 5 and words >= 700:
         return "dense"
@@ -58,7 +58,7 @@ def main() -> int:
         (
             "The report is a measurement aid, not a substitute for human review. "
             "Dense means the page has the required teaching sections, at least "
-            "five worked examples, and at least 700 words."
+            "five worked examples or topic demonstrations, and at least 700 words."
         ),
         "",
         "| Day | Lesson | Words | Code blocks | Examples | Status |",

@@ -2,7 +2,12 @@
 
 [← Day 108](../day_108_configuration_drift/day_108_configuration_drift.md) · [Day index](../DAY_INDEX.md) · [Day 110 →](../day_110_project__secure_delivery_pipeline/day_110_project__secure_delivery_pipeline.md)
 
-## Table of Contents
+
+
+
+
+
+## Table of contents
 
 - [Why this lesson exists](#why-this-lesson-exists)
 - [Prerequisites](#prerequisites)
@@ -10,13 +15,27 @@
 - [The problem](#the-problem)
 - [Security boundary](#security-boundary)
 - [Lesson](#lesson)
-- [Vocabulary](#vocabulary)
+  - [Vocabulary](#vocabulary)
 - [Worked examples](#worked-examples)
+  - [Example 1: Define a ratio](#example-1-define-a-ratio)
+  - [Example 2: Name the population](#example-2-name-the-population)
+  - [Example 3: Add data quality](#example-3-add-data-quality)
+  - [Example 4: Avoid vanity metrics](#example-4-avoid-vanity-metrics)
+  - [Example 5: Attach action](#example-5-attach-action)
+- [Read the first example line by line](#read-the-first-example-line-by-line)
 - [Execution trace](#execution-trace)
 - [Common mistakes](#common-mistakes)
 - [Security application](#security-application)
+- [Line-by-line walkthrough](#line-by-line-walkthrough)
+- [Prediction experiments](#prediction-experiments)
+- [Broken example and repair](#broken-example-and-repair)
+- [Guided practice walkthrough](#guided-practice-walkthrough)
+- [Bounded cybersecurity fixture walkthrough](#bounded-cybersecurity-fixture-walkthrough)
 - [Exercises](#exercises)
 - [Finish line](#finish-line)
+- [Mental model](#mental-model)
+- [Limitations](#limitations)
+- [References](#references)
 
 ## Why this lesson exists
 
@@ -121,6 +140,17 @@ print(metric)
 
 The metric has purpose.
 
+## Read the first example line by line
+
+The first runnable example introduces **Security Metrics and Measurement**. Copy it into a new file and run it before changing anything. Then use this table to read the same code slowly. A line-by-line explanation does not replace practice: it shows you what to look for when a program behaves differently from your prediction.
+
+| Line | Code | What Python is doing |
+| ---: | --- | --- |
+| 1 | `passed = 18` | Assignment: Python evaluates the right side and stores the result under the name on the left. |
+| 2 | `total = 20` | Assignment: Python evaluates the right side and stores the result under the name on the left. |
+| 3 | `print(passed / total)` | Output call: Python evaluates the argument and writes a representation to the terminal. |
+
+After the run, write down the value created by each assignment, the condition tested by each branch, and the output that appeared. Change one input only. If the result changes, identify the line that used that input. If the result does not change, explain why the input was not part of the decision. This is the same tracing habit used later when reviewing security automation.
 ## Execution trace
 
 The metric definition identifies population, unit, time window, data quality, and decision; only then are values calculated and interpreted.

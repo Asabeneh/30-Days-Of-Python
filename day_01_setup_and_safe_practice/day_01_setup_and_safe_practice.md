@@ -2,6 +2,37 @@
 
 [Day index](../DAY_INDEX.md) · [Day 2 →](../day_02_values_names_and_input/day_02_values_names_and_input.md)
 
+
+
+
+
+## Table of contents
+
+- [Welcome to programming](#welcome-to-programming)
+- [What you need before starting](#what-you-need-before-starting)
+- [The problem: a computer does not understand an intention](#the-problem-a-computer-does-not-understand-an-intention)
+- [Vocabulary in ordinary language](#vocabulary-in-ordinary-language)
+  - [Program](#program)
+  - [Source code](#source-code)
+  - [Interpreter](#interpreter)
+  - [Command](#command)
+  - [Output](#output)
+  - [Error](#error)
+- [Worked examples](#worked-examples)
+  - [Example 1: reading the first line character by character](#example-1-reading-the-first-line-character-by-character)
+  - [Example 2: sequence means top to bottom](#example-2-sequence-means-top-to-bottom)
+  - [Example 3: comments are notes for humans](#example-3-comments-are-notes-for-humans)
+  - [Example 4: a safe spelling error](#example-4-a-safe-spelling-error)
+  - [Example 5: strings and quotation marks](#example-5-strings-and-quotation-marks)
+  - [Example 6: calculations have visible intermediate steps](#example-6-calculations-have-visible-intermediate-steps)
+- [Execution trace](#execution-trace)
+- [Common mistakes and repairs](#common-mistakes-and-repairs)
+- [Guided practice: build a safety notice](#guided-practice-build-a-safety-notice)
+- [Security application: a safe local boundary](#security-application-a-safe-local-boundary)
+- [Independent exercises](#independent-exercises)
+- [Finish line](#finish-line)
+- [References](#references)
+
 ## Welcome to programming
 
 You are not expected to know what a variable, function, script, terminal, algorithm, or cybersecurity tool is yet. Today begins at the beginning.

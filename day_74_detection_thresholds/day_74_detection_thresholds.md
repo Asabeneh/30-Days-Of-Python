@@ -2,7 +2,12 @@
 
 [← Day 73](../day_73_ioc_enrichment/day_73_ioc_enrichment.md) · [Day index](../DAY_INDEX.md) · [Day 75 →](../day_75_mitre_att_ck_mapping/day_75_mitre_att_ck_mapping.md)
 
-## Table of Contents
+
+
+
+
+
+## Table of contents
 
 - [Why this lesson exists](#why-this-lesson-exists)
 - [Prerequisites](#prerequisites)
@@ -10,13 +15,27 @@
 - [The problem](#the-problem)
 - [Security boundary](#security-boundary)
 - [Lesson](#lesson)
-- [Vocabulary](#vocabulary)
+  - [Vocabulary](#vocabulary)
 - [Worked examples](#worked-examples)
+  - [Example 1: Count events](#example-1-count-events)
+  - [Example 2: Apply a threshold](#example-2-apply-a-threshold)
+  - [Example 3: Create labels](#example-3-create-labels)
+  - [Example 4: Count errors](#example-4-count-errors)
+  - [Example 5: State threshold limits](#example-5-state-threshold-limits)
+- [Read the first example line by line](#read-the-first-example-line-by-line)
 - [Execution trace](#execution-trace)
 - [Common mistakes](#common-mistakes)
 - [Security application](#security-application)
+- [Line-by-line walkthrough](#line-by-line-walkthrough)
+- [Prediction experiments](#prediction-experiments)
+- [Broken example and repair](#broken-example-and-repair)
+- [Guided practice walkthrough](#guided-practice-walkthrough)
+- [Bounded cybersecurity fixture walkthrough](#bounded-cybersecurity-fixture-walkthrough)
 - [Exercises](#exercises)
 - [Finish line](#finish-line)
+- [Mental model](#mental-model)
+- [Limitations](#limitations)
+- [References](#references)
 
 ## Why this lesson exists
 
@@ -119,6 +138,17 @@ print(
 
 The detector is not overclaimed.
 
+## Read the first example line by line
+
+The first runnable example introduces **Detection Thresholds and Evaluation**. Copy it into a new file and run it before changing anything. Then use this table to read the same code slowly. A line-by-line explanation does not replace practice: it shows you what to look for when a program behaves differently from your prediction.
+
+| Line | Code | What Python is doing |
+| ---: | --- | --- |
+| 1 | `events = ["failed", "failed", "ok"]` | Assignment: Python evaluates the right side and stores the result under the name on the left. |
+| 2 | `failures = events.count("failed")` | Assignment: Python evaluates the right side and stores the result under the name on the left. |
+| 3 | `print(failures)` | Output call: Python evaluates the argument and writes a representation to the terminal. |
+
+After the run, write down the value created by each assignment, the condition tested by each branch, and the output that appeared. Change one input only. If the result changes, identify the line that used that input. If the result does not change, explain why the input was not part of the decision. This is the same tracing habit used later when reviewing security automation.
 ## Execution trace
 
 The detector aggregates bounded events, applies a threshold, compares output with synthetic labels, counts errors, and documents blind spots before deployment.

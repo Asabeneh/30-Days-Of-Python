@@ -2,7 +2,12 @@
 
 [← Day 32](../day_32_linux_command_line/day_32_linux_command_line.md) · [Day index](../DAY_INDEX.md) · [Day 34 →](../day_34_safe_subprocesses/day_34_safe_subprocesses.md)
 
-## Table of Contents
+
+
+
+
+
+## Table of contents
 
 - [Why this lesson exists](#why-this-lesson-exists)
 - [Prerequisites](#prerequisites)
@@ -10,13 +15,27 @@
 - [The problem](#the-problem)
 - [Security boundary](#security-boundary)
 - [Lesson](#lesson)
-- [Vocabulary](#vocabulary)
+  - [Vocabulary](#vocabulary)
 - [Worked examples](#worked-examples)
+  - [Example 1: Read basic metadata](#example-1-read-basic-metadata)
+  - [Example 2: Check a regular file](#example-2-check-a-regular-file)
+  - [Example 3: Inspect without following](#example-3-inspect-without-following)
+  - [Example 4: Hash a fixture](#example-4-hash-a-fixture)
+  - [Example 5: Compare before and after](#example-5-compare-before-and-after)
+- [Read the first example line by line](#read-the-first-example-line-by-line)
 - [Execution trace](#execution-trace)
 - [Common mistakes](#common-mistakes)
 - [Security application](#security-application)
+- [Line-by-line walkthrough](#line-by-line-walkthrough)
+- [Prediction experiments](#prediction-experiments)
+- [Broken example and repair](#broken-example-and-repair)
+- [Guided practice walkthrough](#guided-practice-walkthrough)
+- [Bounded cybersecurity fixture walkthrough](#bounded-cybersecurity-fixture-walkthrough)
 - [Exercises](#exercises)
 - [Finish line](#finish-line)
+- [Mental model](#mental-model)
+- [Limitations](#limitations)
+- [References](#references)
 
 ## Why this lesson exists
 
@@ -122,6 +141,19 @@ print(before, after)
 
 A change is observable and should be explained.
 
+## Read the first example line by line
+
+The first runnable example introduces **Paths, File Metadata, and Symlinks**. Copy it into a new file and run it before changing anything. Then use this table to read the same code slowly. A line-by-line explanation does not replace practice: it shows you what to look for when a program behaves differently from your prediction.
+
+| Line | Code | What Python is doing |
+| ---: | --- | --- |
+| 1 | `from pathlib import Path` | Import statement: the program asks for code from a module. |
+| 2 | `` | Blank line: it separates ideas for the human reader. |
+| 3 | `path = Path("shared/fixtures/events.log")` | Assignment: Python evaluates the right side and stores the result under the name on the left. |
+| 4 | `info = path.stat()` | Assignment: Python evaluates the right side and stores the result under the name on the left. |
+| 5 | `print(info.st_size)` | Output call: Python evaluates the argument and writes a representation to the terminal. |
+
+After the run, write down the value created by each assignment, the condition tested by each branch, and the output that appeared. Change one input only. If the result changes, identify the line that used that input. If the result does not change, explain why the input was not part of the decision. This is the same tracing habit used later when reviewing security automation.
 ## Execution trace
 
 A path lookup returns an object whose metadata can be inspected; a link may redirect the lookup, so the tool must choose follow or no-follow behavior before reading.

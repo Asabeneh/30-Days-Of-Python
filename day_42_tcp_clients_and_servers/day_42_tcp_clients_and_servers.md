@@ -2,7 +2,12 @@
 
 [← Day 41](../day_41_addresses__ports__and_sockets/day_41_addresses__ports__and_sockets.md) · [Day index](../DAY_INDEX.md) · [Day 43 →](../day_43_udp_and_framing/day_43_udp_and_framing.md)
 
-## Table of Contents
+
+
+
+
+
+## Table of contents
 
 - [Why this lesson exists](#why-this-lesson-exists)
 - [Prerequisites](#prerequisites)
@@ -10,13 +15,27 @@
 - [The problem](#the-problem)
 - [Security boundary](#security-boundary)
 - [Lesson](#lesson)
-- [Vocabulary](#vocabulary)
+  - [Vocabulary](#vocabulary)
 - [Worked examples](#worked-examples)
+  - [Example 1: Bind a local server](#example-1-bind-a-local-server)
+  - [Example 2: Listen and accept](#example-2-listen-and-accept)
+  - [Example 3: Send bytes](#example-3-send-bytes)
+  - [Example 4: Frame with a delimiter](#example-4-frame-with-a-delimiter)
+  - [Example 5: Set a timeout](#example-5-set-a-timeout)
+- [Read the first example line by line](#read-the-first-example-line-by-line)
 - [Execution trace](#execution-trace)
 - [Common mistakes](#common-mistakes)
 - [Security application](#security-application)
+- [Line-by-line walkthrough](#line-by-line-walkthrough)
+- [Prediction experiments](#prediction-experiments)
+- [Broken example and repair](#broken-example-and-repair)
+- [Guided practice walkthrough](#guided-practice-walkthrough)
+- [Bounded cybersecurity fixture walkthrough](#bounded-cybersecurity-fixture-walkthrough)
 - [Exercises](#exercises)
 - [Finish line](#finish-line)
+- [Mental model](#mental-model)
+- [Limitations](#limitations)
+- [References](#references)
 
 ## Why this lesson exists
 
@@ -123,6 +142,20 @@ print(sock.gettimeout())
 
 The call will not wait forever.
 
+## Read the first example line by line
+
+The first runnable example introduces **TCP Clients, Servers, and Framing**. Copy it into a new file and run it before changing anything. Then use this table to read the same code slowly. A line-by-line explanation does not replace practice: it shows you what to look for when a program behaves differently from your prediction.
+
+| Line | Code | What Python is doing |
+| ---: | --- | --- |
+| 1 | `import socket` | Import statement: the program asks for code from a module. |
+| 2 | `` | Blank line: it separates ideas for the human reader. |
+| 3 | `server = socket.socket()` | Assignment: Python evaluates the right side and stores the result under the name on the left. |
+| 4 | `server.bind(("127.0.0.1", 0))` | Function call: Python evaluates the arguments and runs the named operation. |
+| 5 | `print(server.getsockname()[1])` | Output call: Python evaluates the argument and writes a representation to the terminal. |
+| 6 | `server.close()` | Function call: Python evaluates the arguments and runs the named operation. |
+
+After the run, write down the value created by each assignment, the condition tested by each branch, and the output that appeared. Change one input only. If the result changes, identify the line that used that input. If the result does not change, explain why the input was not part of the decision. This is the same tracing habit used later when reviewing security automation.
 ## Execution trace
 
 A TCP server binds and listens, accepts a connection, receives arbitrary-sized chunks, reconstructs frames, responds, and closes. A single `recv` is not guaranteed to return one complete message.

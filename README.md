@@ -20,6 +20,21 @@ If you have never programmed before, follow these files in order:
 8. [Resources](RESOURCES.md) — use official documentation and authorized training labs effectively.
 9. [Video resources](VIDEO_RESOURCES.md) — use inline and optional YouTube segments with exact timestamps.
 
+## Contents
+
+- [Start here](#start-here)
+- [The daily learning loop](#the-daily-learning-loop)
+- [Course map](#course-map)
+- [Complete 120-day curriculum](DAY_INDEX.md)
+- [What counts as progress](#what-counts-as-progress)
+- [Repository standards](#repository-standards)
+- [Specialization tracks](specializations/README.md)
+- [Resources](RESOURCES.md)
+- [Video resources](VIDEO_RESOURCES.md)
+- [Safety and lab rules](SAFETY_AND_LAB_RULES.md)
+
+The [complete day index](DAY_INDEX.md) remains the authoritative table of contents for all 120 lessons. Each lesson also contains its own **Table of contents** with links to every major topic, example, exercise, and reference section.
+
 ## The daily learning loop
 
 Every day follows the same evidence-based loop. Read the prerequisites and outcomes. Run the starter without changing it. Trace what happened. Change one small thing and predict the result before running again. If the lesson includes a video, watch only the timestamped segment after attempting the local example, then return to the written practice. Answer the numbered exercises from a blank file where the question asks you to write code. Use hints only after a real attempt, and solutions only to compare decisions. Run the checks. Explain the mental model aloud or in writing. Record one edge case, failure mode, or security trade-off.
@@ -49,7 +64,7 @@ A day is complete when you can run its starter, pass its acceptance checks, expl
 
 ## Repository standards
 
-The course quality contract is documented in [COURSE_QUALITY_STANDARD.md](COURSE_QUALITY_STANDARD.md), and the actual teaching requirements are in [DENSE_LESSON_STANDARD.md](DENSE_LESSON_STANDARD.md). Use [TROUBLESHOOTING.md](TROUBLESHOOTING.md) when a command fails. Contributors should read [CONTRIBUTING.md](CONTRIBUTING.md) and [SECURITY.md](SECURITY.md). The repository's course doctor checks structure, links, safety documents, and required learner files.
+The course quality contract is documented in [COURSE_QUALITY_STANDARD.md](COURSE_QUALITY_STANDARD.md), the actual teaching requirements are in [DENSE_LESSON_STANDARD.md](DENSE_LESSON_STANDARD.md), and the beginner-facing page structure is defined in [BEGINNER_TUTORIAL_STANDARD.md](BEGINNER_TUTORIAL_STANDARD.md). Use [TROUBLESHOOTING.md](TROUBLESHOOTING.md) when a command fails. Contributors should read [CONTRIBUTING.md](CONTRIBUTING.md) and [SECURITY.md](SECURITY.md). The repository's course doctor checks structure, links, safety documents, and required learner files.
 
 ## License and provenance
 

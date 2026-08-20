@@ -2,7 +2,12 @@
 
 [← Day 16](../day_16_regular_expressions/day_16_regular_expressions.md) · [Day index](../DAY_INDEX.md) · [Day 18 →](../day_18_classes_and_dataclasses/day_18_classes_and_dataclasses.md)
 
-## Table of Contents
+
+
+
+
+
+## Table of contents
 
 - [Why this lesson exists](#why-this-lesson-exists)
 - [Prerequisites](#prerequisites)
@@ -10,13 +15,27 @@
 - [The problem](#the-problem)
 - [Security boundary](#security-boundary)
 - [Lesson](#lesson)
-- [Vocabulary](#vocabulary)
+  - [Vocabulary](#vocabulary)
 - [Worked examples](#worked-examples)
+  - [Example 1: Parse UTC](#example-1-parse-utc)
+  - [Example 2: Reject a naive value](#example-2-reject-a-naive-value)
+  - [Example 3: Compare offsets](#example-3-compare-offsets)
+  - [Example 4: Normalize to UTC](#example-4-normalize-to-utc)
+  - [Example 5: Keep provenance](#example-5-keep-provenance)
+- [Read the first example line by line](#read-the-first-example-line-by-line)
 - [Execution trace](#execution-trace)
 - [Common mistakes](#common-mistakes)
 - [Security application](#security-application)
+- [Line-by-line walkthrough](#line-by-line-walkthrough)
+- [Prediction experiments](#prediction-experiments)
+- [Broken example and repair](#broken-example-and-repair)
+- [Guided practice walkthrough](#guided-practice-walkthrough)
+- [Bounded cybersecurity fixture walkthrough](#bounded-cybersecurity-fixture-walkthrough)
 - [Exercises](#exercises)
 - [Finish line](#finish-line)
+- [Mental model](#mental-model)
+- [Limitations](#limitations)
+- [References](#references)
 
 ## Why this lesson exists
 
@@ -121,6 +140,18 @@ record = {"raw_timestamp": "2026-08-20T11:00:00+01:00", "parsed": second}
 
 The reviewer can check the transformation.
 
+## Read the first example line by line
+
+The first runnable example introduces **Timestamps, Timezones, and Incident Timelines**. Copy it into a new file and run it before changing anything. Then use this table to read the same code slowly. A line-by-line explanation does not replace practice: it shows you what to look for when a program behaves differently from your prediction.
+
+| Line | Code | What Python is doing |
+| ---: | --- | --- |
+| 1 | `from datetime import datetime` | Import statement: the program asks for code from a module. |
+| 2 | `` | Blank line: it separates ideas for the human reader. |
+| 3 | `value = datetime.fromisoformat("2026-08-20T10:00:00+00:00")` | Assignment: Python evaluates the right side and stores the result under the name on the left. |
+| 4 | `print(value.tzinfo is not None)` | Output call: Python evaluates the argument and writes a representation to the terminal. |
+
+After the run, write down the value created by each assignment, the condition tested by each branch, and the output that appeared. Change one input only. If the result changes, identify the line that used that input. If the result does not change, explain why the input was not part of the decision. This is the same tracing habit used later when reviewing security automation.
 ## Execution trace
 
 The two example timestamps compare equal because their offsets describe the same instant. If one value is naive, Python should reject it before sorting rather than inventing a timezone.

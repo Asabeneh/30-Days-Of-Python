@@ -2,7 +2,12 @@
 
 [← Day 29](../day_29_threat_modeling/day_29_threat_modeling.md) · [Day index](../DAY_INDEX.md) · [Day 31 →](../day_31_processes_and_system_calls/day_31_processes_and_system_calls.md)
 
-## Table of Contents
+
+
+
+
+
+## Table of contents
 
 - [Why this lesson exists](#why-this-lesson-exists)
 - [Prerequisites](#prerequisites)
@@ -10,13 +15,27 @@
 - [The problem](#the-problem)
 - [Security boundary](#security-boundary)
 - [Lesson](#lesson)
-- [Vocabulary](#vocabulary)
+  - [Vocabulary](#vocabulary)
 - [Worked examples](#worked-examples)
+  - [Example 1: Define a record](#example-1-define-a-record)
+  - [Example 2: Validate required fields](#example-2-validate-required-fields)
+  - [Example 3: Redact before export](#example-3-redact-before-export)
+  - [Example 4: Write JSON Lines](#example-4-write-json-lines)
+  - [Example 5: State limitations](#example-5-state-limitations)
+- [Read the first example line by line](#read-the-first-example-line-by-line)
 - [Execution trace](#execution-trace)
 - [Common mistakes](#common-mistakes)
 - [Security application](#security-application)
+- [Line-by-line walkthrough](#line-by-line-walkthrough)
+- [Prediction experiments](#prediction-experiments)
+- [Broken example and repair](#broken-example-and-repair)
+- [Guided practice walkthrough](#guided-practice-walkthrough)
+- [Bounded cybersecurity fixture walkthrough](#bounded-cybersecurity-fixture-walkthrough)
 - [Exercises](#exercises)
 - [Finish line](#finish-line)
+- [Mental model](#mental-model)
+- [Limitations](#limitations)
+- [References](#references)
 
 ## Why this lesson exists
 
@@ -123,6 +142,20 @@ print("; ".join(limitations))
 
 The report communicates scope honestly.
 
+## Read the first example line by line
+
+The first runnable example introduces **Project: Secure Evidence Journal**. Copy it into a new file and run it before changing anything. Then use this table to read the same code slowly. A line-by-line explanation does not replace practice: it shows you what to look for when a program behaves differently from your prediction.
+
+| Line | Code | What Python is doing |
+| ---: | --- | --- |
+| 1 | `entry = {` | Assignment: Python evaluates the right side and stores the result under the name on the left. |
+| 2 | `"case_id": "training-030",` | Expression or data declaration: read the names, values, and operators and predict the result. |
+| 3 | `"source": "fixture-a",` | Expression or data declaration: read the names, values, and operators and predict the result. |
+| 4 | `"observed_at": "2026-08-20T10:00:00+00:00",` | Expression or data declaration: read the names, values, and operators and predict the result. |
+| 5 | `"note": "login_failed",` | Expression or data declaration: read the names, values, and operators and predict the result. |
+| 6 | `}` | Expression or data declaration: read the names, values, and operators and predict the result. |
+
+After the run, write down the value created by each assignment, the condition tested by each branch, and the output that appeared. Change one input only. If the result changes, identify the line that used that input. If the result does not change, explain why the input was not part of the decision. This is the same tracing habit used later when reviewing security automation.
 ## Execution trace
 
 The project pipeline is validate → preserve raw safe fields → derive an identifier → append JSON Lines → export a redacted report → test and reset. Every step should be inspectable.

@@ -2,7 +2,12 @@
 
 [← Day 44](../day_44_dns_concepts/day_44_dns_concepts.md) · [Day index](../DAY_INDEX.md) · [Day 46 →](../day_46_tls_and_certificate_validation/day_46_tls_and_certificate_validation.md)
 
-## Table of Contents
+
+
+
+
+
+## Table of contents
 
 - [Why this lesson exists](#why-this-lesson-exists)
 - [Prerequisites](#prerequisites)
@@ -10,13 +15,27 @@
 - [The problem](#the-problem)
 - [Security boundary](#security-boundary)
 - [Lesson](#lesson)
-- [Vocabulary](#vocabulary)
+  - [Vocabulary](#vocabulary)
 - [Worked examples](#worked-examples)
+  - [Example 1: Parse a request line](#example-1-parse-a-request-line)
+  - [Example 2: Read a status](#example-2-read-a-status)
+  - [Example 3: Build headers](#example-3-build-headers)
+  - [Example 4: Parse JSON deliberately](#example-4-parse-json-deliberately)
+  - [Example 5: Limit a body](#example-5-limit-a-body)
+- [Read the first example line by line](#read-the-first-example-line-by-line)
 - [Execution trace](#execution-trace)
 - [Common mistakes](#common-mistakes)
 - [Security application](#security-application)
+- [Line-by-line walkthrough](#line-by-line-walkthrough)
+- [Prediction experiments](#prediction-experiments)
+- [Broken example and repair](#broken-example-and-repair)
+- [Guided practice walkthrough](#guided-practice-walkthrough)
+- [Bounded cybersecurity fixture walkthrough](#bounded-cybersecurity-fixture-walkthrough)
 - [Exercises](#exercises)
 - [Finish line](#finish-line)
+- [Mental model](#mental-model)
+- [Limitations](#limitations)
+- [References](#references)
 
 ## Why this lesson exists
 
@@ -121,6 +140,17 @@ print(body[:MAX])
 
 The preview is bounded.
 
+## Read the first example line by line
+
+The first runnable example introduces **HTTP Requests, Responses, and Safe Parsing**. Copy it into a new file and run it before changing anything. Then use this table to read the same code slowly. A line-by-line explanation does not replace practice: it shows you what to look for when a program behaves differently from your prediction.
+
+| Line | Code | What Python is doing |
+| ---: | --- | --- |
+| 1 | `line = "GET /health HTTP/1.1"` | Assignment: Python evaluates the right side and stores the result under the name on the left. |
+| 2 | `method, target, version = line.split()` | Assignment: Python evaluates the right side and stores the result under the name on the left. |
+| 3 | `print(method, target, version)` | Output call: Python evaluates the argument and writes a representation to the terminal. |
+
+After the run, write down the value created by each assignment, the condition tested by each branch, and the output that appeared. Change one input only. If the result changes, identify the line that used that input. If the result does not change, explain why the input was not part of the decision. This is the same tracing habit used later when reviewing security automation.
 ## Execution trace
 
 A parser reads the request line and headers, checks the declared limits, decodes the body according to a documented encoding, and returns a structured result or rejection.

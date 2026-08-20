@@ -2,7 +2,12 @@
 
 [← Day 113](../day_113_advanced_concurrency/day_113_advanced_concurrency.md) · [Day index](../DAY_INDEX.md) · [Day 115 →](../day_115_privacy_and_retention/day_115_privacy_and_retention.md)
 
-## Table of Contents
+
+
+
+
+
+## Table of contents
 
 - [Why this lesson exists](#why-this-lesson-exists)
 - [Prerequisites](#prerequisites)
@@ -10,13 +15,27 @@
 - [The problem](#the-problem)
 - [Security boundary](#security-boundary)
 - [Lesson](#lesson)
-- [Vocabulary](#vocabulary)
+  - [Vocabulary](#vocabulary)
 - [Worked examples](#worked-examples)
+  - [Example 1: Inject a timeout](#example-1-inject-a-timeout)
+  - [Example 2: Recover with fallback](#example-2-recover-with-fallback)
+  - [Example 3: Stop repeated attempts](#example-3-stop-repeated-attempts)
+  - [Example 4: Preserve partial output](#example-4-preserve-partial-output)
+  - [Example 5: Test recovery](#example-5-test-recovery)
+- [Read the first example line by line](#read-the-first-example-line-by-line)
 - [Execution trace](#execution-trace)
 - [Common mistakes](#common-mistakes)
 - [Security application](#security-application)
+- [Line-by-line walkthrough](#line-by-line-walkthrough)
+- [Prediction experiments](#prediction-experiments)
+- [Broken example and repair](#broken-example-and-repair)
+- [Guided practice walkthrough](#guided-practice-walkthrough)
+- [Bounded cybersecurity fixture walkthrough](#bounded-cybersecurity-fixture-walkthrough)
 - [Exercises](#exercises)
 - [Finish line](#finish-line)
+- [Mental model](#mental-model)
+- [Limitations](#limitations)
+- [References](#references)
 
 ## Why this lesson exists
 
@@ -123,6 +142,22 @@ print("recovery contract passed")
 
 The recovery behavior is tested.
 
+## Read the first example line by line
+
+The first runnable example introduces **Failure Injection and Recovery**. Copy it into a new file and run it before changing anything. Then use this table to read the same code slowly. A line-by-line explanation does not replace practice: it shows you what to look for when a program behaves differently from your prediction.
+
+| Line | Code | What Python is doing |
+| ---: | --- | --- |
+| 1 | `def fake_timeout():` | Function definition: Python records a reusable block with this name. |
+| 2 | `raise TimeoutError("training timeout")` | Explicit failure: the program refuses an input that violates the contract. |
+| 3 | `` | Blank line: it separates ideas for the human reader. |
+| 4 | `` | Blank line: it separates ideas for the human reader. |
+| 5 | `try:` | Expression or data declaration: read the names, values, and operators and predict the result. |
+| 6 | `fake_timeout()` | Function call: Python evaluates the arguments and runs the named operation. |
+| 7 | `except TimeoutError as error:` | Expression or data declaration: read the names, values, and operators and predict the result. |
+| 8 | `print(type(error).__name__)` | Output call: Python evaluates the argument and writes a representation to the terminal. |
+
+After the run, write down the value created by each assignment, the condition tested by each branch, and the output that appeared. Change one input only. If the result changes, identify the line that used that input. If the result does not change, explain why the input was not part of the decision. This is the same tracing habit used later when reviewing security automation.
 ## Execution trace
 
 The injected failure enters a known category, the pipeline stops or falls back according to policy, records partial state, cleans resources, and reports incomplete work.

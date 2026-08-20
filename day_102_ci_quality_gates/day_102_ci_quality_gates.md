@@ -2,7 +2,12 @@
 
 [← Day 101](../day_101_secure_sdlc/day_101_secure_sdlc.md) · [Day index](../DAY_INDEX.md) · [Day 103 →](../day_103_static_analysis/day_103_static_analysis.md)
 
-## Table of Contents
+
+
+
+
+
+## Table of contents
 
 - [Why this lesson exists](#why-this-lesson-exists)
 - [Prerequisites](#prerequisites)
@@ -10,13 +15,27 @@
 - [The problem](#the-problem)
 - [Security boundary](#security-boundary)
 - [Lesson](#lesson)
-- [Vocabulary](#vocabulary)
+  - [Vocabulary](#vocabulary)
 - [Worked examples](#worked-examples)
+  - [Example 1: List gates](#example-1-list-gates)
+  - [Example 2: Represent a result](#example-2-represent-a-result)
+  - [Example 3: Fail closed](#example-3-fail-closed)
+  - [Example 4: Separate flaky from failed](#example-4-separate-flaky-from-failed)
+  - [Example 5: Store safe artifacts](#example-5-store-safe-artifacts)
+- [Read the first example line by line](#read-the-first-example-line-by-line)
 - [Execution trace](#execution-trace)
 - [Common mistakes](#common-mistakes)
 - [Security application](#security-application)
+- [Line-by-line walkthrough](#line-by-line-walkthrough)
+- [Prediction experiments](#prediction-experiments)
+- [Broken example and repair](#broken-example-and-repair)
+- [Guided practice walkthrough](#guided-practice-walkthrough)
+- [Bounded cybersecurity fixture walkthrough](#bounded-cybersecurity-fixture-walkthrough)
 - [Exercises](#exercises)
 - [Finish line](#finish-line)
+- [Mental model](#mental-model)
+- [Limitations](#limitations)
+- [References](#references)
 
 ## Why this lesson exists
 
@@ -117,6 +136,16 @@ print(artifact_policy)
 
 The output policy is explicit.
 
+## Read the first example line by line
+
+The first runnable example introduces **CI Quality Gates**. Copy it into a new file and run it before changing anything. Then use this table to read the same code slowly. A line-by-line explanation does not replace practice: it shows you what to look for when a program behaves differently from your prediction.
+
+| Line | Code | What Python is doing |
+| ---: | --- | --- |
+| 1 | `gates = ["format", "lint", "compile", "test", "links"]` | Assignment: Python evaluates the right side and stores the result under the name on the left. |
+| 2 | `print(gates)` | Output call: Python evaluates the argument and writes a representation to the terminal. |
+
+After the run, write down the value created by each assignment, the condition tested by each branch, and the output that appeared. Change one input only. If the result changes, identify the line that used that input. If the result does not change, explain why the input was not part of the decision. This is the same tracing habit used later when reviewing security automation.
 ## Execution trace
 
 The pipeline runs deterministic checks, captures minimal artifacts, aggregates statuses, and refuses delivery when a required gate fails or is unknown.

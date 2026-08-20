@@ -2,7 +2,12 @@
 
 [← Day 45](../day_45_http_requests_and_responses/day_45_http_requests_and_responses.md) · [Day index](../DAY_INDEX.md) · [Day 47 →](../day_47_packet_capture_fixtures/day_47_packet_capture_fixtures.md)
 
-## Table of Contents
+
+
+
+
+
+## Table of contents
 
 - [Why this lesson exists](#why-this-lesson-exists)
 - [Prerequisites](#prerequisites)
@@ -10,13 +15,27 @@
 - [The problem](#the-problem)
 - [Security boundary](#security-boundary)
 - [Lesson](#lesson)
-- [Vocabulary](#vocabulary)
+  - [Vocabulary](#vocabulary)
 - [Worked examples](#worked-examples)
+  - [Example 1: Create a default context](#example-1-create-a-default-context)
+  - [Example 2: Name the target](#example-2-name-the-target)
+  - [Example 3: Reject a mismatch conceptually](#example-3-reject-a-mismatch-conceptually)
+  - [Example 4: Separate trust stores](#example-4-separate-trust-stores)
+  - [Example 5: Do not disable verification](#example-5-do-not-disable-verification)
+- [Read the first example line by line](#read-the-first-example-line-by-line)
 - [Execution trace](#execution-trace)
 - [Common mistakes](#common-mistakes)
 - [Security application](#security-application)
+- [Line-by-line walkthrough](#line-by-line-walkthrough)
+- [Prediction experiments](#prediction-experiments)
+- [Broken example and repair](#broken-example-and-repair)
+- [Guided practice walkthrough](#guided-practice-walkthrough)
+- [Bounded cybersecurity fixture walkthrough](#bounded-cybersecurity-fixture-walkthrough)
 - [Exercises](#exercises)
 - [Finish line](#finish-line)
+- [Mental model](#mental-model)
+- [Limitations](#limitations)
+- [References](#references)
 
 ## Why this lesson exists
 
@@ -120,6 +139,18 @@ print(safe)
 
 Both checks remain enabled.
 
+## Read the first example line by line
+
+The first runnable example introduces **TLS and Certificate Validation**. Copy it into a new file and run it before changing anything. Then use this table to read the same code slowly. A line-by-line explanation does not replace practice: it shows you what to look for when a program behaves differently from your prediction.
+
+| Line | Code | What Python is doing |
+| ---: | --- | --- |
+| 1 | `import ssl` | Import statement: the program asks for code from a module. |
+| 2 | `` | Blank line: it separates ideas for the human reader. |
+| 3 | `context = ssl.create_default_context()` | Assignment: Python evaluates the right side and stores the result under the name on the left. |
+| 4 | `print(context.check_hostname, context.verify_mode)` | Output call: Python evaluates the argument and writes a representation to the terminal. |
+
+After the run, write down the value created by each assignment, the condition tested by each branch, and the output that appeared. Change one input only. If the result changes, identify the line that used that input. If the result does not change, explain why the input was not part of the decision. This is the same tracing habit used later when reviewing security automation.
 ## Execution trace
 
 The client chooses a trust store, negotiates TLS, validates the chain and hostname, and only then treats the connection as authenticated for the stated identity.

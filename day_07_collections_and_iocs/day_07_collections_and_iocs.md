@@ -2,6 +2,39 @@
 
 [← Day 6](../day_06_loops_and_bounded_work/day_06_loops_and_bounded_work.md) · [Day index](../DAY_INDEX.md) · [Day 8 →](../day_08_strings_and_canonicalization/day_08_strings_and_canonicalization.md)
 
+
+
+
+
+## Table of contents
+
+- [Welcome](#welcome)
+- [Prerequisites](#prerequisites)
+- [Outcomes](#outcomes)
+- [The problem](#the-problem)
+- [Security boundary](#security-boundary)
+- [Vocabulary](#vocabulary)
+- [Lesson](#lesson)
+- [1. Lists preserve order and duplicates](#1-lists-preserve-order-and-duplicates)
+- [2. Sets answer membership questions](#2-sets-answer-membership-questions)
+- [3. Dictionaries label fields](#3-dictionaries-label-fields)
+- [4. Tuples group fixed values](#4-tuples-group-fixed-values)
+- [5. Mutation is a visible change](#5-mutation-is-a-visible-change)
+- [Worked examples](#worked-examples)
+  - [Example 1: A first runnable case](#example-1-a-first-runnable-case)
+  - [Example 2: A boundary case](#example-2-a-boundary-case)
+  - [Example 3: A deliberate experiment](#example-3-a-deliberate-experiment)
+  - [Example 4: A bounded security fixture](#example-4-a-bounded-security-fixture)
+  - [Example 5: Keep observation order and uniqueness separately](#example-5-keep-observation-order-and-uniqueness-separately)
+- [Execution trace](#execution-trace)
+- [Common mistakes and repairs](#common-mistakes-and-repairs)
+- [Guided practice](#guided-practice)
+- [Security application](#security-application)
+- [Independent exercises](#independent-exercises)
+  - [Additional beginner checkpoint](#additional-beginner-checkpoint)
+- [Finish line](#finish-line)
+- [References](#references)
+
 ## Welcome
 
 One value is useful, but cybersecurity programs usually handle groups of values. Today you will learn lists, tuples, sets, and dictionaries by asking what each collection promises and when that promise matters.
@@ -104,6 +137,82 @@ print(items)
 
 The list now contains three items. A name referring to a mutable list can observe changes made elsewhere. Later lessons will discuss copying and shared state; for now, remember that a collection can be changed after creation.
 
+## 1. Lists preserve order and duplicates
+
+```python
+events = ["login_failed", "logout", "login_failed"]
+print(events[0])
+print(len(events))
+```
+
+Output:
+
+```text
+login_failed
+3
+```
+
+The first item has index 0. The duplicate is meaningful: the event was observed twice. Use a list when order and repeated observations matter.
+
+## 2. Sets answer membership questions
+
+```python
+known_events = {"login_failed", "access_denied", "login_failed"}
+print(len(known_events))
+print("logout" in known_events)
+```
+
+Output:
+
+```text
+2
+False
+```
+
+The set removes duplicates. It is useful for asking whether a value has appeared or belongs to an allowlist. It cannot preserve the original sequence or prove that an event is malicious.
+
+## 3. Dictionaries label fields
+
+```python
+record = {
+    "event": "login_failed",
+    "severity": 7,
+    "source": "training-auth",
+}
+print(record["event"])
+print(record.get("confidence"))
+```
+
+Output:
+
+```text
+login_failed
+None
+```
+
+Square brackets require the key to exist. `.get` returns `None` when the optional key is absent. Decide deliberately whether a missing required key should be rejected instead.
+
+## 4. Tuples group fixed values
+
+```python
+endpoint = ("127.0.0.1", 8000)
+host, port = endpoint
+print(host)
+print(port)
+```
+
+A tuple can communicate that the two values belong together. The loopback address and port are local training values, not an instruction to connect to a remote service.
+
+## 5. Mutation is a visible change
+
+```python
+items = ["a", "b"]
+items.append("c")
+print(items)
+```
+
+The list changes from two items to three. When two names refer to the same mutable list, one function can change what another function sees. Later lessons will use copying and contracts to make ownership clearer.
+
 ## Worked examples
 
 Run the examples in order. Each one changes only a small part of the previous idea.
@@ -123,6 +232,17 @@ Make one controlled change, record the output, and compare it with your predicti
 ### Example 4: A bounded security fixture
 
 Apply the idea to the synthetic fixture in this lesson. The fixture is local, finite, and invented; it is not permission to inspect real systems.
+
+### Example 5: Keep observation order and uniqueness separately
+
+```python
+observed = ["login_failed", "logout", "login_failed"]
+unique = set(observed)
+print(len(observed))
+print(len(unique))
+```
+
+The list preserves three observations and the set contains two unique values. Security reports often need both facts: frequency and uniqueness answer different questions.
 
 ## Execution trace
 

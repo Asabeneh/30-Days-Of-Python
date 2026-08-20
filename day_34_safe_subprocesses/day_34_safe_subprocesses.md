@@ -2,7 +2,12 @@
 
 [← Day 33](../day_33_paths_and_file_metadata/day_33_paths_and_file_metadata.md) · [Day index](../DAY_INDEX.md) · [Day 35 →](../day_35_users_and_permissions/day_35_users_and_permissions.md)
 
-## Table of Contents
+
+
+
+
+
+## Table of contents
 
 - [Why this lesson exists](#why-this-lesson-exists)
 - [Prerequisites](#prerequisites)
@@ -10,13 +15,27 @@
 - [The problem](#the-problem)
 - [Security boundary](#security-boundary)
 - [Lesson](#lesson)
-- [Vocabulary](#vocabulary)
+  - [Vocabulary](#vocabulary)
 - [Worked examples](#worked-examples)
+  - [Example 1: Allow one command](#example-1-allow-one-command)
+  - [Example 2: Reject unknown keys](#example-2-reject-unknown-keys)
+  - [Example 3: Constrain arguments](#example-3-constrain-arguments)
+  - [Example 4: Set environment](#example-4-set-environment)
+  - [Example 5: Bound output](#example-5-bound-output)
+- [Read the first example line by line](#read-the-first-example-line-by-line)
 - [Execution trace](#execution-trace)
 - [Common mistakes](#common-mistakes)
 - [Security application](#security-application)
+- [Line-by-line walkthrough](#line-by-line-walkthrough)
+- [Prediction experiments](#prediction-experiments)
+- [Broken example and repair](#broken-example-and-repair)
+- [Guided practice walkthrough](#guided-practice-walkthrough)
+- [Bounded cybersecurity fixture walkthrough](#bounded-cybersecurity-fixture-walkthrough)
 - [Exercises](#exercises)
 - [Finish line](#finish-line)
+- [Mental model](#mental-model)
+- [Limitations](#limitations)
+- [References](#references)
 
 ## Why this lesson exists
 
@@ -121,6 +140,16 @@ def preview(text, limit=4096):
 
 The caller can display `truncated=True`.
 
+## Read the first example line by line
+
+The first runnable example introduces **Safe Subprocess Allowlisting**. Copy it into a new file and run it before changing anything. Then use this table to read the same code slowly. A line-by-line explanation does not replace practice: it shows you what to look for when a program behaves differently from your prediction.
+
+| Line | Code | What Python is doing |
+| ---: | --- | --- |
+| 1 | `COMMANDS = {"python-version": ["python", "--version"]}` | Assignment: Python evaluates the right side and stores the result under the name on the left. |
+| 2 | `print(COMMANDS["python-version"])` | Output call: Python evaluates the argument and writes a representation to the terminal. |
+
+After the run, write down the value created by each assignment, the condition tested by each branch, and the output that appeared. Change one input only. If the result changes, identify the line that used that input. If the result does not change, explain why the input was not part of the decision. This is the same tracing habit used later when reviewing security automation.
 ## Execution trace
 
 The friendly operation maps to fixed data, the adapter validates the key and arguments, starts with an explicit cwd/environment, and caps output and lifetime.

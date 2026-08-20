@@ -2,7 +2,12 @@
 
 [← Day 54](../day_54_hmac_and_authenticity/day_54_hmac_and_authenticity.md) · [Day index](../DAY_INDEX.md) · [Day 56 →](../day_56_password_verification/day_56_password_verification.md)
 
-## Table of Contents
+
+
+
+
+
+## Table of contents
 
 - [Why this lesson exists](#why-this-lesson-exists)
 - [Prerequisites](#prerequisites)
@@ -10,13 +15,27 @@
 - [The problem](#the-problem)
 - [Security boundary](#security-boundary)
 - [Lesson](#lesson)
-- [Vocabulary](#vocabulary)
+  - [Vocabulary](#vocabulary)
 - [Worked examples](#worked-examples)
+  - [Example 1: Generate bytes](#example-1-generate-bytes)
+  - [Example 2: Encode for a URL](#example-2-encode-for-a-url)
+  - [Example 3: Use a nonce once](#example-3-use-a-nonce-once)
+  - [Example 4: Compare a token safely](#example-4-compare-a-token-safely)
+  - [Example 5: Set expiry](#example-5-set-expiry)
+- [Read the first example line by line](#read-the-first-example-line-by-line)
 - [Execution trace](#execution-trace)
 - [Common mistakes](#common-mistakes)
 - [Security application](#security-application)
+- [Line-by-line walkthrough](#line-by-line-walkthrough)
+- [Prediction experiments](#prediction-experiments)
+- [Broken example and repair](#broken-example-and-repair)
+- [Guided practice walkthrough](#guided-practice-walkthrough)
+- [Bounded cybersecurity fixture walkthrough](#bounded-cybersecurity-fixture-walkthrough)
 - [Exercises](#exercises)
 - [Finish line](#finish-line)
+- [Mental model](#mental-model)
+- [Limitations](#limitations)
+- [References](#references)
 
 ## Why this lesson exists
 
@@ -123,6 +142,18 @@ print(token_record)
 
 The token has purpose and expiry metadata.
 
+## Read the first example line by line
+
+The first runnable example introduces **Secure Randomness and Token Design**. Copy it into a new file and run it before changing anything. Then use this table to read the same code slowly. A line-by-line explanation does not replace practice: it shows you what to look for when a program behaves differently from your prediction.
+
+| Line | Code | What Python is doing |
+| ---: | --- | --- |
+| 1 | `import secrets` | Import statement: the program asks for code from a module. |
+| 2 | `` | Blank line: it separates ideas for the human reader. |
+| 3 | `value = secrets.token_bytes(16)` | Assignment: Python evaluates the right side and stores the result under the name on the left. |
+| 4 | `print(len(value))` | Output call: Python evaluates the argument and writes a representation to the terminal. |
+
+After the run, write down the value created by each assignment, the condition tested by each branch, and the output that appeared. Change one input only. If the result changes, identify the line that used that input. If the result does not change, explain why the input was not part of the decision. This is the same tracing habit used later when reviewing security automation.
 ## Execution trace
 
 The secure generator creates unpredictable bytes, the protocol encodes them, records purpose and lifecycle without storing the secret in logs, and verification compares supplied material safely.

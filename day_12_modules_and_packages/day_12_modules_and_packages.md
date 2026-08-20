@@ -2,7 +2,12 @@
 
 [← Day 11](../day_11_function_contracts/day_11_function_contracts.md) · [Day index](../DAY_INDEX.md) · [Day 13 →](../day_13_exceptions_and_error_taxonomy/day_13_exceptions_and_error_taxonomy.md)
 
-## Table of Contents
+
+
+
+
+
+## Table of contents
 
 - [Why this lesson exists](#why-this-lesson-exists)
 - [Prerequisites](#prerequisites)
@@ -10,13 +15,27 @@
 - [The problem](#the-problem)
 - [Security boundary](#security-boundary)
 - [Lesson](#lesson)
-- [Vocabulary](#vocabulary)
+  - [Vocabulary](#vocabulary)
 - [Worked examples](#worked-examples)
+  - [Example 1: A focused module](#example-1-a-focused-module)
+  - [Example 2: The main guard](#example-2-the-main-guard)
+  - [Example 3: A package path](#example-3-a-package-path)
+  - [Example 4: Explicit exports](#example-4-explicit-exports)
+  - [Example 5: Avoid import-time file access](#example-5-avoid-import-time-file-access)
+- [Read the first example line by line](#read-the-first-example-line-by-line)
 - [Execution trace](#execution-trace)
 - [Common mistakes](#common-mistakes)
 - [Security application](#security-application)
+- [Line-by-line walkthrough](#line-by-line-walkthrough)
+- [Prediction experiments](#prediction-experiments)
+- [Broken example and repair](#broken-example-and-repair)
+- [Guided practice walkthrough](#guided-practice-walkthrough)
+- [Bounded cybersecurity fixture walkthrough](#bounded-cybersecurity-fixture-walkthrough)
 - [Exercises](#exercises)
 - [Finish line](#finish-line)
+- [Mental model](#mental-model)
+- [Limitations](#limitations)
+- [References](#references)
 
 ## Why this lesson exists
 
@@ -136,6 +155,24 @@ def load_fixture(path):
 
 The caller chooses when and which authorized fixture to read.
 
+## Read the first example line by line
+
+The first runnable example introduces **Modules, Packages, and Import Boundaries**. Copy it into a new file and run it before changing anything. Then use this table to read the same code slowly. A line-by-line explanation does not replace practice: it shows you what to look for when a program behaves differently from your prediction.
+
+| Line | Code | What Python is doing |
+| ---: | --- | --- |
+| 1 | `# parsers.py` | Comment: Python ignores this text while running the program. |
+| 2 | `def parse_pair(text):` | Function definition: Python records a reusable block with this name. |
+| 3 | `left, right = text.split(":", 1)` | Assignment: Python evaluates the right side and stores the result under the name on the left. |
+| 4 | `return left, right` | Return statement: the function sends this value back to its caller. |
+| 5 | `` | Blank line: it separates ideas for the human reader. |
+| 6 | `` | Blank line: it separates ideas for the human reader. |
+| 7 | `# main.py` | Comment: Python ignores this text while running the program. |
+| 8 | `from parsers import parse_pair` | Import statement: the program asks for code from a module. |
+| 9 | `` | Blank line: it separates ideas for the human reader. |
+| 10 | `print(parse_pair("auth:failed"))` | Output call: Python evaluates the argument and writes a representation to the terminal. |
+
+After the run, write down the value created by each assignment, the condition tested by each branch, and the output that appeared. Change one input only. If the result changes, identify the line that used that input. If the result does not change, explain why the input was not part of the decision. This is the same tracing habit used later when reviewing security automation.
 ## Execution trace
 
 When `main.py` imports `parse_pair`, Python loads the module, creates the function, and skips the guarded `main()` call. When the same file is executed directly, `__name__` is `"__main__"` and the entry point runs.

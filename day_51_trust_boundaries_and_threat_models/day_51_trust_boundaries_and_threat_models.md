@@ -2,7 +2,12 @@
 
 [← Day 50](../day_50_project__local_service_monitor/day_50_project__local_service_monitor.md) · [Day index](../DAY_INDEX.md) · [Day 52 →](../day_52_encoding_and_unicode/day_52_encoding_and_unicode.md)
 
-## Table of Contents
+
+
+
+
+
+## Table of contents
 
 - [Why this lesson exists](#why-this-lesson-exists)
 - [Prerequisites](#prerequisites)
@@ -10,13 +15,27 @@
 - [The problem](#the-problem)
 - [Security boundary](#security-boundary)
 - [Lesson](#lesson)
-- [Vocabulary](#vocabulary)
+  - [Vocabulary](#vocabulary)
 - [Worked examples](#worked-examples)
+  - [Example 1: Name properties](#example-1-name-properties)
+  - [Example 2: Model a key holder](#example-2-model-a-key-holder)
+  - [Example 3: Define failure](#example-3-define-failure)
+  - [Example 4: State threat](#example-4-state-threat)
+  - [Example 5: Record residual risk](#example-5-record-residual-risk)
+- [Read the first example line by line](#read-the-first-example-line-by-line)
 - [Execution trace](#execution-trace)
 - [Common mistakes](#common-mistakes)
 - [Security application](#security-application)
+- [Line-by-line walkthrough](#line-by-line-walkthrough)
+- [Prediction experiments](#prediction-experiments)
+- [Broken example and repair](#broken-example-and-repair)
+- [Guided practice walkthrough](#guided-practice-walkthrough)
+- [Bounded cybersecurity fixture walkthrough](#bounded-cybersecurity-fixture-walkthrough)
 - [Exercises](#exercises)
 - [Finish line](#finish-line)
+- [Mental model](#mental-model)
+- [Limitations](#limitations)
+- [References](#references)
 
 ## Why this lesson exists
 
@@ -124,6 +143,16 @@ print("residual: compromised key or wrong key selection defeats verification")
 
 The limitation remains visible.
 
+## Read the first example line by line
+
+The first runnable example introduces **Trust Boundaries and Threat Models for Crypto**. Copy it into a new file and run it before changing anything. Then use this table to read the same code slowly. A line-by-line explanation does not replace practice: it shows you what to look for when a program behaves differently from your prediction.
+
+| Line | Code | What Python is doing |
+| ---: | --- | --- |
+| 1 | `needs = {"secret": "confidentiality", "changed": "integrity", "sender": "authenticity"}` | Assignment: Python evaluates the right side and stores the result under the name on the left. |
+| 2 | `print(needs)` | Output call: Python evaluates the argument and writes a representation to the terminal. |
+
+After the run, write down the value created by each assignment, the condition tested by each branch, and the output that appeared. Change one input only. If the result changes, identify the line that used that input. If the result does not change, explain why the input was not part of the decision. This is the same tracing habit used later when reviewing security automation.
 ## Execution trace
 
 The model starts with properties and key holders, chooses a failure policy, maps threat to control, and states what remains. Only then should code select a primitive.

@@ -2,7 +2,12 @@
 
 [← Day 68](../day_68_misconfiguration_and_defaults/day_68_misconfiguration_and_defaults.md) · [Day index](../DAY_INDEX.md) · [Day 70 →](../day_70_project__secure_case_api/day_70_project__secure_case_api.md)
 
-## Table of Contents
+
+
+
+
+
+## Table of contents
 
 - [Why this lesson exists](#why-this-lesson-exists)
 - [Prerequisites](#prerequisites)
@@ -10,13 +15,27 @@
 - [The problem](#the-problem)
 - [Security boundary](#security-boundary)
 - [Lesson](#lesson)
-- [Vocabulary](#vocabulary)
+  - [Vocabulary](#vocabulary)
 - [Worked examples](#worked-examples)
+  - [Example 1: Inventory a component](#example-1-inventory-a-component)
+  - [Example 2: Separate required and optional](#example-2-separate-required-and-optional)
+  - [Example 3: Handle unavailable verification](#example-3-handle-unavailable-verification)
+  - [Example 4: Pin a policy](#example-4-pin-a-policy)
+  - [Example 5: Preserve evidence](#example-5-preserve-evidence)
+- [Read the first example line by line](#read-the-first-example-line-by-line)
 - [Execution trace](#execution-trace)
 - [Common mistakes](#common-mistakes)
 - [Security application](#security-application)
+- [Line-by-line walkthrough](#line-by-line-walkthrough)
+- [Prediction experiments](#prediction-experiments)
+- [Broken example and repair](#broken-example-and-repair)
+- [Guided practice walkthrough](#guided-practice-walkthrough)
+- [Bounded cybersecurity fixture walkthrough](#bounded-cybersecurity-fixture-walkthrough)
 - [Exercises](#exercises)
 - [Finish line](#finish-line)
+- [Mental model](#mental-model)
+- [Limitations](#limitations)
+- [References](#references)
 
 ## Why this lesson exists
 
@@ -121,6 +140,21 @@ print({"component": component["name"], "event": "verification_failed"})
 
 The log is minimal.
 
+## Read the first example line by line
+
+The first runnable example introduces **Supply Chain and Exceptional Conditions**. Copy it into a new file and run it before changing anything. Then use this table to read the same code slowly. A line-by-line explanation does not replace practice: it shows you what to look for when a program behaves differently from your prediction.
+
+| Line | Code | What Python is doing |
+| ---: | --- | --- |
+| 1 | `component = {` | Assignment: Python evaluates the right side and stores the result under the name on the left. |
+| 2 | `"name": "training-lib",` | Expression or data declaration: read the names, values, and operators and predict the result. |
+| 3 | `"version": "1.0",` | Expression or data declaration: read the names, values, and operators and predict the result. |
+| 4 | `"source": "reviewed-index",` | Expression or data declaration: read the names, values, and operators and predict the result. |
+| 5 | `"reviewed": "2026-08-20",` | Expression or data declaration: read the names, values, and operators and predict the result. |
+| 6 | `}` | Expression or data declaration: read the names, values, and operators and predict the result. |
+| 7 | `print(component)` | Output call: Python evaluates the argument and writes a representation to the terminal. |
+
+After the run, write down the value created by each assignment, the condition tested by each branch, and the output that appeared. Change one input only. If the result changes, identify the line that used that input. If the result does not change, explain why the input was not part of the decision. This is the same tracing habit used later when reviewing security automation.
 ## Execution trace
 
 The program identifies dependencies and their provenance, attempts a required control, records whether it was available, and refuses to mark the artifact trusted when the control failed.

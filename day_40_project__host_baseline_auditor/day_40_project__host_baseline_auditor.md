@@ -2,7 +2,12 @@
 
 [← Day 39](../day_39_host_inventories/day_39_host_inventories.md) · [Day index](../DAY_INDEX.md) · [Day 41 →](../day_41_addresses__ports__and_sockets/day_41_addresses__ports__and_sockets.md)
 
-## Table of Contents
+
+
+
+
+
+## Table of contents
 
 - [Why this lesson exists](#why-this-lesson-exists)
 - [Prerequisites](#prerequisites)
@@ -10,13 +15,27 @@
 - [The problem](#the-problem)
 - [Security boundary](#security-boundary)
 - [Lesson](#lesson)
-- [Vocabulary](#vocabulary)
+  - [Vocabulary](#vocabulary)
 - [Worked examples](#worked-examples)
+  - [Example 1: Define the baseline](#example-1-define-the-baseline)
+  - [Example 2: Collect bounded state](#example-2-collect-bounded-state)
+  - [Example 3: Compare fields](#example-3-compare-fields)
+  - [Example 4: Handle missing state](#example-4-handle-missing-state)
+  - [Example 5: Write the project report](#example-5-write-the-project-report)
+- [Read the first example line by line](#read-the-first-example-line-by-line)
 - [Execution trace](#execution-trace)
 - [Common mistakes](#common-mistakes)
 - [Security application](#security-application)
+- [Line-by-line walkthrough](#line-by-line-walkthrough)
+- [Prediction experiments](#prediction-experiments)
+- [Broken example and repair](#broken-example-and-repair)
+- [Guided practice walkthrough](#guided-practice-walkthrough)
+- [Bounded cybersecurity fixture walkthrough](#bounded-cybersecurity-fixture-walkthrough)
 - [Exercises](#exercises)
 - [Finish line](#finish-line)
+- [Mental model](#mental-model)
+- [Limitations](#limitations)
+- [References](#references)
 
 ## Why this lesson exists
 
@@ -122,6 +141,20 @@ print(report)
 
 The artifact is reviewable and bounded.
 
+## Read the first example line by line
+
+The first runnable example introduces **Project: Host Baseline Auditor**. Copy it into a new file and run it before changing anything. Then use this table to read the same code slowly. A line-by-line explanation does not replace practice: it shows you what to look for when a program behaves differently from your prediction.
+
+| Line | Code | What Python is doing |
+| ---: | --- | --- |
+| 1 | `baseline = {` | Assignment: Python evaluates the right side and stores the result under the name on the left. |
+| 2 | `"version": 1,` | Expression or data declaration: read the names, values, and operators and predict the result. |
+| 3 | `"scope": ["python_version", "fixture_files"],` | Expression or data declaration: read the names, values, and operators and predict the result. |
+| 4 | `"python_version": "3.x",` | Expression or data declaration: read the names, values, and operators and predict the result. |
+| 5 | `}` | Expression or data declaration: read the names, values, and operators and predict the result. |
+| 6 | `print(baseline)` | Output call: Python evaluates the argument and writes a representation to the terminal. |
+
+After the run, write down the value created by each assignment, the condition tested by each branch, and the output that appeared. Change one input only. If the result changes, identify the line that used that input. If the result does not change, explain why the input was not part of the decision. This is the same tracing habit used later when reviewing security automation.
 ## Execution trace
 
 The auditor loads the versioned baseline, collects only approved local fixture state, normalizes it, compares field by field, reports changed/missing/not-observed states, and writes a safe report.

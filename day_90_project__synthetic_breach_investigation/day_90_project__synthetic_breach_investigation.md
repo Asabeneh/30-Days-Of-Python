@@ -2,7 +2,12 @@
 
 [← Day 89](../day_89_incident_reporting/day_89_incident_reporting.md) · [Day index](../DAY_INDEX.md) · [Day 91 →](../day_91_rules_of_engagement/day_91_rules_of_engagement.md)
 
-## Table of Contents
+
+
+
+
+
+## Table of contents
 
 - [Why this lesson exists](#why-this-lesson-exists)
 - [Prerequisites](#prerequisites)
@@ -10,13 +15,27 @@
 - [The problem](#the-problem)
 - [Security boundary](#security-boundary)
 - [Lesson](#lesson)
-- [Vocabulary](#vocabulary)
+  - [Vocabulary](#vocabulary)
 - [Worked examples](#worked-examples)
+  - [Example 1: Open the case index](#example-1-open-the-case-index)
+  - [Example 2: Verify artifacts](#example-2-verify-artifacts)
+  - [Example 3: Build hypotheses](#example-3-build-hypotheses)
+  - [Example 4: Reference evidence](#example-4-reference-evidence)
+  - [Example 5: Close the case](#example-5-close-the-case)
+- [Read the first example line by line](#read-the-first-example-line-by-line)
 - [Execution trace](#execution-trace)
 - [Common mistakes](#common-mistakes)
 - [Security application](#security-application)
+- [Line-by-line walkthrough](#line-by-line-walkthrough)
+- [Prediction experiments](#prediction-experiments)
+- [Broken example and repair](#broken-example-and-repair)
+- [Guided practice walkthrough](#guided-practice-walkthrough)
+- [Bounded cybersecurity fixture walkthrough](#bounded-cybersecurity-fixture-walkthrough)
 - [Exercises](#exercises)
 - [Finish line](#finish-line)
+- [Mental model](#mental-model)
+- [Limitations](#limitations)
+- [References](#references)
 
 ## Why this lesson exists
 
@@ -128,6 +147,20 @@ print(closure)
 
 The case closes without pretending certainty.
 
+## Read the first example line by line
+
+The first runnable example introduces **Project: Synthetic Breach Investigation**. Copy it into a new file and run it before changing anything. Then use this table to read the same code slowly. A line-by-line explanation does not replace practice: it shows you what to look for when a program behaves differently from your prediction.
+
+| Line | Code | What Python is doing |
+| ---: | --- | --- |
+| 1 | `case = {` | Assignment: Python evaluates the right side and stores the result under the name on the left. |
+| 2 | `"id": "training-090",` | Expression or data declaration: read the names, values, and operators and predict the result. |
+| 3 | `"artifacts": ["timeline.json", "email.txt", "flow.json"],` | Expression or data declaration: read the names, values, and operators and predict the result. |
+| 4 | `"scope": "synthetic",` | Expression or data declaration: read the names, values, and operators and predict the result. |
+| 5 | `}` | Expression or data declaration: read the names, values, and operators and predict the result. |
+| 6 | `print(case)` | Output call: Python evaluates the argument and writes a representation to the terminal. |
+
+After the run, write down the value created by each assignment, the condition tested by each branch, and the output that appeared. Change one input only. If the result changes, identify the line that used that input. If the result does not change, explain why the input was not part of the decision. This is the same tracing habit used later when reviewing security automation.
 ## Execution trace
 
 The investigator preserves the bundle, verifies artifacts, builds hypotheses, tests them against local evidence, writes a report, and closes with lessons and unknowns.

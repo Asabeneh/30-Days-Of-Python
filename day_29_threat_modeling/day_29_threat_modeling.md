@@ -2,7 +2,12 @@
 
 [← Day 28](../day_28_dependency_hygiene_and_sboms/day_28_dependency_hygiene_and_sboms.md) · [Day index](../DAY_INDEX.md) · [Day 30 →](../day_30_project__secure_evidence_journal/day_30_project__secure_evidence_journal.md)
 
-## Table of Contents
+
+
+
+
+
+## Table of contents
 
 - [Why this lesson exists](#why-this-lesson-exists)
 - [Prerequisites](#prerequisites)
@@ -10,13 +15,27 @@
 - [The problem](#the-problem)
 - [Security boundary](#security-boundary)
 - [Lesson](#lesson)
-- [Vocabulary](#vocabulary)
+  - [Vocabulary](#vocabulary)
 - [Worked examples](#worked-examples)
+  - [Example 1: Name an asset](#example-1-name-an-asset)
+  - [Example 2: Draw a trust boundary](#example-2-draw-a-trust-boundary)
+  - [Example 3: Describe a threat](#example-3-describe-a-threat)
+  - [Example 4: Choose a control](#example-4-choose-a-control)
+  - [Example 5: Record residual risk](#example-5-record-residual-risk)
+- [Read the first example line by line](#read-the-first-example-line-by-line)
 - [Execution trace](#execution-trace)
 - [Common mistakes](#common-mistakes)
 - [Security application](#security-application)
+- [Line-by-line walkthrough](#line-by-line-walkthrough)
+- [Prediction experiments](#prediction-experiments)
+- [Broken example and repair](#broken-example-and-repair)
+- [Guided practice walkthrough](#guided-practice-walkthrough)
+- [Bounded cybersecurity fixture walkthrough](#bounded-cybersecurity-fixture-walkthrough)
 - [Exercises](#exercises)
 - [Finish line](#finish-line)
+- [Mental model](#mental-model)
+- [Limitations](#limitations)
+- [References](#references)
 
 ## Why this lesson exists
 
@@ -123,6 +142,16 @@ print(residual)
 
 The remaining uncertainty is visible.
 
+## Read the first example line by line
+
+The first runnable example introduces **Threat Modeling Before Automation**. Copy it into a new file and run it before changing anything. Then use this table to read the same code slowly. A line-by-line explanation does not replace practice: it shows you what to look for when a program behaves differently from your prediction.
+
+| Line | Code | What Python is doing |
+| ---: | --- | --- |
+| 1 | `assets = ["synthetic evidence", "report integrity", "developer credentials"]` | Assignment: Python evaluates the right side and stores the result under the name on the left. |
+| 2 | `print(assets)` | Output call: Python evaluates the argument and writes a representation to the terminal. |
+
+After the run, write down the value created by each assignment, the condition tested by each branch, and the output that appeared. Change one input only. If the result changes, identify the line that used that input. If the result does not change, explain why the input was not part of the decision. This is the same tracing habit used later when reviewing security automation.
 ## Execution trace
 
 The model starts at asset, crosses a trust boundary, names a threat, chooses a control, and records what remains. It is a reasoning process, not a decorative table.

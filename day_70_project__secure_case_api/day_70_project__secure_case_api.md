@@ -2,7 +2,12 @@
 
 [← Day 69](../day_69_supply_chain_and_exceptional_conditions/day_69_supply_chain_and_exceptional_conditions.md) · [Day index](../DAY_INDEX.md) · [Day 71 →](../day_71_telemetry_and_event_schemas/day_71_telemetry_and_event_schemas.md)
 
-## Table of Contents
+
+
+
+
+
+## Table of contents
 
 - [Why this lesson exists](#why-this-lesson-exists)
 - [Prerequisites](#prerequisites)
@@ -10,13 +15,27 @@
 - [The problem](#the-problem)
 - [Security boundary](#security-boundary)
 - [Lesson](#lesson)
-- [Vocabulary](#vocabulary)
+  - [Vocabulary](#vocabulary)
 - [Worked examples](#worked-examples)
+  - [Example 1: Define routes](#example-1-define-routes)
+  - [Example 2: Validate a body](#example-2-validate-a-body)
+  - [Example 3: Authorize an object](#example-3-authorize-an-object)
+  - [Example 4: Use safe SQL](#example-4-use-safe-sql)
+  - [Example 5: Return safe errors](#example-5-return-safe-errors)
+- [Read the first example line by line](#read-the-first-example-line-by-line)
 - [Execution trace](#execution-trace)
 - [Common mistakes](#common-mistakes)
 - [Security application](#security-application)
+- [Line-by-line walkthrough](#line-by-line-walkthrough)
+- [Prediction experiments](#prediction-experiments)
+- [Broken example and repair](#broken-example-and-repair)
+- [Guided practice walkthrough](#guided-practice-walkthrough)
+- [Bounded cybersecurity fixture walkthrough](#bounded-cybersecurity-fixture-walkthrough)
 - [Exercises](#exercises)
 - [Finish line](#finish-line)
+- [Mental model](#mental-model)
+- [Limitations](#limitations)
+- [References](#references)
 
 ## Why this lesson exists
 
@@ -121,6 +140,19 @@ print(response)
 
 The response is useful but minimal.
 
+## Read the first example line by line
+
+The first runnable example introduces **Project: Secure Case API**. Copy it into a new file and run it before changing anything. Then use this table to read the same code slowly. A line-by-line explanation does not replace practice: it shows you what to look for when a program behaves differently from your prediction.
+
+| Line | Code | What Python is doing |
+| ---: | --- | --- |
+| 1 | `routes = {` | Assignment: Python evaluates the right side and stores the result under the name on the left. |
+| 2 | `"GET /cases/{id}": "read synthetic case",` | Expression or data declaration: read the names, values, and operators and predict the result. |
+| 3 | `"POST /cases": "disabled in training",` | Expression or data declaration: read the names, values, and operators and predict the result. |
+| 4 | `}` | Expression or data declaration: read the names, values, and operators and predict the result. |
+| 5 | `print(routes)` | Output call: Python evaluates the argument and writes a representation to the terminal. |
+
+After the run, write down the value created by each assignment, the condition tested by each branch, and the output that appeared. Change one input only. If the result changes, identify the line that used that input. If the result does not change, explain why the input was not part of the decision. This is the same tracing habit used later when reviewing security automation.
 ## Execution trace
 
 The request enters through a bounded parser, passes auth and object checks, reaches a parameterized repository call, and returns a schema-controlled response with safe errors.

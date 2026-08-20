@@ -2,7 +2,12 @@
 
 [← Day 76](../day_76_alert_triage/day_76_alert_triage.md) · [Day index](../DAY_INDEX.md) · [Day 78 →](../day_78_threat_intelligence_provenance/day_78_threat_intelligence_provenance.md)
 
-## Table of Contents
+
+
+
+
+
+## Table of contents
 
 - [Why this lesson exists](#why-this-lesson-exists)
 - [Prerequisites](#prerequisites)
@@ -10,13 +15,27 @@
 - [The problem](#the-problem)
 - [Security boundary](#security-boundary)
 - [Lesson](#lesson)
-- [Vocabulary](#vocabulary)
+  - [Vocabulary](#vocabulary)
 - [Worked examples](#worked-examples)
+  - [Example 1: Compute an average](#example-1-compute-an-average)
+  - [Example 2: Measure deviation](#example-2-measure-deviation)
+  - [Example 3: Choose a rule](#example-3-choose-a-rule)
+  - [Example 4: Handle missing data](#example-4-handle-missing-data)
+  - [Example 5: Document drift](#example-5-document-drift)
+- [Read the first example line by line](#read-the-first-example-line-by-line)
 - [Execution trace](#execution-trace)
 - [Common mistakes](#common-mistakes)
 - [Security application](#security-application)
+- [Line-by-line walkthrough](#line-by-line-walkthrough)
+- [Prediction experiments](#prediction-experiments)
+- [Broken example and repair](#broken-example-and-repair)
+- [Guided practice walkthrough](#guided-practice-walkthrough)
+- [Bounded cybersecurity fixture walkthrough](#bounded-cybersecurity-fixture-walkthrough)
 - [Exercises](#exercises)
 - [Finish line](#finish-line)
+- [Mental model](#mental-model)
+- [Limitations](#limitations)
+- [References](#references)
 
 ## Why this lesson exists
 
@@ -118,6 +137,17 @@ print(model)
 
 The model lifecycle is visible.
 
+## Read the first example line by line
+
+The first runnable example introduces **Baselines and Anomaly Reasoning**. Copy it into a new file and run it before changing anything. Then use this table to read the same code slowly. A line-by-line explanation does not replace practice: it shows you what to look for when a program behaves differently from your prediction.
+
+| Line | Code | What Python is doing |
+| ---: | --- | --- |
+| 1 | `values = [10, 11, 9, 10]` | Assignment: Python evaluates the right side and stores the result under the name on the left. |
+| 2 | `mean = sum(values) / len(values)` | Assignment: Python evaluates the right side and stores the result under the name on the left. |
+| 3 | `print(mean)` | Output call: Python evaluates the argument and writes a representation to the terminal. |
+
+After the run, write down the value created by each assignment, the condition tested by each branch, and the output that appeared. Change one input only. If the result changes, identify the line that used that input. If the result does not change, explain why the input was not part of the decision. This is the same tracing habit used later when reviewing security automation.
 ## Execution trace
 
 The detector defines a reference window, computes a feature, measures deviation, applies a threshold, and emits a review signal with model version and missing-data status.

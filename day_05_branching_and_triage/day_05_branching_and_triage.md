@@ -2,6 +2,39 @@
 
 [← Day 4](../day_04_operators_and_decisions/day_04_operators_and_decisions.md) · [Day index](../DAY_INDEX.md) · [Day 6 →](../day_06_loops_and_bounded_work/day_06_loops_and_bounded_work.md)
 
+
+
+
+
+## Table of contents
+
+- [Welcome](#welcome)
+- [Prerequisites](#prerequisites)
+- [Outcomes](#outcomes)
+- [The problem](#the-problem)
+- [Security boundary](#security-boundary)
+- [Vocabulary](#vocabulary)
+- [Lesson](#lesson)
+- [1. An `if` statement asks one question](#1-an-if-statement-asks-one-question)
+- [2. Add an alternative with `else`](#2-add-an-alternative-with-else)
+- [3. Use `elif` for several ranges](#3-use-elif-for-several-ranges)
+- [4. Separate the questions before combining them](#4-separate-the-questions-before-combining-them)
+- [5. Truthiness needs a policy](#5-truthiness-needs-a-policy)
+- [Worked examples](#worked-examples)
+  - [Example 1: A first runnable case](#example-1-a-first-runnable-case)
+  - [Example 2: A boundary case](#example-2-a-boundary-case)
+  - [Example 3: A deliberate experiment](#example-3-a-deliberate-experiment)
+  - [Example 4: A bounded security fixture](#example-4-a-bounded-security-fixture)
+  - [Example 5: The order of branches changes the result](#example-5-the-order-of-branches-changes-the-result)
+- [Execution trace](#execution-trace)
+- [Common mistakes and repairs](#common-mistakes-and-repairs)
+- [Guided practice](#guided-practice)
+- [Security application](#security-application)
+- [Independent exercises](#independent-exercises)
+  - [Additional beginner checkpoint](#additional-beginner-checkpoint)
+- [Finish line](#finish-line)
+- [References](#references)
+
 ## Welcome
 
 Yesterday you learned the symbols that produce decisions. Today you will slow down and design a branching program carefully. The goal is not to write clever conditions; it is to make the path a reader can predict, test, and explain.
@@ -108,6 +141,81 @@ print(f"classification={label}")
 
 A branch can choose a value without immediately printing it. Separating decision from output makes later testing easier.
 
+## 1. An `if` statement asks one question
+
+The smallest decision has one condition and one indented body:
+
+```python
+severity = 8
+if severity >= 7:
+    print("review")
+```
+
+Output:
+
+```text
+review
+```
+
+The colon ends the condition. The indentation shows which statement belongs to the `if`. If the condition is false, Python skips the indented statement. Indentation is part of Python's syntax, not decoration.
+
+## 2. Add an alternative with `else`
+
+```python
+severity = 4
+if severity >= 7:
+    label = "review"
+else:
+    label = "routine"
+print(label)
+```
+
+Output: `routine`. Exactly one of the two blocks runs. The `else` is not another test; it is the fallback when the `if` condition is false.
+
+## 3. Use `elif` for several ranges
+
+```python
+severity = 9
+if severity >= 9:
+    label = "urgent"
+elif severity >= 7:
+    label = "review"
+else:
+    label = "routine"
+print(label)
+```
+
+Output: `urgent`. Python checks from top to bottom and stops at the first true branch. Put the most specific or highest-priority rule first. If `severity >= 7` came first, a severity of 9 would never reach the urgent branch.
+
+## 4. Separate the questions before combining them
+
+Long conditions are easier to debug when you name their parts:
+
+```python
+severity = 8
+source = "training-auth"
+source_is_present = source != ""
+severity_is_high = severity >= 7
+needs_review = severity_is_high and source_is_present
+print(severity_is_high)
+print(source_is_present)
+print(needs_review)
+```
+
+If the final result surprises you, print the smaller Boolean values. This is a beginner-friendly debugging technique and a useful security-review habit.
+
+## 5. Truthiness needs a policy
+
+Python treats several values as false in a condition, including `0`, `""`, empty collections, and `None`. That can be convenient, but “empty” and “zero” may have different meanings in a security record. Use an explicit comparison when the difference matters:
+
+```python
+attempts = 0
+if attempts == 0:
+    print("no attempts recorded")
+```
+
+This says exactly what the program means.
+
 ## Worked examples
 
 Run the examples in order. Each one changes only a small part of the previous idea.
@@ -127,6 +235,19 @@ Make one controlled change, record the output, and compare it with your predicti
 ### Example 4: A bounded security fixture
 
 Apply the idea to the synthetic fixture in this lesson. The fixture is local, finite, and invented; it is not permission to inspect real systems.
+
+### Example 5: The order of branches changes the result
+
+```python
+severity = 9
+if severity >= 7:
+    label = "review"
+elif severity >= 9:
+    label = "urgent"
+print(label)
+```
+
+This prints `review`, because Python stops at the first true branch. Put the urgent test first when urgent is meant to be a more specific category.
 
 ## Execution trace
 

@@ -2,7 +2,12 @@
 
 [← Day 52](../day_52_encoding_and_unicode/day_52_encoding_and_unicode.md) · [Day index](../DAY_INDEX.md) · [Day 54 →](../day_54_hmac_and_authenticity/day_54_hmac_and_authenticity.md)
 
-## Table of Contents
+
+
+
+
+
+## Table of contents
 
 - [Why this lesson exists](#why-this-lesson-exists)
 - [Prerequisites](#prerequisites)
@@ -10,13 +15,27 @@
 - [The problem](#the-problem)
 - [Security boundary](#security-boundary)
 - [Lesson](#lesson)
-- [Vocabulary](#vocabulary)
+  - [Vocabulary](#vocabulary)
 - [Worked examples](#worked-examples)
+  - [Example 1: Hash a value](#example-1-hash-a-value)
+  - [Example 2: Compare bytes](#example-2-compare-bytes)
+  - [Example 3: Change one byte](#example-3-change-one-byte)
+  - [Example 4: Hash a file in chunks](#example-4-hash-a-file-in-chunks)
+  - [Example 5: State the trust point](#example-5-state-the-trust-point)
+- [Read the first example line by line](#read-the-first-example-line-by-line)
 - [Execution trace](#execution-trace)
 - [Common mistakes](#common-mistakes)
 - [Security application](#security-application)
+- [Line-by-line walkthrough](#line-by-line-walkthrough)
+- [Prediction experiments](#prediction-experiments)
+- [Broken example and repair](#broken-example-and-repair)
+- [Guided practice walkthrough](#guided-practice-walkthrough)
+- [Bounded cybersecurity fixture walkthrough](#bounded-cybersecurity-fixture-walkthrough)
 - [Exercises](#exercises)
 - [Finish line](#finish-line)
+- [Mental model](#mental-model)
+- [Limitations](#limitations)
+- [References](#references)
 
 ## Why this lesson exists
 
@@ -122,6 +141,17 @@ print(evidence)
 
 The baseline provenance is part of the evidence.
 
+## Read the first example line by line
+
+The first runnable example introduces **Hashes and Integrity**. Copy it into a new file and run it before changing anything. Then use this table to read the same code slowly. A line-by-line explanation does not replace practice: it shows you what to look for when a program behaves differently from your prediction.
+
+| Line | Code | What Python is doing |
+| ---: | --- | --- |
+| 1 | `import hashlib` | Import statement: the program asks for code from a module. |
+| 2 | `` | Blank line: it separates ideas for the human reader. |
+| 3 | `print(hashlib.sha256(b"training").hexdigest())` | Output call: Python evaluates the argument and writes a representation to the terminal. |
+
+After the run, write down the value created by each assignment, the condition tested by each branch, and the output that appeared. Change one input only. If the result changes, identify the line that used that input. If the result does not change, explain why the input was not part of the decision. This is the same tracing habit used later when reviewing security automation.
 ## Execution trace
 
 The bytes are fed to the hash in order; the digest is compared to a trusted baseline; a mismatch becomes an integrity finding, not an identity claim.

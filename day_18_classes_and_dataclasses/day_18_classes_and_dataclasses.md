@@ -2,7 +2,12 @@
 
 [← Day 17](../day_17_dates_and_timelines/day_17_dates_and_timelines.md) · [Day index](../DAY_INDEX.md) · [Day 19 →](../day_19_testing_with_pytest/day_19_testing_with_pytest.md)
 
-## Table of Contents
+
+
+
+
+
+## Table of contents
 
 - [Why this lesson exists](#why-this-lesson-exists)
 - [Prerequisites](#prerequisites)
@@ -10,13 +15,27 @@
 - [The problem](#the-problem)
 - [Security boundary](#security-boundary)
 - [Lesson](#lesson)
-- [Vocabulary](#vocabulary)
+  - [Vocabulary](#vocabulary)
 - [Worked examples](#worked-examples)
+  - [Example 1: The smallest dataclass](#example-1-the-smallest-dataclass)
+  - [Example 2: Validate on construction](#example-2-validate-on-construction)
+  - [Example 3: Freeze a finding](#example-3-freeze-a-finding)
+  - [Example 4: Convert deliberately](#example-4-convert-deliberately)
+  - [Example 5: Keep evidence references narrow](#example-5-keep-evidence-references-narrow)
+- [Read the first example line by line](#read-the-first-example-line-by-line)
 - [Execution trace](#execution-trace)
 - [Common mistakes](#common-mistakes)
 - [Security application](#security-application)
+- [Line-by-line walkthrough](#line-by-line-walkthrough)
+- [Prediction experiments](#prediction-experiments)
+- [Broken example and repair](#broken-example-and-repair)
+- [Guided practice walkthrough](#guided-practice-walkthrough)
+- [Bounded cybersecurity fixture walkthrough](#bounded-cybersecurity-fixture-walkthrough)
 - [Exercises](#exercises)
 - [Finish line](#finish-line)
+- [Mental model](#mental-model)
+- [Limitations](#limitations)
+- [References](#references)
 
 ## Why this lesson exists
 
@@ -134,6 +153,21 @@ print(ref)
 
 The report points to local evidence without copying it everywhere.
 
+## Read the first example line by line
+
+The first runnable example introduces **Dataclasses and Evidence Models**. Copy it into a new file and run it before changing anything. Then use this table to read the same code slowly. A line-by-line explanation does not replace practice: it shows you what to look for when a program behaves differently from your prediction.
+
+| Line | Code | What Python is doing |
+| ---: | --- | --- |
+| 1 | `from dataclasses import dataclass` | Import statement: the program asks for code from a module. |
+| 2 | `` | Blank line: it separates ideas for the human reader. |
+| 3 | `` | Blank line: it separates ideas for the human reader. |
+| 4 | `@dataclass` | Expression or data declaration: read the names, values, and operators and predict the result. |
+| 5 | `class Finding:` | Expression or data declaration: read the names, values, and operators and predict the result. |
+| 6 | `title: str` | Expression or data declaration: read the names, values, and operators and predict the result. |
+| 7 | `severity: int` | Expression or data declaration: read the names, values, and operators and predict the result. |
+
+After the run, write down the value created by each assignment, the condition tested by each branch, and the output that appeared. Change one input only. If the result changes, identify the line that used that input. If the result does not change, explain why the input was not part of the decision. This is the same tracing habit used later when reviewing security automation.
 ## Execution trace
 
 Construction calls the generated initializer, then `__post_init__` validates the fields. A frozen object can be read and serialized, but its attributes cannot be reassigned.

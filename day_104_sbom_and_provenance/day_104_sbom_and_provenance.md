@@ -2,7 +2,12 @@
 
 [← Day 103](../day_103_static_analysis/day_103_static_analysis.md) · [Day index](../DAY_INDEX.md) · [Day 105 →](../day_105_secret_detection/day_105_secret_detection.md)
 
-## Table of Contents
+
+
+
+
+
+## Table of contents
 
 - [Why this lesson exists](#why-this-lesson-exists)
 - [Prerequisites](#prerequisites)
@@ -10,13 +15,27 @@
 - [The problem](#the-problem)
 - [Security boundary](#security-boundary)
 - [Lesson](#lesson)
-- [Vocabulary](#vocabulary)
+  - [Vocabulary](#vocabulary)
 - [Worked examples](#worked-examples)
+  - [Example 1: List components](#example-1-list-components)
+  - [Example 2: Record source](#example-2-record-source)
+  - [Example 3: Record builder](#example-3-record-builder)
+  - [Example 4: Hash an artifact](#example-4-hash-an-artifact)
+  - [Example 5: State unknowns](#example-5-state-unknowns)
+- [Read the first example line by line](#read-the-first-example-line-by-line)
 - [Execution trace](#execution-trace)
 - [Common mistakes](#common-mistakes)
 - [Security application](#security-application)
+- [Line-by-line walkthrough](#line-by-line-walkthrough)
+- [Prediction experiments](#prediction-experiments)
+- [Broken example and repair](#broken-example-and-repair)
+- [Guided practice walkthrough](#guided-practice-walkthrough)
+- [Bounded cybersecurity fixture walkthrough](#bounded-cybersecurity-fixture-walkthrough)
 - [Exercises](#exercises)
 - [Finish line](#finish-line)
+- [Mental model](#mental-model)
+- [Limitations](#limitations)
+- [References](#references)
 
 ## Why this lesson exists
 
@@ -117,6 +136,16 @@ print({"unknown": ["transitive build behavior", "future vulnerability"]})
 
 The report remains honest.
 
+## Read the first example line by line
+
+The first runnable example introduces **SBOM and Provenance**. Copy it into a new file and run it before changing anything. Then use this table to read the same code slowly. A line-by-line explanation does not replace practice: it shows you what to look for when a program behaves differently from your prediction.
+
+| Line | Code | What Python is doing |
+| ---: | --- | --- |
+| 1 | `sbom = [{"name": "python", "version": "3.x"}, {"name": "course-tool", "version": "1.0"}]` | Assignment: Python evaluates the right side and stores the result under the name on the left. |
+| 2 | `print(sbom)` | Output call: Python evaluates the argument and writes a representation to the terminal. |
+
+After the run, write down the value created by each assignment, the condition tested by each branch, and the output that appeared. Change one input only. If the result changes, identify the line that used that input. If the result does not change, explain why the input was not part of the decision. This is the same tracing habit used later when reviewing security automation.
 ## Execution trace
 
 The artifact is linked to source, builder, components, build steps, and digest; reviewers can compare records without treating the record as proof of a harmless supply chain.

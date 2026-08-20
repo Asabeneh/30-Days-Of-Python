@@ -2,7 +2,12 @@
 
 [← Day 51](../day_51_trust_boundaries_and_threat_models/day_51_trust_boundaries_and_threat_models.md) · [Day index](../DAY_INDEX.md) · [Day 53 →](../day_53_hashes_and_integrity/day_53_hashes_and_integrity.md)
 
-## Table of Contents
+
+
+
+
+
+## Table of contents
 
 - [Why this lesson exists](#why-this-lesson-exists)
 - [Prerequisites](#prerequisites)
@@ -10,13 +15,27 @@
 - [The problem](#the-problem)
 - [Security boundary](#security-boundary)
 - [Lesson](#lesson)
-- [Vocabulary](#vocabulary)
+  - [Vocabulary](#vocabulary)
 - [Worked examples](#worked-examples)
+  - [Example 1: Encode UTF-8](#example-1-encode-utf-8)
+  - [Example 2: Decode with the same rule](#example-2-decode-with-the-same-rule)
+  - [Example 3: Hash bytes, not a vague string](#example-3-hash-bytes-not-a-vague-string)
+  - [Example 4: Normalize deliberately](#example-4-normalize-deliberately)
+  - [Example 5: Preserve raw and canonical](#example-5-preserve-raw-and-canonical)
+- [Read the first example line by line](#read-the-first-example-line-by-line)
 - [Execution trace](#execution-trace)
 - [Common mistakes](#common-mistakes)
 - [Security application](#security-application)
+- [Line-by-line walkthrough](#line-by-line-walkthrough)
+- [Prediction experiments](#prediction-experiments)
+- [Broken example and repair](#broken-example-and-repair)
+- [Guided practice walkthrough](#guided-practice-walkthrough)
+- [Bounded cybersecurity fixture walkthrough](#bounded-cybersecurity-fixture-walkthrough)
 - [Exercises](#exercises)
 - [Finish line](#finish-line)
+- [Mental model](#mental-model)
+- [Limitations](#limitations)
+- [References](#references)
 
 ## Why this lesson exists
 
@@ -120,6 +139,17 @@ print(record)
 
 Both representations remain available.
 
+## Read the first example line by line
+
+The first runnable example introduces **Encoding, Unicode, and Canonical Bytes**. Copy it into a new file and run it before changing anything. Then use this table to read the same code slowly. A line-by-line explanation does not replace practice: it shows you what to look for when a program behaves differently from your prediction.
+
+| Line | Code | What Python is doing |
+| ---: | --- | --- |
+| 1 | `text = "café"` | Assignment: Python evaluates the right side and stores the result under the name on the left. |
+| 2 | `data = text.encode("utf-8")` | Assignment: Python evaluates the right side and stores the result under the name on the left. |
+| 3 | `print(data)` | Output call: Python evaluates the argument and writes a representation to the terminal. |
+
+After the run, write down the value created by each assignment, the condition tested by each branch, and the output that appeared. Change one input only. If the result changes, identify the line that used that input. If the result does not change, explain why the input was not part of the decision. This is the same tracing habit used later when reviewing security automation.
 ## Execution trace
 
 The protocol chooses text normalization and encoding, produces bytes, applies the cryptographic operation to those bytes, and records the choices so another implementation can reproduce them.

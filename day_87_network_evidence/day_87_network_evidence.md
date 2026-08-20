@@ -2,7 +2,12 @@
 
 [← Day 86](../day_86_email_and_phishing_fixtures/day_86_email_and_phishing_fixtures.md) · [Day index](../DAY_INDEX.md) · [Day 88 →](../day_88_volatile_evidence_concepts/day_88_volatile_evidence_concepts.md)
 
-## Table of Contents
+
+
+
+
+
+## Table of contents
 
 - [Why this lesson exists](#why-this-lesson-exists)
 - [Prerequisites](#prerequisites)
@@ -10,13 +15,27 @@
 - [The problem](#the-problem)
 - [Security boundary](#security-boundary)
 - [Lesson](#lesson)
-- [Vocabulary](#vocabulary)
+  - [Vocabulary](#vocabulary)
 - [Worked examples](#worked-examples)
+  - [Example 1: Model a flow](#example-1-model-a-flow)
+  - [Example 2: Normalize direction](#example-2-normalize-direction)
+  - [Example 3: Aggregate safely](#example-3-aggregate-safely)
+  - [Example 4: Mark truncation](#example-4-mark-truncation)
+  - [Example 5: Avoid identity claims](#example-5-avoid-identity-claims)
+- [Read the first example line by line](#read-the-first-example-line-by-line)
 - [Execution trace](#execution-trace)
 - [Common mistakes](#common-mistakes)
 - [Security application](#security-application)
+- [Line-by-line walkthrough](#line-by-line-walkthrough)
+- [Prediction experiments](#prediction-experiments)
+- [Broken example and repair](#broken-example-and-repair)
+- [Guided practice walkthrough](#guided-practice-walkthrough)
+- [Bounded cybersecurity fixture walkthrough](#bounded-cybersecurity-fixture-walkthrough)
 - [Exercises](#exercises)
 - [Finish line](#finish-line)
+- [Mental model](#mental-model)
+- [Limitations](#limitations)
+- [References](#references)
 
 ## Why this lesson exists
 
@@ -121,6 +140,22 @@ print({"endpoint": "127.0.0.1", "identity": "not established"})
 
 The interpretation is bounded.
 
+## Read the first example line by line
+
+The first runnable example introduces **Network Evidence**. Copy it into a new file and run it before changing anything. Then use this table to read the same code slowly. A line-by-line explanation does not replace practice: it shows you what to look for when a program behaves differently from your prediction.
+
+| Line | Code | What Python is doing |
+| ---: | --- | --- |
+| 1 | `flow = {` | Assignment: Python evaluates the right side and stores the result under the name on the left. |
+| 2 | `"src": "127.0.0.1",` | Expression or data declaration: read the names, values, and operators and predict the result. |
+| 3 | `"dst": "127.0.0.1",` | Expression or data declaration: read the names, values, and operators and predict the result. |
+| 4 | `"src_port": 5000,` | Expression or data declaration: read the names, values, and operators and predict the result. |
+| 5 | `"dst_port": 8000,` | Expression or data declaration: read the names, values, and operators and predict the result. |
+| 6 | `"bytes": 120,` | Expression or data declaration: read the names, values, and operators and predict the result. |
+| 7 | `}` | Expression or data declaration: read the names, values, and operators and predict the result. |
+| 8 | `print(flow)` | Output call: Python evaluates the argument and writes a representation to the terminal. |
+
+After the run, write down the value created by each assignment, the condition tested by each branch, and the output that appeared. Change one input only. If the result changes, identify the line that used that input. If the result does not change, explain why the input was not part of the decision. This is the same tracing habit used later when reviewing security automation.
 ## Execution trace
 
 The analyst loads a saved fixture, parses flow fields, normalizes direction and time, aggregates selected counts, and marks missing payload or capture gaps.

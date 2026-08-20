@@ -2,7 +2,12 @@
 
 [← Day 92](../day_92_asset_inventory/day_92_asset_inventory.md) · [Day index](../DAY_INDEX.md) · [Day 94 →](../day_94_cve_and_severity_reasoning/day_94_cve_and_severity_reasoning.md)
 
-## Table of Contents
+
+
+
+
+
+## Table of contents
 
 - [Why this lesson exists](#why-this-lesson-exists)
 - [Prerequisites](#prerequisites)
@@ -10,13 +15,27 @@
 - [The problem](#the-problem)
 - [Security boundary](#security-boundary)
 - [Lesson](#lesson)
-- [Vocabulary](#vocabulary)
+  - [Vocabulary](#vocabulary)
 - [Worked examples](#worked-examples)
+  - [Example 1: Read targets](#example-1-read-targets)
+  - [Example 2: Validate endpoint](#example-2-validate-endpoint)
+  - [Example 3: Check one service](#example-3-check-one-service)
+  - [Example 4: Classify result](#example-4-classify-result)
+  - [Example 5: Stop after inventory](#example-5-stop-after-inventory)
+- [Read the first example line by line](#read-the-first-example-line-by-line)
 - [Execution trace](#execution-trace)
 - [Common mistakes](#common-mistakes)
 - [Security application](#security-application)
+- [Line-by-line walkthrough](#line-by-line-walkthrough)
+- [Prediction experiments](#prediction-experiments)
+- [Broken example and repair](#broken-example-and-repair)
+- [Guided practice walkthrough](#guided-practice-walkthrough)
+- [Bounded cybersecurity fixture walkthrough](#bounded-cybersecurity-fixture-walkthrough)
 - [Exercises](#exercises)
 - [Finish line](#finish-line)
+- [Mental model](#mental-model)
+- [Limitations](#limitations)
+- [References](#references)
 
 ## Why this lesson exists
 
@@ -115,6 +134,16 @@ print({"targets_checked": 1, "range_scan": False})
 
 Scope is recorded.
 
+## Read the first example line by line
+
+The first runnable example introduces **Safe Service Discovery**. Copy it into a new file and run it before changing anything. Then use this table to read the same code slowly. A line-by-line explanation does not replace practice: it shows you what to look for when a program behaves differently from your prediction.
+
+| Line | Code | What Python is doing |
+| ---: | --- | --- |
+| 1 | `targets = [{"host": "127.0.0.1", "port": 8000, "purpose": "training"}]` | Assignment: Python evaluates the right side and stores the result under the name on the left. |
+| 2 | `print(targets)` | Output call: Python evaluates the argument and writes a representation to the terminal. |
+
+After the run, write down the value created by each assignment, the condition tested by each branch, and the output that appeared. Change one input only. If the result changes, identify the line that used that input. If the result does not change, explain why the input was not part of the decision. This is the same tracing habit used later when reviewing security automation.
 ## Execution trace
 
 The tool loads an approved target, validates the host and port, performs one finite health check, records the transport result, and exits without expanding the target set.

@@ -2,7 +2,12 @@
 
 [← Day 61](../day_61_local_service_architecture/day_61_local_service_architecture.md) · [Day index](../DAY_INDEX.md) · [Day 63 →](../day_63_authentication_and_authorization/day_63_authentication_and_authorization.md)
 
-## Table of Contents
+
+
+
+
+
+## Table of contents
 
 - [Why this lesson exists](#why-this-lesson-exists)
 - [Prerequisites](#prerequisites)
@@ -10,13 +15,27 @@
 - [The problem](#the-problem)
 - [Security boundary](#security-boundary)
 - [Lesson](#lesson)
-- [Vocabulary](#vocabulary)
+  - [Vocabulary](#vocabulary)
 - [Worked examples](#worked-examples)
+  - [Example 1: Parse JSON](#example-1-parse-json)
+  - [Example 2: Require an object](#example-2-require-an-object)
+  - [Example 3: Check required fields](#example-3-check-required-fields)
+  - [Example 4: Bound a field](#example-4-bound-a-field)
+  - [Example 5: Reject unknown fields](#example-5-reject-unknown-fields)
+- [Read the first example line by line](#read-the-first-example-line-by-line)
 - [Execution trace](#execution-trace)
 - [Common mistakes](#common-mistakes)
 - [Security application](#security-application)
+- [Line-by-line walkthrough](#line-by-line-walkthrough)
+- [Prediction experiments](#prediction-experiments)
+- [Broken example and repair](#broken-example-and-repair)
+- [Guided practice walkthrough](#guided-practice-walkthrough)
+- [Bounded cybersecurity fixture walkthrough](#bounded-cybersecurity-fixture-walkthrough)
 - [Exercises](#exercises)
 - [Finish line](#finish-line)
+- [Mental model](#mental-model)
+- [Limitations](#limitations)
+- [References](#references)
 
 ## Why this lesson exists
 
@@ -122,6 +141,19 @@ print(unknown)
 
 The caller can choose to reject unknown keys.
 
+## Read the first example line by line
+
+The first runnable example introduces **Request Parsing and Validation**. Copy it into a new file and run it before changing anything. Then use this table to read the same code slowly. A line-by-line explanation does not replace practice: it shows you what to look for when a program behaves differently from your prediction.
+
+| Line | Code | What Python is doing |
+| ---: | --- | --- |
+| 1 | `import json` | Import statement: the program asks for code from a module. |
+| 2 | `` | Blank line: it separates ideas for the human reader. |
+| 3 | `raw = '{"case_id": "training-062", "limit": 10}'` | Assignment: Python evaluates the right side and stores the result under the name on the left. |
+| 4 | `record = json.loads(raw)` | Assignment: Python evaluates the right side and stores the result under the name on the left. |
+| 5 | `print(record)` | Output call: Python evaluates the argument and writes a representation to the terminal. |
+
+After the run, write down the value created by each assignment, the condition tested by each branch, and the output that appeared. Change one input only. If the result changes, identify the line that used that input. If the result does not change, explain why the input was not part of the decision. This is the same tracing habit used later when reviewing security automation.
 ## Execution trace
 
 The raw body is parsed, top-level type is checked, keys are compared to schema, values are converted and bounded, and only the validated model enters the service layer.

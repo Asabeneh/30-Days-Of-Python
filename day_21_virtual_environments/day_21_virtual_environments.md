@@ -2,7 +2,12 @@
 
 [← Day 20](../day_20_project__log_triage_cli/day_20_project__log_triage_cli.md) · [Day index](../DAY_INDEX.md) · [Day 22 →](../day_22_cli_design/day_22_cli_design.md)
 
-## Table of Contents
+
+
+
+
+
+## Table of contents
 
 - [Why this lesson exists](#why-this-lesson-exists)
 - [Prerequisites](#prerequisites)
@@ -10,13 +15,27 @@
 - [The problem](#the-problem)
 - [Security boundary](#security-boundary)
 - [Lesson](#lesson)
-- [Vocabulary](#vocabulary)
+  - [Vocabulary](#vocabulary)
 - [Worked examples](#worked-examples)
+  - [Example 1: Create an environment](#example-1-create-an-environment)
+  - [Example 2: Prove the interpreter](#example-2-prove-the-interpreter)
+  - [Example 3: Install through the interpreter](#example-3-install-through-the-interpreter)
+  - [Example 4: Freeze a small environment](#example-4-freeze-a-small-environment)
+  - [Example 5: Deactivate and compare](#example-5-deactivate-and-compare)
+- [Read the first example line by line](#read-the-first-example-line-by-line)
 - [Execution trace](#execution-trace)
 - [Common mistakes](#common-mistakes)
 - [Security application](#security-application)
+- [Line-by-line walkthrough](#line-by-line-walkthrough)
+- [Prediction experiments](#prediction-experiments)
+- [Broken example and repair](#broken-example-and-repair)
+- [Guided practice walkthrough](#guided-practice-walkthrough)
+- [Bounded cybersecurity fixture walkthrough](#bounded-cybersecurity-fixture-walkthrough)
 - [Exercises](#exercises)
 - [Finish line](#finish-line)
+- [Mental model](#mental-model)
+- [Limitations](#limitations)
+- [References](#references)
 
 ## Why this lesson exists
 
@@ -117,6 +136,19 @@ python -c "import sys; print(sys.executable)"
 
 The executable path changes away from `.venv`.
 
+## Read the first example line by line
+
+The first runnable example introduces **Virtual Environments and Reproducible Setup**. Copy it into a new file and run it before changing anything. Then use this table to read the same code slowly. A line-by-line explanation does not replace practice: it shows you what to look for when a program behaves differently from your prediction.
+
+| Line | Code | What Python is doing |
+| ---: | --- | --- |
+| 1 | `python -m venv .venv` | Expression or data declaration: read the names, values, and operators and predict the result. |
+| 2 | `# macOS/Linux` | Comment: Python ignores this text while running the program. |
+| 3 | `source .venv/bin/activate` | Expression or data declaration: read the names, values, and operators and predict the result. |
+| 4 | `# Windows PowerShell` | Comment: Python ignores this text while running the program. |
+| 5 | `.venv\Scripts\Activate.ps1` | Expression or data declaration: read the names, values, and operators and predict the result. |
+
+After the run, write down the value created by each assignment, the condition tested by each branch, and the output that appeared. Change one input only. If the result changes, identify the line that used that input. If the result does not change, explain why the input was not part of the decision. This is the same tracing habit used later when reviewing security automation.
 ## Execution trace
 
 Activation changes the shell’s command lookup; it does not change Python itself. `python -m pip` uses the interpreter selected by `python`, so the package and runtime stay aligned.

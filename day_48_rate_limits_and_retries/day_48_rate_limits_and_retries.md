@@ -2,7 +2,12 @@
 
 [← Day 47](../day_47_packet_capture_fixtures/day_47_packet_capture_fixtures.md) · [Day index](../DAY_INDEX.md) · [Day 49 →](../day_49_network_baselines/day_49_network_baselines.md)
 
-## Table of Contents
+
+
+
+
+
+## Table of contents
 
 - [Why this lesson exists](#why-this-lesson-exists)
 - [Prerequisites](#prerequisites)
@@ -10,13 +15,27 @@
 - [The problem](#the-problem)
 - [Security boundary](#security-boundary)
 - [Lesson](#lesson)
-- [Vocabulary](#vocabulary)
+  - [Vocabulary](#vocabulary)
 - [Worked examples](#worked-examples)
+  - [Example 1: Bound attempts](#example-1-bound-attempts)
+  - [Example 2: Retry a local function](#example-2-retry-a-local-function)
+  - [Example 3: Calculate capped backoff](#example-3-calculate-capped-backoff)
+  - [Example 4: Respect a budget](#example-4-respect-a-budget)
+  - [Example 5: Report partial work](#example-5-report-partial-work)
+- [Read the first example line by line](#read-the-first-example-line-by-line)
 - [Execution trace](#execution-trace)
 - [Common mistakes](#common-mistakes)
 - [Security application](#security-application)
+- [Line-by-line walkthrough](#line-by-line-walkthrough)
+- [Prediction experiments](#prediction-experiments)
+- [Broken example and repair](#broken-example-and-repair)
+- [Guided practice walkthrough](#guided-practice-walkthrough)
+- [Bounded cybersecurity fixture walkthrough](#bounded-cybersecurity-fixture-walkthrough)
 - [Exercises](#exercises)
 - [Finish line](#finish-line)
+- [Mental model](#mental-model)
+- [Limitations](#limitations)
+- [References](#references)
 
 ## Why this lesson exists
 
@@ -128,6 +147,20 @@ print({"status": "unavailable_after_retries", "complete": False})
 
 The report does not claim the target was down or malicious.
 
+## Read the first example line by line
+
+The first runnable example introduces **Rate Limits, Retries, and Backoff**. Copy it into a new file and run it before changing anything. Then use this table to read the same code slowly. A line-by-line explanation does not replace practice: it shows you what to look for when a program behaves differently from your prediction.
+
+| Line | Code | What Python is doing |
+| ---: | --- | --- |
+| 1 | `def attempts(max_attempts=3):` | Function definition: Python records a reusable block with this name. |
+| 2 | `for number in range(1, max_attempts + 1):` | Loop header: Python prepares to repeat the indented block. |
+| 3 | `yield number` | Expression or data declaration: read the names, values, and operators and predict the result. |
+| 4 | `` | Blank line: it separates ideas for the human reader. |
+| 5 | `` | Blank line: it separates ideas for the human reader. |
+| 6 | `print(list(attempts()))` | Output call: Python evaluates the argument and writes a representation to the terminal. |
+
+After the run, write down the value created by each assignment, the condition tested by each branch, and the output that appeared. Change one input only. If the result changes, identify the line that used that input. If the result does not change, explain why the input was not part of the decision. This is the same tracing habit used later when reviewing security automation.
 ## Execution trace
 
 The operation checks whether the error is retryable, increments a finite attempt count, waits within a cap, and returns success or an incomplete result with the reason.

@@ -2,7 +2,12 @@
 
 [← Day 79](../day_79_analyst_reporting/day_79_analyst_reporting.md) · [Day index](../DAY_INDEX.md) · [Day 81 →](../day_81_response_lifecycle/day_81_response_lifecycle.md)
 
-## Table of Contents
+
+
+
+
+
+## Table of contents
 
 - [Why this lesson exists](#why-this-lesson-exists)
 - [Prerequisites](#prerequisites)
@@ -10,13 +15,27 @@
 - [The problem](#the-problem)
 - [Security boundary](#security-boundary)
 - [Lesson](#lesson)
-- [Vocabulary](#vocabulary)
+  - [Vocabulary](#vocabulary)
 - [Worked examples](#worked-examples)
+  - [Example 1: Define stages](#example-1-define-stages)
+  - [Example 2: Normalize an event](#example-2-normalize-an-event)
+  - [Example 3: Apply a rule](#example-3-apply-a-rule)
+  - [Example 4: Create triage](#example-4-create-triage)
+  - [Example 5: Write limitations](#example-5-write-limitations)
+- [Read the first example line by line](#read-the-first-example-line-by-line)
 - [Execution trace](#execution-trace)
 - [Common mistakes](#common-mistakes)
 - [Security application](#security-application)
+- [Line-by-line walkthrough](#line-by-line-walkthrough)
+- [Prediction experiments](#prediction-experiments)
+- [Broken example and repair](#broken-example-and-repair)
+- [Guided practice walkthrough](#guided-practice-walkthrough)
+- [Bounded cybersecurity fixture walkthrough](#bounded-cybersecurity-fixture-walkthrough)
 - [Exercises](#exercises)
 - [Finish line](#finish-line)
+- [Mental model](#mental-model)
+- [Limitations](#limitations)
+- [References](#references)
 
 ## Why this lesson exists
 
@@ -131,6 +150,16 @@ print(report)
 
 The report is transparent.
 
+## Read the first example line by line
+
+The first runnable example introduces **Project: Mini Detection Pipeline**. Copy it into a new file and run it before changing anything. Then use this table to read the same code slowly. A line-by-line explanation does not replace practice: it shows you what to look for when a program behaves differently from your prediction.
+
+| Line | Code | What Python is doing |
+| ---: | --- | --- |
+| 1 | `stages = ["ingest", "normalize", "enrich", "detect", "triage", "report"]` | Assignment: Python evaluates the right side and stores the result under the name on the left. |
+| 2 | `print(" -> ".join(stages))` | Output call: Python evaluates the argument and writes a representation to the terminal. |
+
+After the run, write down the value created by each assignment, the condition tested by each branch, and the output that appeared. Change one input only. If the result changes, identify the line that used that input. If the result does not change, explain why the input was not part of the decision. This is the same tracing habit used later when reviewing security automation.
 ## Execution trace
 
 The pipeline validates input, normalizes fields, enriches from local data, applies a bounded rule, creates a triage item, and writes a report with provenance, completeness, and limitations.

@@ -2,7 +2,12 @@
 
 [← Day 10](../day_10_checkpoint_log_triage/day_10_checkpoint_log_triage.md) · [Day index](../DAY_INDEX.md) · [Day 12 →](../day_12_modules_and_packages/day_12_modules_and_packages.md)
 
-## Table of Contents
+
+
+
+
+
+## Table of contents
 
 - [Why this lesson exists](#why-this-lesson-exists)
 - [Prerequisites](#prerequisites)
@@ -10,13 +15,27 @@
 - [The problem](#the-problem)
 - [Security boundary](#security-boundary)
 - [Lesson](#lesson)
-- [Vocabulary](#vocabulary)
+  - [Vocabulary](#vocabulary)
 - [Worked examples](#worked-examples)
+  - [Example 1: The smallest contract](#example-1-the-smallest-contract)
+  - [Example 2: A bounded contract](#example-2-a-bounded-contract)
+  - [Example 3: Keyword-only safety options](#example-3-keyword-only-safety-options)
+  - [Example 4: Return instead of print](#example-4-return-instead-of-print)
+  - [Example 5: Keep effects at the edge](#example-5-keep-effects-at-the-edge)
+- [Read the first example line by line](#read-the-first-example-line-by-line)
 - [Execution trace](#execution-trace)
 - [Common mistakes](#common-mistakes)
 - [Security application](#security-application)
+- [Line-by-line walkthrough](#line-by-line-walkthrough)
+- [Prediction experiments](#prediction-experiments)
+- [Broken example and repair](#broken-example-and-repair)
+- [Guided practice walkthrough](#guided-practice-walkthrough)
+- [Bounded cybersecurity fixture walkthrough](#bounded-cybersecurity-fixture-walkthrough)
 - [Exercises](#exercises)
 - [Finish line](#finish-line)
+- [Mental model](#mental-model)
+- [Limitations](#limitations)
+- [References](#references)
 
 ## Why this lesson exists
 
@@ -130,6 +149,19 @@ def format_report(event):
 
 The function returns text and does not open a file or contact a service.
 
+## Read the first example line by line
+
+The first runnable example introduces **Function Contracts and Explicit Security Decisions**. Copy it into a new file and run it before changing anything. Then use this table to read the same code slowly. A line-by-line explanation does not replace practice: it shows you what to look for when a program behaves differently from your prediction.
+
+| Line | Code | What Python is doing |
+| ---: | --- | --- |
+| 1 | `def double(value):` | Function definition: Python records a reusable block with this name. |
+| 2 | `return value * 2` | Return statement: the function sends this value back to its caller. |
+| 3 | `` | Blank line: it separates ideas for the human reader. |
+| 4 | `` | Blank line: it separates ideas for the human reader. |
+| 5 | `print(double(4))` | Output call: Python evaluates the argument and writes a representation to the terminal. |
+
+After the run, write down the value created by each assignment, the condition tested by each branch, and the output that appeared. Change one input only. If the result changes, identify the line that used that input. If the result does not change, explain why the input was not part of the decision. This is the same tracing habit used later when reviewing security automation.
 ## Execution trace
 
 For `severity_label(8)`, Python binds the argument, checks its type, checks the range, evaluates `8 >= 7`, and returns `high`. For `severity_label("8")`, the type precondition fails before policy logic runs.

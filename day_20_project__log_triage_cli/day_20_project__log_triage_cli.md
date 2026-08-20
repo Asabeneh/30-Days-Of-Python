@@ -2,7 +2,12 @@
 
 [← Day 19](../day_19_testing_with_pytest/day_19_testing_with_pytest.md) · [Day index](../DAY_INDEX.md) · [Day 21 →](../day_21_virtual_environments/day_21_virtual_environments.md)
 
-## Table of Contents
+
+
+
+
+
+## Table of contents
 
 - [Why this lesson exists](#why-this-lesson-exists)
 - [Prerequisites](#prerequisites)
@@ -10,13 +15,27 @@
 - [The problem](#the-problem)
 - [Security boundary](#security-boundary)
 - [Lesson](#lesson)
-- [Vocabulary](#vocabulary)
+  - [Vocabulary](#vocabulary)
 - [Worked examples](#worked-examples)
+  - [Example 1: Define the command](#example-1-define-the-command)
+  - [Example 2: Parse arguments](#example-2-parse-arguments)
+  - [Example 3: Compose the pipeline](#example-3-compose-the-pipeline)
+  - [Example 4: Represent a report](#example-4-represent-a-report)
+  - [Example 5: Exit deliberately](#example-5-exit-deliberately)
+- [Read the first example line by line](#read-the-first-example-line-by-line)
 - [Execution trace](#execution-trace)
 - [Common mistakes](#common-mistakes)
 - [Security application](#security-application)
+- [Line-by-line walkthrough](#line-by-line-walkthrough)
+- [Prediction experiments](#prediction-experiments)
+- [Broken example and repair](#broken-example-and-repair)
+- [Guided practice walkthrough](#guided-practice-walkthrough)
+- [Bounded cybersecurity fixture walkthrough](#bounded-cybersecurity-fixture-walkthrough)
 - [Exercises](#exercises)
 - [Finish line](#finish-line)
+- [Mental model](#mental-model)
+- [Limitations](#limitations)
+- [References](#references)
 
 ## Why this lesson exists
 
@@ -118,6 +137,15 @@ raise SystemExit(0)
 
 The project must document whether rejected records are an error, warning, or expected result.
 
+## Read the first example line by line
+
+The first runnable example introduces **Checkpoint: Build a Log-Triage CLI**. Copy it into a new file and run it before changing anything. Then use this table to read the same code slowly. A line-by-line explanation does not replace practice: it shows you what to look for when a program behaves differently from your prediction.
+
+| Line | Code | What Python is doing |
+| ---: | --- | --- |
+| 1 | `python -m course_days.day020 --input shared/fixtures/events.log --limit 100 --output training-output/report.json` | Expression or data declaration: read the names, values, and operators and predict the result. |
+
+After the run, write down the value created by each assignment, the condition tested by each branch, and the output that appeared. Change one input only. If the result changes, identify the line that used that input. If the result does not change, explain why the input was not part of the decision. This is the same tracing habit used later when reviewing security automation.
 ## Execution trace
 
 The CLI parses options, resolves and bounds the input, streams lines, parses and validates records, applies the pure classifier, writes a safe report, and exits with a documented status. A failure in one boundary should not become an empty successful report.

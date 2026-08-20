@@ -2,7 +2,12 @@
 
 [← Day 12](../day_12_modules_and_packages/day_12_modules_and_packages.md) · [Day index](../DAY_INDEX.md) · [Day 14 →](../day_14_files_and_safe_paths/day_14_files_and_safe_paths.md)
 
-## Table of Contents
+
+
+
+
+
+## Table of contents
 
 - [Why this lesson exists](#why-this-lesson-exists)
 - [Prerequisites](#prerequisites)
@@ -10,13 +15,27 @@
 - [The problem](#the-problem)
 - [Security boundary](#security-boundary)
 - [Lesson](#lesson)
-- [Vocabulary](#vocabulary)
+  - [Vocabulary](#vocabulary)
 - [Worked examples](#worked-examples)
+  - [Example 1: Catch the expected conversion error](#example-1-catch-the-expected-conversion-error)
+  - [Example 2: Raise a policy error](#example-2-raise-a-policy-error)
+  - [Example 3: Use separate exception types](#example-3-use-separate-exception-types)
+  - [Example 4: Chain a cause](#example-4-chain-a-cause)
+  - [Example 5: Do not hide failures](#example-5-do-not-hide-failures)
+- [Read the first example line by line](#read-the-first-example-line-by-line)
 - [Execution trace](#execution-trace)
 - [Common mistakes](#common-mistakes)
 - [Security application](#security-application)
+- [Line-by-line walkthrough](#line-by-line-walkthrough)
+- [Prediction experiments](#prediction-experiments)
+- [Broken example and repair](#broken-example-and-repair)
+- [Guided practice walkthrough](#guided-practice-walkthrough)
+- [Bounded cybersecurity fixture walkthrough](#bounded-cybersecurity-fixture-walkthrough)
 - [Exercises](#exercises)
 - [Finish line](#finish-line)
+- [Mental model](#mental-model)
+- [Limitations](#limitations)
+- [References](#references)
 
 ## Why this lesson exists
 
@@ -129,6 +148,18 @@ except FixtureNotFound:
 
 The caller can distinguish unavailable input from an empty result.
 
+## Read the first example line by line
+
+The first runnable example introduces **Exceptions and Error Taxonomy**. Copy it into a new file and run it before changing anything. Then use this table to read the same code slowly. A line-by-line explanation does not replace practice: it shows you what to look for when a program behaves differently from your prediction.
+
+| Line | Code | What Python is doing |
+| ---: | --- | --- |
+| 1 | `try:` | Expression or data declaration: read the names, values, and operators and predict the result. |
+| 2 | `severity = int(raw)` | Assignment: Python evaluates the right side and stores the result under the name on the left. |
+| 3 | `except ValueError:` | Expression or data declaration: read the names, values, and operators and predict the result. |
+| 4 | `print("severity must be an integer")` | Output call: Python evaluates the argument and writes a representation to the terminal. |
+
+After the run, write down the value created by each assignment, the condition tested by each branch, and the output that appeared. Change one input only. If the result changes, identify the line that used that input. If the result does not change, explain why the input was not part of the decision. This is the same tracing habit used later when reviewing security automation.
 ## Execution trace
 
 For `int("high")`, Python raises `ValueError`; the boundary catches it and raises `InvalidRecord` with the original error chained. A programming error such as a misspelled variable should remain visible instead of being converted into `invalid input`.

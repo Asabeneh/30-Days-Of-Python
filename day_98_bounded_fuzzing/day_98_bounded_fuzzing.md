@@ -2,7 +2,12 @@
 
 [← Day 97](../day_97_input_validation_testing/day_97_input_validation_testing.md) · [Day index](../DAY_INDEX.md) · [Day 99 →](../day_99_findings_and_retesting/day_99_findings_and_retesting.md)
 
-## Table of Contents
+
+
+
+
+
+## Table of contents
 
 - [Why this lesson exists](#why-this-lesson-exists)
 - [Prerequisites](#prerequisites)
@@ -10,13 +15,27 @@
 - [The problem](#the-problem)
 - [Security boundary](#security-boundary)
 - [Lesson](#lesson)
-- [Vocabulary](#vocabulary)
+  - [Vocabulary](#vocabulary)
 - [Worked examples](#worked-examples)
+  - [Example 1: Create a seed](#example-1-create-a-seed)
+  - [Example 2: Generate a bounded string](#example-2-generate-a-bounded-string)
+  - [Example 3: Run a pure validator](#example-3-run-a-pure-validator)
+  - [Example 4: Record a failure](#example-4-record-a-failure)
+  - [Example 5: Stop at a budget](#example-5-stop-at-a-budget)
+- [Read the first example line by line](#read-the-first-example-line-by-line)
 - [Execution trace](#execution-trace)
 - [Common mistakes](#common-mistakes)
 - [Security application](#security-application)
+- [Line-by-line walkthrough](#line-by-line-walkthrough)
+- [Prediction experiments](#prediction-experiments)
+- [Broken example and repair](#broken-example-and-repair)
+- [Guided practice walkthrough](#guided-practice-walkthrough)
+- [Bounded cybersecurity fixture walkthrough](#bounded-cybersecurity-fixture-walkthrough)
 - [Exercises](#exercises)
 - [Finish line](#finish-line)
+- [Mental model](#mental-model)
+- [Limitations](#limitations)
+- [References](#references)
 
 ## Why this lesson exists
 
@@ -123,6 +142,18 @@ print(budget)
 
 The fuzzer cannot run forever.
 
+## Read the first example line by line
+
+The first runnable example introduces **Bounded Fuzzing**. Copy it into a new file and run it before changing anything. Then use this table to read the same code slowly. A line-by-line explanation does not replace practice: it shows you what to look for when a program behaves differently from your prediction.
+
+| Line | Code | What Python is doing |
+| ---: | --- | --- |
+| 1 | `import random` | Import statement: the program asks for code from a module. |
+| 2 | `` | Blank line: it separates ideas for the human reader. |
+| 3 | `rng = random.Random(98)` | Assignment: Python evaluates the right side and stores the result under the name on the left. |
+| 4 | `print([rng.randint(0, 9) for _ in range(5)])` | Output call: Python evaluates the argument and writes a representation to the terminal. |
+
+After the run, write down the value created by each assignment, the condition tested by each branch, and the output that appeared. Change one input only. If the result changes, identify the line that used that input. If the result does not change, explain why the input was not part of the decision. This is the same tracing habit used later when reviewing security automation.
 ## Execution trace
 
 The runner seeds the generator, creates bounded inputs, invokes a pure local validator, records exceptions with the seed, and stops at case/time limits.

@@ -2,7 +2,12 @@
 
 [← Day 21](../day_21_virtual_environments/day_21_virtual_environments.md) · [Day index](../DAY_INDEX.md) · [Day 23 →](../day_23_configuration_and_secrets/day_23_configuration_and_secrets.md)
 
-## Table of Contents
+
+
+
+
+
+## Table of contents
 
 - [Why this lesson exists](#why-this-lesson-exists)
 - [Prerequisites](#prerequisites)
@@ -10,13 +15,27 @@
 - [The problem](#the-problem)
 - [Security boundary](#security-boundary)
 - [Lesson](#lesson)
-- [Vocabulary](#vocabulary)
+  - [Vocabulary](#vocabulary)
 - [Worked examples](#worked-examples)
+  - [Example 1: Parse a flag](#example-1-parse-a-flag)
+  - [Example 2: Show help](#example-2-show-help)
+  - [Example 3: Reject a bound](#example-3-reject-a-bound)
+  - [Example 4: Return a status](#example-4-return-a-status)
+  - [Example 5: Keep paths as data](#example-5-keep-paths-as-data)
+- [Read the first example line by line](#read-the-first-example-line-by-line)
 - [Execution trace](#execution-trace)
 - [Common mistakes](#common-mistakes)
 - [Security application](#security-application)
+- [Line-by-line walkthrough](#line-by-line-walkthrough)
+- [Prediction experiments](#prediction-experiments)
+- [Broken example and repair](#broken-example-and-repair)
+- [Guided practice walkthrough](#guided-practice-walkthrough)
+- [Bounded cybersecurity fixture walkthrough](#bounded-cybersecurity-fixture-walkthrough)
 - [Exercises](#exercises)
 - [Finish line](#finish-line)
+- [Mental model](#mental-model)
+- [Limitations](#limitations)
+- [References](#references)
 
 ## Why this lesson exists
 
@@ -127,6 +146,20 @@ print(args.input)
 
 The value remains a path object until a bounded file function accepts it.
 
+## Read the first example line by line
+
+The first runnable example introduces **Command-Line Interfaces and Explicit Input**. Copy it into a new file and run it before changing anything. Then use this table to read the same code slowly. A line-by-line explanation does not replace practice: it shows you what to look for when a program behaves differently from your prediction.
+
+| Line | Code | What Python is doing |
+| ---: | --- | --- |
+| 1 | `import argparse` | Import statement: the program asks for code from a module. |
+| 2 | `` | Blank line: it separates ideas for the human reader. |
+| 3 | `parser = argparse.ArgumentParser()` | Assignment: Python evaluates the right side and stores the result under the name on the left. |
+| 4 | `parser.add_argument("--limit", type=int, default=100)` | Assignment: Python evaluates the right side and stores the result under the name on the left. |
+| 5 | `args = parser.parse_args(["--limit", "5"])` | Assignment: Python evaluates the right side and stores the result under the name on the left. |
+| 6 | `print(args.limit)` | Output call: Python evaluates the argument and writes a representation to the terminal. |
+
+After the run, write down the value created by each assignment, the condition tested by each branch, and the output that appeared. Change one input only. If the result changes, identify the line that used that input. If the result does not change, explain why the input was not part of the decision. This is the same tracing habit used later when reviewing security automation.
 ## Execution trace
 
 The shell provides tokens, argparse converts them, the custom validator checks policy, and only then does the tool resolve a path or process a fixture.

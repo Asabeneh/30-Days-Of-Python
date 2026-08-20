@@ -2,7 +2,12 @@
 
 [← Day 115](../day_115_privacy_and_retention/day_115_privacy_and_retention.md) · [Day index](../DAY_INDEX.md) · [Day 117 →](../day_117_capstone_planning/day_117_capstone_planning.md)
 
-## Table of Contents
+
+
+
+
+
+## Table of contents
 
 - [Why this lesson exists](#why-this-lesson-exists)
 - [Prerequisites](#prerequisites)
@@ -10,13 +15,27 @@
 - [The problem](#the-problem)
 - [Security boundary](#security-boundary)
 - [Lesson](#lesson)
-- [Vocabulary](#vocabulary)
+  - [Vocabulary](#vocabulary)
 - [Worked examples](#worked-examples)
+  - [Example 1: Record a source](#example-1-record-a-source)
+  - [Example 2: Check claim fit](#example-2-check-claim-fit)
+  - [Example 3: Compare authority](#example-3-compare-authority)
+  - [Example 4: Record version](#example-4-record-version)
+  - [Example 5: State uncertainty](#example-5-state-uncertainty)
+- [Read the first example line by line](#read-the-first-example-line-by-line)
 - [Execution trace](#execution-trace)
 - [Common mistakes](#common-mistakes)
 - [Security application](#security-application)
+- [Line-by-line walkthrough](#line-by-line-walkthrough)
+- [Prediction experiments](#prediction-experiments)
+- [Broken example and repair](#broken-example-and-repair)
+- [Guided practice walkthrough](#guided-practice-walkthrough)
+- [Bounded cybersecurity fixture walkthrough](#bounded-cybersecurity-fixture-walkthrough)
 - [Exercises](#exercises)
 - [Finish line](#finish-line)
+- [Mental model](#mental-model)
+- [Limitations](#limitations)
+- [References](#references)
 
 ## Why this lesson exists
 
@@ -122,6 +141,21 @@ print({"confidence": "medium", "follow_up": "run local example"})
 
 The learner is directed to verify.
 
+## Read the first example line by line
+
+The first runnable example introduces **Research and Source Evaluation**. Copy it into a new file and run it before changing anything. Then use this table to read the same code slowly. A line-by-line explanation does not replace practice: it shows you what to look for when a program behaves differently from your prediction.
+
+| Line | Code | What Python is doing |
+| ---: | --- | --- |
+| 1 | `source = {` | Assignment: Python evaluates the right side and stores the result under the name on the left. |
+| 2 | `"title": "Python docs",` | Expression or data declaration: read the names, values, and operators and predict the result. |
+| 3 | `"publisher": "Python",` | Expression or data declaration: read the names, values, and operators and predict the result. |
+| 4 | `"date": "current",` | Expression or data declaration: read the names, values, and operators and predict the result. |
+| 5 | `"url": "https://docs.python.org/3/",` | Expression or data declaration: read the names, values, and operators and predict the result. |
+| 6 | `}` | Expression or data declaration: read the names, values, and operators and predict the result. |
+| 7 | `print(source)` | Output call: Python evaluates the argument and writes a representation to the terminal. |
+
+After the run, write down the value created by each assignment, the condition tested by each branch, and the output that appeared. Change one input only. If the result changes, identify the line that used that input. If the result does not change, explain why the input was not part of the decision. This is the same tracing habit used later when reviewing security automation.
 ## Execution trace
 
 The researcher defines a claim, finds the closest authoritative source, records version and date, checks exact support, reproduces locally, and cites uncertainty or alternatives.

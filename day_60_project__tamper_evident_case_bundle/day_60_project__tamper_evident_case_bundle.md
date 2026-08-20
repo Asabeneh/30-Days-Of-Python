@@ -2,7 +2,12 @@
 
 [← Day 59](../day_59_secure_errors_and_logging/day_59_secure_errors_and_logging.md) · [Day index](../DAY_INDEX.md) · [Day 61 →](../day_61_local_service_architecture/day_61_local_service_architecture.md)
 
-## Table of Contents
+
+
+
+
+
+## Table of contents
 
 - [Why this lesson exists](#why-this-lesson-exists)
 - [Prerequisites](#prerequisites)
@@ -10,13 +15,27 @@
 - [The problem](#the-problem)
 - [Security boundary](#security-boundary)
 - [Lesson](#lesson)
-- [Vocabulary](#vocabulary)
+  - [Vocabulary](#vocabulary)
 - [Worked examples](#worked-examples)
+  - [Example 1: Create canonical JSON](#example-1-create-canonical-json)
+  - [Example 2: Digest a member](#example-2-digest-a-member)
+  - [Example 3: Build a manifest](#example-3-build-a-manifest)
+  - [Example 4: Authenticate the manifest](#example-4-authenticate-the-manifest)
+  - [Example 5: Verify before reading](#example-5-verify-before-reading)
+- [Read the first example line by line](#read-the-first-example-line-by-line)
 - [Execution trace](#execution-trace)
 - [Common mistakes](#common-mistakes)
 - [Security application](#security-application)
+- [Line-by-line walkthrough](#line-by-line-walkthrough)
+- [Prediction experiments](#prediction-experiments)
+- [Broken example and repair](#broken-example-and-repair)
+- [Guided practice walkthrough](#guided-practice-walkthrough)
+- [Bounded cybersecurity fixture walkthrough](#bounded-cybersecurity-fixture-walkthrough)
 - [Exercises](#exercises)
 - [Finish line](#finish-line)
+- [Mental model](#mental-model)
+- [Limitations](#limitations)
+- [References](#references)
 
 ## Why this lesson exists
 
@@ -130,6 +149,19 @@ print(ok)
 
 `True` for the unchanged training manifest.
 
+## Read the first example line by line
+
+The first runnable example introduces **Project: Tamper-Evident Case Bundle**. Copy it into a new file and run it before changing anything. Then use this table to read the same code slowly. A line-by-line explanation does not replace practice: it shows you what to look for when a program behaves differently from your prediction.
+
+| Line | Code | What Python is doing |
+| ---: | --- | --- |
+| 1 | `import json` | Import statement: the program asks for code from a module. |
+| 2 | `` | Blank line: it separates ideas for the human reader. |
+| 3 | `record = {"severity": 7, "case_id": "training-060"}` | Assignment: Python evaluates the right side and stores the result under the name on the left. |
+| 4 | `canonical = json.dumps(record, sort_keys=True, separators=(",", ":")).encode("utf-8")` | Assignment: Python evaluates the right side and stores the result under the name on the left. |
+| 5 | `print(canonical)` | Output call: Python evaluates the argument and writes a representation to the terminal. |
+
+After the run, write down the value created by each assignment, the condition tested by each branch, and the output that appeared. Change one input only. If the result changes, identify the line that used that input. If the result does not change, explain why the input was not part of the decision. This is the same tracing habit used later when reviewing security automation.
 ## Execution trace
 
 The project canonicalizes data, hashes each member, authenticates the manifest, writes a bounded bundle, and verifies the tag and member digests before reporting a result.

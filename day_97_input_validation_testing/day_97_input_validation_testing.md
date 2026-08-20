@@ -2,7 +2,12 @@
 
 [← Day 96](../day_96_authorization_testing/day_96_authorization_testing.md) · [Day index](../DAY_INDEX.md) · [Day 98 →](../day_98_bounded_fuzzing/day_98_bounded_fuzzing.md)
 
-## Table of Contents
+
+
+
+
+
+## Table of contents
 
 - [Why this lesson exists](#why-this-lesson-exists)
 - [Prerequisites](#prerequisites)
@@ -10,13 +15,27 @@
 - [The problem](#the-problem)
 - [Security boundary](#security-boundary)
 - [Lesson](#lesson)
-- [Vocabulary](#vocabulary)
+  - [Vocabulary](#vocabulary)
 - [Worked examples](#worked-examples)
+  - [Example 1: Define valid input](#example-1-define-valid-input)
+  - [Example 2: List invalid cases](#example-2-list-invalid-cases)
+  - [Example 3: Test a boundary](#example-3-test-a-boundary)
+  - [Example 4: Test a just-outside value](#example-4-test-a-just-outside-value)
+  - [Example 5: Return safe errors](#example-5-return-safe-errors)
+- [Read the first example line by line](#read-the-first-example-line-by-line)
 - [Execution trace](#execution-trace)
 - [Common mistakes](#common-mistakes)
 - [Security application](#security-application)
+- [Line-by-line walkthrough](#line-by-line-walkthrough)
+- [Prediction experiments](#prediction-experiments)
+- [Broken example and repair](#broken-example-and-repair)
+- [Guided practice walkthrough](#guided-practice-walkthrough)
+- [Bounded cybersecurity fixture walkthrough](#bounded-cybersecurity-fixture-walkthrough)
 - [Exercises](#exercises)
 - [Finish line](#finish-line)
+- [Mental model](#mental-model)
+- [Limitations](#limitations)
+- [References](#references)
 
 ## Why this lesson exists
 
@@ -117,6 +136,16 @@ print(error)
 
 The error is actionable and minimal.
 
+## Read the first example line by line
+
+The first runnable example introduces **Input Validation Testing**. Copy it into a new file and run it before changing anything. Then use this table to read the same code slowly. A line-by-line explanation does not replace practice: it shows you what to look for when a program behaves differently from your prediction.
+
+| Line | Code | What Python is doing |
+| ---: | --- | --- |
+| 1 | `valid = {"case_id": "training-97", "limit": 10}` | Assignment: Python evaluates the right side and stores the result under the name on the left. |
+| 2 | `print(valid)` | Output call: Python evaluates the argument and writes a representation to the terminal. |
+
+After the run, write down the value created by each assignment, the condition tested by each branch, and the output that appeared. Change one input only. If the result changes, identify the line that used that input. If the result does not change, explain why the input was not part of the decision. This is the same tracing habit used later when reviewing security automation.
 ## Execution trace
 
 The suite arranges one case, validates it, compares accepted/rejected outcome and safe error schema, and repeats across a table of boundaries and malformed shapes.

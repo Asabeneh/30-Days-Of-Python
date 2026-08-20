@@ -2,7 +2,12 @@
 
 [← Day 31](../day_31_processes_and_system_calls/day_31_processes_and_system_calls.md) · [Day index](../DAY_INDEX.md) · [Day 33 →](../day_33_paths_and_file_metadata/day_33_paths_and_file_metadata.md)
 
-## Table of Contents
+
+
+
+
+
+## Table of contents
 
 - [Why this lesson exists](#why-this-lesson-exists)
 - [Prerequisites](#prerequisites)
@@ -10,13 +15,27 @@
 - [The problem](#the-problem)
 - [Security boundary](#security-boundary)
 - [Lesson](#lesson)
-- [Vocabulary](#vocabulary)
+  - [Vocabulary](#vocabulary)
 - [Worked examples](#worked-examples)
+  - [Example 1: Print the current directory](#example-1-print-the-current-directory)
+  - [Example 2: List deliberately](#example-2-list-deliberately)
+  - [Example 3: Search text](#example-3-search-text)
+  - [Example 4: Inspect exit status](#example-4-inspect-exit-status)
+  - [Example 5: Connect streams conceptually](#example-5-connect-streams-conceptually)
+- [Read the first example line by line](#read-the-first-example-line-by-line)
 - [Execution trace](#execution-trace)
 - [Common mistakes](#common-mistakes)
 - [Security application](#security-application)
+- [Line-by-line walkthrough](#line-by-line-walkthrough)
+- [Prediction experiments](#prediction-experiments)
+- [Broken example and repair](#broken-example-and-repair)
+- [Guided practice walkthrough](#guided-practice-walkthrough)
+- [Bounded cybersecurity fixture walkthrough](#bounded-cybersecurity-fixture-walkthrough)
 - [Exercises](#exercises)
 - [Finish line](#finish-line)
+- [Mental model](#mental-model)
+- [Limitations](#limitations)
+- [References](#references)
 
 ## Why this lesson exists
 
@@ -112,6 +131,15 @@ printf "ok\nfailed\n" | grep failed
 
 `failed` is selected from synthetic text.
 
+## Read the first example line by line
+
+The first runnable example introduces **Linux Command-Line Concepts**. Copy it into a new file and run it before changing anything. Then use this table to read the same code slowly. A line-by-line explanation does not replace practice: it shows you what to look for when a program behaves differently from your prediction.
+
+| Line | Code | What Python is doing |
+| ---: | --- | --- |
+| 1 | `pwd` | Expression or data declaration: read the names, values, and operators and predict the result. |
+
+After the run, write down the value created by each assignment, the condition tested by each branch, and the output that appeared. Change one input only. If the result changes, identify the line that used that input. If the result does not change, explain why the input was not part of the decision. This is the same tracing habit used later when reviewing security automation.
 ## Execution trace
 
 The shell resolves a command, opens streams, runs it in the current directory, and stores an exit status. Python can reproduce the process while making argv and cwd more explicit.

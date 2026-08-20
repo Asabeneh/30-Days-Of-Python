@@ -2,7 +2,12 @@
 
 [← Day 15](../day_15_iterators_and_generators/day_15_iterators_and_generators.md) · [Day index](../DAY_INDEX.md) · [Day 17 →](../day_17_dates_and_timelines/day_17_dates_and_timelines.md)
 
-## Table of Contents
+
+
+
+
+
+## Table of contents
 
 - [Why this lesson exists](#why-this-lesson-exists)
 - [Prerequisites](#prerequisites)
@@ -10,13 +15,27 @@
 - [The problem](#the-problem)
 - [Security boundary](#security-boundary)
 - [Lesson](#lesson)
-- [Vocabulary](#vocabulary)
+  - [Vocabulary](#vocabulary)
 - [Worked examples](#worked-examples)
+  - [Example 1: Find a simple field](#example-1-find-a-simple-field)
+  - [Example 2: Find every candidate](#example-2-find-every-candidate)
+  - [Example 3: Validate an IP-like candidate](#example-3-validate-an-ip-like-candidate)
+  - [Example 4: Avoid a greedy match](#example-4-avoid-a-greedy-match)
+  - [Example 5: Bound the input](#example-5-bound-the-input)
+- [Read the first example line by line](#read-the-first-example-line-by-line)
 - [Execution trace](#execution-trace)
 - [Common mistakes](#common-mistakes)
 - [Security application](#security-application)
+- [Line-by-line walkthrough](#line-by-line-walkthrough)
+- [Prediction experiments](#prediction-experiments)
+- [Broken example and repair](#broken-example-and-repair)
+- [Guided practice walkthrough](#guided-practice-walkthrough)
+- [Bounded cybersecurity fixture walkthrough](#bounded-cybersecurity-fixture-walkthrough)
 - [Exercises](#exercises)
 - [Finish line](#finish-line)
+- [Mental model](#mental-model)
+- [Limitations](#limitations)
+- [References](#references)
 
 ## Why this lesson exists
 
@@ -124,6 +143,19 @@ if len(line) == 2000:
 
 The report can say that matching occurred on a bounded preview.
 
+## Read the first example line by line
+
+The first runnable example introduces **Regular Expressions and Careful Indicator Extraction**. Copy it into a new file and run it before changing anything. Then use this table to read the same code slowly. A line-by-line explanation does not replace practice: it shows you what to look for when a program behaves differently from your prediction.
+
+| Line | Code | What Python is doing |
+| ---: | --- | --- |
+| 1 | `import re` | Import statement: the program asks for code from a module. |
+| 2 | `` | Blank line: it separates ideas for the human reader. |
+| 3 | `pattern = re.compile(r"user=(?P<user>[a-z0-9_-]+)")` | Assignment: Python evaluates the right side and stores the result under the name on the left. |
+| 4 | `match = pattern.search("user=alice status=ok")` | Assignment: Python evaluates the right side and stores the result under the name on the left. |
+| 5 | `print(match.group("user"))` | Output call: Python evaluates the argument and writes a representation to the terminal. |
+
+After the run, write down the value created by each assignment, the condition tested by each branch, and the output that appeared. Change one input only. If the result changes, identify the line that used that input. If the result does not change, explain why the input was not part of the decision. This is the same tracing habit used later when reviewing security automation.
 ## Execution trace
 
 For `user=alice`, the pattern first locates the literal `user=`, captures allowed characters into `user`, and returns the group. For a candidate IP, extraction finds text first and validation checks four numeric octets afterward.

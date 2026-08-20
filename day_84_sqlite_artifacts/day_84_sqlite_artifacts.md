@@ -2,7 +2,12 @@
 
 [← Day 83](../day_83_filesystem_timelines/day_83_filesystem_timelines.md) · [Day index](../DAY_INDEX.md) · [Day 85 →](../day_85_browser_and_document_artifacts/day_85_browser_and_document_artifacts.md)
 
-## Table of Contents
+
+
+
+
+
+## Table of contents
 
 - [Why this lesson exists](#why-this-lesson-exists)
 - [Prerequisites](#prerequisites)
@@ -10,13 +15,27 @@
 - [The problem](#the-problem)
 - [Security boundary](#security-boundary)
 - [Lesson](#lesson)
-- [Vocabulary](#vocabulary)
+  - [Vocabulary](#vocabulary)
 - [Worked examples](#worked-examples)
+  - [Example 1: Connect to memory](#example-1-connect-to-memory)
+  - [Example 2: Insert fixture rows](#example-2-insert-fixture-rows)
+  - [Example 3: Use parameters](#example-3-use-parameters)
+  - [Example 4: Bound rows](#example-4-bound-rows)
+  - [Example 5: Copy before work](#example-5-copy-before-work)
+- [Read the first example line by line](#read-the-first-example-line-by-line)
 - [Execution trace](#execution-trace)
 - [Common mistakes](#common-mistakes)
 - [Security application](#security-application)
+- [Line-by-line walkthrough](#line-by-line-walkthrough)
+- [Prediction experiments](#prediction-experiments)
+- [Broken example and repair](#broken-example-and-repair)
+- [Guided practice walkthrough](#guided-practice-walkthrough)
+- [Bounded cybersecurity fixture walkthrough](#bounded-cybersecurity-fixture-walkthrough)
 - [Exercises](#exercises)
 - [Finish line](#finish-line)
+- [Mental model](#mental-model)
+- [Limitations](#limitations)
+- [References](#references)
 
 ## Why this lesson exists
 
@@ -119,6 +138,19 @@ print(paths)
 
 The source and copy are distinct.
 
+## Read the first example line by line
+
+The first runnable example introduces **SQLite Artifacts**. Copy it into a new file and run it before changing anything. Then use this table to read the same code slowly. A line-by-line explanation does not replace practice: it shows you what to look for when a program behaves differently from your prediction.
+
+| Line | Code | What Python is doing |
+| ---: | --- | --- |
+| 1 | `import sqlite3` | Import statement: the program asks for code from a module. |
+| 2 | `` | Blank line: it separates ideas for the human reader. |
+| 3 | `db = sqlite3.connect(":memory:")` | Assignment: Python evaluates the right side and stores the result under the name on the left. |
+| 4 | `db.execute("CREATE TABLE events (id INTEGER, kind TEXT)")` | Function call: Python evaluates the arguments and runs the named operation. |
+| 5 | `print(db.execute("SELECT name FROM sqlite_master WHERE type='table'").fetchall())` | Output call: Python evaluates the argument and writes a representation to the terminal. |
+
+After the run, write down the value created by each assignment, the condition tested by each branch, and the output that appeared. Change one input only. If the result changes, identify the line that used that input. If the result does not change, explain why the input was not part of the decision. This is the same tracing habit used later when reviewing security automation.
 ## Execution trace
 
 The analyst preserves a source copy, discovers schema, uses parameters and read-only operations, caps results, and records query purpose and limitations.

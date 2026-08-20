@@ -2,7 +2,12 @@
 
 [← Day 49](../day_49_network_baselines/day_49_network_baselines.md) · [Day index](../DAY_INDEX.md) · [Day 51 →](../day_51_trust_boundaries_and_threat_models/day_51_trust_boundaries_and_threat_models.md)
 
-## Table of Contents
+
+
+
+
+
+## Table of contents
 
 - [Why this lesson exists](#why-this-lesson-exists)
 - [Prerequisites](#prerequisites)
@@ -10,13 +15,27 @@
 - [The problem](#the-problem)
 - [Security boundary](#security-boundary)
 - [Lesson](#lesson)
-- [Vocabulary](#vocabulary)
+  - [Vocabulary](#vocabulary)
 - [Worked examples](#worked-examples)
+  - [Example 1: Define scope](#example-1-define-scope)
+  - [Example 2: Record a check](#example-2-record-a-check)
+  - [Example 3: Handle timeout](#example-3-handle-timeout)
+  - [Example 4: Compare baseline](#example-4-compare-baseline)
+  - [Example 5: Reset cleanly](#example-5-reset-cleanly)
+- [Read the first example line by line](#read-the-first-example-line-by-line)
 - [Execution trace](#execution-trace)
 - [Common mistakes](#common-mistakes)
 - [Security application](#security-application)
+- [Line-by-line walkthrough](#line-by-line-walkthrough)
+- [Prediction experiments](#prediction-experiments)
+- [Broken example and repair](#broken-example-and-repair)
+- [Guided practice walkthrough](#guided-practice-walkthrough)
+- [Bounded cybersecurity fixture walkthrough](#bounded-cybersecurity-fixture-walkthrough)
 - [Exercises](#exercises)
 - [Finish line](#finish-line)
+- [Mental model](#mental-model)
+- [Limitations](#limitations)
+- [References](#references)
 
 ## Why this lesson exists
 
@@ -117,6 +136,16 @@ print(cleanup)
 
 The reset plan is explicit.
 
+## Read the first example line by line
+
+The first runnable example introduces **Project: Local Service Monitor**. Copy it into a new file and run it before changing anything. Then use this table to read the same code slowly. A line-by-line explanation does not replace practice: it shows you what to look for when a program behaves differently from your prediction.
+
+| Line | Code | What Python is doing |
+| ---: | --- | --- |
+| 1 | `scope = {"host": "127.0.0.1", "port": 8000, "path": "/health", "max_attempts": 2}` | Assignment: Python evaluates the right side and stores the result under the name on the left. |
+| 2 | `print(scope)` | Output call: Python evaluates the argument and writes a representation to the terminal. |
+
+After the run, write down the value created by each assignment, the condition tested by each branch, and the output that appeared. Change one input only. If the result changes, identify the line that used that input. If the result does not change, explain why the input was not part of the decision. This is the same tracing habit used later when reviewing security automation.
 ## Execution trace
 
 The monitor validates scope, performs a finite local check, handles timeout/retry, parses a bounded response, compares safe features, and writes a report with completeness and limitations.
