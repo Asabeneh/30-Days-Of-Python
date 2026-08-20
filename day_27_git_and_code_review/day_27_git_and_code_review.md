@@ -88,7 +88,7 @@ You see changed files and the active branch.
 A diff shows additions, deletions, and context.
 
 ```python
-git diff -- course_days/day027.py
+git diff -- course_days/day27.py
 ```
 
 **What to observe:**
@@ -100,7 +100,7 @@ The reviewer can focus on the actual changed lines.
 A commit should tell one coherent story.
 
 ```python
-git add course_days/day027.py tests/test_day027.py
+git add course_days/day27.py tests/test_day27.py
 git commit -m "Validate evidence source"
 ```
 
@@ -207,7 +207,7 @@ Complete the numbered questions in [practice/exercises.md](practice/exercises.md
 
 ## Finish line
 
-Run `python -m course_days.day027`, pass the relevant tests, complete the numbered exercises, and explain one edge case aloud or in writing.
+Run `python -m course_days.day27`, pass the relevant tests, complete the numbered exercises, and explain one edge case aloud or in writing.
 
 ## Mental model
 

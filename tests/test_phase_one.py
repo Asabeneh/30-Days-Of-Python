@@ -1,10 +1,10 @@
-from course_days.day002 import describe_event
-from course_days.day003 import parse_status
-from course_days.day005 import classify
-from course_days.day006 import bounded_matches
-from course_days.day008 import normalize_username
-from course_days.day009 import is_nonempty_text
-from course_days.day010 import classify_event
+from course_days.day2 import describe_event
+from course_days.day3 import parse_status
+from course_days.day5 import classify
+from course_days.day6 import bounded_matches
+from course_days.day8 import normalize_username
+from course_days.day9 import is_nonempty_text
+from course_days.day10 import classify_event
 
 
 def test_day_two_preserves_raw_and_source() -> None:

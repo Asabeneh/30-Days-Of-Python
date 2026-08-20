@@ -210,7 +210,7 @@ Complete the numbered questions in [practice/exercises.md](practice/exercises.md
 
 ## Finish line
 
-Run `python -m course_days.day043`, pass the relevant tests, complete the numbered exercises, and explain one edge case aloud or in writing.
+Run `python -m course_days.day43`, pass the relevant tests, complete the numbered exercises, and explain one edge case aloud or in writing.
 
 ## Mental model
 

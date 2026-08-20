@@ -1,6 +1,6 @@
 # Day 4: Python Operators, Comparisons, and Decisions
 
-[← Day 3](../day_03_types_and_parsing/day_03_types_and_parsing.md) · [Day index](../DAY_INDEX.md) · [Day 5 →](../day_05_branching_and_triage/day_05_branching_and_triage.md)
+[← Day 3](../day_3_types_and_parsing/day_3_types_and_parsing.md) · [Day index](../DAY_INDEX.md) · [Day 5 →](../day_5_branching_and_triage/day_5_branching_and_triage.md)
 
 
 
@@ -754,4 +754,4 @@ You are finished when you can explain every operator in the reference tables, ru
 [5]: https://docs.python.org/3/reference/expressions.html#operator-precedence "Python operator precedence"
 [6]: https://www.freecodecamp.org/learn/python-v9/lecture-understanding-variables-and-data-types/how-do-you-declare-variables-and-what-are-naming-conventions-to-name-variables "Python variables and naming conventions"
 
-[← Day 3](../day_03_types_and_parsing/day_03_types_and_parsing.md) · [Day index](../DAY_INDEX.md) · [Day 5 →](../day_05_branching_and_triage/day_05_branching_and_triage.md)
+[← Day 3](../day_3_types_and_parsing/day_3_types_and_parsing.md) · [Day index](../DAY_INDEX.md) · [Day 5 →](../day_5_branching_and_triage/day_5_branching_and_triage.md)

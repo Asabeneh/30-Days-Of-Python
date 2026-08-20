@@ -175,9 +175,9 @@ def inject_into_lessons(resources: list[dict[str, object]]) -> None:
         for day in resource["lessons"]:
             by_day[int(day)].append(resource)
     for day, day_resources in by_day.items():
-        matches = sorted(ROOT.glob(f"{day:03d}_day_*/*.md"))
+        matches = sorted(ROOT.glob(f"day_{day}_*/*.md"))
         lesson_files = [
-            path for path in matches if path.parent.name.startswith(f"{day:03d}_day_")
+            path for path in matches if path.parent.name.startswith(f"day_{day}_")
         ]
         if not lesson_files:
             continue

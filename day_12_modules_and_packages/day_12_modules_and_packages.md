@@ -114,7 +114,7 @@ Importing the module defines `main` without printing; executing the file prints 
 A package gives related modules a stable namespace.
 
 ```python
-from course_days.day012 import parse_pair
+from course_days.day12 import parse_pair
 
 print(parse_pair("source:message"))
 ```
@@ -230,7 +230,7 @@ Complete the numbered questions in [practice/exercises.md](practice/exercises.md
 
 ## Finish line
 
-Run `python -m course_days.day012`, pass the relevant tests, complete the numbered exercises, and explain one edge case aloud or in writing.
+Run `python -m course_days.day12`, pass the relevant tests, complete the numbered exercises, and explain one edge case aloud or in writing.
 
 ## Mental model
 

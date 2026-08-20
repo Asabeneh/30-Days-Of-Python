@@ -8,15 +8,15 @@ The report is a measurement aid, not a substitute for human review. Dense means 
 
 | Day | Lesson | Words | Code blocks | Examples | Status |
 | ---: | --- | ---: | ---: | ---: | --- |
-| 1 | `day_01_setup_and_safe_practice` | 2685 | 30 | 6 | dense |
-| 2 | `day_02_values_names_and_input` | 3058 | 42 | 5 | dense |
-| 3 | `day_03_types_and_parsing` | 2663 | 24 | 5 | dense |
-| 4 | `day_04_operators_and_decisions` | 3846 | 61 | 5 | dense |
-| 5 | `day_05_branching_and_triage` | 2122 | 14 | 5 | dense |
-| 6 | `day_06_loops_and_bounded_work` | 2061 | 14 | 5 | dense |
-| 7 | `day_07_collections_and_iocs` | 1889 | 17 | 5 | dense |
-| 8 | `day_08_strings_and_canonicalization` | 1853 | 16 | 5 | dense |
-| 9 | `day_09_functions_and_validation` | 2024 | 15 | 5 | dense |
+| 1 | `day_1_setup_and_safe_practice` | 2685 | 30 | 6 | dense |
+| 2 | `day_2_values_names_and_input` | 3058 | 42 | 5 | dense |
+| 3 | `day_3_types_and_parsing` | 2663 | 24 | 5 | dense |
+| 4 | `day_4_operators_and_decisions` | 3846 | 61 | 5 | dense |
+| 5 | `day_5_branching_and_triage` | 2122 | 14 | 5 | dense |
+| 6 | `day_6_loops_and_bounded_work` | 2061 | 14 | 5 | dense |
+| 7 | `day_7_collections_and_iocs` | 1889 | 17 | 5 | dense |
+| 8 | `day_8_strings_and_canonicalization` | 1853 | 16 | 5 | dense |
+| 9 | `day_9_functions_and_validation` | 2024 | 15 | 5 | dense |
 | 100 | `day_100_project__authorized_local_assessment` | 2094 | 5 | 5 | dense |
 | 101 | `day_101_secure_sdlc` | 2015 | 5 | 5 | dense |
 | 102 | `day_102_ci_quality_gates` | 1980 | 5 | 5 | dense |

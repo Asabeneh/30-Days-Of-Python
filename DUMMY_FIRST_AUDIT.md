@@ -10,15 +10,15 @@ This report is deliberately stricter than a heading or word-count check. `teachi
 
 | Day | Lesson | Words | Code blocks | Examples | Components | Status |
 | ---: | --- | ---: | ---: | ---: | ---: | --- |
-| 1 | `day_01_setup_and_safe_practice` | 2685 | 30 | 6 | 10/10 | teaching-ready |
-| 2 | `day_02_values_names_and_input` | 3058 | 42 | 5 | 10/10 | teaching-ready |
-| 3 | `day_03_types_and_parsing` | 2663 | 24 | 5 | 10/10 | teaching-ready |
-| 4 | `day_04_operators_and_decisions` | 3846 | 61 | 5 | 10/10 | teaching-ready |
-| 5 | `day_05_branching_and_triage` | 2122 | 14 | 5 | 10/10 | teaching-ready |
-| 6 | `day_06_loops_and_bounded_work` | 2061 | 14 | 5 | 10/10 | teaching-ready |
-| 7 | `day_07_collections_and_iocs` | 1889 | 17 | 5 | 10/10 | teaching-ready |
-| 8 | `day_08_strings_and_canonicalization` | 1853 | 16 | 5 | 10/10 | teaching-ready |
-| 9 | `day_09_functions_and_validation` | 2024 | 15 | 5 | 10/10 | teaching-ready |
+| 1 | `day_1_setup_and_safe_practice` | 2685 | 30 | 6 | 10/10 | teaching-ready |
+| 2 | `day_2_values_names_and_input` | 3058 | 42 | 5 | 10/10 | teaching-ready |
+| 3 | `day_3_types_and_parsing` | 2663 | 24 | 5 | 10/10 | teaching-ready |
+| 4 | `day_4_operators_and_decisions` | 3846 | 61 | 5 | 10/10 | teaching-ready |
+| 5 | `day_5_branching_and_triage` | 2122 | 14 | 5 | 10/10 | teaching-ready |
+| 6 | `day_6_loops_and_bounded_work` | 2061 | 14 | 5 | 10/10 | teaching-ready |
+| 7 | `day_7_collections_and_iocs` | 1889 | 17 | 5 | 10/10 | teaching-ready |
+| 8 | `day_8_strings_and_canonicalization` | 1853 | 16 | 5 | 10/10 | teaching-ready |
+| 9 | `day_9_functions_and_validation` | 2024 | 15 | 5 | 10/10 | teaching-ready |
 | 10 | `day_10_checkpoint_log_triage` | 2139 | 14 | 5 | 10/10 | teaching-ready |
 | 11 | `day_11_function_contracts` | 2227 | 5 | 5 | 10/10 | needs-human-review |
 | 12 | `day_12_modules_and_packages` | 2262 | 5 | 5 | 10/10 | needs-human-review |

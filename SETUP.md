@@ -98,7 +98,7 @@ The doctor should report the Python version, repository root, virtual environmen
 Run Day 1's starter:
 
 ```text
-python -m course_days.day001
+python -m course_days.day1
 ```
 
 Run the repository tests:

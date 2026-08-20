@@ -334,13 +334,13 @@ SPECS = [
             ex(
                 "Read a diff",
                 "A diff shows additions, deletions, and context.",
-                "git diff -- course_days/day027.py",
+                "git diff -- course_days/day27.py",
                 "The reviewer can focus on the actual changed lines.",
             ),
             ex(
                 "Make a focused commit",
                 "A commit should tell one coherent story.",
-                'git add course_days/day027.py tests/test_day027.py\ngit commit -m "Validate evidence source"',
+                'git add course_days/day27.py tests/test_day27.py\ngit commit -m "Validate evidence source"',
                 "The source and its tests move together.",
             ),
             ex(
@@ -1031,7 +1031,7 @@ def render(spec: Spec) -> str:
         "",
         "## Finish line",
         "",
-        f"Run `python -m course_days.day{spec.day:03d}`, pass the relevant tests, complete the numbered exercises, and explain one edge case aloud or in writing.",
+        f"Run `python -m course_days.day{spec.day}`, pass the relevant tests, complete the numbered exercises, and explain one edge case aloud or in writing.",
         "",
         "## Mental model",
         "",

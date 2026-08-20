@@ -1,6 +1,6 @@
 # Day 5: Branching and a First Triage Classifier
 
-[← Day 4](../day_04_operators_and_decisions/day_04_operators_and_decisions.md) · [Day index](../DAY_INDEX.md) · [Day 6 →](../day_06_loops_and_bounded_work/day_06_loops_and_bounded_work.md)
+[← Day 4](../day_4_operators_and_decisions/day_4_operators_and_decisions.md) · [Day index](../DAY_INDEX.md) · [Day 6 →](../day_6_loops_and_bounded_work/day_6_loops_and_bounded_work.md)
 
 
 
@@ -343,4 +343,4 @@ Day 5 is complete when you can design a decision table, implement ordered branch
 [3]: https://csrc.nist.gov/glossary/term/risk "NIST risk glossary"
 [4]: https://www.cisa.gov/topics/cyber-threats-and-advisories "CISA cyber threat guidance"
 
-[← Day 4](../day_04_operators_and_decisions/day_04_operators_and_decisions.md) · [Day index](../DAY_INDEX.md) · [Day 6 →](../day_06_loops_and_bounded_work/day_06_loops_and_bounded_work.md)
+[← Day 4](../day_4_operators_and_decisions/day_4_operators_and_decisions.md) · [Day index](../DAY_INDEX.md) · [Day 6 →](../day_6_loops_and_bounded_work/day_6_loops_and_bounded_work.md)

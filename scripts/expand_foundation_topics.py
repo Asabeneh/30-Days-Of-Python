@@ -573,7 +573,7 @@ The safe report tells the reader what the program actually processed.
 }
 
 for day, addition in EXPANSIONS.items():
-    matches = list(ROOT.glob(f"day_{day:02d}_*/*.md"))
+    matches = list(ROOT.glob(f"day_{day}_*/*.md"))
     if len(matches) != 1:
         raise SystemExit(f"Expected one lesson for Day {day}, found {matches}")
     path = matches[0]

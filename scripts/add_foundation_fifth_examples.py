@@ -102,7 +102,7 @@ The summary keeps `invalid` separate from `routine`. A malformed record should n
 }
 
 for day, addition in EXAMPLES.items():
-    path = next(ROOT.glob(f"day_{day:02d}_*/*.md"))
+    path = next(ROOT.glob(f"day_{day}_*/*.md"))
     text = path.read_text(encoding="utf-8")
     if "### Example 5:" not in text:
         marker = "## Execution trace\n"

@@ -1,6 +1,6 @@
 # Day 7: Collections and an Indicator Catalog
 
-[← Day 6](../day_06_loops_and_bounded_work/day_06_loops_and_bounded_work.md) · [Day index](../DAY_INDEX.md) · [Day 8 →](../day_08_strings_and_canonicalization/day_08_strings_and_canonicalization.md)
+[← Day 6](../day_6_loops_and_bounded_work/day_6_loops_and_bounded_work.md) · [Day index](../DAY_INDEX.md) · [Day 8 →](../day_8_strings_and_canonicalization/day_8_strings_and_canonicalization.md)
 
 
 
@@ -321,4 +321,4 @@ Day 7 is complete when you can choose a collection based on order, uniqueness, m
 [3]: https://docs.python.org/3/library/stdtypes.html#set "Python set documentation"
 [4]: https://www.cisa.gov/topics/cyber-threats-and-advisories "CISA cyber threat guidance"
 
-[← Day 6](../day_06_loops_and_bounded_work/day_06_loops_and_bounded_work.md) · [Day index](../DAY_INDEX.md) · [Day 8 →](../day_08_strings_and_canonicalization/day_08_strings_and_canonicalization.md)
+[← Day 6](../day_6_loops_and_bounded_work/day_6_loops_and_bounded_work.md) · [Day index](../DAY_INDEX.md) · [Day 8 →](../day_8_strings_and_canonicalization/day_8_strings_and_canonicalization.md)

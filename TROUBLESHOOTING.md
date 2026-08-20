@@ -20,7 +20,7 @@ Do not copy an unrestricted execution-policy command from an unknown website. As
 
 ## `No module named course_days`
 
-The command was probably run outside the repository root. Use the VS Code Explorer to confirm that `README.md`, `pyproject.toml`, and `course_days` are visible. Then run `python -m course_days.day001` from that folder.
+The command was probably run outside the repository root. Use the VS Code Explorer to confirm that `README.md`, `pyproject.toml`, and `course_days` are visible. Then run `python -m course_days.day1` from that folder.
 
 ## A package is missing
 

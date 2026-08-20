@@ -1,6 +1,6 @@
 # Day 3: Types, Conversion, and Parsing Boundaries
 
-[← Day 2](../day_02_values_names_and_input/day_02_values_names_and_input.md) · [Day index](../DAY_INDEX.md) · [Day 4 →](../day_04_operators_and_decisions/day_04_operators_and_decisions.md)
+[← Day 2](../day_2_values_names_and_input/day_2_values_names_and_input.md) · [Day index](../DAY_INDEX.md) · [Day 4 →](../day_4_operators_and_decisions/day_4_operators_and_decisions.md)
 
 
 
@@ -433,4 +433,4 @@ Day 3 is complete when you can inspect a value's type, explain why conversion an
 [4]: https://docs.python.org/3/tutorial/errors.html "Python errors and exceptions"
 [5]: https://cheatsheetseries.owasp.org/cheatsheets/Input_Validation_Cheat_Sheet.html "OWASP input validation guidance"
 
-[← Day 2](../day_02_values_names_and_input/day_02_values_names_and_input.md) · [Day index](../DAY_INDEX.md) · [Day 4 →](../day_04_operators_and_decisions/day_04_operators_and_decisions.md)
+[← Day 2](../day_2_values_names_and_input/day_2_values_names_and_input.md) · [Day index](../DAY_INDEX.md) · [Day 4 →](../day_4_operators_and_decisions/day_4_operators_and_decisions.md)

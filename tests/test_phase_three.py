@@ -1,8 +1,8 @@
-from course_days.day023 import load_timeout
-from course_days.day024 import validate_record
-from course_days.day026 import redact
-from course_days.day028 import dependency_record
-from course_days.day030 import JournalEntry
+from course_days.day23 import load_timeout
+from course_days.day24 import validate_record
+from course_days.day26 import redact
+from course_days.day28 import dependency_record
+from course_days.day30 import JournalEntry
 
 
 def test_configuration_has_a_bounded_default(monkeypatch) -> None:

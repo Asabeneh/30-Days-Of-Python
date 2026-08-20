@@ -114,7 +114,7 @@ LESSONS = [
             (
                 "A package path",
                 "A package gives related modules a stable namespace.",
-                'from course_days.day012 import parse_pair\n\nprint(parse_pair("source:message"))',
+                'from course_days.day12 import parse_pair\n\nprint(parse_pair("source:message"))',
                 "The import name documents where the behavior lives.",
             ),
             (
@@ -478,7 +478,7 @@ LESSONS = [
             (
                 "Define the command",
                 "Use explicit options instead of positional magic for security-sensitive bounds.",
-                "python -m course_days.day020 --input shared/fixtures/events.log --limit 100 --output training-output/report.json",
+                "python -m course_days.day20 --input shared/fixtures/events.log --limit 100 --output training-output/report.json",
                 "The command states its input, limit, and output.",
             ),
             (
@@ -613,7 +613,7 @@ def render(lesson: Lesson) -> str:
             "",
             "## Finish line",
             "",
-            f"Run `python -m course_days.day{lesson.day:03d}`, pass the relevant tests, complete the numbered exercises, and explain one edge case aloud or in writing.",
+            f"Run `python -m course_days.day{lesson.day}`, pass the relevant tests, complete the numbered exercises, and explain one edge case aloud or in writing.",
             "",
             "## Mental model",
             "",

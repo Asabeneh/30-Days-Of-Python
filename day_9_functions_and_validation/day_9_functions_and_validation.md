@@ -1,6 +1,6 @@
 # Day 9: Functions, Contracts, and Validation
 
-[← Day 8](../day_08_strings_and_canonicalization/day_08_strings_and_canonicalization.md) · [Day index](../DAY_INDEX.md) · [Day 10 →](../day_10_checkpoint_log_triage/day_10_checkpoint_log_triage.md)
+[← Day 8](../day_8_strings_and_canonicalization/day_8_strings_and_canonicalization.md) · [Day index](../DAY_INDEX.md) · [Day 10 →](../day_10_checkpoint_log_triage/day_10_checkpoint_log_triage.md)
 
 
 
@@ -342,4 +342,4 @@ Day 9 is complete when you can write a small function with a clear contract, exp
 [3]: https://docs.python.org/3/tutorial/classes.html#python-scopes-and-namespaces "Python scopes and namespaces"
 [4]: https://owasp.org/www-community/attacks/Improper_Input_Validation "OWASP input validation overview"
 
-[← Day 8](../day_08_strings_and_canonicalization/day_08_strings_and_canonicalization.md) · [Day index](../DAY_INDEX.md) · [Day 10 →](../day_10_checkpoint_log_triage/day_10_checkpoint_log_triage.md)
+[← Day 8](../day_8_strings_and_canonicalization/day_8_strings_and_canonicalization.md) · [Day index](../DAY_INDEX.md) · [Day 10 →](../day_10_checkpoint_log_triage/day_10_checkpoint_log_triage.md)

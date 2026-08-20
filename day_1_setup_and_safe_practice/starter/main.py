@@ -4,7 +4,7 @@
 def main() -> None:
     learner = "new security engineer"
     print(f"Hello, {learner}.")
-    print("This output came from Python reading course_days/day001.py.")
+    print("This output came from Python reading course_days/day1.py.")
     print("The default lab target is synthetic and local.")
 
 

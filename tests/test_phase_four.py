@@ -1,11 +1,11 @@
 import asyncio
 from pathlib import Path
 
-from course_days.day033 import inventory
-from course_days.day034 import python_version
-from course_days.day037 import ordered_upper
-from course_days.day038 import collect
-from course_days.day039 import diff
+from course_days.day33 import inventory
+from course_days.day34 import python_version
+from course_days.day37 import ordered_upper
+from course_days.day38 import collect
+from course_days.day39 import diff
 
 
 def test_inventory_is_local_and_structured(tmp_path: Path) -> None:

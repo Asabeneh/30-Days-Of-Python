@@ -76,7 +76,7 @@ A **CLI** is a user-facing boundary around program behavior. An **exit status** 
 Use explicit options instead of positional magic for security-sensitive bounds.
 
 ```python
-python -m course_days.day020 --input shared/fixtures/events.log --limit 100 --output training-output/report.json
+python -m course_days.day20 --input shared/fixtures/events.log --limit 100 --output training-output/report.json
 ```
 
 **What to observe:**
@@ -143,7 +143,7 @@ The first runnable example introduces **Checkpoint: Build a Log-Triage CLI**. Co
 
 | Line | Code | What Python is doing |
 | ---: | --- | --- |
-| 1 | `python -m course_days.day020 --input shared/fixtures/events.log --limit 100 --output training-output/report.json` | Expression or data declaration: read the names, values, and operators and predict the result. |
+| 1 | `python -m course_days.day20 --input shared/fixtures/events.log --limit 100 --output training-output/report.json` | Expression or data declaration: read the names, values, and operators and predict the result. |
 
 After the run, write down the value created by each assignment, the condition tested by each branch, and the output that appeared. Change one input only. If the result changes, identify the line that used that input. If the result does not change, explain why the input was not part of the decision. This is the same tracing habit used later when reviewing security automation.
 ## Execution trace
@@ -203,7 +203,7 @@ Complete the numbered questions in [practice/exercises.md](practice/exercises.md
 
 ## Finish line
 
-Run `python -m course_days.day020`, pass the relevant tests, complete the numbered exercises, and explain one edge case aloud or in writing.
+Run `python -m course_days.day20`, pass the relevant tests, complete the numbered exercises, and explain one edge case aloud or in writing.
 
 ## Mental model
 

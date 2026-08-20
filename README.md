@@ -13,7 +13,7 @@ If you have never programmed before, follow these files in order:
 1. [Setup from zero](SETUP.md) — install Python, Git, VS Code, and the recommended extensions.
 2. [VS Code setup](VS_CODE_SETUP.md) — configure the editor, interpreter, debugger, tests, and Markdown workflow.
 3. [Safety and lab rules](SAFETY_AND_LAB_RULES.md) — learn authorization, scope, evidence handling, and cleanup.
-4. [Day 1](day_01_setup_and_safe_practice/day_01_setup_and_safe_practice.md) — run your first Python program and your first safe cyber exercise.
+4. [Day 1](day_1_setup_and_safe_practice/day_1_setup_and_safe_practice.md) — run your first Python program and your first safe cyber exercise.
 5. [Curriculum guide](CURRICULUM_GUIDE.md) — understand the 120-day sequence and project checkpoints.
 6. [Complete day index](DAY_INDEX.md) — jump directly to any of the 120 lessons.
 7. [LeetCode guide](LEETCODE_GUIDE.md) — build problem-solving fluency without confusing puzzles with security engineering.

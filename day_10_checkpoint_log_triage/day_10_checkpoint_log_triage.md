@@ -1,6 +1,6 @@
 # Day 10: Checkpoint: Build a Safe Log-Triage Classifier
 
-[← Day 9](../day_09_functions_and_validation/day_09_functions_and_validation.md) · [Day index](../DAY_INDEX.md) · [Day 11 →](../day_11_function_contracts/day_11_function_contracts.md)
+[← Day 9](../day_9_functions_and_validation/day_9_functions_and_validation.md) · [Day index](../DAY_INDEX.md) · [Day 11 →](../day_11_function_contracts/day_11_function_contracts.md)
 
 
 
@@ -362,4 +362,4 @@ Day 10 is complete when you can explain the pipeline from fixture to report, pro
 [4]: https://csrc.nist.gov/glossary/term/log_analysis "NIST log analysis glossary"
 [5]: https://owasp.org/www-community/attacks/Denial_of_Service "OWASP denial of service overview"
 
-[← Day 9](../day_09_functions_and_validation/day_09_functions_and_validation.md) · [Day index](../DAY_INDEX.md) · [Day 11 →](../day_11_function_contracts/day_11_function_contracts.md)
+[← Day 9](../day_9_functions_and_validation/day_9_functions_and_validation.md) · [Day index](../DAY_INDEX.md) · [Day 11 →](../day_11_function_contracts/day_11_function_contracts.md)

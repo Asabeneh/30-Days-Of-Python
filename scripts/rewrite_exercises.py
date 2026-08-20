@@ -11,7 +11,7 @@ ROOT = Path(__file__).resolve().parents[1]
 SPECIFIC: dict[int, str] = {
     1: """# Exercises: Day 1
 
-1. Run `python -m course_days.day001`. What text does the program print? Write the command you used and the final line of output.
+1. Run `python -m course_days.day1`. What text does the program print? Write the command you used and the final line of output.
 2. Create `practice/hello_security.py` that prints your name, your course goal, and the sentence `Only authorized practice is safe practice.` What does each `print` call output?
 3. Change one string in your program without changing its structure. Run it again. What changed, and what stayed the same?
 4. Add a comment explaining why the course uses local, synthetic, bounded fixtures. Does the comment change the program output?
@@ -255,7 +255,7 @@ Use only this repository and synthetic text. Do not enter a real password, priva
 
 
 def lesson_path(day: int) -> Path:
-    matches = sorted(ROOT.glob(f"{day:03d}_day_*/{day:03d}_day_*.md"))
+    matches = sorted(ROOT.glob(f"day_{day}_*/day_{day}_*.md"))
     if not matches:
         raise FileNotFoundError(f"missing lesson for day {day}")
     return matches[0]

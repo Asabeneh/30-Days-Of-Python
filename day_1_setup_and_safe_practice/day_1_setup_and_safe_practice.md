@@ -1,6 +1,6 @@
 # Day 1: Your First Python Program and Your First Safe Cybersecurity Habit
 
-[Day index](../DAY_INDEX.md) · [Day 2 →](../day_02_values_names_and_input/day_02_values_names_and_input.md)
+[Day index](../DAY_INDEX.md) · [Day 2 →](../day_2_values_names_and_input/day_2_values_names_and_input.md)
 
 
 
@@ -84,7 +84,7 @@ Do not continue by guessing. Use the interpreter command that worked on your mac
 
 Suppose you want the computer to greet you. You may think, “Tell the computer to say hello.” A computer cannot execute that sentence as ordinary English because it needs exact syntax: the spelling, punctuation, and structure that Python recognizes.
 
-Create a file named `day_01_hello.py` and write:
+Create a file named `day_1_hello.py` and write:
 
 ```python
 print("Hello, Python")
@@ -93,7 +93,7 @@ print("Hello, Python")
 Save the file. In the terminal, run:
 
 ```text
-python day_01_hello.py
+python day_1_hello.py
 ```
 
 Expected output:
@@ -116,7 +116,7 @@ If the terminal says it cannot find the file, the Python code may be perfectly c
 
 ### Program
 
-A **program** is a set of instructions. `day_01_hello.py` is a program containing one instruction: call `print` with the text `Hello, Python`.
+A **program** is a set of instructions. `day_1_hello.py` is a program containing one instruction: call `print` with the text `Hello, Python`.
 
 ### Source code
 
@@ -124,11 +124,11 @@ A **program** is a set of instructions. `day_01_hello.py` is a program containin
 
 ### Interpreter
 
-An **interpreter** is a program that reads Python source code and performs the instructions. When you type `python day_01_hello.py`, `python` is the interpreter command and the filename is the source file it should read.
+An **interpreter** is a program that reads Python source code and performs the instructions. When you type `python day_1_hello.py`, `python` is the interpreter command and the filename is the source file it should read.
 
 ### Command
 
-A **command** is text you type into the terminal. `python day_01_hello.py` is a command. The terminal sends it to the operating system, which starts Python with that file as an input.
+A **command** is text you type into the terminal. `python day_1_hello.py` is a command. The terminal sends it to the operating system, which starts Python with that file as an input.
 
 ### Output
 
@@ -415,7 +415,7 @@ Complete these in `practice/exercises.md` in order:
 8. Create a program with three print calls where the second call has a deliberate name error. Predict which lines will appear before the error and which line will never run.
 9. Repair Question 8 with one small change. Record the before and after output.
 10. Run the course starter and write down the command you used, the output you received, and the folder from which you ran it.
-11. Explain the difference between source code, a command, the interpreter, and output using this example: `python day_01_hello.py`.
+11. Explain the difference between source code, a command, the interpreter, and output using this example: `python day_1_hello.py`.
 12. Safety question: list three systems or data sources that are out of scope for this lesson and three safe substitutes inside the repository.
 13. Write a short paragraph answering: why is reading an error message a programming skill rather than a sign that you failed?
 14. Explain what the computer can and cannot infer from the printed sentence `Training mode: local and synthetic data only`.

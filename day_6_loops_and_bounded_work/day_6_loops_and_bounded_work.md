@@ -1,6 +1,6 @@
 # Day 6: Loops, Bounds, and Resource Safety
 
-[← Day 5](../day_05_branching_and_triage/day_05_branching_and_triage.md) · [Day index](../DAY_INDEX.md) · [Day 7 →](../day_07_collections_and_iocs/day_07_collections_and_iocs.md)
+[← Day 5](../day_5_branching_and_triage/day_5_branching_and_triage.md) · [Day index](../DAY_INDEX.md) · [Day 7 →](../day_7_collections_and_iocs/day_7_collections_and_iocs.md)
 
 
 
@@ -314,4 +314,4 @@ Day 6 is complete when you can explain one `for` loop and one `while` loop step 
 [3]: https://docs.python.org/3/library/functions.html#range "Python range documentation"
 [4]: https://owasp.org/www-community/attacks/Denial_of_Service "OWASP denial of service overview"
 
-[← Day 5](../day_05_branching_and_triage/day_05_branching_and_triage.md) · [Day index](../DAY_INDEX.md) · [Day 7 →](../day_07_collections_and_iocs/day_07_collections_and_iocs.md)
+[← Day 5](../day_5_branching_and_triage/day_5_branching_and_triage.md) · [Day index](../DAY_INDEX.md) · [Day 7 →](../day_7_collections_and_iocs/day_7_collections_and_iocs.md)

@@ -1,6 +1,6 @@
 # Day 2: Variables, Names, Values, Input, and Output
 
-[← Day 1](../day_01_setup_and_safe_practice/day_01_setup_and_safe_practice.md) · [Day index](../DAY_INDEX.md) · [Day 3 →](../day_03_types_and_parsing/day_03_types_and_parsing.md)
+[← Day 1](../day_1_setup_and_safe_practice/day_1_setup_and_safe_practice.md) · [Day index](../DAY_INDEX.md) · [Day 3 →](../day_3_types_and_parsing/day_3_types_and_parsing.md)
 
 
 
@@ -598,4 +598,4 @@ Day 2 is complete when you can explain a value, variable, type, name, assignment
 [5]: https://docs.python.org/3/library/functions.html#int "Python int documentation"
 [6]: https://owasp.org/www-community/attacks/Improper_Error_Handling "OWASP error handling guidance"
 
-[← Day 1](../day_01_setup_and_safe_practice/day_01_setup_and_safe_practice.md) · [Day index](../DAY_INDEX.md) · [Day 3 →](../day_03_types_and_parsing/day_03_types_and_parsing.md)
+[← Day 1](../day_1_setup_and_safe_practice/day_1_setup_and_safe_practice.md) · [Day index](../DAY_INDEX.md) · [Day 3 →](../day_3_types_and_parsing/day_3_types_and_parsing.md)

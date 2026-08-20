@@ -1025,7 +1025,7 @@ def render(spec: Spec) -> str:
         "",
         "## Finish line",
         "",
-        f"Run `python -m course_days.day{spec.day:03d}`, pass the relevant tests, complete the numbered exercises, and explain one edge case aloud or in writing.",
+        f"Run `python -m course_days.day{spec.day}`, pass the relevant tests, complete the numbered exercises, and explain one edge case aloud or in writing.",
         "",
         "## Mental model",
         "",
