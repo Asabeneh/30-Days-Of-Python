@@ -1,4 +1,4 @@
-# Day 27: Git and code review
+# Day 27: Git, Code Review, and Change History
 
 [Previous](../026_day_structured_logging/026_day_structured_logging.md) | [Next](../028_day_dependency_hygiene_and_sboms/028_day_dependency_hygiene_and_sboms.md)
 
@@ -9,43 +9,75 @@
 - [Outcomes](#outcomes)
 - [The problem](#the-problem)
 - [Security boundary](#security-boundary)
-- [Concept map](#concept-map)
+- [Core lesson](#core-lesson)
+- [Common mistakes](#common-mistakes)
 - [Practice](#practice)
 - [Mental model](#mental-model)
 - [Finish line](#finish-line)
 
 ## Why this lesson exists
 
-This lesson belongs to **Professional Engineering and Data Boundaries**. It turns one engineering concept into a runnable, testable, and explainable security practice. The final lesson will be expanded with execution traces, diagrams, common-mistake tables, and worked examples before that phase is marked complete.
+Security engineering becomes dependable when its inputs, dependencies, failure behavior, and evidence are visible. This day builds one professional Python habit through a bounded local exercise.
 
 ## Prerequisites
 
-Complete the previous lesson and keep the repository setup from [SETUP.md](../SETUP.md) available. Revisit the linked previous lesson if any term is unfamiliar.
+Complete Day 26, keep [SETUP.md](../SETUP.md) available, and read [SAFETY_AND_LAB_RULES.md](../SAFETY_AND_LAB_RULES.md).
 
 ## Outcomes
 
-By the end, you can explain the concept, run the starter, predict a result, write a small test, identify one failure mode, and state the security boundary of the exercise.
+You can explain the concept, trace the starter, make one controlled change, test a normal and negative case, and document one security limitation.
 
 ## The problem
 
-Security engineering requires reliable decisions under imperfect input and failure. This day introduces **Git and code review** through a bounded local fixture before asking you to generalize the pattern.
+A security utility often fails at a boundary: installation, command-line input, configuration, data serialization, logging, review, dependencies, or design assumptions. Today makes one such boundary explicit.
 
 ## Security boundary
 
-Use only the supplied synthetic data or a local fixture. Do not substitute public targets, university systems, employer systems, real credentials, or private evidence. Stop if the scope changes.
+Use only synthetic data and local files. Do not add real credentials, private evidence, public targets, or network access to the starter. Stop if the exercise leaves its documented scope.
 
-## Concept map
+## Core lesson
 
-Start with the smallest runnable example in `starter/main.py`. Trace the input, transformation, decision, and output. Then deliberately change one input and predict the result before running again. The full lesson expansion will add a visual data-flow diagram, a common-mistakes table, and an explanation of what the tool cannot conclude.
+Git provides a time-ordered record of changes. A review should make the security-relevant delta easy to inspect: input boundaries, permissions, logging, dependencies, tests, and documentation.
+
+```text
+git diff --check
+git diff
+python -m pytest -q
+```
+
+A commit message explains intent; it does not prove correctness. A reviewer asks what changed, what could fail, what was tested, and whether the change expands access or data collection.
+
+Security connection: traceability supports accountability, rollback, and incident investigation.
+
+### Common mistakes
+
+| Mistake | Symptom | Correction |
+| --- | --- | --- |
+| Treating tools as magic | The learner cannot reproduce the result | State the interpreter, input, command, and expected output |
+| Trusting representation | Malformed data enters the decision layer | Validate fields and types at the boundary |
+| Logging everything | Secrets or private data appear in output | Minimize, redact, and test logging behavior |
+| Confusing a control with proof | A checklist is called “secure” | Name the test and the residual risk |
 
 ## Practice
 
-Complete [practice/prompts.md](practice/prompts.md) before opening [hints](practice/hints.md) or [solutions](practice/solutions.md). Level 1 builds mechanical fluency. Level 2 applies the idea to a security utility. Level 3 asks for an edge case, negative test, or design trade-off.
+### Level 1 — Mechanical
+
+Run the starter, predict one output, change one value, and explain the result.
+
+### Level 2 — Applied
+
+Build a small local utility that uses today's idea with synthetic input. State its contract and acceptance criteria before coding.
+
+### Level 3 — Synthesis
+
+Add one failure case, one test, and a short threat-model note naming an asset, boundary, threat, control, and residual risk.
+
+Use [practice/prompts.md](practice/prompts.md), then progressive [hints](practice/hints.md), then explained [solutions](practice/solutions.md).
 
 ## Mental model
 
-> A security tool is a small program whose assumptions, inputs, outputs, and limits must be made visible.
+> A security decision is easier to trust when another person can see what changed, why it changed, and which tests support it.
 
 ## Finish line
 
-Run the starter, pass the day tests when present, complete the core practice, and write one sentence naming an edge case and one sentence naming the lab boundary.
+Run `python -m course_days.day027`, pass the phase tests, complete Levels 1 and 2, and write one edge-case note.

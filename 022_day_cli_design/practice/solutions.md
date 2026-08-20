@@ -1,3 +1,3 @@
 # Solution route
 
-Compare your solution against the acceptance criteria, not against a particular spelling. A strong solution explains its contract, tests its failure path, and states what it cannot prove.
+Compare your attempt with the acceptance criteria and your threat-model note. A strong solution explains the decision, handles failure explicitly, and says what it cannot prove.
