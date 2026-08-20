@@ -11,7 +11,7 @@
 
 ## Start here
 
-Read the [course README](../README.md), complete the [setup guide](../SETUP.md) and [VS Code setup](../VS_CODE_SETUP.md), then use the [day index](../DAY_INDEX.md) to confirm where this lesson fits. Run the linked local starter before attempting the [exercises](practice/exercises.md), then use [hints](practice/hints.md) and [solutions](practice/solutions.md) only after an honest attempt.
+Read the [course README](../README.md), complete the [setup guide](../SETUP.md) and [VS Code setup](../VS_CODE_SETUP.md), then use the [day index](../DAY_INDEX.md) to confirm where this lesson fits. Run the linked local starter before attempting the the numbered exercises in this lesson, then use [hints](practice/hints.md) and [solutions](practice/solutions.md) only after an honest attempt.
 
 ## Table of contents
 
@@ -417,7 +417,7 @@ This output does not magically enforce the boundary. It reminds the learner of t
 
 ## Independent exercises
 
-Complete these in `practice/exercises.md` in order:
+Complete these in the lesson’s numbered exercises in order:
 
 1. Create a file that prints your first name, your course goal, and the sentence `Only authorized practice is safe practice.` Run it and record the exact three-line output.
 2. Add a comment above the program explaining why the course uses local, synthetic, bounded fixtures. Does the comment change the output? Prove your answer by running the file.

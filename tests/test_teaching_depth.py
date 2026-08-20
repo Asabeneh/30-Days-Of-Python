@@ -1,3 +1,4 @@
+import re
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -15,7 +16,12 @@ def test_first_phase_has_dense_teaching_sections() -> None:
         assert "## Execution trace" in text
         assert "## Common mistakes" in text
         assert "## Security application" in text or "## Project requirements" in text
-        assert "practice/exercises.md" in text
+        assert "## Independent exercises" in text or "## Exercises" in text
+        exercise_start = text.find("## Independent exercises")
+        if exercise_start < 0:
+            exercise_start = text.find("## Exercises")
+        exercise_text = text[exercise_start:]
+        assert len(re.findall(r"^\d+\.\s+", exercise_text, flags=re.MULTILINE)) >= 12
         assert text.count("```python") >= 4
 
 

@@ -1,6 +1,6 @@
 # Solution route: Day 29
 
-Use this guide after attempting the [exercises](exercises.md). It gives review checkpoints rather than a secret finished submission. Compare decisions, inputs, outputs, tests, and limitations for **Day 29: Threat Modeling Before Automation**.
+Use this guide after attempting the the numbered exercises in this lesson. It gives review checkpoints rather than a secret finished submission. Compare decisions, inputs, outputs, tests, and limitations for **Day 29: Threat Modeling Before Automation**.
 
 ## Review checkpoints
 

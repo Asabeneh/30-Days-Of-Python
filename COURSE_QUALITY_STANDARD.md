@@ -11,7 +11,7 @@ A lesson is not complete because it names a Python feature or a security tool. I
 5. A substantial teaching body with vocabulary, the problem first, multiple worked examples, expected outputs, and an execution trace, plus a small runnable starter.
 6. Plain-language terminology followed by precise technical vocabulary.
 7. At least five worked demonstrations when the concept warrants them, including normal, boundary, invalid, and cybersecurity cases; simple concepts may justify fewer with a clear explanation.
-8. A numbered `practice/exercises.md` file with at least twelve direct questions or coding tasks, expected outputs, edge cases, and a challenge when appropriate.
+8. A numbered the lesson’s numbered exercises file with at least twelve direct questions or coding tasks, expected outputs, edge cases, and a challenge when appropriate.
 9. Separate substantive `practice/hints.md` and `practice/solutions.md` files with at least twelve numbered entries that follow the exercise numbers; the reading flow must not reveal full answers or collapse into a generic paragraph.
 10. Common mistakes, design trade-offs, security limitations, a one-sentence mental model, a finish line, and a short proof section.
 

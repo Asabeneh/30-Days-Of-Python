@@ -14,20 +14,24 @@ def main() -> int:
     lessons = sorted(ROOT.glob("day_*"))
     for directory in lessons:
         lesson = directory / f"{directory.name}.md"
-        exercise = directory / "practice" / "exercises.md"
+        lesson_text = lesson.read_text(encoding="utf-8")
+        exercise_heading = re.search(r"^## (Independent exercises|Exercises)\s*$", lesson_text, re.MULTILINE)
+        if not exercise_heading:
+            errors.append(f"missing canonical exercise section: {lesson.relative_to(ROOT)}")
+            continue
+        exercise_tail = lesson_text[exercise_heading.end() :]
+        next_heading = re.search(r"^## ", exercise_tail, re.MULTILINE)
+        exercise_text = exercise_tail[: next_heading.start() if next_heading else len(exercise_tail)]
+        question_count = len(NUMBERED.findall(exercise_text))
+        if question_count < 12:
+            errors.append(f"fewer than twelve numbered exercises in lesson: {lesson.relative_to(ROOT)}")
+        if len(exercise_text.split()) < 120:
+            errors.append(f"lesson exercise section is too short: {lesson.relative_to(ROOT)}")
         hints = directory / "practice" / "hints.md"
         solutions = directory / "practice" / "solutions.md"
-        if not exercise.exists():
-            errors.append(f"missing exercises: {exercise.relative_to(ROOT)}")
-            continue
-        text = exercise.read_text(encoding="utf-8")
-        question_count = len(NUMBERED.findall(text))
-        if question_count < 12:
-            errors.append(
-                f"fewer than twelve numbered exercises: {exercise.relative_to(ROOT)}"
-            )
-        if len(text.split()) < 120:
-            errors.append(f"exercise file is too short: {exercise.relative_to(ROOT)}")
+        legacy_exercise = directory / "practice" / "exercises.md"
+        if legacy_exercise.exists():
+            errors.append(f"redundant exercise companion remains: {legacy_exercise.relative_to(ROOT)}")
         for companion in (hints, solutions):
             if not companion.exists():
                 errors.append(f"missing companion: {companion.relative_to(ROOT)}")
@@ -39,12 +43,11 @@ def main() -> int:
                 errors.append(f"companion needs twelve numbered entries: {companion.relative_to(ROOT)}")
             if "Use the exercise numbers in order." in companion_text:
                 errors.append(f"generic placeholder companion remains: {companion.relative_to(ROOT)}")
-        lesson_text = lesson.read_text(encoding="utf-8")
-        for link in ("../README.md", "../SETUP.md", "../VS_CODE_SETUP.md", "../DAY_INDEX.md", "practice/exercises.md", "practice/hints.md", "practice/solutions.md"):
+        for link in ("../README.md", "../SETUP.md", "../VS_CODE_SETUP.md", "../DAY_INDEX.md", "practice/hints.md", "practice/solutions.md"):
             if link not in lesson_text:
                 errors.append(f"lesson missing navigation or practice link {link}: {lesson.relative_to(ROOT)}")
-        if "practice/prompts.md" in lesson_text:
-            errors.append(f"legacy prompts link remains: {lesson.relative_to(ROOT)}")
+        if "practice/exercises.md" in lesson_text or "practice/prompts.md" in lesson_text:
+            errors.append(f"legacy exercise or prompts link remains: {lesson.relative_to(ROOT)}")
     legacy = list(ROOT.rglob("prompts.md"))
     if legacy:
         errors.extend(

@@ -12,7 +12,7 @@
 
 ## Start here
 
-Read the [course README](../README.md), complete the [setup guide](../SETUP.md) and [VS Code setup](../VS_CODE_SETUP.md), then use the [day index](../DAY_INDEX.md) to confirm where this lesson fits. Run the linked local starter before attempting the [exercises](practice/exercises.md), then use [hints](practice/hints.md) and [solutions](practice/solutions.md) only after an honest attempt.
+Read the [course README](../README.md), complete the [setup guide](../SETUP.md) and [VS Code setup](../VS_CODE_SETUP.md), then use the [day index](../DAY_INDEX.md) to confirm where this lesson fits. Run the linked local starter before attempting the the numbered exercises in this lesson, then use [hints](practice/hints.md) and [solutions](practice/solutions.md) only after an honest attempt.
 
 ## Table of contents
 
@@ -234,7 +234,24 @@ A defensible report should distinguish at least four things: what was observed, 
 At the end, perform a small review. Check that the program uses only local fixtures, has a finite workload, handles malformed input, avoids raw sensitive output, and leaves the fixture unchanged. Then write one residual-risk sentence. A useful form is: "This lesson demonstrates Threat Modeling Before Automation on synthetic data, but it does not establish authenticity, authorization, production readiness, or the presence of a real attack.
 ## Exercises
 
-Complete the numbered questions in [practice/exercises.md](practice/exercises.md) in order. Run every requested command, create the requested artifact, and record the limitation the exercise asks you to name.
+
+The following numbered exercises are the canonical practice for this lesson. Attempt them here in order; use the separate hints and solutions only after a genuine attempt.
+
+1. Create a threat entry for a synthetic case record and a parser boundary.
+2. Name one asset, one threat, one control, and one residual risk for the log-triage CLI.
+3. Add a second threat involving malformed input. Which test provides evidence for the control?
+4. Draw the trust boundary between a fixture file and a classification function.
+5. Explain why “secure” is not a sufficient description of a control.
+
+6. Apply the lesson to the supplied local synthetic fixture and state the expected artifact before running it.
+7. Add a normal case and predict the result before executing the code.
+8. Add a boundary case and explain the chosen behavior.
+9. Add an invalid case and keep the failure visible and understandable.
+10. Reproduce the deliberate mistake from the lesson and record the smallest repair.
+11. Add a focused test or evidence note for the most important behavior.
+12. Write one limitation and one review question for a teammate.
+
+Use only the supplied local, synthetic, bounded fixtures. Do not use real credentials, private data, public targets, or systems outside explicit authorization.
 
 ## Finish line
 

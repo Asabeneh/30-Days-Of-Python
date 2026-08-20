@@ -17,7 +17,7 @@ def main() -> int:
         replacement = (
             "## Exercises\n\n"
             "Complete the numbered questions in "
-            "[practice/exercises.md](practice/exercises.md) in order. "
+            "the numbered exercises in this lesson in order. "
             "Run the requested commands, produce the requested artifact, "
             "and record the edge case or limitation asked for by the exercise. "
             "Use [hints](practice/hints.md) only after a real attempt and "

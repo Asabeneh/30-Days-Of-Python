@@ -11,7 +11,7 @@
 
 ## Start here
 
-Read the [course README](../README.md), complete the [setup guide](../SETUP.md) and [VS Code setup](../VS_CODE_SETUP.md), then use the [day index](../DAY_INDEX.md) to confirm where this lesson fits. Run the linked local starter before attempting the [exercises](practice/exercises.md), then use [hints](practice/hints.md) and [solutions](practice/solutions.md) only after an honest attempt.
+Read the [course README](../README.md), complete the [setup guide](../SETUP.md) and [VS Code setup](../VS_CODE_SETUP.md), then use the [day index](../DAY_INDEX.md) to confirm where this lesson fits. Run the linked local starter before attempting the the numbered exercises in this lesson, then use [hints](practice/hints.md) and [solutions](practice/solutions.md) only after an honest attempt.
 
 ## Table of contents
 
@@ -318,7 +318,7 @@ Never use this training classifier to make decisions about a real person. It has
 
 ## Independent exercises
 
-Complete these in [`practice/exercises.md`](practice/exercises.md) in order:
+Complete these in the numbered exercises in this lesson in order:
 
 1. Write a two-branch classifier for a number being inside or outside 0–10.
 2. Add an explicit `unknown` path for missing source text.

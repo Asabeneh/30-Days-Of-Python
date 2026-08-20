@@ -1,6 +1,6 @@
 # Solution route: Day 9
 
-Use this guide after attempting the [exercises](exercises.md). It gives review checkpoints rather than a secret finished submission. Compare decisions, inputs, outputs, tests, and limitations for **Day 9: Functions, Contracts, and Validation**.
+Use this guide after attempting the the numbered exercises in this lesson. It gives review checkpoints rather than a secret finished submission. Compare decisions, inputs, outputs, tests, and limitations for **Day 9: Functions, Contracts, and Validation**.
 
 ## Review checkpoints
 

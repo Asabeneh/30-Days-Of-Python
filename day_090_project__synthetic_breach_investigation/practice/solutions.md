@@ -1,6 +1,6 @@
 # Solution route: Day 90
 
-Use this guide after attempting the [exercises](exercises.md). It gives review checkpoints rather than a secret finished submission. Compare decisions, inputs, outputs, tests, and limitations for **Day 90: Project: Synthetic Breach Investigation**.
+Use this guide after attempting the the numbered exercises in this lesson. It gives review checkpoints rather than a secret finished submission. Compare decisions, inputs, outputs, tests, and limitations for **Day 90: Project: Synthetic Breach Investigation**.
 
 ## Review checkpoints
 

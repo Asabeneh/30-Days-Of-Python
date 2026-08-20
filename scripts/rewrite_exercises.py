@@ -312,7 +312,7 @@ def complete_exercises(text: str, day: int, title: str) -> str:
 def support_hints(day: int, title: str) -> str:
     return f"""# Hints: Day {day}
 
-Use these hints after a genuine attempt at the [exercises](exercises.md). Start with the [course README](../../README.md), [setup guide](../../SETUP.md), and [VS Code setup](../../VS_CODE_SETUP.md) when a command or environment is unclear.
+Use these hints after a genuine attempt at the numbered exercises in this lesson. Start with the [course README](../../README.md), [setup guide](../../SETUP.md), and [VS Code setup](../../VS_CODE_SETUP.md) when a command or environment is unclear.
 
 ## Progressive hint route
 
@@ -336,7 +336,7 @@ The goal is to understand **{title}**, not to copy a finished answer.
 def support_solutions(day: int, title: str) -> str:
     return f"""# Solution route: Day {day}
 
-Use this guide after attempting the [exercises](exercises.md). It gives review checkpoints rather than a secret finished submission. Compare decisions, inputs, outputs, tests, and limitations for **{title}**.
+Use this guide after attempting the numbered exercises in this lesson. It gives review checkpoints rather than a secret finished submission. Compare decisions, inputs, outputs, tests, and limitations for **{title}**.
 
 ## Review checkpoints
 
@@ -377,35 +377,37 @@ def main() -> int:
         title = title_for(day)
         practice = directory / "practice"
         practice.mkdir(exist_ok=True)
-        existing = SPECIFIC.get(day, generic_exercises(day))
-        exercise_file = practice / "exercises.md"
-        exercise_file.write_text(complete_exercises(existing, day, title), encoding="utf-8")
+        (practice / "exercises.md").unlink(missing_ok=True)
         (practice / "hints.md").write_text(support_hints(day, title), encoding="utf-8")
         (practice / "solutions.md").write_text(support_solutions(day, title), encoding="utf-8")
         text = lesson.read_text(encoding="utf-8")
-        text = text.replace("practice/prompts.md", "practice/exercises.md")
+        text = text.replace("practice/prompts.md", "#independent-exercises")
         text = re.sub(r"\n## Practice\n", "\n## Exercises\n", text, count=1)
         text = text.replace(
-            "Use [practice/exercises.md](practice/exercises.md), then",
-            "Complete [practice/exercises.md](practice/exercises.md), then",
+            "Use the numbered exercises in this lesson, then",
+            "Complete the numbered exercises in this lesson, then",
+        )
+        text = text.replace(
+            "Complete the numbered exercises in this lesson, then",
+            "Complete the numbered exercises in this lesson, then",
         )
         text = re.sub(r"^\[.*?\]\(\.\./DAY_INDEX\.md\).*?$", navigation(day, directory, directories), text, count=1, flags=re.MULTILINE)
         if "## Start here" not in text:
-            start = "## Start here\n\nRead the [course README](../README.md), complete the [setup guide](../SETUP.md) and [VS Code setup](../VS_CODE_SETUP.md), then use the [day index](../DAY_INDEX.md) to confirm where this lesson fits. Run the linked local starter before attempting the [exercises](practice/exercises.md), then use [hints](practice/hints.md) and [solutions](practice/solutions.md) only after an honest attempt.\n\n"
+            start = "## Start here\n\nRead the [course README](../README.md), complete the [setup guide](../SETUP.md) and [VS Code setup](../VS_CODE_SETUP.md), then use the [day index](../DAY_INDEX.md) to confirm where this lesson fits. Run the linked local starter before attempting the numbered exercises in this lesson, then use [hints](practice/hints.md) and [solutions](practice/solutions.md) only after an honest attempt.\n\n"
             text = text.replace("\n## Table of contents", f"\n{start}## Table of contents", 1)
         if "- [Start here](#start-here)" not in text:
             text = text.replace("## Table of contents\n", "## Table of contents\n\n- [Start here](#start-here)\n", 1)
         if "practice/hints.md" not in text:
-            text = text.replace("## Exercises\n", "## Exercises\n\nUse [practice/exercises.md](practice/exercises.md) first, then [practice/hints.md](practice/hints.md), and finally [practice/solutions.md](practice/solutions.md).\n", 1)
+            text = text.replace("## Exercises\n", "## Exercises\n\nComplete the numbered exercises in this lesson first, then use [practice/hints.md](practice/hints.md) and [practice/solutions.md](practice/solutions.md).\n", 1)
         lesson.write_text(text, encoding="utf-8")
     for markdown in ROOT.rglob("*.md"):
         if ".git" in markdown.parts:
             continue
         text = markdown.read_text(encoding="utf-8")
-        text = text.replace("practice/prompts.md", "practice/exercises.md")
+        text = text.replace("practice/prompts.md", "#independent-exercises")
         text = text.replace("generic prompt cards", "generic practice cards")
         markdown.write_text(text, encoding="utf-8")
-    print("Rewrote 120 learner practice files with exercises, hints, solutions, and onboarding navigation.")
+    print("Rewrote 120 learner lessons with canonical exercises, hints, solutions, and onboarding navigation.")
     return 0
 
 

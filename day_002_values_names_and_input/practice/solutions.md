@@ -1,6 +1,6 @@
 # Solution route: Day 2
 
-Use this guide after attempting the [exercises](exercises.md). It gives review checkpoints rather than a secret finished submission. Compare decisions, inputs, outputs, tests, and limitations for **Day 2: Variables, Names, Values, Input, and Output**.
+Use this guide after attempting the the numbered exercises in this lesson. It gives review checkpoints rather than a secret finished submission. Compare decisions, inputs, outputs, tests, and limitations for **Day 2: Variables, Names, Values, Input, and Output**.
 
 ## Review checkpoints
 

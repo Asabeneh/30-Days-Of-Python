@@ -11,7 +11,7 @@
 
 ## Start here
 
-Read the [course README](../README.md), complete the [setup guide](../SETUP.md) and [VS Code setup](../VS_CODE_SETUP.md), then use the [day index](../DAY_INDEX.md) to confirm where this lesson fits. Run the linked local starter before attempting the [exercises](practice/exercises.md), then use [hints](practice/hints.md) and [solutions](practice/solutions.md) only after an honest attempt.
+Read the [course README](../README.md), complete the [setup guide](../SETUP.md) and [VS Code setup](../VS_CODE_SETUP.md), then use the [day index](../DAY_INDEX.md) to confirm where this lesson fits. Run the linked local starter before attempting the the numbered exercises in this lesson, then use [hints](practice/hints.md) and [solutions](practice/solutions.md) only after an honest attempt.
 
 ## Table of contents
 
@@ -582,7 +582,7 @@ The program demonstrates organization and safe display. It does not authorize co
 
 ## Independent exercises
 
-Complete the numbered questions in [`practice/exercises.md`](practice/exercises.md) in order. Use hints only after a genuine attempt and solutions only to compare your reasoning.
+Complete the numbered questions in the numbered exercises in this lesson in order. Use hints only after a genuine attempt and solutions only to compare your reasoning.
 
 1. Create a value inventory containing a string, integer, float, Boolean, and `None`. Print each value and its type name.
 2. Assign `count = 0`, update it twice, and explain why `count = count + 1` is valid Python.

@@ -609,7 +609,7 @@ def render(lesson: Lesson) -> str:
             "",
             "## Exercises",
             "",
-            "Complete the numbered questions in [practice/exercises.md](practice/exercises.md) in order. Use the examples above as your starting point. Use [hints](practice/hints.md) only after a genuine attempt and [solutions](practice/solutions.md) only to compare your reasoning.",
+            "Complete the numbered questions in the numbered exercises in this lesson in order. Use the examples above as your starting point. Use [hints](practice/hints.md) only after a genuine attempt and [solutions](practice/solutions.md) only to compare your reasoning.",
             "",
             "## Finish line",
             "",

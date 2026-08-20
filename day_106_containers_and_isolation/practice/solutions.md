@@ -1,6 +1,6 @@
 # Solution route: Day 106
 
-Use this guide after attempting the [exercises](exercises.md). It gives review checkpoints rather than a secret finished submission. Compare decisions, inputs, outputs, tests, and limitations for **Day 106: Containers and Isolation Concepts**.
+Use this guide after attempting the the numbered exercises in this lesson. It gives review checkpoints rather than a secret finished submission. Compare decisions, inputs, outputs, tests, and limitations for **Day 106: Containers and Isolation Concepts**.
 
 ## Review checkpoints
 

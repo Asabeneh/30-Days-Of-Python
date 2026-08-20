@@ -11,7 +11,7 @@
 
 ## Start here
 
-Read the [course README](../README.md), complete the [setup guide](../SETUP.md) and [VS Code setup](../VS_CODE_SETUP.md), then use the [day index](../DAY_INDEX.md) to confirm where this lesson fits. Run the linked local starter before attempting the [exercises](practice/exercises.md), then use [hints](practice/hints.md) and [solutions](practice/solutions.md) only after an honest attempt.
+Read the [course README](../README.md), complete the [setup guide](../SETUP.md) and [VS Code setup](../VS_CODE_SETUP.md), then use the [day index](../DAY_INDEX.md) to confirm where this lesson fits. Run the linked local starter before attempting the the numbered exercises in this lesson, then use [hints](practice/hints.md) and [solutions](practice/solutions.md) only after an honest attempt.
 
 ## Table of contents
 
@@ -289,7 +289,7 @@ When a bound is reached, report that processing was incomplete. Do not silently 
 
 ## Independent exercises
 
-Complete these in [`practice/exercises.md`](practice/exercises.md) in order:
+Complete these in the numbered exercises in this lesson in order:
 
 1. Loop over three event names and predict the output order.
 2. Use `range(5)` and write down the exact values it produces.

@@ -1027,7 +1027,7 @@ def render(spec: Spec) -> str:
         "",
         "## Exercises",
         "",
-        "Complete the numbered questions in [practice/exercises.md](practice/exercises.md) in order. Run every requested command, create the requested artifact, and record the limitation the exercise asks you to name.",
+        "Complete the numbered questions in the numbered exercises in this lesson in order. Run every requested command, create the requested artifact, and record the limitation the exercise asks you to name.",
         "",
         "## Finish line",
         "",

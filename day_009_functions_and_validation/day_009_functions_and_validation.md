@@ -11,7 +11,7 @@
 
 ## Start here
 
-Read the [course README](../README.md), complete the [setup guide](../SETUP.md) and [VS Code setup](../VS_CODE_SETUP.md), then use the [day index](../DAY_INDEX.md) to confirm where this lesson fits. Run the linked local starter before attempting the [exercises](practice/exercises.md), then use [hints](practice/hints.md) and [solutions](practice/solutions.md) only after an honest attempt.
+Read the [course README](../README.md), complete the [setup guide](../SETUP.md) and [VS Code setup](../VS_CODE_SETUP.md), then use the [day index](../DAY_INDEX.md) to confirm where this lesson fits. Run the linked local starter before attempting the the numbered exercises in this lesson, then use [hints](practice/hints.md) and [solutions](practice/solutions.md) only after an honest attempt.
 
 ## Table of contents
 
@@ -340,7 +340,7 @@ A function contract is not authorization. A perfectly tested function can still 
 
 ## Independent exercises
 
-Complete these in [`practice/exercises.md`](practice/exercises.md) in order:
+Complete these in the numbered exercises in this lesson in order:
 
 1. Write `add_one` and explain parameter, argument, and return value.
 2. Write a function with a default source label.

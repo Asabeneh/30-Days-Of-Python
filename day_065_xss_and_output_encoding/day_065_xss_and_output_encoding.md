@@ -12,7 +12,7 @@
 
 ## Start here
 
-Read the [course README](../README.md), complete the [setup guide](../SETUP.md) and [VS Code setup](../VS_CODE_SETUP.md), then use the [day index](../DAY_INDEX.md) to confirm where this lesson fits. Run the linked local starter before attempting the [exercises](practice/exercises.md), then use [hints](practice/hints.md) and [solutions](practice/solutions.md) only after an honest attempt.
+Read the [course README](../README.md), complete the [setup guide](../SETUP.md) and [VS Code setup](../VS_CODE_SETUP.md), then use the [day index](../DAY_INDEX.md) to confirm where this lesson fits. Run the linked local starter before attempting the the numbered exercises in this lesson, then use [hints](practice/hints.md) and [solutions](practice/solutions.md) only after an honest attempt.
 
 ## Table of contents
 
@@ -230,7 +230,23 @@ A defensible report should distinguish at least four things: what was observed, 
 At the end, perform a small review. Check that the program uses only local fixtures, has a finite workload, handles malformed input, avoids raw sensitive output, and leaves the fixture unchanged. Then write one residual-risk sentence. A useful form is: "This lesson demonstrates Cross-Site Scripting and Output Encoding on synthetic data, but it does not establish authenticity, authorization, production readiness, or the presence of a real attack.
 ## Exercises
 
-Complete the numbered questions in [practice/exercises.md](practice/exercises.md) in order. Use the examples as a starting point, then record the requested output, edge case, and limitation.
+
+The following numbered exercises are the canonical practice for this lesson. Attempt them here in order; use the separate hints and solutions only after a genuine attempt.
+
+1. Run the starter for **Day 65: Cross-Site Scripting and Output Encoding** unchanged. What does it print, return, or create? Record the command and observed result.
+2. Define the main keyword from this lesson in plain language and point to the first line where the idea appears.
+3. Write down the input, operation, output, and owner of the important value before changing any code.
+4. Apply today's concept to the supplied synthetic fixture. State the file, function, component, or report you expect to change.
+5. Add one normal case and predict its result before running it.
+6. Add one boundary case and decide whether it should return a value, reject input, or show a safe empty/failure state.
+7. Add one invalid or malformed case. Capture the visible error or rejection without hiding it with a broad catch.
+8. Reproduce the deliberate mistake from the lesson, record the error, and repair the smallest possible line.
+9. Add a focused test or evidence note that would fail if the important behavior were removed.
+10. Explain the security, reliability, accessibility, or ownership boundary that today's example demonstrates.
+11. Write one limitation: what does your successful run not prove about a real system or production readiness?
+12. Prepare a short review note naming the changed files, commands, evidence, remaining risk, and next step.
+
+Use only the supplied fixtures or a local resettable example. Do not use real credentials, private data, public targets, or systems outside explicit authorization.
 
 ## Finish line
 

@@ -1,6 +1,6 @@
 # Solution route: Day 66
 
-Use this guide after attempting the [exercises](exercises.md). It gives review checkpoints rather than a secret finished submission. Compare decisions, inputs, outputs, tests, and limitations for **Day 66: CSRF, Cookies, and CORS**.
+Use this guide after attempting the the numbered exercises in this lesson. It gives review checkpoints rather than a secret finished submission. Compare decisions, inputs, outputs, tests, and limitations for **Day 66: CSRF, Cookies, and CORS**.
 
 ## Review checkpoints
 

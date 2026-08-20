@@ -1021,7 +1021,7 @@ def render(spec: Spec) -> str:
         "",
         "## Exercises",
         "",
-        "Complete the numbered questions in [practice/exercises.md](practice/exercises.md) in order. Use the examples as a starting point, then record the requested output, edge case, and limitation.",
+        "Complete the numbered questions in the numbered exercises in this lesson in order. Use the examples as a starting point, then record the requested output, edge case, and limitation.",
         "",
         "## Finish line",
         "",

@@ -12,7 +12,7 @@
 
 ## Start here
 
-Read the [course README](../README.md), complete the [setup guide](../SETUP.md) and [VS Code setup](../VS_CODE_SETUP.md), then use the [day index](../DAY_INDEX.md) to confirm where this lesson fits. Run the linked local starter before attempting the [exercises](practice/exercises.md), then use [hints](practice/hints.md) and [solutions](practice/solutions.md) only after an honest attempt.
+Read the [course README](../README.md), complete the [setup guide](../SETUP.md) and [VS Code setup](../VS_CODE_SETUP.md), then use the [day index](../DAY_INDEX.md) to confirm where this lesson fits. Run the linked local starter before attempting the the numbered exercises in this lesson, then use [hints](practice/hints.md) and [solutions](practice/solutions.md) only after an honest attempt.
 
 ## Table of contents
 
@@ -234,7 +234,24 @@ A defensible report should distinguish at least four things: what was observed, 
 At the end, perform a small review. Check that the program uses only local fixtures, has a finite workload, handles malformed input, avoids raw sensitive output, and leaves the fixture unchanged. Then write one residual-risk sentence. A useful form is: "This lesson demonstrates Timestamps, Timezones, and Incident Timelines on synthetic data, but it does not establish authenticity, authorization, production readiness, or the presence of a real attack.
 ## Exercises
 
-Complete the numbered questions in [practice/exercises.md](practice/exercises.md) in order. Use the examples above as your starting point. Use [hints](practice/hints.md) only after a genuine attempt and [solutions](practice/solutions.md) only to compare your reasoning.
+
+The following numbered exercises are the canonical practice for this lesson. Attempt them here in order; use the separate hints and solutions only after a genuine attempt.
+
+1. Parse `2026-08-20T12:00:00Z`. What timezone does the returned value use?
+2. What should happen when a timestamp has no timezone offset? Test the rejection.
+3. Parse two timestamps with different offsets and sort them in UTC. Which event occurred first?
+4. Preserve the original timestamp string beside the normalized datetime. Why is provenance useful?
+5. List two reasons a sorted timeline might still be an incomplete incident explanation.
+
+6. Apply the lesson to the supplied local synthetic fixture and state the expected artifact before running it.
+7. Add a normal case and predict the result before executing the code.
+8. Add a boundary case and explain the chosen behavior.
+9. Add an invalid case and keep the failure visible and understandable.
+10. Reproduce the deliberate mistake from the lesson and record the smallest repair.
+11. Add a focused test or evidence note for the most important behavior.
+12. Write one limitation and one review question for a teammate.
+
+Use only the supplied local, synthetic, bounded fixtures. Do not use real credentials, private data, public targets, or systems outside explicit authorization.
 
 ## Finish line
 

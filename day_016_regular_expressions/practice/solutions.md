@@ -1,6 +1,6 @@
 # Solution route: Day 16
 
-Use this guide after attempting the [exercises](exercises.md). It gives review checkpoints rather than a secret finished submission. Compare decisions, inputs, outputs, tests, and limitations for **Day 16: Regular Expressions and Careful Indicator Extraction**.
+Use this guide after attempting the the numbered exercises in this lesson. It gives review checkpoints rather than a secret finished submission. Compare decisions, inputs, outputs, tests, and limitations for **Day 16: Regular Expressions and Careful Indicator Extraction**.
 
 ## Review checkpoints
 

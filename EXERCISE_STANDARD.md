@@ -4,7 +4,7 @@ Every lesson ends with a question-driven `## Exercises` section. The exercise is
 
 ## Required shape
 
-Each `practice/exercises.md` file contains a numbered sequence of questions and tasks in the same order as the lesson. The preferred sequence is:
+Each the lesson’s numbered exercises file contains a numbered sequence of questions and tasks in the same order as the lesson. The preferred sequence is:
 
 1. **Try the examples.** Run the starter or the exact example from the lesson and record the output.
 2. **Check understanding.** Answer one or two short questions about values, control flow, data shape, or the execution trace.

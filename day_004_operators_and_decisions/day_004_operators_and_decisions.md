@@ -11,7 +11,7 @@
 
 ## Start here
 
-Read the [course README](../README.md), complete the [setup guide](../SETUP.md) and [VS Code setup](../VS_CODE_SETUP.md), then use the [day index](../DAY_INDEX.md) to confirm where this lesson fits. Run the linked local starter before attempting the [exercises](practice/exercises.md), then use [hints](practice/hints.md) and [solutions](practice/solutions.md) only after an honest attempt.
+Read the [course README](../README.md), complete the [setup guide](../SETUP.md) and [VS Code setup](../VS_CODE_SETUP.md), then use the [day index](../DAY_INDEX.md) to confirm where this lesson fits. Run the linked local starter before attempting the the numbered exercises in this lesson, then use [hints](practice/hints.md) and [solutions](practice/solutions.md) only after an honest attempt.
 
 ## Table of contents
 
@@ -737,7 +737,7 @@ This function returns a label; it does not accuse anyone. The third fixture reco
 
 ## Independent exercises
 
-Complete the numbered questions in [`practice/exercises.md`](practice/exercises.md) in order. Use hints only after a genuine attempt and solutions only to compare your reasoning.
+Complete the numbered questions in the numbered exercises in this lesson in order. Use hints only after a genuine attempt and solutions only to compare your reasoning.
 
 1. Write one expression using `+`, one using `-`, one using `*`, and one using `/`. Predict and then print all four results.
 2. Calculate `17 // 5` and `17 % 5`. Explain what each answer means in the language of complete groups and leftover records.

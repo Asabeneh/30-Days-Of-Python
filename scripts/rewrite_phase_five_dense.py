@@ -1021,7 +1021,7 @@ def render(lesson: Lesson) -> str:
         "",
         "## Exercises",
         "",
-        "Complete the numbered questions in [practice/exercises.md](practice/exercises.md) in order. Run the requested local command, inspect its output, and record the limitation asked for by the exercise.",
+        "Complete the numbered questions in the numbered exercises in this lesson in order. Run the requested local command, inspect its output, and record the limitation asked for by the exercise.",
         "",
         "## Finish line",
         "",
