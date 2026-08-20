@@ -54,3 +54,16 @@ def test_days_61_to_80_have_teaching_markers() -> None:
         assert "## Common mistakes" in text
         assert "## Security application" in text
         assert text.count("```python") >= 5
+
+
+def test_days_81_to_100_have_teaching_markers() -> None:
+    lessons = sorted(ROOT.glob("[0-9][0-9][0-9]_day_*/*.md"))[80:100]
+    assert len(lessons) == 20
+    for lesson in lessons:
+        text = lesson.read_text(encoding="utf-8")
+        assert len(text.splitlines()) >= 145
+        assert "## Worked examples" in text
+        assert "## Execution trace" in text
+        assert "## Common mistakes" in text
+        assert "## Security application" in text
+        assert text.count("```python") >= 5

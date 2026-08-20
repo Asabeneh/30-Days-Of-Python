@@ -1,6 +1,6 @@
-# Day 93: Safe service discovery
+# Day 93: Safe Service Discovery
 
-[Previous](../092_day_asset_inventory/092_day_asset_inventory.md) | [Next](../094_day_cve_and_severity_reasoning/094_day_cve_and_severity_reasoning.md)
+[← Day 92](../092_day_asset_inventory/092_day_asset_inventory.md) · [Day index](../DAY_INDEX.md) · [Day 94 →](../094_day_cve_and_severity_reasoning/094_day_cve_and_severity_reasoning.md)
 
 ## Table of Contents
 
@@ -9,43 +9,144 @@
 - [Outcomes](#outcomes)
 - [The problem](#the-problem)
 - [Security boundary](#security-boundary)
-- [Concept map](#concept-map)
-- [Practice](#practice)
-- [Mental model](#mental-model)
+- [Lesson](#lesson)
+- [Vocabulary](#vocabulary)
+- [Worked examples](#worked-examples)
+- [Execution trace](#execution-trace)
+- [Common mistakes](#common-mistakes)
+- [Security application](#security-application)
+- [Exercises](#exercises)
 - [Finish line](#finish-line)
 
 ## Why this lesson exists
 
-This lesson belongs to **Authorized Security Testing**. It turns one engineering concept into a runnable, testable, and explainable security practice. The final lesson will be expanded with execution traces, diagrams, common-mistake tables, and worked examples before that phase is marked complete.
+Discovery can be useful in a disposable lab and dangerous on an unowned network. The safe pattern is to use a supplied target list and verify one endpoint rather than scan ranges.
 
 ## Prerequisites
 
-Complete the previous lesson and keep the repository setup from [SETUP.md](../SETUP.md) available. Revisit the linked previous lesson if any term is unfamiliar.
+Complete Day 92. Use only the local fixtures and explicit loopback assessment scope supplied by the course.
 
 ## Outcomes
 
-By the end, you can explain the concept, run the starter, predict a result, write a small test, identify one failure mode, and state the security boundary of the exercise.
+By the end of this lesson, you can:
+
+- explain the concept before using a tool
+- run and modify every worked example
+- test normal, boundary, and failure behavior
+- state scope, evidence, and residual risk
+- complete the numbered exercises
 
 ## The problem
 
-Security engineering requires reliable decisions under imperfect input and failure. This day introduces **Safe service discovery** through a bounded local fixture before asking you to generalize the pattern.
+Check one approved local service from an explicit inventory and report unavailable versus closed without scanning.
 
 ## Security boundary
 
-Use only the supplied synthetic data or a local fixture. Do not substitute public targets, university systems, employer systems, real credentials, or private evidence. Stop if the scope changes.
+This lesson is educational and authorized-lab-only. It does not authorize public scanning, credential guessing, exploitation, interception, persistence, or changes to systems you do not own.
 
-## Concept map
+## Lesson
 
-Start with the smallest runnable example in `starter/main.py`. Trace the input, transformation, decision, and output. Then deliberately change one input and predict the result before running again. The full lesson expansion will add a visual data-flow diagram, a common-mistakes table, and an explanation of what the tool cannot conclude.
+### Vocabulary
+
+Discovery identifies reachable services. An allowlist is a fixed target set. A health check is a known request. A timeout limits waiting.
+
+## Worked examples
+
+### Example 1: Read targets
+
+Discovery begins with approved inventory, not guesses.
+
+```python
+targets = [{"host": "127.0.0.1", "port": 8000, "purpose": "training"}]
+print(targets)
+```
+
+**What to observe:**
+
+The target is explicit.
+
+### Example 2: Validate endpoint
+
+Reject targets outside the lab policy.
+
+```python
+target = targets[0]
+print(target["host"] == "127.0.0.1")
+```
+
+**What to observe:**
+
+Only loopback passes this example.
+
+### Example 3: Check one service
+
+A connection attempt is still an authorized action.
+
+```python
+check = {"target": "127.0.0.1:8000", "timeout": 1, "request": "health"}
+print(check)
+```
+
+**What to observe:**
+
+The operation is bounded.
+
+### Example 4: Classify result
+
+Unavailable and refused are different observations.
+
+```python
+print({"status": "unavailable", "meaning": "no conclusion about cause"})
+```
+
+**What to observe:**
+
+The interpretation is neutral.
+
+### Example 5: Stop after inventory
+
+Do not turn one check into a range scan.
+
+```python
+print({"targets_checked": 1, "range_scan": False})
+```
+
+**What to observe:**
+
+Scope is recorded.
+
+## Execution trace
+
+The tool loads an approved target, validates the host and port, performs one finite health check, records the transport result, and exits without expanding the target set.
+
+## Common mistakes
+
+| Mistake | Symptom | Correction |
+| --- | --- | --- |
+| scan subnet | unauthorized reconnaissance | use one supplied target |
+| retry many ports | scope expands | fixed endpoint |
+| timeout means closed | cause is overclaimed | report unknown/unavailable |
+| follow redirects | target changes | revalidate or disable |
+| no log of scope | review cannot verify | record target count |
+
+## Security application
+
+Use loopback and a disposable service only. No range scans, port sweeps, banner grabbing, or public targets.
 
 ## Exercises
 
-Complete the numbered questions in [practice/exercises.md](practice/exercises.md) in order. Run the requested commands, produce the requested artifact, and record the edge case or limitation asked for by the exercise. Use [hints](practice/hints.md) only after a real attempt and [solutions](practice/solutions.md) only to compare your reasoning.
-
-## Mental model
-
-> A security tool is a small program whose assumptions, inputs, outputs, and limits must be made visible.
+Complete the numbered questions in [practice/exercises.md](practice/exercises.md) in order. Record the requested evidence, expected behavior, edge case, and limitation.
 
 ## Finish line
 
-Run the starter, pass the day tests when present, complete the core practice, and write one sentence naming an edge case and one sentence naming the lab boundary.
+Run `python -m course_days.day093`, pass the relevant tests, complete the numbered exercises, and explain one edge case aloud or in writing.
+
+## Mental model
+
+> Safe discovery is an approved inventory check with a finite target and neutral result interpretation.
+
+## Limitations
+
+A failed connection can be caused by policy, routing, service state, or timeout; it does not reveal intent.
+
+[← Day 92](../092_day_asset_inventory/092_day_asset_inventory.md) · [Day index](../DAY_INDEX.md) · [Day 94 →](../094_day_cve_and_severity_reasoning/094_day_cve_and_severity_reasoning.md)

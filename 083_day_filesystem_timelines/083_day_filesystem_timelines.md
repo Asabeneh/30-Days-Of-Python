@@ -1,6 +1,6 @@
-# Day 83: Filesystem timelines
+# Day 83: Filesystem Timelines
 
-[Previous](../082_day_evidence_integrity/082_day_evidence_integrity.md) | [Next](../084_day_sqlite_artifacts/084_day_sqlite_artifacts.md)
+[← Day 82](../082_day_evidence_integrity/082_day_evidence_integrity.md) · [Day index](../DAY_INDEX.md) · [Day 84 →](../084_day_sqlite_artifacts/084_day_sqlite_artifacts.md)
 
 ## Table of Contents
 
@@ -9,43 +9,146 @@
 - [Outcomes](#outcomes)
 - [The problem](#the-problem)
 - [Security boundary](#security-boundary)
-- [Concept map](#concept-map)
-- [Practice](#practice)
-- [Mental model](#mental-model)
+- [Lesson](#lesson)
+- [Vocabulary](#vocabulary)
+- [Worked examples](#worked-examples)
+- [Execution trace](#execution-trace)
+- [Common mistakes](#common-mistakes)
+- [Security application](#security-application)
+- [Exercises](#exercises)
 - [Finish line](#finish-line)
 
 ## Why this lesson exists
 
-This lesson belongs to **Incident Response and Digital Forensics**. It turns one engineering concept into a runnable, testable, and explainable security practice. The final lesson will be expanded with execution traces, diagrams, common-mistake tables, and worked examples before that phase is marked complete.
+File metadata and content changes can help reconstruct a sequence. Timestamps are clues with clock, filesystem, and copying limitations—not an automatic story of who acted.
 
 ## Prerequisites
 
-Complete the previous lesson and keep the repository setup from [SETUP.md](../SETUP.md) available. Revisit the linked previous lesson if any term is unfamiliar.
+Complete Day 82. Use only the local fixtures and explicit loopback assessment scope supplied by the course.
 
 ## Outcomes
 
-By the end, you can explain the concept, run the starter, predict a result, write a small test, identify one failure mode, and state the security boundary of the exercise.
+By the end of this lesson, you can:
+
+- explain the concept before using a tool
+- run and modify every worked example
+- test normal, boundary, and failure behavior
+- state scope, evidence, and residual risk
+- complete the numbered exercises
 
 ## The problem
 
-Security engineering requires reliable decisions under imperfect input and failure. This day introduces **Filesystem timelines** through a bounded local fixture before asking you to generalize the pattern.
+Build a synthetic timeline from file events and identify gaps and ambiguous ordering.
 
 ## Security boundary
 
-Use only the supplied synthetic data or a local fixture. Do not substitute public targets, university systems, employer systems, real credentials, or private evidence. Stop if the scope changes.
+This lesson is educational and authorized-lab-only. It does not authorize public scanning, credential guessing, exploitation, interception, persistence, or changes to systems you do not own.
 
-## Concept map
+## Lesson
 
-Start with the smallest runnable example in `starter/main.py`. Trace the input, transformation, decision, and output. Then deliberately change one input and predict the result before running again. The full lesson expansion will add a visual data-flow diagram, a common-mistakes table, and an explanation of what the tool cannot conclude.
+### Vocabulary
+
+A filesystem timestamp is metadata about an operation or state. A timeline orders observations. Clock skew and copying can change interpretation.
+
+## Worked examples
+
+### Example 1: Represent events
+
+A timeline entry needs item, time, and source.
+
+```python
+events = [{"path": "a.txt", "kind": "modified", "time": "10:00Z"}]
+print(events)
+```
+
+**What to observe:**
+
+The event is a bounded observation.
+
+### Example 2: Sort parsed times
+
+Use aware timestamps rather than text sorting.
+
+```python
+from datetime import datetime
+
+events = ["2026-08-20T10:02:00+00:00", "2026-08-20T10:01:00+00:00"]
+print(sorted(map(datetime.fromisoformat, events)))
+```
+
+**What to observe:**
+
+The earlier instant comes first.
+
+### Example 3: Record source
+
+A copied file and an original need different provenance.
+
+```python
+events[0]["source"] = "synthetic-fixture"
+print(events[0])
+```
+
+**What to observe:**
+
+The source is attached.
+
+### Example 4: Flag clock uncertainty
+
+An event can be ordered while its exact meaning remains uncertain.
+
+```python
+print({"ordered": True, "clock_confidence": "low"})
+```
+
+**What to observe:**
+
+The report avoids overconfidence.
+
+### Example 5: Identify a gap
+
+Missing events are part of the timeline conclusion.
+
+```python
+print({"gap": "10:03–10:10Z", "explanation": "not observed"})
+```
+
+**What to observe:**
+
+The gap is explicit.
+
+## Execution trace
+
+The parser reads bounded metadata, converts timezones, sorts observations, attaches source and confidence, and reports missing windows rather than inventing actions.
+
+## Common mistakes
+
+| Mistake | Symptom | Correction |
+| --- | --- | --- |
+| timestamp equals action | metadata is overinterpreted | say observed time only |
+| text sort | offsets misorder events | parse aware time |
+| copied file treated as original | provenance is lost | record source and transformations |
+| no gaps | incomplete collection looks complete | report not observed |
+| identify a person | file metadata is not identity proof | avoid attribution |
+
+## Security application
+
+Use only synthetic files and timestamps. Do not inspect a real home directory, university system, or workplace disk.
 
 ## Exercises
 
-Complete the numbered questions in [practice/exercises.md](practice/exercises.md) in order. Run the requested commands, produce the requested artifact, and record the edge case or limitation asked for by the exercise. Use [hints](practice/hints.md) only after a real attempt and [solutions](practice/solutions.md) only to compare your reasoning.
-
-## Mental model
-
-> A security tool is a small program whose assumptions, inputs, outputs, and limits must be made visible.
+Complete the numbered questions in [practice/exercises.md](practice/exercises.md) in order. Record the requested evidence, expected behavior, edge case, and limitation.
 
 ## Finish line
 
-Run the starter, pass the day tests when present, complete the core practice, and write one sentence naming an edge case and one sentence naming the lab boundary.
+Run `python -m course_days.day083`, pass the relevant tests, complete the numbered exercises, and explain one edge case aloud or in writing.
+
+## Mental model
+
+> A timeline orders observations and exposes gaps; it does not establish causation or identity.
+
+## Limitations
+
+Filesystem semantics vary across platforms, filesystems, clocks, and copy tools.
+
+[← Day 82](../082_day_evidence_integrity/082_day_evidence_integrity.md) · [Day index](../DAY_INDEX.md) · [Day 84 →](../084_day_sqlite_artifacts/084_day_sqlite_artifacts.md)

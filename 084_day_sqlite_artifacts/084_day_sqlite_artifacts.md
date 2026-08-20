@@ -1,6 +1,6 @@
-# Day 84: SQLite artifacts
+# Day 84: SQLite Artifacts
 
-[Previous](../083_day_filesystem_timelines/083_day_filesystem_timelines.md) | [Next](../085_day_browser_and_document_artifacts/085_day_browser_and_document_artifacts.md)
+[← Day 83](../083_day_filesystem_timelines/083_day_filesystem_timelines.md) · [Day index](../DAY_INDEX.md) · [Day 85 →](../085_day_browser_and_document_artifacts/085_day_browser_and_document_artifacts.md)
 
 ## Table of Contents
 
@@ -9,43 +9,148 @@
 - [Outcomes](#outcomes)
 - [The problem](#the-problem)
 - [Security boundary](#security-boundary)
-- [Concept map](#concept-map)
-- [Practice](#practice)
-- [Mental model](#mental-model)
+- [Lesson](#lesson)
+- [Vocabulary](#vocabulary)
+- [Worked examples](#worked-examples)
+- [Execution trace](#execution-trace)
+- [Common mistakes](#common-mistakes)
+- [Security application](#security-application)
+- [Exercises](#exercises)
 - [Finish line](#finish-line)
 
 ## Why this lesson exists
 
-This lesson belongs to **Incident Response and Digital Forensics**. It turns one engineering concept into a runnable, testable, and explainable security practice. The final lesson will be expanded with execution traces, diagrams, common-mistake tables, and worked examples before that phase is marked complete.
+Applications often store useful evidence in local databases. Safe analysis requires read-only copies, schema discovery, parameterized queries, bounded rows, and careful handling of deleted or stale records.
 
 ## Prerequisites
 
-Complete the previous lesson and keep the repository setup from [SETUP.md](../SETUP.md) available. Revisit the linked previous lesson if any term is unfamiliar.
+Complete Day 83. Use only the local fixtures and explicit loopback assessment scope supplied by the course.
 
 ## Outcomes
 
-By the end, you can explain the concept, run the starter, predict a result, write a small test, identify one failure mode, and state the security boundary of the exercise.
+By the end of this lesson, you can:
+
+- explain the concept before using a tool
+- run and modify every worked example
+- test normal, boundary, and failure behavior
+- state scope, evidence, and residual risk
+- complete the numbered exercises
 
 ## The problem
 
-Security engineering requires reliable decisions under imperfect input and failure. This day introduces **SQLite artifacts** through a bounded local fixture before asking you to generalize the pattern.
+Inspect a disposable SQLite fixture and produce a query result without modifying the source database.
 
 ## Security boundary
 
-Use only the supplied synthetic data or a local fixture. Do not substitute public targets, university systems, employer systems, real credentials, or private evidence. Stop if the scope changes.
+This lesson is educational and authorized-lab-only. It does not authorize public scanning, credential guessing, exploitation, interception, persistence, or changes to systems you do not own.
 
-## Concept map
+## Lesson
 
-Start with the smallest runnable example in `starter/main.py`. Trace the input, transformation, decision, and output. Then deliberately change one input and predict the result before running again. The full lesson expansion will add a visual data-flow diagram, a common-mistakes table, and an explanation of what the tool cannot conclude.
+### Vocabulary
+
+A SQLite artifact is a database file. A schema describes tables and columns. Read-only analysis avoids altering the source. A query plan affects resource behavior.
+
+## Worked examples
+
+### Example 1: Connect to memory
+
+Use an in-memory database while learning SQL shape.
+
+```python
+import sqlite3
+
+db = sqlite3.connect(":memory:")
+db.execute("CREATE TABLE events (id INTEGER, kind TEXT)")
+print(db.execute("SELECT name FROM sqlite_master WHERE type='table'").fetchall())
+```
+
+**What to observe:**
+
+The table is visible.
+
+### Example 2: Insert fixture rows
+
+Synthetic data makes the query repeatable.
+
+```python
+db.executemany("INSERT INTO events VALUES (?, ?)", [(1, "login"), (2, "process")])
+print(db.execute("SELECT COUNT(*) FROM events").fetchone())
+```
+
+**What to observe:**
+
+`(2,)`
+
+### Example 3: Use parameters
+
+Values remain separate from SQL syntax.
+
+```python
+kind = "login"
+print(db.execute("SELECT id FROM events WHERE kind = ?", (kind,)).fetchall())
+```
+
+**What to observe:**
+
+`[(1,)]`
+
+### Example 4: Bound rows
+
+A forensic query should not accidentally return millions of rows.
+
+```python
+print(db.execute("SELECT id, kind FROM events LIMIT ?", (10,)).fetchall())
+```
+
+**What to observe:**
+
+The result is finite.
+
+### Example 5: Copy before work
+
+A source artifact should be preserved before analysis.
+
+```python
+paths = {"source": "evidence/app.db", "working_copy": "analysis/app.db"}
+print(paths)
+```
+
+**What to observe:**
+
+The source and copy are distinct.
+
+## Execution trace
+
+The analyst preserves a source copy, discovers schema, uses parameters and read-only operations, caps results, and records query purpose and limitations.
+
+## Common mistakes
+
+| Mistake | Symptom | Correction |
+| --- | --- | --- |
+| query original writable | evidence changes | work on a copy or read-only connection |
+| string SQL | injection and quoting errors | parameterize |
+| assume table names | query fails or misreads | inspect schema |
+| no limit | analysis exhausts resources | bound result |
+| missing timezone | timeline is wrong | normalize and preserve raw |
+
+## Security application
+
+Use only a disposable fixture. Do not open private browser, application, or workplace databases.
 
 ## Exercises
 
-Complete the numbered questions in [practice/exercises.md](practice/exercises.md) in order. Run the requested commands, produce the requested artifact, and record the edge case or limitation asked for by the exercise. Use [hints](practice/hints.md) only after a real attempt and [solutions](practice/solutions.md) only to compare your reasoning.
-
-## Mental model
-
-> A security tool is a small program whose assumptions, inputs, outputs, and limits must be made visible.
+Complete the numbered questions in [practice/exercises.md](practice/exercises.md) in order. Record the requested evidence, expected behavior, edge case, and limitation.
 
 ## Finish line
 
-Run the starter, pass the day tests when present, complete the core practice, and write one sentence naming an edge case and one sentence naming the lab boundary.
+Run `python -m course_days.day084`, pass the relevant tests, complete the numbered exercises, and explain one edge case aloud or in writing.
+
+## Mental model
+
+> Database analysis is a bounded, read-only interpretation of a preserved artifact.
+
+## Limitations
+
+SQLite internals, deleted records, journaling, and application semantics require specialized tools and careful authorization.
+
+[← Day 83](../083_day_filesystem_timelines/083_day_filesystem_timelines.md) · [Day index](../DAY_INDEX.md) · [Day 85 →](../085_day_browser_and_document_artifacts/085_day_browser_and_document_artifacts.md)

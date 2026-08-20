@@ -2,7 +2,7 @@
 
 | Days | Dense | Developing | Outline |
 | ---: | ---: | ---: | ---: |
-| 1–120 | 24 | 56 | 40 |
+| 1–120 | 24 | 76 | 20 |
 
 The report is a measurement aid, not a substitute for human review. Dense means the page has the required teaching sections, at least five worked examples, and at least 700 words.
 
@@ -68,46 +68,46 @@ The report is a measurement aid, not a substitute for human review. Dense means 
 | 58 | `058_day_safe_serialization` | 633 | 5 | 5 | developing |
 | 59 | `059_day_secure_errors_and_logging` | 646 | 5 | 5 | developing |
 | 60 | `060_day_project__tamper_evident_case_bundle` | 666 | 5 | 5 | developing |
-| 61 | `061_day_local_service_architecture` | 650 | 5 | 5 | developing |
+| 61 | `061_day_local_service_architecture` | 652 | 5 | 5 | developing |
 | 62 | `062_day_request_parsing_and_validation` | 644 | 5 | 5 | developing |
 | 63 | `063_day_authentication_and_authorization` | 632 | 5 | 5 | developing |
 | 64 | `064_day_injection_and_parameterized_queries` | 694 | 5 | 5 | developing |
 | 65 | `065_day_xss_and_output_encoding` | 683 | 5 | 5 | developing |
 | 66 | `066_day_csrf__cookies__and_cors` | 665 | 5 | 5 | developing |
 | 67 | `067_day_ssrf_and_outbound_controls` | 642 | 5 | 5 | developing |
-| 68 | `068_day_misconfiguration_and_defaults` | 607 | 5 | 5 | developing |
-| 69 | `069_day_supply_chain_and_exceptional_conditions` | 646 | 5 | 5 | developing |
-| 70 | `070_day_project__secure_case_api` | 651 | 5 | 5 | developing |
-| 71 | `071_day_telemetry_and_event_schemas` | 600 | 5 | 5 | developing |
-| 72 | `072_day_log_normalization` | 607 | 5 | 5 | developing |
+| 68 | `068_day_misconfiguration_and_defaults` | 609 | 5 | 5 | developing |
+| 69 | `069_day_supply_chain_and_exceptional_conditions` | 648 | 5 | 5 | developing |
+| 70 | `070_day_project__secure_case_api` | 653 | 5 | 5 | developing |
+| 71 | `071_day_telemetry_and_event_schemas` | 602 | 5 | 5 | developing |
+| 72 | `072_day_log_normalization` | 609 | 5 | 5 | developing |
 | 73 | `073_day_ioc_enrichment` | 612 | 5 | 5 | developing |
-| 74 | `074_day_detection_thresholds` | 629 | 5 | 5 | developing |
-| 75 | `075_day_mitre_att_ck_mapping` | 607 | 5 | 5 | developing |
+| 74 | `074_day_detection_thresholds` | 631 | 5 | 5 | developing |
+| 75 | `075_day_mitre_att_ck_mapping` | 611 | 5 | 5 | developing |
 | 76 | `076_day_alert_triage` | 606 | 5 | 5 | developing |
 | 77 | `077_day_baselines_and_anomalies` | 609 | 5 | 5 | developing |
-| 78 | `078_day_threat_intelligence_provenance` | 587 | 5 | 5 | developing |
-| 79 | `079_day_analyst_reporting` | 627 | 5 | 5 | developing |
-| 80 | `080_day_project__mini_detection_pipeline` | 645 | 5 | 5 | developing |
-| 81 | `081_day_response_lifecycle` | 352 | 0 | 0 | outline |
-| 82 | `082_day_evidence_integrity` | 352 | 0 | 0 | outline |
-| 83 | `083_day_filesystem_timelines` | 352 | 0 | 0 | outline |
-| 84 | `084_day_sqlite_artifacts` | 352 | 0 | 0 | outline |
-| 85 | `085_day_browser_and_document_artifacts` | 356 | 0 | 0 | outline |
-| 86 | `086_day_email_and_phishing_fixtures` | 356 | 0 | 0 | outline |
-| 87 | `087_day_network_evidence` | 352 | 0 | 0 | outline |
-| 88 | `088_day_volatile_evidence_concepts` | 354 | 0 | 0 | outline |
-| 89 | `089_day_incident_reporting` | 352 | 0 | 0 | outline |
-| 90 | `090_day_project__synthetic_breach_investigation` | 356 | 0 | 0 | outline |
-| 91 | `091_day_rules_of_engagement` | 352 | 0 | 0 | outline |
-| 92 | `092_day_asset_inventory` | 350 | 0 | 0 | outline |
-| 93 | `093_day_safe_service_discovery` | 352 | 0 | 0 | outline |
-| 94 | `094_day_cve_and_severity_reasoning` | 354 | 0 | 0 | outline |
-| 95 | `095_day_local_web_testing` | 352 | 0 | 0 | outline |
-| 96 | `096_day_authorization_testing` | 350 | 0 | 0 | outline |
-| 97 | `097_day_input_validation_testing` | 352 | 0 | 0 | outline |
-| 98 | `098_day_bounded_fuzzing` | 350 | 0 | 0 | outline |
-| 99 | `099_day_findings_and_retesting` | 352 | 0 | 0 | outline |
-| 100 | `100_day_project__authorized_local_assessment` | 354 | 0 | 0 | outline |
+| 78 | `078_day_threat_intelligence_provenance` | 589 | 5 | 5 | developing |
+| 79 | `079_day_analyst_reporting` | 631 | 5 | 5 | developing |
+| 80 | `080_day_project__mini_detection_pipeline` | 651 | 5 | 5 | developing |
+| 81 | `081_day_response_lifecycle` | 598 | 5 | 5 | developing |
+| 82 | `082_day_evidence_integrity` | 610 | 5 | 5 | developing |
+| 83 | `083_day_filesystem_timelines` | 587 | 5 | 5 | developing |
+| 84 | `084_day_sqlite_artifacts` | 601 | 5 | 5 | developing |
+| 85 | `085_day_browser_and_document_artifacts` | 611 | 5 | 5 | developing |
+| 86 | `086_day_email_and_phishing_fixtures` | 606 | 5 | 5 | developing |
+| 87 | `087_day_network_evidence` | 570 | 5 | 5 | developing |
+| 88 | `088_day_volatile_evidence_concepts` | 608 | 5 | 5 | developing |
+| 89 | `089_day_incident_reporting` | 597 | 5 | 5 | developing |
+| 90 | `090_day_project__synthetic_breach_investigation` | 606 | 5 | 5 | developing |
+| 91 | `091_day_rules_of_engagement` | 606 | 5 | 5 | developing |
+| 92 | `092_day_asset_inventory` | 582 | 5 | 5 | developing |
+| 93 | `093_day_safe_service_discovery` | 595 | 5 | 5 | developing |
+| 94 | `094_day_cve_and_severity_reasoning` | 595 | 5 | 5 | developing |
+| 95 | `095_day_local_web_testing` | 596 | 5 | 5 | developing |
+| 96 | `096_day_authorization_testing` | 601 | 5 | 5 | developing |
+| 97 | `097_day_input_validation_testing` | 600 | 5 | 5 | developing |
+| 98 | `098_day_bounded_fuzzing` | 614 | 5 | 5 | developing |
+| 99 | `099_day_findings_and_retesting` | 620 | 5 | 5 | developing |
+| 100 | `100_day_project__authorized_local_assessment` | 628 | 5 | 5 | developing |
 | 101 | `101_day_secure_sdlc` | 353 | 0 | 0 | outline |
 | 102 | `102_day_ci_quality_gates` | 355 | 0 | 0 | outline |
 | 103 | `103_day_static_analysis` | 353 | 0 | 0 | outline |

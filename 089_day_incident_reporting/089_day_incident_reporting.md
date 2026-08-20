@@ -1,6 +1,6 @@
-# Day 89: Incident reporting
+# Day 89: Incident Reporting
 
-[Previous](../088_day_volatile_evidence_concepts/088_day_volatile_evidence_concepts.md) | [Next](../090_day_project__synthetic_breach_investigation/090_day_project__synthetic_breach_investigation.md)
+[← Day 88](../088_day_volatile_evidence_concepts/088_day_volatile_evidence_concepts.md) · [Day index](../DAY_INDEX.md) · [Day 90 →](../090_day_project__synthetic_breach_investigation/090_day_project__synthetic_breach_investigation.md)
 
 ## Table of Contents
 
@@ -9,43 +9,146 @@
 - [Outcomes](#outcomes)
 - [The problem](#the-problem)
 - [Security boundary](#security-boundary)
-- [Concept map](#concept-map)
-- [Practice](#practice)
-- [Mental model](#mental-model)
+- [Lesson](#lesson)
+- [Vocabulary](#vocabulary)
+- [Worked examples](#worked-examples)
+- [Execution trace](#execution-trace)
+- [Common mistakes](#common-mistakes)
+- [Security application](#security-application)
+- [Exercises](#exercises)
 - [Finish line](#finish-line)
 
 ## Why this lesson exists
 
-This lesson belongs to **Incident Response and Digital Forensics**. It turns one engineering concept into a runnable, testable, and explainable security practice. The final lesson will be expanded with execution traces, diagrams, common-mistake tables, and worked examples before that phase is marked complete.
+A report converts technical observations into a shared decision record. It should be concise enough to use and detailed enough to reproduce, with separate facts, assessment, actions, and limitations.
 
 ## Prerequisites
 
-Complete the previous lesson and keep the repository setup from [SETUP.md](../SETUP.md) available. Revisit the linked previous lesson if any term is unfamiliar.
+Complete Day 88. Use only the local fixtures and explicit loopback assessment scope supplied by the course.
 
 ## Outcomes
 
-By the end, you can explain the concept, run the starter, predict a result, write a small test, identify one failure mode, and state the security boundary of the exercise.
+By the end of this lesson, you can:
+
+- explain the concept before using a tool
+- run and modify every worked example
+- test normal, boundary, and failure behavior
+- state scope, evidence, and residual risk
+- complete the numbered exercises
 
 ## The problem
 
-Security engineering requires reliable decisions under imperfect input and failure. This day introduces **Incident reporting** through a bounded local fixture before asking you to generalize the pattern.
+Write a synthetic incident report with an executive summary, timeline, evidence references, impact assessment, and next steps.
 
 ## Security boundary
 
-Use only the supplied synthetic data or a local fixture. Do not substitute public targets, university systems, employer systems, real credentials, or private evidence. Stop if the scope changes.
+This lesson is educational and authorized-lab-only. It does not authorize public scanning, credential guessing, exploitation, interception, persistence, or changes to systems you do not own.
 
-## Concept map
+## Lesson
 
-Start with the smallest runnable example in `starter/main.py`. Trace the input, transformation, decision, and output. Then deliberately change one input and predict the result before running again. The full lesson expansion will add a visual data-flow diagram, a common-mistakes table, and an explanation of what the tool cannot conclude.
+### Vocabulary
+
+An executive summary communicates impact and status. A timeline orders observations. An impact assessment states affected scope. An action item has an owner and due state.
+
+## Worked examples
+
+### Example 1: Write a summary
+
+Lead with scope, status, and confidence.
+
+```python
+summary = {"status": "investigating", "scope": "training fixture", "confidence": "low"}
+print(summary)
+```
+
+**What to observe:**
+
+The summary is cautious.
+
+### Example 2: Build a timeline
+
+Use evidence references rather than unsupported prose.
+
+```python
+timeline = [{"time": "10:00Z", "event": "fixture alert", "ref": "line-2"}]
+print(timeline)
+```
+
+**What to observe:**
+
+The event is traceable.
+
+### Example 3: Assess impact
+
+Impact is a bounded claim.
+
+```python
+impact = {"systems": 0, "real_users": 0, "training_records": 3}
+print(impact)
+```
+
+**What to observe:**
+
+The scope is explicit.
+
+### Example 4: Assign action
+
+Reports should result in owned follow-up.
+
+```python
+action = {"task": "add parser test", "owner": "student", "state": "open"}
+print(action)
+```
+
+**What to observe:**
+
+The action is concrete.
+
+### Example 5: State limitations
+
+A report protects readers from overtrust.
+
+```python
+limitations = ["synthetic", "no identity proof", "no live collection"]
+print(limitations)
+```
+
+**What to observe:**
+
+The limitations are visible.
+
+## Execution trace
+
+The report gathers validated observations, orders them, assesses bounded impact, records authorized actions, assigns owners, and preserves limitations and evidence references.
+
+## Common mistakes
+
+| Mistake | Symptom | Correction |
+| --- | --- | --- |
+| bury status | leaders cannot act | start with summary |
+| mix fact and interpretation | claims are hard to review | label sections |
+| no impact boundary | scope expands in retelling | quantify what is known |
+| no owner | action stalls | assign follow-up |
+| omit uncertainty | report becomes verdict | state confidence and gaps |
+
+## Security application
+
+Use synthetic events and fictional ownership. Do not report a real person, organization, or incident.
 
 ## Exercises
 
-Complete the numbered questions in [practice/exercises.md](practice/exercises.md) in order. Run the requested commands, produce the requested artifact, and record the edge case or limitation asked for by the exercise. Use [hints](practice/hints.md) only after a real attempt and [solutions](practice/solutions.md) only to compare your reasoning.
-
-## Mental model
-
-> A security tool is a small program whose assumptions, inputs, outputs, and limits must be made visible.
+Complete the numbered questions in [practice/exercises.md](practice/exercises.md) in order. Record the requested evidence, expected behavior, edge case, and limitation.
 
 ## Finish line
 
-Run the starter, pass the day tests when present, complete the core practice, and write one sentence naming an edge case and one sentence naming the lab boundary.
+Run `python -m course_days.day089`, pass the relevant tests, complete the numbered exercises, and explain one edge case aloud or in writing.
+
+## Mental model
+
+> A report is a shared, evidence-linked decision record with explicit scope and uncertainty.
+
+## Limitations
+
+Reports can be copied out of context and cannot replace incident command or legal review.
+
+[← Day 88](../088_day_volatile_evidence_concepts/088_day_volatile_evidence_concepts.md) · [Day index](../DAY_INDEX.md) · [Day 90 →](../090_day_project__synthetic_breach_investigation/090_day_project__synthetic_breach_investigation.md)
