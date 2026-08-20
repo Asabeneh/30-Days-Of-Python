@@ -49,7 +49,7 @@ A day is complete when you can run its starter, pass its acceptance checks, expl
 
 ## Repository standards
 
-The course quality contract is documented in [COURSE_QUALITY_STANDARD.md](COURSE_QUALITY_STANDARD.md). Use [TROUBLESHOOTING.md](TROUBLESHOOTING.md) when a command fails. Contributors should read [CONTRIBUTING.md](CONTRIBUTING.md) and [SECURITY.md](SECURITY.md). The repository's course doctor checks structure, links, safety documents, and required learner files.
+The course quality contract is documented in [COURSE_QUALITY_STANDARD.md](COURSE_QUALITY_STANDARD.md), and the actual teaching requirements are in [DENSE_LESSON_STANDARD.md](DENSE_LESSON_STANDARD.md). Use [TROUBLESHOOTING.md](TROUBLESHOOTING.md) when a command fails. Contributors should read [CONTRIBUTING.md](CONTRIBUTING.md) and [SECURITY.md](SECURITY.md). The repository's course doctor checks structure, links, safety documents, and required learner files.
 
 ## License and provenance
 

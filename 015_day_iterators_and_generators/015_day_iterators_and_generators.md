@@ -1,6 +1,6 @@
-# Day 15: Iterators, Generators, and Bounded Streaming
+# Day 15: Generators, Iterators, and Streaming Evidence
 
-[Previous](../014_day_files_and_safe_paths/014_day_files_and_safe_paths.md) | [Next](../016_day_regular_expressions/016_day_regular_expressions.md)
+[← Day 14](../014_day_files_and_safe_paths/014_day_files_and_safe_paths.md) · [Day index](../DAY_INDEX.md) · [Day 16 →](../016_day_regular_expressions/016_day_regular_expressions.md)
 
 ## Table of Contents
 
@@ -9,73 +9,159 @@
 - [Outcomes](#outcomes)
 - [The problem](#the-problem)
 - [Security boundary](#security-boundary)
-- [Core lesson](#core-lesson)
+- [Lesson](#lesson)
+- [Vocabulary](#vocabulary)
+- [Worked examples](#worked-examples)
+- [Execution trace](#execution-trace)
 - [Common mistakes](#common-mistakes)
-- [Practice](#practice)
-- [Mental model](#mental-model)
+- [Security application](#security-application)
+- [Exercises](#exercises)
 - [Finish line](#finish-line)
 
 ## Why this lesson exists
 
-Python becomes useful in cybersecurity when its behavior is predictable, testable, and explainable. This day introduces a professional engineering idea through a small local problem before asking you to combine it with other tools.
+A list loads everything before processing; a generator produces one item at a time. Streaming can reduce memory use, but it does not remove the need for bounds, error handling, or a completeness signal.
 
 ## Prerequisites
 
-You should be able to run the previous day, write a small function, and use the setup in [SETUP.md](../SETUP.md). If a term is unfamiliar, return to the previous lesson rather than copying a later pattern.
+Complete Days 1–14 and be able to read a bounded file path.
 
 ## Outcomes
 
-By the end, you can explain the core concept, trace the starter, predict a changed result, write a normal and negative test, and state what the exercise does not prove about a real system.
+By the end of this lesson, you can:
+
+- distinguish an iterable, iterator, and generator
+- use `yield` to stream records
+- preserve progress and truncation information
+- handle malformed lines without loading everything
+- explain when a generator is exhausted
 
 ## The problem
 
-Security data is untrusted, incomplete, and easy to misinterpret. The problem today is to make one transformation or decision explicit enough that another learner can run it, test it, and review its assumptions.
+A fixture may contain many lines. The tool should inspect a small window and stop safely while telling the reviewer whether the window was complete.
 
 ## Security boundary
 
-Use only the synthetic fixtures supplied by the course or a local file you created. Do not substitute public targets, university systems, employer systems, real credentials, or private evidence. Read `lab/scope.md` before changing the exercise.
+Use only the repository, synthetic examples, and local fixtures. The examples do not authorize access to public systems, university systems, employer systems, or accounts that you do not own.
 
-## Core lesson
+## Lesson
 
-A list loads all values into memory. An iterator produces values one at a time. Generators are useful for large logs, but a lazy pipeline still needs bounds, error handling, and observability.
+### Vocabulary
 
-### Problem first
+An **iterable** can produce an iterator. An **iterator** remembers its position. A **generator** is a convenient way to create an iterator with `yield`. A generator is lazy: its body runs when the caller asks for the next item.
 
-Process synthetic lines without building a second copy of the entire input.
+## Worked examples
+
+### Example 1: A generator function
+
+`yield` pauses the function and resumes it later.
 
 ```python
-def matching_lines(lines, needle):
+def numbers():
+    yield 1
+    yield 2
+
+
+items = numbers()
+print(next(items))
+print(next(items))
+```
+
+**What to observe:**
+
+`1` then `2`; a later `next` raises `StopIteration`.
+
+### Example 2: Stream matching lines
+
+Yield only matching synthetic lines instead of building a complete list.
+
+```python
+def matching(lines, needle):
     for line in lines:
         if needle in line:
             yield line
 ```
 
-### Execution trace
+**What to observe:**
 
-Calling `matching_lines` creates a generator without running its body. Each `next` request resumes the function until it yields a matching line. When the source is exhausted, Python raises `StopIteration` internally and the loop ends.
+The caller controls how many matches it consumes.
 
-### Security connection
+### Example 3: Add a bound
 
-Generators improve memory behavior but do not make untrusted input safe. Add maximum records, maximum line length, timeouts, and counters so the operator knows how much was processed.
+Streaming still needs a maximum to prevent endless input.
 
+```python
+def bounded(lines, limit):
+    for index, line in enumerate(lines):
+        if index >= limit:
+            return
+        yield line
+```
 
-### Common mistakes
+**What to observe:**
+
+Only `limit` values are yielded.
+
+### Example 4: Observe truncation
+
+Return status separately when a report needs to say whether input was complete.
+
+```python
+def preview(lines, limit):
+    values = list(bounded(lines, limit + 1))
+    return values[:limit], len(values) > limit
+```
+
+**What to observe:**
+
+The extra value lets the caller detect truncation.
+
+### Example 5: Generator exhaustion
+
+An iterator is stateful and cannot be replayed without creating another one.
+
+```python
+items = iter(["a", "b"])
+print(list(items))
+print(list(items))
+```
+
+**What to observe:**
+
+The first list has values; the second is empty.
+
+## Execution trace
+
+A generator enters its body only when `next` or a loop requests a value. After yielding the final item, the next request raises `StopIteration`, which a `for` loop handles for you.
+
+## Common mistakes
 
 | Mistake | Symptom | Correction |
 | --- | --- | --- |
-| Using a broad catch-all | A real failure looks like an empty success | Catch expected boundary errors and preserve unexpected failures |
-| Skipping the raw value | A reviewer cannot reproduce the decision | Keep raw input next to normalized or parsed fields |
-| Assuming a type hint is validation | Malformed runtime data still enters the function | Validate at the boundary and test rejection |
-| Optimizing before measuring | The code becomes harder to explain | Build the simplest correct version, then measure |
+| converting the generator to a list | memory use returns to input size | consume with a bound |
+| reusing an exhausted iterator | second pass is empty | create a new iterator |
+| no truncation flag | output looks complete | report whether the bound stopped work |
+| swallowing malformed lines | evidence disappears | count and report rejected records |
+| generator with hidden network calls | iteration performs surprising effects | keep the source local and explicit |
+
+## Security application
+
+Stream the supplied synthetic log fixture, stop at a line limit, count matches and rejected lines, and mark `truncated=true` when the source exceeded the bound.
 
 ## Exercises
 
-Complete the numbered questions in [practice/exercises.md](practice/exercises.md) in order. Run the requested commands, produce the requested artifact, and record the edge case or limitation asked for by the exercise. Use [hints](practice/hints.md) only after a real attempt and [solutions](practice/solutions.md) only to compare your reasoning.
-
-## Mental model
-
-> Iterators, Generators, and Bounded Streaming is valuable when the boundary, assumptions, failure behavior, and evidence are visible.
+Complete the numbered questions in [practice/exercises.md](practice/exercises.md) in order. Use the examples above as your starting point. Use [hints](practice/hints.md) only after a genuine attempt and [solutions](practice/solutions.md) only to compare your reasoning.
 
 ## Finish line
 
-Run the starter, pass the relevant tests, complete the numbered exercises, and explain one edge case aloud or in writing.
+Run `python -m course_days.day015`, pass the relevant tests, complete the numbered exercises, and explain one edge case aloud or in writing.
+
+## Mental model
+
+> A generator makes work lazy, not unlimited: the caller still owns the bound, progress, and completeness story.
+
+## Limitations
+
+Streaming changes memory behavior but not the trustworthiness of the input. A generator cannot authenticate a line or prevent a malicious source from producing endless data.
+
+[← Day 14](../014_day_files_and_safe_paths/014_day_files_and_safe_paths.md) · [Day index](../DAY_INDEX.md) · [Day 16 →](../016_day_regular_expressions/016_day_regular_expressions.md)

@@ -1,6 +1,6 @@
 # Course Quality Standard
 
-A lesson is not complete because it names a Python feature or a security tool. It is complete when a learner can **explain, predict, practise, apply, test, and communicate** the idea safely.
+A lesson is not complete because it names a Python feature or a security tool. It is complete when a learner can **explain, predict, practise, apply, test, and communicate** the idea safely. Every authored lesson must follow [DENSE_LESSON_STANDARD.md](DENSE_LESSON_STANDARD.md).
 
 ## Every lesson must contain
 
@@ -8,12 +8,12 @@ A lesson is not complete because it names a Python feature or a security tool. I
 2. Prerequisites written for a beginner, including the exact earlier day to revisit when needed.
 3. Observable outcomes using verbs such as explain, trace, write, test, compare, or document.
 4. The practical problem the concept solves before the syntax or tool appears.
-5. A small runnable starter with expected output and an execution trace.
+5. A substantial teaching body with vocabulary, the problem first, multiple worked examples, expected outputs, and an execution trace, plus a small runnable starter.
 6. Plain-language terminology followed by precise technical vocabulary.
-7. At least one common mistake, its symptom, and the smallest correction.
+7. At least five worked demonstrations when the concept warrants them, including normal, boundary, invalid, and cybersecurity cases; simple concepts may justify fewer with a clear explanation.
 8. A numbered `practice/exercises.md` file with direct questions, coding tasks, expected outputs, edge cases, and a challenge when appropriate.
 9. Separate `practice/hints.md` and `practice/solutions.md` that follow the exercise numbers; the reading flow must not reveal full answers.
-10. A one-sentence mental model, a finish line, and a short proof section.
+10. Common mistakes, design trade-offs, security limitations, a one-sentence mental model, a finish line, and a short proof section.
 
 ## Additional security requirements
 

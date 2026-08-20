@@ -1,6 +1,6 @@
 # Day 11: Function Contracts and Explicit Security Decisions
 
-[Previous](../010_day_checkpoint_log_triage/010_day_checkpoint_log_triage.md) | [Next](../012_day_modules_and_packages/012_day_modules_and_packages.md)
+[← Day 10](../010_day_checkpoint_log_triage/010_day_checkpoint_log_triage.md) · [Day index](../DAY_INDEX.md) · [Day 12 →](../012_day_modules_and_packages/012_day_modules_and_packages.md)
 
 ## Table of Contents
 
@@ -9,73 +9,159 @@
 - [Outcomes](#outcomes)
 - [The problem](#the-problem)
 - [Security boundary](#security-boundary)
-- [Core lesson](#core-lesson)
+- [Lesson](#lesson)
+- [Vocabulary](#vocabulary)
+- [Worked examples](#worked-examples)
+- [Execution trace](#execution-trace)
 - [Common mistakes](#common-mistakes)
-- [Practice](#practice)
-- [Mental model](#mental-model)
+- [Security application](#security-application)
+- [Exercises](#exercises)
 - [Finish line](#finish-line)
 
 ## Why this lesson exists
 
-Python becomes useful in cybersecurity when its behavior is predictable, testable, and explainable. This day introduces a professional engineering idea through a small local problem before asking you to combine it with other tools.
+A function is where an idea becomes a reusable promise. Security utilities become trustworthy when their inputs, outputs, failures, and side effects are visible enough for another person to review.
 
 ## Prerequisites
 
-You should be able to run the previous day, write a small function, and use the setup in [SETUP.md](../SETUP.md). If a term is unfamiliar, return to the previous lesson rather than copying a later pattern.
+Complete Days 1–10. You should be able to write a function, return a value, and test a boundary.
 
 ## Outcomes
 
-By the end, you can explain the core concept, trace the starter, predict a changed result, write a normal and negative test, and state what the exercise does not prove about a real system.
+By the end of this lesson, you can:
+
+- write a precondition and postcondition
+- distinguish a return value from a side effect
+- use keyword-only arguments and immutable defaults
+- preserve failure information
+- test a contract rather than an implementation detail
 
 ## The problem
 
-Security data is untrusted, incomplete, and easy to misinterpret. The problem today is to make one transformation or decision explicit enough that another learner can run it, test it, and review its assumptions.
+The phase-one classifier works, but its rules are hidden inside a script. A reviewer needs a small function whose contract says exactly which severity values are accepted, which label is returned, and what happens when the input is invalid.
 
 ## Security boundary
 
-Use only the synthetic fixtures supplied by the course or a local file you created. Do not substitute public targets, university systems, employer systems, real credentials, or private evidence. Read `lab/scope.md` before changing the exercise.
+Use only the repository, synthetic examples, and local fixtures. The examples do not authorize access to public systems, university systems, employer systems, or accounts that you do not own.
 
-## Core lesson
+## Lesson
 
-A function is a named contract: it receives defined inputs, performs a bounded transformation, and returns a documented result. In security code, vague contracts create hidden assumptions.
+### Vocabulary
 
-### Problem first
+A **precondition** describes what must be true before a call. A **postcondition** describes what the caller can rely on after a successful return. A **side effect** changes something outside the returned value, such as a file, log, database, or network service.
 
-A triage helper should not silently accept any object and guess what it means. It should receive an event mapping, require the fields it needs, and return a small result that a caller can test.
+## Worked examples
+
+### Example 1: The smallest contract
+
+A function can make its accepted input and returned value obvious.
 
 ```python
-def severity_label(severity: int) -> str:
+def double(value):
+    return value * 2
+
+
+print(double(4))
+```
+
+**What to observe:**
+
+8
+
+### Example 2: A bounded contract
+
+Validation belongs at the boundary so every caller receives the same rule.
+
+```python
+def severity_label(severity):
+    if not isinstance(severity, int):
+        raise TypeError("severity must be an integer")
     if not 0 <= severity <= 10:
         raise ValueError("severity must be between 0 and 10")
     return "high" if severity >= 7 else "normal"
 ```
 
-### Execution trace
+**What to observe:**
 
-For `severity_label(8)`, Python binds `severity` to `8`, checks the range, evaluates `8 >= 7` as `True`, and returns the string `"high"`. The caller receives a value; the function does not print, mutate global state, or decide that an incident occurred.
+`severity_label(7)` returns `high`; `severity_label(11)` raises `ValueError`.
 
-### Security connection
+### Example 3: Keyword-only safety options
 
-A narrow function is easier to review. Keep policy decisions pure where possible, return reasons alongside labels, and let the caller decide how to display or store the result. Type hints describe intent but do not replace runtime validation.
+Keyword-only parameters make an important option visible at the call site.
+
+```python
+def read_preview(path, *, max_bytes=4096):
+    if max_bytes <= 0:
+        raise ValueError("max_bytes must be positive")
+    return path.read_bytes()[:max_bytes]
+```
+
+**What to observe:**
+
+The caller must write `max_bytes=...`; an accidental positional limit is harder to review.
+
+### Example 4: Return instead of print
+
+Returning a structured value lets tests and callers inspect the decision without capturing terminal output.
+
+```python
+def finding(label, reason):
+    return {"label": label, "reason": reason}
 
 
-### Common mistakes
+result = finding("review", "high severity")
+print(result["label"])
+```
+
+**What to observe:**
+
+`review`
+
+### Example 5: Keep effects at the edge
+
+File access is a side effect and should be separated from a pure parser.
+
+```python
+def format_report(event):
+    return f"source={event['source']} severity={event['severity']}"
+```
+
+**What to observe:**
+
+The function returns text and does not open a file or contact a service.
+
+## Execution trace
+
+For `severity_label(8)`, Python binds the argument, checks its type, checks the range, evaluates `8 >= 7`, and returns `high`. For `severity_label("8")`, the type precondition fails before policy logic runs.
+
+## Common mistakes
 
 | Mistake | Symptom | Correction |
 | --- | --- | --- |
-| Using a broad catch-all | A real failure looks like an empty success | Catch expected boundary errors and preserve unexpected failures |
-| Skipping the raw value | A reviewer cannot reproduce the decision | Keep raw input next to normalized or parsed fields |
-| Assuming a type hint is validation | Malformed runtime data still enters the function | Validate at the boundary and test rejection |
-| Optimizing before measuring | The code becomes harder to explain | Build the simplest correct version, then measure |
+| no return | caller receives `None` | return the promised value |
+| broad `except` | programming errors become ordinary bad input | catch only expected boundary errors |
+| mutable default | calls share hidden state | use `None` or an immutable default |
+| hidden file write | a pure function changes evidence | keep effects in a small boundary function |
+| undocumented range | callers guess the policy | state preconditions and test boundaries |
+
+## Security application
+
+Refactor one phase-one rule into a pure function and add a contract table. The exercise must use only synthetic events and must distinguish the observation `rule matched` from the conclusion `attack occurred`.
 
 ## Exercises
 
-Complete the numbered questions in [practice/exercises.md](practice/exercises.md) in order. Run the requested commands, produce the requested artifact, and record the edge case or limitation asked for by the exercise. Use [hints](practice/hints.md) only after a real attempt and [solutions](practice/solutions.md) only to compare your reasoning.
-
-## Mental model
-
-> Function Contracts and Explicit Security Decisions is valuable when the boundary, assumptions, failure behavior, and evidence are visible.
+Complete the numbered questions in [practice/exercises.md](practice/exercises.md) in order. Use the examples above as your starting point. Use [hints](practice/hints.md) only after a genuine attempt and [solutions](practice/solutions.md) only to compare your reasoning.
 
 ## Finish line
 
-Run the starter, pass the relevant tests, complete the numbered exercises, and explain one edge case aloud or in writing.
+Run `python -m course_days.day011`, pass the relevant tests, complete the numbered exercises, and explain one edge case aloud or in writing.
+
+## Mental model
+
+> A function contract is a small trust boundary: explicit input enters, a defined result leaves, and side effects are visible.
+
+## Limitations
+
+A contract improves review but cannot prove that the caller supplied authentic data or that the policy is correct for a production environment.
+
+[← Day 10](../010_day_checkpoint_log_triage/010_day_checkpoint_log_triage.md) · [Day index](../DAY_INDEX.md) · [Day 12 →](../012_day_modules_and_packages/012_day_modules_and_packages.md)

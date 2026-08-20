@@ -1,6 +1,6 @@
-# Day 19: Testing as Executable Security Reasoning
+# Day 19: Testing Security Utilities
 
-[Previous](../018_day_classes_and_dataclasses/018_day_classes_and_dataclasses.md) | [Next](../020_day_project__log_triage_cli/020_day_project__log_triage_cli.md)
+[← Day 18](../018_day_classes_and_dataclasses/018_day_classes_and_dataclasses.md) · [Day index](../DAY_INDEX.md) · [Day 20 →](../020_day_project__log_triage_cli/020_day_project__log_triage_cli.md)
 
 ## Table of Contents
 
@@ -9,72 +9,155 @@
 - [Outcomes](#outcomes)
 - [The problem](#the-problem)
 - [Security boundary](#security-boundary)
-- [Core lesson](#core-lesson)
+- [Lesson](#lesson)
+- [Vocabulary](#vocabulary)
+- [Worked examples](#worked-examples)
+- [Execution trace](#execution-trace)
 - [Common mistakes](#common-mistakes)
-- [Practice](#practice)
-- [Mental model](#mental-model)
+- [Security application](#security-application)
+- [Exercises](#exercises)
 - [Finish line](#finish-line)
 
 ## Why this lesson exists
 
-Python becomes useful in cybersecurity when its behavior is predictable, testable, and explainable. This day introduces a professional engineering idea through a small local problem before asking you to combine it with other tools.
+Tests turn a claim about code into a repeatable check. Security tests should cover ordinary behavior, boundaries, malformed inputs, and the absence of dangerous side effects.
 
 ## Prerequisites
 
-You should be able to run the previous day, write a small function, and use the setup in [SETUP.md](../SETUP.md). If a term is unfamiliar, return to the previous lesson rather than copying a later pattern.
+Complete Days 1–18 and run the existing pytest suite once.
 
 ## Outcomes
 
-By the end, you can explain the core concept, trace the starter, predict a changed result, write a normal and negative test, and state what the exercise does not prove about a real system.
+By the end of this lesson, you can:
+
+- write a focused test
+- use arrange, act, assert
+- test boundaries and rejection paths
+- isolate filesystem work with temporary paths
+- distinguish unit evidence from system confidence
 
 ## The problem
 
-Security data is untrusted, incomplete, and easy to misinterpret. The problem today is to make one transformation or decision explicit enough that another learner can run it, test it, and review its assumptions.
+A parser that passes one happy-path test may still accept an invalid port, leak a token, or read outside its fixture. The test suite must make those failures visible.
 
 ## Security boundary
 
-Use only the synthetic fixtures supplied by the course or a local file you created. Do not substitute public targets, university systems, employer systems, real credentials, or private evidence. Read `lab/scope.md` before changing the exercise.
+Use only the repository, synthetic examples, and local fixtures. The examples do not authorize access to public systems, university systems, employer systems, or accounts that you do not own.
 
-## Core lesson
+## Lesson
 
-A test is a small, repeatable claim about behavior. Security tests should include expected behavior, rejected input, boundaries, and regression cases.
+### Vocabulary
 
-### Problem first
+A **unit test** checks one small behavior. A **fixture** prepares repeatable input. A **negative test** proves that an invalid or unsafe case is rejected. A **regression test** preserves a behavior after a bug is fixed.
 
-A parser that accepts one sample is not enough. Write tests that prove valid input works, malformed input is rejected, and a previous bug stays fixed.
+## Worked examples
+
+### Example 1: Arrange, act, assert
+
+Keep the test readable by separating setup, call, and expectation.
 
 ```python
-def test_severity_rejects_eleven():
-    with pytest.raises(ValueError):
-        parse_severity("11")
+def test_severity_label_high():
+    result = severity_label(8)
+    assert result == "high"
 ```
 
-### Execution trace
+**What to observe:**
 
-Pytest calls the test function. The context manager expects the block to raise `ValueError`; if it does not, the test fails. A passing test tells you that one stated claim held for one input.
+A failure points to the contract.
 
-### Security connection
+### Example 2: Parametrize boundaries
 
-Tests are evidence, not a security certificate. Combine unit tests with threat modeling, code review, dependency checks, and safe integration tests.
+Multiple boundary cases should share the same claim.
+
+```python
+import pytest
 
 
-### Common mistakes
+@pytest.mark.parametrize("value", [0, 10])
+def test_severity_boundaries(value):
+    assert severity_label(value) in {"normal", "high"}
+```
+
+**What to observe:**
+
+Both accepted endpoints are checked.
+
+### Example 3: Assert rejection
+
+A test should prove an invalid value fails for the intended reason.
+
+```python
+def test_bad_port_rejected():
+    with pytest.raises(ValueError, match="1..65535"):
+        parse_port("70000")
+```
+
+**What to observe:**
+
+The test fails if the value is silently accepted.
+
+### Example 4: Use a temporary path
+
+Filesystem tests should not write into the repository or a real home directory.
+
+```python
+def test_report(tmp_path):
+    path = tmp_path / "report.txt"
+    write_report(path, "training")
+    assert path.read_text(encoding="utf-8") == "training\n"
+```
+
+**What to observe:**
+
+pytest cleans the temporary directory.
+
+### Example 5: Test no secret leakage
+
+A report contract can assert that a token is absent.
+
+```python
+def test_report_redacts_token():
+    output = render({"token": "training-secret"})
+    assert "training-secret" not in output
+```
+
+**What to observe:**
+
+The negative property is explicit.
+
+## Execution trace
+
+A test first creates the fixture, calls one behavior, and then asserts the contract. A failure should tell you which claim broke; a test that only checks `result is not None` is weak evidence.
+
+## Common mistakes
 
 | Mistake | Symptom | Correction |
 | --- | --- | --- |
-| Using a broad catch-all | A real failure looks like an empty success | Catch expected boundary errors and preserve unexpected failures |
-| Skipping the raw value | A reviewer cannot reproduce the decision | Keep raw input next to normalized or parsed fields |
-| Assuming a type hint is validation | Malformed runtime data still enters the function | Validate at the boundary and test rejection |
-| Optimizing before measuring | The code becomes harder to explain | Build the simplest correct version, then measure |
+| testing implementation details | harmless refactor breaks tests | assert observable contracts |
+| only happy paths | malformed input is untested | add rejection and boundary cases |
+| shared real files | tests interfere or leak data | use `tmp_path` and fixtures |
+| giant integration test | failure location is unclear | keep units small and add focused integration tests |
+| trusting coverage alone | lines run without meaningful assertions | review the claims each test makes |
+
+## Security application
+
+Write tests for the phase-two tools: safe path rejection, bounded line handling, severity validation, timestamp timezone requirements, dataclass immutability, and redaction. Use only synthetic fixtures.
 
 ## Exercises
 
-Complete the numbered questions in [practice/exercises.md](practice/exercises.md) in order. Run the requested commands, produce the requested artifact, and record the edge case or limitation asked for by the exercise. Use [hints](practice/hints.md) only after a real attempt and [solutions](practice/solutions.md) only to compare your reasoning.
-
-## Mental model
-
-> Testing as Executable Security Reasoning is valuable when the boundary, assumptions, failure behavior, and evidence are visible.
+Complete the numbered questions in [practice/exercises.md](practice/exercises.md) in order. Use the examples above as your starting point. Use [hints](practice/hints.md) only after a genuine attempt and [solutions](practice/solutions.md) only to compare your reasoning.
 
 ## Finish line
 
-Run the starter, pass the relevant tests, complete the numbered exercises, and explain one edge case aloud or in writing.
+Run `python -m course_days.day019`, pass the relevant tests, complete the numbered exercises, and explain one edge case aloud or in writing.
+
+## Mental model
+
+> A test is a repeatable argument for one behavior; a suite becomes useful when it includes failure modes and security properties, not only successful output.
+
+## Limitations
+
+Passing tests do not prove absence of vulnerabilities, correctness of a threat model, or authorization to operate on a real system. They provide bounded evidence.
+
+[← Day 18](../018_day_classes_and_dataclasses/018_day_classes_and_dataclasses.md) · [Day index](../DAY_INDEX.md) · [Day 20 →](../020_day_project__log_triage_cli/020_day_project__log_triage_cli.md)

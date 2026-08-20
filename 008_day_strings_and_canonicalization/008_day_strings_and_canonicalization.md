@@ -1,6 +1,6 @@
 # Day 8: Strings, Encoding, and Canonicalization
 
-[Previous](../007_day_collections_and_iocs/007_day_collections_and_iocs.md) | [Next](../009_day_functions_and_validation/009_day_functions_and_validation.md)
+[← Day 7](../007_day_collections_and_iocs/007_day_collections_and_iocs.md) · [Day index](../DAY_INDEX.md) · [Day 9 →](../009_day_functions_and_validation/009_day_functions_and_validation.md)
 
 ## Table of Contents
 
@@ -10,84 +10,199 @@
 - [The problem](#the-problem)
 - [Security boundary](#security-boundary)
 - [Lesson](#lesson)
+- [Worked examples](#worked-examples)
+- [Execution trace](#execution-trace)
 - [Common mistakes](#common-mistakes)
-- [Practice](#practice)
-- [Mental model](#mental-model)
+- [Security application](#security-application)
+- [Exercises](#exercises)
 - [Finish line](#finish-line)
 
 ## Why this lesson exists
 
-This lesson is part of the first phase for a learner who may have never written code. It introduces one idea at a time and connects it to a small, safe cybersecurity problem.
+Text is where logs, usernames, URLs, commands, and evidence meet the program. Small differences in whitespace, case, Unicode, or encoding can cause duplicate records or incorrect comparisons.
 
 ## Prerequisites
 
-- Day 7 or “none” if this is Day 1.
-- A working setup from [SETUP.md](../SETUP.md).
-- The safety rules in [SAFETY_AND_LAB_RULES.md](../SAFETY_AND_LAB_RULES.md).
+Complete Day 7. Be able to iterate through a list and preserve raw values.
 
 ## Outcomes
 
-By the end, you can explain the day's mental model, run the starter, predict at least one result, correct one deliberate mistake, and apply the idea to a synthetic security fixture.
+By the end of this lesson, you can:
+
+- inspect and transform strings
+- distinguish raw text from normalized keys
+- explain Unicode text and UTF-8 bytes
+- canonicalize without destroying evidence
+- avoid unsafe assumptions about text
 
 ## The problem
 
-Security engineering is programming applied to systems, data, and decisions. If the underlying programming idea is vague, the security label only makes the confusion harder to see. This day gives the idea a small problem before adding tools.
+Two records contain `Admin`, ` admin `, and `Ａｄｍｉｎ`. A comparison policy may treat them as the same key, but an investigator may still need the original spellings.
 
 ## Security boundary
 
-This lesson uses only local text and synthetic examples. Do not replace the fixture path with a university, employer, public website, or another person's data. The objective is to learn a programming idea and a safe evidence habit, not to discover targets.
+Use only the repository, synthetic examples, and local fixtures. The examples may describe security signals, but they do not identify attackers, authorize testing, or justify touching public systems. Keep real credentials, private logs, and university or employer data out of the lesson.
 
 ## Lesson
-## Why this lesson exists
 
-Text may contain whitespace, case differences, Unicode forms, or alternate representations. Comparing text before deciding how it should be normalized can create false matches or missed matches.
+### Strings are sequences of text
 
-## The problem this solves
+```python
+message = "login_failed"
+print(len(message))
+print(message[0])
+print(message[-1])
+print(message[0:5])
+```
 
-Normalize a synthetic username or indicator using an explicit policy: trim surrounding whitespace, apply case folding when the field is case-insensitive, and preserve the raw value for evidence.
+Indexes begin at zero. Slicing creates a new string and excludes the stop index. Do not assume that one visible character always equals one byte.
+
+### Whitespace and case
 
 ```python
 raw = "  Admin  "
-normalized = raw.strip().casefold()
-print(raw, normalized)
+print(raw.strip())
+print(raw.strip().casefold())
 ```
 
-Normalization is not validation. It does not prove that the result is safe or authorized. It only makes a declared representation easier to compare.
+`strip` removes surrounding whitespace. `casefold` is designed for case-insensitive comparison. Keep `raw` if the original representation is evidence.
 
-## Finish line
+### Replace is not validation
 
-You can preserve raw text, normalize a field deliberately, and explain why canonicalization and validation are separate steps.
+```python
+value = "example.invalid/path"
+print(value.replace("/", "_"))
+```
 
+Replacement creates a transformed value. It does not prove that the original path or domain is valid, safe, or authorized.
+
+### Text and bytes
+
+```python
+text = "café"
+data = text.encode("utf-8")
+print(data)
+print(data.decode("utf-8"))
+```
+
+The string is Unicode text. UTF-8 encodes it as bytes for storage or transport. Decode with the encoding you expect; arbitrary decoding can corrupt or reject data.
+
+### Raw and canonical forms
+
+```python
+def canonical_key(text):
+    return " ".join(text.strip().casefold().split())
+
+
+raw = "  ADMIN   user "
+print(raw)
+print(canonical_key(raw))
+```
+
+The canonical key is useful for comparison, but it must not replace the raw observation in an evidence record.
+## Worked examples
+
+### Example 1: empty versus whitespace
+
+```python
+for value in ["", " ", "
+", "admin"]:
+    print(repr(value), bool(value), bool(value.strip()))
+```
+
+A whitespace string is non-empty but has no visible content after stripping. Test the rule you actually intend.
+
+### Example 2: Unicode normalization
+
+```python
+import unicodedata
+
+value = "Ａｄｍｉｎ"
+normalized = unicodedata.normalize("NFKC", value)
+print(normalized)
+```
+
+Unicode normalization can make visually equivalent forms comparable. It can also change representation, so retain the raw input.
+
+### Example 3: safe display
+
+```python
+line = "user=alice token=training-secret"
+print(line.replace("training-secret", "[REDACTED]"))
+```
+
+This is a demonstration only. Real redaction should identify fields structurally and test that secrets cannot appear through alternate formatting.
+
+### Example 4: bounded string input
+
+```python
+def accept_message(text, maximum=2000):
+    if len(text) > maximum:
+        raise ValueError("message is too long")
+    return text
+```
+
+Length limits protect later processing. They do not guarantee that the content is harmless.
+
+### Example 5: canonicalization with provenance
+
+```python
+record = {
+    "raw_username": "  Admin ",
+    "canonical_username": canonical_key("  Admin "),
+}
+print(record)
+```
+
+A reviewer can see both the original and the comparison key.
+
+## Execution trace
+
+For `canonical_key("  ADMIN   user ")`:
+
+| Step | Operation | Result |
+| ---: | --- | --- |
+| 1 | `strip()` | `"ADMIN   user"` |
+| 2 | `casefold()` | `"admin   user"` |
+| 3 | `split()` | `["admin", "user"]` |
+| 4 | `" ".join(...)` | `"admin user"` |
+
+The transformation is deterministic and explainable.
 
 ## Common mistakes
 
-The most useful debugging move is to reproduce the smallest failure, read the first error line, identify the value or assumption that differs from your expectation, and change one thing. Do not copy a large solution while the mental model is still unclear.
+| Mistake | Symptom | Correction |
+| --- | --- | --- |
+| normalizing in place | original evidence is lost | store raw and canonical values separately |
+| assuming ASCII | names or paths fail for Unicode | define encoding and test representative text |
+| using `lower` everywhere | some Unicode cases compare poorly | use `casefold` for comparison when appropriate |
+| stripping internal spaces | distinct values collapse | define whether internal whitespace is meaningful |
+| redacting only one spelling | a secret leaks in another form | model fields and test variants |
 
+## Security application
+
+Build a local normalizer for synthetic usernames or indicator keys. Produce a table with raw value, canonical key, and reason for normalization. Never resolve or contact a normalized indicator.
 ## Exercises
 
-Complete the numbered questions in [practice/exercises.md](practice/exercises.md) in order. Run the requested commands, produce the requested artifact, and record the edge case or limitation asked for by the exercise. Use [hints](practice/hints.md) only after a real attempt and [solutions](practice/solutions.md) only to compare your reasoning.
-
-## Mental model
-
-> The same visible text can have different representations, so comparison requires an explicit normalization policy.
+Complete the numbered questions in [practice/exercises.md](practice/exercises.md) in order. Use the examples from this lesson as your starting point. Use [hints](practice/hints.md) only after a genuine attempt and [solutions](practice/solutions.md) only to compare your reasoning.
 
 ## Finish line
 
-Run `python -m course_days.day008`, pass the relevant tests, complete the Level 1 and Level 2 practice, and write one sentence about an edge case or security boundary.
+Run the starter, pass the relevant tests, complete the numbered exercises, and explain one edge case aloud or in writing.
+
+## Mental model
+
+> Canonicalization creates a comparison representation; evidence handling requires preserving the original text and documenting every transformation.
+
+## Limitations
+
+No text normalization can determine intent or prove identity. Encoding errors, confusable characters, and lossy transformations require careful policy and review.
+
+## Optional video support
+
+Watch [CS50P Lecture 0](https://www.youtube.com/watch?v=JP7ITIXGpHk&t=24s) from `00:24` for the first program, then return to the local string examples.
+
+Use the [timestamped video catalog](../VIDEO_RESOURCES.md) only after running the local examples. The written lesson and Python documentation remain authoritative.
 
 
-<!-- video-resources:start -->
-## Video support
-
-**Optional recommendation:** [Learn Python - Full Course for Beginners [Tutorial]](https://www.youtube.com/watch?v=rfscVS0vtbw).
-
-- Watch [00:00–01:45: Introduction](https://www.youtube.com/watch?v=rfscVS0vtbw&t=0s) for **what the course covers**. Then return to this lesson and run the local starter.
-- Watch [01:45–06:40: Installing Python and PyCharm](https://www.youtube.com/watch?v=rfscVS0vtbw&t=105s) for **first installation**. Then return to this lesson and run the local starter.
-- Watch [06:40–10:23: Setup and Hello World](https://www.youtube.com/watch?v=rfscVS0vtbw&t=400s) for **first runnable program**. Then return to this lesson and run the local starter.
-- Watch [15:06–27:03: Variables and Data Types](https://www.youtube.com/watch?v=rfscVS0vtbw&t=906s) for **values and names**. Then return to this lesson and run the local starter.
-- Watch [27:03–38:18: Working With Strings](https://www.youtube.com/watch?v=rfscVS0vtbw&t=1623s) for **text values**. Then return to this lesson and run the local starter.
-- Watch [38:18–48:26: Working With Numbers](https://www.youtube.com/watch?v=rfscVS0vtbw&t=2298s) for **numeric operations**. Then return to this lesson and run the local starter.
-- Watch [48:26–1:00:00: Getting Input From Users](https://www.youtube.com/watch?v=rfscVS0vtbw&t=2906s) for **input is text at the boundary**. Then return to this lesson and run the local starter.
-
-Written alternative: [https://docs.python.org/3/tutorial/](https://docs.python.org/3/tutorial/).
-<!-- video-resources:end -->
+[← Day 7](../007_day_collections_and_iocs/007_day_collections_and_iocs.md) · [Day index](../DAY_INDEX.md) · [Day 9 →](../009_day_functions_and_validation/009_day_functions_and_validation.md)

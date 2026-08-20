@@ -1,6 +1,6 @@
-# Day 20: Project: Build a Safe Log-Triage CLI
+# Day 20: Checkpoint: Build a Log-Triage CLI
 
-[Previous](../019_day_testing_with_pytest/019_day_testing_with_pytest.md) | [Next](../021_day_virtual_environments/021_day_virtual_environments.md)
+[← Day 19](../019_day_testing_with_pytest/019_day_testing_with_pytest.md) · [Day index](../DAY_INDEX.md) · [Day 21 →](../021_day_virtual_environments/021_day_virtual_environments.md)
 
 ## Table of Contents
 
@@ -9,66 +9,147 @@
 - [Outcomes](#outcomes)
 - [The problem](#the-problem)
 - [Security boundary](#security-boundary)
-- [Core lesson](#core-lesson)
+- [Lesson](#lesson)
+- [Vocabulary](#vocabulary)
+- [Worked examples](#worked-examples)
+- [Execution trace](#execution-trace)
 - [Common mistakes](#common-mistakes)
-- [Practice](#practice)
-- [Mental model](#mental-model)
+- [Security application](#security-application)
+- [Exercises](#exercises)
 - [Finish line](#finish-line)
 
 ## Why this lesson exists
 
-Python becomes useful in cybersecurity when its behavior is predictable, testable, and explainable. This day introduces a professional engineering idea through a small local problem before asking you to combine it with other tools.
+A command-line tool is where modules, errors, files, generators, regex, timelines, dataclasses, and tests meet. This checkpoint turns the phase into a small artifact that another learner can run and review.
 
 ## Prerequisites
 
-You should be able to run the previous day, write a small function, and use the setup in [SETUP.md](../SETUP.md). If a term is unfamiliar, return to the previous lesson rather than copying a later pattern.
+Complete Days 11–19. Run formatting, linting, compilation, and tests before starting the project.
 
 ## Outcomes
 
-By the end, you can explain the core concept, trace the starter, predict a changed result, write a normal and negative test, and state what the exercise does not prove about a real system.
+By the end of this lesson, you can:
+
+- design a CLI with explicit arguments and exit statuses
+- compose validated modules without hidden side effects
+- produce bounded, explainable output
+- test normal, malformed, missing, and out-of-scope cases
+- write a threat model and limitations section
 
 ## The problem
 
-Security data is untrusted, incomplete, and easy to misinterpret. The problem today is to make one transformation or decision explicit enough that another learner can run it, test it, and review its assumptions.
+Build `log-triage` for the supplied synthetic fixture. It should accept an input path beneath a fixture root, process a maximum number of lines, classify only validated records, and write a report under a dedicated output directory.
 
 ## Security boundary
 
-Use only the synthetic fixtures supplied by the course or a local file you created. Do not substitute public targets, university systems, employer systems, real credentials, or private evidence. Read `lab/scope.md` before changing the exercise.
+Use only the repository, synthetic examples, and local fixtures. The examples do not authorize access to public systems, university systems, employer systems, or accounts that you do not own.
 
-## Core lesson
+## Lesson
 
-The first project combines the phase: read a bounded synthetic log, parse a small grammar, classify events, preserve raw evidence, and print an explainable report.
+### Vocabulary
 
-### Requirements
+A **CLI** is a user-facing boundary around program behavior. An **exit status** communicates success or failure to a shell or automation. A **report** should distinguish raw observations, derived labels, rejected records, and truncation.
 
-The CLI accepts a fixture path and a maximum number of lines. It must reject paths outside the supplied fixture directory, report malformed lines without crashing the complete run, preserve raw text in findings, and distinguish observations from analyst conclusions.
+## Worked examples
 
-### Suggested design
+### Example 1: Define the command
 
-Separate the program into input validation, line parsing, policy classification, and output formatting. Test each layer independently. Use a `main()` function that translates exceptions into a short user-facing error and a non-zero exit status.
+Use explicit options instead of positional magic for security-sensitive bounds.
 
-### Security connection
+```python
+python -m course_days.day020 --input shared/fixtures/events.log --limit 100 --output training-output/report.json
+```
 
-This is a triage helper, not an incident verdict. Its README must state its scope, data format, limitations, and how to reset the fixture.
+**What to observe:**
 
+The command states its input, limit, and output.
 
-### Common mistakes
+### Example 2: Parse arguments
+
+`argparse` provides help and type conversion, but application bounds still belong in validation.
+
+```python
+parser.add_argument("--limit", type=int, default=100)
+args = parser.parse_args([])
+print(args.limit)
+```
+
+**What to observe:**
+
+`100` is the documented default.
+
+### Example 3: Compose the pipeline
+
+Each stage should have a single responsibility.
+
+```python
+raw_lines = read_lines(input_path, limit)
+records = (parse_line(line) for line in raw_lines)
+validated = (validate(record) for record in records)
+```
+
+**What to observe:**
+
+The pipeline is lazy and bounded; add rejection accounting before production.
+
+### Example 4: Represent a report
+
+A structured report makes incomplete work visible.
+
+```python
+report = {"processed": 3, "accepted": 2, "rejected": 1, "truncated": False}
+```
+
+**What to observe:**
+
+The report does not pretend that rejected data was accepted.
+
+### Example 5: Exit deliberately
+
+Automation needs a stable status contract.
+
+```python
+if report["rejected"]:
+    raise SystemExit(2)
+raise SystemExit(0)
+```
+
+**What to observe:**
+
+The project must document whether rejected records are an error, warning, or expected result.
+
+## Execution trace
+
+The CLI parses options, resolves and bounds the input, streams lines, parses and validates records, applies the pure classifier, writes a safe report, and exits with a documented status. A failure in one boundary should not become an empty successful report.
+
+## Common mistakes
 
 | Mistake | Symptom | Correction |
 | --- | --- | --- |
-| Using a broad catch-all | A real failure looks like an empty success | Catch expected boundary errors and preserve unexpected failures |
-| Skipping the raw value | A reviewer cannot reproduce the decision | Keep raw input next to normalized or parsed fields |
-| Assuming a type hint is validation | Malformed runtime data still enters the function | Validate at the boundary and test rejection |
-| Optimizing before measuring | The code becomes harder to explain | Build the simplest correct version, then measure |
+| arbitrary input path | fixture boundary is bypassed | resolve beneath an allowed root |
+| unlimited default | CLI can consume unexpected resources | choose a finite default |
+| hidden output location | reports overwrite source data | require a dedicated output directory |
+| mixed raw and derived data | users cannot audit decisions | label fields clearly |
+| no README | another learner cannot reproduce it | document setup, scope, examples, and reset |
+
+## Security application
+
+The checkpoint is local-only and synthetic. The README must name the allowed fixture root, maximum line and byte limits, output cleanup, test command, threat model, false-positive limitations, and the fact that a label is not proof of compromise.
 
 ## Exercises
 
-Complete the numbered questions in [practice/exercises.md](practice/exercises.md) in order. Run the requested commands, produce the requested artifact, and record the edge case or limitation asked for by the exercise. Use [hints](practice/hints.md) only after a real attempt and [solutions](practice/solutions.md) only to compare your reasoning.
-
-## Mental model
-
-> Project: Build a Safe Log-Triage CLI is valuable when the boundary, assumptions, failure behavior, and evidence are visible.
+Complete the numbered questions in [practice/exercises.md](practice/exercises.md) in order. Use the examples above as your starting point. Use [hints](practice/hints.md) only after a genuine attempt and [solutions](practice/solutions.md) only to compare your reasoning.
 
 ## Finish line
 
-Run the starter, pass the relevant tests, complete the numbered exercises, and explain one edge case aloud or in writing.
+Run `python -m course_days.day020`, pass the relevant tests, complete the numbered exercises, and explain one edge case aloud or in writing.
+
+## Mental model
+
+> A CLI is a chain of explicit boundaries; its quality is the quality of its input contract, resource limits, evidence labels, and failure behavior.
+
+## Limitations
+
+This is not a production SIEM, incident-response platform, or detector of real attacks. It demonstrates composition and safe evidence handling. Real deployments require operational ownership, authorization, monitoring, and review.
+
+[← Day 19](../019_day_testing_with_pytest/019_day_testing_with_pytest.md) · [Day index](../DAY_INDEX.md) · [Day 21 →](../021_day_virtual_environments/021_day_virtual_environments.md)

@@ -1,6 +1,6 @@
 # Day 4: Operators, Comparisons, Truthiness, and Precedence
 
-[Previous](../003_day_types_and_parsing/003_day_types_and_parsing.md) | [Next](../005_day_branching_and_triage/005_day_branching_and_triage.md)
+[← Day 3](../003_day_types_and_parsing/003_day_types_and_parsing.md) · [Day index](../DAY_INDEX.md) · [Day 5 →](../005_day_branching_and_triage/005_day_branching_and_triage.md)
 
 ## Table of Contents
 
@@ -10,90 +10,196 @@
 - [The problem](#the-problem)
 - [Security boundary](#security-boundary)
 - [Lesson](#lesson)
+- [Worked examples](#worked-examples)
+- [Execution trace](#execution-trace)
 - [Common mistakes](#common-mistakes)
-- [Practice](#practice)
-- [Mental model](#mental-model)
+- [Security application](#security-application)
+- [Exercises](#exercises)
 - [Finish line](#finish-line)
 
 ## Why this lesson exists
 
-This lesson is part of the first phase for a learner who may have never written code. It introduces one idea at a time and connects it to a small, safe cybersecurity problem.
+Security decisions are combinations of facts. Operators let a program calculate, compare, combine, and reject conditions, but a misplaced parenthesis or truthiness assumption can reverse a decision.
 
 ## Prerequisites
 
-- Day 3 or “none” if this is Day 1.
-- A working setup from [SETUP.md](../SETUP.md).
-- The safety rules in [SAFETY_AND_LAB_RULES.md](../SAFETY_AND_LAB_RULES.md).
+Complete Days 1–3. Be able to parse integers and explain a boolean value.
 
 ## Outcomes
 
-By the end, you can explain the day's mental model, run the starter, predict at least one result, correct one deliberate mistake, and apply the idea to a synthetic security fixture.
+By the end of this lesson, you can:
+
+- calculate with arithmetic operators
+- compare values and combine conditions
+- predict precedence and use parentheses
+- distinguish false, missing, empty, and invalid data
+- review a security rule as a truth table
 
 ## The problem
 
-Security engineering is programming applied to systems, data, and decisions. If the underlying programming idea is vague, the security label only makes the confusion harder to see. This day gives the idea a small problem before adding tools.
+You need a rule that reviews a high-severity event only when it has a source and is not explicitly marked trusted. The rule must be readable and testable at its boundaries.
 
 ## Security boundary
 
-This lesson uses only local text and synthetic examples. Do not replace the fixture path with a university, employer, public website, or another person's data. The objective is to learn a programming idea and a safe evidence habit, not to discover targets.
+Use only the repository, synthetic examples, and local fixtures. The examples may describe security signals, but they do not identify attackers, authorize testing, or justify touching public systems. Keep real credentials, private logs, and university or employer data out of the lesson.
 
 ## Lesson
-## Why this lesson exists
 
-A single character can change a security decision. `and` versus `or`, `>` versus `>=`, or an unexpected precedence rule can turn a safe allowlist into an accidental bypass.
-
-## The problem this solves
-
-You need to express a policy such as “the event is in scope and either high severity or repeated.” Write the conditions in named pieces before combining them. Parentheses make intent visible.
+### Arithmetic is evaluation
 
 ```python
-in_scope = True
-severity = 8
-repeated = False
-needs_review = in_scope and (severity >= 7 or repeated)
-print(needs_review)
+print(2 + 3 * 4)
+print((2 + 3) * 4)
+print(7 // 3)
+print(7 % 3)
 ```
 
-Trace each comparison first. Then combine the resulting booleans. Do not rely on a reader remembering precedence.
+The output is `14`, `20`, `2`, and `1`. Multiplication happens before addition. Parentheses make the intended order visible. Floor division and remainder are useful when grouping records into batches, but do not confuse `//` with ordinary division.
 
-## Truthiness is not authorization
+### Comparisons produce booleans
 
-Empty strings, empty collections, zero, and `None` are falsy. That can be convenient for ordinary control flow, but security policy should usually compare an explicit value or use a named predicate. `if token:` does not prove that a token is valid, unexpired, or authorized.
+```python
+severity = 7
+print(severity >= 7)
+print(severity == "7")
+print(severity != 3)
+```
 
-## Finish line
+The output is `True`, `False`, and `True`. The integer `7` is not equal to the string `"7"`.
 
-You can predict a compound boolean expression, add parentheses to express intent, and distinguish a truthy value from a verified security fact.
+### Combine conditions deliberately
 
+```python
+severity = 8
+source = "auth"
+trusted = False
+review = severity >= 7 and source != "" and not trusted
+print(review)
+```
+
+The result is `True`. Read the expression as a sentence. If it becomes difficult to read, assign named boolean values and test them separately.
+
+### Membership and identity are different
+
+```python
+status = "login_failed"
+print("login" in status)
+print(status is "login_failed")
+```
+
+The first expression asks whether text occurs inside another value. The second uses identity and should not be used for ordinary string equality. Use `==` for values. Python may warn about the `is` comparison.
+
+### Truthiness is a conversion rule, not a security decision
+
+```python
+for value in ["", "false", [], [1], 0, 1, None]:
+    print(repr(value), bool(value))
+```
+
+Empty strings, empty collections, zero, and `None` are falsey. The non-empty string `"false"` is truthy. A user-controlled word must be parsed explicitly.
+## Worked examples
+
+### Example 1: parentheses make policy visible
+
+```python
+review = (severity >= 7 and source != "") or force_review
+```
+
+This means either the event is high severity with a source, or a separate trusted workflow forces review. Without parentheses, a reviewer must remember precedence rules.
+
+### Example 2: truth table for a triage rule
+
+| Severity high? | Source present? | Trusted? | Review? |
+| --- | --- | --- | --- |
+| no | yes | no | no |
+| yes | yes | no | yes |
+| yes | no | no | no |
+| yes | yes | yes | no |
+
+Writing the table before coding exposes ambiguity. Should a trusted high-severity event be excluded or still reviewed? The owner must decide.
+
+### Example 3: explicit text parsing
+
+```python
+def parse_trusted(text):
+    value = text.strip().casefold()
+    if value == "true":
+        return True
+    if value == "false":
+        return False
+    raise ValueError("trusted must be true or false")
+```
+
+Now `parse_trusted("false")` returns `False`, unlike `bool("false")`.
+
+### Example 4: short-circuiting
+
+```python
+def has_source(event):
+    return bool(event.get("source"))
+
+
+review = event.get("severity", 0) >= 7 and has_source(event)
+```
+
+If the severity comparison is false, Python does not need to call `has_source`. Short-circuiting can avoid unsafe work, but do not hide required validation inside a condition that may never run.
+
+### Example 5: range checks
+
+```python
+def valid_severity(value):
+    return 0 <= value <= 10
+```
+
+Chained comparisons read like mathematics. Test `0`, `10`, `-1`, and `11`; the boundaries are where off-by-one mistakes appear.
+
+## Execution trace
+
+For `severity=8`, `source="auth"`, `trusted=False`:
+
+| Step | Expression | Result |
+| ---: | --- | --- |
+| 1 | `severity >= 7` | `True` |
+| 2 | `source != ""` | `True` |
+| 3 | `not trusted` | `True` |
+| 4 | combine with `and` | `True` |
+
+Change `trusted` to `True`; step 3 becomes `False` and the final result becomes `False`.
 
 ## Common mistakes
 
-The most useful debugging move is to reproduce the smallest failure, read the first error line, identify the value or assumption that differs from your expectation, and change one thing. Do not copy a large solution while the mental model is still unclear.
+| Mistake | Symptom | Correction |
+| --- | --- | --- |
+| Missing parentheses | a rule passes the wrong combination | write a truth table and parenthesize |
+| `is` for string equality | warnings or inconsistent behavior | use `==` |
+| `bool("false")` | false text becomes true | parse allowed words |
+| `x == 1 or 2` | condition is always truthy | write `x == 1 or x == 2` |
+| treating empty as malicious | missing data becomes a conclusion | label missing data explicitly |
 
+## Security application
+
+Implement a pure `needs_review(event)` function for synthetic events. Return a boolean and write a separate explanation function. The decision must not print, open files, or contact services, so it can be tested exhaustively.
 ## Exercises
 
-Complete the numbered questions in [practice/exercises.md](practice/exercises.md) in order. Run the requested commands, produce the requested artifact, and record the edge case or limitation asked for by the exercise. Use [hints](practice/hints.md) only after a real attempt and [solutions](practice/solutions.md) only to compare your reasoning.
-
-## Mental model
-
-> A security decision is only as correct as the exact expression and assumptions that produce it.
+Complete the numbered questions in [practice/exercises.md](practice/exercises.md) in order. Use the examples from this lesson as your starting point. Use [hints](practice/hints.md) only after a genuine attempt and [solutions](practice/solutions.md) only to compare your reasoning.
 
 ## Finish line
 
-Run `python -m course_days.day004`, pass the relevant tests, complete the Level 1 and Level 2 practice, and write one sentence about an edge case or security boundary.
+Run the starter, pass the relevant tests, complete the numbered exercises, and explain one edge case aloud or in writing.
+
+## Mental model
+
+> A security decision is a boolean expression with assumptions; make the assumptions visible, test the truth table, and never confuse falsey data with a security conclusion.
+
+## Limitations
+
+The rule is only a training policy. Real organizations need documented risk ownership, trusted data sources, escalation procedures, and review of false positives and negatives.
+
+## Optional video support
+
+Watch [CS50P Lecture 0](https://www.youtube.com/watch?v=JP7ITIXGpHk&t=306s) from `05:06` for function arguments and side effects.
+
+Use the [timestamped video catalog](../VIDEO_RESOURCES.md) only after running the local examples. The written lesson and Python documentation remain authoritative.
 
 
-<!-- video-resources:start -->
-## Video support
-
-**Optional recommendation:** [Learn Python - Full Course for Beginners [Tutorial]](https://www.youtube.com/watch?v=rfscVS0vtbw).
-
-- Watch [00:00–01:45: Introduction](https://www.youtube.com/watch?v=rfscVS0vtbw&t=0s) for **what the course covers**. Then return to this lesson and run the local starter.
-- Watch [01:45–06:40: Installing Python and PyCharm](https://www.youtube.com/watch?v=rfscVS0vtbw&t=105s) for **first installation**. Then return to this lesson and run the local starter.
-- Watch [06:40–10:23: Setup and Hello World](https://www.youtube.com/watch?v=rfscVS0vtbw&t=400s) for **first runnable program**. Then return to this lesson and run the local starter.
-- Watch [15:06–27:03: Variables and Data Types](https://www.youtube.com/watch?v=rfscVS0vtbw&t=906s) for **values and names**. Then return to this lesson and run the local starter.
-- Watch [27:03–38:18: Working With Strings](https://www.youtube.com/watch?v=rfscVS0vtbw&t=1623s) for **text values**. Then return to this lesson and run the local starter.
-- Watch [38:18–48:26: Working With Numbers](https://www.youtube.com/watch?v=rfscVS0vtbw&t=2298s) for **numeric operations**. Then return to this lesson and run the local starter.
-- Watch [48:26–1:00:00: Getting Input From Users](https://www.youtube.com/watch?v=rfscVS0vtbw&t=2906s) for **input is text at the boundary**. Then return to this lesson and run the local starter.
-
-Written alternative: [https://docs.python.org/3/tutorial/](https://docs.python.org/3/tutorial/).
-<!-- video-resources:end -->
+[← Day 3](../003_day_types_and_parsing/003_day_types_and_parsing.md) · [Day index](../DAY_INDEX.md) · [Day 5 →](../005_day_branching_and_triage/005_day_branching_and_triage.md)

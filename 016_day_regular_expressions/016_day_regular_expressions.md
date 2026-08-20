@@ -1,6 +1,6 @@
-# Day 16: Regular Expressions and Structured Indicator Extraction
+# Day 16: Regular Expressions and Careful Indicator Extraction
 
-[Previous](../015_day_iterators_and_generators/015_day_iterators_and_generators.md) | [Next](../017_day_dates_and_timelines/017_day_dates_and_timelines.md)
+[← Day 15](../015_day_iterators_and_generators/015_day_iterators_and_generators.md) · [Day index](../DAY_INDEX.md) · [Day 17 →](../017_day_dates_and_timelines/017_day_dates_and_timelines.md)
 
 ## Table of Contents
 
@@ -9,72 +9,153 @@
 - [Outcomes](#outcomes)
 - [The problem](#the-problem)
 - [Security boundary](#security-boundary)
-- [Core lesson](#core-lesson)
+- [Lesson](#lesson)
+- [Vocabulary](#vocabulary)
+- [Worked examples](#worked-examples)
+- [Execution trace](#execution-trace)
 - [Common mistakes](#common-mistakes)
-- [Practice](#practice)
-- [Mental model](#mental-model)
+- [Security application](#security-application)
+- [Exercises](#exercises)
 - [Finish line](#finish-line)
 
 ## Why this lesson exists
 
-Python becomes useful in cybersecurity when its behavior is predictable, testable, and explainable. This day introduces a professional engineering idea through a small local problem before asking you to combine it with other tools.
+Regular expressions are useful for finding candidate shapes in text, such as an IP-like token or an event ID. They are not complete validators and must never turn a match into an accusation.
 
 ## Prerequisites
 
-You should be able to run the previous day, write a small function, and use the setup in [SETUP.md](../SETUP.md). If a term is unfamiliar, return to the previous lesson rather than copying a later pattern.
+Complete Days 1–15 and understand strings, generators, and bounded processing.
 
 ## Outcomes
 
-By the end, you can explain the core concept, trace the starter, predict a changed result, write a normal and negative test, and state what the exercise does not prove about a real system.
+By the end of this lesson, you can:
+
+- write a small regex with named groups
+- use `finditer` to preserve positions
+- distinguish candidate extraction from validation
+- avoid catastrophic patterns and excessive input
+- retain raw context and confidence
 
 ## The problem
 
-Security data is untrusted, incomplete, and easy to misinterpret. The problem today is to make one transformation or decision explicit enough that another learner can run it, test it, and review its assumptions.
+A synthetic log line contains several tokens. Extract candidates with their positions, then validate the candidate using ordinary Python logic. The report must preserve the original line number without storing unnecessary raw data.
 
 ## Security boundary
 
-Use only the synthetic fixtures supplied by the course or a local file you created. Do not substitute public targets, university systems, employer systems, real credentials, or private evidence. Read `lab/scope.md` before changing the exercise.
+Use only the repository, synthetic examples, and local fixtures. The examples do not authorize access to public systems, university systems, employer systems, or accounts that you do not own.
 
-## Core lesson
+## Lesson
 
-Regular expressions describe text patterns. They are useful for small, known formats, but a pattern is not proof that a value is valid, malicious, or attributable.
+### Vocabulary
 
-### Problem first
+A **pattern** describes text shape. A **match** is evidence that the shape occurred. A **capture group** returns part of a match. A **validator** applies domain rules that a pattern alone may not express.
 
-Extract candidate IPv4-like strings from a synthetic line, then validate the candidate with a second rule. Keep the raw line for review.
+## Worked examples
+
+### Example 1: Find a simple field
+
+A named group makes the captured value readable.
 
 ```python
 import re
 
-IP_CANDIDATE = re.compile(r"(?<![0-9])(?:[0-9]{1,3}\.){3}[0-9]{1,3}(?![0-9])")
+pattern = re.compile(r"user=(?P<user>[a-z0-9_-]+)")
+match = pattern.search("user=alice status=ok")
+print(match.group("user"))
 ```
 
-### Execution trace
+**What to observe:**
 
-The pattern scans left to right and yields candidate spans. A candidate such as `999.1.1.1` matches the shape but fails an octet-range check. Extraction and validation are separate steps.
+`alice`
 
-### Security connection
+### Example 2: Find every candidate
 
-Avoid catastrophic backtracking patterns, unbounded input, and assumptions that a match is an indicator of compromise. Test ordinary text, malformed text, Unicode text, and long lines.
+`finditer` provides each match and its position.
 
+```python
+for match in re.finditer(r"id=(?P<id>\d+)", "id=12 id=99"):
+    print(match.group("id"), match.start())
+```
 
-### Common mistakes
+**What to observe:**
+
+`12 0` and `99 6` with positions relative to the string.
+
+### Example 3: Validate an IP-like candidate
+
+A simple shape can be checked with numeric policy afterward.
+
+```python
+def valid_ipv4(text):
+    parts = text.split(".")
+    return len(parts) == 4 and all(
+        part.isdigit() and 0 <= int(part) <= 255 for part in parts
+    )
+```
+
+**What to observe:**
+
+`203.0.113.8` is accepted; `999.1.1.1` is rejected.
+
+### Example 4: Avoid a greedy match
+
+A narrow character class prevents a pattern from swallowing unrelated text.
+
+```python
+pattern = re.compile(r"token=(?P<token>[^\s]+)")
+print(pattern.search("token=abc next=value").group("token"))
+```
+
+**What to observe:**
+
+`abc`; the match stops at whitespace.
+
+### Example 5: Bound the input
+
+A regex should not process an unbounded line supplied by an unknown source.
+
+```python
+line = line[:2000]
+if len(line) == 2000:
+    truncated = True
+```
+
+**What to observe:**
+
+The report can say that matching occurred on a bounded preview.
+
+## Execution trace
+
+For `user=alice`, the pattern first locates the literal `user=`, captures allowed characters into `user`, and returns the group. For a candidate IP, extraction finds text first and validation checks four numeric octets afterward.
+
+## Common mistakes
 
 | Mistake | Symptom | Correction |
 | --- | --- | --- |
-| Using a broad catch-all | A real failure looks like an empty success | Catch expected boundary errors and preserve unexpected failures |
-| Skipping the raw value | A reviewer cannot reproduce the decision | Keep raw input next to normalized or parsed fields |
-| Assuming a type hint is validation | Malformed runtime data still enters the function | Validate at the boundary and test rejection |
-| Optimizing before measuring | The code becomes harder to explain | Build the simplest correct version, then measure |
+| pattern is a validator | malformed candidate is trusted | validate with domain logic |
+| greedy `.*` | one match consumes too much | use narrow classes and test boundaries |
+| no input bound | expensive matching on huge data | cap line length |
+| losing positions | reviewer cannot locate evidence | store line and character positions |
+| printing full sensitive line | data leaks into output | report a redacted excerpt or identifier |
+
+## Security application
+
+Extract candidate IP-like values only from the synthetic fixture. Preserve line number and character position, validate octets, and label the result `candidate` rather than `malicious`.
 
 ## Exercises
 
-Complete the numbered questions in [practice/exercises.md](practice/exercises.md) in order. Run the requested commands, produce the requested artifact, and record the edge case or limitation asked for by the exercise. Use [hints](practice/hints.md) only after a real attempt and [solutions](practice/solutions.md) only to compare your reasoning.
-
-## Mental model
-
-> Regular Expressions and Structured Indicator Extraction is valuable when the boundary, assumptions, failure behavior, and evidence are visible.
+Complete the numbered questions in [practice/exercises.md](practice/exercises.md) in order. Use the examples above as your starting point. Use [hints](practice/hints.md) only after a genuine attempt and [solutions](practice/solutions.md) only to compare your reasoning.
 
 ## Finish line
 
-Run the starter, pass the relevant tests, complete the numbered exercises, and explain one edge case aloud or in writing.
+Run `python -m course_days.day016`, pass the relevant tests, complete the numbered exercises, and explain one edge case aloud or in writing.
+
+## Mental model
+
+> A regex finds a shape; a validator adds domain rules; neither one proves intent, ownership, or compromise.
+
+## Limitations
+
+Regex syntax can become complex and expensive. Prefer small patterns, bounds, tests, and a standard library parser when a protocol already defines one.
+
+[← Day 15](../015_day_iterators_and_generators/015_day_iterators_and_generators.md) · [Day index](../DAY_INDEX.md) · [Day 17 →](../017_day_dates_and_timelines/017_day_dates_and_timelines.md)

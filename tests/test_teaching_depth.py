@@ -1,0 +1,17 @@
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parents[1]
+
+
+def test_first_phase_has_dense_teaching_sections() -> None:
+    lessons = sorted(ROOT.glob("[0-9][0-9][0-9]_day_*/*.md"))[:10]
+    assert len(lessons) == 10
+    for lesson in lessons:
+        text = lesson.read_text(encoding="utf-8")
+        assert len(text.splitlines()) >= 180
+        assert "## Worked examples" in text
+        assert "## Execution trace" in text
+        assert "## Common mistakes" in text
+        assert "## Security application" in text or "## Project requirements" in text
+        assert "practice/exercises.md" in text
+        assert text.count("```python") >= 4

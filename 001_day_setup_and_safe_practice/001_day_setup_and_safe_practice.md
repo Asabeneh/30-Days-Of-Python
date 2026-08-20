@@ -1,6 +1,6 @@
 # Day 1: How Programs Run and How to Practise Cybersecurity Safely
 
-[Course home](../README.md) | [002 next](../002_day_values_names_and_input/002_day_values_names_and_input.md)
+[← Home](../README.md) · [Day index](../DAY_INDEX.md) · [Day 2 →](../002_day_values_names_and_input/002_day_values_names_and_input.md)
 
 ## Table of Contents
 
@@ -10,136 +10,223 @@
 - [The problem](#the-problem)
 - [Security boundary](#security-boundary)
 - [Lesson](#lesson)
+- [Worked examples](#worked-examples)
+- [Execution trace](#execution-trace)
 - [Common mistakes](#common-mistakes)
-- [Practice](#practice)
-- [Mental model](#mental-model)
+- [Security application](#security-application)
+- [Exercises](#exercises)
 - [Finish line](#finish-line)
 
 ## Why this lesson exists
 
-This lesson is part of the first phase for a learner who may have never written code. It introduces one idea at a time and connects it to a small, safe cybersecurity problem.
+A complete beginner needs a reliable first mental model before syntax becomes useful. You will see how a file becomes instructions, how the interpreter reports mistakes, and why safe security work begins with authorization and scope.
 
 ## Prerequisites
 
-- Day 0 or “none” if this is Day 1.
-- A working setup from [SETUP.md](../SETUP.md).
-- The safety rules in [SAFETY_AND_LAB_RULES.md](../SAFETY_AND_LAB_RULES.md).
+Install Python and VS Code by following [SETUP.md](../SETUP.md). Run `python --version` and open the repository in VS Code.
 
 ## Outcomes
 
-By the end, you can explain the day's mental model, run the starter, predict at least one result, correct one deliberate mistake, and apply the idea to a synthetic security fixture.
+By the end of this lesson, you can:
+
+- run a Python file from the terminal
+- distinguish source code, interpreter, output, and error
+- read a traceback as a location and explanation
+- keep a security exercise local, synthetic, bounded, and resettable
 
 ## The problem
 
-Security engineering is programming applied to systems, data, and decisions. If the underlying programming idea is vague, the security label only makes the confusion harder to see. This day gives the idea a small problem before adding tools.
+Suppose a teammate gives you a script and says it “checks suspicious activity.” Before changing it, you need to know how to run it, what it actually observes, and what it does when an input is wrong.
 
 ## Security boundary
 
-This lesson uses only local text and synthetic examples. Do not replace the fixture path with a university, employer, public website, or another person's data. The objective is to learn a programming idea and a safe evidence habit, not to discover targets.
+Use only the repository, synthetic examples, and local fixtures. The examples may describe security signals, but they do not identify attackers, authorize testing, or justify touching public systems. Keep real credentials, private logs, and university or employer data out of the lesson.
 
 ## Lesson
-## Why this lesson exists
 
-A beginner often sees a command print a result and concludes that the computer “just knows” what to do. That mental model makes every later tool feel magical. Security work becomes safer when you can name the program, file, input, output, and permission boundary involved in an action.
+### Source code is a set of instructions
 
-## The problem this solves
+A Python file is ordinary text. The interpreter reads that text and performs the instructions in order. The file is not magic, and the computer does not understand your intention; it follows the syntax and values that you provide.
 
-You need to answer four questions without guessing: where is the code, what reads it, what data enters it, and what evidence proves what happened? Python gives you an interpreter, a standard library, an error message, and a terminal. Today you will use all four.
+Create `hello.py`:
 
-## The runtime model
-
-A `.py` file is text on disk. When you run `python path/to/file.py`, the Python interpreter reads that text, checks its syntax, executes statements in order, and writes output or an error. The operating system starts the interpreter as a process. The interpreter opens the file. The file may read input, but input does not become trustworthy merely because the interpreter accepted its type as a string.
-
-```text
-keyboard or fixture
-        │
-        ▼
-Python program receives text
-        │
-        ▼
-validation and transformation
-        │
-        ▼
-output, evidence, or a clearly reported error
+```python
+print("first line")
+print("second line")
 ```
 
-Run the starter from the repository root:
+Run it from the repository root:
 
 ```text
-python -m course_days.day001
+$ python hello.py
+first line
+second line
 ```
 
-Then change one printed name and predict the new output before running it again. That tiny experiment teaches the difference between source text and runtime behavior.
+The two calls run top to bottom. If you swap them, the output order swaps. This simple observation becomes important when a security tool records evidence: the order in which the tool reads, transforms, and reports data is part of its behavior.
 
-## Your first error is information
+### A program can calculate before it prints
 
-Create a temporary file with a missing closing parenthesis and run it. Python reports a `SyntaxError` before it can execute the file. Fix the parenthesis and run it again. Then create a `NameError` by using a name that was never assigned. The two errors answer different questions: the first says the program text is not shaped like Python; the second says the running program cannot find a name.
+```python
+left = 2
+right = 3
+answer = left + right
+print(answer)
+```
 
-Read the first error line, the file path, and the line number. Do not start by searching the entire internet. First reduce the problem to the smallest example that still fails.
+Expected output:
 
-## Terminal and editor workflow
+```text
+5
+```
 
-The terminal is not a black box. `pwd` or `Get-Location` tells you where you are. `ls` or `Get-ChildItem` lists files. `cd` changes the working directory. VS Code's integrated terminal is the same kind of terminal, placed beside your editor. Run the same course command in both places and compare the result.
+The names `left`, `right`, and `answer` make intermediate values visible. A beginner often writes one large expression, but named steps are easier to inspect and review.
 
-## A first security distinction
+### The interpreter reports syntax mistakes
 
-A program can be technically capable of opening a file or connecting to a service without being authorized to do so. Python answers “can this process attempt the operation?” Professional security practice also asks “should it?” and “what evidence and cleanup are required?” Keep those questions separate from syntax.
+```python
+print("this line is valid")
+print("this line is missing a quote)
+```
+
+Python stops before it can run the second line and reports a `SyntaxError`. The line number tells you where Python noticed the problem. It may not be the first character you should fix, because an unclosed quote or bracket can make the following line look wrong too.
+
+Fix the quote, rerun the file, and observe that the first line now prints because the program can be parsed completely.
+
+### Runtime errors are different
+
+```python
+number = int("not a number")
+print(number)
+```
+
+This file is syntactically valid. Python begins executing it, then raises `ValueError` when `int` cannot interpret the text. The distinction matters:
+
+| Error kind | When it happens | First question |
+| --- | --- | --- |
+| `SyntaxError` | before execution | Which punctuation or structure is incomplete? |
+| `NameError` | during execution | Which name has not been defined? |
+| `ValueError` | during a conversion or operation | Does the value fit the requested format? |
+
+### Your first security distinction
+
+A line that prints `"login_failed"` is an observation. It is not proof that a person attacked the system. A local fixture that contains a suspicious-looking line is safe to analyze; a real system requires authorization, scope, data-handling rules, and a plan to stop.
+
+The course therefore uses four words repeatedly:
+
+- **Authorized:** you have permission from the owner.
+- **Local:** the program runs on your computer or a supplied fixture.
+- **Synthetic:** the data is invented for practice.
+- **Bounded:** the work has explicit limits on files, rows, time, and output.
+## Worked examples
+
+### Example 1: print a safe report header
+
+```python
+case_id = "training-001"
+print(f"case={case_id} status=training-only")
+```
+
+Expected output:
+
+```text
+case=training-001 status=training-only
+```
+
+The `f` before the string lets Python replace `{case_id}` with the value. There is no real case data here.
+
+### Example 2: trace a name change
+
+```python
+status = "new"
+status = "review"
+print(status)
+```
+
+The output is `review` because the second assignment replaces the value stored under `status`. The old value is not printed and is not automatically preserved as history. If you need history, store multiple records explicitly.
+
+### Example 3: inspect the type
+
+```python
+value = "7"
+print(type(value).__name__)
+print(value)
+```
+
+Expected output is `str` followed by `7`. Text that looks like a number is still text until you convert and validate it.
+
+### Example 4: make a deliberate failure
+
+```python
+print(10 / 0)
+```
+
+The interpreter raises `ZeroDivisionError`. Read the last traceback line first, then move upward to the file and line location. Do not delete the error without understanding what input made it possible.
+
+### Example 5: a safe local boundary
+
+```python
+fixture_name = "sample_events.txt"
+allowed_directory = "training-fixtures"
+print(f"reading={fixture_name} from={allowed_directory}")
+```
+
+This reports an intended fixture without opening a path supplied by an unknown user. Later lessons will implement actual path validation.
+
+## Execution trace
+
+For this program:
+
+```python
+label = "warning"
+level = 2
+message = f"{label}:{level}"
+print(message)
+```
+
+| Step | Statement | State or result |
+| ---: | --- | --- |
+| 1 | `label = "warning"` | `label` refers to a string |
+| 2 | `level = 2` | `level` refers to an integer |
+| 3 | `message = ...` | `message` becomes `"warning:2"` |
+| 4 | `print(message)` | the string is displayed |
+
+A trace is a small, human-readable record of the program’s state. It is more useful than saying “Python runs it somehow.”
 
 ## Common mistakes
 
-| Mistake | Symptom | Correction |
+| Mistake | What you see | Smallest correction |
 | --- | --- | --- |
-| Running from the wrong folder | `No module named course_days` | Return to the repository root and verify the path |
-| Using the wrong interpreter | A package appears missing | Select `.venv` and run `python -c "import sys; print(sys.executable)"` |
-| Treating input as trusted | A classifier accepts malformed text | Parse, validate, and report rejected input |
-| Ignoring the first error line | Repeated unrelated fixes | Read the file, line, and error type first |
+| Running the wrong directory | `can't open file` | print the current directory and use the lesson command |
+| Using smart quotes | `SyntaxError` | replace them with ordinary Python quotes |
+| Saving as `hello.py.txt` | the terminal cannot find the file | show file extensions and rename it |
+| Ignoring the last traceback line | repeated failure | read the exception type and then the reported line |
+| Calling an observation an attack | an unjustified conclusion | record the observation and confidence separately |
+
+## Security application
+
+Create a local note named `scope.md` containing the target, owner, allowed files, time window, stop condition, and cleanup command for a fictional fixture. This is not paperwork for its own sake. A written scope prevents a beginner from turning a learning command into an unauthorized action.
+## Exercises
+
+Complete the numbered questions in [practice/exercises.md](practice/exercises.md) in order. Use the examples from this lesson as your starting point. Use [hints](practice/hints.md) only after a genuine attempt and [solutions](practice/solutions.md) only to compare your reasoning.
 
 ## Finish line
 
-You can run Day 1, explain the interpreter model, deliberately create and fix one syntax error, identify the current directory, and state why authorization is separate from technical capability.
-
-## Prove it
-
-Write five sentences: what is a runtime, what file did it read, what input did your starter receive, what output did it produce, and what would make a security action unauthorized?
-
-
-## Common mistakes
-
-The most useful debugging move is to reproduce the smallest failure, read the first error line, identify the value or assumption that differs from your expectation, and change one thing. Do not copy a large solution while the mental model is still unclear.
-
-## Exercises
-
-Complete the numbered questions in [practice/exercises.md](practice/exercises.md) in order. Run the requested commands, produce the requested artifact, and record the edge case or limitation asked for by the exercise. Use [hints](practice/hints.md) only after a real attempt and [solutions](practice/solutions.md) only to compare your reasoning.
+Run the starter, pass the relevant tests, complete the numbered exercises, and explain one edge case aloud or in writing.
 
 ## Mental model
 
-> Code is text; the Python interpreter turns it into behavior, and a security professional never separates capability from authorization.
+> A program is a sequence of instructions whose observable behavior depends on its source, inputs, and runtime state; safe security learning adds authorization and bounds before execution.
 
-## Finish line
+## Limitations
 
-Run `python -m course_days.day001`, pass the relevant tests, complete the Level 1 and Level 2 practice, and write one sentence about an edge case or security boundary.
+This lesson does not teach debugging every Python error or establish a complete security methodology. It teaches the first runtime and authorization habits that later tools depend on.
+
+## Optional video support
+
+Watch [CS50P Lecture 0](https://www.youtube.com/watch?v=JP7ITIXGpHk&t=24s) from `00:24` for `hello.py`, then `09:54` for VS Code. Watch only after running the local examples.
+
+Use the [timestamped video catalog](../VIDEO_RESOURCES.md) only after running the local examples. The written lesson and Python documentation remain authoritative.
 
 
-<!-- video-resources:start -->
-## Video support
-
-**Optional recommendation:** [Learn Python - Full Course for Beginners [Tutorial]](https://www.youtube.com/watch?v=rfscVS0vtbw).
-
-- Watch [00:00–01:45: Introduction](https://www.youtube.com/watch?v=rfscVS0vtbw&t=0s) for **what the course covers**. Then return to this lesson and run the local starter.
-- Watch [01:45–06:40: Installing Python and PyCharm](https://www.youtube.com/watch?v=rfscVS0vtbw&t=105s) for **first installation**. Then return to this lesson and run the local starter.
-- Watch [06:40–10:23: Setup and Hello World](https://www.youtube.com/watch?v=rfscVS0vtbw&t=400s) for **first runnable program**. Then return to this lesson and run the local starter.
-- Watch [15:06–27:03: Variables and Data Types](https://www.youtube.com/watch?v=rfscVS0vtbw&t=906s) for **values and names**. Then return to this lesson and run the local starter.
-- Watch [27:03–38:18: Working With Strings](https://www.youtube.com/watch?v=rfscVS0vtbw&t=1623s) for **text values**. Then return to this lesson and run the local starter.
-- Watch [38:18–48:26: Working With Numbers](https://www.youtube.com/watch?v=rfscVS0vtbw&t=2298s) for **numeric operations**. Then return to this lesson and run the local starter.
-- Watch [48:26–1:00:00: Getting Input From Users](https://www.youtube.com/watch?v=rfscVS0vtbw&t=2906s) for **input is text at the boundary**. Then return to this lesson and run the local starter.
-
-Written alternative: [https://docs.python.org/3/tutorial/](https://docs.python.org/3/tutorial/).
-
-**Inline recommendation:** [Getting Started with Python in VS Code (Official Video)](https://www.youtube.com/watch?v=D2cwvpJSBX4).
-
-- Watch [00:00–06:30: Python in VS Code setup](https://www.youtube.com/watch?v=D2cwvpJSBX4&t=0s) for **editor, interpreter, and workspace**. Then return to this lesson and run the local starter.
-- Watch [06:30–08:27: Code navigation and debugging](https://www.youtube.com/watch?v=D2cwvpJSBX4&t=390s) for **navigation and debugger**. Then return to this lesson and run the local starter.
-- Watch [08:27–10:19: Debugging](https://www.youtube.com/watch?v=D2cwvpJSBX4&t=507s) for **breakpoints and stepping**. Then return to this lesson and run the local starter.
-
-Written alternative: [https://code.visualstudio.com/docs/python/python-tutorial](https://code.visualstudio.com/docs/python/python-tutorial).
-<!-- video-resources:end -->
+[← Home](../README.md) · [Day index](../DAY_INDEX.md) · [Day 2 →](../002_day_values_names_and_input/002_day_values_names_and_input.md)
