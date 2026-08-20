@@ -1,10 +1,10 @@
-"""Day 18: Classes and dataclasses."""
+"""Runnable Day 18: Dataclasses, Immutable Records, and Finding Models."""
 
 
 def main() -> None:
-    print("Day 18: Classes and dataclasses")
-    print("Starter placeholder: expand this lesson before marking the phase complete.")
-    print("Scope: local, synthetic, and authorized only.")
+    print("Day 18: Dataclasses, Immutable Records, and Finding Models")
+    print("The starter is local, synthetic, bounded, and designed for inspection.")
+    print("Next step: read the lesson, change one input, and run the tests.")
 
 
 if __name__ == "__main__":

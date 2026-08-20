@@ -1,10 +1,10 @@
-"""Day 14: Files and safe paths."""
+"""Runnable Day 14: Files, Paths, Encodings, and Safe Cleanup."""
 
 
 def main() -> None:
-    print("Day 14: Files and safe paths")
-    print("Starter placeholder: expand this lesson before marking the phase complete.")
-    print("Scope: local, synthetic, and authorized only.")
+    print("Day 14: Files, Paths, Encodings, and Safe Cleanup")
+    print("The starter is local, synthetic, bounded, and designed for inspection.")
+    print("Next step: read the lesson, change one input, and run the tests.")
 
 
 if __name__ == "__main__":

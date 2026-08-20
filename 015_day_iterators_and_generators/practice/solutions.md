@@ -1,3 +1,3 @@
 # Solution route
 
-Compare your solution against the acceptance criteria, not against a particular spelling. A strong solution explains its contract, tests its failure path, and states what it cannot prove.
+Compare your attempt with the acceptance criteria. A strong solution explains the input contract, keeps failure visible, tests a boundary, and documents a limitation. There is no requirement to match one exact implementation if your behavior and reasoning are correct.

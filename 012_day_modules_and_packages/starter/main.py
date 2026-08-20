@@ -1,10 +1,10 @@
-"""Day 12: Modules and packages."""
+"""Runnable Day 12: Modules, Imports, and Package Boundaries."""
 
 
 def main() -> None:
-    print("Day 12: Modules and packages")
-    print("Starter placeholder: expand this lesson before marking the phase complete.")
-    print("Scope: local, synthetic, and authorized only.")
+    print("Day 12: Modules, Imports, and Package Boundaries")
+    print("The starter is local, synthetic, bounded, and designed for inspection.")
+    print("Next step: read the lesson, change one input, and run the tests.")
 
 
 if __name__ == "__main__":
