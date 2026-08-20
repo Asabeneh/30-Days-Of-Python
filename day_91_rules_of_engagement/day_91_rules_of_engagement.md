@@ -7,6 +7,9 @@
 
 
 
+
+
+
 ## Table of contents
 
 - [Why this lesson exists](#why-this-lesson-exists)
@@ -14,8 +17,12 @@
 - [Outcomes](#outcomes)
 - [The problem](#the-problem)
 - [Security boundary](#security-boundary)
-- [Lesson](#lesson)
-  - [Vocabulary](#vocabulary)
+- [Keywords and terms](#keywords-and-terms)
+- [Topics](#topics)
+  - [What is Rules of Engagement?](#what-is-rules-of-engagement)
+  - [Why is Rules of Engagement useful?](#why-is-rules-of-engagement-useful)
+  - [How will Python use this idea?](#how-will-python-use-this-idea)
+  - [What are the security limits?](#what-are-the-security-limits)
 - [Worked examples](#worked-examples)
   - [Example 1: Define target](#example-1-define-target)
   - [Example 2: Define allowed tests](#example-2-define-allowed-tests)
@@ -63,11 +70,27 @@ Write a rules-of-engagement document for a local test service and show how a pro
 
 This lesson is educational and authorized-lab-only. It does not authorize public scanning, credential guessing, exploitation, interception, persistence, or changes to systems you do not own.
 
-## Lesson
-
-### Vocabulary
+## Keywords and terms
 
 Rules of engagement define permitted activity. Scope identifies targets. A stop condition ends testing. An escalation path handles unexpected impact.
+
+## Topics
+
+### What is Rules of Engagement?
+
+Authorized testing starts with permission, scope, timing, targets, techniques, stop conditions, and reporting—not with a tool command.
+
+### Why is Rules of Engagement useful?
+
+Write a rules-of-engagement document for a local test service and show how a proposed action is checked before execution.
+
+### How will Python use this idea?
+
+Read the worked examples next. For each one, identify the input, the operation, the result, and the boundary that prevents the example from doing more than the lesson allows.
+
+### What are the security limits?
+
+The examples remain local, synthetic, bounded, and authorized. A successful program run demonstrates behavior on the fixture; it does not prove authenticity, compromise, or permission to act on a real target.
 
 ## Worked examples
 

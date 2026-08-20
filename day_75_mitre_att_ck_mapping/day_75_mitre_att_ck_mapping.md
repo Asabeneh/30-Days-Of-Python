@@ -7,6 +7,9 @@
 
 
 
+
+
+
 ## Table of contents
 
 - [Why this lesson exists](#why-this-lesson-exists)
@@ -14,8 +17,12 @@
 - [Outcomes](#outcomes)
 - [The problem](#the-problem)
 - [Security boundary](#security-boundary)
-- [Lesson](#lesson)
-  - [Vocabulary](#vocabulary)
+- [Keywords and terms](#keywords-and-terms)
+- [Topics](#topics)
+  - [What is MITRE ATT&CK Mapping as Documentation?](#what-is-mitre-attck-mapping-as-documentation)
+  - [Why is MITRE ATT&CK Mapping as Documentation useful?](#why-is-mitre-attck-mapping-as-documentation-useful)
+  - [How will Python use this idea?](#how-will-python-use-this-idea)
+  - [What are the security limits?](#what-are-the-security-limits)
 - [Worked examples](#worked-examples)
   - [Example 1: Describe behavior](#example-1-describe-behavior)
   - [Example 2: Map cautiously](#example-2-map-cautiously)
@@ -63,11 +70,27 @@ Map synthetic behavior descriptions to a documented technique reference without 
 
 This lesson is educational and bounded. It does not authorize public scanning, credential use, interception, exploit delivery, real-user profiling, or changes to systems you do not own.
 
-## Lesson
-
-### Vocabulary
+## Keywords and terms
 
 A tactic describes a goal. A technique describes a behavior. Mapping links evidence to a framework entry. Attribution claims actor identity and requires much more evidence.
+
+## Topics
+
+### What is MITRE ATT&CK Mapping as Documentation?
+
+Framework mappings can help analysts communicate behavior, but a technique label is not proof that an adversary used it. The mapping should link observable evidence to a cautious hypothesis.
+
+### Why is MITRE ATT&CK Mapping as Documentation useful?
+
+Map synthetic behavior descriptions to a documented technique reference without claiming attribution.
+
+### How will Python use this idea?
+
+Read the worked examples next. For each one, identify the input, the operation, the result, and the boundary that prevents the example from doing more than the lesson allows.
+
+### What are the security limits?
+
+The examples remain local, synthetic, bounded, and authorized. A successful program run demonstrates behavior on the fixture; it does not prove authenticity, compromise, or permission to act on a real target.
 
 ## Worked examples
 

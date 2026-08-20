@@ -7,6 +7,9 @@
 
 
 
+
+
+
 ## Table of contents
 
 - [Why this lesson exists](#why-this-lesson-exists)
@@ -14,8 +17,12 @@
 - [Outcomes](#outcomes)
 - [The problem](#the-problem)
 - [Security boundary](#security-boundary)
-- [Lesson](#lesson)
-  - [Vocabulary](#vocabulary)
+- [Keywords and terms](#keywords-and-terms)
+- [Topics](#topics)
+  - [What is Evidence Integrity and Handling?](#what-is-evidence-integrity-and-handling)
+  - [Why is Evidence Integrity and Handling useful?](#why-is-evidence-integrity-and-handling-useful)
+  - [How will Python use this idea?](#how-will-python-use-this-idea)
+  - [What are the security limits?](#what-are-the-security-limits)
 - [Worked examples](#worked-examples)
   - [Example 1: Hash a file](#example-1-hash-a-file)
   - [Example 2: Create a manifest](#example-2-create-a-manifest)
@@ -63,11 +70,27 @@ Create a local manifest for synthetic files and record who, when, where, and how
 
 This lesson is educational and authorized-lab-only. It does not authorize public scanning, credential guessing, exploitation, interception, persistence, or changes to systems you do not own.
 
-## Lesson
-
-### Vocabulary
+## Keywords and terms
 
 Integrity means detecting change. Provenance records origin and transformation. A working copy is an analysis copy. A manifest lists evidence and digests.
+
+## Topics
+
+### What is Evidence Integrity and Handling?
+
+Evidence must remain attributable and unchanged enough for another reviewer to check it. Hashes, manifests, access records, and working copies support integrity but do not create a legal chain of custody by themselves.
+
+### Why is Evidence Integrity and Handling useful?
+
+Create a local manifest for synthetic files and record who, when, where, and how each item was handled.
+
+### How will Python use this idea?
+
+Read the worked examples next. For each one, identify the input, the operation, the result, and the boundary that prevents the example from doing more than the lesson allows.
+
+### What are the security limits?
+
+The examples remain local, synthetic, bounded, and authorized. A successful program run demonstrates behavior on the fixture; it does not prove authenticity, compromise, or permission to act on a real target.
 
 ## Worked examples
 

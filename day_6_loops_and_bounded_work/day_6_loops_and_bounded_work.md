@@ -6,6 +6,9 @@
 
 
 
+
+
+
 ## Table of contents
 
 - [Welcome](#welcome)
@@ -13,8 +16,8 @@
 - [Outcomes](#outcomes)
 - [The problem](#the-problem)
 - [Security boundary](#security-boundary)
-- [Vocabulary](#vocabulary)
-- [Lesson](#lesson)
+- [Keywords and terms](#keywords-and-terms)
+- [Topics](#topics)
 - [1. A `for` loop repeats a known sequence](#1-a-for-loop-repeats-a-known-sequence)
 - [2. `range` creates a predictable counting sequence](#2-range-creates-a-predictable-counting-sequence)
 - [3. A `while` loop needs a changing condition](#3-a-while-loop-needs-a-changing-condition)
@@ -57,11 +60,11 @@ A program needs to inspect several synthetic events without copying the same lin
 
 This lesson is educational and local. It does not authorize public scanning, credential use, data collection, exploitation, interception, or changes to systems you do not own. The cybersecurity examples use invented names, loopback targets, or repository fixtures.
 
-## Vocabulary
+## Keywords and terms
 
 A **loop** repeats a block. A `for` loop visits items in a sequence. A `while` loop continues while a condition is true. A **bound** is a deliberate maximum. `break` stops a loop; `continue` skips to the next iteration. An **iteration** is one pass through the body.
 
-## Lesson
+## Topics
 
 Start with a `for` loop:
 

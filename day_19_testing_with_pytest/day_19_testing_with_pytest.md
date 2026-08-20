@@ -7,6 +7,9 @@
 
 
 
+
+
+
 ## Table of contents
 
 - [Why this lesson exists](#why-this-lesson-exists)
@@ -14,8 +17,12 @@
 - [Outcomes](#outcomes)
 - [The problem](#the-problem)
 - [Security boundary](#security-boundary)
-- [Lesson](#lesson)
-  - [Vocabulary](#vocabulary)
+- [Keywords and terms](#keywords-and-terms)
+- [Topics](#topics)
+  - [What is Testing Security Utilities?](#what-is-testing-security-utilities)
+  - [Why is Testing Security Utilities useful?](#why-is-testing-security-utilities-useful)
+  - [How will Python use this idea?](#how-will-python-use-this-idea)
+  - [What are the security limits?](#what-are-the-security-limits)
 - [Worked examples](#worked-examples)
   - [Example 1: Arrange, act, assert](#example-1-arrange-act-assert)
   - [Example 2: Parametrize boundaries](#example-2-parametrize-boundaries)
@@ -63,11 +70,27 @@ A parser that passes one happy-path test may still accept an invalid port, leak 
 
 Use only the repository, synthetic examples, and local fixtures. The examples do not authorize access to public systems, university systems, employer systems, or accounts that you do not own.
 
-## Lesson
-
-### Vocabulary
+## Keywords and terms
 
 A **unit test** checks one small behavior. A **fixture** prepares repeatable input. A **negative test** proves that an invalid or unsafe case is rejected. A **regression test** preserves a behavior after a bug is fixed.
+
+## Topics
+
+### What is Testing Security Utilities?
+
+Tests turn a claim about code into a repeatable check. Security tests should cover ordinary behavior, boundaries, malformed inputs, and the absence of dangerous side effects.
+
+### Why is Testing Security Utilities useful?
+
+A parser that passes one happy-path test may still accept an invalid port, leak a token, or read outside its fixture. The test suite must make those failures visible.
+
+### How will Python use this idea?
+
+Read the worked examples next. For each one, identify the input, the operation, the result, and the boundary that prevents the example from doing more than the lesson allows.
+
+### What are the security limits?
+
+The examples remain local, synthetic, bounded, and authorized. A successful program run demonstrates behavior on the fixture; it does not prove authenticity, compromise, or permission to act on a real target.
 
 ## Worked examples
 

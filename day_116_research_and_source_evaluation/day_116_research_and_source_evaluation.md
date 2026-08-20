@@ -7,6 +7,9 @@
 
 
 
+
+
+
 ## Table of contents
 
 - [Why this lesson exists](#why-this-lesson-exists)
@@ -14,8 +17,12 @@
 - [Outcomes](#outcomes)
 - [The problem](#the-problem)
 - [Security boundary](#security-boundary)
-- [Lesson](#lesson)
-  - [Vocabulary](#vocabulary)
+- [Keywords and terms](#keywords-and-terms)
+- [Topics](#topics)
+  - [What is Research and Source Evaluation?](#what-is-research-and-source-evaluation)
+  - [Why is Research and Source Evaluation useful?](#why-is-research-and-source-evaluation-useful)
+  - [How will Python use this idea?](#how-will-python-use-this-idea)
+  - [What are the security limits?](#what-are-the-security-limits)
 - [Worked examples](#worked-examples)
   - [Example 1: Record a source](#example-1-record-a-source)
   - [Example 2: Check claim fit](#example-2-check-claim-fit)
@@ -63,11 +70,27 @@ Evaluate three synthetic source records and choose which one can support a cours
 
 This lesson is educational and bounded. It does not authorize public scanning, credential use, destructive actions, persistence, or processing of private data.
 
-## Lesson
-
-### Vocabulary
+## Keywords and terms
 
 A primary source is closest to the authority or specification. A secondary source explains or summarizes. Currency is how up to date a source is. Reproducibility means another learner can verify the claim.
+
+## Topics
+
+### What is Research and Source Evaluation?
+
+Security learners meet conflicting tutorials, outdated commands, and impressive but unsafe demonstrations. Research skill means checking primary sources, version, scope, evidence, and reproducibility.
+
+### Why is Research and Source Evaluation useful?
+
+Evaluate three synthetic source records and choose which one can support a course claim.
+
+### How will Python use this idea?
+
+Read the worked examples next. For each one, identify the input, the operation, the result, and the boundary that prevents the example from doing more than the lesson allows.
+
+### What are the security limits?
+
+The examples remain local, synthetic, bounded, and authorized. A successful program run demonstrates behavior on the fixture; it does not prove authenticity, compromise, or permission to act on a real target.
 
 ## Worked examples
 

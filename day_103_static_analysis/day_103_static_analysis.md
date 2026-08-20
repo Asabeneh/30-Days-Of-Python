@@ -7,6 +7,9 @@
 
 
 
+
+
+
 ## Table of contents
 
 - [Why this lesson exists](#why-this-lesson-exists)
@@ -14,8 +17,12 @@
 - [Outcomes](#outcomes)
 - [The problem](#the-problem)
 - [Security boundary](#security-boundary)
-- [Lesson](#lesson)
-  - [Vocabulary](#vocabulary)
+- [Keywords and terms](#keywords-and-terms)
+- [Topics](#topics)
+  - [What is Static Analysis and Code Review Signals?](#what-is-static-analysis-and-code-review-signals)
+  - [Why is Static Analysis and Code Review Signals useful?](#why-is-static-analysis-and-code-review-signals-useful)
+  - [How will Python use this idea?](#how-will-python-use-this-idea)
+  - [What are the security limits?](#what-are-the-security-limits)
 - [Worked examples](#worked-examples)
   - [Example 1: Run a checker](#example-1-run-a-checker)
   - [Example 2: Classify severity](#example-2-classify-severity)
@@ -63,11 +70,27 @@ Run a local lint and type-check policy, classify findings, and record justified 
 
 This lesson is educational and bounded. It does not authorize public scanning, credential use, destructive actions, persistence, or processing of private data.
 
-## Lesson
-
-### Vocabulary
+## Keywords and terms
 
 Static analysis inspects source. A rule identifies a pattern. A suppression disables a finding. A false positive is a finding that does not represent a defect in context.
+
+## Topics
+
+### What is Static Analysis and Code Review Signals?
+
+Static tools find patterns without executing the program. They are valuable review assistants when their findings are understood, triaged, and combined with tests rather than treated as proof of security.
+
+### Why is Static Analysis and Code Review Signals useful?
+
+Run a local lint and type-check policy, classify findings, and record justified exceptions narrowly.
+
+### How will Python use this idea?
+
+Read the worked examples next. For each one, identify the input, the operation, the result, and the boundary that prevents the example from doing more than the lesson allows.
+
+### What are the security limits?
+
+The examples remain local, synthetic, bounded, and authorized. A successful program run demonstrates behavior on the fixture; it does not prove authenticity, compromise, or permission to act on a real target.
 
 ## Worked examples
 

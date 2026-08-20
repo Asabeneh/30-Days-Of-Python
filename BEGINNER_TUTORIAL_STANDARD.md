@@ -6,7 +6,7 @@ The course is written for a learner who may have never programmed before. A less
 
 Every lesson begins with a title, previous and next navigation, and a **Table of contents** linking to every major section and subsection on the page. The table of contents is not decorative: it lets a learner return to a definition, example, exercise, or summary without searching through the entire file.
 
-Every lesson contains an orientation, prerequisites, outcomes, the problem, the security boundary, vocabulary, concept sections, worked examples, an execution trace, common mistakes and repairs, guided practice, a bounded cybersecurity application, independent numbered exercises, a finish line, and references. Longer lessons divide the concept section into named topics rather than presenting one large block called Lesson.
+Every lesson contains an orientation, prerequisites, outcomes, the problem, the security boundary, a **Keywords and terms** section, a separate **Topics** section, worked examples, an execution trace, common mistakes and repairs, guided practice, a bounded cybersecurity application, independent numbered exercises, a finish line, and references. Topics must be named questions or concepts, such as **What is a function?**, **Why are functions useful?**, **What are the parts of a function?**, and **What types of functions can we write?** Longer lessons must never hide all teaching inside one large block called Lesson.
 
 ## Required teaching behavior
 

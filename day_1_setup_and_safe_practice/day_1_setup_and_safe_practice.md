@@ -6,18 +6,22 @@
 
 
 
+
+
+
 ## Table of contents
 
 - [Welcome to programming](#welcome-to-programming)
 - [What you need before starting](#what-you-need-before-starting)
 - [The problem: a computer does not understand an intention](#the-problem-a-computer-does-not-understand-an-intention)
-- [Vocabulary in ordinary language](#vocabulary-in-ordinary-language)
+- [Keywords and terms in ordinary language](#keywords-and-terms-in-ordinary-language)
   - [Program](#program)
   - [Source code](#source-code)
   - [Interpreter](#interpreter)
   - [Command](#command)
   - [Output](#output)
   - [Error](#error)
+- [Topics](#topics)
 - [Worked examples](#worked-examples)
   - [Example 1: reading the first line character by character](#example-1-reading-the-first-line-character-by-character)
   - [Example 2: sequence means top to bottom](#example-2-sequence-means-top-to-bottom)
@@ -112,7 +116,7 @@ You have just completed the smallest useful programming loop:
 
 If the terminal says it cannot find the file, the Python code may be perfectly correct. The terminal may simply be in a different folder. This is your first debugging distinction: **a program problem and a file-location problem are not the same problem**.
 
-## Vocabulary in ordinary language
+## Keywords and terms in ordinary language
 
 ### Program
 
@@ -137,6 +141,10 @@ A **command** is text you type into the terminal. `python day_1_hello.py` is a c
 ### Error
 
 An **error** is information that the computer gives you when it cannot perform an instruction as written. An error is not a personal failure. It is evidence about what Python could not understand or do.
+
+## Topics
+
+This lesson moves through four topics: what a Python program is, how the interpreter runs it, how to read an error, and how to practise safely. Each topic introduces one idea before the next one depends on it.
 
 ## Worked examples
 

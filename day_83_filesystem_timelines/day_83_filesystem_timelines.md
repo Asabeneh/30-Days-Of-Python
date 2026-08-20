@@ -7,6 +7,9 @@
 
 
 
+
+
+
 ## Table of contents
 
 - [Why this lesson exists](#why-this-lesson-exists)
@@ -14,8 +17,12 @@
 - [Outcomes](#outcomes)
 - [The problem](#the-problem)
 - [Security boundary](#security-boundary)
-- [Lesson](#lesson)
-  - [Vocabulary](#vocabulary)
+- [Keywords and terms](#keywords-and-terms)
+- [Topics](#topics)
+  - [What is Filesystem Timelines?](#what-is-filesystem-timelines)
+  - [Why is Filesystem Timelines useful?](#why-is-filesystem-timelines-useful)
+  - [How will Python use this idea?](#how-will-python-use-this-idea)
+  - [What are the security limits?](#what-are-the-security-limits)
 - [Worked examples](#worked-examples)
   - [Example 1: Represent events](#example-1-represent-events)
   - [Example 2: Sort parsed times](#example-2-sort-parsed-times)
@@ -63,11 +70,27 @@ Build a synthetic timeline from file events and identify gaps and ambiguous orde
 
 This lesson is educational and authorized-lab-only. It does not authorize public scanning, credential guessing, exploitation, interception, persistence, or changes to systems you do not own.
 
-## Lesson
-
-### Vocabulary
+## Keywords and terms
 
 A filesystem timestamp is metadata about an operation or state. A timeline orders observations. Clock skew and copying can change interpretation.
+
+## Topics
+
+### What is Filesystem Timelines?
+
+File metadata and content changes can help reconstruct a sequence. Timestamps are clues with clock, filesystem, and copying limitations—not an automatic story of who acted.
+
+### Why is Filesystem Timelines useful?
+
+Build a synthetic timeline from file events and identify gaps and ambiguous ordering.
+
+### How will Python use this idea?
+
+Read the worked examples next. For each one, identify the input, the operation, the result, and the boundary that prevents the example from doing more than the lesson allows.
+
+### What are the security limits?
+
+The examples remain local, synthetic, bounded, and authorized. A successful program run demonstrates behavior on the fixture; it does not prove authenticity, compromise, or permission to act on a real target.
 
 ## Worked examples
 

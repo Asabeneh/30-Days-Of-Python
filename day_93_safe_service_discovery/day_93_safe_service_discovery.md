@@ -7,6 +7,9 @@
 
 
 
+
+
+
 ## Table of contents
 
 - [Why this lesson exists](#why-this-lesson-exists)
@@ -14,8 +17,12 @@
 - [Outcomes](#outcomes)
 - [The problem](#the-problem)
 - [Security boundary](#security-boundary)
-- [Lesson](#lesson)
-  - [Vocabulary](#vocabulary)
+- [Keywords and terms](#keywords-and-terms)
+- [Topics](#topics)
+  - [What is Safe Service Discovery?](#what-is-safe-service-discovery)
+  - [Why is Safe Service Discovery useful?](#why-is-safe-service-discovery-useful)
+  - [How will Python use this idea?](#how-will-python-use-this-idea)
+  - [What are the security limits?](#what-are-the-security-limits)
 - [Worked examples](#worked-examples)
   - [Example 1: Read targets](#example-1-read-targets)
   - [Example 2: Validate endpoint](#example-2-validate-endpoint)
@@ -63,11 +70,27 @@ Check one approved local service from an explicit inventory and report unavailab
 
 This lesson is educational and authorized-lab-only. It does not authorize public scanning, credential guessing, exploitation, interception, persistence, or changes to systems you do not own.
 
-## Lesson
-
-### Vocabulary
+## Keywords and terms
 
 Discovery identifies reachable services. An allowlist is a fixed target set. A health check is a known request. A timeout limits waiting.
+
+## Topics
+
+### What is Safe Service Discovery?
+
+Discovery can be useful in a disposable lab and dangerous on an unowned network. The safe pattern is to use a supplied target list and verify one endpoint rather than scan ranges.
+
+### Why is Safe Service Discovery useful?
+
+Check one approved local service from an explicit inventory and report unavailable versus closed without scanning.
+
+### How will Python use this idea?
+
+Read the worked examples next. For each one, identify the input, the operation, the result, and the boundary that prevents the example from doing more than the lesson allows.
+
+### What are the security limits?
+
+The examples remain local, synthetic, bounded, and authorized. A successful program run demonstrates behavior on the fixture; it does not prove authenticity, compromise, or permission to act on a real target.
 
 ## Worked examples
 

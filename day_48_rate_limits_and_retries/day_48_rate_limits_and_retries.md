@@ -7,6 +7,9 @@
 
 
 
+
+
+
 ## Table of contents
 
 - [Why this lesson exists](#why-this-lesson-exists)
@@ -14,8 +17,12 @@
 - [Outcomes](#outcomes)
 - [The problem](#the-problem)
 - [Security boundary](#security-boundary)
-- [Lesson](#lesson)
-  - [Vocabulary](#vocabulary)
+- [Keywords and terms](#keywords-and-terms)
+- [Topics](#topics)
+  - [What is Rate Limits, Retries, and Backoff?](#what-is-rate-limits-retries-and-backoff)
+  - [Why is Rate Limits, Retries, and Backoff useful?](#why-is-rate-limits-retries-and-backoff-useful)
+  - [How will Python use this idea?](#how-will-python-use-this-idea)
+  - [What are the security limits?](#what-are-the-security-limits)
 - [Worked examples](#worked-examples)
   - [Example 1: Bound attempts](#example-1-bound-attempts)
   - [Example 2: Retry a local function](#example-2-retry-a-local-function)
@@ -63,11 +70,27 @@ Implement a local retry helper that stops after a finite number of attempts and 
 
 Use synthetic data, local fixtures, and loopback-only demonstrations. This lesson does not authorize scanning, interception, credential use, remote command execution, or changes to systems you do not own.
 
-## Lesson
-
-### Vocabulary
+## Keywords and terms
 
 A **rate limit** bounds operations per time. A **retry** repeats a failed operation. **Backoff** spaces attempts. **Jitter** varies wait time to avoid synchronized retries.
+
+## Topics
+
+### What is Rate Limits, Retries, and Backoff?
+
+Retries can recover from transient local failures or amplify load. A security engineer must distinguish a bounded retry policy from a loop that turns one failure into an outage.
+
+### Why is Rate Limits, Retries, and Backoff useful?
+
+Implement a local retry helper that stops after a finite number of attempts and reports the final state.
+
+### How will Python use this idea?
+
+Read the worked examples next. For each one, identify the input, the operation, the result, and the boundary that prevents the example from doing more than the lesson allows.
+
+### What are the security limits?
+
+The examples remain local, synthetic, bounded, and authorized. A successful program run demonstrates behavior on the fixture; it does not prove authenticity, compromise, or permission to act on a real target.
 
 ## Worked examples
 

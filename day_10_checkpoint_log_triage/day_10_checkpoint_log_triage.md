@@ -6,6 +6,9 @@
 
 
 
+
+
+
 ## Table of contents
 
 - [Welcome](#welcome)
@@ -13,8 +16,8 @@
 - [Outcomes](#outcomes)
 - [The problem](#the-problem)
 - [Security boundary](#security-boundary)
-- [Vocabulary](#vocabulary)
-- [Lesson](#lesson)
+- [Keywords and terms](#keywords-and-terms)
+- [Topics](#topics)
 - [1. A pipeline is a sequence of small stages](#1-a-pipeline-is-a-sequence-of-small-stages)
 - [2. Parse a simple key-value line](#2-parse-a-simple-key-value-line)
 - [3. Classify without making accusations](#3-classify-without-making-accusations)
@@ -56,11 +59,11 @@ A log-triage program must accept a small synthetic fixture, parse each line, cla
 
 This lesson is educational and local. It does not authorize public scanning, credential use, data collection, exploitation, interception, or changes to systems you do not own. The cybersecurity examples use invented names, loopback targets, or repository fixtures.
 
-## Vocabulary
+## Keywords and terms
 
 A **fixture** is a supplied test input. A **pipeline** is a sequence of transformations. **Triage** is prioritizing items for review, not declaring guilt. A **summary** is a compact report. **Completeness** says whether all permitted input was processed.
 
-## Lesson
+## Topics
 
 Start with a fixture represented as a list of strings:
 

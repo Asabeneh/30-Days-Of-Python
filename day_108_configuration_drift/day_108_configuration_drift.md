@@ -7,6 +7,9 @@
 
 
 
+
+
+
 ## Table of contents
 
 - [Why this lesson exists](#why-this-lesson-exists)
@@ -14,8 +17,12 @@
 - [Outcomes](#outcomes)
 - [The problem](#the-problem)
 - [Security boundary](#security-boundary)
-- [Lesson](#lesson)
-  - [Vocabulary](#vocabulary)
+- [Keywords and terms](#keywords-and-terms)
+- [Topics](#topics)
+  - [What is Configuration Drift?](#what-is-configuration-drift)
+  - [Why is Configuration Drift useful?](#why-is-configuration-drift-useful)
+  - [How will Python use this idea?](#how-will-python-use-this-idea)
+  - [What are the security limits?](#what-are-the-security-limits)
 - [Worked examples](#worked-examples)
   - [Example 1: Create a baseline](#example-1-create-a-baseline)
   - [Example 2: Read runtime state](#example-2-read-runtime-state)
@@ -63,11 +70,27 @@ Compare synthetic baseline and runtime configuration, classify drift, and assign
 
 This lesson is educational and bounded. It does not authorize public scanning, credential use, destructive actions, persistence, or processing of private data.
 
-## Lesson
-
-### Vocabulary
+## Keywords and terms
 
 Drift is a difference from an approved state. Effective configuration is what the process actually uses. A baseline is a reviewed reference.
+
+## Topics
+
+### What is Configuration Drift?
+
+A secure configuration can become insecure after a manual change, deployment override, dependency update, or environment difference. Drift detection compares an approved baseline to effective state.
+
+### Why is Configuration Drift useful?
+
+Compare synthetic baseline and runtime configuration, classify drift, and assign a review action.
+
+### How will Python use this idea?
+
+Read the worked examples next. For each one, identify the input, the operation, the result, and the boundary that prevents the example from doing more than the lesson allows.
+
+### What are the security limits?
+
+The examples remain local, synthetic, bounded, and authorized. A successful program run demonstrates behavior on the fixture; it does not prove authenticity, compromise, or permission to act on a real target.
 
 ## Worked examples
 

@@ -7,6 +7,9 @@
 
 
 
+
+
+
 ## Table of contents
 
 - [Why this lesson exists](#why-this-lesson-exists)
@@ -14,8 +17,12 @@
 - [Outcomes](#outcomes)
 - [The problem](#the-problem)
 - [Security boundary](#security-boundary)
-- [Lesson](#lesson)
-  - [Vocabulary](#vocabulary)
+- [Keywords and terms](#keywords-and-terms)
+- [Topics](#topics)
+  - [What is Addresses, Ports, and Sockets?](#what-is-addresses-ports-and-sockets)
+  - [Why is Addresses, Ports, and Sockets useful?](#why-is-addresses-ports-and-sockets-useful)
+  - [How will Python use this idea?](#how-will-python-use-this-idea)
+  - [What are the security limits?](#what-are-the-security-limits)
 - [Worked examples](#worked-examples)
   - [Example 1: Represent an endpoint](#example-1-represent-an-endpoint)
   - [Example 2: Validate a port](#example-2-validate-a-port)
@@ -63,11 +70,27 @@ Describe a local service endpoint and create a socket object without scanning or
 
 Use synthetic data, local fixtures, and loopback-only demonstrations. This lesson does not authorize scanning, interception, credential use, remote command execution, or changes to systems you do not own.
 
-## Lesson
-
-### Vocabulary
+## Keywords and terms
 
 An IP address identifies an interface in a network context. A port identifies a transport endpoint. A socket is a program object representing communication settings.
+
+## Topics
+
+### What is Addresses, Ports, and Sockets?
+
+Network programs begin with names and endpoints. A learner must understand what an address identifies, what a port represents, and why a socket operation is not automatically authorized.
+
+### Why is Addresses, Ports, and Sockets useful?
+
+Describe a local service endpoint and create a socket object without scanning or connecting to an unknown host.
+
+### How will Python use this idea?
+
+Read the worked examples next. For each one, identify the input, the operation, the result, and the boundary that prevents the example from doing more than the lesson allows.
+
+### What are the security limits?
+
+The examples remain local, synthetic, bounded, and authorized. A successful program run demonstrates behavior on the fixture; it does not prove authenticity, compromise, or permission to act on a real target.
 
 ## Worked examples
 

@@ -7,6 +7,9 @@
 
 
 
+
+
+
 ## Table of contents
 
 - [Why this lesson exists](#why-this-lesson-exists)
@@ -14,8 +17,12 @@
 - [Outcomes](#outcomes)
 - [The problem](#the-problem)
 - [Security boundary](#security-boundary)
-- [Lesson](#lesson)
-  - [Vocabulary](#vocabulary)
+- [Keywords and terms](#keywords-and-terms)
+- [Topics](#topics)
+  - [What is Incident Reporting?](#what-is-incident-reporting)
+  - [Why is Incident Reporting useful?](#why-is-incident-reporting-useful)
+  - [How will Python use this idea?](#how-will-python-use-this-idea)
+  - [What are the security limits?](#what-are-the-security-limits)
 - [Worked examples](#worked-examples)
   - [Example 1: Write a summary](#example-1-write-a-summary)
   - [Example 2: Build a timeline](#example-2-build-a-timeline)
@@ -63,11 +70,27 @@ Write a synthetic incident report with an executive summary, timeline, evidence 
 
 This lesson is educational and authorized-lab-only. It does not authorize public scanning, credential guessing, exploitation, interception, persistence, or changes to systems you do not own.
 
-## Lesson
-
-### Vocabulary
+## Keywords and terms
 
 An executive summary communicates impact and status. A timeline orders observations. An impact assessment states affected scope. An action item has an owner and due state.
+
+## Topics
+
+### What is Incident Reporting?
+
+A report converts technical observations into a shared decision record. It should be concise enough to use and detailed enough to reproduce, with separate facts, assessment, actions, and limitations.
+
+### Why is Incident Reporting useful?
+
+Write a synthetic incident report with an executive summary, timeline, evidence references, impact assessment, and next steps.
+
+### How will Python use this idea?
+
+Read the worked examples next. For each one, identify the input, the operation, the result, and the boundary that prevents the example from doing more than the lesson allows.
+
+### What are the security limits?
+
+The examples remain local, synthetic, bounded, and authorized. A successful program run demonstrates behavior on the fixture; it does not prove authenticity, compromise, or permission to act on a real target.
 
 ## Worked examples
 

@@ -7,6 +7,9 @@
 
 
 
+
+
+
 ## Table of contents
 
 - [Why this lesson exists](#why-this-lesson-exists)
@@ -14,8 +17,12 @@
 - [Outcomes](#outcomes)
 - [The problem](#the-problem)
 - [Security boundary](#security-boundary)
-- [Lesson](#lesson)
-  - [Vocabulary](#vocabulary)
+- [Keywords and terms](#keywords-and-terms)
+- [Topics](#topics)
+  - [What is Misconfiguration and Secure Defaults?](#what-is-misconfiguration-and-secure-defaults)
+  - [Why is Misconfiguration and Secure Defaults useful?](#why-is-misconfiguration-and-secure-defaults-useful)
+  - [How will Python use this idea?](#how-will-python-use-this-idea)
+  - [What are the security limits?](#what-are-the-security-limits)
 - [Worked examples](#worked-examples)
   - [Example 1: Represent settings](#example-1-represent-settings)
   - [Example 2: Flag debug](#example-2-flag-debug)
@@ -63,11 +70,27 @@ Create a configuration review that identifies unsafe defaults without changing a
 
 This lesson is educational and bounded. It does not authorize public scanning, credential use, interception, exploit delivery, real-user profiling, or changes to systems you do not own.
 
-## Lesson
-
-### Vocabulary
+## Keywords and terms
 
 A secure default is safe when the user does nothing. A misconfiguration is a deployed setting that violates intended security or reliability policy.
+
+## Topics
+
+### What is Misconfiguration and Secure Defaults?
+
+Many security failures are ordinary configuration choices: debug enabled, permissive origins, verbose errors, weak cookies, unlimited bodies, or development keys.
+
+### Why is Misconfiguration and Secure Defaults useful?
+
+Create a configuration review that identifies unsafe defaults without changing a real service.
+
+### How will Python use this idea?
+
+Read the worked examples next. For each one, identify the input, the operation, the result, and the boundary that prevents the example from doing more than the lesson allows.
+
+### What are the security limits?
+
+The examples remain local, synthetic, bounded, and authorized. A successful program run demonstrates behavior on the fixture; it does not prove authenticity, compromise, or permission to act on a real target.
 
 ## Worked examples
 

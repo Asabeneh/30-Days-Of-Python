@@ -7,6 +7,9 @@
 
 
 
+
+
+
 ## Table of contents
 
 - [Why this lesson exists](#why-this-lesson-exists)
@@ -14,8 +17,12 @@
 - [Outcomes](#outcomes)
 - [The problem](#the-problem)
 - [Security boundary](#security-boundary)
-- [Lesson](#lesson)
-  - [Vocabulary](#vocabulary)
+- [Keywords and terms](#keywords-and-terms)
+- [Topics](#topics)
+  - [What is TLS and Certificate Validation?](#what-is-tls-and-certificate-validation)
+  - [Why is TLS and Certificate Validation useful?](#why-is-tls-and-certificate-validation-useful)
+  - [How will Python use this idea?](#how-will-python-use-this-idea)
+  - [What are the security limits?](#what-are-the-security-limits)
 - [Worked examples](#worked-examples)
   - [Example 1: Create a default context](#example-1-create-a-default-context)
   - [Example 2: Name the target](#example-2-name-the-target)
@@ -63,11 +70,27 @@ Inspect the standard library’s secure client defaults and explain why disablin
 
 Use synthetic data, local fixtures, and loopback-only demonstrations. This lesson does not authorize scanning, interception, credential use, remote command execution, or changes to systems you do not own.
 
-## Lesson
-
-### Vocabulary
+## Keywords and terms
 
 TLS provides confidentiality and integrity for a negotiated connection. A certificate binds a public key to an identity under a trust model. Hostname verification checks the requested name.
+
+## Topics
+
+### What is TLS and Certificate Validation?
+
+Encryption in transit is useful only when the client validates who it is communicating with. A learner should understand certificates and hostname checks without writing a bypass.
+
+### Why is TLS and Certificate Validation useful?
+
+Inspect the standard library’s secure client defaults and explain why disabling certificate verification is not a fix.
+
+### How will Python use this idea?
+
+Read the worked examples next. For each one, identify the input, the operation, the result, and the boundary that prevents the example from doing more than the lesson allows.
+
+### What are the security limits?
+
+The examples remain local, synthetic, bounded, and authorized. A successful program run demonstrates behavior on the fixture; it does not prove authenticity, compromise, or permission to act on a real target.
 
 ## Worked examples
 

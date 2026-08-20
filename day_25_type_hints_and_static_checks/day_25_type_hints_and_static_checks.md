@@ -7,6 +7,9 @@
 
 
 
+
+
+
 ## Table of contents
 
 - [Why this lesson exists](#why-this-lesson-exists)
@@ -14,8 +17,12 @@
 - [Outcomes](#outcomes)
 - [The problem](#the-problem)
 - [Security boundary](#security-boundary)
-- [Lesson](#lesson)
-  - [Vocabulary](#vocabulary)
+- [Keywords and terms](#keywords-and-terms)
+- [Topics](#topics)
+  - [What is Type Hints and Static Checks?](#what-is-type-hints-and-static-checks)
+  - [Why is Type Hints and Static Checks useful?](#why-is-type-hints-and-static-checks-useful)
+  - [How will Python use this idea?](#how-will-python-use-this-idea)
+  - [What are the security limits?](#what-are-the-security-limits)
 - [Worked examples](#worked-examples)
   - [Example 1: Annotate a function](#example-1-annotate-a-function)
   - [Example 2: Use a TypedDict](#example-2-use-a-typeddict)
@@ -62,11 +69,27 @@ A reviewer needs to see which functions accept raw text, which accept validated 
 
 Use only local synthetic fixtures and explicitly authorized course files. The lesson does not authorize public scanning, credential use, remote command execution, or changes to operating-system state.
 
-## Lesson
-
-### Vocabulary
+## Keywords and terms
 
 A **type annotation** describes intended types. A **static checker** analyzes code without running it. A `TypedDict` describes dictionary keys but does not enforce them at runtime.
+
+## Topics
+
+### What is Type Hints and Static Checks?
+
+Type hints make a function’s intended data flow visible to humans and tools. They improve review, but they do not validate runtime JSON, CSV, or CLI input.
+
+### Why is Type Hints and Static Checks useful?
+
+A reviewer needs to see which functions accept raw text, which accept validated events, and which return reports or errors.
+
+### How will Python use this idea?
+
+Read the worked examples next. For each one, identify the input, the operation, the result, and the boundary that prevents the example from doing more than the lesson allows.
+
+### What are the security limits?
+
+The examples remain local, synthetic, bounded, and authorized. A successful program run demonstrates behavior on the fixture; it does not prove authenticity, compromise, or permission to act on a real target.
 
 ## Worked examples
 

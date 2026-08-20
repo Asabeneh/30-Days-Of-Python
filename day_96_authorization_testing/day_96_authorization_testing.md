@@ -7,6 +7,9 @@
 
 
 
+
+
+
 ## Table of contents
 
 - [Why this lesson exists](#why-this-lesson-exists)
@@ -14,8 +17,12 @@
 - [Outcomes](#outcomes)
 - [The problem](#the-problem)
 - [Security boundary](#security-boundary)
-- [Lesson](#lesson)
-  - [Vocabulary](#vocabulary)
+- [Keywords and terms](#keywords-and-terms)
+- [Topics](#topics)
+  - [What is Authorization Testing?](#what-is-authorization-testing)
+  - [Why is Authorization Testing useful?](#why-is-authorization-testing-useful)
+  - [How will Python use this idea?](#how-will-python-use-this-idea)
+  - [What are the security limits?](#what-are-the-security-limits)
 - [Worked examples](#worked-examples)
   - [Example 1: Create identities](#example-1-create-identities)
   - [Example 2: Create objects](#example-2-create-objects)
@@ -63,11 +70,27 @@ Test object-level and action-level authorization with a small matrix of fictiona
 
 This lesson is educational and authorized-lab-only. It does not authorize public scanning, credential guessing, exploitation, interception, persistence, or changes to systems you do not own.
 
-## Lesson
-
-### Vocabulary
+## Keywords and terms
 
 A subject is a fictional caller identity. An object is a resource. An action is an operation. An authorization matrix lists allowed and denied combinations.
+
+## Topics
+
+### What is Authorization Testing?
+
+Authorization bugs often occur when a caller can access another object or perform an action outside its role. Testing should use synthetic identities and cases, not real accounts.
+
+### Why is Authorization Testing useful?
+
+Test object-level and action-level authorization with a small matrix of fictional users, roles, and cases.
+
+### How will Python use this idea?
+
+Read the worked examples next. For each one, identify the input, the operation, the result, and the boundary that prevents the example from doing more than the lesson allows.
+
+### What are the security limits?
+
+The examples remain local, synthetic, bounded, and authorized. A successful program run demonstrates behavior on the fixture; it does not prove authenticity, compromise, or permission to act on a real target.
 
 ## Worked examples
 

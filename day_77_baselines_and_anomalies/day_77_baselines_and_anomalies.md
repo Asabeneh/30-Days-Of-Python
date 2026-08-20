@@ -7,6 +7,9 @@
 
 
 
+
+
+
 ## Table of contents
 
 - [Why this lesson exists](#why-this-lesson-exists)
@@ -14,8 +17,12 @@
 - [Outcomes](#outcomes)
 - [The problem](#the-problem)
 - [Security boundary](#security-boundary)
-- [Lesson](#lesson)
-  - [Vocabulary](#vocabulary)
+- [Keywords and terms](#keywords-and-terms)
+- [Topics](#topics)
+  - [What is Baselines and Anomaly Reasoning?](#what-is-baselines-and-anomaly-reasoning)
+  - [Why is Baselines and Anomaly Reasoning useful?](#why-is-baselines-and-anomaly-reasoning-useful)
+  - [How will Python use this idea?](#how-will-python-use-this-idea)
+  - [What are the security limits?](#what-are-the-security-limits)
 - [Worked examples](#worked-examples)
   - [Example 1: Compute an average](#example-1-compute-an-average)
   - [Example 2: Measure deviation](#example-2-measure-deviation)
@@ -63,11 +70,27 @@ Compute a simple synthetic baseline and flag a value for review while preserving
 
 This lesson is educational and bounded. It does not authorize public scanning, credential use, interception, exploit delivery, real-user profiling, or changes to systems you do not own.
 
-## Lesson
-
-### Vocabulary
+## Keywords and terms
 
 A baseline summarizes normal reference data. An anomaly score measures deviation. A false positive is benign deviation. Concept drift means normal behavior changes over time.
+
+## Topics
+
+### What is Baselines and Anomaly Reasoning?
+
+An anomaly is a deviation from a model, not proof of maliciousness. Baselines need a time window, feature definition, missing-data policy, and a plan for normal change.
+
+### Why is Baselines and Anomaly Reasoning useful?
+
+Compute a simple synthetic baseline and flag a value for review while preserving the model’s assumptions.
+
+### How will Python use this idea?
+
+Read the worked examples next. For each one, identify the input, the operation, the result, and the boundary that prevents the example from doing more than the lesson allows.
+
+### What are the security limits?
+
+The examples remain local, synthetic, bounded, and authorized. A successful program run demonstrates behavior on the fixture; it does not prove authenticity, compromise, or permission to act on a real target.
 
 ## Worked examples
 

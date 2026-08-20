@@ -7,6 +7,9 @@
 
 
 
+
+
+
 ## Table of contents
 
 - [Why this lesson exists](#why-this-lesson-exists)
@@ -14,8 +17,12 @@
 - [Outcomes](#outcomes)
 - [The problem](#the-problem)
 - [Security boundary](#security-boundary)
-- [Lesson](#lesson)
-  - [Vocabulary](#vocabulary)
+- [Keywords and terms](#keywords-and-terms)
+- [Topics](#topics)
+  - [What is The Response Lifecycle?](#what-is-the-response-lifecycle)
+  - [Why is The Response Lifecycle useful?](#why-is-the-response-lifecycle-useful)
+  - [How will Python use this idea?](#how-will-python-use-this-idea)
+  - [What are the security limits?](#what-are-the-security-limits)
 - [Worked examples](#worked-examples)
   - [Example 1: Define states](#example-1-define-states)
   - [Example 2: Record an owner](#example-2-record-an-owner)
@@ -63,11 +70,27 @@ Represent a synthetic alert from intake through closure while keeping actions bo
 
 This lesson is educational and authorized-lab-only. It does not authorize public scanning, credential guessing, exploitation, interception, persistence, or changes to systems you do not own.
 
-## Lesson
-
-### Vocabulary
+## Keywords and terms
 
 An incident is a suspected adverse event requiring coordinated handling. Containment limits impact. Eradication removes a cause. Recovery restores service. A retrospective improves the system.
+
+## Topics
+
+### What is The Response Lifecycle?
+
+Response work is a controlled lifecycle, not a collection of exciting commands. Preparation, detection, analysis, containment, recovery, and lessons learned each have different evidence and authority requirements.
+
+### Why is The Response Lifecycle useful?
+
+Represent a synthetic alert from intake through closure while keeping actions bounded and approvals visible.
+
+### How will Python use this idea?
+
+Read the worked examples next. For each one, identify the input, the operation, the result, and the boundary that prevents the example from doing more than the lesson allows.
+
+### What are the security limits?
+
+The examples remain local, synthetic, bounded, and authorized. A successful program run demonstrates behavior on the fixture; it does not prove authenticity, compromise, or permission to act on a real target.
 
 ## Worked examples
 

@@ -7,6 +7,9 @@
 
 
 
+
+
+
 ## Table of contents
 
 - [Why this lesson exists](#why-this-lesson-exists)
@@ -14,8 +17,12 @@
 - [Outcomes](#outcomes)
 - [The problem](#the-problem)
 - [Security boundary](#security-boundary)
-- [Lesson](#lesson)
-  - [Vocabulary](#vocabulary)
+- [Keywords and terms](#keywords-and-terms)
+- [Topics](#topics)
+  - [What is Modules, Packages, and Import Boundaries?](#what-is-modules-packages-and-import-boundaries)
+  - [Why is Modules, Packages, and Import Boundaries useful?](#why-is-modules-packages-and-import-boundaries-useful)
+  - [How will Python use this idea?](#how-will-python-use-this-idea)
+  - [What are the security limits?](#what-are-the-security-limits)
 - [Worked examples](#worked-examples)
   - [Example 1: A focused module](#example-1-a-focused-module)
   - [Example 2: The main guard](#example-2-the-main-guard)
@@ -63,11 +70,27 @@ A log utility should be importable by tests without printing a banner, reading a
 
 Use only the repository, synthetic examples, and local fixtures. The examples do not authorize access to public systems, university systems, employer systems, or accounts that you do not own.
 
-## Lesson
-
-### Vocabulary
+## Keywords and terms
 
 A **module** is usually one `.py` file. A **package** is a directory of modules with an importable structure. An **import side effect** is work performed merely because another file imported a name.
+
+## Topics
+
+### What is Modules, Packages, and Import Boundaries?
+
+A security tool that grows in one file becomes difficult to test, review, and reuse. Modules let you separate parsing, policy, formatting, and command-line orchestration while keeping import behavior predictable.
+
+### Why is Modules, Packages, and Import Boundaries useful?
+
+A log utility should be importable by tests without printing a banner, reading a file, or starting a server. The command-line entry point should run only when the module is executed directly.
+
+### How will Python use this idea?
+
+Read the worked examples next. For each one, identify the input, the operation, the result, and the boundary that prevents the example from doing more than the lesson allows.
+
+### What are the security limits?
+
+The examples remain local, synthetic, bounded, and authorized. A successful program run demonstrates behavior on the fixture; it does not prove authenticity, compromise, or permission to act on a real target.
 
 ## Worked examples
 

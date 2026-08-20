@@ -7,6 +7,9 @@
 
 
 
+
+
+
 ## Table of contents
 
 - [Why this lesson exists](#why-this-lesson-exists)
@@ -14,8 +17,12 @@
 - [Outcomes](#outcomes)
 - [The problem](#the-problem)
 - [Security boundary](#security-boundary)
-- [Lesson](#lesson)
-  - [Vocabulary](#vocabulary)
+- [Keywords and terms](#keywords-and-terms)
+- [Topics](#topics)
+  - [What is Linux Command-Line Concepts?](#what-is-linux-command-line-concepts)
+  - [Why is Linux Command-Line Concepts useful?](#why-is-linux-command-line-concepts-useful)
+  - [How will Python use this idea?](#how-will-python-use-this-idea)
+  - [What are the security limits?](#what-are-the-security-limits)
 - [Worked examples](#worked-examples)
   - [Example 1: Print the current directory](#example-1-print-the-current-directory)
   - [Example 2: List deliberately](#example-2-list-deliberately)
@@ -62,11 +69,27 @@ Use harmless commands to inspect the repository and connect their outputs to Pyt
 
 Use only local synthetic fixtures and explicitly authorized course files. The lesson does not authorize public scanning, credential use, remote command execution, or changes to operating-system state.
 
-## Lesson
-
-### Vocabulary
+## Keywords and terms
 
 A **shell** starts programs and connects streams. `stdout` is normal output. `stderr` is diagnostic output. A **pipe** sends one process’s output to another.
+
+## Topics
+
+### What is Linux Command-Line Concepts?
+
+Security engineers need a shell mental model before automating it. Understanding paths, streams, exit statuses, and pipes helps a learner inspect a local system without treating commands as magic incantations.
+
+### Why is Linux Command-Line Concepts useful?
+
+Use harmless commands to inspect the repository and connect their outputs to Python’s process model.
+
+### How will Python use this idea?
+
+Read the worked examples next. For each one, identify the input, the operation, the result, and the boundary that prevents the example from doing more than the lesson allows.
+
+### What are the security limits?
+
+The examples remain local, synthetic, bounded, and authorized. A successful program run demonstrates behavior on the fixture; it does not prove authenticity, compromise, or permission to act on a real target.
 
 ## Worked examples
 

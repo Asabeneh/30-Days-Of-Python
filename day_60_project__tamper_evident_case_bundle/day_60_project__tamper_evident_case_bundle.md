@@ -7,6 +7,9 @@
 
 
 
+
+
+
 ## Table of contents
 
 - [Why this lesson exists](#why-this-lesson-exists)
@@ -14,8 +17,12 @@
 - [Outcomes](#outcomes)
 - [The problem](#the-problem)
 - [Security boundary](#security-boundary)
-- [Lesson](#lesson)
-  - [Vocabulary](#vocabulary)
+- [Keywords and terms](#keywords-and-terms)
+- [Topics](#topics)
+  - [What is Project: Tamper-Evident Case Bundle?](#what-is-project-tamper-evident-case-bundle)
+  - [Why is Project: Tamper-Evident Case Bundle useful?](#why-is-project-tamper-evident-case-bundle-useful)
+  - [How will Python use this idea?](#how-will-python-use-this-idea)
+  - [What are the security limits?](#what-are-the-security-limits)
 - [Worked examples](#worked-examples)
   - [Example 1: Create canonical JSON](#example-1-create-canonical-json)
   - [Example 2: Digest a member](#example-2-digest-a-member)
@@ -63,11 +70,27 @@ Build a bundle of synthetic JSON records with canonical bytes, a manifest digest
 
 Use synthetic data, local fixtures, and loopback-only demonstrations. This lesson does not authorize scanning, interception, credential use, remote command execution, or changes to systems you do not own.
 
-## Lesson
-
-### Vocabulary
+## Keywords and terms
 
 A manifest lists bundle members. Canonical bytes make hashing reproducible. Tamper-evident means change is detectable under a protected verification key.
+
+## Topics
+
+### What is Project: Tamper-Evident Case Bundle?
+
+This project combines encoding, hashes, HMAC, serialization, error policy, and provenance into a local case bundle that can detect modification without pretending to be legal chain of custody.
+
+### Why is Project: Tamper-Evident Case Bundle useful?
+
+Build a bundle of synthetic JSON records with canonical bytes, a manifest digest, an HMAC tag, and a verification command.
+
+### How will Python use this idea?
+
+Read the worked examples next. For each one, identify the input, the operation, the result, and the boundary that prevents the example from doing more than the lesson allows.
+
+### What are the security limits?
+
+The examples remain local, synthetic, bounded, and authorized. A successful program run demonstrates behavior on the fixture; it does not prove authenticity, compromise, or permission to act on a real target.
 
 ## Worked examples
 

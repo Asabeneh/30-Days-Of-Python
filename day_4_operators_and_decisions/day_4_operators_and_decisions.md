@@ -6,12 +6,16 @@
 
 
 
+
+
+
 ## Table of contents
 
 - [Welcome](#welcome)
 - [What you will learn](#what-you-will-learn)
 - [The problem: asking Python a question](#the-problem-asking-python-a-question)
-- [Vocabulary](#vocabulary)
+- [Keywords and terms](#keywords-and-terms)
+- [Topics](#topics)
 - [1. What an operator is](#1-what-an-operator-is)
 - [2. Arithmetic operators](#2-arithmetic-operators)
   - [Addition and subtraction](#addition-and-subtraction)
@@ -85,7 +89,7 @@ The expression `severity >= 7` is a **comparison**. It asks whether the value st
 
 That answer can be stored in a variable, printed, combined with another answer, or used later by an `if` statement. Today we concentrate on producing and understanding the answer. Tomorrow you will use conditions to choose different blocks of code.
 
-## Vocabulary
+## Keywords and terms
 
 An **operator** is a symbol or keyword that tells Python to perform an operation. Examples include `+`, `>=`, `and`, and `in`.
 
@@ -104,6 +108,10 @@ A **condition** is an expression used to make a decision. `severity >= 7` is a c
 **Precedence** is the rule that tells Python which operation to perform first when an expression contains several operators.
 
 **Identity** asks whether two names refer to the very same object. **Equality** asks whether two values have the same contents. These questions are related, but they are not the same question.
+
+## Topics
+
+This lesson teaches **Python Operators, Comparisons, and Decisions** as a sequence of topics. Read the topics in order: first understand the basic idea, then learn the syntax, then study variations and boundaries, and finally apply the idea to a bounded cybersecurity fixture.
 
 ## 1. What an operator is
 

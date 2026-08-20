@@ -7,6 +7,9 @@
 
 
 
+
+
+
 ## Table of contents
 
 - [Why this lesson exists](#why-this-lesson-exists)
@@ -14,8 +17,12 @@
 - [Outcomes](#outcomes)
 - [The problem](#the-problem)
 - [Security boundary](#security-boundary)
-- [Lesson](#lesson)
-  - [Vocabulary](#vocabulary)
+- [Keywords and terms](#keywords-and-terms)
+- [Topics](#topics)
+  - [What is Async I/O and Bounded Awaiting?](#what-is-async-io-and-bounded-awaiting)
+  - [Why is Async I/O and Bounded Awaiting useful?](#why-is-async-io-and-bounded-awaiting-useful)
+  - [How will Python use this idea?](#how-will-python-use-this-idea)
+  - [What are the security limits?](#what-are-the-security-limits)
 - [Worked examples](#worked-examples)
   - [Example 1: Define a coroutine](#example-1-define-a-coroutine)
   - [Example 2: Gather tasks](#example-2-gather-tasks)
@@ -62,11 +69,27 @@ Run several local coroutines with a semaphore and collect successes, failures, a
 
 Use only local synthetic fixtures and explicitly authorized course files. The lesson does not authorize public scanning, credential use, remote command execution, or changes to operating-system state.
 
-## Lesson
-
-### Vocabulary
+## Keywords and terms
 
 A **coroutine** is an awaitable computation. `await` yields control. A **task** schedules a coroutine. A **semaphore** limits concurrent entry.
+
+## Topics
+
+### What is Async I/O and Bounded Awaiting?
+
+Asynchronous code lets one task wait while another makes progress, but it introduces cancellation, ordering, and concurrency limits. It is useful for cooperative local I/O, not a reason to remove authorization.
+
+### Why is Async I/O and Bounded Awaiting useful?
+
+Run several local coroutines with a semaphore and collect successes, failures, and cancellation cleanly.
+
+### How will Python use this idea?
+
+Read the worked examples next. For each one, identify the input, the operation, the result, and the boundary that prevents the example from doing more than the lesson allows.
+
+### What are the security limits?
+
+The examples remain local, synthetic, bounded, and authorized. A successful program run demonstrates behavior on the fixture; it does not prove authenticity, compromise, or permission to act on a real target.
 
 ## Worked examples
 

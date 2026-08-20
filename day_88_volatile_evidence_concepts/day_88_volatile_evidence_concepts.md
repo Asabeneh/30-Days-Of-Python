@@ -7,6 +7,9 @@
 
 
 
+
+
+
 ## Table of contents
 
 - [Why this lesson exists](#why-this-lesson-exists)
@@ -14,8 +17,12 @@
 - [Outcomes](#outcomes)
 - [The problem](#the-problem)
 - [Security boundary](#security-boundary)
-- [Lesson](#lesson)
-  - [Vocabulary](#vocabulary)
+- [Keywords and terms](#keywords-and-terms)
+- [Topics](#topics)
+  - [What is Volatile Evidence Concepts?](#what-is-volatile-evidence-concepts)
+  - [Why is Volatile Evidence Concepts useful?](#why-is-volatile-evidence-concepts-useful)
+  - [How will Python use this idea?](#how-will-python-use-this-idea)
+  - [What are the security limits?](#what-are-the-security-limits)
 - [Worked examples](#worked-examples)
   - [Example 1: Rank volatility](#example-1-rank-volatility)
   - [Example 2: Model a snapshot](#example-2-model-a-snapshot)
@@ -63,11 +70,27 @@ Create a synthetic evidence-priority plan and explain why collection order matte
 
 This lesson is educational and authorized-lab-only. It does not authorize public scanning, credential guessing, exploitation, interception, persistence, or changes to systems you do not own.
 
-## Lesson
-
-### Vocabulary
+## Keywords and terms
 
 Volatile evidence changes quickly. A snapshot is one observation. Collection order is the sequence in which evidence is preserved. A live response has operational risk.
+
+## Topics
+
+### What is Volatile Evidence Concepts?
+
+Some evidence changes quickly: process lists, memory, open connections, and temporary state. The safe lesson is to reason about volatility and collection order without collecting from a real host.
+
+### Why is Volatile Evidence Concepts useful?
+
+Create a synthetic evidence-priority plan and explain why collection order matters.
+
+### How will Python use this idea?
+
+Read the worked examples next. For each one, identify the input, the operation, the result, and the boundary that prevents the example from doing more than the lesson allows.
+
+### What are the security limits?
+
+The examples remain local, synthetic, bounded, and authorized. A successful program run demonstrates behavior on the fixture; it does not prove authenticity, compromise, or permission to act on a real target.
 
 ## Worked examples
 

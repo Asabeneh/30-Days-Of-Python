@@ -9,7 +9,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 REQUIRED = {
     "problem": ["## The problem"],
-    "vocabulary": ["Vocabulary", "What does", "means"],
+    "keywords": ["Keywords", "What does", "means"],
     "worked_examples": ["## Worked examples"],
     "trace": ["## Execution trace"],
     "mistakes": ["Common mistake", "Common mistakes"],

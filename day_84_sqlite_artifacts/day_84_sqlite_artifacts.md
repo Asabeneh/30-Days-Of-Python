@@ -7,6 +7,9 @@
 
 
 
+
+
+
 ## Table of contents
 
 - [Why this lesson exists](#why-this-lesson-exists)
@@ -14,8 +17,12 @@
 - [Outcomes](#outcomes)
 - [The problem](#the-problem)
 - [Security boundary](#security-boundary)
-- [Lesson](#lesson)
-  - [Vocabulary](#vocabulary)
+- [Keywords and terms](#keywords-and-terms)
+- [Topics](#topics)
+  - [What is SQLite Artifacts?](#what-is-sqlite-artifacts)
+  - [Why is SQLite Artifacts useful?](#why-is-sqlite-artifacts-useful)
+  - [How will Python use this idea?](#how-will-python-use-this-idea)
+  - [What are the security limits?](#what-are-the-security-limits)
 - [Worked examples](#worked-examples)
   - [Example 1: Connect to memory](#example-1-connect-to-memory)
   - [Example 2: Insert fixture rows](#example-2-insert-fixture-rows)
@@ -63,11 +70,27 @@ Inspect a disposable SQLite fixture and produce a query result without modifying
 
 This lesson is educational and authorized-lab-only. It does not authorize public scanning, credential guessing, exploitation, interception, persistence, or changes to systems you do not own.
 
-## Lesson
-
-### Vocabulary
+## Keywords and terms
 
 A SQLite artifact is a database file. A schema describes tables and columns. Read-only analysis avoids altering the source. A query plan affects resource behavior.
+
+## Topics
+
+### What is SQLite Artifacts?
+
+Applications often store useful evidence in local databases. Safe analysis requires read-only copies, schema discovery, parameterized queries, bounded rows, and careful handling of deleted or stale records.
+
+### Why is SQLite Artifacts useful?
+
+Inspect a disposable SQLite fixture and produce a query result without modifying the source database.
+
+### How will Python use this idea?
+
+Read the worked examples next. For each one, identify the input, the operation, the result, and the boundary that prevents the example from doing more than the lesson allows.
+
+### What are the security limits?
+
+The examples remain local, synthetic, bounded, and authorized. A successful program run demonstrates behavior on the fixture; it does not prove authenticity, compromise, or permission to act on a real target.
 
 ## Worked examples
 

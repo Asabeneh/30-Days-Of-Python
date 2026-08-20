@@ -7,6 +7,9 @@
 
 
 
+
+
+
 ## Table of contents
 
 - [Why this lesson exists](#why-this-lesson-exists)
@@ -14,8 +17,12 @@
 - [Outcomes](#outcomes)
 - [The problem](#the-problem)
 - [Security boundary](#security-boundary)
-- [Lesson](#lesson)
-  - [Vocabulary](#vocabulary)
+- [Keywords and terms](#keywords-and-terms)
+- [Topics](#topics)
+  - [What is Virtual Environments and Reproducible Setup?](#what-is-virtual-environments-and-reproducible-setup)
+  - [Why is Virtual Environments and Reproducible Setup useful?](#why-is-virtual-environments-and-reproducible-setup-useful)
+  - [How will Python use this idea?](#how-will-python-use-this-idea)
+  - [What are the security limits?](#what-are-the-security-limits)
 - [Worked examples](#worked-examples)
   - [Example 1: Create an environment](#example-1-create-an-environment)
   - [Example 2: Prove the interpreter](#example-2-prove-the-interpreter)
@@ -62,11 +69,27 @@ A new learner must install the course without confusing the system Python, a glo
 
 Use only local synthetic fixtures and explicitly authorized course files. The lesson does not authorize public scanning, credential use, remote command execution, or changes to operating-system state.
 
-## Lesson
-
-### Vocabulary
+## Keywords and terms
 
 A **virtual environment** is an isolated Python installation for one project. The **interpreter** is the executable that runs code. A **dependency** is a package or tool the project needs.
+
+## Topics
+
+### What is Virtual Environments and Reproducible Setup?
+
+A script that works only on its author’s machine is not a reliable security tool. Virtual environments give a project an isolated interpreter and make its dependency assumptions visible.
+
+### Why is Virtual Environments and Reproducible Setup useful?
+
+A new learner must install the course without confusing the system Python, a global package, and the repository environment.
+
+### How will Python use this idea?
+
+Read the worked examples next. For each one, identify the input, the operation, the result, and the boundary that prevents the example from doing more than the lesson allows.
+
+### What are the security limits?
+
+The examples remain local, synthetic, bounded, and authorized. A successful program run demonstrates behavior on the fixture; it does not prove authenticity, compromise, or permission to act on a real target.
 
 ## Worked examples
 

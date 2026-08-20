@@ -7,6 +7,9 @@
 
 
 
+
+
+
 ## Table of contents
 
 - [Why this lesson exists](#why-this-lesson-exists)
@@ -14,8 +17,12 @@
 - [Outcomes](#outcomes)
 - [The problem](#the-problem)
 - [Security boundary](#security-boundary)
-- [Lesson](#lesson)
-  - [Vocabulary](#vocabulary)
+- [Keywords and terms](#keywords-and-terms)
+- [Topics](#topics)
+  - [What is Exceptions and Error Taxonomy?](#what-is-exceptions-and-error-taxonomy)
+  - [Why is Exceptions and Error Taxonomy useful?](#why-is-exceptions-and-error-taxonomy-useful)
+  - [How will Python use this idea?](#how-will-python-use-this-idea)
+  - [What are the security limits?](#what-are-the-security-limits)
 - [Worked examples](#worked-examples)
   - [Example 1: Catch the expected conversion error](#example-1-catch-the-expected-conversion-error)
   - [Example 2: Raise a policy error](#example-2-raise-a-policy-error)
@@ -63,11 +70,27 @@ The log parser sees a missing field, the fixture path is outside the allowed dir
 
 Use only the repository, synthetic examples, and local fixtures. The examples do not authorize access to public systems, university systems, employer systems, or accounts that you do not own.
 
-## Lesson
-
-### Vocabulary
+## Keywords and terms
 
 An **exception** is an object describing an abnormal condition. **Raising** transfers control to a handler. **Catching** says the current layer knows how to recover or report. An exception chain preserves the original cause.
+
+## Topics
+
+### What is Exceptions and Error Taxonomy?
+
+Errors are part of a security tool’s output. If a program hides a malformed record, a permission failure, and a programming bug under one `except`, operators cannot know what happened or what to do next.
+
+### Why is Exceptions and Error Taxonomy useful?
+
+The log parser sees a missing field, the fixture path is outside the allowed directory, and the report file cannot be written. These are different failures and require different messages and tests.
+
+### How will Python use this idea?
+
+Read the worked examples next. For each one, identify the input, the operation, the result, and the boundary that prevents the example from doing more than the lesson allows.
+
+### What are the security limits?
+
+The examples remain local, synthetic, bounded, and authorized. A successful program run demonstrates behavior on the fixture; it does not prove authenticity, compromise, or permission to act on a real target.
 
 ## Worked examples
 

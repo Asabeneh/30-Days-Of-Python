@@ -7,6 +7,9 @@
 
 
 
+
+
+
 ## Table of contents
 
 - [Why this lesson exists](#why-this-lesson-exists)
@@ -14,8 +17,12 @@
 - [Outcomes](#outcomes)
 - [The problem](#the-problem)
 - [Security boundary](#security-boundary)
-- [Lesson](#lesson)
-  - [Vocabulary](#vocabulary)
+- [Keywords and terms](#keywords-and-terms)
+- [Topics](#topics)
+  - [What is Capstone Security Review?](#what-is-capstone-security-review)
+  - [Why is Capstone Security Review useful?](#why-is-capstone-security-review-useful)
+  - [How will Python use this idea?](#how-will-python-use-this-idea)
+  - [What are the security limits?](#what-are-the-security-limits)
 - [Worked examples](#worked-examples)
   - [Example 1: Review inputs](#example-1-review-inputs)
   - [Example 2: Review secrets](#example-2-review-secrets)
@@ -63,11 +70,27 @@ Review a capstone with a checklist covering inputs, secrets, authorization, reso
 
 This lesson is educational and bounded. It does not authorize public scanning, credential use, destructive actions, persistence, or processing of private data.
 
-## Lesson
-
-### Vocabulary
+## Keywords and terms
 
 A security review challenges assumptions. A control is effective only when it protects the intended boundary. A residual risk is a known remaining weakness.
+
+## Topics
+
+### What is Capstone Security Review?
+
+A final review asks whether the capstone’s claims are supported, whether the controls are correctly placed, and whether the demonstration could mislead a user.
+
+### Why is Capstone Security Review useful?
+
+Review a capstone with a checklist covering inputs, secrets, authorization, resources, evidence, tests, and limitations.
+
+### How will Python use this idea?
+
+Read the worked examples next. For each one, identify the input, the operation, the result, and the boundary that prevents the example from doing more than the lesson allows.
+
+### What are the security limits?
+
+The examples remain local, synthetic, bounded, and authorized. A successful program run demonstrates behavior on the fixture; it does not prove authenticity, compromise, or permission to act on a real target.
 
 ## Worked examples
 

@@ -6,6 +6,9 @@
 
 
 
+
+
+
 ## Table of contents
 
 - [Welcome](#welcome)
@@ -13,8 +16,8 @@
 - [Outcomes](#outcomes)
 - [The problem](#the-problem)
 - [Security boundary](#security-boundary)
-- [Vocabulary](#vocabulary)
-- [Lesson](#lesson)
+- [Keywords and terms](#keywords-and-terms)
+- [Topics](#topics)
 - [1. Strings are sequences of characters](#1-strings-are-sequences-of-characters)
 - [2. Use methods for deliberate transformations](#2-use-methods-for-deliberate-transformations)
 - [3. Slicing selects a portion](#3-slicing-selects-a-portion)
@@ -57,11 +60,11 @@ A tool wants to compare event labels consistently, but input may contain spaces,
 
 This lesson is educational and local. It does not authorize public scanning, credential use, data collection, exploitation, interception, or changes to systems you do not own. The cybersecurity examples use invented names, loopback targets, or repository fixtures.
 
-## Vocabulary
+## Keywords and terms
 
 A **string** is a sequence of text characters. **Whitespace** includes spaces, tabs, and line breaks. **Encoding** maps characters to bytes. **Canonicalization** turns equivalent representations into one comparison form. **Normalization** should be recorded when the original matters.
 
-## Lesson
+## Topics
 
 Start with string methods:
 

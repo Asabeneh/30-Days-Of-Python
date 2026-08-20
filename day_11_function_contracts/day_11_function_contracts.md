@@ -7,6 +7,9 @@
 
 
 
+
+
+
 ## Table of contents
 
 - [Why this lesson exists](#why-this-lesson-exists)
@@ -14,8 +17,12 @@
 - [Outcomes](#outcomes)
 - [The problem](#the-problem)
 - [Security boundary](#security-boundary)
-- [Lesson](#lesson)
-  - [Vocabulary](#vocabulary)
+- [Keywords and terms](#keywords-and-terms)
+- [Topics](#topics)
+  - [What is a function contract?](#what-is-a-function-contract)
+  - [Why are function contracts useful?](#why-are-function-contracts-useful)
+  - [What are the parts of a function contract?](#what-are-the-parts-of-a-function-contract)
+  - [How do contracts support safe security decisions?](#how-do-contracts-support-safe-security-decisions)
 - [Worked examples](#worked-examples)
   - [Example 1: The smallest contract](#example-1-the-smallest-contract)
   - [Example 2: A bounded contract](#example-2-a-bounded-contract)
@@ -63,11 +70,27 @@ The phase-one classifier works, but its rules are hidden inside a script. A revi
 
 Use only the repository, synthetic examples, and local fixtures. The examples do not authorize access to public systems, university systems, employer systems, or accounts that you do not own.
 
-## Lesson
-
-### Vocabulary
+## Keywords and terms
 
 A **precondition** describes what must be true before a call. A **postcondition** describes what the caller can rely on after a successful return. A **side effect** changes something outside the returned value, such as a file, log, database, or network service.
+
+## Topics
+
+### What is a function contract?
+
+A function is where an idea becomes a reusable promise. Security utilities become trustworthy when their inputs, outputs, failures, and side effects are visible enough for another person to review.
+
+### Why are function contracts useful?
+
+The phase-one classifier works, but its rules are hidden inside a script. A reviewer needs a small function whose contract says exactly which severity values are accepted, which label is returned, and what happens when the input is invalid.
+
+### What are the parts of a function contract?
+
+Read the worked examples next. For each one, identify the input, the operation, the result, and the boundary that prevents the example from doing more than the lesson allows.
+
+### How do contracts support safe security decisions?
+
+The examples remain local, synthetic, bounded, and authorized. A successful program run demonstrates behavior on the fixture; it does not prove authenticity, compromise, or permission to act on a real target.
 
 ## Worked examples
 

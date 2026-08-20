@@ -7,6 +7,9 @@
 
 
 
+
+
+
 ## Table of contents
 
 - [Why this lesson exists](#why-this-lesson-exists)
@@ -14,8 +17,12 @@
 - [Outcomes](#outcomes)
 - [The problem](#the-problem)
 - [Security boundary](#security-boundary)
-- [Lesson](#lesson)
-  - [Vocabulary](#vocabulary)
+- [Keywords and terms](#keywords-and-terms)
+- [Topics](#topics)
+  - [What is Secure SDLC and Security Requirements?](#what-is-secure-sdlc-and-security-requirements)
+  - [Why is Secure SDLC and Security Requirements useful?](#why-is-secure-sdlc-and-security-requirements-useful)
+  - [How will Python use this idea?](#how-will-python-use-this-idea)
+  - [What are the security limits?](#what-are-the-security-limits)
 - [Worked examples](#worked-examples)
   - [Example 1: Name an asset](#example-1-name-an-asset)
   - [Example 2: Write an abuse case](#example-2-write-an-abuse-case)
@@ -63,11 +70,27 @@ Translate a synthetic case API requirement into security acceptance criteria tha
 
 This lesson is educational and bounded. It does not authorize public scanning, credential use, destructive actions, persistence, or processing of private data.
 
-## Lesson
-
-### Vocabulary
+## Keywords and terms
 
 An abuse case describes harmful use. A security requirement states a control. Acceptance criteria define observable evidence. A threat model records assumptions and residual risk.
+
+## Topics
+
+### What is Secure SDLC and Security Requirements?
+
+Security is cheaper to reason about before code and deployment decisions harden. A secure software-development lifecycle turns assets, abuse cases, controls, tests, and ownership into ordinary engineering work.
+
+### Why is Secure SDLC and Security Requirements useful?
+
+Translate a synthetic case API requirement into security acceptance criteria that can be tested before release.
+
+### How will Python use this idea?
+
+Read the worked examples next. For each one, identify the input, the operation, the result, and the boundary that prevents the example from doing more than the lesson allows.
+
+### What are the security limits?
+
+The examples remain local, synthetic, bounded, and authorized. A successful program run demonstrates behavior on the fixture; it does not prove authenticity, compromise, or permission to act on a real target.
 
 ## Worked examples
 

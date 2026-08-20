@@ -7,6 +7,9 @@
 
 
 
+
+
+
 ## Table of contents
 
 - [Why this lesson exists](#why-this-lesson-exists)
@@ -14,8 +17,12 @@
 - [Outcomes](#outcomes)
 - [The problem](#the-problem)
 - [Security boundary](#security-boundary)
-- [Lesson](#lesson)
-  - [Vocabulary](#vocabulary)
+- [Keywords and terms](#keywords-and-terms)
+- [Topics](#topics)
+  - [What is Threat Modeling Before Automation?](#what-is-threat-modeling-before-automation)
+  - [Why is Threat Modeling Before Automation useful?](#why-is-threat-modeling-before-automation-useful)
+  - [How will Python use this idea?](#how-will-python-use-this-idea)
+  - [What are the security limits?](#what-are-the-security-limits)
 - [Worked examples](#worked-examples)
   - [Example 1: Name an asset](#example-1-name-an-asset)
   - [Example 2: Draw a trust boundary](#example-2-draw-a-trust-boundary)
@@ -62,11 +69,27 @@ Threat-model the log triage tool and identify what can be harmed, how, and which
 
 Use only local synthetic fixtures and explicitly authorized course files. The lesson does not authorize public scanning, credential use, remote command execution, or changes to operating-system state.
 
-## Lesson
-
-### Vocabulary
+## Keywords and terms
 
 An **asset** is something worth protecting. A **threat** is a potential harmful action or condition. A **control** reduces likelihood or impact. **Residual risk** remains after controls.
+
+## Topics
+
+### What is Threat Modeling Before Automation?
+
+Threat modeling turns “make it secure” into explicit assets, threats, controls, assumptions, and residual risk before code makes the decision harder to change.
+
+### Why is Threat Modeling Before Automation useful?
+
+Threat-model the log triage tool and identify what can be harmed, how, and which control reduces the risk.
+
+### How will Python use this idea?
+
+Read the worked examples next. For each one, identify the input, the operation, the result, and the boundary that prevents the example from doing more than the lesson allows.
+
+### What are the security limits?
+
+The examples remain local, synthetic, bounded, and authorized. A successful program run demonstrates behavior on the fixture; it does not prove authenticity, compromise, or permission to act on a real target.
 
 ## Worked examples
 

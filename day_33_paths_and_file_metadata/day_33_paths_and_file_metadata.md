@@ -7,6 +7,9 @@
 
 
 
+
+
+
 ## Table of contents
 
 - [Why this lesson exists](#why-this-lesson-exists)
@@ -14,8 +17,12 @@
 - [Outcomes](#outcomes)
 - [The problem](#the-problem)
 - [Security boundary](#security-boundary)
-- [Lesson](#lesson)
-  - [Vocabulary](#vocabulary)
+- [Keywords and terms](#keywords-and-terms)
+- [Topics](#topics)
+  - [What is Paths, File Metadata, and Symlinks?](#what-is-paths-file-metadata-and-symlinks)
+  - [Why is Paths, File Metadata, and Symlinks useful?](#why-is-paths-file-metadata-and-symlinks-useful)
+  - [How will Python use this idea?](#how-will-python-use-this-idea)
+  - [What are the security limits?](#what-are-the-security-limits)
 - [Worked examples](#worked-examples)
   - [Example 1: Read basic metadata](#example-1-read-basic-metadata)
   - [Example 2: Check a regular file](#example-2-check-a-regular-file)
@@ -62,11 +69,27 @@ Inspect metadata of local fixture files without following an unexpected link or 
 
 Use only local synthetic fixtures and explicitly authorized course files. The lesson does not authorize public scanning, credential use, remote command execution, or changes to operating-system state.
 
-## Lesson
-
-### Vocabulary
+## Keywords and terms
 
 Metadata describes a file object. A **symlink** points to another path. A **mode** describes permission bits. `stat` reports file metadata.
+
+## Topics
+
+### What is Paths, File Metadata, and Symlinks?
+
+A file’s content is not its only property. Size, mode, owner, modification time, and link status affect how a security tool should handle it.
+
+### Why is Paths, File Metadata, and Symlinks useful?
+
+Inspect metadata of local fixture files without following an unexpected link or assuming that a name identifies one object.
+
+### How will Python use this idea?
+
+Read the worked examples next. For each one, identify the input, the operation, the result, and the boundary that prevents the example from doing more than the lesson allows.
+
+### What are the security limits?
+
+The examples remain local, synthetic, bounded, and authorized. A successful program run demonstrates behavior on the fixture; it does not prove authenticity, compromise, or permission to act on a real target.
 
 ## Worked examples
 

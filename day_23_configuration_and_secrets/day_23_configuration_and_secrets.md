@@ -7,6 +7,9 @@
 
 
 
+
+
+
 ## Table of contents
 
 - [Why this lesson exists](#why-this-lesson-exists)
@@ -14,8 +17,12 @@
 - [Outcomes](#outcomes)
 - [The problem](#the-problem)
 - [Security boundary](#security-boundary)
-- [Lesson](#lesson)
-  - [Vocabulary](#vocabulary)
+- [Keywords and terms](#keywords-and-terms)
+- [Topics](#topics)
+  - [What is Configuration, Environment Variables, and Secrets?](#what-is-configuration-environment-variables-and-secrets)
+  - [Why is Configuration, Environment Variables, and Secrets useful?](#why-is-configuration-environment-variables-and-secrets-useful)
+  - [How will Python use this idea?](#how-will-python-use-this-idea)
+  - [What are the security limits?](#what-are-the-security-limits)
 - [Worked examples](#worked-examples)
   - [Example 1: Read a default](#example-1-read-a-default)
   - [Example 2: Validate configuration](#example-2-validate-configuration)
@@ -62,11 +69,27 @@ The tool needs a timeout and a case identifier, while an optional API token must
 
 Use only local synthetic fixtures and explicitly authorized course files. The lesson does not authorize public scanning, credential use, remote command execution, or changes to operating-system state.
 
-## Lesson
-
-### Vocabulary
+## Keywords and terms
 
 Configuration is non-code input that controls behavior. A **secret** is sensitive authentication material. A **default** is a fallback, not proof that a value is valid.
+
+## Topics
+
+### What is Configuration, Environment Variables, and Secrets?
+
+Configuration changes between development, testing, and deployment. Secrets must be supplied through a controlled mechanism, not copied into source code or printed while debugging.
+
+### Why is Configuration, Environment Variables, and Secrets useful?
+
+The tool needs a timeout and a case identifier, while an optional API token must be present without ever appearing in a report.
+
+### How will Python use this idea?
+
+Read the worked examples next. For each one, identify the input, the operation, the result, and the boundary that prevents the example from doing more than the lesson allows.
+
+### What are the security limits?
+
+The examples remain local, synthetic, bounded, and authorized. A successful program run demonstrates behavior on the fixture; it does not prove authenticity, compromise, or permission to act on a real target.
 
 ## Worked examples
 

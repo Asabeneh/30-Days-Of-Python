@@ -7,6 +7,9 @@
 
 
 
+
+
+
 ## Table of contents
 
 - [Why this lesson exists](#why-this-lesson-exists)
@@ -14,8 +17,12 @@
 - [Outcomes](#outcomes)
 - [The problem](#the-problem)
 - [Security boundary](#security-boundary)
-- [Lesson](#lesson)
-  - [Vocabulary](#vocabulary)
+- [Keywords and terms](#keywords-and-terms)
+- [Topics](#topics)
+  - [What is Checkpoint: Build a Log-Triage CLI?](#what-is-checkpoint-build-a-log-triage-cli)
+  - [Why is Checkpoint: Build a Log-Triage CLI useful?](#why-is-checkpoint-build-a-log-triage-cli-useful)
+  - [How will Python use this idea?](#how-will-python-use-this-idea)
+  - [What are the security limits?](#what-are-the-security-limits)
 - [Worked examples](#worked-examples)
   - [Example 1: Define the command](#example-1-define-the-command)
   - [Example 2: Parse arguments](#example-2-parse-arguments)
@@ -63,11 +70,27 @@ Build `log-triage` for the supplied synthetic fixture. It should accept an input
 
 Use only the repository, synthetic examples, and local fixtures. The examples do not authorize access to public systems, university systems, employer systems, or accounts that you do not own.
 
-## Lesson
-
-### Vocabulary
+## Keywords and terms
 
 A **CLI** is a user-facing boundary around program behavior. An **exit status** communicates success or failure to a shell or automation. A **report** should distinguish raw observations, derived labels, rejected records, and truncation.
+
+## Topics
+
+### What is Checkpoint: Build a Log-Triage CLI?
+
+A command-line tool is where modules, errors, files, generators, regex, timelines, dataclasses, and tests meet. This checkpoint turns the phase into a small artifact that another learner can run and review.
+
+### Why is Checkpoint: Build a Log-Triage CLI useful?
+
+Build `log-triage` for the supplied synthetic fixture. It should accept an input path beneath a fixture root, process a maximum number of lines, classify only validated records, and write a report under a dedicated output directory.
+
+### How will Python use this idea?
+
+Read the worked examples next. For each one, identify the input, the operation, the result, and the boundary that prevents the example from doing more than the lesson allows.
+
+### What are the security limits?
+
+The examples remain local, synthetic, bounded, and authorized. A successful program run demonstrates behavior on the fixture; it does not prove authenticity, compromise, or permission to act on a real target.
 
 ## Worked examples
 

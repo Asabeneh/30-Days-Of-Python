@@ -7,6 +7,9 @@
 
 
 
+
+
+
 ## Table of contents
 
 - [Why this lesson exists](#why-this-lesson-exists)
@@ -14,8 +17,12 @@
 - [Outcomes](#outcomes)
 - [The problem](#the-problem)
 - [Security boundary](#security-boundary)
-- [Lesson](#lesson)
-  - [Vocabulary](#vocabulary)
+- [Keywords and terms](#keywords-and-terms)
+- [Topics](#topics)
+  - [What is Security Tool Architecture?](#what-is-security-tool-architecture)
+  - [Why is Security Tool Architecture useful?](#why-is-security-tool-architecture-useful)
+  - [How will Python use this idea?](#how-will-python-use-this-idea)
+  - [What are the security limits?](#what-are-the-security-limits)
 - [Worked examples](#worked-examples)
   - [Example 1: Name layers](#example-1-name-layers)
   - [Example 2: Define an interface](#example-2-define-an-interface)
@@ -63,11 +70,27 @@ Design module boundaries and dependency directions for a local detection utility
 
 This lesson is educational and bounded. It does not authorize public scanning, credential use, destructive actions, persistence, or processing of private data.
 
-## Lesson
-
-### Vocabulary
+## Keywords and terms
 
 Architecture describes components and relationships. Dependency direction says which layer may call which. An adapter translates external systems into internal interfaces.
+
+## Topics
+
+### What is Security Tool Architecture?
+
+A mature security tool needs clear modules for collection, parsing, policy, storage, reporting, and orchestration. Architecture prevents a proof-of-concept from becoming an unreviewable tool.
+
+### Why is Security Tool Architecture useful?
+
+Design module boundaries and dependency directions for a local detection utility.
+
+### How will Python use this idea?
+
+Read the worked examples next. For each one, identify the input, the operation, the result, and the boundary that prevents the example from doing more than the lesson allows.
+
+### What are the security limits?
+
+The examples remain local, synthetic, bounded, and authorized. A successful program run demonstrates behavior on the fixture; it does not prove authenticity, compromise, or permission to act on a real target.
 
 ## Worked examples
 

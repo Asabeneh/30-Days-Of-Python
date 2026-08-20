@@ -7,6 +7,9 @@
 
 
 
+
+
+
 ## Table of contents
 
 - [Why this lesson exists](#why-this-lesson-exists)
@@ -14,8 +17,12 @@
 - [Outcomes](#outcomes)
 - [The problem](#the-problem)
 - [Security boundary](#security-boundary)
-- [Lesson](#lesson)
-  - [Vocabulary](#vocabulary)
+- [Keywords and terms](#keywords-and-terms)
+- [Topics](#topics)
+  - [What is Hashes and Integrity?](#what-is-hashes-and-integrity)
+  - [Why is Hashes and Integrity useful?](#why-is-hashes-and-integrity-useful)
+  - [How will Python use this idea?](#how-will-python-use-this-idea)
+  - [What are the security limits?](#what-are-the-security-limits)
 - [Worked examples](#worked-examples)
   - [Example 1: Hash a value](#example-1-hash-a-value)
   - [Example 2: Compare bytes](#example-2-compare-bytes)
@@ -63,11 +70,27 @@ Hash a local fixture, change a copy, and show that the digest changes without ca
 
 Use synthetic data, local fixtures, and loopback-only demonstrations. This lesson does not authorize scanning, interception, credential use, remote command execution, or changes to systems you do not own.
 
-## Lesson
-
-### Vocabulary
+## Keywords and terms
 
 A hash is a one-way digest. Integrity is the property of detecting change. A collision is two inputs with the same digest; secure hashes make finding one impractical under assumptions.
+
+## Topics
+
+### What is Hashes and Integrity?
+
+A cryptographic hash is a compact fingerprint of bytes. It can detect accidental or unauthorized change only when the expected digest comes from a trusted comparison point.
+
+### Why is Hashes and Integrity useful?
+
+Hash a local fixture, change a copy, and show that the digest changes without calling the digest proof of authorship.
+
+### How will Python use this idea?
+
+Read the worked examples next. For each one, identify the input, the operation, the result, and the boundary that prevents the example from doing more than the lesson allows.
+
+### What are the security limits?
+
+The examples remain local, synthetic, bounded, and authorized. A successful program run demonstrates behavior on the fixture; it does not prove authenticity, compromise, or permission to act on a real target.
 
 ## Worked examples
 

@@ -7,6 +7,9 @@
 
 
 
+
+
+
 ## Table of contents
 
 - [Why this lesson exists](#why-this-lesson-exists)
@@ -14,8 +17,12 @@
 - [Outcomes](#outcomes)
 - [The problem](#the-problem)
 - [Security boundary](#security-boundary)
-- [Lesson](#lesson)
-  - [Vocabulary](#vocabulary)
+- [Keywords and terms](#keywords-and-terms)
+- [Topics](#topics)
+  - [What is Request Parsing and Validation?](#what-is-request-parsing-and-validation)
+  - [Why is Request Parsing and Validation useful?](#why-is-request-parsing-and-validation-useful)
+  - [How will Python use this idea?](#how-will-python-use-this-idea)
+  - [What are the security limits?](#what-are-the-security-limits)
 - [Worked examples](#worked-examples)
   - [Example 1: Parse JSON](#example-1-parse-json)
   - [Example 2: Require an object](#example-2-require-an-object)
@@ -63,11 +70,27 @@ Validate a synthetic JSON request with required fields, bounds, and unknown-fiel
 
 This lesson is educational and bounded. It does not authorize public scanning, credential use, interception, exploit delivery, real-user profiling, or changes to systems you do not own.
 
-## Lesson
-
-### Vocabulary
+## Keywords and terms
 
 Parsing extracts structure. Validation checks type and policy. A schema describes shape. Canonical errors avoid leaking implementation details.
+
+## Topics
+
+### What is Request Parsing and Validation?
+
+Web input arrives as bytes, headers, path segments, query values, and bodies. Parsing creates structure; validation decides whether that structure is acceptable.
+
+### Why is Request Parsing and Validation useful?
+
+Validate a synthetic JSON request with required fields, bounds, and unknown-field policy before it reaches a service function.
+
+### How will Python use this idea?
+
+Read the worked examples next. For each one, identify the input, the operation, the result, and the boundary that prevents the example from doing more than the lesson allows.
+
+### What are the security limits?
+
+The examples remain local, synthetic, bounded, and authorized. A successful program run demonstrates behavior on the fixture; it does not prove authenticity, compromise, or permission to act on a real target.
 
 ## Worked examples
 

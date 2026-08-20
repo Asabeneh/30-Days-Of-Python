@@ -7,6 +7,9 @@
 
 
 
+
+
+
 ## Table of contents
 
 - [Why this lesson exists](#why-this-lesson-exists)
@@ -14,8 +17,12 @@
 - [Outcomes](#outcomes)
 - [The problem](#the-problem)
 - [Security boundary](#security-boundary)
-- [Lesson](#lesson)
-  - [Vocabulary](#vocabulary)
+- [Keywords and terms](#keywords-and-terms)
+- [Topics](#topics)
+  - [What is Local Service Architecture?](#what-is-local-service-architecture)
+  - [Why is Local Service Architecture useful?](#why-is-local-service-architecture-useful)
+  - [How will Python use this idea?](#how-will-python-use-this-idea)
+  - [What are the security limits?](#what-are-the-security-limits)
 - [Worked examples](#worked-examples)
   - [Example 1: Draw the flow](#example-1-draw-the-flow)
   - [Example 2: Use a typed request](#example-2-use-a-typed-request)
@@ -63,11 +70,27 @@ Sketch a local case API that accepts a request, validates it, checks authorizati
 
 This lesson is educational and bounded. It does not authorize public scanning, credential use, interception, exploit delivery, real-user profiling, or changes to systems you do not own.
 
-## Lesson
-
-### Vocabulary
+## Keywords and terms
 
 A request is untrusted input. A handler coordinates work. A service layer applies policy. A repository stores data. A response is an output boundary.
+
+## Topics
+
+### What is Local Service Architecture?
+
+A web service is a pipeline of request parsing, validation, authorization, business logic, and response construction. Drawing those boundaries before coding makes security behavior testable.
+
+### Why is Local Service Architecture useful?
+
+Sketch a local case API that accepts a request, validates it, checks authorization, and returns a safe response without touching a real account.
+
+### How will Python use this idea?
+
+Read the worked examples next. For each one, identify the input, the operation, the result, and the boundary that prevents the example from doing more than the lesson allows.
+
+### What are the security limits?
+
+The examples remain local, synthetic, bounded, and authorized. A successful program run demonstrates behavior on the fixture; it does not prove authenticity, compromise, or permission to act on a real target.
 
 ## Worked examples
 

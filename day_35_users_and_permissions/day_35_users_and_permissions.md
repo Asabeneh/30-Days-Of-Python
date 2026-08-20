@@ -7,6 +7,9 @@
 
 
 
+
+
+
 ## Table of contents
 
 - [Why this lesson exists](#why-this-lesson-exists)
@@ -14,8 +17,12 @@
 - [Outcomes](#outcomes)
 - [The problem](#the-problem)
 - [Security boundary](#security-boundary)
-- [Lesson](#lesson)
-  - [Vocabulary](#vocabulary)
+- [Keywords and terms](#keywords-and-terms)
+- [Topics](#topics)
+  - [What is Users, Permissions, and Least Privilege?](#what-is-users-permissions-and-least-privilege)
+  - [Why is Users, Permissions, and Least Privilege useful?](#why-is-users-permissions-and-least-privilege-useful)
+  - [How will Python use this idea?](#how-will-python-use-this-idea)
+  - [What are the security limits?](#what-are-the-security-limits)
 - [Worked examples](#worked-examples)
   - [Example 1: Read the current user](#example-1-read-the-current-user)
   - [Example 2: Inspect a mode](#example-2-inspect-a-mode)
@@ -62,11 +69,27 @@ Inspect the current local user and a fixture’s permission metadata without cha
 
 Use only local synthetic fixtures and explicitly authorized course files. The lesson does not authorize public scanning, credential use, remote command execution, or changes to operating-system state.
 
-## Lesson
-
-### Vocabulary
+## Keywords and terms
 
 An **identity** is the account associated with a process. **Permission** controls an operation. **Least privilege** grants only what the task needs.
+
+## Topics
+
+### What is Users, Permissions, and Least Privilege?
+
+A process runs with an identity and permissions. Security automation must understand the difference between needing access and being entitled to broaden access.
+
+### Why is Users, Permissions, and Least Privilege useful?
+
+Inspect the current local user and a fixture’s permission metadata without changing the machine’s security settings.
+
+### How will Python use this idea?
+
+Read the worked examples next. For each one, identify the input, the operation, the result, and the boundary that prevents the example from doing more than the lesson allows.
+
+### What are the security limits?
+
+The examples remain local, synthetic, bounded, and authorized. A successful program run demonstrates behavior on the fixture; it does not prove authenticity, compromise, or permission to act on a real target.
 
 ## Worked examples
 

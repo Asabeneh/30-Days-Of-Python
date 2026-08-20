@@ -7,6 +7,9 @@
 
 
 
+
+
+
 ## Table of contents
 
 - [Why this lesson exists](#why-this-lesson-exists)
@@ -14,8 +17,12 @@
 - [Outcomes](#outcomes)
 - [The problem](#the-problem)
 - [Security boundary](#security-boundary)
-- [Lesson](#lesson)
-  - [Vocabulary](#vocabulary)
+- [Keywords and terms](#keywords-and-terms)
+- [Topics](#topics)
+  - [What is CSRF, Cookies, and CORS?](#what-is-csrf-cookies-and-cors)
+  - [Why is CSRF, Cookies, and CORS useful?](#why-is-csrf-cookies-and-cors-useful)
+  - [How will Python use this idea?](#how-will-python-use-this-idea)
+  - [What are the security limits?](#what-are-the-security-limits)
 - [Worked examples](#worked-examples)
   - [Example 1: Describe a session cookie](#example-1-describe-a-session-cookie)
   - [Example 2: Separate read and write](#example-2-separate-read-and-write)
@@ -63,11 +70,27 @@ Model a local state-changing request and decide which cookie, CSRF, and origin c
 
 This lesson is educational and bounded. It does not authorize public scanning, credential use, interception, exploit delivery, real-user profiling, or changes to systems you do not own.
 
-## Lesson
-
-### Vocabulary
+## Keywords and terms
 
 A cookie is browser-managed state. CSRF tricks a browser into sending ambient credentials. CORS is a browser read-access policy, not an authentication mechanism.
+
+## Topics
+
+### What is CSRF, Cookies, and CORS?
+
+Browser state creates security behavior that is not visible in a single Python function. Cookies carry session context, CSRF defenses bind state-changing requests to intent, and CORS controls which browser origins may read responses.
+
+### Why is CSRF, Cookies, and CORS useful?
+
+Model a local state-changing request and decide which cookie, CSRF, and origin checks belong to it.
+
+### How will Python use this idea?
+
+Read the worked examples next. For each one, identify the input, the operation, the result, and the boundary that prevents the example from doing more than the lesson allows.
+
+### What are the security limits?
+
+The examples remain local, synthetic, bounded, and authorized. A successful program run demonstrates behavior on the fixture; it does not prove authenticity, compromise, or permission to act on a real target.
 
 ## Worked examples
 

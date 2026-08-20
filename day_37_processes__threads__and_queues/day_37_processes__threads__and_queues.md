@@ -7,6 +7,9 @@
 
 
 
+
+
+
 ## Table of contents
 
 - [Why this lesson exists](#why-this-lesson-exists)
@@ -14,8 +17,12 @@
 - [Outcomes](#outcomes)
 - [The problem](#the-problem)
 - [Security boundary](#security-boundary)
-- [Lesson](#lesson)
-  - [Vocabulary](#vocabulary)
+- [Keywords and terms](#keywords-and-terms)
+- [Topics](#topics)
+  - [What is Processes, Threads, and Queues?](#what-is-processes-threads-and-queues)
+  - [Why is Processes, Threads, and Queues useful?](#why-is-processes-threads-and-queues-useful)
+  - [How will Python use this idea?](#how-will-python-use-this-idea)
+  - [What are the security limits?](#what-are-the-security-limits)
 - [Worked examples](#worked-examples)
   - [Example 1: Use a thread pool](#example-1-use-a-thread-pool)
   - [Example 2: Use a process pool carefully](#example-2-use-a-process-pool-carefully)
@@ -62,11 +69,27 @@ Process several local fixture items with a small worker pool and preserve a safe
 
 Use only local synthetic fixtures and explicitly authorized course files. The lesson does not authorize public scanning, credential use, remote command execution, or changes to operating-system state.
 
-## Lesson
-
-### Vocabulary
+## Keywords and terms
 
 A **thread** shares memory within one process. A **process** has a separate memory space. A **queue** coordinates producers and consumers. A **race condition** occurs when outcome depends on timing.
+
+## Topics
+
+### What is Processes, Threads, and Queues?
+
+Concurrency can reduce waiting time, but it also creates shared state, ordering, cancellation, and resource problems. A security tool should prefer predictable bounded concurrency over maximum parallelism.
+
+### Why is Processes, Threads, and Queues useful?
+
+Process several local fixture items with a small worker pool and preserve a safe result for each item.
+
+### How will Python use this idea?
+
+Read the worked examples next. For each one, identify the input, the operation, the result, and the boundary that prevents the example from doing more than the lesson allows.
+
+### What are the security limits?
+
+The examples remain local, synthetic, bounded, and authorized. A successful program run demonstrates behavior on the fixture; it does not prove authenticity, compromise, or permission to act on a real target.
 
 ## Worked examples
 

@@ -7,6 +7,9 @@
 
 
 
+
+
+
 ## Table of contents
 
 - [Why this lesson exists](#why-this-lesson-exists)
@@ -14,8 +17,12 @@
 - [Outcomes](#outcomes)
 - [The problem](#the-problem)
 - [Security boundary](#security-boundary)
-- [Lesson](#lesson)
-  - [Vocabulary](#vocabulary)
+- [Keywords and terms](#keywords-and-terms)
+- [Topics](#topics)
+  - [What is SBOM and Provenance?](#what-is-sbom-and-provenance)
+  - [Why is SBOM and Provenance useful?](#why-is-sbom-and-provenance-useful)
+  - [How will Python use this idea?](#how-will-python-use-this-idea)
+  - [What are the security limits?](#what-are-the-security-limits)
 - [Worked examples](#worked-examples)
   - [Example 1: List components](#example-1-list-components)
   - [Example 2: Record source](#example-2-record-source)
@@ -63,11 +70,27 @@ Create a small provenance record for a synthetic course artifact without claimin
 
 This lesson is educational and bounded. It does not authorize public scanning, credential use, destructive actions, persistence, or processing of private data.
 
-## Lesson
-
-### Vocabulary
+## Keywords and terms
 
 An SBOM inventories software components. Provenance records origin and build steps. An artifact is a produced file or image. Reproducibility means rebuilding from the same declared inputs.
+
+## Topics
+
+### What is SBOM and Provenance?
+
+Delivery teams need to know which components produced an artifact. An SBOM-like inventory and provenance record help answer what was built, from which source, with which tools, and under which review.
+
+### Why is SBOM and Provenance useful?
+
+Create a small provenance record for a synthetic course artifact without claiming that metadata proves safety.
+
+### How will Python use this idea?
+
+Read the worked examples next. For each one, identify the input, the operation, the result, and the boundary that prevents the example from doing more than the lesson allows.
+
+### What are the security limits?
+
+The examples remain local, synthetic, bounded, and authorized. A successful program run demonstrates behavior on the fixture; it does not prove authenticity, compromise, or permission to act on a real target.
 
 ## Worked examples
 

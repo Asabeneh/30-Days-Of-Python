@@ -7,6 +7,9 @@
 
 
 
+
+
+
 ## Table of contents
 
 - [Why this lesson exists](#why-this-lesson-exists)
@@ -14,8 +17,12 @@
 - [Outcomes](#outcomes)
 - [The problem](#the-problem)
 - [Security boundary](#security-boundary)
-- [Lesson](#lesson)
-  - [Vocabulary](#vocabulary)
+- [Keywords and terms](#keywords-and-terms)
+- [Topics](#topics)
+  - [What is Regular Expressions and Careful Indicator Extraction?](#what-is-regular-expressions-and-careful-indicator-extraction)
+  - [Why is Regular Expressions and Careful Indicator Extraction useful?](#why-is-regular-expressions-and-careful-indicator-extraction-useful)
+  - [How will Python use this idea?](#how-will-python-use-this-idea)
+  - [What are the security limits?](#what-are-the-security-limits)
 - [Worked examples](#worked-examples)
   - [Example 1: Find a simple field](#example-1-find-a-simple-field)
   - [Example 2: Find every candidate](#example-2-find-every-candidate)
@@ -63,11 +70,27 @@ A synthetic log line contains several tokens. Extract candidates with their posi
 
 Use only the repository, synthetic examples, and local fixtures. The examples do not authorize access to public systems, university systems, employer systems, or accounts that you do not own.
 
-## Lesson
-
-### Vocabulary
+## Keywords and terms
 
 A **pattern** describes text shape. A **match** is evidence that the shape occurred. A **capture group** returns part of a match. A **validator** applies domain rules that a pattern alone may not express.
+
+## Topics
+
+### What is Regular Expressions and Careful Indicator Extraction?
+
+Regular expressions are useful for finding candidate shapes in text, such as an IP-like token or an event ID. They are not complete validators and must never turn a match into an accusation.
+
+### Why is Regular Expressions and Careful Indicator Extraction useful?
+
+A synthetic log line contains several tokens. Extract candidates with their positions, then validate the candidate using ordinary Python logic. The report must preserve the original line number without storing unnecessary raw data.
+
+### How will Python use this idea?
+
+Read the worked examples next. For each one, identify the input, the operation, the result, and the boundary that prevents the example from doing more than the lesson allows.
+
+### What are the security limits?
+
+The examples remain local, synthetic, bounded, and authorized. A successful program run demonstrates behavior on the fixture; it does not prove authenticity, compromise, or permission to act on a real target.
 
 ## Worked examples
 

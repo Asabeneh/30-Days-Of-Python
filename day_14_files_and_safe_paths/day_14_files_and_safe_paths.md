@@ -7,6 +7,9 @@
 
 
 
+
+
+
 ## Table of contents
 
 - [Why this lesson exists](#why-this-lesson-exists)
@@ -14,8 +17,12 @@
 - [Outcomes](#outcomes)
 - [The problem](#the-problem)
 - [Security boundary](#security-boundary)
-- [Lesson](#lesson)
-  - [Vocabulary](#vocabulary)
+- [Keywords and terms](#keywords-and-terms)
+- [Topics](#topics)
+  - [What is Files, Paths, and Safe Evidence Boundaries?](#what-is-files-paths-and-safe-evidence-boundaries)
+  - [Why is Files, Paths, and Safe Evidence Boundaries useful?](#why-is-files-paths-and-safe-evidence-boundaries-useful)
+  - [How will Python use this idea?](#how-will-python-use-this-idea)
+  - [What are the security limits?](#what-are-the-security-limits)
 - [Worked examples](#worked-examples)
   - [Example 1: Build a path](#example-1-build-a-path)
   - [Example 2: Resolve and constrain](#example-2-resolve-and-constrain)
@@ -63,11 +70,27 @@ The checkpoint should read one supplied fixture and write one generated report w
 
 Use only the repository, synthetic examples, and local fixtures. The examples do not authorize access to public systems, university systems, employer systems, or accounts that you do not own.
 
-## Lesson
-
-### Vocabulary
+## Keywords and terms
 
 A **path** is a description of a location. A **resolved path** is the normalized location after following relative components and links. A **trust boundary** is where data changes from an external or less-trusted source into a sensitive operation.
+
+## Topics
+
+### What is Files, Paths, and Safe Evidence Boundaries?
+
+Files are useful evidence sources and dangerous trust boundaries. A path supplied by a user can escape the intended directory, a large file can consume resources, and a report can overwrite something important.
+
+### Why is Files, Paths, and Safe Evidence Boundaries useful?
+
+The checkpoint should read one supplied fixture and write one generated report without following `../` outside the training directory. The safety property must be testable.
+
+### How will Python use this idea?
+
+Read the worked examples next. For each one, identify the input, the operation, the result, and the boundary that prevents the example from doing more than the lesson allows.
+
+### What are the security limits?
+
+The examples remain local, synthetic, bounded, and authorized. A successful program run demonstrates behavior on the fixture; it does not prove authenticity, compromise, or permission to act on a real target.
 
 ## Worked examples
 

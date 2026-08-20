@@ -7,6 +7,9 @@
 
 
 
+
+
+
 ## Table of contents
 
 - [Why this lesson exists](#why-this-lesson-exists)
@@ -14,8 +17,12 @@
 - [Outcomes](#outcomes)
 - [The problem](#the-problem)
 - [Security boundary](#security-boundary)
-- [Lesson](#lesson)
-  - [Vocabulary](#vocabulary)
+- [Keywords and terms](#keywords-and-terms)
+- [Topics](#topics)
+  - [What is Analyst Reporting and Evidence-Based Writing?](#what-is-analyst-reporting-and-evidence-based-writing)
+  - [Why is Analyst Reporting and Evidence-Based Writing useful?](#why-is-analyst-reporting-and-evidence-based-writing-useful)
+  - [How will Python use this idea?](#how-will-python-use-this-idea)
+  - [What are the security limits?](#what-are-the-security-limits)
 - [Worked examples](#worked-examples)
   - [Example 1: Write an observation](#example-1-write-an-observation)
   - [Example 2: Write analysis](#example-2-write-analysis)
@@ -63,11 +70,27 @@ Write a short synthetic alert report that distinguishes facts from interpretatio
 
 This lesson is educational and bounded. It does not authorize public scanning, credential use, interception, exploit delivery, real-user profiling, or changes to systems you do not own.
 
-## Lesson
-
-### Vocabulary
+## Keywords and terms
 
 An observation is what was recorded. Analysis connects observations. Assessment states a cautious interpretation. A limitation identifies missing or weak evidence.
+
+## Topics
+
+### What is Analyst Reporting and Evidence-Based Writing?
+
+A security report must let another person reproduce the reasoning. Separating observation, analysis, assessment, action, and limitation reduces accidental overclaiming.
+
+### Why is Analyst Reporting and Evidence-Based Writing useful?
+
+Write a short synthetic alert report that distinguishes facts from interpretation and names the next authorized step.
+
+### How will Python use this idea?
+
+Read the worked examples next. For each one, identify the input, the operation, the result, and the boundary that prevents the example from doing more than the lesson allows.
+
+### What are the security limits?
+
+The examples remain local, synthetic, bounded, and authorized. A successful program run demonstrates behavior on the fixture; it does not prove authenticity, compromise, or permission to act on a real target.
 
 ## Worked examples
 

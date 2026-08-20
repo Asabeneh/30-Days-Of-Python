@@ -7,6 +7,9 @@
 
 
 
+
+
+
 ## Table of contents
 
 - [Why this lesson exists](#why-this-lesson-exists)
@@ -14,8 +17,12 @@
 - [Outcomes](#outcomes)
 - [The problem](#the-problem)
 - [Security boundary](#security-boundary)
-- [Lesson](#lesson)
-  - [Vocabulary](#vocabulary)
+- [Keywords and terms](#keywords-and-terms)
+- [Topics](#topics)
+  - [What is Authentication and Authorization?](#what-is-authentication-and-authorization)
+  - [Why is Authentication and Authorization useful?](#why-is-authentication-and-authorization-useful)
+  - [How will Python use this idea?](#how-will-python-use-this-idea)
+  - [What are the security limits?](#what-are-the-security-limits)
 - [Worked examples](#worked-examples)
   - [Example 1: Represent identity](#example-1-represent-identity)
   - [Example 2: Define a permission](#example-2-define-a-permission)
@@ -63,11 +70,27 @@ Model a local case-read request with a fictional identity, role, resource owner,
 
 This lesson is educational and bounded. It does not authorize public scanning, credential use, interception, exploit delivery, real-user profiling, or changes to systems you do not own.
 
-## Lesson
-
-### Vocabulary
+## Keywords and terms
 
 Authentication establishes an identity claim. Authorization evaluates a policy. A role is a group of permissions. An object-level check compares the requested resource to the caller’s allowed scope.
+
+## Topics
+
+### What is Authentication and Authorization?
+
+Authentication asks who or what is calling. Authorization asks whether that identity may perform this action on this resource. Confusing them creates security gaps.
+
+### Why is Authentication and Authorization useful?
+
+Model a local case-read request with a fictional identity, role, resource owner, and explicit authorization decision.
+
+### How will Python use this idea?
+
+Read the worked examples next. For each one, identify the input, the operation, the result, and the boundary that prevents the example from doing more than the lesson allows.
+
+### What are the security limits?
+
+The examples remain local, synthetic, bounded, and authorized. A successful program run demonstrates behavior on the fixture; it does not prove authenticity, compromise, or permission to act on a real target.
 
 ## Worked examples
 

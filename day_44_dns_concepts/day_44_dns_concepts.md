@@ -7,6 +7,9 @@
 
 
 
+
+
+
 ## Table of contents
 
 - [Why this lesson exists](#why-this-lesson-exists)
@@ -14,8 +17,12 @@
 - [Outcomes](#outcomes)
 - [The problem](#the-problem)
 - [Security boundary](#security-boundary)
-- [Lesson](#lesson)
-  - [Vocabulary](#vocabulary)
+- [Keywords and terms](#keywords-and-terms)
+- [Topics](#topics)
+  - [What is DNS Concepts and Safe Resolution?](#what-is-dns-concepts-and-safe-resolution)
+  - [Why is DNS Concepts and Safe Resolution useful?](#why-is-dns-concepts-and-safe-resolution-useful)
+  - [How will Python use this idea?](#how-will-python-use-this-idea)
+  - [What are the security limits?](#what-are-the-security-limits)
 - [Worked examples](#worked-examples)
   - [Example 1: Resolve a local name](#example-1-resolve-a-local-name)
   - [Example 2: Inspect multiple results](#example-2-inspect-multiple-results)
@@ -63,11 +70,27 @@ Resolve a documentation name or local fixture safely and record the resolver res
 
 Use synthetic data, local fixtures, and loopback-only demonstrations. This lesson does not authorize scanning, interception, credential use, remote command execution, or changes to systems you do not own.
 
-## Lesson
-
-### Vocabulary
+## Keywords and terms
 
 DNS maps names to records. A resolver performs lookup. A cache stores results for a period. TTL expresses a caching interval.
+
+## Topics
+
+### What is DNS Concepts and Safe Resolution?
+
+Names are translated into addresses through a resolver path that can vary by cache, configuration, and time. Security tooling should distinguish lookup results from ownership or trust.
+
+### Why is DNS Concepts and Safe Resolution useful?
+
+Resolve a documentation name or local fixture safely and record the resolver result without probing the returned host.
+
+### How will Python use this idea?
+
+Read the worked examples next. For each one, identify the input, the operation, the result, and the boundary that prevents the example from doing more than the lesson allows.
+
+### What are the security limits?
+
+The examples remain local, synthetic, bounded, and authorized. A successful program run demonstrates behavior on the fixture; it does not prove authenticity, compromise, or permission to act on a real target.
 
 ## Worked examples
 

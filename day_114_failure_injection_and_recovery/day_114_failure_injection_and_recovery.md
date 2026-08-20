@@ -7,6 +7,9 @@
 
 
 
+
+
+
 ## Table of contents
 
 - [Why this lesson exists](#why-this-lesson-exists)
@@ -14,8 +17,12 @@
 - [Outcomes](#outcomes)
 - [The problem](#the-problem)
 - [Security boundary](#security-boundary)
-- [Lesson](#lesson)
-  - [Vocabulary](#vocabulary)
+- [Keywords and terms](#keywords-and-terms)
+- [Topics](#topics)
+  - [What is Failure Injection and Recovery?](#what-is-failure-injection-and-recovery)
+  - [Why is Failure Injection and Recovery useful?](#why-is-failure-injection-and-recovery-useful)
+  - [How will Python use this idea?](#how-will-python-use-this-idea)
+  - [What are the security limits?](#what-are-the-security-limits)
 - [Worked examples](#worked-examples)
   - [Example 1: Inject a timeout](#example-1-inject-a-timeout)
   - [Example 2: Recover with fallback](#example-2-recover-with-fallback)
@@ -63,11 +70,27 @@ Inject controlled timeout, malformed data, and write failures into a local pipel
 
 This lesson is educational and bounded. It does not authorize public scanning, credential use, destructive actions, persistence, or processing of private data.
 
-## Lesson
-
-### Vocabulary
+## Keywords and terms
 
 Failure injection deliberately creates a test condition. Recovery restores an acceptable state. A retryable failure differs from a permanent failure. A circuit breaker stops repeated attempts.
+
+## Topics
+
+### What is Failure Injection and Recovery?
+
+A resilient tool is not one that never fails; it is one whose failure modes are expected, bounded, observable, and recoverable without corrupting evidence.
+
+### Why is Failure Injection and Recovery useful?
+
+Inject controlled timeout, malformed data, and write failures into a local pipeline and verify recovery behavior.
+
+### How will Python use this idea?
+
+Read the worked examples next. For each one, identify the input, the operation, the result, and the boundary that prevents the example from doing more than the lesson allows.
+
+### What are the security limits?
+
+The examples remain local, synthetic, bounded, and authorized. A successful program run demonstrates behavior on the fixture; it does not prove authenticity, compromise, or permission to act on a real target.
 
 ## Worked examples
 

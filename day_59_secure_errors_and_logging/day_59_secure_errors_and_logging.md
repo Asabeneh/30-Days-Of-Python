@@ -7,6 +7,9 @@
 
 
 
+
+
+
 ## Table of contents
 
 - [Why this lesson exists](#why-this-lesson-exists)
@@ -14,8 +17,12 @@
 - [Outcomes](#outcomes)
 - [The problem](#the-problem)
 - [Security boundary](#security-boundary)
-- [Lesson](#lesson)
-  - [Vocabulary](#vocabulary)
+- [Keywords and terms](#keywords-and-terms)
+- [Topics](#topics)
+  - [What is Secure Errors and Logging?](#what-is-secure-errors-and-logging)
+  - [Why is Secure Errors and Logging useful?](#why-is-secure-errors-and-logging-useful)
+  - [How will Python use this idea?](#how-will-python-use-this-idea)
+  - [What are the security limits?](#what-are-the-security-limits)
 - [Worked examples](#worked-examples)
   - [Example 1: Define safe categories](#example-1-define-safe-categories)
   - [Example 2: Redact fields](#example-2-redact-fields)
@@ -63,11 +70,27 @@ Design error categories and structured logs for a local case bundle without expo
 
 Use synthetic data, local fixtures, and loopback-only demonstrations. This lesson does not authorize scanning, interception, credential use, remote command execution, or changes to systems you do not own.
 
-## Lesson
-
-### Vocabulary
+## Keywords and terms
 
 An error category groups a failure for a caller. A safe message is actionable but minimized. A correlation identifier links events without copying sensitive data.
+
+## Topics
+
+### What is Secure Errors and Logging?
+
+Crypto and network failures are sensitive. An error should help an operator recover without revealing keys, passwords, raw tokens, internal paths, or attacker-controlled formatting.
+
+### Why is Secure Errors and Logging useful?
+
+Design error categories and structured logs for a local case bundle without exposing secret material.
+
+### How will Python use this idea?
+
+Read the worked examples next. For each one, identify the input, the operation, the result, and the boundary that prevents the example from doing more than the lesson allows.
+
+### What are the security limits?
+
+The examples remain local, synthetic, bounded, and authorized. A successful program run demonstrates behavior on the fixture; it does not prove authenticity, compromise, or permission to act on a real target.
 
 ## Worked examples
 

@@ -7,6 +7,9 @@
 
 
 
+
+
+
 ## Table of contents
 
 - [Why this lesson exists](#why-this-lesson-exists)
@@ -14,8 +17,12 @@
 - [Outcomes](#outcomes)
 - [The problem](#the-problem)
 - [Security boundary](#security-boundary)
-- [Lesson](#lesson)
-  - [Vocabulary](#vocabulary)
+- [Keywords and terms](#keywords-and-terms)
+- [Topics](#topics)
+  - [What is Symmetric and Asymmetric Cryptography?](#what-is-symmetric-and-asymmetric-cryptography)
+  - [Why is Symmetric and Asymmetric Cryptography useful?](#why-is-symmetric-and-asymmetric-cryptography-useful)
+  - [How will Python use this idea?](#how-will-python-use-this-idea)
+  - [What are the security limits?](#what-are-the-security-limits)
 - [Worked examples](#worked-examples)
   - [Example 1: Map the key roles](#example-1-map-the-key-roles)
   - [Example 2: Symmetric key scope](#example-2-symmetric-key-scope)
@@ -63,11 +70,27 @@ Map security requirements to a key model and use library-level pseudocode withou
 
 Use synthetic data, local fixtures, and loopback-only demonstrations. This lesson does not authorize scanning, interception, credential use, remote command execution, or changes to systems you do not own.
 
-## Lesson
-
-### Vocabulary
+## Keywords and terms
 
 Symmetric encryption uses one secret key for both directions. Asymmetric cryptography uses a public key and private key. A signature proves possession of a private key under a verification model.
+
+## Topics
+
+### What is Symmetric and Asymmetric Cryptography?
+
+Encryption protects confidentiality under a key model. Symmetric systems use a shared secret; asymmetric systems use a public/private pair. Choosing one requires knowing who must encrypt, decrypt, sign, or verify.
+
+### Why is Symmetric and Asymmetric Cryptography useful?
+
+Map security requirements to a key model and use library-level pseudocode without inventing cryptography.
+
+### How will Python use this idea?
+
+Read the worked examples next. For each one, identify the input, the operation, the result, and the boundary that prevents the example from doing more than the lesson allows.
+
+### What are the security limits?
+
+The examples remain local, synthetic, bounded, and authorized. A successful program run demonstrates behavior on the fixture; it does not prove authenticity, compromise, or permission to act on a real target.
 
 ## Worked examples
 

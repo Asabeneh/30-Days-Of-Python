@@ -7,6 +7,9 @@
 
 
 
+
+
+
 ## Table of contents
 
 - [Why this lesson exists](#why-this-lesson-exists)
@@ -14,8 +17,12 @@
 - [Outcomes](#outcomes)
 - [The problem](#the-problem)
 - [Security boundary](#security-boundary)
-- [Lesson](#lesson)
-  - [Vocabulary](#vocabulary)
+- [Keywords and terms](#keywords-and-terms)
+- [Topics](#topics)
+  - [What is Project: Local Service Monitor?](#what-is-project-local-service-monitor)
+  - [Why is Project: Local Service Monitor useful?](#why-is-project-local-service-monitor-useful)
+  - [How will Python use this idea?](#how-will-python-use-this-idea)
+  - [What are the security limits?](#what-are-the-security-limits)
 - [Worked examples](#worked-examples)
   - [Example 1: Define scope](#example-1-define-scope)
   - [Example 2: Record a check](#example-2-record-a-check)
@@ -63,11 +70,27 @@ Build a monitor for one supplied loopback service with explicit timeout, retry, 
 
 Use synthetic data, local fixtures, and loopback-only demonstrations. This lesson does not authorize scanning, interception, credential use, remote command execution, or changes to systems you do not own.
 
-## Lesson
-
-### Vocabulary
+## Keywords and terms
 
 A monitor observes availability and response properties. It does not prove health, ownership, or security. An **SLO** is a documented reliability target.
+
+## Topics
+
+### What is Project: Local Service Monitor?
+
+This project combines sockets, HTTP parsing, TLS reasoning, timeouts, retries, and baselines into a local monitor that reports bounded observations instead of acting like an internet scanner.
+
+### Why is Project: Local Service Monitor useful?
+
+Build a monitor for one supplied loopback service with explicit timeout, retry, endpoint, and cleanup rules.
+
+### How will Python use this idea?
+
+Read the worked examples next. For each one, identify the input, the operation, the result, and the boundary that prevents the example from doing more than the lesson allows.
+
+### What are the security limits?
+
+The examples remain local, synthetic, bounded, and authorized. A successful program run demonstrates behavior on the fixture; it does not prove authenticity, compromise, or permission to act on a real target.
 
 ## Worked examples
 

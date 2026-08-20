@@ -7,6 +7,9 @@
 
 
 
+
+
+
 ## Table of contents
 
 - [Why this lesson exists](#why-this-lesson-exists)
@@ -14,8 +17,12 @@
 - [Outcomes](#outcomes)
 - [The problem](#the-problem)
 - [Security boundary](#security-boundary)
-- [Lesson](#lesson)
-  - [Vocabulary](#vocabulary)
+- [Keywords and terms](#keywords-and-terms)
+- [Topics](#topics)
+  - [What is Secure Randomness and Token Design?](#what-is-secure-randomness-and-token-design)
+  - [Why is Secure Randomness and Token Design useful?](#why-is-secure-randomness-and-token-design-useful)
+  - [How will Python use this idea?](#how-will-python-use-this-idea)
+  - [What are the security limits?](#what-are-the-security-limits)
 - [Worked examples](#worked-examples)
   - [Example 1: Generate bytes](#example-1-generate-bytes)
   - [Example 2: Encode for a URL](#example-2-encode-for-a-url)
@@ -63,11 +70,27 @@ Generate a short-lived training token, encode it safely, and explain its purpose
 
 Use synthetic data, local fixtures, and loopback-only demonstrations. This lesson does not authorize scanning, interception, credential use, remote command execution, or changes to systems you do not own.
 
-## Lesson
-
-### Vocabulary
+## Keywords and terms
 
 Entropy measures uncertainty. A nonce is intended for one use. A salt is a public random value mixed into password derivation. A token is a bearer value whose secrecy matters.
+
+## Topics
+
+### What is Secure Randomness and Token Design?
+
+Security tokens, salts, nonces, and identifiers require unpredictable values. Ordinary pseudo-random helpers are useful for games and simulations but are not interchangeable with a cryptographic random source.
+
+### Why is Secure Randomness and Token Design useful?
+
+Generate a short-lived training token, encode it safely, and explain its purpose and lifecycle.
+
+### How will Python use this idea?
+
+Read the worked examples next. For each one, identify the input, the operation, the result, and the boundary that prevents the example from doing more than the lesson allows.
+
+### What are the security limits?
+
+The examples remain local, synthetic, bounded, and authorized. A successful program run demonstrates behavior on the fixture; it does not prove authenticity, compromise, or permission to act on a real target.
 
 ## Worked examples
 

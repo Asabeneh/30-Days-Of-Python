@@ -7,6 +7,9 @@
 
 
 
+
+
+
 ## Table of contents
 
 - [Why this lesson exists](#why-this-lesson-exists)
@@ -14,8 +17,12 @@
 - [Outcomes](#outcomes)
 - [The problem](#the-problem)
 - [Security boundary](#security-boundary)
-- [Lesson](#lesson)
-  - [Vocabulary](#vocabulary)
+- [Keywords and terms](#keywords-and-terms)
+- [Topics](#topics)
+  - [What is Supply Chain and Exceptional Conditions?](#what-is-supply-chain-and-exceptional-conditions)
+  - [Why is Supply Chain and Exceptional Conditions useful?](#why-is-supply-chain-and-exceptional-conditions-useful)
+  - [How will Python use this idea?](#how-will-python-use-this-idea)
+  - [What are the security limits?](#what-are-the-security-limits)
 - [Worked examples](#worked-examples)
   - [Example 1: Inventory a component](#example-1-inventory-a-component)
   - [Example 2: Separate required and optional](#example-2-separate-required-and-optional)
@@ -63,11 +70,27 @@ Review a synthetic dependency record and design a failure path that does not sil
 
 This lesson is educational and bounded. It does not authorize public scanning, credential use, interception, exploit delivery, real-user profiling, or changes to systems you do not own.
 
-## Lesson
-
-### Vocabulary
+## Keywords and terms
 
 A supply chain includes code, packages, maintainers, build systems, and artifacts. An exceptional condition is a failure outside the ordinary happy path. Fail closed means refusing a sensitive action when a required control is unavailable.
+
+## Topics
+
+### What is Supply Chain and Exceptional Conditions?
+
+A secure application depends on packages, build steps, services, and assumptions outside one source file. Exceptional conditions include dependency failure, missing updates, and unexpected runtime behavior.
+
+### Why is Supply Chain and Exceptional Conditions useful?
+
+Review a synthetic dependency record and design a failure path that does not silently downgrade security.
+
+### How will Python use this idea?
+
+Read the worked examples next. For each one, identify the input, the operation, the result, and the boundary that prevents the example from doing more than the lesson allows.
+
+### What are the security limits?
+
+The examples remain local, synthetic, bounded, and authorized. A successful program run demonstrates behavior on the fixture; it does not prove authenticity, compromise, or permission to act on a real target.
 
 ## Worked examples
 

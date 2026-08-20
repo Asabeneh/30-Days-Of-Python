@@ -7,6 +7,9 @@
 
 
 
+
+
+
 ## Table of contents
 
 - [Why this lesson exists](#why-this-lesson-exists)
@@ -14,8 +17,12 @@
 - [Outcomes](#outcomes)
 - [The problem](#the-problem)
 - [Security boundary](#security-boundary)
-- [Lesson](#lesson)
-  - [Vocabulary](#vocabulary)
+- [Keywords and terms](#keywords-and-terms)
+- [Topics](#topics)
+  - [What is Timeouts, Resource Limits, and Backpressure?](#what-is-timeouts-resource-limits-and-backpressure)
+  - [Why is Timeouts, Resource Limits, and Backpressure useful?](#why-is-timeouts-resource-limits-and-backpressure-useful)
+  - [How will Python use this idea?](#how-will-python-use-this-idea)
+  - [What are the security limits?](#what-are-the-security-limits)
 - [Worked examples](#worked-examples)
   - [Example 1: Set a timeout](#example-1-set-a-timeout)
   - [Example 2: Handle timeout](#example-2-handle-timeout)
@@ -62,11 +69,27 @@ Run a bounded local task and show how the caller reacts when the task exceeds th
 
 Use only local synthetic fixtures and explicitly authorized course files. The lesson does not authorize public scanning, credential use, remote command execution, or changes to operating-system state.
 
-## Lesson
-
-### Vocabulary
+## Keywords and terms
 
 A **timeout** limits elapsed time. A **resource limit** bounds work or memory. **Backpressure** slows producers when consumers cannot keep up.
+
+## Topics
+
+### What is Timeouts, Resource Limits, and Backpressure?
+
+A security tool can fail by doing too much work. Timeouts, maximum sizes, and backpressure turn resource behavior into an explicit contract.
+
+### Why is Timeouts, Resource Limits, and Backpressure useful?
+
+Run a bounded local task and show how the caller reacts when the task exceeds the allowed time or output budget.
+
+### How will Python use this idea?
+
+Read the worked examples next. For each one, identify the input, the operation, the result, and the boundary that prevents the example from doing more than the lesson allows.
+
+### What are the security limits?
+
+The examples remain local, synthetic, bounded, and authorized. A successful program run demonstrates behavior on the fixture; it does not prove authenticity, compromise, or permission to act on a real target.
 
 ## Worked examples
 

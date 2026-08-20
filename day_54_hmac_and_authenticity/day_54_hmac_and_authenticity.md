@@ -7,6 +7,9 @@
 
 
 
+
+
+
 ## Table of contents
 
 - [Why this lesson exists](#why-this-lesson-exists)
@@ -14,8 +17,12 @@
 - [Outcomes](#outcomes)
 - [The problem](#the-problem)
 - [Security boundary](#security-boundary)
-- [Lesson](#lesson)
-  - [Vocabulary](#vocabulary)
+- [Keywords and terms](#keywords-and-terms)
+- [Topics](#topics)
+  - [What is HMAC and Message Authenticity?](#what-is-hmac-and-message-authenticity)
+  - [Why is HMAC and Message Authenticity useful?](#why-is-hmac-and-message-authenticity-useful)
+  - [How will Python use this idea?](#how-will-python-use-this-idea)
+  - [What are the security limits?](#what-are-the-security-limits)
 - [Worked examples](#worked-examples)
   - [Example 1: Create a tag](#example-1-create-a-tag)
   - [Example 2: Verify with compare_digest](#example-2-verify-with-comparedigest)
@@ -63,11 +70,27 @@ Authenticate a synthetic record with an HMAC, verify it before parsing, and reje
 
 Use synthetic data, local fixtures, and loopback-only demonstrations. This lesson does not authorize scanning, interception, credential use, remote command execution, or changes to systems you do not own.
 
-## Lesson
-
-### Vocabulary
+## Keywords and terms
 
 HMAC is a keyed integrity/authenticity construction. A tag is the resulting authenticator. Constant-time comparison reduces timing leakage in comparisons.
+
+## Topics
+
+### What is HMAC and Message Authenticity?
+
+A keyed message authentication code adds a secret key to integrity checking. It can show that a verifier with the same key accepts a message, but it does not provide non-repudiation and depends on key protection.
+
+### Why is HMAC and Message Authenticity useful?
+
+Authenticate a synthetic record with an HMAC, verify it before parsing, and reject a changed message.
+
+### How will Python use this idea?
+
+Read the worked examples next. For each one, identify the input, the operation, the result, and the boundary that prevents the example from doing more than the lesson allows.
+
+### What are the security limits?
+
+The examples remain local, synthetic, bounded, and authorized. A successful program run demonstrates behavior on the fixture; it does not prove authenticity, compromise, or permission to act on a real target.
 
 ## Worked examples
 

@@ -7,6 +7,9 @@
 
 
 
+
+
+
 ## Table of contents
 
 - [Why this lesson exists](#why-this-lesson-exists)
@@ -14,8 +17,12 @@
 - [Outcomes](#outcomes)
 - [The problem](#the-problem)
 - [Security boundary](#security-boundary)
-- [Lesson](#lesson)
-  - [Vocabulary](#vocabulary)
+- [Keywords and terms](#keywords-and-terms)
+- [Topics](#topics)
+  - [What is Generators, Iterators, and Streaming Evidence?](#what-is-generators-iterators-and-streaming-evidence)
+  - [Why is Generators, Iterators, and Streaming Evidence useful?](#why-is-generators-iterators-and-streaming-evidence-useful)
+  - [How will Python use this idea?](#how-will-python-use-this-idea)
+  - [What are the security limits?](#what-are-the-security-limits)
 - [Worked examples](#worked-examples)
   - [Example 1: A generator function](#example-1-a-generator-function)
   - [Example 2: Stream matching lines](#example-2-stream-matching-lines)
@@ -63,11 +70,27 @@ A fixture may contain many lines. The tool should inspect a small window and sto
 
 Use only the repository, synthetic examples, and local fixtures. The examples do not authorize access to public systems, university systems, employer systems, or accounts that you do not own.
 
-## Lesson
-
-### Vocabulary
+## Keywords and terms
 
 An **iterable** can produce an iterator. An **iterator** remembers its position. A **generator** is a convenient way to create an iterator with `yield`. A generator is lazy: its body runs when the caller asks for the next item.
+
+## Topics
+
+### What is Generators, Iterators, and Streaming Evidence?
+
+A list loads everything before processing; a generator produces one item at a time. Streaming can reduce memory use, but it does not remove the need for bounds, error handling, or a completeness signal.
+
+### Why is Generators, Iterators, and Streaming Evidence useful?
+
+A fixture may contain many lines. The tool should inspect a small window and stop safely while telling the reviewer whether the window was complete.
+
+### How will Python use this idea?
+
+Read the worked examples next. For each one, identify the input, the operation, the result, and the boundary that prevents the example from doing more than the lesson allows.
+
+### What are the security limits?
+
+The examples remain local, synthetic, bounded, and authorized. A successful program run demonstrates behavior on the fixture; it does not prove authenticity, compromise, or permission to act on a real target.
 
 ## Worked examples
 

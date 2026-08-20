@@ -7,6 +7,9 @@
 
 
 
+
+
+
 ## Table of contents
 
 - [Why this lesson exists](#why-this-lesson-exists)
@@ -14,8 +17,12 @@
 - [Outcomes](#outcomes)
 - [The problem](#the-problem)
 - [Security boundary](#security-boundary)
-- [Lesson](#lesson)
-  - [Vocabulary](#vocabulary)
+- [Keywords and terms](#keywords-and-terms)
+- [Topics](#topics)
+  - [What is Containers and Isolation Concepts?](#what-is-containers-and-isolation-concepts)
+  - [Why is Containers and Isolation Concepts useful?](#why-is-containers-and-isolation-concepts-useful)
+  - [How will Python use this idea?](#how-will-python-use-this-idea)
+  - [What are the security limits?](#what-are-the-security-limits)
 - [Worked examples](#worked-examples)
   - [Example 1: Name the image source](#example-1-name-the-image-source)
   - [Example 2: Drop privileges](#example-2-drop-privileges)
@@ -63,11 +70,27 @@ Describe a least-privilege local container configuration without running untrust
 
 This lesson is educational and bounded. It does not authorize public scanning, credential use, destructive actions, persistence, or processing of private data.
 
-## Lesson
-
-### Vocabulary
+## Keywords and terms
 
 An image is a packaged filesystem and metadata. A container is a running instance. A mount shares host data. Isolation reduces but does not eliminate risk.
+
+## Topics
+
+### What is Containers and Isolation Concepts?
+
+Containers package a process and its dependencies, but they are not magical security boundaries. Images, privileges, mounts, networks, and secrets still need explicit policy.
+
+### Why is Containers and Isolation Concepts useful?
+
+Describe a least-privilege local container configuration without running untrusted images or altering the host.
+
+### How will Python use this idea?
+
+Read the worked examples next. For each one, identify the input, the operation, the result, and the boundary that prevents the example from doing more than the lesson allows.
+
+### What are the security limits?
+
+The examples remain local, synthetic, bounded, and authorized. A successful program run demonstrates behavior on the fixture; it does not prove authenticity, compromise, or permission to act on a real target.
 
 ## Worked examples
 

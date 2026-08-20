@@ -7,6 +7,9 @@
 
 
 
+
+
+
 ## Table of contents
 
 - [Why this lesson exists](#why-this-lesson-exists)
@@ -14,8 +17,12 @@
 - [Outcomes](#outcomes)
 - [The problem](#the-problem)
 - [Security boundary](#security-boundary)
-- [Lesson](#lesson)
-  - [Vocabulary](#vocabulary)
+- [Keywords and terms](#keywords-and-terms)
+- [Topics](#topics)
+  - [What is Command-Line Interfaces and Explicit Input?](#what-is-command-line-interfaces-and-explicit-input)
+  - [Why is Command-Line Interfaces and Explicit Input useful?](#why-is-command-line-interfaces-and-explicit-input-useful)
+  - [How will Python use this idea?](#how-will-python-use-this-idea)
+  - [What are the security limits?](#what-are-the-security-limits)
 - [Worked examples](#worked-examples)
   - [Example 1: Parse a flag](#example-1-parse-a-flag)
   - [Example 2: Show help](#example-2-show-help)
@@ -62,11 +69,27 @@ Turn the log triage function into a command that accepts a fixture path, a finit
 
 Use only local synthetic fixtures and explicitly authorized course files. The lesson does not authorize public scanning, credential use, remote command execution, or changes to operating-system state.
 
-## Lesson
-
-### Vocabulary
+## Keywords and terms
 
 An **argument parser** turns shell text into values. An **exit status** communicates success or failure. A **flag** is an explicit named option.
+
+## Topics
+
+### What is Command-Line Interfaces and Explicit Input?
+
+A CLI is the first trust boundary for many security utilities. Clear options, help text, validation, and exit statuses make a tool safer to automate and easier to review.
+
+### Why is Command-Line Interfaces and Explicit Input useful?
+
+Turn the log triage function into a command that accepts a fixture path, a finite limit, and an output mode without relying on ambiguous positional input.
+
+### How will Python use this idea?
+
+Read the worked examples next. For each one, identify the input, the operation, the result, and the boundary that prevents the example from doing more than the lesson allows.
+
+### What are the security limits?
+
+The examples remain local, synthetic, bounded, and authorized. A successful program run demonstrates behavior on the fixture; it does not prove authenticity, compromise, or permission to act on a real target.
 
 ## Worked examples
 

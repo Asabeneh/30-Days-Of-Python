@@ -7,6 +7,9 @@
 
 
 
+
+
+
 ## Table of contents
 
 - [Why this lesson exists](#why-this-lesson-exists)
@@ -14,8 +17,12 @@
 - [Outcomes](#outcomes)
 - [The problem](#the-problem)
 - [Security boundary](#security-boundary)
-- [Lesson](#lesson)
-  - [Vocabulary](#vocabulary)
+- [Keywords and terms](#keywords-and-terms)
+- [Topics](#topics)
+  - [What is Advanced Concurrency and Cancellation?](#what-is-advanced-concurrency-and-cancellation)
+  - [Why is Advanced Concurrency and Cancellation useful?](#why-is-advanced-concurrency-and-cancellation-useful)
+  - [How will Python use this idea?](#how-will-python-use-this-idea)
+  - [What are the security limits?](#what-are-the-security-limits)
 - [Worked examples](#worked-examples)
   - [Example 1: Name tasks](#example-1-name-tasks)
   - [Example 2: Limit concurrency](#example-2-limit-concurrency)
@@ -63,11 +70,27 @@ Coordinate bounded asynchronous tasks, cancel them cleanly, and preserve result 
 
 This lesson is educational and bounded. It does not authorize public scanning, credential use, destructive actions, persistence, or processing of private data.
 
-## Lesson
-
-### Vocabulary
+## Keywords and terms
 
 Cancellation requests work to stop. A future represents pending work. Idempotence means repeating an operation has the same safe effect. A race depends on timing.
+
+## Topics
+
+### What is Advanced Concurrency and Cancellation?
+
+Concurrency at scale introduces cancellation, ordering, shared state, and cleanup problems. Reliable security tooling needs deterministic identifiers and explicit lifecycle control.
+
+### Why is Advanced Concurrency and Cancellation useful?
+
+Coordinate bounded asynchronous tasks, cancel them cleanly, and preserve result identity.
+
+### How will Python use this idea?
+
+Read the worked examples next. For each one, identify the input, the operation, the result, and the boundary that prevents the example from doing more than the lesson allows.
+
+### What are the security limits?
+
+The examples remain local, synthetic, bounded, and authorized. A successful program run demonstrates behavior on the fixture; it does not prove authenticity, compromise, or permission to act on a real target.
 
 ## Worked examples
 

@@ -6,6 +6,9 @@
 
 
 
+
+
+
 ## Table of contents
 
 - [Welcome](#welcome)
@@ -13,8 +16,13 @@
 - [Outcomes](#outcomes)
 - [The problem](#the-problem)
 - [Security boundary](#security-boundary)
-- [Vocabulary](#vocabulary)
-- [Lesson](#lesson)
+- [Keywords and terms](#keywords-and-terms)
+- [Topics](#topics)
+  - [What is a function?](#what-is-a-function)
+  - [What are the benefits of using a function?](#what-are-the-benefits-of-using-a-function)
+  - [What types of functions can we write?](#what-types-of-functions-can-we-write)
+  - [What is scope, and why does it matter?](#what-is-scope-and-why-does-it-matter)
+  - [What should a function contract say?](#what-should-a-function-contract-say)
 - [1. A function packages one job](#1-a-function-packages-one-job)
 - [2. Parameters make a rule reusable](#2-parameters-make-a-rule-reusable)
 - [3. Validate at the boundary](#3-validate-at-the-boundary)
@@ -57,11 +65,13 @@ A parser, classifier, and report formatter should be testable separately. If one
 
 This lesson is educational and local. It does not authorize public scanning, credential use, data collection, exploitation, interception, or changes to systems you do not own. The cybersecurity examples use invented names, loopback targets, or repository fixtures.
 
-## Vocabulary
+## Keywords and terms
 
 A **function** is a reusable named block. A **parameter** is a name in the function definition. An **argument** is the value supplied when calling it. `return` sends a result back. A **contract** describes accepted inputs, produced outputs, and failure behavior. **Scope** describes where a name exists.
 
-## Lesson
+## Topics
+
+### What is a function?
 
 Define the smallest function:
 
@@ -76,6 +86,10 @@ print(result)
 
 The `def` line creates the function. `number` is a parameter. The indented body adds one. `return` sends 5 back to the caller. The function does not print by itself; the caller decides what to do with the result.
 
+### What are the benefits of using a function?
+
+A function gives one job a name, lets you test that job separately, and prevents the same rule from being copied into several places. In security automation, one validation rule should not silently differ between the parser, classifier, and report writer.
+
 A parameter can have a default:
 
 ```python
@@ -88,6 +102,10 @@ print(label_source(" Training-Auth "))
 ```
 
 The first call uses the default. The second supplies an argument. Defaults are useful only when “missing” really has a documented meaning.
+
+### What types of functions can we write?
+
+This lesson uses small pure functions that return values, functions with default parameters, validation functions that reject invalid values, and functions that call other functions. These are different designs for different jobs; they are not separate Python languages.
 
 Write a function that validates a range:
 
@@ -114,6 +132,10 @@ def parse_severity(text):
 
 The parser converts representation. The validator checks the internal value. Keeping those jobs separate makes each one easier to test.
 
+### What is scope, and why does it matter?
+
+Scope explains where a name can be used. A name created inside a function normally belongs to that function, which prevents unrelated code from changing it accidentally.
+
 Scope surprises beginners:
 
 ```python
@@ -136,6 +158,10 @@ def format_summary(source, severity):
 ```
 
 This function returns text and does not write a file, contact a network, or modify a global list. Pure or mostly pure functions are easier to test because the same inputs produce the same result.
+
+### What should a function contract say?
+
+A useful contract describes accepted input, returned output, expected failures, and side effects. It should also name edge cases instead of leaving Python's default behavior to become an accidental policy.
 
 A function contract should state edge cases. For `parse_severity`, decide what empty text means, whether spaces are accepted, and whether a plus sign such as `+7` is allowed. Python will have behavior even when you have not written a policy; your job is to decide whether that behavior matches the program's purpose.
 

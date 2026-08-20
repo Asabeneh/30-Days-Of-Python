@@ -7,6 +7,9 @@
 
 
 
+
+
+
 ## Table of contents
 
 - [Why this lesson exists](#why-this-lesson-exists)
@@ -14,8 +17,12 @@
 - [Outcomes](#outcomes)
 - [The problem](#the-problem)
 - [Security boundary](#security-boundary)
-- [Lesson](#lesson)
-  - [Vocabulary](#vocabulary)
+- [Keywords and terms](#keywords-and-terms)
+- [Topics](#topics)
+  - [What is Host Inventories and Baseline Data?](#what-is-host-inventories-and-baseline-data)
+  - [Why is Host Inventories and Baseline Data useful?](#why-is-host-inventories-and-baseline-data-useful)
+  - [How will Python use this idea?](#how-will-python-use-this-idea)
+  - [What are the security limits?](#what-are-the-security-limits)
 - [Worked examples](#worked-examples)
   - [Example 1: Model a host](#example-1-model-a-host)
   - [Example 2: Normalize a service list](#example-2-normalize-a-service-list)
@@ -62,11 +69,27 @@ Create a local host-like inventory from synthetic data and compare two snapshots
 
 Use only local synthetic fixtures and explicitly authorized course files. The lesson does not authorize public scanning, credential use, remote command execution, or changes to operating-system state.
 
-## Lesson
-
-### Vocabulary
+## Keywords and terms
 
 An **inventory** is a structured list of observed properties. A **baseline** is a reference snapshot. **Drift** is a difference between observations.
+
+## Topics
+
+### What is Host Inventories and Baseline Data?
+
+An inventory describes what a tool observed about a host or fixture at one point in time. Baselines help identify change, but only when collection scope, normalization, and comparison are clear.
+
+### Why is Host Inventories and Baseline Data useful?
+
+Create a local host-like inventory from synthetic data and compare two snapshots without claiming that a difference is malicious.
+
+### How will Python use this idea?
+
+Read the worked examples next. For each one, identify the input, the operation, the result, and the boundary that prevents the example from doing more than the lesson allows.
+
+### What are the security limits?
+
+The examples remain local, synthetic, bounded, and authorized. A successful program run demonstrates behavior on the fixture; it does not prove authenticity, compromise, or permission to act on a real target.
 
 ## Worked examples
 

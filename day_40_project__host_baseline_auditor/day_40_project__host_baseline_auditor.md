@@ -7,6 +7,9 @@
 
 
 
+
+
+
 ## Table of contents
 
 - [Why this lesson exists](#why-this-lesson-exists)
@@ -14,8 +17,12 @@
 - [Outcomes](#outcomes)
 - [The problem](#the-problem)
 - [Security boundary](#security-boundary)
-- [Lesson](#lesson)
-  - [Vocabulary](#vocabulary)
+- [Keywords and terms](#keywords-and-terms)
+- [Topics](#topics)
+  - [What is Project: Host Baseline Auditor?](#what-is-project-host-baseline-auditor)
+  - [Why is Project: Host Baseline Auditor useful?](#why-is-project-host-baseline-auditor-useful)
+  - [How will Python use this idea?](#how-will-python-use-this-idea)
+  - [What are the security limits?](#what-are-the-security-limits)
 - [Worked examples](#worked-examples)
   - [Example 1: Define the baseline](#example-1-define-the-baseline)
   - [Example 2: Collect bounded state](#example-2-collect-bounded-state)
@@ -62,11 +69,27 @@ Build a host baseline auditor for a fixture representation, with explicit scope,
 
 Use only local synthetic fixtures and explicitly authorized course files. The lesson does not authorize public scanning, credential use, remote command execution, or changes to operating-system state.
 
-## Lesson
-
-### Vocabulary
+## Keywords and terms
 
 An **auditor** compares observed state with an expected baseline. A **control** defines what is allowed. A **finding** describes a difference and its evidence.
+
+## Topics
+
+### What is Project: Host Baseline Auditor?
+
+The project combines operating-system concepts into a local, bounded auditor. It should collect a small approved inventory, compare it to a synthetic baseline, and produce explainable drift without destructive action.
+
+### Why is Project: Host Baseline Auditor useful?
+
+Build a host baseline auditor for a fixture representation, with explicit scope, deterministic output, tests, and a resettable report.
+
+### How will Python use this idea?
+
+Read the worked examples next. For each one, identify the input, the operation, the result, and the boundary that prevents the example from doing more than the lesson allows.
+
+### What are the security limits?
+
+The examples remain local, synthetic, bounded, and authorized. A successful program run demonstrates behavior on the fixture; it does not prove authenticity, compromise, or permission to act on a real target.
 
 ## Worked examples
 

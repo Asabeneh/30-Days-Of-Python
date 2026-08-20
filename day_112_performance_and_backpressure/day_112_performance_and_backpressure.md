@@ -7,6 +7,9 @@
 
 
 
+
+
+
 ## Table of contents
 
 - [Why this lesson exists](#why-this-lesson-exists)
@@ -14,8 +17,12 @@
 - [Outcomes](#outcomes)
 - [The problem](#the-problem)
 - [Security boundary](#security-boundary)
-- [Lesson](#lesson)
-  - [Vocabulary](#vocabulary)
+- [Keywords and terms](#keywords-and-terms)
+- [Topics](#topics)
+  - [What is Performance and Backpressure?](#what-is-performance-and-backpressure)
+  - [Why is Performance and Backpressure useful?](#why-is-performance-and-backpressure-useful)
+  - [How will Python use this idea?](#how-will-python-use-this-idea)
+  - [What are the security limits?](#what-are-the-security-limits)
 - [Worked examples](#worked-examples)
   - [Example 1: Measure a count](#example-1-measure-a-count)
   - [Example 2: Bound a queue](#example-2-bound-a-queue)
@@ -63,11 +70,27 @@ Process a synthetic stream with a bounded queue and explain what happens when th
 
 This lesson is educational and bounded. It does not authorize public scanning, credential use, destructive actions, persistence, or processing of private data.
 
-## Lesson
-
-### Vocabulary
+## Keywords and terms
 
 Throughput is work per time. Latency is time per operation. Backpressure limits producers. A queue is a buffer. Rejection is an explicit resource policy.
+
+## Topics
+
+### What is Performance and Backpressure?
+
+Performance is a security property when slow or oversized work can exhaust a service. Measure first, then choose bounded queues, batching, streaming, and rejection policies.
+
+### Why is Performance and Backpressure useful?
+
+Process a synthetic stream with a bounded queue and explain what happens when the consumer is slower than the producer.
+
+### How will Python use this idea?
+
+Read the worked examples next. For each one, identify the input, the operation, the result, and the boundary that prevents the example from doing more than the lesson allows.
+
+### What are the security limits?
+
+The examples remain local, synthetic, bounded, and authorized. A successful program run demonstrates behavior on the fixture; it does not prove authenticity, compromise, or permission to act on a real target.
 
 ## Worked examples
 

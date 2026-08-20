@@ -7,6 +7,9 @@
 
 
 
+
+
+
 ## Table of contents
 
 - [Why this lesson exists](#why-this-lesson-exists)
@@ -14,8 +17,12 @@
 - [Outcomes](#outcomes)
 - [The problem](#the-problem)
 - [Security boundary](#security-boundary)
-- [Lesson](#lesson)
-  - [Vocabulary](#vocabulary)
+- [Keywords and terms](#keywords-and-terms)
+- [Topics](#topics)
+  - [What is Browser and Document Artifacts?](#what-is-browser-and-document-artifacts)
+  - [Why is Browser and Document Artifacts useful?](#why-is-browser-and-document-artifacts-useful)
+  - [How will Python use this idea?](#how-will-python-use-this-idea)
+  - [What are the security limits?](#what-are-the-security-limits)
 - [Worked examples](#worked-examples)
   - [Example 1: Model a history row](#example-1-model-a-history-row)
   - [Example 2: Redact a query](#example-2-redact-a-query)
@@ -63,11 +70,27 @@ Extract a few fields from synthetic browser and document fixtures without interp
 
 This lesson is educational and authorized-lab-only. It does not authorize public scanning, credential guessing, exploitation, interception, persistence, or changes to systems you do not own.
 
-## Lesson
-
-### Vocabulary
+## Keywords and terms
 
 An artifact is a recorded object. Metadata describes creation or modification. Content is the body. Provenance records source and handling.
+
+## Topics
+
+### What is Browser and Document Artifacts?
+
+Browser history, downloaded files, and office documents may contain useful context and sensitive personal data. Analysis should use supplied fixtures and minimize what is copied into reports.
+
+### Why is Browser and Document Artifacts useful?
+
+Extract a few fields from synthetic browser and document fixtures without interpreting them as proof of a person’s intent.
+
+### How will Python use this idea?
+
+Read the worked examples next. For each one, identify the input, the operation, the result, and the boundary that prevents the example from doing more than the lesson allows.
+
+### What are the security limits?
+
+The examples remain local, synthetic, bounded, and authorized. A successful program run demonstrates behavior on the fixture; it does not prove authenticity, compromise, or permission to act on a real target.
 
 ## Worked examples
 

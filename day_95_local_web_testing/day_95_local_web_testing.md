@@ -7,6 +7,9 @@
 
 
 
+
+
+
 ## Table of contents
 
 - [Why this lesson exists](#why-this-lesson-exists)
@@ -14,8 +17,12 @@
 - [Outcomes](#outcomes)
 - [The problem](#the-problem)
 - [Security boundary](#security-boundary)
-- [Lesson](#lesson)
-  - [Vocabulary](#vocabulary)
+- [Keywords and terms](#keywords-and-terms)
+- [Topics](#topics)
+  - [What is Local Web Testing?](#what-is-local-web-testing)
+  - [Why is Local Web Testing useful?](#why-is-local-web-testing-useful)
+  - [How will Python use this idea?](#how-will-python-use-this-idea)
+  - [What are the security limits?](#what-are-the-security-limits)
 - [Worked examples](#worked-examples)
   - [Example 1: Define a case](#example-1-define-a-case)
   - [Example 2: Check content type](#example-2-check-content-type)
@@ -63,11 +70,27 @@ Test a local health endpoint for status, content type, and invalid input using a
 
 This lesson is educational and authorized-lab-only. It does not authorize public scanning, credential guessing, exploitation, interception, persistence, or changes to systems you do not own.
 
-## Lesson
-
-### Vocabulary
+## Keywords and terms
 
 A test case has setup, action, expected result, and cleanup. A negative test sends invalid input. A regression test protects a fixed behavior.
+
+## Topics
+
+### What is Local Web Testing?
+
+Testing a web service safely means checking explicit contracts on a local target, recording expected and unexpected behavior, and stopping at the rules of engagement.
+
+### Why is Local Web Testing useful?
+
+Test a local health endpoint for status, content type, and invalid input using a small fixture-driven test suite.
+
+### How will Python use this idea?
+
+Read the worked examples next. For each one, identify the input, the operation, the result, and the boundary that prevents the example from doing more than the lesson allows.
+
+### What are the security limits?
+
+The examples remain local, synthetic, bounded, and authorized. A successful program run demonstrates behavior on the fixture; it does not prove authenticity, compromise, or permission to act on a real target.
 
 ## Worked examples
 

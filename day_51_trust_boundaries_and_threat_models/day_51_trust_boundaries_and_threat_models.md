@@ -7,6 +7,9 @@
 
 
 
+
+
+
 ## Table of contents
 
 - [Why this lesson exists](#why-this-lesson-exists)
@@ -14,8 +17,12 @@
 - [Outcomes](#outcomes)
 - [The problem](#the-problem)
 - [Security boundary](#security-boundary)
-- [Lesson](#lesson)
-  - [Vocabulary](#vocabulary)
+- [Keywords and terms](#keywords-and-terms)
+- [Topics](#topics)
+  - [What is Trust Boundaries and Threat Models for Crypto?](#what-is-trust-boundaries-and-threat-models-for-crypto)
+  - [Why is Trust Boundaries and Threat Models for Crypto useful?](#why-is-trust-boundaries-and-threat-models-for-crypto-useful)
+  - [How will Python use this idea?](#how-will-python-use-this-idea)
+  - [What are the security limits?](#what-are-the-security-limits)
 - [Worked examples](#worked-examples)
   - [Example 1: Name properties](#example-1-name-properties)
   - [Example 2: Model a key holder](#example-2-model-a-key-holder)
@@ -63,11 +70,27 @@ Threat-model a local case bundle before selecting hashes, HMAC, encryption, or s
 
 Use synthetic data, local fixtures, and loopback-only demonstrations. This lesson does not authorize scanning, interception, credential use, remote command execution, or changes to systems you do not own.
 
-## Lesson
-
-### Vocabulary
+## Keywords and terms
 
 A trust boundary separates assumptions. Confidentiality hides content. Integrity detects change. Authenticity ties data to a key or signer. A threat model records assets and adversaries.
+
+## Topics
+
+### What is Trust Boundaries and Threat Models for Crypto?
+
+Cryptography is not a decoration around data. Before choosing a primitive, identify what must remain secret, what must be tamper-evident, who holds keys, and what happens when verification fails.
+
+### Why is Trust Boundaries and Threat Models for Crypto useful?
+
+Threat-model a local case bundle before selecting hashes, HMAC, encryption, or signatures.
+
+### How will Python use this idea?
+
+Read the worked examples next. For each one, identify the input, the operation, the result, and the boundary that prevents the example from doing more than the lesson allows.
+
+### What are the security limits?
+
+The examples remain local, synthetic, bounded, and authorized. A successful program run demonstrates behavior on the fixture; it does not prove authenticity, compromise, or permission to act on a real target.
 
 ## Worked examples
 

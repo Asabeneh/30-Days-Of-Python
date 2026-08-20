@@ -7,6 +7,9 @@
 
 
 
+
+
+
 ## Table of contents
 
 - [Why this lesson exists](#why-this-lesson-exists)
@@ -14,8 +17,12 @@
 - [Outcomes](#outcomes)
 - [The problem](#the-problem)
 - [Security boundary](#security-boundary)
-- [Lesson](#lesson)
-  - [Vocabulary](#vocabulary)
+- [Keywords and terms](#keywords-and-terms)
+- [Topics](#topics)
+  - [What is Network Baselines and Change Detection?](#what-is-network-baselines-and-change-detection)
+  - [Why is Network Baselines and Change Detection useful?](#why-is-network-baselines-and-change-detection-useful)
+  - [How will Python use this idea?](#how-will-python-use-this-idea)
+  - [What are the security limits?](#what-are-the-security-limits)
 - [Worked examples](#worked-examples)
   - [Example 1: Create features](#example-1-create-features)
   - [Example 2: Normalize a measurement](#example-2-normalize-a-measurement)
@@ -63,11 +70,27 @@ Compare two synthetic connection summaries and classify the difference as observ
 
 Use synthetic data, local fixtures, and loopback-only demonstrations. This lesson does not authorize scanning, interception, credential use, remote command execution, or changes to systems you do not own.
 
-## Lesson
-
-### Vocabulary
+## Keywords and terms
 
 A baseline is a reference observation. A feature is a measured property. Drift is a difference. A false positive is an alert for benign change.
+
+## Topics
+
+### What is Network Baselines and Change Detection?
+
+A baseline can make local service behavior easier to understand. It can also create false alarms when normal timing, DNS, or deployment changes are treated as threats.
+
+### Why is Network Baselines and Change Detection useful?
+
+Compare two synthetic connection summaries and classify the difference as observed drift requiring review.
+
+### How will Python use this idea?
+
+Read the worked examples next. For each one, identify the input, the operation, the result, and the boundary that prevents the example from doing more than the lesson allows.
+
+### What are the security limits?
+
+The examples remain local, synthetic, bounded, and authorized. A successful program run demonstrates behavior on the fixture; it does not prove authenticity, compromise, or permission to act on a real target.
 
 ## Worked examples
 

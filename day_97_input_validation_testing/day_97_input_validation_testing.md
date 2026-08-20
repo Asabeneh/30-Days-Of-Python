@@ -7,6 +7,9 @@
 
 
 
+
+
+
 ## Table of contents
 
 - [Why this lesson exists](#why-this-lesson-exists)
@@ -14,8 +17,12 @@
 - [Outcomes](#outcomes)
 - [The problem](#the-problem)
 - [Security boundary](#security-boundary)
-- [Lesson](#lesson)
-  - [Vocabulary](#vocabulary)
+- [Keywords and terms](#keywords-and-terms)
+- [Topics](#topics)
+  - [What is Input Validation Testing?](#what-is-input-validation-testing)
+  - [Why is Input Validation Testing useful?](#why-is-input-validation-testing-useful)
+  - [How will Python use this idea?](#how-will-python-use-this-idea)
+  - [What are the security limits?](#what-are-the-security-limits)
 - [Worked examples](#worked-examples)
   - [Example 1: Define valid input](#example-1-define-valid-input)
   - [Example 2: List invalid cases](#example-2-list-invalid-cases)
@@ -63,11 +70,27 @@ Create a table-driven validation suite for a synthetic case request.
 
 This lesson is educational and authorized-lab-only. It does not authorize public scanning, credential guessing, exploitation, interception, persistence, or changes to systems you do not own.
 
-## Lesson
-
-### Vocabulary
+## Keywords and terms
 
 A boundary case is near an allowed limit. A negative case is invalid. A property is a behavior that should hold across many inputs.
+
+## Topics
+
+### What is Input Validation Testing?
+
+Validation tests should prove that boundaries reject malformed, missing, oversized, and unexpected input while accepting valid data. The goal is predictable behavior, not payload theater.
+
+### Why is Input Validation Testing useful?
+
+Create a table-driven validation suite for a synthetic case request.
+
+### How will Python use this idea?
+
+Read the worked examples next. For each one, identify the input, the operation, the result, and the boundary that prevents the example from doing more than the lesson allows.
+
+### What are the security limits?
+
+The examples remain local, synthetic, bounded, and authorized. A successful program run demonstrates behavior on the fixture; it does not prove authenticity, compromise, or permission to act on a real target.
 
 ## Worked examples
 

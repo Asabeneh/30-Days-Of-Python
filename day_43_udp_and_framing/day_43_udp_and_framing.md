@@ -7,6 +7,9 @@
 
 
 
+
+
+
 ## Table of contents
 
 - [Why this lesson exists](#why-this-lesson-exists)
@@ -14,8 +17,12 @@
 - [Outcomes](#outcomes)
 - [The problem](#the-problem)
 - [Security boundary](#security-boundary)
-- [Lesson](#lesson)
-  - [Vocabulary](#vocabulary)
+- [Keywords and terms](#keywords-and-terms)
+- [Topics](#topics)
+  - [What is UDP and Message Framing?](#what-is-udp-and-message-framing)
+  - [Why is UDP and Message Framing useful?](#why-is-udp-and-message-framing-useful)
+  - [How will Python use this idea?](#how-will-python-use-this-idea)
+  - [What are the security limits?](#what-are-the-security-limits)
 - [Worked examples](#worked-examples)
   - [Example 1: Create a UDP socket](#example-1-create-a-udp-socket)
   - [Example 2: Encode a datagram](#example-2-encode-a-datagram)
@@ -63,11 +70,27 @@ Parse a local datagram fixture and explain why a missing response is not automat
 
 Use synthetic data, local fixtures, and loopback-only demonstrations. This lesson does not authorize scanning, interception, credential use, remote command execution, or changes to systems you do not own.
 
-## Lesson
-
-### Vocabulary
+## Keywords and terms
 
 A datagram is one UDP packet payload. UDP is connectionless and does not guarantee delivery. A sequence number supports application-level ordering.
+
+## Topics
+
+### What is UDP and Message Framing?
+
+UDP sends independent datagrams without a connection guarantee. It can be useful for bounded local telemetry, but loss, duplication, reordering, and spoofing must be part of the design.
+
+### Why is UDP and Message Framing useful?
+
+Parse a local datagram fixture and explain why a missing response is not automatically an attack.
+
+### How will Python use this idea?
+
+Read the worked examples next. For each one, identify the input, the operation, the result, and the boundary that prevents the example from doing more than the lesson allows.
+
+### What are the security limits?
+
+The examples remain local, synthetic, bounded, and authorized. A successful program run demonstrates behavior on the fixture; it does not prove authenticity, compromise, or permission to act on a real target.
 
 ## Worked examples
 

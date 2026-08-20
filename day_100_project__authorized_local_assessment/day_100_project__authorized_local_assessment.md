@@ -7,6 +7,9 @@
 
 
 
+
+
+
 ## Table of contents
 
 - [Why this lesson exists](#why-this-lesson-exists)
@@ -14,8 +17,12 @@
 - [Outcomes](#outcomes)
 - [The problem](#the-problem)
 - [Security boundary](#security-boundary)
-- [Lesson](#lesson)
-  - [Vocabulary](#vocabulary)
+- [Keywords and terms](#keywords-and-terms)
+- [Topics](#topics)
+  - [What is Project: Authorized Local Assessment?](#what-is-project-authorized-local-assessment)
+  - [Why is Project: Authorized Local Assessment useful?](#why-is-project-authorized-local-assessment-useful)
+  - [How will Python use this idea?](#how-will-python-use-this-idea)
+  - [What are the security limits?](#what-are-the-security-limits)
 - [Worked examples](#worked-examples)
   - [Example 1: Load authorization](#example-1-load-authorization)
   - [Example 2: Run inventory](#example-2-run-inventory)
@@ -63,11 +70,27 @@ Assess one disposable local service and produce an evidence-based report without
 
 This lesson is educational and authorized-lab-only. It does not authorize public scanning, credential guessing, exploitation, interception, persistence, or changes to systems you do not own.
 
-## Lesson
-
-### Vocabulary
+## Keywords and terms
 
 An assessment is a scoped evaluation. A test plan states cases and expected results. A finding is an observed contract failure. A closeout records limits and cleanup.
+
+## Topics
+
+### What is Project: Authorized Local Assessment?
+
+This project is the culmination of safe testing: scope, inventory, ROE, local web tests, validation checks, bounded fuzzing, findings, remediation, and retesting in one controlled assessment.
+
+### Why is Project: Authorized Local Assessment useful?
+
+Assess one disposable local service and produce an evidence-based report without scanning, exploitation, or real credentials.
+
+### How will Python use this idea?
+
+Read the worked examples next. For each one, identify the input, the operation, the result, and the boundary that prevents the example from doing more than the lesson allows.
+
+### What are the security limits?
+
+The examples remain local, synthetic, bounded, and authorized. A successful program run demonstrates behavior on the fixture; it does not prove authenticity, compromise, or permission to act on a real target.
 
 ## Worked examples
 

@@ -7,6 +7,9 @@
 
 
 
+
+
+
 ## Table of contents
 
 - [Why this lesson exists](#why-this-lesson-exists)
@@ -14,8 +17,12 @@
 - [Outcomes](#outcomes)
 - [The problem](#the-problem)
 - [Security boundary](#security-boundary)
-- [Lesson](#lesson)
-  - [Vocabulary](#vocabulary)
+- [Keywords and terms](#keywords-and-terms)
+- [Topics](#topics)
+  - [What is Structured Logging and Redaction?](#what-is-structured-logging-and-redaction)
+  - [Why is Structured Logging and Redaction useful?](#why-is-structured-logging-and-redaction-useful)
+  - [How will Python use this idea?](#how-will-python-use-this-idea)
+  - [What are the security limits?](#what-are-the-security-limits)
 - [Worked examples](#worked-examples)
   - [Example 1: Use logging levels](#example-1-use-logging-levels)
   - [Example 2: Log fields carefully](#example-2-log-fields-carefully)
@@ -62,11 +69,27 @@ Emit a machine-readable event with a stable schema while ensuring token, passwor
 
 Use only local synthetic fixtures and explicitly authorized course files. The lesson does not authorize public scanning, credential use, remote command execution, or changes to operating-system state.
 
-## Lesson
-
-### Vocabulary
+## Keywords and terms
 
 A **log record** has fields such as time, level, event, and context. **Structured logging** emits fields rather than only prose. **Redaction** removes or masks sensitive values.
+
+## Topics
+
+### What is Structured Logging and Redaction?
+
+Logs are evidence for operators and input for future tools. Unstructured messages are hard to query; unredacted messages can leak secrets.
+
+### Why is Structured Logging and Redaction useful?
+
+Emit a machine-readable event with a stable schema while ensuring token, password, and private message values do not appear.
+
+### How will Python use this idea?
+
+Read the worked examples next. For each one, identify the input, the operation, the result, and the boundary that prevents the example from doing more than the lesson allows.
+
+### What are the security limits?
+
+The examples remain local, synthetic, bounded, and authorized. A successful program run demonstrates behavior on the fixture; it does not prove authenticity, compromise, or permission to act on a real target.
 
 ## Worked examples
 

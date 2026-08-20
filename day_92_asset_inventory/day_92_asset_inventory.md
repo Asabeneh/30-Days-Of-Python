@@ -7,6 +7,9 @@
 
 
 
+
+
+
 ## Table of contents
 
 - [Why this lesson exists](#why-this-lesson-exists)
@@ -14,8 +17,12 @@
 - [Outcomes](#outcomes)
 - [The problem](#the-problem)
 - [Security boundary](#security-boundary)
-- [Lesson](#lesson)
-  - [Vocabulary](#vocabulary)
+- [Keywords and terms](#keywords-and-terms)
+- [Topics](#topics)
+  - [What is Asset Inventory for Authorized Testing?](#what-is-asset-inventory-for-authorized-testing)
+  - [Why is Asset Inventory for Authorized Testing useful?](#why-is-asset-inventory-for-authorized-testing-useful)
+  - [How will Python use this idea?](#how-will-python-use-this-idea)
+  - [What are the security limits?](#what-are-the-security-limits)
 - [Worked examples](#worked-examples)
   - [Example 1: Model an asset](#example-1-model-an-asset)
   - [Example 2: Record data](#example-2-record-data)
@@ -63,11 +70,27 @@ Create an inventory for a local application and classify each asset by owner, en
 
 This lesson is educational and authorized-lab-only. It does not authorize public scanning, credential guessing, exploitation, interception, persistence, or changes to systems you do not own.
 
-## Lesson
-
-### Vocabulary
+## Keywords and terms
 
 An asset is a system or data resource. An owner is responsible for it. An environment is development, test, staging, or production. Scope is the allowed subset.
+
+## Topics
+
+### What is Asset Inventory for Authorized Testing?
+
+A test plan cannot be safe if the tester does not know what exists, who owns it, and which environment is in scope. Inventory is the foundation for bounded assessment.
+
+### Why is Asset Inventory for Authorized Testing useful?
+
+Create an inventory for a local application and classify each asset by owner, environment, data, and permitted action.
+
+### How will Python use this idea?
+
+Read the worked examples next. For each one, identify the input, the operation, the result, and the boundary that prevents the example from doing more than the lesson allows.
+
+### What are the security limits?
+
+The examples remain local, synthetic, bounded, and authorized. A successful program run demonstrates behavior on the fixture; it does not prove authenticity, compromise, or permission to act on a real target.
 
 ## Worked examples
 

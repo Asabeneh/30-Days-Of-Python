@@ -7,6 +7,9 @@
 
 
 
+
+
+
 ## Table of contents
 
 - [Why this lesson exists](#why-this-lesson-exists)
@@ -14,8 +17,12 @@
 - [Outcomes](#outcomes)
 - [The problem](#the-problem)
 - [Security boundary](#security-boundary)
-- [Lesson](#lesson)
-  - [Vocabulary](#vocabulary)
+- [Keywords and terms](#keywords-and-terms)
+- [Topics](#topics)
+  - [What is Project: Mini Detection Pipeline?](#what-is-project-mini-detection-pipeline)
+  - [Why is Project: Mini Detection Pipeline useful?](#why-is-project-mini-detection-pipeline-useful)
+  - [How will Python use this idea?](#how-will-python-use-this-idea)
+  - [What are the security limits?](#what-are-the-security-limits)
 - [Worked examples](#worked-examples)
   - [Example 1: Define stages](#example-1-define-stages)
   - [Example 2: Normalize an event](#example-2-normalize-an-event)
@@ -63,11 +70,27 @@ Build a local pipeline that ingests synthetic events, normalizes them, applies o
 
 This lesson is educational and bounded. It does not authorize public scanning, credential use, interception, exploit delivery, real-user profiling, or changes to systems you do not own.
 
-## Lesson
-
-### Vocabulary
+## Keywords and terms
 
 A pipeline is an ordered transformation. A detection rule emits a signal. Triage adds context and disposition. A report preserves evidence and limitations.
+
+## Topics
+
+### What is Project: Mini Detection Pipeline?
+
+The project composes telemetry schemas, normalization, enrichment, thresholds, mappings, triage, baselines, provenance, and reporting into a small defensive pipeline with honest limits.
+
+### Why is Project: Mini Detection Pipeline useful?
+
+Build a local pipeline that ingests synthetic events, normalizes them, applies one detection rule, creates a triage item, and writes an evidence-based report.
+
+### How will Python use this idea?
+
+Read the worked examples next. For each one, identify the input, the operation, the result, and the boundary that prevents the example from doing more than the lesson allows.
+
+### What are the security limits?
+
+The examples remain local, synthetic, bounded, and authorized. A successful program run demonstrates behavior on the fixture; it does not prove authenticity, compromise, or permission to act on a real target.
 
 ## Worked examples
 

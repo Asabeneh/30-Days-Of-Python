@@ -7,6 +7,9 @@
 
 
 
+
+
+
 ## Table of contents
 
 - [Why this lesson exists](#why-this-lesson-exists)
@@ -14,8 +17,12 @@
 - [Outcomes](#outcomes)
 - [The problem](#the-problem)
 - [Security boundary](#security-boundary)
-- [Lesson](#lesson)
-  - [Vocabulary](#vocabulary)
+- [Keywords and terms](#keywords-and-terms)
+- [Topics](#topics)
+  - [What is IOC Enrichment and Provenance?](#what-is-ioc-enrichment-and-provenance)
+  - [Why is IOC Enrichment and Provenance useful?](#why-is-ioc-enrichment-and-provenance-useful)
+  - [How will Python use this idea?](#how-will-python-use-this-idea)
+  - [What are the security limits?](#what-are-the-security-limits)
 - [Worked examples](#worked-examples)
   - [Example 1: Classify a candidate](#example-1-classify-a-candidate)
   - [Example 2: Use local enrichment](#example-2-use-local-enrichment)
@@ -63,11 +70,27 @@ Enrich synthetic indicators from a local lookup table and keep source, time, and
 
 This lesson is educational and bounded. It does not authorize public scanning, credential use, interception, exploit delivery, real-user profiling, or changes to systems you do not own.
 
-## Lesson
-
-### Vocabulary
+## Keywords and terms
 
 An IOC is an observed indicator. Enrichment adds context. Provenance records source and time. Confidence describes evidence quality.
+
+## Topics
+
+### What is IOC Enrichment and Provenance?
+
+An indicator can be a domain, hash, address, or filename. Enrichment adds context, but it can also create privacy, accuracy, and false-confidence problems.
+
+### Why is IOC Enrichment and Provenance useful?
+
+Enrich synthetic indicators from a local lookup table and keep source, time, and confidence attached to each result.
+
+### How will Python use this idea?
+
+Read the worked examples next. For each one, identify the input, the operation, the result, and the boundary that prevents the example from doing more than the lesson allows.
+
+### What are the security limits?
+
+The examples remain local, synthetic, bounded, and authorized. A successful program run demonstrates behavior on the fixture; it does not prove authenticity, compromise, or permission to act on a real target.
 
 ## Worked examples
 

@@ -7,6 +7,9 @@
 
 
 
+
+
+
 ## Table of contents
 
 - [Why this lesson exists](#why-this-lesson-exists)
@@ -14,8 +17,12 @@
 - [Outcomes](#outcomes)
 - [The problem](#the-problem)
 - [Security boundary](#security-boundary)
-- [Lesson](#lesson)
-  - [Vocabulary](#vocabulary)
+- [Keywords and terms](#keywords-and-terms)
+- [Topics](#topics)
+  - [What is Cross-Site Scripting and Output Encoding?](#what-is-cross-site-scripting-and-output-encoding)
+  - [Why is Cross-Site Scripting and Output Encoding useful?](#why-is-cross-site-scripting-and-output-encoding-useful)
+  - [How will Python use this idea?](#how-will-python-use-this-idea)
+  - [What are the security limits?](#what-are-the-security-limits)
 - [Worked examples](#worked-examples)
   - [Example 1: Treat input as text](#example-1-treat-input-as-text)
   - [Example 2: Escape HTML](#example-2-escape-html)
@@ -63,11 +70,27 @@ Render a synthetic username as text and show why inserting it into an HTML strin
 
 This lesson is educational and bounded. It does not authorize public scanning, credential use, interception, exploit delivery, real-user profiling, or changes to systems you do not own.
 
-## Lesson
-
-### Vocabulary
+## Keywords and terms
 
 XSS is unintended script execution in a browser context. Escaping encodes special characters. Context determines the correct encoding rule. Content Security Policy is a defense in depth control.
+
+## Topics
+
+### What is Cross-Site Scripting and Output Encoding?
+
+A web application can turn stored or reflected text into browser-interpreted markup. The safe response is context-aware output encoding and a strict separation between data and HTML/JavaScript.
+
+### Why is Cross-Site Scripting and Output Encoding useful?
+
+Render a synthetic username as text and show why inserting it into an HTML string without escaping is unsafe.
+
+### How will Python use this idea?
+
+Read the worked examples next. For each one, identify the input, the operation, the result, and the boundary that prevents the example from doing more than the lesson allows.
+
+### What are the security limits?
+
+The examples remain local, synthetic, bounded, and authorized. A successful program run demonstrates behavior on the fixture; it does not prove authenticity, compromise, or permission to act on a real target.
 
 ## Worked examples
 

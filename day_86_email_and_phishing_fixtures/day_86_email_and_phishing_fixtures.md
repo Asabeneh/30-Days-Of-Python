@@ -7,6 +7,9 @@
 
 
 
+
+
+
 ## Table of contents
 
 - [Why this lesson exists](#why-this-lesson-exists)
@@ -14,8 +17,12 @@
 - [Outcomes](#outcomes)
 - [The problem](#the-problem)
 - [Security boundary](#security-boundary)
-- [Lesson](#lesson)
-  - [Vocabulary](#vocabulary)
+- [Keywords and terms](#keywords-and-terms)
+- [Topics](#topics)
+  - [What is Email and Phishing Fixtures?](#what-is-email-and-phishing-fixtures)
+  - [Why is Email and Phishing Fixtures useful?](#why-is-email-and-phishing-fixtures-useful)
+  - [How will Python use this idea?](#how-will-python-use-this-idea)
+  - [What are the security limits?](#what-are-the-security-limits)
 - [Worked examples](#worked-examples)
   - [Example 1: Parse headers](#example-1-parse-headers)
   - [Example 2: Extract a URL](#example-2-extract-a-url)
@@ -63,11 +70,27 @@ Analyze a synthetic email fixture and report indicators, provenance, and uncerta
 
 This lesson is educational and authorized-lab-only. It does not authorize public scanning, credential guessing, exploitation, interception, persistence, or changes to systems you do not own.
 
-## Lesson
-
-### Vocabulary
+## Keywords and terms
 
 An email header contains transport and message metadata. A URL is a destination string. An attachment is a referenced file. A lure is persuasive text designed to influence behavior.
+
+## Topics
+
+### What is Email and Phishing Fixtures?
+
+Phishing analysis teaches headers, links, attachments, and social-engineering indicators without asking a learner to send, open, or interact with a real malicious message.
+
+### Why is Email and Phishing Fixtures useful?
+
+Analyze a synthetic email fixture and report indicators, provenance, and uncertainty without visiting its links.
+
+### How will Python use this idea?
+
+Read the worked examples next. For each one, identify the input, the operation, the result, and the boundary that prevents the example from doing more than the lesson allows.
+
+### What are the security limits?
+
+The examples remain local, synthetic, bounded, and authorized. A successful program run demonstrates behavior on the fixture; it does not prove authenticity, compromise, or permission to act on a real target.
 
 ## Worked examples
 

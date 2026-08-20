@@ -7,6 +7,9 @@
 
 
 
+
+
+
 ## Table of contents
 
 - [Why this lesson exists](#why-this-lesson-exists)
@@ -14,8 +17,12 @@
 - [Outcomes](#outcomes)
 - [The problem](#the-problem)
 - [Security boundary](#security-boundary)
-- [Lesson](#lesson)
-  - [Vocabulary](#vocabulary)
+- [Keywords and terms](#keywords-and-terms)
+- [Topics](#topics)
+  - [What is Cloud Identity Concepts?](#what-is-cloud-identity-concepts)
+  - [Why is Cloud Identity Concepts useful?](#why-is-cloud-identity-concepts-useful)
+  - [How will Python use this idea?](#how-will-python-use-this-idea)
+  - [What are the security limits?](#what-are-the-security-limits)
 - [Worked examples](#worked-examples)
   - [Example 1: Name a principal](#example-1-name-a-principal)
   - [Example 2: List actions](#example-2-list-actions)
@@ -63,11 +70,27 @@ Model a least-privilege role for a synthetic report worker without connecting to
 
 This lesson is educational and bounded. It does not authorize public scanning, credential use, destructive actions, persistence, or processing of private data.
 
-## Lesson
-
-### Vocabulary
+## Keywords and terms
 
 An identity is a principal. A role is a set of permissions. A resource is an object. Least privilege grants only required actions. A trust policy controls who may assume a role.
+
+## Topics
+
+### What is Cloud Identity Concepts?
+
+Cloud security often fails when an identity receives more permission than its task needs or when roles, resources, and trust relationships are unclear. This lesson stays conceptual and local.
+
+### Why is Cloud Identity Concepts useful?
+
+Model a least-privilege role for a synthetic report worker without connecting to a cloud account.
+
+### How will Python use this idea?
+
+Read the worked examples next. For each one, identify the input, the operation, the result, and the boundary that prevents the example from doing more than the lesson allows.
+
+### What are the security limits?
+
+The examples remain local, synthetic, bounded, and authorized. A successful program run demonstrates behavior on the fixture; it does not prove authenticity, compromise, or permission to act on a real target.
 
 ## Worked examples
 

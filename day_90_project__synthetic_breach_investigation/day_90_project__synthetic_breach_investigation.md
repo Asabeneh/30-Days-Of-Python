@@ -7,6 +7,9 @@
 
 
 
+
+
+
 ## Table of contents
 
 - [Why this lesson exists](#why-this-lesson-exists)
@@ -14,8 +17,12 @@
 - [Outcomes](#outcomes)
 - [The problem](#the-problem)
 - [Security boundary](#security-boundary)
-- [Lesson](#lesson)
-  - [Vocabulary](#vocabulary)
+- [Keywords and terms](#keywords-and-terms)
+- [Topics](#topics)
+  - [What is Project: Synthetic Breach Investigation?](#what-is-project-synthetic-breach-investigation)
+  - [Why is Project: Synthetic Breach Investigation useful?](#why-is-project-synthetic-breach-investigation-useful)
+  - [How will Python use this idea?](#how-will-python-use-this-idea)
+  - [What are the security limits?](#what-are-the-security-limits)
 - [Worked examples](#worked-examples)
   - [Example 1: Open the case index](#example-1-open-the-case-index)
   - [Example 2: Verify artifacts](#example-2-verify-artifacts)
@@ -63,11 +70,27 @@ Investigate a synthetic case bundle and produce a report that distinguishes obse
 
 This lesson is educational and authorized-lab-only. It does not authorize public scanning, credential guessing, exploitation, interception, persistence, or changes to systems you do not own.
 
-## Lesson
-
-### Vocabulary
+## Keywords and terms
 
 A case bundle is a bounded set of artifacts. A hypothesis is an explanation to test. A finding links evidence to a cautious conclusion.
+
+## Topics
+
+### What is Project: Synthetic Breach Investigation?
+
+This project combines response lifecycle, evidence handling, timelines, artifacts, email, network context, volatility planning, and reporting into one safe investigation of invented data.
+
+### Why is Project: Synthetic Breach Investigation useful?
+
+Investigate a synthetic case bundle and produce a report that distinguishes observations, hypotheses, and missing evidence.
+
+### How will Python use this idea?
+
+Read the worked examples next. For each one, identify the input, the operation, the result, and the boundary that prevents the example from doing more than the lesson allows.
+
+### What are the security limits?
+
+The examples remain local, synthetic, bounded, and authorized. A successful program run demonstrates behavior on the fixture; it does not prove authenticity, compromise, or permission to act on a real target.
 
 ## Worked examples
 

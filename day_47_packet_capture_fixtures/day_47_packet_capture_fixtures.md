@@ -7,6 +7,9 @@
 
 
 
+
+
+
 ## Table of contents
 
 - [Why this lesson exists](#why-this-lesson-exists)
@@ -14,8 +17,12 @@
 - [Outcomes](#outcomes)
 - [The problem](#the-problem)
 - [Security boundary](#security-boundary)
-- [Lesson](#lesson)
-  - [Vocabulary](#vocabulary)
+- [Keywords and terms](#keywords-and-terms)
+- [Topics](#topics)
+  - [What is Packet-Capture Fixtures and Layered Parsing?](#what-is-packet-capture-fixtures-and-layered-parsing)
+  - [Why is Packet-Capture Fixtures and Layered Parsing useful?](#why-is-packet-capture-fixtures-and-layered-parsing-useful)
+  - [How will Python use this idea?](#how-will-python-use-this-idea)
+  - [What are the security limits?](#what-are-the-security-limits)
 - [Worked examples](#worked-examples)
   - [Example 1: Represent a frame](#example-1-represent-a-frame)
   - [Example 2: Parse a bounded header](#example-2-parse-a-bounded-header)
@@ -63,11 +70,27 @@ Parse a saved, synthetic packet summary rather than sniffing a live interface.
 
 Use synthetic data, local fixtures, and loopback-only demonstrations. This lesson does not authorize scanning, interception, credential use, remote command execution, or changes to systems you do not own.
 
-## Lesson
-
-### Vocabulary
+## Keywords and terms
 
 A packet is a sequence of bytes. A protocol layer interprets part of it. A capture fixture is saved evidence with collection limits and metadata.
+
+## Topics
+
+### What is Packet-Capture Fixtures and Layered Parsing?
+
+Packet captures are rich evidence, but a beginner can easily mistake a decoded field for complete context. A fixture-first parser makes layers, offsets, and truncation visible.
+
+### Why is Packet-Capture Fixtures and Layered Parsing useful?
+
+Parse a saved, synthetic packet summary rather than sniffing a live interface.
+
+### How will Python use this idea?
+
+Read the worked examples next. For each one, identify the input, the operation, the result, and the boundary that prevents the example from doing more than the lesson allows.
+
+### What are the security limits?
+
+The examples remain local, synthetic, bounded, and authorized. A successful program run demonstrates behavior on the fixture; it does not prove authenticity, compromise, or permission to act on a real target.
 
 ## Worked examples
 

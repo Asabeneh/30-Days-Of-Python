@@ -7,6 +7,9 @@
 
 
 
+
+
+
 ## Table of contents
 
 - [Why this lesson exists](#why-this-lesson-exists)
@@ -14,8 +17,12 @@
 - [Outcomes](#outcomes)
 - [The problem](#the-problem)
 - [Security boundary](#security-boundary)
-- [Lesson](#lesson)
-  - [Vocabulary](#vocabulary)
+- [Keywords and terms](#keywords-and-terms)
+- [Topics](#topics)
+  - [What is Timestamps, Timezones, and Incident Timelines?](#what-is-timestamps-timezones-and-incident-timelines)
+  - [Why is Timestamps, Timezones, and Incident Timelines useful?](#why-is-timestamps-timezones-and-incident-timelines-useful)
+  - [How will Python use this idea?](#how-will-python-use-this-idea)
+  - [What are the security limits?](#what-are-the-security-limits)
 - [Worked examples](#worked-examples)
   - [Example 1: Parse UTC](#example-1-parse-utc)
   - [Example 2: Reject a naive value](#example-2-reject-a-naive-value)
@@ -63,11 +70,27 @@ Two synthetic records show `10:00+00:00` and `11:00+01:00`. They represent the s
 
 Use only the repository, synthetic examples, and local fixtures. The examples do not authorize access to public systems, university systems, employer systems, or accounts that you do not own.
 
-## Lesson
-
-### Vocabulary
+## Keywords and terms
 
 A **naive datetime** has no timezone. An **aware datetime** includes enough offset information to identify an instant. **Normalization** converts values into a common representation while **provenance** preserves how the value originally arrived.
+
+## Topics
+
+### What is Timestamps, Timezones, and Incident Timelines?
+
+Security evidence is often ordered by time, but timestamps arrive in different formats and offsets. A timeline is only as reliable as its parsing, timezone policy, and provenance.
+
+### Why is Timestamps, Timezones, and Incident Timelines useful?
+
+Two synthetic records show `10:00+00:00` and `11:00+01:00`. They represent the same instant. A naive string sort can suggest the wrong order.
+
+### How will Python use this idea?
+
+Read the worked examples next. For each one, identify the input, the operation, the result, and the boundary that prevents the example from doing more than the lesson allows.
+
+### What are the security limits?
+
+The examples remain local, synthetic, bounded, and authorized. A successful program run demonstrates behavior on the fixture; it does not prove authenticity, compromise, or permission to act on a real target.
 
 ## Worked examples
 

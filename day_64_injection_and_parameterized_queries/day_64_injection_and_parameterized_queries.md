@@ -7,6 +7,9 @@
 
 
 
+
+
+
 ## Table of contents
 
 - [Why this lesson exists](#why-this-lesson-exists)
@@ -14,8 +17,12 @@
 - [Outcomes](#outcomes)
 - [The problem](#the-problem)
 - [Security boundary](#security-boundary)
-- [Lesson](#lesson)
-  - [Vocabulary](#vocabulary)
+- [Keywords and terms](#keywords-and-terms)
+- [Topics](#topics)
+  - [What is Injection and Parameterized Queries?](#what-is-injection-and-parameterized-queries)
+  - [Why is Injection and Parameterized Queries useful?](#why-is-injection-and-parameterized-queries-useful)
+  - [How will Python use this idea?](#how-will-python-use-this-idea)
+  - [What are the security limits?](#what-are-the-security-limits)
 - [Worked examples](#worked-examples)
   - [Example 1: The unsafe shape](#example-1-the-unsafe-shape)
   - [Example 2: Use a placeholder](#example-2-use-a-placeholder)
@@ -63,11 +70,27 @@ Store and search synthetic cases in SQLite using parameters, then compare it wit
 
 This lesson is educational and bounded. It does not authorize public scanning, credential use, interception, exploit delivery, real-user profiling, or changes to systems you do not own.
 
-## Lesson
-
-### Vocabulary
+## Keywords and terms
 
 Injection changes the meaning of an interpreter input. A parameterized query sends values separately from SQL syntax. Allowlisting constrains identifiers or operations.
+
+## Topics
+
+### What is Injection and Parameterized Queries?
+
+Injection occurs when data is interpreted as code or query syntax. The core defense is to keep data separate from the language being executed and to validate values at the boundary.
+
+### Why is Injection and Parameterized Queries useful?
+
+Store and search synthetic cases in SQLite using parameters, then compare it with an intentionally unsafe string-building example without executing attacker input.
+
+### How will Python use this idea?
+
+Read the worked examples next. For each one, identify the input, the operation, the result, and the boundary that prevents the example from doing more than the lesson allows.
+
+### What are the security limits?
+
+The examples remain local, synthetic, bounded, and authorized. A successful program run demonstrates behavior on the fixture; it does not prove authenticity, compromise, or permission to act on a real target.
 
 ## Worked examples
 

@@ -7,6 +7,9 @@
 
 
 
+
+
+
 ## Table of contents
 
 - [Why this lesson exists](#why-this-lesson-exists)
@@ -14,8 +17,12 @@
 - [Outcomes](#outcomes)
 - [The problem](#the-problem)
 - [Security boundary](#security-boundary)
-- [Lesson](#lesson)
-  - [Vocabulary](#vocabulary)
+- [Keywords and terms](#keywords-and-terms)
+- [Topics](#topics)
+  - [What is TCP Clients, Servers, and Framing?](#what-is-tcp-clients-servers-and-framing)
+  - [Why is TCP Clients, Servers, and Framing useful?](#why-is-tcp-clients-servers-and-framing-useful)
+  - [How will Python use this idea?](#how-will-python-use-this-idea)
+  - [What are the security limits?](#what-are-the-security-limits)
 - [Worked examples](#worked-examples)
   - [Example 1: Bind a local server](#example-1-bind-a-local-server)
   - [Example 2: Listen and accept](#example-2-listen-and-accept)
@@ -63,11 +70,27 @@ Build a local loopback echo exchange with a length or delimiter rule and a finit
 
 Use synthetic data, local fixtures, and loopback-only demonstrations. This lesson does not authorize scanning, interception, credential use, remote command execution, or changes to systems you do not own.
 
-## Lesson
-
-### Vocabulary
+## Keywords and terms
 
 TCP is connection-oriented. A **stream** has no message boundaries. **Framing** tells the receiver where one message ends. `accept` creates a per-client socket.
+
+## Topics
+
+### What is TCP Clients, Servers, and Framing?
+
+TCP provides an ordered byte stream, not messages. A security engineer must understand connection lifecycle, partial reads, framing, and timeouts before writing a client or service.
+
+### Why is TCP Clients, Servers, and Framing useful?
+
+Build a local loopback echo exchange with a length or delimiter rule and a finite timeout.
+
+### How will Python use this idea?
+
+Read the worked examples next. For each one, identify the input, the operation, the result, and the boundary that prevents the example from doing more than the lesson allows.
+
+### What are the security limits?
+
+The examples remain local, synthetic, bounded, and authorized. A successful program run demonstrates behavior on the fixture; it does not prove authenticity, compromise, or permission to act on a real target.
 
 ## Worked examples
 

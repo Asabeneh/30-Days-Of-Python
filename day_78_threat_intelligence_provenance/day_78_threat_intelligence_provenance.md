@@ -7,6 +7,9 @@
 
 
 
+
+
+
 ## Table of contents
 
 - [Why this lesson exists](#why-this-lesson-exists)
@@ -14,8 +17,12 @@
 - [Outcomes](#outcomes)
 - [The problem](#the-problem)
 - [Security boundary](#security-boundary)
-- [Lesson](#lesson)
-  - [Vocabulary](#vocabulary)
+- [Keywords and terms](#keywords-and-terms)
+- [Topics](#topics)
+  - [What is Threat Intelligence Provenance?](#what-is-threat-intelligence-provenance)
+  - [Why is Threat Intelligence Provenance useful?](#why-is-threat-intelligence-provenance-useful)
+  - [How will Python use this idea?](#how-will-python-use-this-idea)
+  - [What are the security limits?](#what-are-the-security-limits)
 - [Worked examples](#worked-examples)
   - [Example 1: Model a report](#example-1-model-a-report)
   - [Example 2: Add confidence](#example-2-add-confidence)
@@ -63,11 +70,27 @@ Represent a synthetic intelligence report and decide whether its indicator is su
 
 This lesson is educational and bounded. It does not authorize public scanning, credential use, interception, exploit delivery, real-user profiling, or changes to systems you do not own.
 
-## Lesson
-
-### Vocabulary
+## Keywords and terms
 
 Intelligence is analyzed information. Provenance records source and transformation. Freshness describes age. Confidence reflects evidence quality. Handling restrictions limit sharing.
+
+## Topics
+
+### What is Threat Intelligence Provenance?
+
+Threat intelligence is useful only when analysts can judge source, freshness, confidence, and handling restrictions. Copying an indicator without context creates false authority.
+
+### Why is Threat Intelligence Provenance useful?
+
+Represent a synthetic intelligence report and decide whether its indicator is suitable for a local training rule.
+
+### How will Python use this idea?
+
+Read the worked examples next. For each one, identify the input, the operation, the result, and the boundary that prevents the example from doing more than the lesson allows.
+
+### What are the security limits?
+
+The examples remain local, synthetic, bounded, and authorized. A successful program run demonstrates behavior on the fixture; it does not prove authenticity, compromise, or permission to act on a real target.
 
 ## Worked examples
 

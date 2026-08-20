@@ -7,6 +7,9 @@
 
 
 
+
+
+
 ## Table of contents
 
 - [Why this lesson exists](#why-this-lesson-exists)
@@ -14,8 +17,12 @@
 - [Outcomes](#outcomes)
 - [The problem](#the-problem)
 - [Security boundary](#security-boundary)
-- [Lesson](#lesson)
-  - [Vocabulary](#vocabulary)
+- [Keywords and terms](#keywords-and-terms)
+- [Topics](#topics)
+  - [What is Alert Triage and Analyst Decisions?](#what-is-alert-triage-and-analyst-decisions)
+  - [Why is Alert Triage and Analyst Decisions useful?](#why-is-alert-triage-and-analyst-decisions-useful)
+  - [How will Python use this idea?](#how-will-python-use-this-idea)
+  - [What are the security limits?](#what-are-the-security-limits)
 - [Worked examples](#worked-examples)
   - [Example 1: Create an alert](#example-1-create-an-alert)
   - [Example 2: Score separately](#example-2-score-separately)
@@ -63,11 +70,27 @@ Triage synthetic alerts into review states with an explicit evidence checklist a
 
 This lesson is educational and bounded. It does not authorize public scanning, credential use, interception, exploit delivery, real-user profiling, or changes to systems you do not own.
 
-## Lesson
-
-### Vocabulary
+## Keywords and terms
 
 Triage prioritizes work. Severity describes impact or urgency. Confidence describes evidence quality. Disposition records what happened to the alert.
+
+## Topics
+
+### What is Alert Triage and Analyst Decisions?
+
+An alert is a queue item, not a conclusion. Triage organizes evidence, severity, confidence, scope, next step, and closure reason so analysts do not confuse urgency with certainty.
+
+### Why is Alert Triage and Analyst Decisions useful?
+
+Triage synthetic alerts into review states with an explicit evidence checklist and no automatic accusation.
+
+### How will Python use this idea?
+
+Read the worked examples next. For each one, identify the input, the operation, the result, and the boundary that prevents the example from doing more than the lesson allows.
+
+### What are the security limits?
+
+The examples remain local, synthetic, bounded, and authorized. A successful program run demonstrates behavior on the fixture; it does not prove authenticity, compromise, or permission to act on a real target.
 
 ## Worked examples
 

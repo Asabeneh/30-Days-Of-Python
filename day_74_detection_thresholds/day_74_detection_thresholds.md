@@ -7,6 +7,9 @@
 
 
 
+
+
+
 ## Table of contents
 
 - [Why this lesson exists](#why-this-lesson-exists)
@@ -14,8 +17,12 @@
 - [Outcomes](#outcomes)
 - [The problem](#the-problem)
 - [Security boundary](#security-boundary)
-- [Lesson](#lesson)
-  - [Vocabulary](#vocabulary)
+- [Keywords and terms](#keywords-and-terms)
+- [Topics](#topics)
+  - [What is Detection Thresholds and Evaluation?](#what-is-detection-thresholds-and-evaluation)
+  - [Why is Detection Thresholds and Evaluation useful?](#why-is-detection-thresholds-and-evaluation-useful)
+  - [How will Python use this idea?](#how-will-python-use-this-idea)
+  - [What are the security limits?](#what-are-the-security-limits)
 - [Worked examples](#worked-examples)
   - [Example 1: Count events](#example-1-count-events)
   - [Example 2: Apply a threshold](#example-2-apply-a-threshold)
@@ -63,11 +70,27 @@ Choose and evaluate a threshold for synthetic failed-login events, then explain 
 
 This lesson is educational and bounded. It does not authorize public scanning, credential use, interception, exploit delivery, real-user profiling, or changes to systems you do not own.
 
-## Lesson
-
-### Vocabulary
+## Keywords and terms
 
 A threshold is a rule boundary. A true positive matches a labeled condition. A false positive alerts on benign data. Recall and precision summarize different error trade-offs.
+
+## Topics
+
+### What is Detection Thresholds and Evaluation?
+
+A detection rule is a policy over incomplete telemetry. Thresholds control false positives and false negatives, so a learner should evaluate them against labeled synthetic fixtures instead of trusting intuition.
+
+### Why is Detection Thresholds and Evaluation useful?
+
+Choose and evaluate a threshold for synthetic failed-login events, then explain what the metric does not show.
+
+### How will Python use this idea?
+
+Read the worked examples next. For each one, identify the input, the operation, the result, and the boundary that prevents the example from doing more than the lesson allows.
+
+### What are the security limits?
+
+The examples remain local, synthetic, bounded, and authorized. A successful program run demonstrates behavior on the fixture; it does not prove authenticity, compromise, or permission to act on a real target.
 
 ## Worked examples
 

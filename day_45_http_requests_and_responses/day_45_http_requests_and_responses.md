@@ -7,6 +7,9 @@
 
 
 
+
+
+
 ## Table of contents
 
 - [Why this lesson exists](#why-this-lesson-exists)
@@ -14,8 +17,12 @@
 - [Outcomes](#outcomes)
 - [The problem](#the-problem)
 - [Security boundary](#security-boundary)
-- [Lesson](#lesson)
-  - [Vocabulary](#vocabulary)
+- [Keywords and terms](#keywords-and-terms)
+- [Topics](#topics)
+  - [What is HTTP Requests, Responses, and Safe Parsing?](#what-is-http-requests-responses-and-safe-parsing)
+  - [Why is HTTP Requests, Responses, and Safe Parsing useful?](#why-is-http-requests-responses-and-safe-parsing-useful)
+  - [How will Python use this idea?](#how-will-python-use-this-idea)
+  - [What are the security limits?](#what-are-the-security-limits)
 - [Worked examples](#worked-examples)
   - [Example 1: Parse a request line](#example-1-parse-a-request-line)
   - [Example 2: Read a status](#example-2-read-a-status)
@@ -63,11 +70,27 @@ Parse a synthetic HTTP exchange and make a bounded request only to a supplied lo
 
 Use synthetic data, local fixtures, and loopback-only demonstrations. This lesson does not authorize scanning, interception, credential use, remote command execution, or changes to systems you do not own.
 
-## Lesson
-
-### Vocabulary
+## Keywords and terms
 
 A request has a method, target, headers, and body. A response has a status, headers, and body. Headers are metadata, not automatically safe input.
+
+## Topics
+
+### What is HTTP Requests, Responses, and Safe Parsing?
+
+HTTP is a text-and-byte protocol used by security tools and applications. Understanding methods, status, headers, bodies, and limits helps a learner inspect a local service without treating requests as harmless by default.
+
+### Why is HTTP Requests, Responses, and Safe Parsing useful?
+
+Parse a synthetic HTTP exchange and make a bounded request only to a supplied loopback service.
+
+### How will Python use this idea?
+
+Read the worked examples next. For each one, identify the input, the operation, the result, and the boundary that prevents the example from doing more than the lesson allows.
+
+### What are the security limits?
+
+The examples remain local, synthetic, bounded, and authorized. A successful program run demonstrates behavior on the fixture; it does not prove authenticity, compromise, or permission to act on a real target.
 
 ## Worked examples
 

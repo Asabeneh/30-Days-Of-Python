@@ -7,6 +7,9 @@
 
 
 
+
+
+
 ## Table of contents
 
 - [Why this lesson exists](#why-this-lesson-exists)
@@ -14,8 +17,12 @@
 - [Outcomes](#outcomes)
 - [The problem](#the-problem)
 - [Security boundary](#security-boundary)
-- [Lesson](#lesson)
-  - [Vocabulary](#vocabulary)
+- [Keywords and terms](#keywords-and-terms)
+- [Topics](#topics)
+  - [What is CI Quality Gates?](#what-is-ci-quality-gates)
+  - [Why is CI Quality Gates useful?](#why-is-ci-quality-gates-useful)
+  - [How will Python use this idea?](#how-will-python-use-this-idea)
+  - [What are the security limits?](#what-are-the-security-limits)
 - [Worked examples](#worked-examples)
   - [Example 1: List gates](#example-1-list-gates)
   - [Example 2: Represent a result](#example-2-represent-a-result)
@@ -63,11 +70,27 @@ Design a local CI-like sequence that formats, lints, compiles, tests, checks lin
 
 This lesson is educational and bounded. It does not authorize public scanning, credential use, destructive actions, persistence, or processing of private data.
 
-## Lesson
-
-### Vocabulary
+## Keywords and terms
 
 A quality gate is a required check. CI runs checks in an automated environment. An artifact is an output such as a test report. A false negative lets a defect pass.
+
+## Topics
+
+### What is CI Quality Gates?
+
+Continuous integration makes quality checks repeatable on every change. A gate should be fast, explainable, and proportionate, while a failure should stop unsafe delivery rather than be ignored.
+
+### Why is CI Quality Gates useful?
+
+Design a local CI-like sequence that formats, lints, compiles, tests, checks links, and records artifacts.
+
+### How will Python use this idea?
+
+Read the worked examples next. For each one, identify the input, the operation, the result, and the boundary that prevents the example from doing more than the lesson allows.
+
+### What are the security limits?
+
+The examples remain local, synthetic, bounded, and authorized. A successful program run demonstrates behavior on the fixture; it does not prove authenticity, compromise, or permission to act on a real target.
 
 ## Worked examples
 

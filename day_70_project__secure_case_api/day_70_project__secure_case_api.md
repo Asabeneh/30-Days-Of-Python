@@ -7,6 +7,9 @@
 
 
 
+
+
+
 ## Table of contents
 
 - [Why this lesson exists](#why-this-lesson-exists)
@@ -14,8 +17,12 @@
 - [Outcomes](#outcomes)
 - [The problem](#the-problem)
 - [Security boundary](#security-boundary)
-- [Lesson](#lesson)
-  - [Vocabulary](#vocabulary)
+- [Keywords and terms](#keywords-and-terms)
+- [Topics](#topics)
+  - [What is Project: Secure Case API?](#what-is-project-secure-case-api)
+  - [Why is Project: Secure Case API useful?](#why-is-project-secure-case-api-useful)
+  - [How will Python use this idea?](#how-will-python-use-this-idea)
+  - [What are the security limits?](#what-are-the-security-limits)
 - [Worked examples](#worked-examples)
   - [Example 1: Define routes](#example-1-define-routes)
   - [Example 2: Validate a body](#example-2-validate-a-body)
@@ -63,11 +70,27 @@ Build a local API for synthetic cases with read-only routes, explicit authorizat
 
 This lesson is educational and bounded. It does not authorize public scanning, credential use, interception, exploit delivery, real-user profiling, or changes to systems you do not own.
 
-## Lesson
-
-### Vocabulary
+## Keywords and terms
 
 A route maps an HTTP method and path to behavior. An object-level authorization check compares the caller to the requested case. An API contract specifies request and response fields.
+
+## Topics
+
+### What is Project: Secure Case API?
+
+This project applies request validation, authorization, injection defense, output handling, browser controls, outbound policy, secure defaults, and dependency thinking to a single local API design.
+
+### Why is Project: Secure Case API useful?
+
+Build a local API for synthetic cases with read-only routes, explicit authorization, bounded JSON, safe errors, and a threat model.
+
+### How will Python use this idea?
+
+Read the worked examples next. For each one, identify the input, the operation, the result, and the boundary that prevents the example from doing more than the lesson allows.
+
+### What are the security limits?
+
+The examples remain local, synthetic, bounded, and authorized. A successful program run demonstrates behavior on the fixture; it does not prove authenticity, compromise, or permission to act on a real target.
 
 ## Worked examples
 

@@ -7,6 +7,9 @@
 
 
 
+
+
+
 ## Table of contents
 
 - [Why this lesson exists](#why-this-lesson-exists)
@@ -14,8 +17,12 @@
 - [Outcomes](#outcomes)
 - [The problem](#the-problem)
 - [Security boundary](#security-boundary)
-- [Lesson](#lesson)
-  - [Vocabulary](#vocabulary)
+- [Keywords and terms](#keywords-and-terms)
+- [Topics](#topics)
+  - [What is Safe Subprocess Allowlisting?](#what-is-safe-subprocess-allowlisting)
+  - [Why is Safe Subprocess Allowlisting useful?](#why-is-safe-subprocess-allowlisting-useful)
+  - [How will Python use this idea?](#how-will-python-use-this-idea)
+  - [What are the security limits?](#what-are-the-security-limits)
 - [Worked examples](#worked-examples)
   - [Example 1: Allow one command](#example-1-allow-one-command)
   - [Example 2: Reject unknown keys](#example-2-reject-unknown-keys)
@@ -62,11 +69,27 @@ Build a local command adapter that supports one or two harmless inventory comman
 
 Use only local synthetic fixtures and explicitly authorized course files. The lesson does not authorize public scanning, credential use, remote command execution, or changes to operating-system state.
 
-## Lesson
-
-### Vocabulary
+## Keywords and terms
 
 An **allowlist** permits named safe cases. A **denylist** tries to enumerate unsafe cases. An **argv list** keeps arguments separate from shell parsing.
+
+## Topics
+
+### What is Safe Subprocess Allowlisting?
+
+Day 31 showed how to start a process; this day turns that knowledge into a safer design. A command runner should allow a small set of known operations instead of accepting arbitrary executable input.
+
+### Why is Safe Subprocess Allowlisting useful?
+
+Build a local command adapter that supports one or two harmless inventory commands and rejects everything else.
+
+### How will Python use this idea?
+
+Read the worked examples next. For each one, identify the input, the operation, the result, and the boundary that prevents the example from doing more than the lesson allows.
+
+### What are the security limits?
+
+The examples remain local, synthetic, bounded, and authorized. A successful program run demonstrates behavior on the fixture; it does not prove authenticity, compromise, or permission to act on a real target.
 
 ## Worked examples
 

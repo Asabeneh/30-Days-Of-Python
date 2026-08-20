@@ -7,6 +7,9 @@
 
 
 
+
+
+
 ## Table of contents
 
 - [Why this lesson exists](#why-this-lesson-exists)
@@ -14,8 +17,12 @@
 - [Outcomes](#outcomes)
 - [The problem](#the-problem)
 - [Security boundary](#security-boundary)
-- [Lesson](#lesson)
-  - [Vocabulary](#vocabulary)
+- [Keywords and terms](#keywords-and-terms)
+- [Topics](#topics)
+  - [What is SSRF and Outbound Request Controls?](#what-is-ssrf-and-outbound-request-controls)
+  - [Why is SSRF and Outbound Request Controls useful?](#why-is-ssrf-and-outbound-request-controls-useful)
+  - [How will Python use this idea?](#how-will-python-use-this-idea)
+  - [What are the security limits?](#what-are-the-security-limits)
 - [Worked examples](#worked-examples)
   - [Example 1: Parse a URL](#example-1-parse-a-url)
   - [Example 2: Allow schemes](#example-2-allow-schemes)
@@ -63,11 +70,27 @@ Design a local URL fetch policy that accepts one documentation fixture and rejec
 
 This lesson is educational and bounded. It does not authorize public scanning, credential use, interception, exploit delivery, real-user profiling, or changes to systems you do not own.
 
-## Lesson
-
-### Vocabulary
+## Keywords and terms
 
 SSRF is unintended server-side access through attacker-influenced requests. An egress policy controls outbound destinations. A redirect can change the effective destination.
+
+## Topics
+
+### What is SSRF and Outbound Request Controls?
+
+A server that fetches a URL based on user input can become a network pivot. The defense is an explicit outbound policy: allowed schemes, hosts, ports, resolution behavior, redirects, and response limits.
+
+### Why is SSRF and Outbound Request Controls useful?
+
+Design a local URL fetch policy that accepts one documentation fixture and rejects loopback, private, unsupported, or unknown destinations.
+
+### How will Python use this idea?
+
+Read the worked examples next. For each one, identify the input, the operation, the result, and the boundary that prevents the example from doing more than the lesson allows.
+
+### What are the security limits?
+
+The examples remain local, synthetic, bounded, and authorized. A successful program run demonstrates behavior on the fixture; it does not prove authenticity, compromise, or permission to act on a real target.
 
 ## Worked examples
 

@@ -7,6 +7,9 @@
 
 
 
+
+
+
 ## Table of contents
 
 - [Why this lesson exists](#why-this-lesson-exists)
@@ -14,8 +17,12 @@
 - [Outcomes](#outcomes)
 - [The problem](#the-problem)
 - [Security boundary](#security-boundary)
-- [Lesson](#lesson)
-  - [Vocabulary](#vocabulary)
+- [Keywords and terms](#keywords-and-terms)
+- [Topics](#topics)
+  - [What is Project: Secure Delivery Pipeline?](#what-is-project-secure-delivery-pipeline)
+  - [Why is Project: Secure Delivery Pipeline useful?](#why-is-project-secure-delivery-pipeline-useful)
+  - [How will Python use this idea?](#how-will-python-use-this-idea)
+  - [What are the security limits?](#what-are-the-security-limits)
 - [Worked examples](#worked-examples)
   - [Example 1: Define stages](#example-1-define-stages)
   - [Example 2: Aggregate gates](#example-2-aggregate-gates)
@@ -63,11 +70,27 @@ Design a local pipeline that either produces a reviewed artifact or stops with a
 
 This lesson is educational and bounded. It does not authorize public scanning, credential use, destructive actions, persistence, or processing of private data.
 
-## Lesson
-
-### Vocabulary
+## Keywords and terms
 
 A delivery pipeline is a sequence of build and verification stages. A release decision is the final policy result. Evidence artifacts support review.
+
+## Topics
+
+### What is Project: Secure Delivery Pipeline?
+
+This project composes SDLC requirements, CI gates, static analysis, provenance, secret detection, isolation, identity, drift, and metrics into a delivery decision that can be inspected and repeated.
+
+### Why is Project: Secure Delivery Pipeline useful?
+
+Design a local pipeline that either produces a reviewed artifact or stops with a clear reason.
+
+### How will Python use this idea?
+
+Read the worked examples next. For each one, identify the input, the operation, the result, and the boundary that prevents the example from doing more than the lesson allows.
+
+### What are the security limits?
+
+The examples remain local, synthetic, bounded, and authorized. A successful program run demonstrates behavior on the fixture; it does not prove authenticity, compromise, or permission to act on a real target.
 
 ## Worked examples
 

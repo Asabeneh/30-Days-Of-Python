@@ -7,6 +7,9 @@
 
 
 
+
+
+
 ## Table of contents
 
 - [Why this lesson exists](#why-this-lesson-exists)
@@ -14,8 +17,12 @@
 - [Outcomes](#outcomes)
 - [The problem](#the-problem)
 - [Security boundary](#security-boundary)
-- [Lesson](#lesson)
-  - [Vocabulary](#vocabulary)
+- [Keywords and terms](#keywords-and-terms)
+- [Topics](#topics)
+  - [What is Safe Serialization and Deserialization?](#what-is-safe-serialization-and-deserialization)
+  - [Why is Safe Serialization and Deserialization useful?](#why-is-safe-serialization-and-deserialization-useful)
+  - [How will Python use this idea?](#how-will-python-use-this-idea)
+  - [What are the security limits?](#what-are-the-security-limits)
 - [Worked examples](#worked-examples)
   - [Example 1: Serialize JSON](#example-1-serialize-json)
   - [Example 2: Parse JSON](#example-2-parse-json)
@@ -63,11 +70,27 @@ Serialize a synthetic case record with JSON and reject unexpected fields before 
 
 Use synthetic data, local fixtures, and loopback-only demonstrations. This lesson does not authorize scanning, interception, credential use, remote command execution, or changes to systems you do not own.
 
-## Lesson
-
-### Vocabulary
+## Keywords and terms
 
 Serialization encodes an object. Deserialization reconstructs data. A schema defines allowed fields and types. A data-only format does not execute code by itself.
+
+## Topics
+
+### What is Safe Serialization and Deserialization?
+
+Serialization turns objects into data for storage or transport. Some formats are data-only; others can execute behavior when loaded. Security code must choose a format and validate its schema.
+
+### Why is Safe Serialization and Deserialization useful?
+
+Serialize a synthetic case record with JSON and reject unexpected fields before it reaches policy.
+
+### How will Python use this idea?
+
+Read the worked examples next. For each one, identify the input, the operation, the result, and the boundary that prevents the example from doing more than the lesson allows.
+
+### What are the security limits?
+
+The examples remain local, synthetic, bounded, and authorized. A successful program run demonstrates behavior on the fixture; it does not prove authenticity, compromise, or permission to act on a real target.
 
 ## Worked examples
 

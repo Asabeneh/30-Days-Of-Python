@@ -7,6 +7,9 @@
 
 
 
+
+
+
 ## Table of contents
 
 - [Why this lesson exists](#why-this-lesson-exists)
@@ -14,8 +17,12 @@
 - [Outcomes](#outcomes)
 - [The problem](#the-problem)
 - [Security boundary](#security-boundary)
-- [Lesson](#lesson)
-  - [Vocabulary](#vocabulary)
+- [Keywords and terms](#keywords-and-terms)
+- [Topics](#topics)
+  - [What is Bounded Fuzzing?](#what-is-bounded-fuzzing)
+  - [Why is Bounded Fuzzing useful?](#why-is-bounded-fuzzing-useful)
+  - [How will Python use this idea?](#how-will-python-use-this-idea)
+  - [What are the security limits?](#what-are-the-security-limits)
 - [Worked examples](#worked-examples)
   - [Example 1: Create a seed](#example-1-create-a-seed)
   - [Example 2: Generate a bounded string](#example-2-generate-a-bounded-string)
@@ -63,11 +70,27 @@ Generate small synthetic inputs, run them against a pure validator, and record c
 
 This lesson is educational and authorized-lab-only. It does not authorize public scanning, credential guessing, exploitation, interception, persistence, or changes to systems you do not own.
 
-## Lesson
-
-### Vocabulary
+## Keywords and terms
 
 Fuzzing varies input automatically. A seed makes a run reproducible. A corpus is a collection of inputs. A crash is an unexpected failure requiring minimization.
+
+## Topics
+
+### What is Bounded Fuzzing?
+
+Fuzzing generates varied inputs to find crashes and contract violations. Without bounds and a resettable target, it can become an availability problem instead of a learning exercise.
+
+### Why is Bounded Fuzzing useful?
+
+Generate small synthetic inputs, run them against a pure validator, and record crashes without unbounded loops or network traffic.
+
+### How will Python use this idea?
+
+Read the worked examples next. For each one, identify the input, the operation, the result, and the boundary that prevents the example from doing more than the lesson allows.
+
+### What are the security limits?
+
+The examples remain local, synthetic, bounded, and authorized. A successful program run demonstrates behavior on the fixture; it does not prove authenticity, compromise, or permission to act on a real target.
 
 ## Worked examples
 

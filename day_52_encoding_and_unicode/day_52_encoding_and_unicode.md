@@ -7,6 +7,9 @@
 
 
 
+
+
+
 ## Table of contents
 
 - [Why this lesson exists](#why-this-lesson-exists)
@@ -14,8 +17,12 @@
 - [Outcomes](#outcomes)
 - [The problem](#the-problem)
 - [Security boundary](#security-boundary)
-- [Lesson](#lesson)
-  - [Vocabulary](#vocabulary)
+- [Keywords and terms](#keywords-and-terms)
+- [Topics](#topics)
+  - [What is Encoding, Unicode, and Canonical Bytes?](#what-is-encoding-unicode-and-canonical-bytes)
+  - [Why is Encoding, Unicode, and Canonical Bytes useful?](#why-is-encoding-unicode-and-canonical-bytes-useful)
+  - [How will Python use this idea?](#how-will-python-use-this-idea)
+  - [What are the security limits?](#what-are-the-security-limits)
 - [Worked examples](#worked-examples)
   - [Example 1: Encode UTF-8](#example-1-encode-utf-8)
   - [Example 2: Decode with the same rule](#example-2-decode-with-the-same-rule)
@@ -63,11 +70,27 @@ Convert synthetic text into agreed bytes, preserve the original representation, 
 
 Use synthetic data, local fixtures, and loopback-only demonstrations. This lesson does not authorize scanning, interception, credential use, remote command execution, or changes to systems you do not own.
 
-## Lesson
-
-### Vocabulary
+## Keywords and terms
 
 Text is Unicode. Bytes are numeric data. Encoding maps text to bytes. Canonicalization chooses one representation for comparison or signing.
+
+## Topics
+
+### What is Encoding, Unicode, and Canonical Bytes?
+
+Cryptographic functions operate on bytes, while learners usually see text. Inconsistent encoding or normalization can make two parties hash different data that looks identical.
+
+### Why is Encoding, Unicode, and Canonical Bytes useful?
+
+Convert synthetic text into agreed bytes, preserve the original representation, and explain where normalization belongs.
+
+### How will Python use this idea?
+
+Read the worked examples next. For each one, identify the input, the operation, the result, and the boundary that prevents the example from doing more than the lesson allows.
+
+### What are the security limits?
+
+The examples remain local, synthetic, bounded, and authorized. A successful program run demonstrates behavior on the fixture; it does not prove authenticity, compromise, or permission to act on a real target.
 
 ## Worked examples
 

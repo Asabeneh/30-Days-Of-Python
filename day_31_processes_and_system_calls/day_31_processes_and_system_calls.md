@@ -7,6 +7,9 @@
 
 
 
+
+
+
 ## Table of contents
 
 - [Why this lesson exists](#why-this-lesson-exists)
@@ -14,8 +17,12 @@
 - [Outcomes](#outcomes)
 - [The problem](#the-problem)
 - [Security boundary](#security-boundary)
-- [Lesson](#lesson)
-  - [Vocabulary](#vocabulary)
+- [Keywords and terms](#keywords-and-terms)
+- [Topics](#topics)
+  - [What is Processes and Safe System Calls?](#what-is-processes-and-safe-system-calls)
+  - [Why is Processes and Safe System Calls useful?](#why-is-processes-and-safe-system-calls-useful)
+  - [How will Python use this idea?](#how-will-python-use-this-idea)
+  - [What are the security limits?](#what-are-the-security-limits)
 - [Worked examples](#worked-examples)
   - [Example 1: Run an argument list](#example-1-run-an-argument-list)
   - [Example 2: Capture output](#example-2-capture-output)
@@ -62,11 +69,27 @@ Run a harmless local command and capture its result without turning user input i
 
 Use only local synthetic fixtures and explicitly authorized course files. The lesson does not authorize public scanning, credential use, remote command execution, or changes to operating-system state.
 
-## Lesson
-
-### Vocabulary
+## Keywords and terms
 
 A **process** is a running program. `subprocess.run` starts and waits for one. `argv` is the list of arguments. A **return code** reports process completion.
+
+## Topics
+
+### What is Processes and Safe System Calls?
+
+Operating-system automation is powerful because it crosses from Python into another process. It is dangerous when arguments, environment, working directory, output, and lifetime are implicit.
+
+### Why is Processes and Safe System Calls useful?
+
+Run a harmless local command and capture its result without turning user input into shell syntax.
+
+### How will Python use this idea?
+
+Read the worked examples next. For each one, identify the input, the operation, the result, and the boundary that prevents the example from doing more than the lesson allows.
+
+### What are the security limits?
+
+The examples remain local, synthetic, bounded, and authorized. A successful program run demonstrates behavior on the fixture; it does not prove authenticity, compromise, or permission to act on a real target.
 
 ## Worked examples
 

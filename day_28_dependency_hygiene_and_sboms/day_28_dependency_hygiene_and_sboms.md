@@ -7,6 +7,9 @@
 
 
 
+
+
+
 ## Table of contents
 
 - [Why this lesson exists](#why-this-lesson-exists)
@@ -14,8 +17,12 @@
 - [Outcomes](#outcomes)
 - [The problem](#the-problem)
 - [Security boundary](#security-boundary)
-- [Lesson](#lesson)
-  - [Vocabulary](#vocabulary)
+- [Keywords and terms](#keywords-and-terms)
+- [Topics](#topics)
+  - [What is Dependency Hygiene and SBOM Thinking?](#what-is-dependency-hygiene-and-sbom-thinking)
+  - [Why is Dependency Hygiene and SBOM Thinking useful?](#why-is-dependency-hygiene-and-sbom-thinking-useful)
+  - [How will Python use this idea?](#how-will-python-use-this-idea)
+  - [What are the security limits?](#what-are-the-security-limits)
 - [Worked examples](#worked-examples)
   - [Example 1: List dependencies](#example-1-list-dependencies)
   - [Example 2: Record a version](#example-2-record-a-version)
@@ -62,11 +69,27 @@ Produce a small inventory for the course tools without treating a package name a
 
 Use only local synthetic fixtures and explicitly authorized course files. The lesson does not authorize public scanning, credential use, remote command execution, or changes to operating-system state.
 
-## Lesson
-
-### Vocabulary
+## Keywords and terms
 
 A **dependency** is code your project relies on. An **SBOM** is a machine-readable inventory of components. A **transitive dependency** is pulled in by another dependency.
+
+## Topics
+
+### What is Dependency Hygiene and SBOM Thinking?
+
+Python packages expand what a tool can do and what it must trust. Dependency hygiene makes versions, origins, licenses, and update decisions visible.
+
+### Why is Dependency Hygiene and SBOM Thinking useful?
+
+Produce a small inventory for the course tools without treating a package name as proof of safety.
+
+### How will Python use this idea?
+
+Read the worked examples next. For each one, identify the input, the operation, the result, and the boundary that prevents the example from doing more than the lesson allows.
+
+### What are the security limits?
+
+The examples remain local, synthetic, bounded, and authorized. A successful program run demonstrates behavior on the fixture; it does not prove authenticity, compromise, or permission to act on a real target.
 
 ## Worked examples
 

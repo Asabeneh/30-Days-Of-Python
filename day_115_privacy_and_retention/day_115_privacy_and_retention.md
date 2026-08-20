@@ -7,6 +7,9 @@
 
 
 
+
+
+
 ## Table of contents
 
 - [Why this lesson exists](#why-this-lesson-exists)
@@ -14,8 +17,12 @@
 - [Outcomes](#outcomes)
 - [The problem](#the-problem)
 - [Security boundary](#security-boundary)
-- [Lesson](#lesson)
-  - [Vocabulary](#vocabulary)
+- [Keywords and terms](#keywords-and-terms)
+- [Topics](#topics)
+  - [What is Privacy and Retention?](#what-is-privacy-and-retention)
+  - [Why is Privacy and Retention useful?](#why-is-privacy-and-retention-useful)
+  - [How will Python use this idea?](#how-will-python-use-this-idea)
+  - [What are the security limits?](#what-are-the-security-limits)
 - [Worked examples](#worked-examples)
   - [Example 1: Classify fields](#example-1-classify-fields)
   - [Example 2: Minimize report](#example-2-minimize-report)
@@ -63,11 +70,27 @@ Design a retention policy for synthetic case records and implement minimization 
 
 This lesson is educational and bounded. It does not authorize public scanning, credential use, destructive actions, persistence, or processing of private data.
 
-## Lesson
-
-### Vocabulary
+## Keywords and terms
 
 Data minimization collects only what is needed. Retention is how long data is kept. A deletion record proves an action without preserving the deleted content.
+
+## Topics
+
+### What is Privacy and Retention?
+
+Security tooling often collects more personal data than it needs. Privacy engineering asks what is necessary, how long it is kept, who can access it, and how it is deleted.
+
+### Why is Privacy and Retention useful?
+
+Design a retention policy for synthetic case records and implement minimization and deletion metadata.
+
+### How will Python use this idea?
+
+Read the worked examples next. For each one, identify the input, the operation, the result, and the boundary that prevents the example from doing more than the lesson allows.
+
+### What are the security limits?
+
+The examples remain local, synthetic, bounded, and authorized. A successful program run demonstrates behavior on the fixture; it does not prove authenticity, compromise, or permission to act on a real target.
 
 ## Worked examples
 

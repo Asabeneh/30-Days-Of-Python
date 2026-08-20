@@ -7,6 +7,9 @@
 
 
 
+
+
+
 ## Table of contents
 
 - [Why this lesson exists](#why-this-lesson-exists)
@@ -14,8 +17,12 @@
 - [Outcomes](#outcomes)
 - [The problem](#the-problem)
 - [Security boundary](#security-boundary)
-- [Lesson](#lesson)
-  - [Vocabulary](#vocabulary)
+- [Keywords and terms](#keywords-and-terms)
+- [Topics](#topics)
+  - [What is JSON, CSV, and SQLite Data Boundaries?](#what-is-json-csv-and-sqlite-data-boundaries)
+  - [Why is JSON, CSV, and SQLite Data Boundaries useful?](#why-is-json-csv-and-sqlite-data-boundaries-useful)
+  - [How will Python use this idea?](#how-will-python-use-this-idea)
+  - [What are the security limits?](#what-are-the-security-limits)
 - [Worked examples](#worked-examples)
   - [Example 1: Round-trip JSON](#example-1-round-trip-json)
   - [Example 2: Read CSV rows](#example-2-read-csv-rows)
@@ -62,11 +69,27 @@ Load synthetic event records, validate them, store them locally, and retrieve a 
 
 Use only local synthetic fixtures and explicitly authorized course files. The lesson does not authorize public scanning, credential use, remote command execution, or changes to operating-system state.
 
-## Lesson
-
-### Vocabulary
+## Keywords and terms
 
 JSON represents structured values. CSV represents rows and columns. SQLite is a local relational database. A **parameterized query** keeps data separate from SQL syntax.
+
+## Topics
+
+### What is JSON, CSV, and SQLite Data Boundaries?
+
+Security engineering moves between text formats and databases. Each boundary needs a schema, encoding decision, and safe query or serialization method.
+
+### Why is JSON, CSV, and SQLite Data Boundaries useful?
+
+Load synthetic event records, validate them, store them locally, and retrieve a summary without concatenating user input into SQL.
+
+### How will Python use this idea?
+
+Read the worked examples next. For each one, identify the input, the operation, the result, and the boundary that prevents the example from doing more than the lesson allows.
+
+### What are the security limits?
+
+The examples remain local, synthetic, bounded, and authorized. A successful program run demonstrates behavior on the fixture; it does not prove authenticity, compromise, or permission to act on a real target.
 
 ## Worked examples
 

@@ -7,6 +7,9 @@
 
 
 
+
+
+
 ## Table of contents
 
 - [Why this lesson exists](#why-this-lesson-exists)
@@ -14,8 +17,12 @@
 - [Outcomes](#outcomes)
 - [The problem](#the-problem)
 - [Security boundary](#security-boundary)
-- [Lesson](#lesson)
-  - [Vocabulary](#vocabulary)
+- [Keywords and terms](#keywords-and-terms)
+- [Topics](#topics)
+  - [What is Dataclasses and Evidence Models?](#what-is-dataclasses-and-evidence-models)
+  - [Why is Dataclasses and Evidence Models useful?](#why-is-dataclasses-and-evidence-models-useful)
+  - [How will Python use this idea?](#how-will-python-use-this-idea)
+  - [What are the security limits?](#what-are-the-security-limits)
 - [Worked examples](#worked-examples)
   - [Example 1: The smallest dataclass](#example-1-the-smallest-dataclass)
   - [Example 2: Validate on construction](#example-2-validate-on-construction)
@@ -63,11 +70,27 @@ A report needs a stable finding shape. Reviewers should know which fields are re
 
 Use only the repository, synthetic examples, and local fixtures. The examples do not authorize access to public systems, university systems, employer systems, or accounts that you do not own.
 
-## Lesson
-
-### Vocabulary
+## Keywords and terms
 
 A **dataclass** generates useful representation and comparison methods for a class. A **frozen** dataclass prevents reassignment after construction. A field type documents intent but does not validate arbitrary runtime input.
+
+## Topics
+
+### What is Dataclasses and Evidence Models?
+
+A dictionary is flexible but lets field names and types drift. A dataclass gives a security tool a visible model for a finding, its evidence reference, and its confidence without pretending that the model authenticates the data.
+
+### Why is Dataclasses and Evidence Models useful?
+
+A report needs a stable finding shape. Reviewers should know which fields are required, which are derived, and which identifier points back to a local fixture.
+
+### How will Python use this idea?
+
+Read the worked examples next. For each one, identify the input, the operation, the result, and the boundary that prevents the example from doing more than the lesson allows.
+
+### What are the security limits?
+
+The examples remain local, synthetic, bounded, and authorized. A successful program run demonstrates behavior on the fixture; it does not prove authenticity, compromise, or permission to act on a real target.
 
 ## Worked examples
 

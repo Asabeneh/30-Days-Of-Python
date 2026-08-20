@@ -7,6 +7,9 @@
 
 
 
+
+
+
 ## Table of contents
 
 - [Why this lesson exists](#why-this-lesson-exists)
@@ -14,8 +17,12 @@
 - [Outcomes](#outcomes)
 - [The problem](#the-problem)
 - [Security boundary](#security-boundary)
-- [Lesson](#lesson)
-  - [Vocabulary](#vocabulary)
+- [Keywords and terms](#keywords-and-terms)
+- [Topics](#topics)
+  - [What is Project: Secure Evidence Journal?](#what-is-project-secure-evidence-journal)
+  - [Why is Project: Secure Evidence Journal useful?](#why-is-project-secure-evidence-journal-useful)
+  - [How will Python use this idea?](#how-will-python-use-this-idea)
+  - [What are the security limits?](#what-are-the-security-limits)
 - [Worked examples](#worked-examples)
   - [Example 1: Define a record](#example-1-define-a-record)
   - [Example 2: Validate required fields](#example-2-validate-required-fields)
@@ -62,11 +69,27 @@ Build a local JSON Lines journal that accepts synthetic entries, validates them,
 
 Use only local synthetic fixtures and explicitly authorized course files. The lesson does not authorize public scanning, credential use, remote command execution, or changes to operating-system state.
 
-## Lesson
-
-### Vocabulary
+## Keywords and terms
 
 A **journal entry** is one immutable observation. **Provenance** says where and when it came from. **Confidence** describes the strength of an interpretation, not the guilt of a person.
+
+## Topics
+
+### What is Project: Secure Evidence Journal?
+
+A project makes the engineering habits visible in one artifact. The Secure Evidence Journal stores synthetic observations, preserves provenance, redacts sensitive fields, and records confidence without pretending to be a case-management system.
+
+### Why is Project: Secure Evidence Journal useful?
+
+Build a local JSON Lines journal that accepts synthetic entries, validates them, assigns an identifier, and exports a safe report.
+
+### How will Python use this idea?
+
+Read the worked examples next. For each one, identify the input, the operation, the result, and the boundary that prevents the example from doing more than the lesson allows.
+
+### What are the security limits?
+
+The examples remain local, synthetic, bounded, and authorized. A successful program run demonstrates behavior on the fixture; it does not prove authenticity, compromise, or permission to act on a real target.
 
 ## Worked examples
 

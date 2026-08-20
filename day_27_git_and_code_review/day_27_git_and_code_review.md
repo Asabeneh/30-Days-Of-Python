@@ -7,6 +7,9 @@
 
 
 
+
+
+
 ## Table of contents
 
 - [Why this lesson exists](#why-this-lesson-exists)
@@ -14,8 +17,12 @@
 - [Outcomes](#outcomes)
 - [The problem](#the-problem)
 - [Security boundary](#security-boundary)
-- [Lesson](#lesson)
-  - [Vocabulary](#vocabulary)
+- [Keywords and terms](#keywords-and-terms)
+- [Topics](#topics)
+  - [What is Git and Code Review for Security Changes?](#what-is-git-and-code-review-for-security-changes)
+  - [Why is Git and Code Review for Security Changes useful?](#why-is-git-and-code-review-for-security-changes-useful)
+  - [How will Python use this idea?](#how-will-python-use-this-idea)
+  - [What are the security limits?](#what-are-the-security-limits)
 - [Worked examples](#worked-examples)
   - [Example 1: Inspect status](#example-1-inspect-status)
   - [Example 2: Read a diff](#example-2-read-a-diff)
@@ -62,11 +69,27 @@ Review a change to a parser or security rule without trusting the author’s des
 
 Use only local synthetic fixtures and explicitly authorized course files. The lesson does not authorize public scanning, credential use, remote command execution, or changes to operating-system state.
 
-## Lesson
-
-### Vocabulary
+## Keywords and terms
 
 A **diff** is a line-level change. A **commit** is a recorded snapshot. A **review** checks behavior, tests, scope, and risk before integration.
+
+## Topics
+
+### What is Git and Code Review for Security Changes?
+
+Version control is part of engineering evidence. A small reviewable commit helps a team understand what changed, why it changed, and how to revert it.
+
+### Why is Git and Code Review for Security Changes useful?
+
+Review a change to a parser or security rule without trusting the author’s description alone.
+
+### How will Python use this idea?
+
+Read the worked examples next. For each one, identify the input, the operation, the result, and the boundary that prevents the example from doing more than the lesson allows.
+
+### What are the security limits?
+
+The examples remain local, synthetic, bounded, and authorized. A successful program run demonstrates behavior on the fixture; it does not prove authenticity, compromise, or permission to act on a real target.
 
 ## Worked examples
 

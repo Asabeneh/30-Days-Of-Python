@@ -7,6 +7,9 @@
 
 
 
+
+
+
 ## Table of contents
 
 - [Why this lesson exists](#why-this-lesson-exists)
@@ -14,8 +17,12 @@
 - [Outcomes](#outcomes)
 - [The problem](#the-problem)
 - [Security boundary](#security-boundary)
-- [Lesson](#lesson)
-  - [Vocabulary](#vocabulary)
+- [Keywords and terms](#keywords-and-terms)
+- [Topics](#topics)
+  - [What is Capstone Implementation?](#what-is-capstone-implementation)
+  - [Why is Capstone Implementation useful?](#why-is-capstone-implementation-useful)
+  - [How will Python use this idea?](#how-will-python-use-this-idea)
+  - [What are the security limits?](#what-are-the-security-limits)
 - [Worked examples](#worked-examples)
   - [Example 1: Build the first slice](#example-1-build-the-first-slice)
   - [Example 2: Add a failing test](#example-2-add-a-failing-test)
@@ -63,11 +70,27 @@ Implement the capstone in small vertical slices and record testable outputs at e
 
 This lesson is educational and bounded. It does not authorize public scanning, credential use, destructive actions, persistence, or processing of private data.
 
-## Lesson
-
-### Vocabulary
+## Keywords and terms
 
 A vertical slice crosses input, core behavior, and output. A checkpoint is evidence at a milestone. Refactoring changes structure while preserving behavior.
+
+## Topics
+
+### What is Capstone Implementation?
+
+Implementation is where design decisions meet real code. The learner should build incrementally, keep the core testable, and preserve the evidence needed for a final demonstration.
+
+### Why is Capstone Implementation useful?
+
+Implement the capstone in small vertical slices and record testable outputs at each milestone.
+
+### How will Python use this idea?
+
+Read the worked examples next. For each one, identify the input, the operation, the result, and the boundary that prevents the example from doing more than the lesson allows.
+
+### What are the security limits?
+
+The examples remain local, synthetic, bounded, and authorized. A successful program run demonstrates behavior on the fixture; it does not prove authenticity, compromise, or permission to act on a real target.
 
 ## Worked examples
 

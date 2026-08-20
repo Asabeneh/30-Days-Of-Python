@@ -7,6 +7,9 @@
 
 
 
+
+
+
 ## Table of contents
 
 - [Why this lesson exists](#why-this-lesson-exists)
@@ -14,8 +17,12 @@
 - [Outcomes](#outcomes)
 - [The problem](#the-problem)
 - [Security boundary](#security-boundary)
-- [Lesson](#lesson)
-  - [Vocabulary](#vocabulary)
+- [Keywords and terms](#keywords-and-terms)
+- [Topics](#topics)
+  - [What is Findings and Retesting?](#what-is-findings-and-retesting)
+  - [Why is Findings and Retesting useful?](#why-is-findings-and-retesting-useful)
+  - [How will Python use this idea?](#how-will-python-use-this-idea)
+  - [What are the security limits?](#what-are-the-security-limits)
 - [Worked examples](#worked-examples)
   - [Example 1: State a finding](#example-1-state-a-finding)
   - [Example 2: Give reproduction](#example-2-give-reproduction)
@@ -63,11 +70,27 @@ Write a synthetic finding, propose a fix, and record a retest that changes the s
 
 This lesson is educational and authorized-lab-only. It does not authorize public scanning, credential guessing, exploitation, interception, persistence, or changes to systems you do not own.
 
-## Lesson
-
-### Vocabulary
+## Keywords and terms
 
 A finding is a documented issue. Reproduction is a minimal repeatable test. Remediation changes the control. Retest checks whether the original condition remains.
+
+## Topics
+
+### What is Findings and Retesting?
+
+A finding becomes useful when it states affected component, reproduction, impact, evidence, severity rationale, remediation, and retest result. Retesting should verify the original behavior without expanding scope.
+
+### Why is Findings and Retesting useful?
+
+Write a synthetic finding, propose a fix, and record a retest that changes the status from open to verified or remains open.
+
+### How will Python use this idea?
+
+Read the worked examples next. For each one, identify the input, the operation, the result, and the boundary that prevents the example from doing more than the lesson allows.
+
+### What are the security limits?
+
+The examples remain local, synthetic, bounded, and authorized. A successful program run demonstrates behavior on the fixture; it does not prove authenticity, compromise, or permission to act on a real target.
 
 ## Worked examples
 
