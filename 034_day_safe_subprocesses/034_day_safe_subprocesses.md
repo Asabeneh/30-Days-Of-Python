@@ -1,6 +1,6 @@
-# Day 34: Subprocesses Without Shell Injection
+# Day 34: Safe Subprocess Allowlisting
 
-[Previous](../033_day_paths_and_file_metadata/033_day_paths_and_file_metadata.md) | [Next](../035_day_users_and_permissions/035_day_users_and_permissions.md)
+[← Day 33](../033_day_paths_and_file_metadata/033_day_paths_and_file_metadata.md) · [Day index](../DAY_INDEX.md) · [Day 35 →](../035_day_users_and_permissions/035_day_users_and_permissions.md)
 
 ## Table of Contents
 
@@ -9,65 +9,150 @@
 - [Outcomes](#outcomes)
 - [The problem](#the-problem)
 - [Security boundary](#security-boundary)
-- [Core lesson](#core-lesson)
+- [Lesson](#lesson)
+- [Vocabulary](#vocabulary)
+- [Worked examples](#worked-examples)
+- [Execution trace](#execution-trace)
 - [Common mistakes](#common-mistakes)
-- [Practice](#practice)
-- [Mental model](#mental-model)
+- [Security application](#security-application)
+- [Exercises](#exercises)
 - [Finish line](#finish-line)
 
 ## Why this lesson exists
 
-A Python security tool interacts with a host that has processes, permissions, paths, resource limits, and concurrent work. This lesson makes one host-level boundary visible and testable.
+Day 31 showed how to start a process; this day turns that knowledge into a safer design. A command runner should allow a small set of known operations instead of accepting arbitrary executable input.
 
 ## Prerequisites
 
-Complete Day 33, keep [SETUP.md](../SETUP.md) available, and read [SAFETY_AND_LAB_RULES.md](../SAFETY_AND_LAB_RULES.md).
+Complete Day 33 and run the phase checks. The lesson assumes you can read a traceback, use a virtual environment, and work only with the supplied repository fixtures.
 
 ## Outcomes
 
-You can explain the concept, trace the starter, make one controlled change, test a normal and negative case, and state what the local fixture does not represent.
+By the end of this lesson, you can:
+
+- explain the concept in plain language and precise Python terms
+- run and modify each worked example
+- test a normal case, boundary case, and failure case
+- apply the idea to the safe local context described by Day 34
 
 ## The problem
 
-Host automation can collect useful evidence or cause unexpected load and data exposure. The problem today is to make the target, permission, resource, and cleanup assumptions explicit before writing a broader tool.
+Build a local command adapter that supports one or two harmless inventory commands and rejects everything else.
 
 ## Security boundary
 
-Use only the repository and supplied synthetic fixtures. Do not inspect other users, services, university systems, employer systems, or public targets. Keep collection bounded and stop if scope changes.
+Use only local synthetic fixtures and explicitly authorized course files. The lesson does not authorize public scanning, credential use, remote command execution, or changes to operating-system state.
 
-## Core lesson
+## Lesson
 
-`subprocess.run` can pass arguments as a list without asking a shell to interpret them.
+### Vocabulary
+
+An **allowlist** permits named safe cases. A **denylist** tries to enumerate unsafe cases. An **argv list** keeps arguments separate from shell parsing.
+
+## Worked examples
+
+### Example 1: Allow one command
+
+Map a friendly operation to a fixed argv list.
 
 ```python
-import subprocess
-
-result = subprocess.run(
-    ["python", "--version"], capture_output=True, text=True, timeout=3, check=True
-)
+COMMANDS = {"python-version": ["python", "--version"]}
+print(COMMANDS["python-version"])
 ```
 
-`check=True` turns a non-zero exit into an exception; `timeout` bounds waiting. Never concatenate untrusted text into a shell command, and never use `shell=True` as a shortcut for input handling.
+**What to observe:**
 
-Security connection: allowlisting a program and its arguments is safer than trying to remove dangerous characters from a free-form command.
+The user chooses a key, not an executable string.
 
-### Common mistakes
+### Example 2: Reject unknown keys
+
+Fail before starting a process.
+
+```python
+def command_for(name):
+    try:
+        return COMMANDS[name].copy()
+    except KeyError as error:
+        raise ValueError("operation is not allowed") from error
+```
+
+**What to observe:**
+
+An unknown operation is rejected.
+
+### Example 3: Constrain arguments
+
+Even an allowed executable may accept unsafe arguments.
+
+```python
+def python_check(script):
+    if script != "import sys; print(sys.version_info[:2])":
+        raise ValueError("script is not allowed")
+    return ["python", "-c", script]
+```
+
+**What to observe:**
+
+Only the exact local check is accepted.
+
+### Example 4: Set environment
+
+Do not inherit more environment than necessary.
+
+```python
+safe_env = {"PATH": "/usr/bin:/bin"}
+print(sorted(safe_env))
+```
+
+**What to observe:**
+
+The child receives a deliberately small environment.
+
+### Example 5: Bound output
+
+Capture only a limited amount of output before reporting truncation.
+
+```python
+def preview(text, limit=4096):
+    return text[:limit], len(text) > limit
+```
+
+**What to observe:**
+
+The caller can display `truncated=True`.
+
+## Execution trace
+
+The friendly operation maps to fixed data, the adapter validates the key and arguments, starts with an explicit cwd/environment, and caps output and lifetime.
+
+## Common mistakes
 
 | Mistake | Symptom | Correction |
 | --- | --- | --- |
-| Assuming a name proves identity | A process or file is attributed without evidence | Record the exact observation and its limits |
-| Using free-form commands | Shell metacharacters change behavior | Pass argument lists and allowlist programs |
-| Ignoring limits | A collector can run forever or consume memory | Add bounds, timeouts, and cancellation |
-| Treating differences as verdicts | A baseline change is called compromise | Report the difference and seek context |
+| denylist | a new dangerous command bypasses it | allowlist |
+| executable from input | arbitrary code runs | map names to fixed argv |
+| inherited environment | secrets enter child | pass a minimal environment |
+| inherited privileges | child can do too much | drop privilege or refuse |
+| output stored forever | sensitive output persists | cap, redact, and clean up |
+
+## Security application
+
+The adapter may run only harmless local inventory commands. It must reject shell metacharacters, remote destinations, arbitrary scripts, and unknown operation names.
 
 ## Exercises
 
-Complete the numbered questions in [practice/exercises.md](practice/exercises.md) in order. Run the requested commands, produce the requested artifact, and record the edge case or limitation asked for by the exercise. Use [hints](practice/hints.md) only after a real attempt and [solutions](practice/solutions.md) only to compare your reasoning.
-
-## Mental model
-
-> A subprocess boundary is safer when arguments are separated, programs are allowlisted, and timeouts are enforced.
+Complete the numbered questions in [practice/exercises.md](practice/exercises.md) in order. Run every requested command, create the requested artifact, and record the limitation the exercise asks you to name.
 
 ## Finish line
 
-Run the starter, pass the relevant tests, complete the numbered exercises, and explain one edge case aloud or in writing.
+Run `python -m course_days.day034`, pass the relevant tests, complete the numbered exercises, and explain one edge case aloud or in writing.
+
+## Mental model
+
+> Safe automation narrows the language accepted at the process boundary until only the intended operation remains.
+
+## Limitations
+
+Allowlisting is a design control, not proof that the allowed command is safe on every platform or with every dependency.
+
+[← Day 33](../033_day_paths_and_file_metadata/033_day_paths_and_file_metadata.md) · [Day index](../DAY_INDEX.md) · [Day 35 →](../035_day_users_and_permissions/035_day_users_and_permissions.md)

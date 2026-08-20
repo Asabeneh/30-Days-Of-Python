@@ -1,6 +1,6 @@
-# Day 24: JSON, CSV, SQLite, and Schema Validation
+# Day 24: JSON, CSV, and SQLite Data Boundaries
 
-[Previous](../023_day_configuration_and_secrets/023_day_configuration_and_secrets.md) | [Next](../025_day_type_hints_and_static_checks/025_day_type_hints_and_static_checks.md)
+[← Day 23](../023_day_configuration_and_secrets/023_day_configuration_and_secrets.md) · [Day index](../DAY_INDEX.md) · [Day 25 →](../025_day_type_hints_and_static_checks/025_day_type_hints_and_static_checks.md)
 
 ## Table of Contents
 
@@ -9,65 +9,156 @@
 - [Outcomes](#outcomes)
 - [The problem](#the-problem)
 - [Security boundary](#security-boundary)
-- [Core lesson](#core-lesson)
+- [Lesson](#lesson)
+- [Vocabulary](#vocabulary)
+- [Worked examples](#worked-examples)
+- [Execution trace](#execution-trace)
 - [Common mistakes](#common-mistakes)
-- [Practice](#practice)
-- [Mental model](#mental-model)
+- [Security application](#security-application)
+- [Exercises](#exercises)
 - [Finish line](#finish-line)
 
 ## Why this lesson exists
 
-Security engineering becomes dependable when its inputs, dependencies, failure behavior, and evidence are visible. This day builds one professional Python habit through a bounded local exercise.
+Security engineering moves between text formats and databases. Each boundary needs a schema, encoding decision, and safe query or serialization method.
 
 ## Prerequisites
 
-Complete Day 23, keep [SETUP.md](../SETUP.md) available, and read [SAFETY_AND_LAB_RULES.md](../SAFETY_AND_LAB_RULES.md).
+Complete Day 23 and run the phase checks. The lesson assumes you can read a traceback, use a virtual environment, and work only with the supplied repository fixtures.
 
 ## Outcomes
 
-You can explain the concept, trace the starter, make one controlled change, test a normal and negative case, and document one security limitation.
+By the end of this lesson, you can:
+
+- explain the concept in plain language and precise Python terms
+- run and modify each worked example
+- test a normal case, boundary case, and failure case
+- apply the idea to the safe local context described by Day 24
 
 ## The problem
 
-A security utility often fails at a boundary: installation, command-line input, configuration, data serialization, logging, review, dependencies, or design assumptions. Today makes one such boundary explicit.
+Load synthetic event records, validate them, store them locally, and retrieve a summary without concatenating user input into SQL.
 
 ## Security boundary
 
-Use only synthetic data and local files. Do not add real credentials, private evidence, public targets, or network access to the starter. Stop if the exercise leaves its documented scope.
+Use only local synthetic fixtures and explicitly authorized course files. The lesson does not authorize public scanning, credential use, remote command execution, or changes to operating-system state.
 
-## Core lesson
+## Lesson
 
-JSON and CSV are representations, not trusted object models. SQLite gives structured queries, but a database does not validate that a record's meaning is correct.
+### Vocabulary
+
+JSON represents structured values. CSV represents rows and columns. SQLite is a local relational database. A **parameterized query** keeps data separate from SQL syntax.
+
+## Worked examples
+
+### Example 1: Round-trip JSON
+
+JSON maps common Python values to a text representation.
 
 ```python
 import json
 
-record = json.loads('{"severity": 5}')
-if not isinstance(record.get("severity"), int):
-    raise ValueError("severity must be an integer")
+record = {"source": "auth", "severity": 7}
+text = json.dumps(record)
+print(json.loads(text)["severity"])
 ```
 
-Validate required fields, types, ranges, and unknown-field policy at the boundary. Use parameterized SQL rather than string concatenation.
+**What to observe:**
 
-Security connection: deserialization and injection occur when data is allowed to become behavior without a narrow contract.
+`7` after serialization and parsing.
 
-### Common mistakes
+### Example 2: Read CSV rows
+
+`csv.DictReader` maps column names to row values, which still arrive as strings.
+
+```python
+import csv
+from io import StringIO
+
+rows = csv.DictReader(StringIO("source,severity\nauth,7\n"))
+print(next(rows))
+```
+
+**What to observe:**
+
+`{'source': 'auth', 'severity': '7'}`; validate and convert severity.
+
+### Example 3: Create a table
+
+A schema makes stored fields visible.
+
+```python
+import sqlite3
+
+connection = sqlite3.connect(":memory:")
+connection.execute("CREATE TABLE events (source TEXT, severity INTEGER)")
+```
+
+**What to observe:**
+
+The database now has a table with two columns.
+
+### Example 4: Parameterize data
+
+Never build SQL by concatenating input.
+
+```python
+connection.execute("INSERT INTO events VALUES (?, ?)", ("auth", 7))
+row = connection.execute(
+    "SELECT source, severity FROM events WHERE severity >= ?", (7,)
+).fetchone()
+print(row)
+```
+
+**What to observe:**
+
+`('auth', 7)`
+
+### Example 5: Close the boundary
+
+A context manager commits or closes a short-lived database session.
+
+```python
+with sqlite3.connect("training.db") as db:
+    db.execute("CREATE TABLE IF NOT EXISTS notes (text TEXT)")
+```
+
+**What to observe:**
+
+The connection is cleaned up when the block exits.
+
+## Execution trace
+
+CSV values arrive as strings; validation converts them into an internal record; the parameterized query receives values separately from the SQL statement.
+
+## Common mistakes
 
 | Mistake | Symptom | Correction |
 | --- | --- | --- |
-| Treating tools as magic | The learner cannot reproduce the result | State the interpreter, input, command, and expected output |
-| Trusting representation | Malformed data enters the decision layer | Validate fields and types at the boundary |
-| Logging everything | Secrets or private data appear in output | Minimize, redact, and test logging behavior |
-| Confusing a control with proof | A checklist is called “secure” | Name the test and the residual risk |
+| trust JSON shape | missing or wrong fields reach policy | validate schema |
+| assume CSV types | severity compares as text | convert explicitly |
+| SQL concatenation | input becomes query syntax | use placeholders |
+| store raw secrets | local database becomes a leak | minimize and redact |
+| no migration note | schema changes silently break tools | document schema and version |
+
+## Security application
+
+Use a temporary SQLite file under training output, parameterized statements, synthetic rows, and cleanup after tests. Never import a private CSV.
 
 ## Exercises
 
-Complete the numbered questions in [practice/exercises.md](practice/exercises.md) in order. Run the requested commands, produce the requested artifact, and record the edge case or limitation asked for by the exercise. Use [hints](practice/hints.md) only after a real attempt and [solutions](practice/solutions.md) only to compare your reasoning.
-
-## Mental model
-
-> Serialization moves data across a boundary; validate the structure before trusting the fields.
+Complete the numbered questions in [practice/exercises.md](practice/exercises.md) in order. Run every requested command, create the requested artifact, and record the limitation the exercise asks you to name.
 
 ## Finish line
 
-Run the starter, pass the relevant tests, complete the numbered exercises, and explain one edge case aloud or in writing.
+Run `python -m course_days.day024`, pass the relevant tests, complete the numbered exercises, and explain one edge case aloud or in writing.
+
+## Mental model
+
+> Serialization is a boundary transformation; a safe database call keeps data values separate from executable syntax.
+
+## Limitations
+
+Parameterized SQL prevents one class of injection but does not authorize data access, validate business logic, or protect a database file’s permissions.
+
+[← Day 23](../023_day_configuration_and_secrets/023_day_configuration_and_secrets.md) · [Day index](../DAY_INDEX.md) · [Day 25 →](../025_day_type_hints_and_static_checks/025_day_type_hints_and_static_checks.md)

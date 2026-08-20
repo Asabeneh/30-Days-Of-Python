@@ -1,6 +1,6 @@
-# Day 27: Git, Code Review, and Change History
+# Day 27: Git and Code Review for Security Changes
 
-[Previous](../026_day_structured_logging/026_day_structured_logging.md) | [Next](../028_day_dependency_hygiene_and_sboms/028_day_dependency_hygiene_and_sboms.md)
+[← Day 26](../026_day_structured_logging/026_day_structured_logging.md) · [Day index](../DAY_INDEX.md) · [Day 28 →](../028_day_dependency_hygiene_and_sboms/028_day_dependency_hygiene_and_sboms.md)
 
 ## Table of Contents
 
@@ -9,63 +9,150 @@
 - [Outcomes](#outcomes)
 - [The problem](#the-problem)
 - [Security boundary](#security-boundary)
-- [Core lesson](#core-lesson)
+- [Lesson](#lesson)
+- [Vocabulary](#vocabulary)
+- [Worked examples](#worked-examples)
+- [Execution trace](#execution-trace)
 - [Common mistakes](#common-mistakes)
-- [Practice](#practice)
-- [Mental model](#mental-model)
+- [Security application](#security-application)
+- [Exercises](#exercises)
 - [Finish line](#finish-line)
 
 ## Why this lesson exists
 
-Security engineering becomes dependable when its inputs, dependencies, failure behavior, and evidence are visible. This day builds one professional Python habit through a bounded local exercise.
+Version control is part of engineering evidence. A small reviewable commit helps a team understand what changed, why it changed, and how to revert it.
 
 ## Prerequisites
 
-Complete Day 26, keep [SETUP.md](../SETUP.md) available, and read [SAFETY_AND_LAB_RULES.md](../SAFETY_AND_LAB_RULES.md).
+Complete Day 26 and run the phase checks. The lesson assumes you can read a traceback, use a virtual environment, and work only with the supplied repository fixtures.
 
 ## Outcomes
 
-You can explain the concept, trace the starter, make one controlled change, test a normal and negative case, and document one security limitation.
+By the end of this lesson, you can:
+
+- explain the concept in plain language and precise Python terms
+- run and modify each worked example
+- test a normal case, boundary case, and failure case
+- apply the idea to the safe local context described by Day 27
 
 ## The problem
 
-A security utility often fails at a boundary: installation, command-line input, configuration, data serialization, logging, review, dependencies, or design assumptions. Today makes one such boundary explicit.
+Review a change to a parser or security rule without trusting the author’s description alone.
 
 ## Security boundary
 
-Use only synthetic data and local files. Do not add real credentials, private evidence, public targets, or network access to the starter. Stop if the exercise leaves its documented scope.
+Use only local synthetic fixtures and explicitly authorized course files. The lesson does not authorize public scanning, credential use, remote command execution, or changes to operating-system state.
 
-## Core lesson
+## Lesson
 
-Git provides a time-ordered record of changes. A review should make the security-relevant delta easy to inspect: input boundaries, permissions, logging, dependencies, tests, and documentation.
+### Vocabulary
 
-```text
-git diff --check
-git diff
-python -m pytest -q
+A **diff** is a line-level change. A **commit** is a recorded snapshot. A **review** checks behavior, tests, scope, and risk before integration.
+
+## Worked examples
+
+### Example 1: Inspect status
+
+Start with the repository state before modifying anything.
+
+```python
+git status --short
+git branch --show-current
 ```
 
-A commit message explains intent; it does not prove correctness. A reviewer asks what changed, what could fail, what was tested, and whether the change expands access or data collection.
+**What to observe:**
 
-Security connection: traceability supports accountability, rollback, and incident investigation.
+You see changed files and the active branch.
 
-### Common mistakes
+### Example 2: Read a diff
+
+A diff shows additions, deletions, and context.
+
+```python
+git diff -- course_days/day027.py
+```
+
+**What to observe:**
+
+The reviewer can focus on the actual changed lines.
+
+### Example 3: Make a focused commit
+
+A commit should tell one coherent story.
+
+```python
+git add course_days/day027.py tests/test_day027.py
+git commit -m "Validate evidence source"
+```
+
+**What to observe:**
+
+The source and its tests move together.
+
+### Example 4: Review security questions
+
+A checklist prevents “tests pass” from being the only question.
+
+```python
+questions = [
+    "What input is new?",
+    "What is the trust boundary?",
+    "What can leak?",
+    "What is the rollback?",
+]
+print(len(questions))
+```
+
+**What to observe:**
+
+Four review questions are visible.
+
+### Example 5: Compare before and after
+
+A reviewer should inspect behavior, not only formatting.
+
+```python
+before = {"accepted": ["443"], "rejected": ["70000"]}
+after = {"accepted": ["443"], "rejected": ["70000", "abc"]}
+print(after)
+```
+
+**What to observe:**
+
+The added rejection is an observable behavior change.
+
+## Execution trace
+
+The review moves from status to diff to tests to threat questions to a focused commit. The repository becomes a record of engineering decisions.
+
+## Common mistakes
 
 | Mistake | Symptom | Correction |
 | --- | --- | --- |
-| Treating tools as magic | The learner cannot reproduce the result | State the interpreter, input, command, and expected output |
-| Trusting representation | Malformed data enters the decision layer | Validate fields and types at the boundary |
-| Logging everything | Secrets or private data appear in output | Minimize, redact, and test logging behavior |
-| Confusing a control with proof | A checklist is called “secure” | Name the test and the residual risk |
+| review only the title | dangerous line is missed | inspect the diff |
+| giant mixed commit | rollback is risky | split coherent changes |
+| no negative test | security claim is unproved | add rejection tests |
+| commit secrets | history retains them | scan and remove before commit |
+| approve based on authority | reviewer skips evidence | require reproducible checks |
+
+## Security application
+
+Practice on the course branch and synthetic fixtures. Never commit tokens, private logs, or generated evidence. If a secret enters Git history, stop and follow the repository security policy.
 
 ## Exercises
 
-Complete the numbered questions in [practice/exercises.md](practice/exercises.md) in order. Run the requested commands, produce the requested artifact, and record the edge case or limitation asked for by the exercise. Use [hints](practice/hints.md) only after a real attempt and [solutions](practice/solutions.md) only to compare your reasoning.
-
-## Mental model
-
-> A security decision is easier to trust when another person can see what changed, why it changed, and which tests support it.
+Complete the numbered questions in [practice/exercises.md](practice/exercises.md) in order. Run every requested command, create the requested artifact, and record the limitation the exercise asks you to name.
 
 ## Finish line
 
-Run the starter, pass the relevant tests, complete the numbered exercises, and explain one edge case aloud or in writing.
+Run `python -m course_days.day027`, pass the relevant tests, complete the numbered exercises, and explain one edge case aloud or in writing.
+
+## Mental model
+
+> A code review is a structured challenge to the change’s assumptions, not a vote on the author.
+
+## Limitations
+
+Git records changes but does not make secrets disappear from history or guarantee that a review found every flaw.
+
+[← Day 26](../026_day_structured_logging/026_day_structured_logging.md) · [Day index](../DAY_INDEX.md) · [Day 28 →](../028_day_dependency_hygiene_and_sboms/028_day_dependency_hygiene_and_sboms.md)

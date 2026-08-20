@@ -1,6 +1,6 @@
-# Day 33: Paths, File Metadata, and Safe Traversal
+# Day 33: Paths, File Metadata, and Symlinks
 
-[Previous](../032_day_linux_command_line/032_day_linux_command_line.md) | [Next](../034_day_safe_subprocesses/034_day_safe_subprocesses.md)
+[← Day 32](../032_day_linux_command_line/032_day_linux_command_line.md) · [Day index](../DAY_INDEX.md) · [Day 34 →](../034_day_safe_subprocesses/034_day_safe_subprocesses.md)
 
 ## Table of Contents
 
@@ -9,82 +9,151 @@
 - [Outcomes](#outcomes)
 - [The problem](#the-problem)
 - [Security boundary](#security-boundary)
-- [Core lesson](#core-lesson)
+- [Lesson](#lesson)
+- [Vocabulary](#vocabulary)
+- [Worked examples](#worked-examples)
+- [Execution trace](#execution-trace)
 - [Common mistakes](#common-mistakes)
-- [Practice](#practice)
-- [Mental model](#mental-model)
+- [Security application](#security-application)
+- [Exercises](#exercises)
 - [Finish line](#finish-line)
 
 ## Why this lesson exists
 
-A Python security tool interacts with a host that has processes, permissions, paths, resource limits, and concurrent work. This lesson makes one host-level boundary visible and testable.
+A file’s content is not its only property. Size, mode, owner, modification time, and link status affect how a security tool should handle it.
 
 ## Prerequisites
 
-Complete Day 32, keep [SETUP.md](../SETUP.md) available, and read [SAFETY_AND_LAB_RULES.md](../SAFETY_AND_LAB_RULES.md).
+Complete Day 32 and run the phase checks. The lesson assumes you can read a traceback, use a virtual environment, and work only with the supplied repository fixtures.
 
 ## Outcomes
 
-You can explain the concept, trace the starter, make one controlled change, test a normal and negative case, and state what the local fixture does not represent.
+By the end of this lesson, you can:
+
+- explain the concept in plain language and precise Python terms
+- run and modify each worked example
+- test a normal case, boundary case, and failure case
+- apply the idea to the safe local context described by Day 33
 
 ## The problem
 
-Host automation can collect useful evidence or cause unexpected load and data exposure. The problem today is to make the target, permission, resource, and cleanup assumptions explicit before writing a broader tool.
+Inspect metadata of local fixture files without following an unexpected link or assuming that a name identifies one object.
 
 ## Security boundary
 
-Use only the repository and supplied synthetic fixtures. Do not inspect other users, services, university systems, employer systems, or public targets. Keep collection bounded and stop if scope changes.
+Use only local synthetic fixtures and explicitly authorized course files. The lesson does not authorize public scanning, credential use, remote command execution, or changes to operating-system state.
 
-<!-- video-resources:start -->
-## Video support
+## Lesson
 
-**Inline recommendation:** [Introduction to Linux & Terminal Commands - Full Course for Beginners](https://www.youtube.com/watch?v=iwolPf6kN-k).
+### Vocabulary
 
-- Watch [00:00–01:37: Intro](https://www.youtube.com/watch?v=iwolPf6kN-k&t=0s) for **course orientation**. Then return to this lesson and run the local starter.
-- Watch [01:37–03:57: About the lecture](https://www.youtube.com/watch?v=iwolPf6kN-k&t=97s) for **why the terminal matters**. Then return to this lesson and run the local starter.
-- Watch [03:57–06:24: Terminal Emulator](https://www.youtube.com/watch?v=iwolPf6kN-k&t=237s) for **terminal window**. Then return to this lesson and run the local starter.
-- Watch [06:24–08:58: What is Shell](https://www.youtube.com/watch?v=iwolPf6kN-k&t=384s) for **shell versus terminal**. Then return to this lesson and run the local starter.
-- Watch [08:58–11:04: List commands](https://www.youtube.com/watch?v=iwolPf6kN-k&t=538s) for **listing and inspection**. Then return to this lesson and run the local starter.
-- Watch [11:04–12:24: ls](https://www.youtube.com/watch?v=iwolPf6kN-k&t=664s) for **list directory contents**. Then return to this lesson and run the local starter.
-- Watch [12:24–12:54: mkdir](https://www.youtube.com/watch?v=iwolPf6kN-k&t=744s) for **create a directory**. Then return to this lesson and run the local starter.
-- Watch [12:54–15:00: cd](https://www.youtube.com/watch?v=iwolPf6kN-k&t=774s) for **change directory**. Then return to this lesson and run the local starter.
+Metadata describes a file object. A **symlink** points to another path. A **mode** describes permission bits. `stat` reports file metadata.
 
-Written alternative: [https://ubuntu.com/tutorials/command-line-for-beginners](https://ubuntu.com/tutorials/command-line-for-beginners).
-<!-- video-resources:end -->
+## Worked examples
 
-## Core lesson
+### Example 1: Read basic metadata
 
-`Path` makes path operations explicit and portable. File metadata such as size and modification time is useful evidence, but it can change between collection and analysis.
+`Path.stat` returns size and timestamps.
 
 ```python
 from pathlib import Path
 
-for path in base.iterdir():
-    if path.is_file():
-        print(path.name, path.stat().st_size)
+path = Path("shared/fixtures/events.log")
+info = path.stat()
+print(info.st_size)
 ```
 
-Add maximum depth, maximum file count, and error handling. Resolve paths before comparing them with the allowed root.
+**What to observe:**
 
-Security connection: do not recursively collect a whole home directory when the lab asks for one fixture folder. Minimize data and document exclusions.
+A non-negative byte count.
 
-### Common mistakes
+### Example 2: Check a regular file
+
+A tool should decide whether directories, devices, and links are allowed.
+
+```python
+print(path.is_file(), path.is_dir())
+```
+
+**What to observe:**
+
+The fixture is a regular file and not a directory.
+
+### Example 3: Inspect without following
+
+`lstat` describes the link itself when the path is a symlink.
+
+```python
+info = path.lstat()
+print(info.st_mode)
+```
+
+**What to observe:**
+
+The mode can be inspected before opening.
+
+### Example 4: Hash a fixture
+
+A digest identifies content changes but is not secrecy or authenticity.
+
+```python
+import hashlib
+
+digest = hashlib.sha256(path.read_bytes()).hexdigest()
+print(digest[:12])
+```
+
+**What to observe:**
+
+A short display prefix for a synthetic file.
+
+### Example 5: Compare before and after
+
+Metadata and hashes can support a local baseline.
+
+```python
+before = path.stat().st_size
+# change a local fixture deliberately, then measure again
+after = path.stat().st_size
+print(before, after)
+```
+
+**What to observe:**
+
+A change is observable and should be explained.
+
+## Execution trace
+
+A path lookup returns an object whose metadata can be inspected; a link may redirect the lookup, so the tool must choose follow or no-follow behavior before reading.
+
+## Common mistakes
 
 | Mistake | Symptom | Correction |
 | --- | --- | --- |
-| Assuming a name proves identity | A process or file is attributed without evidence | Record the exact observation and its limits |
-| Using free-form commands | Shell metacharacters change behavior | Pass argument lists and allowlist programs |
-| Ignoring limits | A collector can run forever or consume memory | Add bounds, timeouts, and cancellation |
-| Treating differences as verdicts | A baseline change is called compromise | Report the difference and seek context |
+| name equals object | symlink or replacement is missed | inspect link and resolved target |
+| hash proves integrity | digest is treated as authenticity | compare against a trusted reference |
+| timestamps equal causation | order is overclaimed | state clock limitations |
+| read everything for metadata | unnecessary data exposure | inspect metadata first |
+| assume POSIX permissions | Windows behavior differs | document platform scope |
+
+## Security application
+
+Inspect only local fixture metadata. Do not change permissions or follow links outside the repository. Record what the baseline can and cannot show.
 
 ## Exercises
 
-Complete the numbered questions in [practice/exercises.md](practice/exercises.md) in order. Run the requested commands, produce the requested artifact, and record the edge case or limitation asked for by the exercise. Use [hints](practice/hints.md) only after a real attempt and [solutions](practice/solutions.md) only to compare your reasoning.
-
-## Mental model
-
-> A path names a resource, while metadata describes it; collection must be explicit, bounded, and resistant to path confusion.
+Complete the numbered questions in [practice/exercises.md](practice/exercises.md) in order. Run every requested command, create the requested artifact, and record the limitation the exercise asks you to name.
 
 ## Finish line
 
-Run the starter, pass the relevant tests, complete the numbered exercises, and explain one edge case aloud or in writing.
+Run `python -m course_days.day033`, pass the relevant tests, complete the numbered exercises, and explain one edge case aloud or in writing.
+
+## Mental model
+
+> File metadata is context for a decision, not a verdict; inspect the object, the path resolution, and the source of the baseline.
+
+## Limitations
+
+Metadata can be changed, clocks can be wrong, and a hash without trusted provenance is only a fingerprint.
+
+[← Day 32](../032_day_linux_command_line/032_day_linux_command_line.md) · [Day index](../DAY_INDEX.md) · [Day 34 →](../034_day_safe_subprocesses/034_day_safe_subprocesses.md)

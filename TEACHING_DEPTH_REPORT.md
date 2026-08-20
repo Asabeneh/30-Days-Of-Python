@@ -2,7 +2,7 @@
 
 | Days | Dense | Developing | Outline |
 | ---: | ---: | ---: | ---: |
-| 1–120 | 19 | 1 | 100 |
+| 1–120 | 24 | 16 | 80 |
 
 The report is a measurement aid, not a substitute for human review. Dense means the page has the required teaching sections, at least five worked examples, and at least 700 words.
 
@@ -28,26 +28,26 @@ The report is a measurement aid, not a substitute for human review. Dense means 
 | 18 | `018_day_classes_and_dataclasses` | 724 | 5 | 5 | dense |
 | 19 | `019_day_testing_with_pytest` | 721 | 5 | 5 | dense |
 | 20 | `020_day_project__log_triage_cli` | 770 | 5 | 5 | dense |
-| 21 | `021_day_virtual_environments` | 548 | 1 | 0 | outline |
-| 22 | `022_day_cli_design` | 456 | 1 | 0 | outline |
-| 23 | `023_day_configuration_and_secrets` | 457 | 1 | 0 | outline |
-| 24 | `024_day_json__csv__and_sqlite` | 437 | 1 | 0 | outline |
-| 25 | `025_day_type_hints_and_static_checks` | 443 | 1 | 0 | outline |
-| 26 | `026_day_structured_logging` | 452 | 1 | 0 | outline |
-| 27 | `027_day_git_and_code_review` | 443 | 1 | 0 | outline |
-| 28 | `028_day_dependency_hygiene_and_sboms` | 452 | 1 | 0 | outline |
-| 29 | `029_day_threat_modeling` | 447 | 1 | 0 | outline |
-| 30 | `030_day_project__secure_evidence_journal` | 465 | 0 | 0 | outline |
-| 31 | `031_day_processes_and_system_calls` | 631 | 1 | 0 | outline |
-| 32 | `032_day_linux_command_line` | 642 | 1 | 0 | outline |
-| 33 | `033_day_paths_and_file_metadata` | 628 | 1 | 0 | outline |
-| 34 | `034_day_safe_subprocesses` | 446 | 1 | 0 | outline |
-| 35 | `035_day_users_and_permissions` | 453 | 1 | 0 | outline |
-| 36 | `036_day_timeouts_and_resource_limits` | 445 | 1 | 0 | outline |
-| 37 | `037_day_processes__threads__and_queues` | 446 | 1 | 0 | outline |
-| 38 | `038_day_async_i_o` | 448 | 1 | 0 | outline |
-| 39 | `039_day_host_inventories` | 451 | 1 | 0 | outline |
-| 40 | `040_day_project__host_baseline_auditor` | 457 | 0 | 0 | outline |
+| 21 | `021_day_virtual_environments` | 705 | 5 | 5 | dense |
+| 22 | `022_day_cli_design` | 704 | 5 | 5 | dense |
+| 23 | `023_day_configuration_and_secrets` | 693 | 5 | 5 | developing |
+| 24 | `024_day_json__csv__and_sqlite` | 690 | 5 | 5 | developing |
+| 25 | `025_day_type_hints_and_static_checks` | 700 | 5 | 5 | dense |
+| 26 | `026_day_structured_logging` | 682 | 5 | 5 | developing |
+| 27 | `027_day_git_and_code_review` | 686 | 5 | 5 | developing |
+| 28 | `028_day_dependency_hygiene_and_sboms` | 684 | 5 | 5 | developing |
+| 29 | `029_day_threat_modeling` | 701 | 5 | 5 | dense |
+| 30 | `030_day_project__secure_evidence_journal` | 714 | 5 | 5 | dense |
+| 31 | `031_day_processes_and_system_calls` | 670 | 5 | 5 | developing |
+| 32 | `032_day_linux_command_line` | 664 | 5 | 5 | developing |
+| 33 | `033_day_paths_and_file_metadata` | 683 | 5 | 5 | developing |
+| 34 | `034_day_safe_subprocesses` | 674 | 5 | 5 | developing |
+| 35 | `035_day_users_and_permissions` | 664 | 5 | 5 | developing |
+| 36 | `036_day_timeouts_and_resource_limits` | 664 | 5 | 5 | developing |
+| 37 | `037_day_processes__threads__and_queues` | 683 | 5 | 5 | developing |
+| 38 | `038_day_async_i_o` | 654 | 5 | 5 | developing |
+| 39 | `039_day_host_inventories` | 663 | 5 | 5 | developing |
+| 40 | `040_day_project__host_baseline_auditor` | 694 | 5 | 5 | developing |
 | 41 | `041_day_addresses__ports__and_sockets` | 397 | 0 | 0 | outline |
 | 42 | `042_day_tcp_clients_and_servers` | 354 | 0 | 0 | outline |
 | 43 | `043_day_udp_and_framing` | 352 | 0 | 0 | outline |

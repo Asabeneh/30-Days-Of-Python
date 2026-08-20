@@ -1,6 +1,6 @@
-# Day 29: Threat Models, Assets, and Abuse Cases
+# Day 29: Threat Modeling Before Automation
 
-[Previous](../028_day_dependency_hygiene_and_sboms/028_day_dependency_hygiene_and_sboms.md) | [Next](../030_day_project__secure_evidence_journal/030_day_project__secure_evidence_journal.md)
+[← Day 28](../028_day_dependency_hygiene_and_sboms/028_day_dependency_hygiene_and_sboms.md) · [Day index](../DAY_INDEX.md) · [Day 30 →](../030_day_project__secure_evidence_journal/030_day_project__secure_evidence_journal.md)
 
 ## Table of Contents
 
@@ -9,65 +9,152 @@
 - [Outcomes](#outcomes)
 - [The problem](#the-problem)
 - [Security boundary](#security-boundary)
-- [Core lesson](#core-lesson)
+- [Lesson](#lesson)
+- [Vocabulary](#vocabulary)
+- [Worked examples](#worked-examples)
+- [Execution trace](#execution-trace)
 - [Common mistakes](#common-mistakes)
-- [Practice](#practice)
-- [Mental model](#mental-model)
+- [Security application](#security-application)
+- [Exercises](#exercises)
 - [Finish line](#finish-line)
 
 ## Why this lesson exists
 
-Security engineering becomes dependable when its inputs, dependencies, failure behavior, and evidence are visible. This day builds one professional Python habit through a bounded local exercise.
+Threat modeling turns “make it secure” into explicit assets, threats, controls, assumptions, and residual risk before code makes the decision harder to change.
 
 ## Prerequisites
 
-Complete Day 28, keep [SETUP.md](../SETUP.md) available, and read [SAFETY_AND_LAB_RULES.md](../SAFETY_AND_LAB_RULES.md).
+Complete Day 28 and run the phase checks. The lesson assumes you can read a traceback, use a virtual environment, and work only with the supplied repository fixtures.
 
 ## Outcomes
 
-You can explain the concept, trace the starter, make one controlled change, test a normal and negative case, and document one security limitation.
+By the end of this lesson, you can:
+
+- explain the concept in plain language and precise Python terms
+- run and modify each worked example
+- test a normal case, boundary case, and failure case
+- apply the idea to the safe local context described by Day 29
 
 ## The problem
 
-A security utility often fails at a boundary: installation, command-line input, configuration, data serialization, logging, review, dependencies, or design assumptions. Today makes one such boundary explicit.
+Threat-model the log triage tool and identify what can be harmed, how, and which control reduces the risk.
 
 ## Security boundary
 
-Use only synthetic data and local files. Do not add real credentials, private evidence, public targets, or network access to the starter. Stop if the exercise leaves its documented scope.
+Use only local synthetic fixtures and explicitly authorized course files. The lesson does not authorize public scanning, credential use, remote command execution, or changes to operating-system state.
 
-## Core lesson
+## Lesson
 
-A threat model starts with assets and trust boundaries. Then describe plausible threats, controls, assumptions, and residual risk.
+### Vocabulary
 
-```text
-asset: synthetic case record
-trust boundary: CLI input → parser
-threat: malformed field changes triage
-control: schema validation + negative test
-residual risk: parser does not prove source authenticity
+An **asset** is something worth protecting. A **threat** is a potential harmful action or condition. A **control** reduces likelihood or impact. **Residual risk** remains after controls.
+
+## Worked examples
+
+### Example 1: Name an asset
+
+Start with what the tool must protect.
+
+```python
+assets = ["synthetic evidence", "report integrity", "developer credentials"]
+print(assets)
 ```
 
-Do not write “secure” as a control. Name the mechanism and the evidence that would show it works.
+**What to observe:**
 
-Security connection: threat modeling is a design activity, not a document added after the code is finished.
+The list makes scope concrete.
 
-### Common mistakes
+### Example 2: Draw a trust boundary
+
+Mark where data changes trust level.
+
+```python
+boundary = {
+    "outside": "CLI path and fixture text",
+    "inside": "validated event and report writer",
+}
+print(boundary)
+```
+
+**What to observe:**
+
+The boundary identifies where validation belongs.
+
+### Example 3: Describe a threat
+
+A threat statement names actor, action, asset, and impact.
+
+```python
+threat = {
+    "actor": "malformed fixture",
+    "action": "exhausts line processing",
+    "asset": "tool availability",
+    "impact": "slow or incomplete report",
+}
+```
+
+**What to observe:**
+
+The threat is specific enough to select a control.
+
+### Example 4: Choose a control
+
+A control should connect directly to the threat.
+
+```python
+control = {"threat": threat, "measure": "line limit and truncation flag"}
+print(control["measure"])
+```
+
+**What to observe:**
+
+The control is bounded processing plus honest reporting.
+
+### Example 5: Record residual risk
+
+Controls change risk; they do not erase it.
+
+```python
+residual = "a maliciously shaped line may still be rejected and require review"
+print(residual)
+```
+
+**What to observe:**
+
+The remaining uncertainty is visible.
+
+## Execution trace
+
+The model starts at asset, crosses a trust boundary, names a threat, chooses a control, and records what remains. It is a reasoning process, not a decorative table.
+
+## Common mistakes
 
 | Mistake | Symptom | Correction |
 | --- | --- | --- |
-| Treating tools as magic | The learner cannot reproduce the result | State the interpreter, input, command, and expected output |
-| Trusting representation | Malformed data enters the decision layer | Validate fields and types at the boundary |
-| Logging everything | Secrets or private data appear in output | Minimize, redact, and test logging behavior |
-| Confusing a control with proof | A checklist is called “secure” | Name the test and the residual risk |
+| list tools instead of threats | controls have no rationale | describe harmful conditions |
+| “secure” as a control | no testable behavior | name mechanism and evidence |
+| ignore availability | only confidentiality is discussed | include resource abuse and failure |
+| no owner | nobody maintains the control | identify responsibility |
+| residual risk omitted | report implies certainty | state limits and follow-up |
+
+## Security application
+
+Create a threat model for local synthetic evidence. Do not model or test a public target. Every proposed control needs one local test or inspection method.
 
 ## Exercises
 
-Complete the numbered questions in [practice/exercises.md](practice/exercises.md) in order. Run the requested commands, produce the requested artifact, and record the edge case or limitation asked for by the exercise. Use [hints](practice/hints.md) only after a real attempt and [solutions](practice/solutions.md) only to compare your reasoning.
-
-## Mental model
-
-> A threat model turns vague concern into explicit assets, trust boundaries, threats, controls, assumptions, and residual risk.
+Complete the numbered questions in [practice/exercises.md](practice/exercises.md) in order. Run every requested command, create the requested artifact, and record the limitation the exercise asks you to name.
 
 ## Finish line
 
-Run the starter, pass the relevant tests, complete the numbered exercises, and explain one edge case aloud or in writing.
+Run `python -m course_days.day029`, pass the relevant tests, complete the numbered exercises, and explain one edge case aloud or in writing.
+
+## Mental model
+
+> Threat modeling is disciplined uncertainty reduction: identify what matters, what can go wrong, and what evidence supports the chosen control.
+
+## Limitations
+
+Threat models are hypotheses. They can miss threats, misunderstand assets, or become stale as the system changes.
+
+[← Day 28](../028_day_dependency_hygiene_and_sboms/028_day_dependency_hygiene_and_sboms.md) · [Day index](../DAY_INDEX.md) · [Day 30 →](../030_day_project__secure_evidence_journal/030_day_project__secure_evidence_journal.md)

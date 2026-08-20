@@ -1,6 +1,6 @@
-# Day 21: Virtual Environments and Reproducible Installs
+# Day 21: Virtual Environments and Reproducible Setup
 
-[Previous](../020_day_project__log_triage_cli/020_day_project__log_triage_cli.md) | [Next](../022_day_cli_design/022_day_cli_design.md)
+[← Day 20](../020_day_project__log_triage_cli/020_day_project__log_triage_cli.md) · [Day index](../DAY_INDEX.md) · [Day 22 →](../022_day_cli_design/022_day_cli_design.md)
 
 ## Table of Contents
 
@@ -9,73 +9,146 @@
 - [Outcomes](#outcomes)
 - [The problem](#the-problem)
 - [Security boundary](#security-boundary)
-- [Core lesson](#core-lesson)
+- [Lesson](#lesson)
+- [Vocabulary](#vocabulary)
+- [Worked examples](#worked-examples)
+- [Execution trace](#execution-trace)
 - [Common mistakes](#common-mistakes)
-- [Practice](#practice)
-- [Mental model](#mental-model)
+- [Security application](#security-application)
+- [Exercises](#exercises)
 - [Finish line](#finish-line)
 
 ## Why this lesson exists
 
-Security engineering becomes dependable when its inputs, dependencies, failure behavior, and evidence are visible. This day builds one professional Python habit through a bounded local exercise.
+A script that works only on its author’s machine is not a reliable security tool. Virtual environments give a project an isolated interpreter and make its dependency assumptions visible.
 
 ## Prerequisites
 
-Complete Day 20, keep [SETUP.md](../SETUP.md) available, and read [SAFETY_AND_LAB_RULES.md](../SAFETY_AND_LAB_RULES.md).
+Complete Day 20 and run the phase checks. The lesson assumes you can read a traceback, use a virtual environment, and work only with the supplied repository fixtures.
 
 ## Outcomes
 
-You can explain the concept, trace the starter, make one controlled change, test a normal and negative case, and document one security limitation.
+By the end of this lesson, you can:
+
+- explain the concept in plain language and precise Python terms
+- run and modify each worked example
+- test a normal case, boundary case, and failure case
+- apply the idea to the safe local context described by Day 21
 
 ## The problem
 
-A security utility often fails at a boundary: installation, command-line input, configuration, data serialization, logging, review, dependencies, or design assumptions. Today makes one such boundary explicit.
+A new learner must install the course without confusing the system Python, a global package, and the repository environment.
 
 ## Security boundary
 
-Use only synthetic data and local files. Do not add real credentials, private evidence, public targets, or network access to the starter. Stop if the exercise leaves its documented scope.
+Use only local synthetic fixtures and explicitly authorized course files. The lesson does not authorize public scanning, credential use, remote command execution, or changes to operating-system state.
 
-<!-- video-resources:start -->
-## Video support
+## Lesson
 
-**Inline recommendation:** [Getting Started with Python in VS Code (Official Video)](https://www.youtube.com/watch?v=D2cwvpJSBX4).
+### Vocabulary
 
-- Watch [00:00–06:30: Python in VS Code setup](https://www.youtube.com/watch?v=D2cwvpJSBX4&t=0s) for **editor, interpreter, and workspace**. Then return to this lesson and run the local starter.
-- Watch [06:30–08:27: Code navigation and debugging](https://www.youtube.com/watch?v=D2cwvpJSBX4&t=390s) for **navigation and debugger**. Then return to this lesson and run the local starter.
-- Watch [08:27–10:19: Debugging](https://www.youtube.com/watch?v=D2cwvpJSBX4&t=507s) for **breakpoints and stepping**. Then return to this lesson and run the local starter.
+A **virtual environment** is an isolated Python installation for one project. The **interpreter** is the executable that runs code. A **dependency** is a package or tool the project needs.
 
-Written alternative: [https://code.visualstudio.com/docs/python/python-tutorial](https://code.visualstudio.com/docs/python/python-tutorial).
-<!-- video-resources:end -->
+## Worked examples
 
-## Core lesson
+### Example 1: Create an environment
 
-The interpreter used by a project is part of the project’s assumptions. A virtual environment creates a local place for packages and scripts, but it does not make untrusted packages safe automatically.
+Use Python’s built-in module to create a `.venv` directory.
 
-```text
-repository → .venv → installed tools → reproducible command
+```python
+python -m venv .venv
+# macOS/Linux
+source .venv/bin/activate
+# Windows PowerShell
+.venv\Scripts\Activate.ps1
 ```
 
-Record the Python version and install command. Prefer `python -m pip` so the pip process belongs to the interpreter you selected. A lock or constraints file improves repeatability, but it still needs review and updates.
+**What to observe:**
 
-Security connection: isolation limits accidental coupling. It does not replace dependency review, least privilege, or a clean source of packages.
+The prompt usually shows `(.venv)` after activation.
 
-### Common mistakes
+### Example 2: Prove the interpreter
+
+Do not trust the prompt alone; ask the selected interpreter where it lives.
+
+```python
+python -c "import sys; print(sys.executable)"
+```
+
+**What to observe:**
+
+The printed path should point inside the repository’s `.venv`.
+
+### Example 3: Install through the interpreter
+
+`python -m pip` makes it less likely that pip belongs to another Python.
+
+```python
+python -m pip install -r requirements-dev.txt
+python -m pip list
+```
+
+**What to observe:**
+
+The installed tools are associated with the active interpreter.
+
+### Example 4: Freeze a small environment
+
+A project record makes a setup reviewable.
+
+```python
+python -m pip freeze > local-environment.txt
+```
+
+**What to observe:**
+
+The file records versions; do not commit private paths or unrelated global packages.
+
+### Example 5: Deactivate and compare
+
+Seeing the interpreter change makes environment isolation concrete.
+
+```python
+deactivate
+python -c "import sys; print(sys.executable)"
+```
+
+**What to observe:**
+
+The executable path changes away from `.venv`.
+
+## Execution trace
+
+Activation changes the shell’s command lookup; it does not change Python itself. `python -m pip` uses the interpreter selected by `python`, so the package and runtime stay aligned.
+
+## Common mistakes
 
 | Mistake | Symptom | Correction |
 | --- | --- | --- |
-| Treating tools as magic | The learner cannot reproduce the result | State the interpreter, input, command, and expected output |
-| Trusting representation | Malformed data enters the decision layer | Validate fields and types at the boundary |
-| Logging everything | Secrets or private data appear in output | Minimize, redact, and test logging behavior |
-| Confusing a control with proof | A checklist is called “secure” | Name the test and the residual risk |
+| global install | one project breaks another | activate `.venv` |
+| wrong interpreter in VS Code | imports appear missing | select the repository interpreter |
+| commit `.venv` | huge machine-specific diff | ignore it and recreate it |
+| trust activation blindly | shell and editor disagree | print `sys.executable` |
+| install without a record | setup cannot be reproduced | document dependencies and versions |
+
+## Security application
+
+Create and remove a disposable environment for the course only. Never install unknown packages into the system interpreter, and never place credentials in environment snapshots.
 
 ## Exercises
 
-Complete the numbered questions in [practice/exercises.md](practice/exercises.md) in order. Run the requested commands, produce the requested artifact, and record the edge case or limitation asked for by the exercise. Use [hints](practice/hints.md) only after a real attempt and [solutions](practice/solutions.md) only to compare your reasoning.
-
-## Mental model
-
-> A virtual environment isolates a project’s dependencies, while a reproducible install makes the same starting point available to another learner.
+Complete the numbered questions in [practice/exercises.md](practice/exercises.md) in order. Run every requested command, create the requested artifact, and record the limitation the exercise asks you to name.
 
 ## Finish line
 
-Run the starter, pass the relevant tests, complete the numbered exercises, and explain one edge case aloud or in writing.
+Run `python -m course_days.day021`, pass the relevant tests, complete the numbered exercises, and explain one edge case aloud or in writing.
+
+## Mental model
+
+> An environment is a reproducible boundary around the interpreter and its dependencies.
+
+## Limitations
+
+Virtual environments do not sandbox malicious code, prove package provenance, or protect a host from a dangerous dependency. Use trusted sources and review the dependency list.
+
+[← Day 20](../020_day_project__log_triage_cli/020_day_project__log_triage_cli.md) · [Day index](../DAY_INDEX.md) · [Day 22 →](../022_day_cli_design/022_day_cli_design.md)

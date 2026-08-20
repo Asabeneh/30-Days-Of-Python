@@ -1,6 +1,6 @@
-# Day 23: Configuration, Environment Variables, and Secret Boundaries
+# Day 23: Configuration, Environment Variables, and Secrets
 
-[Previous](../022_day_cli_design/022_day_cli_design.md) | [Next](../024_day_json__csv__and_sqlite/024_day_json__csv__and_sqlite.md)
+[← Day 22](../022_day_cli_design/022_day_cli_design.md) · [Day index](../DAY_INDEX.md) · [Day 24 →](../024_day_json__csv__and_sqlite/024_day_json__csv__and_sqlite.md)
 
 ## Table of Contents
 
@@ -9,64 +9,153 @@
 - [Outcomes](#outcomes)
 - [The problem](#the-problem)
 - [Security boundary](#security-boundary)
-- [Core lesson](#core-lesson)
+- [Lesson](#lesson)
+- [Vocabulary](#vocabulary)
+- [Worked examples](#worked-examples)
+- [Execution trace](#execution-trace)
 - [Common mistakes](#common-mistakes)
-- [Practice](#practice)
-- [Mental model](#mental-model)
+- [Security application](#security-application)
+- [Exercises](#exercises)
 - [Finish line](#finish-line)
 
 ## Why this lesson exists
 
-Security engineering becomes dependable when its inputs, dependencies, failure behavior, and evidence are visible. This day builds one professional Python habit through a bounded local exercise.
+Configuration changes between development, testing, and deployment. Secrets must be supplied through a controlled mechanism, not copied into source code or printed while debugging.
 
 ## Prerequisites
 
-Complete Day 22, keep [SETUP.md](../SETUP.md) available, and read [SAFETY_AND_LAB_RULES.md](../SAFETY_AND_LAB_RULES.md).
+Complete Day 22 and run the phase checks. The lesson assumes you can read a traceback, use a virtual environment, and work only with the supplied repository fixtures.
 
 ## Outcomes
 
-You can explain the concept, trace the starter, make one controlled change, test a normal and negative case, and document one security limitation.
+By the end of this lesson, you can:
+
+- explain the concept in plain language and precise Python terms
+- run and modify each worked example
+- test a normal case, boundary case, and failure case
+- apply the idea to the safe local context described by Day 23
 
 ## The problem
 
-A security utility often fails at a boundary: installation, command-line input, configuration, data serialization, logging, review, dependencies, or design assumptions. Today makes one such boundary explicit.
+The tool needs a timeout and a case identifier, while an optional API token must be present without ever appearing in a report.
 
 ## Security boundary
 
-Use only synthetic data and local files. Do not add real credentials, private evidence, public targets, or network access to the starter. Stop if the exercise leaves its documented scope.
+Use only local synthetic fixtures and explicitly authorized course files. The lesson does not authorize public scanning, credential use, remote command execution, or changes to operating-system state.
 
-## Core lesson
+## Lesson
 
-Configuration is behavior data; a secret is an access capability. They may both arrive through environment variables, but they should not be treated the same way.
+### Vocabulary
+
+Configuration is non-code input that controls behavior. A **secret** is sensitive authentication material. A **default** is a fallback, not proof that a value is valid.
+
+## Worked examples
+
+### Example 1: Read a default
+
+A harmless setting can use an explicit fallback.
 
 ```python
 import os
 
-timeout = int(os.environ.get("APP_TIMEOUT", "5"))
-api_key = os.environ.get("APP_API_KEY")
+timeout = int(os.getenv("APP_TIMEOUT", "3"))
+print(timeout)
 ```
 
-The default timeout is visible and testable. The key is optional in a local fixture and must never be printed. Validate configuration at startup and fail with a safe message.
+**What to observe:**
 
-Security connection: `.env` files and shell history can leak. The course uses fake values and teaches rotation concepts rather than asking learners to paste real keys.
+`3` when the variable is absent.
 
-### Common mistakes
+### Example 2: Validate configuration
+
+Reject values outside the operational policy.
+
+```python
+def read_timeout(raw):
+    value = int(raw)
+    if not 1 <= value <= 60:
+        raise ValueError("timeout must be 1..60 seconds")
+    return value
+```
+
+**What to observe:**
+
+A timeout of `0` or `61` fails early.
+
+### Example 3: Detect a secret without printing it
+
+Presence is often enough for diagnostics.
+
+```python
+token = os.getenv("TRAINING_TOKEN")
+print({"token_present": token is not None})
+```
+
+**What to observe:**
+
+`{'token_present': False}` or `True`; the token value is never printed.
+
+### Example 4: Separate config from code
+
+A dictionary makes the final configuration inspectable.
+
+```python
+config = {
+    "timeout": read_timeout(os.getenv("APP_TIMEOUT", "3")),
+    "case_id": os.getenv("CASE_ID", "training"),
+}
+print(config)
+```
+
+**What to observe:**
+
+Only non-sensitive configuration appears.
+
+### Example 5: Fail closed for required secrets
+
+A tool that requires authentication should not silently continue without it.
+
+```python
+if token is None and require_token:
+    raise RuntimeError("required token is missing")
+```
+
+**What to observe:**
+
+The caller receives an explicit setup failure.
+
+## Execution trace
+
+The program reads environment text, converts it, enforces bounds, and stores a safe configuration object. Secret values remain outside logs, reports, and source control.
+
+## Common mistakes
 
 | Mistake | Symptom | Correction |
 | --- | --- | --- |
-| Treating tools as magic | The learner cannot reproduce the result | State the interpreter, input, command, and expected output |
-| Trusting representation | Malformed data enters the decision layer | Validate fields and types at the boundary |
-| Logging everything | Secrets or private data appear in output | Minimize, redact, and test logging behavior |
-| Confusing a control with proof | A checklist is called “secure” | Name the test and the residual risk |
+| secret in source | it enters Git history | use an external secret mechanism |
+| `print(os.environ)` | all environment secrets leak | print selected safe metadata |
+| default for a required token | authentication silently fails | fail closed |
+| no bounds | timeout or batch becomes abusive | validate limits |
+| configuration scattered | behavior is hard to audit | load once into a typed object |
+
+## Security application
+
+Use fake training values only. Add tests proving a token value is absent from output and that a timeout outside `1..60` is rejected.
 
 ## Exercises
 
-Complete the numbered questions in [practice/exercises.md](practice/exercises.md) in order. Run the requested commands, produce the requested artifact, and record the edge case or limitation asked for by the exercise. Use [hints](practice/hints.md) only after a real attempt and [solutions](practice/solutions.md) only to compare your reasoning.
-
-## Mental model
-
-> Configuration changes behavior; secrets grant access, so they must be separated, minimized, and kept out of source control.
+Complete the numbered questions in [practice/exercises.md](practice/exercises.md) in order. Run every requested command, create the requested artifact, and record the limitation the exercise asks you to name.
 
 ## Finish line
 
-Run the starter, pass the relevant tests, complete the numbered exercises, and explain one edge case aloud or in writing.
+Run `python -m course_days.day023`, pass the relevant tests, complete the numbered exercises, and explain one edge case aloud or in writing.
+
+## Mental model
+
+> Configuration is input with policy; a secret’s presence is not permission to reveal or misuse it.
+
+## Limitations
+
+Environment variables can leak through process listings, CI logs, crash reports, and shell history. Production secret management needs platform controls.
+
+[← Day 22](../022_day_cli_design/022_day_cli_design.md) · [Day index](../DAY_INDEX.md) · [Day 24 →](../024_day_json__csv__and_sqlite/024_day_json__csv__and_sqlite.md)

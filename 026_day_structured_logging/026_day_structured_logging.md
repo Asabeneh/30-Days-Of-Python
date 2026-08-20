@@ -1,6 +1,6 @@
-# Day 26: Structured Logging, Redaction, and Audit Events
+# Day 26: Structured Logging and Redaction
 
-[Previous](../025_day_type_hints_and_static_checks/025_day_type_hints_and_static_checks.md) | [Next](../027_day_git_and_code_review/027_day_git_and_code_review.md)
+[← Day 25](../025_day_type_hints_and_static_checks/025_day_type_hints_and_static_checks.md) · [Day index](../DAY_INDEX.md) · [Day 27 →](../027_day_git_and_code_review/027_day_git_and_code_review.md)
 
 ## Table of Contents
 
@@ -9,68 +9,153 @@
 - [Outcomes](#outcomes)
 - [The problem](#the-problem)
 - [Security boundary](#security-boundary)
-- [Core lesson](#core-lesson)
+- [Lesson](#lesson)
+- [Vocabulary](#vocabulary)
+- [Worked examples](#worked-examples)
+- [Execution trace](#execution-trace)
 - [Common mistakes](#common-mistakes)
-- [Practice](#practice)
-- [Mental model](#mental-model)
+- [Security application](#security-application)
+- [Exercises](#exercises)
 - [Finish line](#finish-line)
 
 ## Why this lesson exists
 
-Security engineering becomes dependable when its inputs, dependencies, failure behavior, and evidence are visible. This day builds one professional Python habit through a bounded local exercise.
+Logs are evidence for operators and input for future tools. Unstructured messages are hard to query; unredacted messages can leak secrets.
 
 ## Prerequisites
 
-Complete Day 25, keep [SETUP.md](../SETUP.md) available, and read [SAFETY_AND_LAB_RULES.md](../SAFETY_AND_LAB_RULES.md).
+Complete Day 25 and run the phase checks. The lesson assumes you can read a traceback, use a virtual environment, and work only with the supplied repository fixtures.
 
 ## Outcomes
 
-You can explain the concept, trace the starter, make one controlled change, test a normal and negative case, and document one security limitation.
+By the end of this lesson, you can:
+
+- explain the concept in plain language and precise Python terms
+- run and modify each worked example
+- test a normal case, boundary case, and failure case
+- apply the idea to the safe local context described by Day 26
 
 ## The problem
 
-A security utility often fails at a boundary: installation, command-line input, configuration, data serialization, logging, review, dependencies, or design assumptions. Today makes one such boundary explicit.
+Emit a machine-readable event with a stable schema while ensuring token, password, and private message values do not appear.
 
 ## Security boundary
 
-Use only synthetic data and local files. Do not add real credentials, private evidence, public targets, or network access to the starter. Stop if the exercise leaves its documented scope.
+Use only local synthetic fixtures and explicitly authorized course files. The lesson does not authorize public scanning, credential use, remote command execution, or changes to operating-system state.
 
-## Core lesson
+## Lesson
 
-A structured log event is data with fields such as timestamp, action, outcome, and actor. Redaction is a policy, not a string replacement that can be applied carelessly.
+### Vocabulary
+
+A **log record** has fields such as time, level, event, and context. **Structured logging** emits fields rather than only prose. **Redaction** removes or masks sensitive values.
+
+## Worked examples
+
+### Example 1: Use logging levels
+
+Levels communicate importance to operators.
 
 ```python
-SENSITIVE_KEYS = {"password", "token", "secret"}
+import logging
 
-
-def redact(event):
-    return {
-        key: "[REDACTED]" if key in SENSITIVE_KEYS else value
-        for key, value in event.items()
-    }
+logging.basicConfig(level=logging.INFO)
+logging.info("triage_started")
 ```
 
-Preserve enough context to investigate while minimizing sensitive data. Neutralize line breaks when writing human-readable logs, and separate audit events from debug output.
+**What to observe:**
 
-Security connection: logs can support detection and become a data-exposure channel at the same time.
+The logger emits a timestamped informational record.
 
-### Common mistakes
+### Example 2: Log fields carefully
+
+A structured dictionary keeps safe context separate from a secret.
+
+```python
+record = {"event": "token_check", "case_id": "training", "token_present": True}
+print(record)
+```
+
+**What to observe:**
+
+Only presence is logged.
+
+### Example 3: Redact known keys
+
+A field policy is more reliable than searching for one literal secret.
+
+```python
+SENSITIVE = {"password", "token", "api_key"}
+
+
+def redact(record):
+    return {k: "[REDACTED]" if k in SENSITIVE else v for k, v in record.items()}
+```
+
+**What to observe:**
+
+Sensitive keys receive the marker.
+
+### Example 4: Prevent newline injection
+
+A user-controlled message can forge visual log lines.
+
+```python
+def one_line(text):
+    return text.replace("\r", "\\r").replace("\n", "\\n")
+```
+
+**What to observe:**
+
+Newlines are represented instead of creating new records.
+
+### Example 5: Add correlation context
+
+A case identifier connects records without copying raw evidence.
+
+```python
+log_record = {
+    "case_id": "training-026",
+    "event": "record_rejected",
+    "reason": "bad severity",
+}
+```
+
+**What to observe:**
+
+The record can be searched by case and event.
+
+## Execution trace
+
+A record is assembled, sensitive keys are transformed, free text is made single-line, and only then is it emitted. Redaction must happen before formatting or serialization.
+
+## Common mistakes
 
 | Mistake | Symptom | Correction |
 | --- | --- | --- |
-| Treating tools as magic | The learner cannot reproduce the result | State the interpreter, input, command, and expected output |
-| Trusting representation | Malformed data enters the decision layer | Validate fields and types at the boundary |
-| Logging everything | Secrets or private data appear in output | Minimize, redact, and test logging behavior |
-| Confusing a control with proof | A checklist is called “secure” | Name the test and the residual risk |
+| log full request | secrets enter retained logs | log selected safe fields |
+| redact after formatting | alternate representations leak | redact structured data first |
+| user newline unescaped | fake records appear | neutralize line breaks |
+| no retention rule | evidence remains forever | define retention and access |
+| use logs as truth | collection error is ignored | record source and confidence |
+
+## Security application
+
+Create structured logs only from synthetic events. Test that secret values and newline payloads never appear in output, and document retention and access assumptions.
 
 ## Exercises
 
-Complete the numbered questions in [practice/exercises.md](practice/exercises.md) in order. Run the requested commands, produce the requested artifact, and record the edge case or limitation asked for by the exercise. Use [hints](practice/hints.md) only after a real attempt and [solutions](practice/solutions.md) only to compare your reasoning.
-
-## Mental model
-
-> Logs should help reconstruction without becoming a second place where secrets and personal data leak.
+Complete the numbered questions in [practice/exercises.md](practice/exercises.md) in order. Run every requested command, create the requested artifact, and record the limitation the exercise asks you to name.
 
 ## Finish line
 
-Run the starter, pass the relevant tests, complete the numbered exercises, and explain one edge case aloud or in writing.
+Run `python -m course_days.day026`, pass the relevant tests, complete the numbered exercises, and explain one edge case aloud or in writing.
+
+## Mental model
+
+> A log is a durable data boundary; make its schema, redaction, provenance, and retention explicit.
+
+## Limitations
+
+Redaction is not perfect if secrets appear in exception traces, process arguments, memory, or nested fields. Minimize collection as well as masking.
+
+[← Day 25](../025_day_type_hints_and_static_checks/025_day_type_hints_and_static_checks.md) · [Day index](../DAY_INDEX.md) · [Day 27 →](../027_day_git_and_code_review/027_day_git_and_code_review.md)

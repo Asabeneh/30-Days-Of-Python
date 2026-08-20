@@ -1,6 +1,6 @@
-# Day 35: Users, Groups, and Least Privilege
+# Day 35: Users, Permissions, and Least Privilege
 
-[Previous](../034_day_safe_subprocesses/034_day_safe_subprocesses.md) | [Next](../036_day_timeouts_and_resource_limits/036_day_timeouts_and_resource_limits.md)
+[← Day 34](../034_day_safe_subprocesses/034_day_safe_subprocesses.md) · [Day index](../DAY_INDEX.md) · [Day 36 →](../036_day_timeouts_and_resource_limits/036_day_timeouts_and_resource_limits.md)
 
 ## Table of Contents
 
@@ -9,64 +9,149 @@
 - [Outcomes](#outcomes)
 - [The problem](#the-problem)
 - [Security boundary](#security-boundary)
-- [Core lesson](#core-lesson)
+- [Lesson](#lesson)
+- [Vocabulary](#vocabulary)
+- [Worked examples](#worked-examples)
+- [Execution trace](#execution-trace)
 - [Common mistakes](#common-mistakes)
-- [Practice](#practice)
-- [Mental model](#mental-model)
+- [Security application](#security-application)
+- [Exercises](#exercises)
 - [Finish line](#finish-line)
 
 ## Why this lesson exists
 
-A Python security tool interacts with a host that has processes, permissions, paths, resource limits, and concurrent work. This lesson makes one host-level boundary visible and testable.
+A process runs with an identity and permissions. Security automation must understand the difference between needing access and being entitled to broaden access.
 
 ## Prerequisites
 
-Complete Day 34, keep [SETUP.md](../SETUP.md) available, and read [SAFETY_AND_LAB_RULES.md](../SAFETY_AND_LAB_RULES.md).
+Complete Day 34 and run the phase checks. The lesson assumes you can read a traceback, use a virtual environment, and work only with the supplied repository fixtures.
 
 ## Outcomes
 
-You can explain the concept, trace the starter, make one controlled change, test a normal and negative case, and state what the local fixture does not represent.
+By the end of this lesson, you can:
+
+- explain the concept in plain language and precise Python terms
+- run and modify each worked example
+- test a normal case, boundary case, and failure case
+- apply the idea to the safe local context described by Day 35
 
 ## The problem
 
-Host automation can collect useful evidence or cause unexpected load and data exposure. The problem today is to make the target, permission, resource, and cleanup assumptions explicit before writing a broader tool.
+Inspect the current local user and a fixture’s permission metadata without changing the machine’s security settings.
 
 ## Security boundary
 
-Use only the repository and supplied synthetic fixtures. Do not inspect other users, services, university systems, employer systems, or public targets. Keep collection bounded and stop if scope changes.
+Use only local synthetic fixtures and explicitly authorized course files. The lesson does not authorize public scanning, credential use, remote command execution, or changes to operating-system state.
 
-## Core lesson
+## Lesson
 
-A process may be able to read a file because of its user, group, ACL, or inherited privilege. Least privilege asks whether it needs that access for the task.
+### Vocabulary
+
+An **identity** is the account associated with a process. **Permission** controls an operation. **Least privilege** grants only what the task needs.
+
+## Worked examples
+
+### Example 1: Read the current user
+
+A diagnostic can identify context without exposing credentials.
+
+```python
+import getpass
+
+print(getpass.getuser())
+```
+
+**What to observe:**
+
+A username, not a password.
+
+### Example 2: Inspect a mode
+
+POSIX mode bits can be displayed as metadata.
 
 ```python
 from pathlib import Path
 
-mode = Path("fixture.txt").stat().st_mode
-print(oct(mode))
+print(oct(Path("shared/fixtures/events.log").stat().st_mode))
 ```
 
-Permission bits are only one part of the host model. Windows ACLs, containers, service accounts, and network-mounted files add other layers.
+**What to observe:**
 
-Security connection: a baseline report should describe what it measured and on which platform rather than claiming that one mode value represents all access.
+An octal mode representation.
 
-### Common mistakes
+### Example 3: Check readability
+
+The program can test a capability before attempting work.
+
+```python
+path = Path("shared/fixtures/events.log")
+print(path.is_file())
+```
+
+**What to observe:**
+
+The fixture exists as a file; actual access can still fail.
+
+### Example 4: Avoid privilege escalation
+
+A tool should report insufficient access rather than silently asking for more.
+
+```python
+def require_readable(path):
+    if not path.is_file():
+        raise PermissionError("fixture is not a readable regular file")
+    return path
+```
+
+**What to observe:**
+
+The caller receives a clear failure path.
+
+### Example 5: Document permissions
+
+A README should say what permissions the tool expects.
+
+```python
+requirements = {"read": "fixture files", "write": "training-output", "admin": "none"}
+print(requirements)
+```
+
+**What to observe:**
+
+The tool explicitly needs no administrator access.
+
+## Execution trace
+
+The process identity is inherited from the launcher; the tool inspects capability, performs only the required operation, and reports a permission error instead of escalating.
+
+## Common mistakes
 
 | Mistake | Symptom | Correction |
 | --- | --- | --- |
-| Assuming a name proves identity | A process or file is attributed without evidence | Record the exact observation and its limits |
-| Using free-form commands | Shell metacharacters change behavior | Pass argument lists and allowlist programs |
-| Ignoring limits | A collector can run forever or consume memory | Add bounds, timeouts, and cancellation |
-| Treating differences as verdicts | A baseline change is called compromise | Report the difference and seek context |
+| run as administrator | a bug has greater impact | use ordinary user privileges |
+| chmod broadly | unrelated files become exposed | change only a disposable fixture if authorized |
+| log username plus secrets | identity data leaks | minimize context |
+| assume platform mode | Windows and POSIX differ | state platform assumptions |
+| permission equals legitimacy | access is treated as authorization | require explicit scope |
+
+## Security application
+
+Use the current sandbox and synthetic fixture only. Do not alter system users, groups, ACLs, or permissions as part of the exercise.
 
 ## Exercises
 
-Complete the numbered questions in [practice/exercises.md](practice/exercises.md) in order. Run the requested commands, produce the requested artifact, and record the edge case or limitation asked for by the exercise. Use [hints](practice/hints.md) only after a real attempt and [solutions](practice/solutions.md) only to compare your reasoning.
-
-## Mental model
-
-> Permissions are a design boundary: a process should have only the access its task requires.
+Complete the numbered questions in [practice/exercises.md](practice/exercises.md) in order. Run every requested command, create the requested artifact, and record the limitation the exercise asks you to name.
 
 ## Finish line
 
-Run the starter, pass the relevant tests, complete the numbered exercises, and explain one edge case aloud or in writing.
+Run `python -m course_days.day035`, pass the relevant tests, complete the numbered exercises, and explain one edge case aloud or in writing.
+
+## Mental model
+
+> Identity and capability describe what a process can do; authorization describes what it is allowed to do.
+
+## Limitations
+
+Permission APIs vary by operating system, containers, filesystems, and ACLs. A local check is not a complete access-control review.
+
+[← Day 34](../034_day_safe_subprocesses/034_day_safe_subprocesses.md) · [Day index](../DAY_INDEX.md) · [Day 36 →](../036_day_timeouts_and_resource_limits/036_day_timeouts_and_resource_limits.md)

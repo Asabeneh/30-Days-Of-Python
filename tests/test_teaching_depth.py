@@ -15,3 +15,16 @@ def test_first_phase_has_dense_teaching_sections() -> None:
         assert "## Security application" in text or "## Project requirements" in text
         assert "practice/exercises.md" in text
         assert text.count("```python") >= 4
+
+
+def test_days_21_to_40_have_teaching_markers() -> None:
+    lessons = sorted(ROOT.glob("[0-9][0-9][0-9]_day_*/*.md"))[20:40]
+    assert len(lessons) == 20
+    for lesson in lessons:
+        text = lesson.read_text(encoding="utf-8")
+        assert len(text.splitlines()) >= 140
+        assert "## Worked examples" in text
+        assert "## Execution trace" in text
+        assert "## Common mistakes" in text
+        assert "## Security application" in text
+        assert text.count("```python") >= 5

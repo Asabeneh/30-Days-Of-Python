@@ -1,6 +1,6 @@
-# Day 28: Dependency Hygiene, Inventories, and SBOM Thinking
+# Day 28: Dependency Hygiene and SBOM Thinking
 
-[Previous](../027_day_git_and_code_review/027_day_git_and_code_review.md) | [Next](../029_day_threat_modeling/029_day_threat_modeling.md)
+[← Day 27](../027_day_git_and_code_review/027_day_git_and_code_review.md) · [Day index](../DAY_INDEX.md) · [Day 29 →](../029_day_threat_modeling/029_day_threat_modeling.md)
 
 ## Table of Contents
 
@@ -9,61 +9,153 @@
 - [Outcomes](#outcomes)
 - [The problem](#the-problem)
 - [Security boundary](#security-boundary)
-- [Core lesson](#core-lesson)
+- [Lesson](#lesson)
+- [Vocabulary](#vocabulary)
+- [Worked examples](#worked-examples)
+- [Execution trace](#execution-trace)
 - [Common mistakes](#common-mistakes)
-- [Practice](#practice)
-- [Mental model](#mental-model)
+- [Security application](#security-application)
+- [Exercises](#exercises)
 - [Finish line](#finish-line)
 
 ## Why this lesson exists
 
-Security engineering becomes dependable when its inputs, dependencies, failure behavior, and evidence are visible. This day builds one professional Python habit through a bounded local exercise.
+Python packages expand what a tool can do and what it must trust. Dependency hygiene makes versions, origins, licenses, and update decisions visible.
 
 ## Prerequisites
 
-Complete Day 27, keep [SETUP.md](../SETUP.md) available, and read [SAFETY_AND_LAB_RULES.md](../SAFETY_AND_LAB_RULES.md).
+Complete Day 27 and run the phase checks. The lesson assumes you can read a traceback, use a virtual environment, and work only with the supplied repository fixtures.
 
 ## Outcomes
 
-You can explain the concept, trace the starter, make one controlled change, test a normal and negative case, and document one security limitation.
+By the end of this lesson, you can:
+
+- explain the concept in plain language and precise Python terms
+- run and modify each worked example
+- test a normal case, boundary case, and failure case
+- apply the idea to the safe local context described by Day 28
 
 ## The problem
 
-A security utility often fails at a boundary: installation, command-line input, configuration, data serialization, logging, review, dependencies, or design assumptions. Today makes one such boundary explicit.
+Produce a small inventory for the course tools without treating a package name as proof of safety.
 
 ## Security boundary
 
-Use only synthetic data and local files. Do not add real credentials, private evidence, public targets, or network access to the starter. Stop if the exercise leaves its documented scope.
+Use only local synthetic fixtures and explicitly authorized course files. The lesson does not authorize public scanning, credential use, remote command execution, or changes to operating-system state.
 
-## Core lesson
+## Lesson
 
-A dependency inventory answers what is installed, where it came from, why it exists, and which version was tested. An SBOM is an inventory artifact, not a guarantee that every component is safe.
+### Vocabulary
+
+A **dependency** is code your project relies on. An **SBOM** is a machine-readable inventory of components. A **transitive dependency** is pulled in by another dependency.
+
+## Worked examples
+
+### Example 1: List dependencies
+
+The project configuration is the starting point for an inventory.
 
 ```python
-package = {"name": "pytest", "version": "8.x", "purpose": "tests"}
+dependencies = ["pytest", "ruff", "mypy"]
+for name in dependencies:
+    print(name)
 ```
 
-Review direct and transitive dependencies, pin or constrain appropriately, and update through a tested process. Never copy a package name from an untrusted snippet without checking its source and purpose.
+**What to observe:**
 
-Security connection: supply-chain risk includes typosquatting, compromised releases, abandoned packages, and unreviewed transitive code.
+Each package is named explicitly.
 
-### Common mistakes
+### Example 2: Record a version
+
+A version makes a test result more reproducible.
+
+```python
+package = {"name": "pytest", "version": "reviewed-version", "purpose": "tests"}
+print(package)
+```
+
+**What to observe:**
+
+The record has name, version, and purpose.
+
+### Example 3: Separate runtime and development
+
+A production tool should not ship every teaching utility.
+
+```python
+runtime = []
+development = ["pytest", "ruff", "mypy"]
+print(runtime, development)
+```
+
+**What to observe:**
+
+The two sets have different deployment implications.
+
+### Example 4: Check a lock-like record
+
+A review can compare the declared record to the installed environment.
+
+```python
+declared = {"pytest"}
+installed = {"pytest", "unexpected-package"}
+print(installed - declared)
+```
+
+**What to observe:**
+
+The unexpected package is visible for investigation.
+
+### Example 5: State provenance questions
+
+An inventory is a starting point for review.
+
+```python
+questions = [
+    "Where was it obtained?",
+    "Who maintains it?",
+    "What license applies?",
+    "When was it reviewed?",
+]
+print(questions)
+```
+
+**What to observe:**
+
+The checklist prevents “it installed” from becoming “it is trusted.”
+
+## Execution trace
+
+The project declares components, the environment reports installed components, and a review compares the two while recording provenance and purpose.
+
+## Common mistakes
 
 | Mistake | Symptom | Correction |
 | --- | --- | --- |
-| Treating tools as magic | The learner cannot reproduce the result | State the interpreter, input, command, and expected output |
-| Trusting representation | Malformed data enters the decision layer | Validate fields and types at the boundary |
-| Logging everything | Secrets or private data appear in output | Minimize, redact, and test logging behavior |
-| Confusing a control with proof | A checklist is called “secure” | Name the test and the residual risk |
+| latest always | updates introduce surprises | review and test updates |
+| package name only | typosquatting or confusion | verify source and provenance |
+| ignore transitive packages | hidden code enters the build | inventory the full environment |
+| no license record | distribution risk appears late | review license context |
+| install into system | unrelated projects change | use the project environment |
+
+## Security application
+
+Create an SBOM-like table for the course environment only. Do not upload private dependency reports or install packages from unverified commands.
 
 ## Exercises
 
-Complete the numbered questions in [practice/exercises.md](practice/exercises.md) in order. Run the requested commands, produce the requested artifact, and record the edge case or limitation asked for by the exercise. Use [hints](practice/hints.md) only after a real attempt and [solutions](practice/solutions.md) only to compare your reasoning.
-
-## Mental model
-
-> A dependency is part of your software supply chain, so its name, version, source, and purpose should be visible.
+Complete the numbered questions in [practice/exercises.md](practice/exercises.md) in order. Run every requested command, create the requested artifact, and record the limitation the exercise asks you to name.
 
 ## Finish line
 
-Run the starter, pass the relevant tests, complete the numbered exercises, and explain one edge case aloud or in writing.
+Run `python -m course_days.day028`, pass the relevant tests, complete the numbered exercises, and explain one edge case aloud or in writing.
+
+## Mental model
+
+> A dependency is part of the system’s trust boundary even when your code did not write it.
+
+## Limitations
+
+An inventory does not prove a package is secure. Vulnerabilities, maintainer compromise, build tampering, and configuration risk remain possible.
+
+[← Day 27](../027_day_git_and_code_review/027_day_git_and_code_review.md) · [Day index](../DAY_INDEX.md) · [Day 29 →](../029_day_threat_modeling/029_day_threat_modeling.md)

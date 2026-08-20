@@ -1,6 +1,6 @@
-# Day 25: Type Hints, Protocols, and Static Feedback
+# Day 25: Type Hints and Static Checks
 
-[Previous](../024_day_json__csv__and_sqlite/024_day_json__csv__and_sqlite.md) | [Next](../026_day_structured_logging/026_day_structured_logging.md)
+[← Day 24](../024_day_json__csv__and_sqlite/024_day_json__csv__and_sqlite.md) · [Day index](../DAY_INDEX.md) · [Day 26 →](../026_day_structured_logging/026_day_structured_logging.md)
 
 ## Table of Contents
 
@@ -9,35 +9,64 @@
 - [Outcomes](#outcomes)
 - [The problem](#the-problem)
 - [Security boundary](#security-boundary)
-- [Core lesson](#core-lesson)
+- [Lesson](#lesson)
+- [Vocabulary](#vocabulary)
+- [Worked examples](#worked-examples)
+- [Execution trace](#execution-trace)
 - [Common mistakes](#common-mistakes)
-- [Practice](#practice)
-- [Mental model](#mental-model)
+- [Security application](#security-application)
+- [Exercises](#exercises)
 - [Finish line](#finish-line)
 
 ## Why this lesson exists
 
-Security engineering becomes dependable when its inputs, dependencies, failure behavior, and evidence are visible. This day builds one professional Python habit through a bounded local exercise.
+Type hints make a function’s intended data flow visible to humans and tools. They improve review, but they do not validate runtime JSON, CSV, or CLI input.
 
 ## Prerequisites
 
-Complete Day 24, keep [SETUP.md](../SETUP.md) available, and read [SAFETY_AND_LAB_RULES.md](../SAFETY_AND_LAB_RULES.md).
+Complete Day 24 and run the phase checks. The lesson assumes you can read a traceback, use a virtual environment, and work only with the supplied repository fixtures.
 
 ## Outcomes
 
-You can explain the concept, trace the starter, make one controlled change, test a normal and negative case, and document one security limitation.
+By the end of this lesson, you can:
+
+- explain the concept in plain language and precise Python terms
+- run and modify each worked example
+- test a normal case, boundary case, and failure case
+- apply the idea to the safe local context described by Day 25
 
 ## The problem
 
-A security utility often fails at a boundary: installation, command-line input, configuration, data serialization, logging, review, dependencies, or design assumptions. Today makes one such boundary explicit.
+A reviewer needs to see which functions accept raw text, which accept validated events, and which return reports or errors.
 
 ## Security boundary
 
-Use only synthetic data and local files. Do not add real credentials, private evidence, public targets, or network access to the starter. Stop if the exercise leaves its documented scope.
+Use only local synthetic fixtures and explicitly authorized course files. The lesson does not authorize public scanning, credential use, remote command execution, or changes to operating-system state.
 
-## Core lesson
+## Lesson
 
-Type hints provide a shared vocabulary for data shapes and make editor feedback more useful. They are erased at runtime, so a value read from JSON still needs runtime validation.
+### Vocabulary
+
+A **type annotation** describes intended types. A **static checker** analyzes code without running it. A `TypedDict` describes dictionary keys but does not enforce them at runtime.
+
+## Worked examples
+
+### Example 1: Annotate a function
+
+Annotations document the contract at the call site.
+
+```python
+def label(severity: int) -> str:
+    return "high" if severity >= 7 else "normal"
+```
+
+**What to observe:**
+
+Readers can see the input and output relationship.
+
+### Example 2: Use a TypedDict
+
+A typed dictionary documents required fields.
 
 ```python
 from typing import TypedDict
@@ -48,27 +77,86 @@ class Event(TypedDict):
     severity: int
 ```
 
-Static checking can catch a missing key in code that claims to build `Event`. It cannot confirm that a remote sender actually followed the contract.
+**What to observe:**
 
-Security connection: types reduce accidental misuse inside the program; boundary validation handles reality.
+The checker can reason about `event['source']`.
 
-### Common mistakes
+### Example 3: Optional values
+
+`None` must be handled before using a value as text.
+
+```python
+def source_name(source: str | None) -> str:
+    return source or "unknown"
+```
+
+**What to observe:**
+
+Missing source becomes an explicit display value.
+
+### Example 4: Protocols by behavior
+
+A protocol can describe the method a dependency must provide.
+
+```python
+from typing import Protocol
+
+
+class Reader(Protocol):
+    def read(self, limit: int) -> list[str]: ...
+```
+
+**What to observe:**
+
+Tests can provide a small fake reader.
+
+### Example 5: Runtime validation still matters
+
+A dictionary from JSON can violate the annotation.
+
+```python
+raw: Event = {
+    "source": "auth",
+    "severity": "7",
+}  # type checker warning; runtime may still create it
+```
+
+**What to observe:**
+
+The annotation does not convert the string or reject it.
+
+## Execution trace
+
+Static analysis reads the declared contract, but external data crosses into Python at runtime. Validate first, then construct the typed internal record.
+
+## Common mistakes
 
 | Mistake | Symptom | Correction |
 | --- | --- | --- |
-| Treating tools as magic | The learner cannot reproduce the result | State the interpreter, input, command, and expected output |
-| Trusting representation | Malformed data enters the decision layer | Validate fields and types at the boundary |
-| Logging everything | Secrets or private data appear in output | Minimize, redact, and test logging behavior |
-| Confusing a control with proof | A checklist is called “secure” | Name the test and the residual risk |
+| type hints as validation | malformed input still runs | validate at runtime |
+| `Any` everywhere | checker provides no signal | narrow types at boundaries |
+| ignore every error | real design gaps disappear | explain justified ignores |
+| wrong `Optional` handling | `None` reaches string methods | branch or validate |
+| annotations without tests | type shape is right but behavior wrong | keep behavioral tests |
+
+## Security application
+
+Run the checker on local course modules and add runtime tests for malformed synthetic data. Do not paste real data into a static-analysis service.
 
 ## Exercises
 
-Complete the numbered questions in [practice/exercises.md](practice/exercises.md) in order. Run the requested commands, produce the requested artifact, and record the edge case or limitation asked for by the exercise. Use [hints](practice/hints.md) only after a real attempt and [solutions](practice/solutions.md) only to compare your reasoning.
-
-## Mental model
-
-> A type annotation documents an expected shape, while runtime checks defend the boundary where real data enters.
+Complete the numbered questions in [practice/exercises.md](practice/exercises.md) in order. Run every requested command, create the requested artifact, and record the limitation the exercise asks you to name.
 
 ## Finish line
 
-Run the starter, pass the relevant tests, complete the numbered exercises, and explain one edge case aloud or in writing.
+Run `python -m course_days.day025`, pass the relevant tests, complete the numbered exercises, and explain one edge case aloud or in writing.
+
+## Mental model
+
+> Type hints are a review map; runtime validation is the gate that external data must pass.
+
+## Limitations
+
+Static checks cannot prove correctness, security, authorization, or package safety. They are one layer of evidence.
+
+[← Day 24](../024_day_json__csv__and_sqlite/024_day_json__csv__and_sqlite.md) · [Day index](../DAY_INDEX.md) · [Day 26 →](../026_day_structured_logging/026_day_structured_logging.md)
