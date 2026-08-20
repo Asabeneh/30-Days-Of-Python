@@ -11,8 +11,8 @@ A lesson is not complete because it names a Python feature or a security tool. I
 5. A substantial teaching body with vocabulary, the problem first, multiple worked examples, expected outputs, and an execution trace, plus a small runnable starter.
 6. Plain-language terminology followed by precise technical vocabulary.
 7. At least five worked demonstrations when the concept warrants them, including normal, boundary, invalid, and cybersecurity cases; simple concepts may justify fewer with a clear explanation.
-8. A numbered `practice/exercises.md` file with direct questions, coding tasks, expected outputs, edge cases, and a challenge when appropriate.
-9. Separate `practice/hints.md` and `practice/solutions.md` that follow the exercise numbers; the reading flow must not reveal full answers.
+8. A numbered `practice/exercises.md` file with at least twelve direct questions or coding tasks, expected outputs, edge cases, and a challenge when appropriate.
+9. Separate substantive `practice/hints.md` and `practice/solutions.md` files with at least twelve numbered entries that follow the exercise numbers; the reading flow must not reveal full answers or collapse into a generic paragraph.
 10. Common mistakes, design trade-offs, security limitations, a one-sentence mental model, a finish line, and a short proof section.
 
 ## Additional security requirements
@@ -21,7 +21,7 @@ Security-heavy lessons must also state the trust boundary, authorization and sco
 
 ## Practice standard
 
-Each numbered exercise states the starting input or state, expected output or acceptance criterion, concepts already available, and the artifact the learner must produce. A solution explains the decision, not only the final code. The sequence should move from trying the examples, to checking understanding, to writing code, to a security application, to an edge case or challenge when appropriate.
+Each numbered exercise states the starting input or state, expected output or acceptance criterion, concepts already available, and the artifact the learner must produce. A hint should unblock the matching exercise without replacing the attempt. A solution explains the decision, not only the final code, and includes review evidence and limitations. The sequence should move from trying the examples, to checking understanding, to writing code, to a security application, to an edge case or challenge when appropriate.
 
 ## Technical verification standard
 

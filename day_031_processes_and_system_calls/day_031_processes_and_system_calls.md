@@ -1,6 +1,6 @@
 # Day 31: Processes and Safe System Calls
 
-[← Day 30](../day_030_project__secure_evidence_journal/day_030_project__secure_evidence_journal.md) · [Day index](../DAY_INDEX.md) · [Day 32 →](../day_032_linux_command_line/day_032_linux_command_line.md)
+[← Previous lesson](../day_030_project__secure_evidence_journal/day_030_project__secure_evidence_journal.md) · [README](../README.md) · [Setup](../SETUP.md) · [VS Code](../VS_CODE_SETUP.md) · [Day index](../DAY_INDEX.md) · [Next lesson →](../day_032_linux_command_line/day_032_linux_command_line.md)
 
 
 
@@ -9,8 +9,14 @@
 
 
 
+
+## Start here
+
+Read the [course README](../README.md), complete the [setup guide](../SETUP.md) and [VS Code setup](../VS_CODE_SETUP.md), then use the [day index](../DAY_INDEX.md) to confirm where this lesson fits. Run the linked local starter before attempting the [exercises](practice/exercises.md), then use [hints](practice/hints.md) and [solutions](practice/solutions.md) only after an honest attempt.
 
 ## Table of contents
+
+- [Start here](#start-here)
 
 - [Why this lesson exists](#why-this-lesson-exists)
 - [Prerequisites](#prerequisites)

@@ -1,6 +1,6 @@
 # Day 75: MITRE ATT&CK Mapping as Documentation
 
-[← Day 74](../day_074_detection_thresholds/day_074_detection_thresholds.md) · [Day index](../DAY_INDEX.md) · [Day 76 →](../day_076_alert_triage/day_076_alert_triage.md)
+[← Previous lesson](../day_074_detection_thresholds/day_074_detection_thresholds.md) · [README](../README.md) · [Setup](../SETUP.md) · [VS Code](../VS_CODE_SETUP.md) · [Day index](../DAY_INDEX.md) · [Next lesson →](../day_076_alert_triage/day_076_alert_triage.md)
 
 
 
@@ -9,8 +9,14 @@
 
 
 
+
+## Start here
+
+Read the [course README](../README.md), complete the [setup guide](../SETUP.md) and [VS Code setup](../VS_CODE_SETUP.md), then use the [day index](../DAY_INDEX.md) to confirm where this lesson fits. Run the linked local starter before attempting the [exercises](practice/exercises.md), then use [hints](practice/hints.md) and [solutions](practice/solutions.md) only after an honest attempt.
 
 ## Table of contents
+
+- [Start here](#start-here)
 
 - [Why this lesson exists](#why-this-lesson-exists)
 - [Prerequisites](#prerequisites)

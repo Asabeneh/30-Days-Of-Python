@@ -1,6 +1,6 @@
 # Day 82: Evidence Integrity and Handling
 
-[← Day 81](../day_081_response_lifecycle/day_081_response_lifecycle.md) · [Day index](../DAY_INDEX.md) · [Day 83 →](../day_083_filesystem_timelines/day_083_filesystem_timelines.md)
+[← Previous lesson](../day_081_response_lifecycle/day_081_response_lifecycle.md) · [README](../README.md) · [Setup](../SETUP.md) · [VS Code](../VS_CODE_SETUP.md) · [Day index](../DAY_INDEX.md) · [Next lesson →](../day_083_filesystem_timelines/day_083_filesystem_timelines.md)
 
 
 
@@ -9,8 +9,14 @@
 
 
 
+
+## Start here
+
+Read the [course README](../README.md), complete the [setup guide](../SETUP.md) and [VS Code setup](../VS_CODE_SETUP.md), then use the [day index](../DAY_INDEX.md) to confirm where this lesson fits. Run the linked local starter before attempting the [exercises](practice/exercises.md), then use [hints](practice/hints.md) and [solutions](practice/solutions.md) only after an honest attempt.
 
 ## Table of contents
+
+- [Start here](#start-here)
 
 - [Why this lesson exists](#why-this-lesson-exists)
 - [Prerequisites](#prerequisites)

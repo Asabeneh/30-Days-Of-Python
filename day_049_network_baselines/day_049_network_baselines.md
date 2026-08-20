@@ -1,6 +1,6 @@
 # Day 49: Network Baselines and Change Detection
 
-[← Day 48](../day_048_rate_limits_and_retries/day_048_rate_limits_and_retries.md) · [Day index](../DAY_INDEX.md) · [Day 50 →](../day_050_project__local_service_monitor/day_050_project__local_service_monitor.md)
+[← Previous lesson](../day_048_rate_limits_and_retries/day_048_rate_limits_and_retries.md) · [README](../README.md) · [Setup](../SETUP.md) · [VS Code](../VS_CODE_SETUP.md) · [Day index](../DAY_INDEX.md) · [Next lesson →](../day_050_project__local_service_monitor/day_050_project__local_service_monitor.md)
 
 
 
@@ -9,8 +9,14 @@
 
 
 
+
+## Start here
+
+Read the [course README](../README.md), complete the [setup guide](../SETUP.md) and [VS Code setup](../VS_CODE_SETUP.md), then use the [day index](../DAY_INDEX.md) to confirm where this lesson fits. Run the linked local starter before attempting the [exercises](practice/exercises.md), then use [hints](practice/hints.md) and [solutions](practice/solutions.md) only after an honest attempt.
 
 ## Table of contents
+
+- [Start here](#start-here)
 
 - [Why this lesson exists](#why-this-lesson-exists)
 - [Prerequisites](#prerequisites)

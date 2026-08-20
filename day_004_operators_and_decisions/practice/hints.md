@@ -1,19 +1,20 @@
-# Hints: Day 4 Operators, Comparisons, and Decisions
+# Hints: Day 4
 
-Use one question at a time. Write your prediction before running the code. If an error appears, read the last line first; it usually names the kind of problem Python found.
+Use these hints after a genuine attempt at the [exercises](exercises.md). Start with the [course README](../../README.md), [setup guide](../../SETUP.md), and [VS Code setup](../../VS_CODE_SETUP.md) when a command or environment is unclear.
 
-1. Put the two operands on either side of each arithmetic operator. Print each expression separately.
-2. `//` counts complete groups. `%` reports what is left after those groups.
-3. Initialize `processed` to zero. Each `+= 1` changes the stored value and can be traced on paper.
-4. Store the result of `new_score > previous_best` in the exact name requested, then use `assert` to check it.
-5. Print the value and both comparisons on the same line. Pay special attention to `7`.
-6. Write the two comparisons in parentheses and connect them with `and`.
-7. Compare the event name with the first allowed string, then use `or` for the second allowed string. A local set plus `in` is another clear option.
-8. If `source_is_missing` is `False`, then `not source_is_missing` is `True`.
-9. Create a set such as `{"login_failed", "access_denied"}` and ask whether the event is `in` it.
-10. `==` asks whether contents are equal. `is` asks whether two names refer to the same object. `is None` is the common missing-value check.
-11. Run both expressions. Parentheses force addition to happen before multiplication.
-12. Translate the policy into English first. The word “and” requires `and`; the phrase “one of these alternatives” often requires `or`.
-13. Keep the output to a record number and label. Do not print the full dictionary.
-14. A boundary test includes the value just below the boundary, the boundary itself, and the value just above it.
-15. A Python expression only processes values already supplied to the program. Authorization and scope come from people, policies, and system controls, not from syntax.
+## Progressive hint route
+
+1. Run the unchanged starter and confirm your current directory before editing.
+2. Name the input and expected output in a sentence before writing code.
+3. Work with one small synthetic fixture, not a real log, credential, host, account, or target.
+4. Change exactly one value so the cause of a different result remains visible.
+5. Trace the value from input boundary to output; identify which function or module owns the decision.
+6. For a boundary case, decide the contract first: accept, reject, return an empty result, or report a controlled failure.
+7. Read the first error line and repair the smallest assumption instead of disabling a check.
+8. Use a focused assertion or test that would fail if the lesson's main behavior disappeared.
+9. For cybersecurity tasks, preserve provenance and redact sensitive-looking values even when the fixture is synthetic.
+10. Keep file access, network access, subprocesses, and loops bounded by explicit policy.
+11. A passing test proves only the claim that test checks; state the untested cases.
+12. If blocked, compare your artifact with the lesson's expected behavior, then read the solution route only for the current exercise.
+
+The goal is to understand **Day 4: Python Operators, Comparisons, and Decisions**, not to copy a finished answer.

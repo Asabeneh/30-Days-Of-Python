@@ -1,6 +1,6 @@
 # Day 114: Failure Injection and Recovery
 
-[← Day 113](../day_113_advanced_concurrency/day_113_advanced_concurrency.md) · [Day index](../DAY_INDEX.md) · [Day 115 →](../day_115_privacy_and_retention/day_115_privacy_and_retention.md)
+[← Previous lesson](../day_113_advanced_concurrency/day_113_advanced_concurrency.md) · [README](../README.md) · [Setup](../SETUP.md) · [VS Code](../VS_CODE_SETUP.md) · [Day index](../DAY_INDEX.md) · [Next lesson →](../day_115_privacy_and_retention/day_115_privacy_and_retention.md)
 
 
 
@@ -9,8 +9,14 @@
 
 
 
+
+## Start here
+
+Read the [course README](../README.md), complete the [setup guide](../SETUP.md) and [VS Code setup](../VS_CODE_SETUP.md), then use the [day index](../DAY_INDEX.md) to confirm where this lesson fits. Run the linked local starter before attempting the [exercises](practice/exercises.md), then use [hints](practice/hints.md) and [solutions](practice/solutions.md) only after an honest attempt.
 
 ## Table of contents
+
+- [Start here](#start-here)
 
 - [Why this lesson exists](#why-this-lesson-exists)
 - [Prerequisites](#prerequisites)

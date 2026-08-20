@@ -1,6 +1,6 @@
 # Day 52: Encoding, Unicode, and Canonical Bytes
 
-[← Day 51](../day_051_trust_boundaries_and_threat_models/day_051_trust_boundaries_and_threat_models.md) · [Day index](../DAY_INDEX.md) · [Day 53 →](../day_053_hashes_and_integrity/day_053_hashes_and_integrity.md)
+[← Previous lesson](../day_051_trust_boundaries_and_threat_models/day_051_trust_boundaries_and_threat_models.md) · [README](../README.md) · [Setup](../SETUP.md) · [VS Code](../VS_CODE_SETUP.md) · [Day index](../DAY_INDEX.md) · [Next lesson →](../day_053_hashes_and_integrity/day_053_hashes_and_integrity.md)
 
 
 
@@ -9,8 +9,14 @@
 
 
 
+
+## Start here
+
+Read the [course README](../README.md), complete the [setup guide](../SETUP.md) and [VS Code setup](../VS_CODE_SETUP.md), then use the [day index](../DAY_INDEX.md) to confirm where this lesson fits. Run the linked local starter before attempting the [exercises](practice/exercises.md), then use [hints](practice/hints.md) and [solutions](practice/solutions.md) only after an honest attempt.
 
 ## Table of contents
+
+- [Start here](#start-here)
 
 - [Why this lesson exists](#why-this-lesson-exists)
 - [Prerequisites](#prerequisites)

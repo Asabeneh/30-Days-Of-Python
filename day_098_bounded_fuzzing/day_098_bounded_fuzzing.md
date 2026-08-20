@@ -1,6 +1,6 @@
 # Day 98: Bounded Fuzzing
 
-[← Day 97](../day_097_input_validation_testing/day_097_input_validation_testing.md) · [Day index](../DAY_INDEX.md) · [Day 99 →](../day_099_findings_and_retesting/day_099_findings_and_retesting.md)
+[← Previous lesson](../day_097_input_validation_testing/day_097_input_validation_testing.md) · [README](../README.md) · [Setup](../SETUP.md) · [VS Code](../VS_CODE_SETUP.md) · [Day index](../DAY_INDEX.md) · [Next lesson →](../day_099_findings_and_retesting/day_099_findings_and_retesting.md)
 
 
 
@@ -9,8 +9,14 @@
 
 
 
+
+## Start here
+
+Read the [course README](../README.md), complete the [setup guide](../SETUP.md) and [VS Code setup](../VS_CODE_SETUP.md), then use the [day index](../DAY_INDEX.md) to confirm where this lesson fits. Run the linked local starter before attempting the [exercises](practice/exercises.md), then use [hints](practice/hints.md) and [solutions](practice/solutions.md) only after an honest attempt.
 
 ## Table of contents
+
+- [Start here](#start-here)
 
 - [Why this lesson exists](#why-this-lesson-exists)
 - [Prerequisites](#prerequisites)

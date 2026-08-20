@@ -1,6 +1,6 @@
 # Day 109: Security Metrics and Measurement
 
-[← Day 108](../day_108_configuration_drift/day_108_configuration_drift.md) · [Day index](../DAY_INDEX.md) · [Day 110 →](../day_110_project__secure_delivery_pipeline/day_110_project__secure_delivery_pipeline.md)
+[← Previous lesson](../day_108_configuration_drift/day_108_configuration_drift.md) · [README](../README.md) · [Setup](../SETUP.md) · [VS Code](../VS_CODE_SETUP.md) · [Day index](../DAY_INDEX.md) · [Next lesson →](../day_110_project__secure_delivery_pipeline/day_110_project__secure_delivery_pipeline.md)
 
 
 
@@ -9,8 +9,14 @@
 
 
 
+
+## Start here
+
+Read the [course README](../README.md), complete the [setup guide](../SETUP.md) and [VS Code setup](../VS_CODE_SETUP.md), then use the [day index](../DAY_INDEX.md) to confirm where this lesson fits. Run the linked local starter before attempting the [exercises](practice/exercises.md), then use [hints](practice/hints.md) and [solutions](practice/solutions.md) only after an honest attempt.
 
 ## Table of contents
+
+- [Start here](#start-here)
 
 - [Why this lesson exists](#why-this-lesson-exists)
 - [Prerequisites](#prerequisites)

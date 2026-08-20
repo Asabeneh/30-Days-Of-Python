@@ -1,6 +1,6 @@
 # Day 64: Injection and Parameterized Queries
 
-[← Day 63](../day_063_authentication_and_authorization/day_063_authentication_and_authorization.md) · [Day index](../DAY_INDEX.md) · [Day 65 →](../day_065_xss_and_output_encoding/day_065_xss_and_output_encoding.md)
+[← Previous lesson](../day_063_authentication_and_authorization/day_063_authentication_and_authorization.md) · [README](../README.md) · [Setup](../SETUP.md) · [VS Code](../VS_CODE_SETUP.md) · [Day index](../DAY_INDEX.md) · [Next lesson →](../day_065_xss_and_output_encoding/day_065_xss_and_output_encoding.md)
 
 
 
@@ -9,8 +9,14 @@
 
 
 
+
+## Start here
+
+Read the [course README](../README.md), complete the [setup guide](../SETUP.md) and [VS Code setup](../VS_CODE_SETUP.md), then use the [day index](../DAY_INDEX.md) to confirm where this lesson fits. Run the linked local starter before attempting the [exercises](practice/exercises.md), then use [hints](practice/hints.md) and [solutions](practice/solutions.md) only after an honest attempt.
 
 ## Table of contents
+
+- [Start here](#start-here)
 
 - [Why this lesson exists](#why-this-lesson-exists)
 - [Prerequisites](#prerequisites)

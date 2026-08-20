@@ -1,6 +1,6 @@
 # Day 11: Function Contracts and Explicit Security Decisions
 
-[← Day 10](../day_010_checkpoint_log_triage/day_010_checkpoint_log_triage.md) · [Day index](../DAY_INDEX.md) · [Day 12 →](../day_012_modules_and_packages/day_012_modules_and_packages.md)
+[← Previous lesson](../day_010_checkpoint_log_triage/day_010_checkpoint_log_triage.md) · [README](../README.md) · [Setup](../SETUP.md) · [VS Code](../VS_CODE_SETUP.md) · [Day index](../DAY_INDEX.md) · [Next lesson →](../day_012_modules_and_packages/day_012_modules_and_packages.md)
 
 
 
@@ -9,8 +9,14 @@
 
 
 
+
+## Start here
+
+Read the [course README](../README.md), complete the [setup guide](../SETUP.md) and [VS Code setup](../VS_CODE_SETUP.md), then use the [day index](../DAY_INDEX.md) to confirm where this lesson fits. Run the linked local starter before attempting the [exercises](practice/exercises.md), then use [hints](practice/hints.md) and [solutions](practice/solutions.md) only after an honest attempt.
 
 ## Table of contents
+
+- [Start here](#start-here)
 
 - [Why this lesson exists](#why-this-lesson-exists)
 - [Prerequisites](#prerequisites)

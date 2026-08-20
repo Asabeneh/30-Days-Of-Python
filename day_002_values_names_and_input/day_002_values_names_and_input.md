@@ -1,6 +1,6 @@
 # Day 2: Variables, Names, Values, Input, and Output
 
-[← Day 1](../day_001_setup_and_safe_practice/day_001_setup_and_safe_practice.md) · [Day index](../DAY_INDEX.md) · [Day 3 →](../day_003_types_and_parsing/day_003_types_and_parsing.md)
+[← Previous lesson](../day_001_setup_and_safe_practice/day_001_setup_and_safe_practice.md) · [README](../README.md) · [Setup](../SETUP.md) · [VS Code](../VS_CODE_SETUP.md) · [Day index](../DAY_INDEX.md) · [Next lesson →](../day_003_types_and_parsing/day_003_types_and_parsing.md)
 
 
 
@@ -8,8 +8,14 @@
 
 
 
+
+## Start here
+
+Read the [course README](../README.md), complete the [setup guide](../SETUP.md) and [VS Code setup](../VS_CODE_SETUP.md), then use the [day index](../DAY_INDEX.md) to confirm where this lesson fits. Run the linked local starter before attempting the [exercises](practice/exercises.md), then use [hints](practice/hints.md) and [solutions](practice/solutions.md) only after an honest attempt.
 
 ## Table of contents
+
+- [Start here](#start-here)
 
 - [Welcome](#welcome)
 - [Before you begin](#before-you-begin)

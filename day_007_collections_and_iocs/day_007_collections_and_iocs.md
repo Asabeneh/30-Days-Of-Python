@@ -1,6 +1,6 @@
 # Day 7: Collections and an Indicator Catalog
 
-[← Day 6](../day_006_loops_and_bounded_work/day_006_loops_and_bounded_work.md) · [Day index](../DAY_INDEX.md) · [Day 8 →](../day_008_strings_and_canonicalization/day_008_strings_and_canonicalization.md)
+[← Previous lesson](../day_006_loops_and_bounded_work/day_006_loops_and_bounded_work.md) · [README](../README.md) · [Setup](../SETUP.md) · [VS Code](../VS_CODE_SETUP.md) · [Day index](../DAY_INDEX.md) · [Next lesson →](../day_008_strings_and_canonicalization/day_008_strings_and_canonicalization.md)
 
 
 
@@ -8,8 +8,14 @@
 
 
 
+
+## Start here
+
+Read the [course README](../README.md), complete the [setup guide](../SETUP.md) and [VS Code setup](../VS_CODE_SETUP.md), then use the [day index](../DAY_INDEX.md) to confirm where this lesson fits. Run the linked local starter before attempting the [exercises](practice/exercises.md), then use [hints](practice/hints.md) and [solutions](practice/solutions.md) only after an honest attempt.
 
 ## Table of contents
+
+- [Start here](#start-here)
 
 - [Welcome](#welcome)
 - [Prerequisites](#prerequisites)

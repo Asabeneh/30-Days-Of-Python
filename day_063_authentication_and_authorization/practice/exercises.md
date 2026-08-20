@@ -1,10 +1,16 @@
 # Exercises: Day 63
 
-1. Run the starter for **Day 63: Authentication and authorization** unchanged. What does it print or return? Record the command and output.
-2. Which input, state, or boundary does today's lesson ask you to observe? Answer in one sentence before changing the code.
-3. Write a small function, script, test, or report that applies today's concept to the supplied synthetic fixture. What file or output should it produce?
-4. Add one normal case, one boundary case, and one invalid case. What should happen in each case?
-5. Add a test or evidence note that proves the tool remains local, bounded, and explainable.
-6. What can your result show, and what can it not prove about a real system?
+1. Run the starter for **Day 63: Authentication and Authorization** unchanged. What does it print, return, or create? Record the command and observed result.
+2. Define the main keyword from this lesson in plain language and point to the first line where the idea appears.
+3. Write down the input, operation, output, and owner of the important value before changing any code.
+4. Apply today's concept to the supplied synthetic fixture. State the file, function, component, or report you expect to change.
+5. Add one normal case and predict its result before running it.
+6. Add one boundary case and decide whether it should return a value, reject input, or show a safe empty/failure state.
+7. Add one invalid or malformed case. Capture the visible error or rejection without hiding it with a broad catch.
+8. Reproduce the deliberate mistake from the lesson, record the error, and repair the smallest possible line.
+9. Add a focused test or evidence note that would fail if the important behavior were removed.
+10. Explain the security, reliability, accessibility, or ownership boundary that today's example demonstrates.
+11. Write one limitation: what does your successful run not prove about a real system or production readiness?
+12. Prepare a short review note naming the changed files, commands, evidence, remaining risk, and next step.
 
-Use only the supplied fixtures or a local resettable example. Do not use real credentials, private data, or systems outside explicit authorization.
+Use only the supplied fixtures or a local resettable example. Do not use real credentials, private data, public targets, or systems outside explicit authorization.

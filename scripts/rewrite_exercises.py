@@ -7,6 +7,7 @@ import re
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
+NUMBERED = re.compile(r"^\d+\.\s+", re.MULTILINE)
 
 SPECIFIC: dict[int, str] = {
     1: """# Exercises: Day 1
@@ -269,28 +270,118 @@ def title_for(day: int) -> str:
 
 def generic_exercises(day: int) -> str:
     title = title_for(day)
-    return f"""# Exercises: Day {day}\n\n1. Run the starter for **{title}** unchanged. What does it print or return? Record the command and output.\n2. Which input, state, or boundary does today's lesson ask you to observe? Answer in one sentence before changing the code.\n3. Write a small function, script, test, or report that applies today's concept to the supplied synthetic fixture. What file or output should it produce?\n4. Add one normal case, one boundary case, and one invalid case. What should happen in each case?\n5. Add a test or evidence note that proves the tool remains local, bounded, and explainable.\n6. What can your result show, and what can it not prove about a real system?\n\nUse only the supplied fixtures or a local resettable example. Do not use real credentials, private data, or systems outside explicit authorization.\n"""
+    return f"""# Exercises: Day {day}
+
+1. Run the starter for **{title}** unchanged. What does it print, return, or create? Record the command and observed result.
+2. Define the main keyword from this lesson in plain language and point to the first line where the idea appears.
+3. Write down the input, operation, output, and owner of the important value before changing any code.
+4. Apply today's concept to the supplied synthetic fixture. State the file, function, component, or report you expect to change.
+5. Add one normal case and predict its result before running it.
+6. Add one boundary case and decide whether it should return a value, reject input, or show a safe empty/failure state.
+7. Add one invalid or malformed case. Capture the visible error or rejection without hiding it with a broad catch.
+8. Reproduce the deliberate mistake from the lesson, record the error, and repair the smallest possible line.
+9. Add a focused test or evidence note that would fail if the important behavior were removed.
+10. Explain the security, reliability, accessibility, or ownership boundary that today's example demonstrates.
+11. Write one limitation: what does your successful run not prove about a real system or production readiness?
+12. Prepare a short review note naming the changed files, commands, evidence, remaining risk, and next step.
+
+Use only the supplied fixtures or a local resettable example. Do not use real credentials, private data, public targets, or systems outside explicit authorization.
+"""
+
+
+def complete_exercises(text: str, day: int, title: str) -> str:
+    count = len(NUMBERED.findall(text))
+    if count >= 12:
+        return text
+    additions = [
+        "Apply the lesson to the supplied local synthetic fixture and state the expected artifact before running it.",
+        "Add a normal case and predict the result before executing the code.",
+        "Add a boundary case and explain the chosen behavior.",
+        "Add an invalid case and keep the failure visible and understandable.",
+        "Reproduce the deliberate mistake from the lesson and record the smallest repair.",
+        "Add a focused test or evidence note for the most important behavior.",
+        "Write one limitation and one review question for a teammate.",
+    ]
+    lines = [text.rstrip(), ""]
+    for index, prompt in enumerate(additions, count + 1):
+        lines.append(f"{index}. {prompt}")
+    lines.append("\nUse only the supplied local, synthetic, bounded fixtures. Do not use real credentials, private data, public targets, or systems outside explicit authorization.\n")
+    return "\n".join(lines)
+
+
+def support_hints(day: int, title: str) -> str:
+    return f"""# Hints: Day {day}
+
+Use these hints after a genuine attempt at the [exercises](exercises.md). Start with the [course README](../../README.md), [setup guide](../../SETUP.md), and [VS Code setup](../../VS_CODE_SETUP.md) when a command or environment is unclear.
+
+## Progressive hint route
+
+1. Run the unchanged starter and confirm your current directory before editing.
+2. Name the input and expected output in a sentence before writing code.
+3. Work with one small synthetic fixture, not a real log, credential, host, account, or target.
+4. Change exactly one value so the cause of a different result remains visible.
+5. Trace the value from input boundary to output; identify which function or module owns the decision.
+6. For a boundary case, decide the contract first: accept, reject, return an empty result, or report a controlled failure.
+7. Read the first error line and repair the smallest assumption instead of disabling a check.
+8. Use a focused assertion or test that would fail if the lesson's main behavior disappeared.
+9. For cybersecurity tasks, preserve provenance and redact sensitive-looking values even when the fixture is synthetic.
+10. Keep file access, network access, subprocesses, and loops bounded by explicit policy.
+11. A passing test proves only the claim that test checks; state the untested cases.
+12. If blocked, compare your artifact with the lesson's expected behavior, then read the solution route only for the current exercise.
+
+The goal is to understand **{title}**, not to copy a finished answer.
+"""
+
+
+def support_solutions(day: int, title: str) -> str:
+    return f"""# Solution route: Day {day}
+
+Use this guide after attempting the [exercises](exercises.md). It gives review checkpoints rather than a secret finished submission. Compare decisions, inputs, outputs, tests, and limitations for **{title}**.
+
+## Review checkpoints
+
+1. The unchanged starter ran from the documented directory and the observed result was recorded.
+2. The main keyword was defined in ordinary language and connected to a concrete line of code.
+3. The input, operation, output, and owner were identified before implementation.
+4. The local synthetic fixture was bounded, resettable, and appropriate to the lesson.
+5. The normal case produced the expected result without unexplained magic.
+6. The boundary case had a deliberate contract and did not silently corrupt evidence.
+7. The invalid case produced a clear rejection or controlled failure.
+8. The broken example reproduced the stated problem and was repaired with the smallest safe change.
+9. A focused test or evidence note would fail if the important behavior were removed.
+10. The solution states the relevant security, reliability, accessibility, or authorization boundary.
+11. The limitation avoids claiming that a passing test or local run proves production readiness.
+12. The review note names files, commands, evidence, remaining risk, and the next learning step.
+
+If a checkpoint is missing, return to the lesson's execution trace and guided practice before moving to the next day.
+"""
+
+
+def navigation(day: int, directory: Path, all_directories: list[Path]) -> str:
+    index = all_directories.index(directory)
+    previous = "../README.md" if index == 0 else f"../{all_directories[index - 1].name}/{all_directories[index - 1].name}.md"
+    next_link = "../DAY_INDEX.md" if index == len(all_directories) - 1 else f"../{all_directories[index + 1].name}/{all_directories[index + 1].name}.md"
+    previous_label = "← Course overview" if index == 0 else "← Previous lesson"
+    next_label = "Course index →" if index == len(all_directories) - 1 else "Next lesson →"
+    return f"[{previous_label}]({previous}) · [README](../README.md) · [Setup](../SETUP.md) · [VS Code](../VS_CODE_SETUP.md) · [Day index](../DAY_INDEX.md) · [{next_label}]({next_link})"
 
 
 def main() -> int:
+    directories = sorted(
+        (path for path in ROOT.glob("day_*") if path.is_dir()),
+        key=lambda path: int(path.name.split("_", 2)[1]),
+    )
     for day in range(1, 121):
         lesson = lesson_path(day)
-        practice = lesson.parent / "practice"
+        directory = lesson.parent
+        title = title_for(day)
+        practice = directory / "practice"
         practice.mkdir(exist_ok=True)
+        existing = SPECIFIC.get(day, generic_exercises(day))
         exercise_file = practice / "exercises.md"
-        exercise_file.write_text(
-            SPECIFIC.get(day, generic_exercises(day)), encoding="utf-8"
-        )
-        hints = practice / "hints.md"
-        hints.write_text(
-            "# Hints\n\nUse the exercise numbers in order. Start by running the starter. Name the input and expected output before writing code. Test a normal value, a boundary value, and an invalid value. Keep security work local, synthetic, bounded, and authorized.\n",
-            encoding="utf-8",
-        )
-        solutions = practice / "solutions.md"
-        solutions.write_text(
-            "# Solution route\n\nUse the exercise numbers in order. Compare your implementation with the requested artifact and acceptance behavior. A strong solution explains its input contract, keeps failure visible, includes a negative test, and states a limitation.\n",
-            encoding="utf-8",
-        )
+        exercise_file.write_text(complete_exercises(existing, day, title), encoding="utf-8")
+        (practice / "hints.md").write_text(support_hints(day, title), encoding="utf-8")
+        (practice / "solutions.md").write_text(support_solutions(day, title), encoding="utf-8")
         text = lesson.read_text(encoding="utf-8")
         text = text.replace("practice/prompts.md", "practice/exercises.md")
         text = re.sub(r"\n## Practice\n", "\n## Exercises\n", text, count=1)
@@ -298,6 +389,14 @@ def main() -> int:
             "Use [practice/exercises.md](practice/exercises.md), then",
             "Complete [practice/exercises.md](practice/exercises.md), then",
         )
+        text = re.sub(r"^\[.*?\]\(\.\./DAY_INDEX\.md\).*?$", navigation(day, directory, directories), text, count=1, flags=re.MULTILINE)
+        if "## Start here" not in text:
+            start = "## Start here\n\nRead the [course README](../README.md), complete the [setup guide](../SETUP.md) and [VS Code setup](../VS_CODE_SETUP.md), then use the [day index](../DAY_INDEX.md) to confirm where this lesson fits. Run the linked local starter before attempting the [exercises](practice/exercises.md), then use [hints](practice/hints.md) and [solutions](practice/solutions.md) only after an honest attempt.\n\n"
+            text = text.replace("\n## Table of contents", f"\n{start}## Table of contents", 1)
+        if "- [Start here](#start-here)" not in text:
+            text = text.replace("## Table of contents\n", "## Table of contents\n\n- [Start here](#start-here)\n", 1)
+        if "practice/hints.md" not in text:
+            text = text.replace("## Exercises\n", "## Exercises\n\nUse [practice/exercises.md](practice/exercises.md) first, then [practice/hints.md](practice/hints.md), and finally [practice/solutions.md](practice/solutions.md).\n", 1)
         lesson.write_text(text, encoding="utf-8")
     for markdown in ROOT.rglob("*.md"):
         if ".git" in markdown.parts:
@@ -306,7 +405,7 @@ def main() -> int:
         text = text.replace("practice/prompts.md", "practice/exercises.md")
         text = text.replace("generic prompt cards", "generic practice cards")
         markdown.write_text(text, encoding="utf-8")
-    print("Rewrote 120 learner practice files as numbered exercises.")
+    print("Rewrote 120 learner practice files with exercises, hints, solutions, and onboarding navigation.")
     return 0
 
 

@@ -22,17 +22,27 @@ def main() -> int:
             continue
         text = exercise.read_text(encoding="utf-8")
         question_count = len(NUMBERED.findall(text))
-        if question_count < 4:
+        if question_count < 12:
             errors.append(
-                f"fewer than four numbered exercises: {exercise.relative_to(ROOT)}"
+                f"fewer than twelve numbered exercises: {exercise.relative_to(ROOT)}"
             )
-        if not hints.exists() or not solutions.exists():
-            errors.append(f"missing hint or solution companion: {directory.name}")
+        if len(text.split()) < 120:
+            errors.append(f"exercise file is too short: {exercise.relative_to(ROOT)}")
+        for companion in (hints, solutions):
+            if not companion.exists():
+                errors.append(f"missing companion: {companion.relative_to(ROOT)}")
+                continue
+            companion_text = companion.read_text(encoding="utf-8")
+            if len(companion_text.split()) < 150:
+                errors.append(f"companion file is too short: {companion.relative_to(ROOT)}")
+            if len(NUMBERED.findall(companion_text)) < 12:
+                errors.append(f"companion needs twelve numbered entries: {companion.relative_to(ROOT)}")
+            if "Use the exercise numbers in order." in companion_text:
+                errors.append(f"generic placeholder companion remains: {companion.relative_to(ROOT)}")
         lesson_text = lesson.read_text(encoding="utf-8")
-        if "practice/exercises.md" not in lesson_text:
-            errors.append(
-                f"lesson does not link exercises.md: {lesson.relative_to(ROOT)}"
-            )
+        for link in ("../README.md", "../SETUP.md", "../VS_CODE_SETUP.md", "../DAY_INDEX.md", "practice/exercises.md", "practice/hints.md", "practice/solutions.md"):
+            if link not in lesson_text:
+                errors.append(f"lesson missing navigation or practice link {link}: {lesson.relative_to(ROOT)}")
         if "practice/prompts.md" in lesson_text:
             errors.append(f"legacy prompts link remains: {lesson.relative_to(ROOT)}")
     legacy = list(ROOT.rglob("prompts.md"))
@@ -44,7 +54,7 @@ def main() -> int:
         print("Exercise doctor found:")
         print("\n".join(f"- {error}" for error in errors))
         return 1
-    print(f"Exercise doctor: OK ({len(lessons)} numbered exercise files)")
+    print(f"Exercise doctor: OK ({len(lessons)} lessons with substantive practice routes)")
     return 0
 
 
