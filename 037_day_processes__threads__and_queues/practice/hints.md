@@ -1,3 +1,3 @@
 # Hints
 
-Start with a tiny example. Name the input and output. Preserve raw data. Test a normal case, a boundary case, and an invalid case. Keep the lab local and bounded.
+Name the target. Bound the work. Preserve evidence. Test a normal, boundary, and invalid case. Never replace the local fixture with a public system.

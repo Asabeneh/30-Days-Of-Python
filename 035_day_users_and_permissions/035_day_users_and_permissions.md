@@ -1,4 +1,4 @@
-# Day 35: Users and permissions
+# Day 35: Users, Groups, and Least Privilege
 
 [Previous](../034_day_safe_subprocesses/034_day_safe_subprocesses.md) | [Next](../036_day_timeouts_and_resource_limits/036_day_timeouts_and_resource_limits.md)
 
@@ -9,43 +9,76 @@
 - [Outcomes](#outcomes)
 - [The problem](#the-problem)
 - [Security boundary](#security-boundary)
-- [Concept map](#concept-map)
+- [Core lesson](#core-lesson)
+- [Common mistakes](#common-mistakes)
 - [Practice](#practice)
 - [Mental model](#mental-model)
 - [Finish line](#finish-line)
 
 ## Why this lesson exists
 
-This lesson belongs to **Operating Systems and Systems Automation**. It turns one engineering concept into a runnable, testable, and explainable security practice. The final lesson will be expanded with execution traces, diagrams, common-mistake tables, and worked examples before that phase is marked complete.
+A Python security tool interacts with a host that has processes, permissions, paths, resource limits, and concurrent work. This lesson makes one host-level boundary visible and testable.
 
 ## Prerequisites
 
-Complete the previous lesson and keep the repository setup from [SETUP.md](../SETUP.md) available. Revisit the linked previous lesson if any term is unfamiliar.
+Complete Day 34, keep [SETUP.md](../SETUP.md) available, and read [SAFETY_AND_LAB_RULES.md](../SAFETY_AND_LAB_RULES.md).
 
 ## Outcomes
 
-By the end, you can explain the concept, run the starter, predict a result, write a small test, identify one failure mode, and state the security boundary of the exercise.
+You can explain the concept, trace the starter, make one controlled change, test a normal and negative case, and state what the local fixture does not represent.
 
 ## The problem
 
-Security engineering requires reliable decisions under imperfect input and failure. This day introduces **Users and permissions** through a bounded local fixture before asking you to generalize the pattern.
+Host automation can collect useful evidence or cause unexpected load and data exposure. The problem today is to make the target, permission, resource, and cleanup assumptions explicit before writing a broader tool.
 
 ## Security boundary
 
-Use only the supplied synthetic data or a local fixture. Do not substitute public targets, university systems, employer systems, real credentials, or private evidence. Stop if the scope changes.
+Use only the repository and supplied synthetic fixtures. Do not inspect other users, services, university systems, employer systems, or public targets. Keep collection bounded and stop if scope changes.
 
-## Concept map
+## Core lesson
 
-Start with the smallest runnable example in `starter/main.py`. Trace the input, transformation, decision, and output. Then deliberately change one input and predict the result before running again. The full lesson expansion will add a visual data-flow diagram, a common-mistakes table, and an explanation of what the tool cannot conclude.
+A process may be able to read a file because of its user, group, ACL, or inherited privilege. Least privilege asks whether it needs that access for the task.
+
+```python
+from pathlib import Path
+
+mode = Path("fixture.txt").stat().st_mode
+print(oct(mode))
+```
+
+Permission bits are only one part of the host model. Windows ACLs, containers, service accounts, and network-mounted files add other layers.
+
+Security connection: a baseline report should describe what it measured and on which platform rather than claiming that one mode value represents all access.
+
+### Common mistakes
+
+| Mistake | Symptom | Correction |
+| --- | --- | --- |
+| Assuming a name proves identity | A process or file is attributed without evidence | Record the exact observation and its limits |
+| Using free-form commands | Shell metacharacters change behavior | Pass argument lists and allowlist programs |
+| Ignoring limits | A collector can run forever or consume memory | Add bounds, timeouts, and cancellation |
+| Treating differences as verdicts | A baseline change is called compromise | Report the difference and seek context |
 
 ## Practice
 
-Complete [practice/prompts.md](practice/prompts.md) before opening [hints](practice/hints.md) or [solutions](practice/solutions.md). Level 1 builds mechanical fluency. Level 2 applies the idea to a security utility. Level 3 asks for an edge case, negative test, or design trade-off.
+### Level 1 — Mechanical
+
+Run the starter, predict one output, change one input, and explain the result.
+
+### Level 2 — Applied
+
+Build a local fixture utility with a documented maximum scope and at least one rejection test.
+
+### Level 3 — Synthesis
+
+Add a timeout, resource bound, or evidence limitation and explain how it changes the tool's safety.
+
+Use [practice/prompts.md](practice/prompts.md), then [hints](practice/hints.md), then [solutions](practice/solutions.md).
 
 ## Mental model
 
-> A security tool is a small program whose assumptions, inputs, outputs, and limits must be made visible.
+> Permissions are a design boundary: a process should have only the access its task requires.
 
 ## Finish line
 
-Run the starter, pass the day tests when present, complete the core practice, and write one sentence naming an edge case and one sentence naming the lab boundary.
+Run `python -m course_days.day035`, pass the phase tests, complete Levels 1 and 2, and write one edge-case note.

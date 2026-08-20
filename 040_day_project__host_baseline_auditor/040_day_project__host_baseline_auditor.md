@@ -1,4 +1,4 @@
-# Day 40: Project: Host Baseline Auditor
+# Day 40: Project: Build a Host Baseline Auditor
 
 [Previous](../039_day_host_inventories/039_day_host_inventories.md) | [Next](../041_day_addresses__ports__and_sockets/041_day_addresses__ports__and_sockets.md)
 
@@ -9,43 +9,70 @@
 - [Outcomes](#outcomes)
 - [The problem](#the-problem)
 - [Security boundary](#security-boundary)
-- [Concept map](#concept-map)
+- [Core lesson](#core-lesson)
+- [Common mistakes](#common-mistakes)
 - [Practice](#practice)
 - [Mental model](#mental-model)
 - [Finish line](#finish-line)
 
 ## Why this lesson exists
 
-This lesson belongs to **Operating Systems and Systems Automation**. It turns one engineering concept into a runnable, testable, and explainable security practice. The final lesson will be expanded with execution traces, diagrams, common-mistake tables, and worked examples before that phase is marked complete.
+A Python security tool interacts with a host that has processes, permissions, paths, resource limits, and concurrent work. This lesson makes one host-level boundary visible and testable.
 
 ## Prerequisites
 
-Complete the previous lesson and keep the repository setup from [SETUP.md](../SETUP.md) available. Revisit the linked previous lesson if any term is unfamiliar.
+Complete Day 39, keep [SETUP.md](../SETUP.md) available, and read [SAFETY_AND_LAB_RULES.md](../SAFETY_AND_LAB_RULES.md).
 
 ## Outcomes
 
-By the end, you can explain the concept, run the starter, predict a result, write a small test, identify one failure mode, and state the security boundary of the exercise.
+You can explain the concept, trace the starter, make one controlled change, test a normal and negative case, and state what the local fixture does not represent.
 
 ## The problem
 
-Security engineering requires reliable decisions under imperfect input and failure. This day introduces **Project: Host Baseline Auditor** through a bounded local fixture before asking you to generalize the pattern.
+Host automation can collect useful evidence or cause unexpected load and data exposure. The problem today is to make the target, permission, resource, and cleanup assumptions explicit before writing a broader tool.
 
 ## Security boundary
 
-Use only the supplied synthetic data or a local fixture. Do not substitute public targets, university systems, employer systems, real credentials, or private evidence. Stop if the scope changes.
+Use only the repository and supplied synthetic fixtures. Do not inspect other users, services, university systems, employer systems, or public targets. Keep collection bounded and stop if scope changes.
 
-## Concept map
+## Core lesson
 
-Start with the smallest runnable example in `starter/main.py`. Trace the input, transformation, decision, and output. Then deliberately change one input and predict the result before running again. The full lesson expansion will add a visual data-flow diagram, a common-mistakes table, and an explanation of what the tool cannot conclude.
+The host baseline auditor combines a local fixture inventory, safe path handling, metadata collection, normalization, and a diff against a declared baseline.
+
+Requirements: collect only the supplied fixture directory, cap file count and depth, record collection time, redact private paths in the report, and distinguish `added`, `removed`, and `changed`.
+
+Project evidence: a README, tests for traversal rejection and diff behavior, a sample baseline, a threat model, a reset instruction, and a limitation that the tool does not prove host compromise or absence.
+
+
+### Common mistakes
+
+| Mistake | Symptom | Correction |
+| --- | --- | --- |
+| Assuming a name proves identity | A process or file is attributed without evidence | Record the exact observation and its limits |
+| Using free-form commands | Shell metacharacters change behavior | Pass argument lists and allowlist programs |
+| Ignoring limits | A collector can run forever or consume memory | Add bounds, timeouts, and cancellation |
+| Treating differences as verdicts | A baseline change is called compromise | Report the difference and seek context |
 
 ## Practice
 
-Complete [practice/prompts.md](practice/prompts.md) before opening [hints](practice/hints.md) or [solutions](practice/solutions.md). Level 1 builds mechanical fluency. Level 2 applies the idea to a security utility. Level 3 asks for an edge case, negative test, or design trade-off.
+### Level 1 — Mechanical
+
+Run the starter, predict one output, change one input, and explain the result.
+
+### Level 2 — Applied
+
+Build a local fixture utility with a documented maximum scope and at least one rejection test.
+
+### Level 3 — Synthesis
+
+Add a timeout, resource bound, or evidence limitation and explain how it changes the tool's safety.
+
+Use [practice/prompts.md](practice/prompts.md), then [hints](practice/hints.md), then [solutions](practice/solutions.md).
 
 ## Mental model
 
-> A security tool is a small program whose assumptions, inputs, outputs, and limits must be made visible.
+> A host baseline auditor collects a narrow local inventory, compares it with a declared baseline, and reports evidence with limitations.
 
 ## Finish line
 
-Run the starter, pass the day tests when present, complete the core practice, and write one sentence naming an edge case and one sentence naming the lab boundary.
+Run `python -m course_days.day040`, pass the phase tests, complete Levels 1 and 2, and write one edge-case note.
