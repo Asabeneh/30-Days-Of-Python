@@ -11,7 +11,7 @@ NUMBERED = re.compile(r"^\d+\.\s+", re.MULTILINE)
 
 def main() -> int:
     errors: list[str] = []
-    lessons = sorted(ROOT.glob("[0-9][0-9][0-9]_day_*"))
+    lessons = sorted(ROOT.glob("day_*"))
     for directory in lessons:
         lesson = directory / f"{directory.name}.md"
         exercise = directory / "practice" / "exercises.md"

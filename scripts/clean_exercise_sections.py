@@ -10,7 +10,7 @@ ROOT = Path(__file__).resolve().parents[1]
 
 def main() -> int:
     changed = 0
-    for lesson in sorted(ROOT.glob("[0-9][0-9][0-9]_day_*/*.md")):
+    for lesson in sorted(ROOT.glob("day_*/*.md")):
         if lesson.name != f"{lesson.parent.name}.md":
             continue
         text = lesson.read_text(encoding="utf-8")

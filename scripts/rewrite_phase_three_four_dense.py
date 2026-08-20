@@ -8,27 +8,27 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 DIRS = {
-    21: "021_day_virtual_environments",
-    22: "022_day_cli_design",
-    23: "023_day_configuration_and_secrets",
-    24: "024_day_json__csv__and_sqlite",
-    25: "025_day_type_hints_and_static_checks",
-    26: "026_day_structured_logging",
-    27: "027_day_git_and_code_review",
-    28: "028_day_dependency_hygiene_and_sboms",
-    29: "029_day_threat_modeling",
-    30: "030_day_project__secure_evidence_journal",
-    31: "031_day_processes_and_system_calls",
-    32: "032_day_linux_command_line",
-    33: "033_day_paths_and_file_metadata",
-    34: "034_day_safe_subprocesses",
-    35: "035_day_users_and_permissions",
-    36: "036_day_timeouts_and_resource_limits",
-    37: "037_day_processes__threads__and_queues",
-    38: "038_day_async_i_o",
-    39: "039_day_host_inventories",
-    40: "040_day_project__host_baseline_auditor",
-    41: "041_day_addresses__ports__and_sockets",
+    21: "day_21_virtual_environments",
+    22: "day_22_cli_design",
+    23: "day_23_configuration_and_secrets",
+    24: "day_24_json__csv__and_sqlite",
+    25: "day_25_type_hints_and_static_checks",
+    26: "day_26_structured_logging",
+    27: "day_27_git_and_code_review",
+    28: "day_28_dependency_hygiene_and_sboms",
+    29: "day_29_threat_modeling",
+    30: "day_30_project__secure_evidence_journal",
+    31: "day_31_processes_and_system_calls",
+    32: "day_32_linux_command_line",
+    33: "day_33_paths_and_file_metadata",
+    34: "day_34_safe_subprocesses",
+    35: "day_35_users_and_permissions",
+    36: "day_36_timeouts_and_resource_limits",
+    37: "day_37_processes__threads__and_queues",
+    38: "day_38_async_i_o",
+    39: "day_39_host_inventories",
+    40: "day_40_project__host_baseline_auditor",
+    41: "day_41_addresses__ports__and_sockets",
 }
 
 
@@ -939,7 +939,7 @@ SPECS = [
 
 def render(spec: Spec) -> str:
     previous_dir = (
-        DIRS[spec.day - 1] if spec.day > 21 else "020_day_project__log_triage_cli"
+        DIRS[spec.day - 1] if spec.day > 21 else "day_20_project__log_triage_cli"
     )
     next_dir = DIRS[spec.day + 1]
     lines = [

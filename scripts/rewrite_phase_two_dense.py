@@ -8,18 +8,18 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 DAY_DIRS = {
-    10: "010_day_checkpoint_log_triage",
-    11: "011_day_function_contracts",
-    12: "012_day_modules_and_packages",
-    13: "013_day_exceptions_and_error_taxonomy",
-    14: "014_day_files_and_safe_paths",
-    15: "015_day_iterators_and_generators",
-    16: "016_day_regular_expressions",
-    17: "017_day_dates_and_timelines",
-    18: "018_day_classes_and_dataclasses",
-    19: "019_day_testing_with_pytest",
-    20: "020_day_project__log_triage_cli",
-    21: "021_day_virtual_environments",
+    10: "day_10_checkpoint_log_triage",
+    11: "day_11_function_contracts",
+    12: "day_12_modules_and_packages",
+    13: "day_13_exceptions_and_error_taxonomy",
+    14: "day_14_files_and_safe_paths",
+    15: "day_15_iterators_and_generators",
+    16: "day_16_regular_expressions",
+    17: "day_17_dates_and_timelines",
+    18: "day_18_classes_and_dataclasses",
+    19: "day_19_testing_with_pytest",
+    20: "day_20_project__log_triage_cli",
+    21: "day_21_virtual_environments",
 }
 
 
@@ -44,7 +44,7 @@ class Lesson:
 LESSONS = [
     Lesson(
         11,
-        "011_day_function_contracts",
+        "day_11_function_contracts",
         "Function Contracts and Explicit Security Decisions",
         "A function is where an idea becomes a reusable promise. Security utilities become trustworthy when their inputs, outputs, failures, and side effects are visible enough for another person to review.",
         "Complete Days 1–10. You should be able to write a function, return a value, and test a boundary.",
@@ -91,7 +91,7 @@ LESSONS = [
     ),
     Lesson(
         12,
-        "012_day_modules_and_packages",
+        "day_12_modules_and_packages",
         "Modules, Packages, and Import Boundaries",
         "A security tool that grows in one file becomes difficult to test, review, and reuse. Modules let you separate parsing, policy, formatting, and command-line orchestration while keeping import behavior predictable.",
         "Complete Day 11 and know how a function contract is written.",
@@ -138,7 +138,7 @@ LESSONS = [
     ),
     Lesson(
         13,
-        "013_day_exceptions_and_error_taxonomy",
+        "day_13_exceptions_and_error_taxonomy",
         "Exceptions and Error Taxonomy",
         "Errors are part of a security tool’s output. If a program hides a malformed record, a permission failure, and a programming bug under one `except`, operators cannot know what happened or what to do next.",
         "Complete Days 1–12 and be comfortable with modules, functions, and conversion errors.",
@@ -185,7 +185,7 @@ LESSONS = [
     ),
     Lesson(
         14,
-        "014_day_files_and_safe_paths",
+        "day_14_files_and_safe_paths",
         "Files, Paths, and Safe Evidence Boundaries",
         "Files are useful evidence sources and dangerous trust boundaries. A path supplied by a user can escape the intended directory, a large file can consume resources, and a report can overwrite something important.",
         "Complete Days 1–13 and know how to catch a boundary exception.",
@@ -232,7 +232,7 @@ LESSONS = [
     ),
     Lesson(
         15,
-        "015_day_iterators_and_generators",
+        "day_15_iterators_and_generators",
         "Generators, Iterators, and Streaming Evidence",
         "A list loads everything before processing; a generator produces one item at a time. Streaming can reduce memory use, but it does not remove the need for bounds, error handling, or a completeness signal.",
         "Complete Days 1–14 and be able to read a bounded file path.",
@@ -279,7 +279,7 @@ LESSONS = [
     ),
     Lesson(
         16,
-        "016_day_regular_expressions",
+        "day_16_regular_expressions",
         "Regular Expressions and Careful Indicator Extraction",
         "Regular expressions are useful for finding candidate shapes in text, such as an IP-like token or an event ID. They are not complete validators and must never turn a match into an accusation.",
         "Complete Days 1–15 and understand strings, generators, and bounded processing.",
@@ -326,7 +326,7 @@ LESSONS = [
     ),
     Lesson(
         17,
-        "017_day_dates_and_timelines",
+        "day_17_dates_and_timelines",
         "Timestamps, Timezones, and Incident Timelines",
         "Security evidence is often ordered by time, but timestamps arrive in different formats and offsets. A timeline is only as reliable as its parsing, timezone policy, and provenance.",
         "Complete Days 1–16 and be able to parse strings at a boundary.",
@@ -373,7 +373,7 @@ LESSONS = [
     ),
     Lesson(
         18,
-        "018_day_classes_and_dataclasses",
+        "day_18_classes_and_dataclasses",
         "Dataclasses and Evidence Models",
         "A dictionary is flexible but lets field names and types drift. A dataclass gives a security tool a visible model for a finding, its evidence reference, and its confidence without pretending that the model authenticates the data.",
         "Complete Days 1–17 and understand functions, validation, collections, and timestamps.",
@@ -420,7 +420,7 @@ LESSONS = [
     ),
     Lesson(
         19,
-        "019_day_testing_with_pytest",
+        "day_19_testing_with_pytest",
         "Testing Security Utilities",
         "Tests turn a claim about code into a repeatable check. Security tests should cover ordinary behavior, boundaries, malformed inputs, and the absence of dangerous side effects.",
         "Complete Days 1–18 and run the existing pytest suite once.",
@@ -467,7 +467,7 @@ LESSONS = [
     ),
     Lesson(
         20,
-        "020_day_project__log_triage_cli",
+        "day_20_project__log_triage_cli",
         "Checkpoint: Build a Log-Triage CLI",
         "A command-line tool is where modules, errors, files, generators, regex, timelines, dataclasses, and tests meet. This checkpoint turns the phase into a small artifact that another learner can run and review.",
         "Complete Days 11–19. Run formatting, linting, compilation, and tests before starting the project.",

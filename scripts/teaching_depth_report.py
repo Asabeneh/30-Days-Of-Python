@@ -32,8 +32,8 @@ def status(text: str) -> str:
 
 def main() -> int:
     rows: list[tuple[int, str, int, int, int, str]] = []
-    for directory in sorted(ROOT.glob("[0-9][0-9][0-9]_day_*")):
-        number = int(directory.name[:3])
+    for directory in sorted(ROOT.glob("day_*")):
+        number = int(directory.name.split("_", 2)[1])
         text = lesson_file(directory).read_text(encoding="utf-8")
         rows.append(
             (

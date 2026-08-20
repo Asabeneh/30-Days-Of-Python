@@ -44,7 +44,7 @@ def check() -> list[str]:
     missing_dirs = sorted(name for name in REQUIRED_DIRS if not (ROOT / name).is_dir())
     errors.extend(f"missing directory: {name}" for name in missing_dirs)
 
-    day_dirs = sorted(ROOT.glob("[0-9][0-9][0-9]_day_*"))
+    day_dirs = sorted(ROOT.glob("day_*"))
     if len(day_dirs) != 120:
         errors.append(f"expected exactly 120 day directories, found {len(day_dirs)}")
 

@@ -405,9 +405,9 @@ zero-to-hero-python-cybersecurity-/
 ├── tests/
 │   ├── test_course_structure.py
 │   └── fixtures/
-├── 001_day_setup_and_safe_practice/
+├── day_01_setup_and_safe_practice/
 ├── ...
-├── 120_day_capstone/
+├── day_117_capstone_planning/
 ├── specializations/
 │   ├── blue-team/
 │   ├── appsec/

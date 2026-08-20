@@ -10,7 +10,7 @@ def test_required_directories_exist() -> None:
 
 
 def test_first_ten_days_have_lesson_and_practice() -> None:
-    day_dirs = sorted(ROOT.glob("[0-9][0-9][0-9]_day_*"))
+    day_dirs = sorted(ROOT.glob("day_*"))
     assert len(day_dirs) >= 10
     for day_dir in day_dirs[:10]:
         assert (day_dir / f"{day_dir.name}.md").is_file()
