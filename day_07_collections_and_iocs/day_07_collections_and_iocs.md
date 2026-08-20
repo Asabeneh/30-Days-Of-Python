@@ -2,199 +2,203 @@
 
 [← Day 6](../day_06_loops_and_bounded_work/day_06_loops_and_bounded_work.md) · [Day index](../DAY_INDEX.md) · [Day 8 →](../day_08_strings_and_canonicalization/day_08_strings_and_canonicalization.md)
 
-## Table of Contents
+## Welcome
 
-- [Why this lesson exists](#why-this-lesson-exists)
-- [Prerequisites](#prerequisites)
-- [Outcomes](#outcomes)
-- [The problem](#the-problem)
-- [Security boundary](#security-boundary)
-- [Lesson](#lesson)
-- [Worked examples](#worked-examples)
-- [Execution trace](#execution-trace)
-- [Common mistakes](#common-mistakes)
-- [Security application](#security-application)
-- [Exercises](#exercises)
-- [Finish line](#finish-line)
+One value is useful, but cybersecurity programs usually handle groups of values. Today you will learn lists, tuples, sets, and dictionaries by asking what each collection promises and when that promise matters.
 
-## Why this lesson exists
-
-Indicators arrive as repeated values with different roles: a list preserves events, a set removes duplicates, and a dictionary associates an indicator with metadata. Choosing the wrong collection can lose evidence or create ambiguity.
+This lesson is designed for a learner who may still need to look up how to create a file, run it, or read an error. Type the examples instead of reading them passively. Before running an experiment, write down what you expect. The difference between your prediction and Python's output is where learning happens.
 
 ## Prerequisites
 
-Complete Day 6 and understand iteration and bounded processing.
+Complete Day 6. Use the repository's local synthetic fixtures only. Keep a terminal open at the repository root and run each file with the Python command that worked on your computer.
 
 ## Outcomes
 
-By the end of this lesson, you can:
-
-- choose between list, tuple, set, and dictionary
-- preserve order when evidence needs chronology
-- remove duplicates without losing first-seen order
-- associate indicator values with metadata
-- state what a collection can and cannot prove
+By the end of this lesson, you should be able to explain the new vocabulary in your own words, run and modify the examples, predict at least one boundary case, repair a deliberate mistake, and apply the idea to a bounded cybersecurity fixture.
 
 ## The problem
 
-A synthetic fixture contains repeated domain-like strings and IP-like addresses. You need a catalog for quick membership checks while preserving the original event order for review.
+A small indicator catalog needs to preserve observations, remove duplicates when appropriate, and attach fields such as type and source. Choosing the wrong collection can lose order, overwrite values, or make a report hard to understand.
 
 ## Security boundary
 
-Use only the repository, synthetic examples, and local fixtures. The examples may describe security signals, but they do not identify attackers, authorize testing, or justify touching public systems. Keep real credentials, private logs, and university or employer data out of the lesson.
+This lesson is educational and local. It does not authorize public scanning, credential use, data collection, exploitation, interception, or changes to systems you do not own. The cybersecurity examples use invented names, loopback targets, or repository fixtures.
+
+## Vocabulary
+
+A **list** is an ordered, changeable collection. A **tuple** is an ordered collection commonly used for fixed groups. A **set** stores unique values without promising list-style order. A **dictionary** maps keys to values. A **membership test** asks whether a value is present.
 
 ## Lesson
 
-### Lists preserve order
+A list preserves order:
 
 ```python
-observations = ["dns", "auth", "dns"]
-print(observations[0])
-print(observations[-1])
-observations.append("process")
-print(observations)
+events = ["login_failed", "logout", "login_failed"]
+print(events[0])
+print(len(events))
 ```
 
-Lists are mutable and ordered. The duplicate `dns` may be meaningful because it occurred twice.
+The first item has index 0, not index 1. The list contains a duplicate because the same event occurred twice. Lists are appropriate when order and repeated observations matter.
 
-### Sets support membership and uniqueness
+A set removes duplicates:
 
 ```python
-unique = set(observations)
-print("dns" in unique)
-print(unique)
+indicators = {"example.invalid", "example.invalid", "training.invalid"}
+print(len(indicators))
+print("training.invalid" in indicators)
 ```
 
-A set removes duplicates and does not promise the chronological order of a list. Use it when uniqueness or membership is the purpose.
+The length is 2. A set is useful for asking whether a value has already been seen. Do not use it when the count or original order of observations is important.
 
-### Dictionaries map keys to values
+A dictionary stores related fields:
 
 ```python
-finding = {
-    "indicator": "example.invalid",
+record = {
+    "value": "example.invalid",
     "kind": "domain",
-    "confidence": "low",
+    "source": "training-fixture",
 }
-print(finding["kind"])
-print(finding.get("owner", "unknown"))
+print(record["kind"])
 ```
 
-`finding["owner"]` would raise `KeyError` if missing; `.get` lets you choose a default. Do not let a default hide a required field.
-
-### Tuples communicate fixed structure
+The key `kind` retrieves the value `domain`. A missing key raises `KeyError` when accessed with brackets. You can use `.get` when missing data has a documented fallback:
 
 ```python
-coordinate = ("example.invalid", "domain")
-name, kind = coordinate
-print(name, kind)
+confidence = record.get("confidence")
+print(confidence)
 ```
 
-A tuple can signal that the pair should not be changed. It does not enforce security or validate either string.
+This prints `None` because the key is absent. Do not use a fallback simply to hide a required field; decide whether missing confidence should reject the record or mark it unknown.
+
+Tuples are useful for fixed pairs:
+
+```python
+address = ("127.0.0.1", 8000)
+host, port = address
+print(host)
+print(port)
+```
+
+The two assignments unpack the tuple. The address is not a real remote target; it is a local training value. The point is to learn how related values can travel together.
+
+A catalog may combine collections:
+
+```python
+catalog = [
+    {"value": "example.invalid", "kind": "domain"},
+    {"value": "127.0.0.1", "kind": "address"},
+]
+for item in catalog:
+    print(f"{item['kind']}={item['value']}")
+```
+
+Read the outer list as “many records” and each inner dictionary as “fields for one record.” This shape appears often in JSON and API responses.
+
+Mutation changes a collection:
+
+```python
+items = ["a", "b"]
+items.append("c")
+print(items)
+```
+
+The list now contains three items. A name referring to a mutable list can observe changes made elsewhere. Later lessons will discuss copying and shared state; for now, remember that a collection can be changed after creation.
+
 ## Worked examples
 
-### Example 1: unique values in first-seen order
+Run the examples in order. Each one changes only a small part of the previous idea.
 
-```python
-def unique_in_order(values):
-    seen = set()
-    result = []
-    for value in values:
-        if value not in seen:
-            seen.add(value)
-            result.append(value)
-    return result
-```
+### Example 1: A first runnable case
 
-This keeps the order of first appearance while using a set for quick membership checks.
+Run the smallest version first and explain what each line contributes.
 
-### Example 2: catalog metadata
+### Example 2: A boundary case
 
-```python
-catalog = {}
-for value in ["example.invalid", "203.0.113.8", "example.invalid"]:
-    kind = (
-        "domain" if "." in value and not value.replace(".", "").isdigit() else "ip-like"
-    )
-    catalog.setdefault(value, {"kind": kind, "count": 0})
-    catalog[value]["count"] += 1
-print(catalog)
-```
+Change exactly one input to an empty, malformed, or out-of-range value. Predict the result before running it.
 
-The heuristic is intentionally simple and not a real indicator validator. It illustrates how metadata can be attached without changing the raw value.
+### Example 3: A deliberate experiment
 
-### Example 3: list of records
+Make one controlled change, record the output, and compare it with your prediction. Do not change several lines at once.
 
-```python
-events = [
-    {"line": 1, "indicator": "example.invalid"},
-    {"line": 2, "indicator": "example.invalid"},
-]
-for event in events:
-    print(event["line"], event["indicator"])
-```
+### Example 4: A bounded security fixture
 
-A list of dictionaries preserves event order and supports later reporting.
-
-### Example 4: defensive copy
-
-```python
-original = ["alpha", "beta"]
-copy = original.copy()
-copy.append("gamma")
-print(original)
-print(copy)
-```
-
-The original list is unchanged. Accidental aliasing can make a parser modify evidence that another part of the program expects to remain raw.
-
-### Example 5: explicit missing data
-
-```python
-record = {"indicator": "example.invalid"}
-owner = record.get("owner")
-print(owner is None)
-```
-
-Missing ownership is a data-quality gap, not proof of maliciousness.
+Apply the idea to the synthetic fixture in this lesson. The fixture is local, finite, and invented; it is not permission to inspect real systems.
 
 ## Execution trace
 
-For `unique_in_order(["a", "b", "a"])`:
+Trace a deduplication task:
 
-| Value | `seen` before | Action | `result` after |
-| --- | --- | --- | --- |
-| `a` | `{}` | add and append | `["a"]` |
-| `b` | `{a}` | add and append | `["a", "b"]` |
-| `a` | `{a, b}` | skip | `["a", "b"]` |
+```python
+observed = ["a", "b", "a"]
+unique = set(observed)
+report = {"observed": len(observed), "unique": len(unique)}
+print(report)
+```
 
-## Common mistakes
+| Step | Name | Value |
+| ---: | --- | --- |
+| 1 | `observed` | three observations, including a duplicate |
+| 2 | `unique` | two unique values |
+| 3 | `report` | a dictionary containing both counts |
 
-| Mistake | Symptom | Correction |
+The set answers a uniqueness question but does not preserve the event sequence. Keep both collections when both facts matter.
+
+## Common mistakes and repairs
+
+| Mistake | Symptom | Repair |
 | --- | --- | --- |
-| converting every list to a set | chronology disappears | preserve the list and derive a set |
-| using a list for repeated membership checks | code becomes slow on large input | use a set for membership |
-| indexing a missing dictionary key | `KeyError` | decide whether missing is an error or default |
-| mutating shared lists | raw evidence changes unexpectedly | copy before transforming |
-| calling an indicator malicious | the value is treated as a conclusion | label it as observed and record confidence |
+| Indexing at 1 | The first item is missed or an error occurs. | Remember that Python starts at 0. |
+| Set for a timeline | Order and duplicate count disappear. | Keep a list for observations. |
+| Dictionary key missing | `KeyError`. | Validate required keys or use a deliberate fallback. |
+| Mutable list shared | One function changes another function's data. | Copy or document ownership. |
+| Treating a value as trusted because it is in a set | Membership only answers presence. | Preserve source and confidence fields. |
+
+## Guided practice
+
+Create a small indicator catalog in stages. Begin with a list of three synthetic strings. Add a duplicate and count observations. Convert to a set and count unique values. Then create dictionaries containing `value`, `kind`, and `source`.
+
+Write a report that prints both `observed_count` and `unique_count`. Add one record with a missing `confidence` key and decide whether your program should print `unknown` or reject the record. Explain your choice before coding it.
 
 ## Security application
 
-Create a catalog from synthetic indicators in `shared/fixtures`. Keep the original observations, store a normalized key separately, count repeats, and record the source line. Do not resolve, scan, or contact the indicators.
-## Exercises
+Collections help organize evidence but do not make evidence true. A list preserves the observations your fixture contained. A set can help detect duplicates. A dictionary can label fields. None of them proves that an indicator is malicious, that a source is authentic, or that a real-world action is justified.
 
-Complete the numbered questions in [practice/exercises.md](practice/exercises.md) in order. Use the examples from this lesson as your starting point. Use [hints](practice/hints.md) only after a genuine attempt and [solutions](practice/solutions.md) only to compare your reasoning.
+Use `.invalid` domains, loopback addresses, and invented hashes in exercises. Do not resolve, scan, or query these values against public services.
+
+## Independent exercises
+
+Complete these in [`practice/exercises.md`](practice/exercises.md) in order:
+
+1. Create a list with three events and print the first and last item.
+2. Explain why the first list index is 0.
+3. Add a duplicate and calculate observed and unique counts.
+4. Create a set and demonstrate membership.
+5. Create a dictionary with `value`, `kind`, and `source`.
+6. Access a missing dictionary key and record the exception.
+7. Repair the missing-key behavior with a documented fallback.
+8. Build a list of dictionaries representing synthetic indicators.
+9. Add a tuple for a loopback host and port.
+10. Explain which collection preserves order and which removes duplicates.
+11. Write a report that includes source and confidence without claiming a verdict.
+12. Safety question: explain why storing an indicator in a collection does not authorize acting on it.
+
+
+
+### Additional beginner checkpoint
+
+Pause before adding another feature. Read the current program aloud as a sequence of decisions: what enters, what is transformed, what is checked, and what leaves. Write down one value that is allowed, one value that must be rejected, and one value whose meaning is uncertain. This distinction matters in cybersecurity because an unknown observation should not silently become a safe conclusion. Run the allowed case, the rejected case, and the uncertain case separately. Keep the exact output in your notes and explain which line produced it.
+
+Now make the smallest useful improvement. Give one name a clearer meaning, extract one repeated operation, or add one explicit boundary check. Run the same three cases again. If the behavior changed, explain whether the change was intended. If a test now fails, treat the failure as information about the contract rather than deleting the test. Finish by writing one sentence about the lesson's limitation: a local Python rule can organize synthetic evidence, but it cannot establish authorization, authenticity, or the truth of a real-world accusation.
 
 ## Finish line
 
-Run the starter, pass the relevant tests, complete the numbered exercises, and explain one edge case aloud or in writing.
+Day 7 is complete when you can choose a collection based on order, uniqueness, mutability, and key-value structure, build a small catalog, handle missing fields, and preserve the difference between an observation and an interpretation.
 
-## Mental model
+## References
 
-> Choose a collection based on what must be preserved: lists for order, sets for uniqueness, dictionaries for relationships, and tuples for fixed groupings.
-
-## Limitations
-
-A catalog is only as reliable as its input and labeling rules. Duplicate removal can hide frequency, and an indicator string alone does not establish threat intent.
-
+[1]: https://docs.python.org/3/tutorial/datastructures.html "Python data structures"
+[2]: https://docs.python.org/3/library/stdtypes.html#dict "Python dictionary documentation"
+[3]: https://docs.python.org/3/library/stdtypes.html#set "Python set documentation"
+[4]: https://www.cisa.gov/topics/cyber-threats-and-advisories "CISA cyber threat guidance"
 
 [← Day 6](../day_06_loops_and_bounded_work/day_06_loops_and_bounded_work.md) · [Day index](../DAY_INDEX.md) · [Day 8 →](../day_08_strings_and_canonicalization/day_08_strings_and_canonicalization.md)

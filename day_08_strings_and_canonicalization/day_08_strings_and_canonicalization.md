@@ -2,207 +2,206 @@
 
 [← Day 7](../day_07_collections_and_iocs/day_07_collections_and_iocs.md) · [Day index](../DAY_INDEX.md) · [Day 9 →](../day_09_functions_and_validation/day_09_functions_and_validation.md)
 
-## Table of Contents
+## Welcome
 
-- [Why this lesson exists](#why-this-lesson-exists)
-- [Prerequisites](#prerequisites)
-- [Outcomes](#outcomes)
-- [The problem](#the-problem)
-- [Security boundary](#security-boundary)
-- [Lesson](#lesson)
-- [Worked examples](#worked-examples)
-- [Execution trace](#execution-trace)
-- [Common mistakes](#common-mistakes)
-- [Security application](#security-application)
-- [Exercises](#exercises)
-- [Finish line](#finish-line)
+Security data often arrives as text, but text is not one simple thing. Case, whitespace, Unicode, separators, and encoding can make two strings look similar while comparing differently. Today you will learn to normalize text deliberately without destroying the original evidence.
 
-## Why this lesson exists
-
-Text is where logs, usernames, URLs, commands, and evidence meet the program. Small differences in whitespace, case, Unicode, or encoding can cause duplicate records or incorrect comparisons.
+This lesson is designed for a learner who may still need to look up how to create a file, run it, or read an error. Type the examples instead of reading them passively. Before running an experiment, write down what you expect. The difference between your prediction and Python's output is where learning happens.
 
 ## Prerequisites
 
-Complete Day 7. Be able to iterate through a list and preserve raw values.
+Complete Day 7. Use the repository's local synthetic fixtures only. Keep a terminal open at the repository root and run each file with the Python command that worked on your computer.
 
 ## Outcomes
 
-By the end of this lesson, you can:
-
-- inspect and transform strings
-- distinguish raw text from normalized keys
-- explain Unicode text and UTF-8 bytes
-- canonicalize without destroying evidence
-- avoid unsafe assumptions about text
+By the end of this lesson, you should be able to explain the new vocabulary in your own words, run and modify the examples, predict at least one boundary case, repair a deliberate mistake, and apply the idea to a bounded cybersecurity fixture.
 
 ## The problem
 
-Two records contain `Admin`, ` admin `, and `Ａｄｍｉｎ`. A comparison policy may treat them as the same key, but an investigator may still need the original spellings.
+A tool wants to compare event labels consistently, but input may contain spaces, different capitalization, or different textual representations. If it silently changes the evidence, it may make a useful comparison while losing the original context.
 
 ## Security boundary
 
-Use only the repository, synthetic examples, and local fixtures. The examples may describe security signals, but they do not identify attackers, authorize testing, or justify touching public systems. Keep real credentials, private logs, and university or employer data out of the lesson.
+This lesson is educational and local. It does not authorize public scanning, credential use, data collection, exploitation, interception, or changes to systems you do not own. The cybersecurity examples use invented names, loopback targets, or repository fixtures.
+
+## Vocabulary
+
+A **string** is a sequence of text characters. **Whitespace** includes spaces, tabs, and line breaks. **Encoding** maps characters to bytes. **Canonicalization** turns equivalent representations into one comparison form. **Normalization** should be recorded when the original matters.
 
 ## Lesson
 
-### Strings are sequences of text
+Start with string methods:
 
 ```python
-message = "login_failed"
-print(len(message))
-print(message[0])
-print(message[-1])
-print(message[0:5])
-```
-
-Indexes begin at zero. Slicing creates a new string and excludes the stop index. Do not assume that one visible character always equals one byte.
-
-### Whitespace and case
-
-```python
-raw = "  Admin  "
+raw = "  Login_Failed  "
 print(raw.strip())
+print(raw.lower())
 print(raw.strip().casefold())
 ```
 
-`strip` removes surrounding whitespace. `casefold` is designed for case-insensitive comparison. Keep `raw` if the original representation is evidence.
+`strip()` removes edge whitespace. `lower()` changes letters to lowercase. `casefold()` is designed for more complete case-insensitive comparisons. Neither method changes `raw`; strings are immutable, so each method returns a new string.
 
-### Replace is not validation
+Splitting turns one string into pieces:
 
 ```python
-value = "example.invalid/path"
-print(value.replace("/", "_"))
+line = "level=7 source=training-auth"
+parts = line.split()
+print(parts)
 ```
 
-Replacement creates a transformed value. It does not prove that the original path or domain is valid, safe, or authorized.
+Expected output is a list of two pieces. `split()` uses whitespace by default. You can specify a separator:
 
-### Text and bytes
+```python
+pair = "severity:7"
+key, value = pair.split(":", 1)
+print(key)
+print(value)
+```
+
+The second argument `1` limits the number of splits. Without a limit, a value containing a colon could produce more pieces than expected. Parsing rules should state what happens when the delimiter is missing.
+
+Joining performs the opposite movement:
+
+```python
+fields = ["source=training-auth", "severity=7"]
+line = " ".join(fields)
+print(line)
+```
+
+Use `repr()` when debugging invisible characters:
+
+```python
+value = "login_failed
+"
+print(value)
+print(repr(value))
+```
+
+The first print creates a line break from the value. The second shows the escape sequence so you can see it.
+
+Canonicalization should be narrow. If you want to compare event labels, define the comparison form:
+
+```python
+def canonical_label(text):
+    return text.strip().casefold().replace("-", "_")
+
+
+print(canonical_label(" Login-Failed "))
+```
+
+The result is `login_failed`. Keep the raw label if you need to report exactly what arrived. Canonicalization for comparison is not permission to overwrite evidence.
+
+Encoding matters when text becomes bytes:
 
 ```python
 text = "café"
-data = text.encode("utf-8")
-print(data)
-print(data.decode("utf-8"))
+encoded = text.encode("utf-8")
+print(encoded)
+print(encoded.decode("utf-8"))
 ```
 
-The string is Unicode text. UTF-8 encodes it as bytes for storage or transport. Decode with the encoding you expect; arbitrary decoding can corrupt or reject data.
+UTF-8 is a common encoding, but a decoder must use the encoding that matches the data source. Decoding bytes with the wrong encoding can raise `UnicodeDecodeError` or produce the wrong characters.
 
-### Raw and canonical forms
+Never normalize paths, URLs, identifiers, or security tokens with a generic string function without understanding the context. A comparison form for labels is not automatically safe for a filesystem path or a URL.
 
-```python
-def canonical_key(text):
-    return " ".join(text.strip().casefold().split())
-
-
-raw = "  ADMIN   user "
-print(raw)
-print(canonical_key(raw))
-```
-
-The canonical key is useful for comparison, but it must not replace the raw observation in an evidence record.
 ## Worked examples
 
-### Example 1: empty versus whitespace
+Run the examples in order. Each one changes only a small part of the previous idea.
 
-```python
-for value in ["", " ", "
-", "admin"]:
-    print(repr(value), bool(value), bool(value.strip()))
-```
+### Example 1: A first runnable case
 
-A whitespace string is non-empty but has no visible content after stripping. Test the rule you actually intend.
+Run the smallest version first and explain what each line contributes.
 
-### Example 2: Unicode normalization
+### Example 2: A boundary case
 
-```python
-import unicodedata
+Change exactly one input to an empty, malformed, or out-of-range value. Predict the result before running it.
 
-value = "Ａｄｍｉｎ"
-normalized = unicodedata.normalize("NFKC", value)
-print(normalized)
-```
+### Example 3: A deliberate experiment
 
-Unicode normalization can make visually equivalent forms comparable. It can also change representation, so retain the raw input.
+Make one controlled change, record the output, and compare it with your prediction. Do not change several lines at once.
 
-### Example 3: safe display
+### Example 4: A bounded security fixture
 
-```python
-line = "user=alice token=training-secret"
-print(line.replace("training-secret", "[REDACTED]"))
-```
-
-This is a demonstration only. Real redaction should identify fields structurally and test that secrets cannot appear through alternate formatting.
-
-### Example 4: bounded string input
-
-```python
-def accept_message(text, maximum=2000):
-    if len(text) > maximum:
-        raise ValueError("message is too long")
-    return text
-```
-
-Length limits protect later processing. They do not guarantee that the content is harmless.
-
-### Example 5: canonicalization with provenance
-
-```python
-record = {
-    "raw_username": "  Admin ",
-    "canonical_username": canonical_key("  Admin "),
-}
-print(record)
-```
-
-A reviewer can see both the original and the comparison key.
+Apply the idea to the synthetic fixture in this lesson. The fixture is local, finite, and invented; it is not permission to inspect real systems.
 
 ## Execution trace
 
-For `canonical_key("  ADMIN   user ")`:
+Trace:
 
-| Step | Operation | Result |
-| ---: | --- | --- |
-| 1 | `strip()` | `"ADMIN   user"` |
-| 2 | `casefold()` | `"admin   user"` |
-| 3 | `split()` | `["admin", "user"]` |
-| 4 | `" ".join(...)` | `"admin user"` |
+```python
+raw = "  Login-Failed 
+"
+comparison = raw.strip().casefold().replace("-", "_")
+print(repr(raw))
+print(comparison)
+```
 
-The transformation is deterministic and explainable.
+| Step | Value |
+| ---: | --- |
+| 1 | raw text includes spaces and a newline |
+| 2 | `strip()` removes the edge whitespace |
+| 3 | `casefold()` changes letter case |
+| 4 | `replace()` changes the selected separator |
+| 5 | `repr(raw)` still shows the original representation |
 
-## Common mistakes
+The comparison value is useful for matching. The raw value remains useful for provenance and debugging.
 
-| Mistake | Symptom | Correction |
+## Common mistakes and repairs
+
+| Mistake | Symptom | Repair |
 | --- | --- | --- |
-| normalizing in place | original evidence is lost | store raw and canonical values separately |
-| assuming ASCII | names or paths fail for Unicode | define encoding and test representative text |
-| using `lower` everywhere | some Unicode cases compare poorly | use `casefold` for comparison when appropriate |
-| stripping internal spaces | distinct values collapse | define whether internal whitespace is meaningful |
-| redacting only one spelling | a secret leaks in another form | model fields and test variants |
+| `lower()` used as universal security normalization | Context-specific rules are ignored. | Define the exact comparison policy. |
+| Discarding raw input | The original evidence cannot be reviewed. | Preserve a safe reference or original fixture. |
+| `split()` without a rule | Unexpected field counts. | Limit splits and handle missing separators. |
+| Decoding with a guess | Errors or corrupted text. | Use documented source encoding. |
+| Replacing every symbol | Meaning changes silently. | Canonicalize only the intended field. |
+
+## Guided practice
+
+Take the string `"  Login-Failed "` through checkpoints: inspect it with `repr`, strip it, casefold it, replace the dash, and compare it with `"login_failed"`. Then add a second label that should not match and prove the result.
+
+Create a small parser for `key=value` fields. Test a normal field, a field with extra `=`, a missing separator, and an empty value. Write down which cases your parser accepts and why.
 
 ## Security application
 
-Build a local normalizer for synthetic usernames or indicator keys. Produce a table with raw value, canonical key, and reason for normalization. Never resolve or contact a normalized indicator.
-## Exercises
+In security tools, canonicalization can prevent duplicate labels or inconsistent comparisons, but it can also hide meaningful differences if applied too broadly. Keep raw synthetic text separate from its normalized comparison form. A report might contain `raw_label` as a redacted or fixture reference and `canonical_label` as the value used for a rule.
 
-Complete the numbered questions in [practice/exercises.md](practice/exercises.md) in order. Use the examples from this lesson as your starting point. Use [hints](practice/hints.md) only after a genuine attempt and [solutions](practice/solutions.md) only to compare your reasoning.
+Do not normalize or inspect real personal identifiers, URLs, tokens, or private logs in this lesson.
+
+## Independent exercises
+
+Complete these in [`practice/exercises.md`](practice/exercises.md) in order:
+
+1. Show the difference between `strip`, `lower`, and `casefold` on a sample.
+2. Use `repr` to reveal a newline and a tab.
+3. Split a key-value pair at the first colon only.
+4. Join three fields with a separator.
+5. Write `canonical_label` for a documented label policy.
+6. Preserve both raw and canonical values in a synthetic record.
+7. Encode and decode a non-ASCII string using UTF-8.
+8. Trigger and explain a missing-separator case.
+9. Explain why generic replacement is dangerous for a URL or path.
+10. Build a small text normalizer and test empty, spaced, and mixed-case input.
+11. Describe the difference between characters and bytes.
+12. Safety question: explain why retaining raw text can be a privacy concern and how fixtures reduce that risk.
+
+
+
+### Additional beginner checkpoint
+
+Pause before adding another feature. Read the current program aloud as a sequence of decisions: what enters, what is transformed, what is checked, and what leaves. Write down one value that is allowed, one value that must be rejected, and one value whose meaning is uncertain. This distinction matters in cybersecurity because an unknown observation should not silently become a safe conclusion. Run the allowed case, the rejected case, and the uncertain case separately. Keep the exact output in your notes and explain which line produced it.
+
+Now make the smallest useful improvement. Give one name a clearer meaning, extract one repeated operation, or add one explicit boundary check. Run the same three cases again. If the behavior changed, explain whether the change was intended. If a test now fails, treat the failure as information about the contract rather than deleting the test. Finish by writing one sentence about the lesson's limitation: a local Python rule can organize synthetic evidence, but it cannot establish authorization, authenticity, or the truth of a real-world accusation.
 
 ## Finish line
 
-Run the starter, pass the relevant tests, complete the numbered exercises, and explain one edge case aloud or in writing.
+Day 8 is complete when you can inspect invisible text, choose a narrow canonicalization rule, preserve original context, explain encoding, and handle malformed text without silently changing its meaning.
 
-## Mental model
+## References
 
-> Canonicalization creates a comparison representation; evidence handling requires preserving the original text and documenting every transformation.
-
-## Limitations
-
-No text normalization can determine intent or prove identity. Encoding errors, confusable characters, and lossy transformations require careful policy and review.
-
-## Optional video support
-
-Watch [CS50P Lecture 0](https://www.youtube.com/watch?v=JP7ITIXGpHk&t=24s) from `00:24` for the first program, then return to the local string examples.
-
-Use the [timestamped video catalog](../VIDEO_RESOURCES.md) only after running the local examples. The written lesson and Python documentation remain authoritative.
-
+[1]: https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str "Python string documentation"
+[2]: https://docs.python.org/3/library/stdtypes.html#str.casefold "Python casefold documentation"
+[3]: https://docs.python.org/3/library/stdtypes.html#str.encode "Python string encoding documentation"
+[4]: https://owasp.org/www-community/attacks/Unicode_Encoding "OWASP Unicode encoding considerations"
 
 [← Day 7](../day_07_collections_and_iocs/day_07_collections_and_iocs.md) · [Day index](../DAY_INDEX.md) · [Day 9 →](../day_09_functions_and_validation/day_09_functions_and_validation.md)

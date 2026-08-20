@@ -2,212 +2,200 @@
 
 [← Day 5](../day_05_branching_and_triage/day_05_branching_and_triage.md) · [Day index](../DAY_INDEX.md) · [Day 7 →](../day_07_collections_and_iocs/day_07_collections_and_iocs.md)
 
-## Table of Contents
+## Welcome
 
-- [Why this lesson exists](#why-this-lesson-exists)
-- [Prerequisites](#prerequisites)
-- [Outcomes](#outcomes)
-- [The problem](#the-problem)
-- [Security boundary](#security-boundary)
-- [Lesson](#lesson)
-- [Worked examples](#worked-examples)
-- [Execution trace](#execution-trace)
-- [Common mistakes](#common-mistakes)
-- [Security application](#security-application)
-- [Exercises](#exercises)
-- [Finish line](#finish-line)
+A loop repeats work. Repetition is powerful because security tools often process many records, but repetition is also a place where a beginner can accidentally create an infinite loop, read an unbounded file, or produce an enormous report. Today you will learn repetition with an explicit stopping rule.
 
-## Why this lesson exists
-
-Automation often processes many records. A loop gives you repetition, but an unbounded loop or unbounded input can exhaust time and memory. Security engineering requires limits.
+This lesson is designed for a learner who may still need to look up how to create a file, run it, or read an error. Type the examples instead of reading them passively. Before running an experiment, write down what you expect. The difference between your prediction and Python's output is where learning happens.
 
 ## Prerequisites
 
-Complete Day 5 and understand lists, conditions, and a returned classification.
+Complete Day 5. Use the repository's local synthetic fixtures only. Keep a terminal open at the repository root and run each file with the Python command that worked on your computer.
 
 ## Outcomes
 
-By the end of this lesson, you can:
-
-- iterate through a collection
-- use `range`, `break`, and `continue` deliberately
-- count and collect results
-- enforce record, line, and output limits
-- explain the trade-off between completeness and resource safety
+By the end of this lesson, you should be able to explain the new vocabulary in your own words, run and modify the examples, predict at least one boundary case, repair a deliberate mistake, and apply the idea to a bounded cybersecurity fixture.
 
 ## The problem
 
-A log file may contain millions of lines. A beginner’s first loop reads everything and prints everything. A safer utility processes a documented maximum and reports what it skipped.
+A program needs to inspect several synthetic events without copying the same line five times. It also needs to stop. A loop without a bound or a progress rule can consume time, memory, and attention indefinitely.
 
 ## Security boundary
 
-Use only the repository, synthetic examples, and local fixtures. The examples may describe security signals, but they do not identify attackers, authorize testing, or justify touching public systems. Keep real credentials, private logs, and university or employer data out of the lesson.
+This lesson is educational and local. It does not authorize public scanning, credential use, data collection, exploitation, interception, or changes to systems you do not own. The cybersecurity examples use invented names, loopback targets, or repository fixtures.
+
+## Vocabulary
+
+A **loop** repeats a block. A `for` loop visits items in a sequence. A `while` loop continues while a condition is true. A **bound** is a deliberate maximum. `break` stops a loop; `continue` skips to the next iteration. An **iteration** is one pass through the body.
 
 ## Lesson
 
-### A `for` loop repeats a known sequence
+Start with a `for` loop:
 
 ```python
-statuses = ["ok", "failed", "ok"]
-for status in statuses:
-    print(status)
-```
-
-Python assigns each item to `status` in order. The loop ends after the list is exhausted. The variable name is not special; choose one that describes each item.
-
-### `range` produces a sequence of integers
-
-```python
-for number in range(3):
+for number in [1, 2, 3]:
     print(number)
 ```
 
-The output is `0`, `1`, `2`. The stop value is excluded. `range(1, 4)` produces `1`, `2`, `3`.
+Expected output is one number per line. Python takes the first item, assigns it to `number`, runs the indented body, then repeats for the next item. The name `number` changes during the loop, but the list is finite.
 
-### Accumulate without losing the count
+The `range` function creates a sequence of numbers for a loop:
 
 ```python
-failed = 0
-for status in statuses:
-    if status == "failed":
-        failed += 1
-print(failed)
+for index in range(3):
+    print(f"index={index}")
 ```
 
-The variable `failed` is state carried from one iteration to the next. Initialize it before the loop, and update it only when the condition is true.
+The output is 0, 1, and 2. The stop value 3 is not included. This is a common source of off-by-one mistakes. Read `range(3)` as “produce three positions starting at zero,” not “count from one to three.”
 
-### `continue` and `break`
+Use a counter when you need a total:
 
 ```python
-for line in ["", "login_failed", "malformed", "login_ok"]:
-    if not line:
-        continue
-    if line == "malformed":
+failed = ["a", "b", "c"]
+count = 0
+
+for event in failed:
+    count += 1
+    print(f"examining={event}")
+
+print(f"total={count}")
+```
+
+The counter starts at zero and increases once per item. The list is already finite, so this loop has a natural bound.
+
+A `while` loop needs a progress rule:
+
+```python
+attempt = 0
+while attempt < 3:
+    print(f"attempt={attempt}")
+    attempt += 1
+```
+
+If you forget `attempt += 1`, the condition remains true forever. A safe `while` loop should make its changing state and maximum attempts visible.
+
+You can add a second safety bound:
+
+```python
+items_seen = 0
+for event in events:
+    if items_seen >= 100:
         break
-    print(line)
+    print(event)
+    items_seen += 1
 ```
 
-The blank line is skipped. The malformed line stops the loop, so `login_ok` is never printed. Use these statements only when their effect is obvious; hidden early exits make evidence incomplete.
+This protects the consumer even if `events` is larger than expected. A bound is not an invitation to ignore the data source; it is a last line of resource control.
 
-### Bounds are part of the function contract
+`continue` can skip an item, but use it carefully:
 
 ```python
-def first_matches(lines, needle, limit=100):
-    if limit < 0:
-        raise ValueError("limit must not be negative")
-    matches = []
-    for line in lines:
-        if needle in line:
-            matches.append(line)
-            if len(matches) == limit:
-                break
-    return matches
+for event in ["", "login_failed", "", "logout"]:
+    if event == "":
+        continue
+    print(event)
 ```
 
-This function has a maximum result count. If `limit` is `0`, the current implementation returns an empty list only after the first match; refine it as an exercise and test your chosen behavior.
+The empty values are skipped. If you skip too much, your report may look clean because the program discarded the evidence. Record how many items were skipped when that matters.
+
+Nested loops multiply work. A loop over 100 files containing a loop over 1,000 lines may inspect 100,000 combinations. Before adding nesting, estimate the work and set a bound.
+
 ## Worked examples
 
-### Example 1: count by category
+Run the examples in order. Each one changes only a small part of the previous idea.
 
-```python
-counts = {"ok": 0, "failed": 0}
-for status in ["ok", "failed", "failed"]:
-    if status in counts:
-        counts[status] += 1
-print(counts)
-```
+### Example 1: A first runnable case
 
-The output is `{'ok': 1, 'failed': 2}`. The membership check prevents an unexpected status from creating a new category silently.
+Run the smallest version first and explain what each line contributes.
 
-### Example 2: line limit
+### Example 2: A boundary case
 
-```python
-lines = [f"event-{number}" for number in range(5)]
-for index, line in enumerate(lines):
-    if index >= 3:
-        break
-    print(line)
-```
+Change exactly one input to an empty, malformed, or out-of-range value. Predict the result before running it.
 
-Only three lines print. `enumerate` provides both the position and the value.
+### Example 3: A deliberate experiment
 
-### Example 3: maximum line length
+Make one controlled change, record the output, and compare it with your prediction. Do not change several lines at once.
 
-```python
-def accept_line(line, max_length=2000):
-    if len(line) > max_length:
-        return False
-    return True
-```
+### Example 4: A bounded security fixture
 
-A line-length limit prevents one malformed record from consuming excessive processing time. A real parser should record that the line was rejected without storing the entire oversized content.
-
-### Example 4: bounded generator input
-
-```python
-def take_first(items, limit):
-    for index, item in enumerate(items):
-        if index == limit:
-            return
-        yield item
-```
-
-A generator yields one item at a time. It can reduce memory use, but it still needs a limit.
-
-### Example 5: progress evidence
-
-```python
-processed = 0
-matched = 0
-for line in lines:
-    processed += 1
-    if "failed" in line:
-        matched += 1
-print(f"processed={processed} matched={matched}")
-```
-
-A report should say how many records were considered and how many matched. That makes a bounded result interpretable.
+Apply the idea to the synthetic fixture in this lesson. The fixture is local, finite, and invented; it is not permission to inspect real systems.
 
 ## Execution trace
 
-For `first_matches(["a", "login_failed", "b", "login_failed"], "login", 1)`:
+Trace:
 
-| Iteration | Line | Match? | State |
-| ---: | --- | --- | --- |
-| 1 | `a` | no | `matches=[]` |
-| 2 | `login_failed` | yes | append; length becomes 1 |
-| 2 | limit check | stop | return one match |
+```python
+items = ["a", "b", "c"]
+count = 0
+for item in items:
+    count += 1
+    print(item, count)
+```
 
-The function intentionally does not inspect the remaining line. Its result is bounded, not complete.
+| Iteration | `item` | `count` before | `count` after |
+| ---: | --- | ---: | ---: |
+| 1 | `a` | 0 | 1 |
+| 2 | `b` | 1 | 2 |
+| 3 | `c` | 2 | 3 |
 
-## Common mistakes
+For a `while` loop, trace both the condition and the changing value. If the value never changes toward the stopping condition, the loop is unsafe. The fastest way to debug a loop is often to print a small state value and add a temporary maximum iteration count.
 
-| Mistake | Symptom | Correction |
+## Common mistakes and repairs
+
+| Mistake | Symptom | Repair |
 | --- | --- | --- |
-| forgetting the stop value | one extra item is processed | test the exact limit |
-| printing every record | huge or sensitive output | collect bounded evidence and summarize |
-| no progress counters | result lacks context | report processed and matched counts |
-| `while True` without a stop | the process never finishes | define a counter, timeout, or input end |
-| loading a whole file first | memory grows with input | stream or cap the read |
+| Forgetting progress in `while` | Infinite loop. | Update the state every iteration. |
+| Assuming `range(3)` includes 3 | Missing or extra work. | Test the endpoints explicitly. |
+| No maximum input count | Resource use depends on an untrusted source. | Set a finite bound. |
+| `continue` hides evidence | The report silently loses records. | Count and explain skipped items. |
+| Nested loops without estimating work | Slow or exhausting processing. | Bound each dimension or redesign. |
+
+## Guided practice
+
+Write a loop in checkpoints. First loop over three literal event names and print them. Then count them. Then skip empty strings while incrementing a `skipped` counter. Finally, add a maximum of three processed items to a list containing five items.
+
+For each change, write the expected processed count and skipped count before running. If your program produces a different answer, inspect the state at the start and end of each iteration. Do not begin with a file or network source; learn the loop with a small list first.
 
 ## Security application
 
-Process the supplied synthetic log fixture with a maximum of 100 lines and 2,000 characters per line. Report `processed`, `matched`, `rejected`, and `truncated`. A truncated report must say it is incomplete.
-## Exercises
+A log tool may need to process many records, but “many” must be turned into a documented resource policy. A training parser can accept at most 100 lines, 1 MB, or 10 seconds of work. These numbers are examples, not universal security thresholds.
 
-Complete the numbered questions in [practice/exercises.md](practice/exercises.md) in order. Use the examples from this lesson as your starting point. Use [hints](practice/hints.md) only after a genuine attempt and [solutions](practice/solutions.md) only to compare your reasoning.
+When a bound is reached, report that processing was incomplete. Do not silently present the first 100 records as if they were the entire source. A bounded report is more honest when it says `complete=False` or `truncated=True`.
+
+## Independent exercises
+
+Complete these in [`practice/exercises.md`](practice/exercises.md) in order:
+
+1. Loop over three event names and predict the output order.
+2. Use `range(5)` and write down the exact values it produces.
+3. Count a list without using `len`.
+4. Write a `while` loop with a maximum of five attempts.
+5. Deliberately remove the progress statement and explain why the loop would not end.
+6. Skip empty events and count how many were skipped.
+7. Stop after three processed events and report truncation.
+8. Estimate the work in a nested loop of 10 files and 100 lines.
+9. Build a synthetic bounded log summary.
+10. Explain why a loop limit protects availability but can reduce completeness.
+11. Write a test for an empty list and a list larger than the bound.
+12. Safety question: explain why an unbounded loop over an untrusted file can become a security problem.
+
+
+
+### Additional beginner checkpoint
+
+Pause before adding another feature. Read the current program aloud as a sequence of decisions: what enters, what is transformed, what is checked, and what leaves. Write down one value that is allowed, one value that must be rejected, and one value whose meaning is uncertain. This distinction matters in cybersecurity because an unknown observation should not silently become a safe conclusion. Run the allowed case, the rejected case, and the uncertain case separately. Keep the exact output in your notes and explain which line produced it.
+
+Now make the smallest useful improvement. Give one name a clearer meaning, extract one repeated operation, or add one explicit boundary check. Run the same three cases again. If the behavior changed, explain whether the change was intended. If a test now fails, treat the failure as information about the contract rather than deleting the test. Finish by writing one sentence about the lesson's limitation: a local Python rule can organize synthetic evidence, but it cannot establish authorization, authenticity, or the truth of a real-world accusation.
 
 ## Finish line
 
-Run the starter, pass the relevant tests, complete the numbered exercises, and explain one edge case aloud or in writing.
+Day 6 is complete when you can explain one `for` loop and one `while` loop step by step, identify their stopping rule, add a finite work bound, account for skipped data, and report incomplete processing honestly.
 
-## Mental model
+## References
 
-> A loop is a repeated state transition; a security loop must define how much input, time, memory, and output it is allowed to consume.
-
-## Limitations
-
-A bound improves safety but can hide an event outside the inspected window. Always report truncation and choose limits from an explicit operational requirement.
-
+[1]: https://docs.python.org/3/tutorial/controlflow.html#for-statements "Python for statements"
+[2]: https://docs.python.org/3/reference/compound_stmts.html#while "Python while statements"
+[3]: https://docs.python.org/3/library/functions.html#range "Python range documentation"
+[4]: https://owasp.org/www-community/attacks/Denial_of_Service "OWASP denial of service overview"
 
 [← Day 5](../day_05_branching_and_triage/day_05_branching_and_triage.md) · [Day index](../DAY_INDEX.md) · [Day 7 →](../day_07_collections_and_iocs/day_07_collections_and_iocs.md)

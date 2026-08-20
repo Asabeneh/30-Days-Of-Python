@@ -1,211 +1,290 @@
-# Day 3: Types, Conversion, and Boundary Validation
+# Day 3: Types, Conversion, and Parsing Boundaries
 
 [← Day 2](../day_02_values_names_and_input/day_02_values_names_and_input.md) · [Day index](../DAY_INDEX.md) · [Day 4 →](../day_04_operators_and_decisions/day_04_operators_and_decisions.md)
 
-## Table of Contents
+## Welcome
 
-- [Why this lesson exists](#why-this-lesson-exists)
-- [Prerequisites](#prerequisites)
-- [Outcomes](#outcomes)
-- [The problem](#the-problem)
-- [Security boundary](#security-boundary)
-- [Lesson](#lesson)
-- [Worked examples](#worked-examples)
-- [Execution trace](#execution-trace)
-- [Common mistakes](#common-mistakes)
-- [Security application](#security-application)
-- [Exercises](#exercises)
-- [Finish line](#finish-line)
+Yesterday you stored values under names and learned that keyboard input begins as text. Today you will learn how to distinguish kinds of values and how to convert text deliberately. A parser is a small translator: it takes an outside representation and turns it into an internal value the program can reason about.
 
-## Why this lesson exists
-
-Most security automation failures begin at a boundary: a command-line argument, JSON field, filename, or log line is not the shape the program expected. Python gives you conversion tools, but you must add policy.
+This lesson is designed for a learner who may still need to look up how to create a file, run it, or read an error. Type the examples instead of reading them passively. Before running an experiment, write down what you expect. The difference between your prediction and Python's output is where learning happens.
 
 ## Prerequisites
 
-Complete Days 1–2. Be comfortable with `str`, `int`, `float`, `bool`, dictionaries, and f-strings.
+Complete Day 2. Use the repository's local synthetic fixtures only. Keep a terminal open at the repository root and run each file with the Python command that worked on your computer.
 
 ## Outcomes
 
-By the end of this lesson, you can:
-
-- inspect a value’s type
-- convert text deliberately
-- distinguish conversion errors from policy violations
-- write a bounded parser
-- test valid, boundary, and invalid inputs
+By the end of this lesson, you should be able to explain the new vocabulary in your own words, run and modify the examples, predict at least one boundary case, repair a deliberate mistake, and apply the idea to a bounded cybersecurity fixture.
 
 ## The problem
 
-A port number arrives as text. `int("70000")` succeeds, but port 70000 is outside the valid range. A parser must separate “Python can read this” from “the application accepts this.”
+A log line may contain `severity=7`, but the characters `7` are not automatically the integer 7. If you add the wrong value, compare the wrong type, or silently treat malformed text as valid, a security tool can make a bad decision. The solution is to inspect, convert, validate, and reject clearly.
 
 ## Security boundary
 
-Use only the repository, synthetic examples, and local fixtures. The examples may describe security signals, but they do not identify attackers, authorize testing, or justify touching public systems. Keep real credentials, private logs, and university or employer data out of the lesson.
+This lesson is educational and local. It does not authorize public scanning, credential use, data collection, exploitation, interception, or changes to systems you do not own. The cybersecurity examples use invented names, loopback targets, or repository fixtures.
+
+## Vocabulary
+
+A **type** describes what kind of value Python is holding. A `str` is text, an `int` is a whole number, a `float` is a decimal number, a `bool` is `True` or `False`, and `None` represents the deliberate absence of a value. **Conversion** asks Python to create a value of another type. **Parsing** is the wider job of interpreting a representation according to rules. **Validation** checks whether the interpreted value is allowed.
 
 ## Lesson
 
-### Inspect before you interpret
+Start with inspection:
 
 ```python
-values = ["443", 443, 443.0, None]
-for value in values:
-    print(repr(value), type(value).__name__)
+samples = ["7", 7, 7.5, True, None]
+
+for sample in samples:
+    print(repr(sample), type(sample).__name__)
 ```
 
-Inspection is not validation. It tells you what arrived, not whether the value is safe or meaningful.
+Expected output:
 
-### Conversion can fail
-
-```python
-for raw in ["443", " 443 ", "four-four-three"]:
-    try:
-        print(raw, "->", int(raw.strip()))
-    except ValueError as error:
-        print(raw, "rejected:", error)
+```text
+'7' str
+7 int
+7.5 float
+True bool
+None NoneType
 ```
 
-The `try` block contains the operation that may fail. The `except ValueError` handles the expected conversion problem. A broad `except Exception` would also catch programming mistakes and make them look like ordinary bad input.
+The list is a container you will study later. For now, notice that the same-looking idea can have different representations. The quotation marks make `"7"` text. The absence of quotation marks makes `7` a number. `None` is not the same as the string `"None"`; one means no value, the other is text that spells a word.
 
-### Policy comes after conversion
+Conversion is explicit:
 
 ```python
-def parse_port(text):
-    port = int(text.strip())
-    if not 1 <= port <= 65535:
-        raise ValueError("port must be between 1 and 65535")
-    return port
+raw = " 7 "
+clean = raw.strip()
+severity = int(clean)
+print(repr(raw))
+print(repr(clean))
+print(severity + 1)
 ```
 
-`parse_port("70000")` converts successfully and then fails the application rule. `parse_port("abc")` fails during conversion. Both are rejected, but for different reasons.
+Expected output:
 
-### Optional values are not automatically safe
-
-```python
-def parse_limit(text, default=100):
-    if text is None or text.strip() == "":
-        return default
-    limit = int(text)
-    if not 1 <= limit <= 10_000:
-        raise ValueError("limit is outside the allowed bound")
-    return limit
+```text
+' 7 '
+'7'
+8
 ```
 
-Defaults should be explicit and bounded. A missing limit should not silently become “unlimited.”
-## Worked examples
+`strip()` removes whitespace at the edges. It does not turn text into a number. `int()` performs that conversion. Keeping the names `raw`, `clean`, and `severity` makes the boundary visible.
 
-### Example 1: a boolean parser
+Now break the assumption:
 
 ```python
-def parse_bool(text):
+raw = "seven"
+severity = int(raw)
+```
+
+Python raises `ValueError`. The error means the input was text, but it was not text that Python could interpret as an integer. The correct response is not to hide the exception. A real tool should report a safe validation error and decide whether to reject the record, ask again, or mark it unknown.
+
+Conversion is not the same as policy:
+
+```python
+severity = int("99")
+print(severity)
+```
+
+This succeeds because `99` is a valid integer. It may still violate the application's policy if the accepted range is 0 through 10. Validation comes after conversion:
+
+```python
+severity = int("99")
+if not 0 <= severity <= 10:
+    raise ValueError("severity must be between 0 and 10")
+```
+
+The condition is a question with a Boolean answer. Day 4 will teach comparisons and decisions more carefully; today notice the separation: first produce an integer, then decide whether it is allowed.
+
+Boolean conversion deserves caution:
+
+```python
+print(bool("false"))
+print(bool(""))
+print(bool(0))
+print(bool(1))
+```
+
+Expected output:
+
+```text
+True
+False
+False
+True
+```
+
+`bool("false")` is `True` because the string is not empty. It does not understand the English word false. A parser for human text must define its own accepted words instead of trusting `bool` to translate them.
+
+A small parser can make the policy visible:
+
+```python
+def parse_boolean(text):
     normalized = text.strip().casefold()
     if normalized in {"true", "yes", "1"}:
         return True
     if normalized in {"false", "no", "0"}:
         return False
-    raise ValueError("expected true or false")
+    raise ValueError("expected yes/no, true/false, or 1/0")
 ```
 
-This parser does not treat every non-empty string as true. It names the accepted vocabulary.
+Read the function from top to bottom. It receives text, removes edge whitespace, makes case comparisons predictable, accepts a small allowlist of words, and rejects everything else. The function does not guess what `"maybe"` means.
 
-### Example 2: a severity parser
+A parser should also decide what to do with missing input:
 
 ```python
-def parse_severity(text):
-    severity = int(text.strip())
-    if severity < 0 or severity > 10:
-        raise ValueError("severity must be from 0 to 10")
-    return severity
+def parse_optional_limit(text):
+    cleaned = text.strip()
+    if cleaned == "":
+        return None
+    limit = int(cleaned)
+    if not 1 <= limit <= 100:
+        raise ValueError("limit must be from 1 through 100")
+    return limit
 ```
 
-Try `"0"`, `"10"`, `"11"`, `"-1"`, and `"high"`. The first two are accepted; the rest are rejected by either policy or conversion.
+Here `None` means “the operator did not provide a limit.” It is different from `0`, which is a number and is rejected by policy. A program that confuses missing, empty, zero, and invalid values can process too much data or report a false result.
 
-### Example 3: parse a record at the boundary
+Try a prediction experiment. What will each line print?
 
 ```python
-def parse_event(record):
-    source = record.get("source", "").strip()
-    if not source:
-        raise ValueError("source is required")
-    return {"source": source, "severity": parse_severity(record["severity"])}
+print(type("7").__name__)
+print(type(int("7")).__name__)
+print("7" + "0")
+print(int("7") + 0)
 ```
 
-A missing or blank source is rejected before a downstream classifier can pretend the record is complete.
+Run it only after writing your prediction. The output demonstrates that conversion changes what operations mean.
 
-### Example 4: preserve the reason for rejection
+The mental model is a boundary table:
 
-```python
-def describe_parse(record):
-    try:
-        return {"ok": True, "event": parse_event(record)}
-    except (KeyError, TypeError, ValueError) as error:
-        return {"ok": False, "reason": str(error)}
-```
+| Stage | Example | Question |
+| --- | --- | --- |
+| Raw input | `" 7 "` | What characters arrived? |
+| Cleaned text | `"7"` | What harmless formatting was removed? |
+| Converted value | `7` | What type did the parser create? |
+| Validated value | `7` within 0–10 | Is this value allowed here? |
+| Application decision | review or accept | What should the program do next? |
 
-The caller receives an explicit failure result. It should not silently return an empty event.
+Do not skip straight from raw text to a security decision. Each stage gives you evidence and a place to handle failure.
 
-### Example 5: negative tests
+## Worked examples
 
-```python
-assert parse_port("443") == 443
-for bad in ["0", "65536", "abc"]:
-    try:
-        parse_port(bad)
-    except ValueError:
-        pass
-    else:
-        raise AssertionError(f"accepted invalid port: {bad}")
-```
+Run the examples in order. Each one changes only a small part of the previous idea.
 
-A negative test proves that the rejection path exists. It is not optional decoration in a security utility.
+### Example 1: A first runnable case
+
+Run the smallest version first and explain what each line contributes.
+
+### Example 2: A boundary case
+
+Change exactly one input to an empty, malformed, or out-of-range value. Predict the result before running it.
+
+### Example 3: A deliberate experiment
+
+Make one controlled change, record the output, and compare it with your prediction. Do not change several lines at once.
+
+### Example 4: A bounded security fixture
+
+Apply the idea to the synthetic fixture in this lesson. The fixture is local, finite, and invented; it is not permission to inspect real systems.
 
 ## Execution trace
 
-For `parse_port(" 443 ")`:
+Trace this program:
 
-| Step | Operation | Result |
-| ---: | --- | --- |
-| 1 | `text.strip()` | `"443"` |
-| 2 | `int(...)` | `443` |
-| 3 | range check | `True` |
-| 4 | `return port` | caller receives integer `443` |
+```python
+raw = " 08 "
+clean = raw.strip()
+number = int(clean)
+allowed = 0 <= number <= 10
+print(allowed)
+```
 
-For `parse_port("70000")`, conversion succeeds but the range check is false. For `parse_port("https")`, conversion raises before the range check.
+| Step | Name | Value | Type |
+| ---: | --- | --- | --- |
+| 1 | `raw` | `" 08 "` | `str` |
+| 2 | `clean` | `"08"` | `str` |
+| 3 | `number` | `8` | `int` |
+| 4 | `allowed` | `True` | `bool` |
+| 5 | output | `True` | terminal text |
 
-## Common mistakes
+Now replace `raw` with `"eleven"`. The program stops at `int(clean)`, so `allowed` is never created. If you replace it with `"99"`, conversion succeeds but `allowed` becomes `False`. Those are different failure categories: malformed representation versus a valid value outside the application's permitted range.
 
-| Mistake | Symptom | Correction |
+## Common mistakes and repairs
+
+| Mistake | Why it happens | Repair |
 | --- | --- | --- |
-| Checking only `isdigit()` | negative or whitespace cases behave unexpectedly | convert and catch `ValueError`, then enforce policy |
-| Using `int(text)` without a bound | huge values consume later resources | enforce a maximum immediately |
-| Returning `None` for every error | callers cannot distinguish missing from malformed | raise or return a structured failure |
-| Catching `Exception` | coding errors look like bad input | catch expected boundary exceptions |
-| Trusting a type hint | runtime dictionaries still contain wrong types | validate actual values |
+| Treating `"7"` as `7` | They look alike when printed. | Inspect the type and convert explicitly. |
+| Using `bool("false")` as a parser | Truthiness is mistaken for language parsing. | Normalize and compare an allowlist. |
+| Converting without a range check | A valid integer may still be unsafe for the application. | Validate the allowed interval. |
+| Treating empty text as zero | Missing input and zero have different meanings. | Represent missing input explicitly with `None`. |
+| Catching every exception | Programmer errors become invisible. | Catch only expected input errors at the boundary. |
+| Printing raw input in a report | Diagnostic output may leak sensitive data. | Keep raw data local and report safe metadata. |
+
+## Guided practice
+
+Build a parser in checkpoints.
+
+1. Begin with `raw = " 7 "` and print it with `repr`.
+2. Create `clean` using `strip()` and print both values.
+3. Convert `clean` to an integer named `severity` and print its type.
+4. Add a range check for 0 through 10.
+5. Test the values `0`, `10`, `-1`, `11`, and `high` one at a time.
+6. For `high`, produce a safe message such as `invalid integer` rather than printing a traceback in the report.
+7. Add a second parser for yes/no text. Accept only the documented words.
+
+At each checkpoint, run the file. Do not add the next layer until you can explain the current output. If a test fails, write down whether the failure happened during cleaning, conversion, or validation.
 
 ## Security application
 
-Use a JSON-like fixture containing `source`, `severity`, `port`, and `limit`. Parse every field at the boundary, reject invalid records with a reason, and prove that no rejected record reaches the triage decision.
-## Exercises
+A synthetic log record is an ideal boundary exercise:
 
-Complete the numbered questions in [practice/exercises.md](practice/exercises.md) in order. Use the examples from this lesson as your starting point. Use [hints](practice/hints.md) only after a genuine attempt and [solutions](practice/solutions.md) only to compare your reasoning.
+```python
+record = {"severity": " 7 ", "authenticated": "no"}
+```
+
+The values are text because they came from an outside representation. Parse them into an internal record:
+
+```python
+severity = int(record["severity"].strip())
+authenticated = parse_boolean(record["authenticated"])
+```
+
+This does not prove that the record is authentic. It only prevents the rest of the program from pretending that unparsed text is already a trusted integer or Boolean. In a real security tool, the parser would also report which field failed, limit input size, preserve provenance, and avoid including secrets in the error message.
+
+Use only synthetic records. Do not paste a real log line into this exercise because real logs may contain usernames, tokens, addresses, or personal data.
+
+## Independent exercises
+
+Complete these in [`practice/exercises.md`](practice/exercises.md) in order:
+
+1. Print the type name of `"7"`, `7`, `7.0`, `True`, and `None`.
+2. Convert `"42"` to an integer and `"0.5"` to a float. Print both values and types.
+3. Try to convert `"high"` to an integer. Record the exception type and explain the message.
+4. Show why `bool("false")` is `True`. Write an explicit parser that treats `false`, `no`, and `0` as false.
+5. Write a parser that accepts integer severities from 0 through 10 and rejects `-1`, `11`, empty text, and `high`.
+6. Explain the difference between raw input, cleaned text, converted value, and validated value.
+7. Write `parse_optional_limit` so empty text returns `None` and non-empty text must be an integer from 1 through 100.
+8. Create a synthetic record containing string fields for severity and authentication. Parse both fields and print their resulting types.
+9. Add a safe error report that names the invalid field but does not print the full raw record.
+10. Write a table of five inputs and classify each as missing, malformed, valid-but-out-of-range, or accepted.
+11. Explain why a valid integer can still be unsafe for a program.
+12. Safety question: name three kinds of input that must remain outside today's files and explain why parsing does not create authorization.
+
+Use [hints](practice/hints.md) only after attempting the question. Use [solutions](practice/solutions.md) to compare reasoning, not to replace it.
 
 ## Finish line
 
-Run the starter, pass the relevant tests, complete the numbered exercises, and explain one edge case aloud or in writing.
+Day 3 is complete when you can inspect a value's type, explain why conversion and validation are separate, write a bounded parser, distinguish missing from invalid, and describe the security limitation of parsing synthetic input. You should be able to trace a failure to the exact stage where it occurred.
 
-## Mental model
+## References
 
-> Conversion answers whether Python can interpret a value; validation answers whether the application accepts it.
-
-## Limitations
-
-A parser can enforce shape and policy, but it cannot prove who supplied the data or whether the surrounding record is authentic.
-
-## Optional video support
-
-Watch [CS50P Lecture 0](https://www.youtube.com/watch?v=JP7ITIXGpHk&t=240s) from `04:00` for the interpreter and `05:06` for functions and arguments.
-
-Use the [timestamped video catalog](../VIDEO_RESOURCES.md) only after running the local examples. The written lesson and Python documentation remain authoritative.
-
+[1]: https://docs.python.org/3/library/functions.html#type "Python type documentation"
+[2]: https://docs.python.org/3/library/functions.html#int "Python int documentation"
+[3]: https://docs.python.org/3/library/stdtypes.html#truth-value-testing "Python truth-value testing"
+[4]: https://docs.python.org/3/tutorial/errors.html "Python errors and exceptions"
+[5]: https://cheatsheetseries.owasp.org/cheatsheets/Input_Validation_Cheat_Sheet.html "OWASP input validation guidance"
 
 [← Day 2](../day_02_values_names_and_input/day_02_values_names_and_input.md) · [Day index](../DAY_INDEX.md) · [Day 4 →](../day_04_operators_and_decisions/day_04_operators_and_decisions.md)

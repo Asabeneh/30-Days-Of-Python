@@ -2,190 +2,224 @@
 
 [← Day 4](../day_04_operators_and_decisions/day_04_operators_and_decisions.md) · [Day index](../DAY_INDEX.md) · [Day 6 →](../day_06_loops_and_bounded_work/day_06_loops_and_bounded_work.md)
 
-## Table of Contents
+## Welcome
 
-- [Why this lesson exists](#why-this-lesson-exists)
-- [Prerequisites](#prerequisites)
-- [Outcomes](#outcomes)
-- [The problem](#the-problem)
-- [Security boundary](#security-boundary)
-- [Lesson](#lesson)
-- [Worked examples](#worked-examples)
-- [Execution trace](#execution-trace)
-- [Common mistakes](#common-mistakes)
-- [Security application](#security-application)
-- [Exercises](#exercises)
-- [Finish line](#finish-line)
+Yesterday you learned the symbols that produce decisions. Today you will slow down and design a branching program carefully. The goal is not to write clever conditions; it is to make the path a reader can predict, test, and explain.
 
-## Why this lesson exists
-
-A classifier chooses among paths. In security work, a branch should make a limited, explainable recommendation—not claim that an incident is proven.
+This lesson is designed for a learner who may still need to look up how to create a file, run it, or read an error. Type the examples instead of reading them passively. Before running an experiment, write down what you expect. The difference between your prediction and Python's output is where learning happens.
 
 ## Prerequisites
 
-Complete Day 4 and be able to write and test a boolean expression.
+Complete Day 4. Use the repository's local synthetic fixtures only. Keep a terminal open at the repository root and run each file with the Python command that worked on your computer.
 
 ## Outcomes
 
-By the end of this lesson, you can:
-
-- use `if`, `elif`, and `else`
-- order conditions from specific to general
-- return a label and reason
-- test branch boundaries
-- separate observations from conclusions
+By the end of this lesson, you should be able to explain the new vocabulary in your own words, run and modify the examples, predict at least one boundary case, repair a deliberate mistake, and apply the idea to a bounded cybersecurity fixture.
 
 ## The problem
 
-A synthetic event can be normal, needs review, or invalid. The program needs a stable policy for each case and a reason that a human can inspect.
+A classifier receives a synthetic record and must choose one label. If conditions overlap, if a field is missing, or if every unexpected value is treated as safe, the result becomes misleading. A branching design needs an order, a default, and a clear treatment of uncertainty.
 
 ## Security boundary
 
-Use only the repository, synthetic examples, and local fixtures. The examples may describe security signals, but they do not identify attackers, authorize testing, or justify touching public systems. Keep real credentials, private logs, and university or employer data out of the lesson.
+This lesson is educational and local. It does not authorize public scanning, credential use, data collection, exploitation, interception, or changes to systems you do not own. The cybersecurity examples use invented names, loopback targets, or repository fixtures.
+
+## Vocabulary
+
+A **branch** is one possible path through a program. A **classifier** assigns a label according to rules. A **default** is what happens when no special case matches. **Unknown** means the program lacks enough information; it should not automatically mean safe.
 
 ## Lesson
 
-### The shape of a branch
+Start with one branch:
 
 ```python
 severity = 8
+
 if severity >= 7:
-    label = "review"
-elif severity >= 4:
-    label = "watch"
-else:
-    label = "normal"
-print(label)
+    print("review")
 ```
 
-Python checks conditions from top to bottom and executes the first true block. The order matters. If `severity >= 4` appeared first, a severity of `8` would be labeled `watch` and the later branch would never run.
-
-### Add an invalid state
+If the condition is false, Python prints nothing. That may be correct for a small experiment, but a reporting tool often needs an explicit default. Add `else`:
 
 ```python
+if severity >= 7:
+    print("review")
+else:
+    print("routine")
+```
+
+Now every numeric input receives a label, but the design still assumes the value is valid. Add validation before classification rather than hiding invalid data inside a normal label.
+
+```python
+severity = 12
+
 if not 0 <= severity <= 10:
     label = "invalid"
 elif severity >= 7:
     label = "review"
-elif severity >= 4:
-    label = "watch"
 else:
-    label = "normal"
+    label = "routine"
+
+print(label)
 ```
 
-Validate the domain before applying the policy. A severity of `99` should not become an urgent event merely because it is large.
+This ordering is important. The invalid check comes before the ordinary severity rules. Otherwise 12 would be classified as review even though it violates the documented range.
 
-### Return a decision and a reason
+Add source quality:
 
 ```python
-def classify(severity, authenticated):
-    if not 0 <= severity <= 10:
-        return "invalid", "severity is outside 0..10"
-    if severity >= 7 and not authenticated:
-        return "review", "high severity and unauthenticated"
-    if severity >= 7:
-        return "watch", "high severity but authenticated"
-    return "normal", "severity is below review threshold"
+severity = 8
+source = "unknown"
+
+if source != "training-auth":
+    label = "unknown-source"
+elif severity >= 9:
+    label = "urgent"
+elif severity >= 7:
+    label = "review"
+else:
+    label = "routine"
+
+print(label)
 ```
 
-A tuple lets the caller keep the label and explanation together. The function does not print or assert that an attack happened.
+This classifier chooses `unknown-source` before examining severity. That is a policy choice: an unknown source prevents this training classifier from making a severity decision. Another system might preserve both labels instead of choosing one. The important lesson is to document the choice.
 
-### Branches are policies
+Nested branches are sometimes readable, but they can become difficult to trace:
 
-A branch encodes a policy decision. Ask who chose the threshold, which data is trusted, how false positives are handled, and what happens when a field is missing. Code can execute correctly while the policy is still wrong for its context.
+```python
+if source == "training-auth":
+    if severity >= 7:
+        print("review")
+    else:
+        print("routine")
+else:
+    print("unknown-source")
+```
+
+The flat `if/elif/else` chain and the nested version can represent the same rule. Choose the form that makes the policy easiest to test. Do not nest conditions merely to look advanced.
+
+You can also return a label from a function, but functions are tomorrow's main topic. For today, notice that storing the label in a name makes it available for a later report:
+
+```python
+label = "review"
+print(f"classification={label}")
+```
+
+A branch can choose a value without immediately printing it. Separating decision from output makes later testing easier.
+
 ## Worked examples
 
-### Example 1: exact boundaries
+Run the examples in order. Each one changes only a small part of the previous idea.
 
-```python
-for severity in [3, 4, 6, 7, 10]:
-    print(severity, classify(severity, authenticated=True))
-```
+### Example 1: A first runnable case
 
-Predict the labels before running it. Boundaries `4` and `7` deserve explicit tests.
+Run the smallest version first and explain what each line contributes.
 
-### Example 2: missing input
+### Example 2: A boundary case
 
-```python
-def classify_record(record):
-    if "severity" not in record:
-        return "invalid", "severity is missing"
-    if "authenticated" not in record:
-        return "invalid", "authenticated is missing"
-    return classify(record["severity"], record["authenticated"])
-```
+Change exactly one input to an empty, malformed, or out-of-range value. Predict the result before running it.
 
-Missing is different from false. Do not silently replace a missing authentication field with `False` unless the policy explicitly says so.
+### Example 3: A deliberate experiment
 
-### Example 3: a decision table
+Make one controlled change, record the output, and compare it with your prediction. Do not change several lines at once.
 
-| Input | Expected label | Reason |
-| --- | --- | --- |
-| `severity=2, authenticated=True` | normal | below threshold |
-| `severity=7, authenticated=True` | watch | high but authenticated |
-| `severity=7, authenticated=False` | review | high and unauthenticated |
-| `severity=11, authenticated=False` | invalid | outside domain |
+### Example 4: A bounded security fixture
 
-### Example 4: do not bury output in policy
-
-```python
-def classify_for_cli(severity, authenticated):
-    label, reason = classify(severity, authenticated)
-    return {"label": label, "reason": reason}
-```
-
-A caller can print this dictionary, save it, or test it. Pure policy is easier to reuse.
-
-### Example 5: an intentionally unresolved signal
-
-```python
-def classify_with_source(event):
-    label, reason = classify_record(event)
-    return {"label": label, "reason": reason, "source": event.get("source", "unknown")}
-```
-
-The source helps a reviewer understand provenance; it does not prove accuracy.
+Apply the idea to the synthetic fixture in this lesson. The fixture is local, finite, and invented; it is not permission to inspect real systems.
 
 ## Execution trace
 
-For `classify(8, False)`:
+Trace the classifier:
 
-| Step | Check | Result |
-| ---: | --- | --- |
-| 1 | `0 <= 8 <= 10` | true |
-| 2 | `8 >= 7 and not False` | true |
-| 3 | return | `("review", "high severity and unauthenticated")` |
+```python
+severity = 12
+source = "training-auth"
 
-For `classify(8, True)`, step 2 is false and the function returns `watch`.
+if not 0 <= severity <= 10:
+    label = "invalid"
+elif source != "training-auth":
+    label = "unknown-source"
+elif severity >= 9:
+    label = "urgent"
+elif severity >= 7:
+    label = "review"
+else:
+    label = "routine"
+```
 
-## Common mistakes
+Python checks the first condition. `12` is not between 0 and 10, so `label` becomes `invalid`. Python skips every later branch. If you move the invalid check below `severity >= 9`, the same input becomes urgent. That is a bug in policy order, not in Python syntax.
 
-| Mistake | Symptom | Correction |
+Make a decision table before coding:
+
+| Input | Expected label |
+| --- | --- |
+| severity 12 | invalid |
+| severity 8, unknown source | unknown-source |
+| severity 9, known source | urgent |
+| severity 7, known source | review |
+| severity 3, known source | routine |
+
+The table is a small specification. The code is an implementation of that specification.
+
+## Common mistakes and repairs
+
+| Mistake | Symptom | Repair |
 | --- | --- | --- |
-| broad condition first | urgent events get a low label | order specific cases first |
-| no invalid branch | malformed data enters policy | validate before classification |
-| printing inside the classifier | tests must capture output | return structured data |
-| using “attack” as a label | observation becomes conclusion | use neutral labels such as `review` |
-| no reason field | reviewer cannot reproduce the decision | return label and reason |
+| No invalid branch | Bad data receives a normal label. | Validate before classifying. |
+| `else` means safe | Unknown conditions are treated as routine. | Use an explicit unknown label. |
+| Overlapping conditions | The first matching rule wins unexpectedly. | Order and test the rules. |
+| Printing inside every branch | The decision cannot be reused or tested easily. | Store a label, then report it. |
+| Nested code too deeply | The path is hard to trace. | Use a table or flat chain where clearer. |
+
+## Guided practice
+
+Create a decision table on paper for a fictional event. Include fields `severity`, `source`, and `authenticated`. Decide what should happen when each field is invalid or missing. Then implement only the first five rows.
+
+Run one test per row. If a result is wrong, do not change the table to match the program. Treat the table as the intended behavior and repair the code. Add a print statement showing which input row you are testing so that a failure is easy to locate.
+
+Finally, change the program so it returns or stores a label before printing. This small separation will prepare you for functions and tests on Day 9.
 
 ## Security application
 
-Run the classifier only against the supplied synthetic event fixture. Save the output as a review queue, not as an incident declaration. Add a note that a human must confirm context before escalation.
-## Exercises
+A defensive classifier should preserve uncertainty. For synthetic logs, an invalid severity should not become a low-priority event, and a missing source should not become a trusted source. A label such as `unknown` is not a weakness in the program; it is a truthful statement about incomplete information.
 
-Complete the numbered questions in [practice/exercises.md](practice/exercises.md) in order. Use the examples from this lesson as your starting point. Use [hints](practice/hints.md) only after a genuine attempt and [solutions](practice/solutions.md) only to compare your reasoning.
+Never use this training classifier to make decisions about a real person. It has no trustworthy collection path, identity proof, context, or organizational policy. It demonstrates branching and safe uncertainty only.
+
+## Independent exercises
+
+Complete these in [`practice/exercises.md`](practice/exercises.md) in order:
+
+1. Write a two-branch classifier for a number being inside or outside 0–10.
+2. Add an explicit `unknown` path for missing source text.
+3. Create a five-row decision table before writing code.
+4. Implement urgent, review, routine, invalid, and unknown-source labels.
+5. Test every boundary and copy the observed result.
+6. Create an overlapping-rule bug and explain why the first matching branch wins.
+7. Rewrite a nested classifier as a flat chain and compare readability.
+8. Store a label before printing it.
+9. Add a safe message that reports `classification=unknown` without making an accusation.
+10. Explain why `else` should not automatically mean safe.
+11. Add a test case for a missing field and describe the desired behavior.
+12. Safety question: identify one way an automated classifier could cause harm if treated as a verdict.
+
+
+
+### Additional beginner checkpoint
+
+Pause before adding another feature. Read the current program aloud as a sequence of decisions: what enters, what is transformed, what is checked, and what leaves. Write down one value that is allowed, one value that must be rejected, and one value whose meaning is uncertain. This distinction matters in cybersecurity because an unknown observation should not silently become a safe conclusion. Run the allowed case, the rejected case, and the uncertain case separately. Keep the exact output in your notes and explain which line produced it.
+
+Now make the smallest useful improvement. Give one name a clearer meaning, extract one repeated operation, or add one explicit boundary check. Run the same three cases again. If the behavior changed, explain whether the change was intended. If a test now fails, treat the failure as information about the contract rather than deleting the test. Finish by writing one sentence about the lesson's limitation: a local Python rule can organize synthetic evidence, but it cannot establish authorization, authenticity, or the truth of a real-world accusation.
 
 ## Finish line
 
-Run the starter, pass the relevant tests, complete the numbered exercises, and explain one edge case aloud or in writing.
+Day 5 is complete when you can design a decision table, implement ordered branches, preserve unknown and invalid states, test every boundary, and explain why a classifier is not an accusation.
 
-## Mental model
+## References
 
-> Branching turns explicit policy into paths; a good classifier validates its input, returns an explainable label, and stops short of claiming more than its evidence supports.
-
-## Limitations
-
-Thresholds are not universal truth. They can create false positives, false negatives, and unfair outcomes if the data or policy is poor.
-
+[1]: https://docs.python.org/3/tutorial/controlflow.html#if-statements "Python conditional statements"
+[2]: https://docs.python.org/3/reference/compound_stmts.html "Python compound statements"
+[3]: https://csrc.nist.gov/glossary/term/risk "NIST risk glossary"
+[4]: https://www.cisa.gov/topics/cyber-threats-and-advisories "CISA cyber threat guidance"
 
 [← Day 4](../day_04_operators_and_decisions/day_04_operators_and_decisions.md) · [Day index](../DAY_INDEX.md) · [Day 6 →](../day_06_loops_and_bounded_work/day_06_loops_and_bounded_work.md)

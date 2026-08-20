@@ -2,241 +2,230 @@
 
 [← Day 9](../day_09_functions_and_validation/day_09_functions_and_validation.md) · [Day index](../DAY_INDEX.md) · [Day 11 →](../day_11_function_contracts/day_11_function_contracts.md)
 
-## Table of Contents
+## Welcome
 
-- [Why this lesson exists](#why-this-lesson-exists)
-- [Prerequisites](#prerequisites)
-- [Outcomes](#outcomes)
-- [The problem](#the-problem)
-- [Security boundary](#security-boundary)
-- [Lesson](#lesson)
-- [Worked examples](#worked-examples)
-- [Execution trace](#execution-trace)
-- [Common mistakes](#common-mistakes)
-- [Security application](#security-application)
-- [Exercises](#exercises)
-- [Finish line](#finish-line)
+Today you will combine the first nine days into one small program. This is not a leap into advanced security tooling. It is a controlled checkpoint that proves you can move from text to values, validate them, choose a label, count records, and report what happened without exposing sensitive-looking fields.
 
-## Why this lesson exists
-
-A checkpoint turns isolated syntax into a small engineering artifact. You will combine input validation, bounded reading, parsing, classification, and reporting without claiming more than synthetic evidence supports.
+This lesson is designed for a learner who may still need to look up how to create a file, run it, or read an error. Type the examples instead of reading them passively. Before running an experiment, write down what you expect. The difference between your prediction and Python's output is where learning happens.
 
 ## Prerequisites
 
-Complete Days 1–9. Run the phase tests and make sure your environment is active.
+Complete Day 9. Use the repository's local synthetic fixtures only. Keep a terminal open at the repository root and run each file with the Python command that worked on your computer.
 
 ## Outcomes
 
-By the end of this lesson, you can:
-
-- describe a small security tool’s data flow
-- process a bounded synthetic log fixture
-- preserve observations while adding derived labels
-- test normal, malformed, and out-of-scope inputs
-- write a README that states scope and limitations
+By the end of this lesson, you should be able to explain the new vocabulary in your own words, run and modify the examples, predict at least one boundary case, repair a deliberate mistake, and apply the idea to a bounded cybersecurity fixture.
 
 ## The problem
 
-A teammate asks for a command that reads a local training log and prints events that deserve review. The tool must not read arbitrary paths, print secrets, run indefinitely, or describe a matched rule as proof of compromise.
+A log-triage program must accept a small synthetic fixture, parse each line, classify it according to a documented rule, count outcomes, and tell the learner if processing stopped or completed. The program must be honest about malformed lines and bounded in its work.
 
 ## Security boundary
 
-Use only the repository, synthetic examples, and local fixtures. The examples may describe security signals, but they do not identify attackers, authorize testing, or justify touching public systems. Keep real credentials, private logs, and university or employer data out of the lesson.
+This lesson is educational and local. It does not authorize public scanning, credential use, data collection, exploitation, interception, or changes to systems you do not own. The cybersecurity examples use invented names, loopback targets, or repository fixtures.
+
+## Vocabulary
+
+A **fixture** is a supplied test input. A **pipeline** is a sequence of transformations. **Triage** is prioritizing items for review, not declaring guilt. A **summary** is a compact report. **Completeness** says whether all permitted input was processed.
 
 ## Lesson
 
-## Project requirements
+Start with a fixture represented as a list of strings:
 
-Build or complete the `log-triage` checkpoint using a local fixture.
+```python
+lines = [
+    "severity=8 source=training-auth event=login_failed",
+    "severity=2 source=training-auth event=logout",
+    "severity=high source=training-auth event=login_failed",
+]
+```
 
-### Required data flow
+This is not a real log and it does not come from a network. It is a small, visible input. Begin with one line and split it:
+
+```python
+line = lines[0]
+fields = {}
+for part in line.split():
+    key, value = part.split("=", 1)
+    fields[key] = value
+
+print(fields)
+```
+
+Expected output is a dictionary containing three text fields. Notice that the severity is still text. Pass it through the parser from Day 9:
+
+```python
+severity = parse_severity(fields["severity"])
+```
+
+The third line contains `severity=high`, so the parser will raise an expected conversion error. A checkpoint program should not crash the whole report because one synthetic line is malformed. Decide on a policy: count the line as `invalid`, record a safe reason, and continue.
+
+A small classification function might look like this:
+
+```python
+def classify(severity_text, source):
+    try:
+        severity = parse_severity(severity_text)
+    except (TypeError, ValueError):
+        return "invalid"
+
+    if source != "training-auth":
+        return "unknown-source"
+    if severity >= 7:
+        return "review"
+    return "routine"
+```
+
+This function does not print, access files, or contact a network. It receives values and returns one label. The caller can count the labels and decide how to report them.
+
+Build a counter:
+
+```python
+counts = {"review": 0, "routine": 0, "invalid": 0, "unknown-source": 0}
+label = classify("8", "training-auth")
+counts[label] += 1
+print(counts)
+```
+
+The dictionary contains every expected label before processing starts. That means a zero count is visible in the final report. A report that omits zero categories can be harder to compare across runs.
+
+Add a bounded loop:
+
+```python
+limit = 100
+processed = 0
+
+for line in lines:
+    if processed >= limit:
+        break
+    processed += 1
+    print(f"processing line {processed}")
+```
+
+The limit is much larger than this fixture, but it demonstrates the policy. A real tool should also bound line length, total bytes, and output size.
+
+A complete checkpoint design has stages:
+
+| Stage | Question |
+| --- | --- |
+| Read | Which fixture is permitted? |
+| Parse | Can this line become fields? |
+| Convert | Can severity become an integer? |
+| Validate | Is severity within 0–10? |
+| Classify | Which documented label applies? |
+| Count | How many labels occurred? |
+| Report | What happened, and was processing complete? |
+
+Do not hide all stages in one enormous function. Give each stage a small job and test it with a tiny input before composing the pipeline.
+
+The final report might look like:
 
 ```text
-fixture path
-   ↓
-safe path and size checks
-   ↓
-bounded line reader
-   ↓
-record parser
-   ↓
-validated event
-   ↓
-triage policy
-   ↓
-explainable report
+source=synthetic-fixture
+processed=3
+complete=True
+review=1
+routine=1
+invalid=1
+unknown-source=0
 ```
 
-Keep each stage small. If a test fails, the data flow should help you locate the failing boundary.
-
-### Suggested fixture
-
-```text
-2026-08-20T10:00:00Z source=auth severity=2 authenticated=true message=login_ok
-2026-08-20T10:01:00Z source=auth severity=8 authenticated=false message=login_failed
-malformed line without fields
-```
-
-This fixture is invented for the course. It is not evidence of a real event.
-
-### Parse only what you need
-
-```python
-def parse_line(line):
-    fields = {}
-    for item in line.split():
-        if "=" not in item:
-            continue
-        key, value = item.split("=", 1)
-        fields[key] = value
-    return fields
-```
-
-This starter is intentionally incomplete. It does not validate required fields, timestamps, severity, or message length. Your job is to add those boundaries in the exercises.
-
-### Classify with an explicit policy
-
-```python
-def classify_event(event):
-    severity = event["severity"]
-    authenticated = event["authenticated"]
-    if severity >= 7 and not authenticated:
-        return "review", "high severity and unauthenticated"
-    return "normal", "no training rule matched"
-```
-
-This says exactly what the training policy does. It does not search the internet, identify a person, or prove an attack.
-
-### Report derived data separately
-
-```python
-def report(event, label, reason):
-    return {
-        "timestamp": event["timestamp"],
-        "source": event["source"],
-        "severity": event["severity"],
-        "label": label,
-        "reason": reason,
-    }
-```
-
-The report contains selected evidence and derived fields. Decide whether the raw message is necessary; if it can contain secrets, redact or omit it.
+The report says what the classifier did. It does not say that a real attack happened or that any person is dangerous.
 
 ## Worked examples
 
-### Example 1: a bounded reader
+Run the examples in order. Each one changes only a small part of the previous idea.
 
-```python
-def read_lines(lines, max_lines=100):
-    for index, line in enumerate(lines):
-        if index == max_lines:
-            return
-        yield line.rstrip("
-")
-```
+### Example 1: A first runnable case
 
-The function stops at the documented bound. A real file wrapper should also enforce a path and line-length policy.
+Run the smallest version first and explain what each line contributes.
 
-### Example 2: boolean parsing
+### Example 2: A boundary case
 
-```python
-def parse_authenticated(value):
-    normalized = value.casefold()
-    if normalized == "true":
-        return True
-    if normalized == "false":
-        return False
-    raise ValueError("authenticated must be true or false")
-```
+Change exactly one input to an empty, malformed, or out-of-range value. Predict the result before running it.
 
-Do not use `bool(value)` for this field.
+### Example 3: A deliberate experiment
 
-### Example 3: timestamp parsing
+Make one controlled change, record the output, and compare it with your prediction. Do not change several lines at once.
 
-```python
-from datetime import datetime
+### Example 4: A bounded security fixture
 
-
-def parse_timestamp(value):
-    parsed = datetime.fromisoformat(value.replace("Z", "+00:00"))
-    if parsed.tzinfo is None:
-        raise ValueError("timestamp must include a timezone")
-    return parsed
-```
-
-A timezone-aware timestamp can be compared consistently. The function still needs policy around future dates or clock skew in a real system.
-
-### Example 4: handling one malformed line
-
-```python
-for line in fixture:
-    try:
-        event = parse_event(line)
-    except ValueError as error:
-        print({"status": "rejected", "reason": str(error)})
-        continue
-    print({"status": "accepted", "source": event["source"]})
-```
-
-The tool preserves the fact of rejection without printing the entire malformed line.
-
-### Example 5: project evidence
-
-A finished checkpoint should include:
-
-| Artifact | What it proves |
-| --- | --- |
-| `README.md` | setup, scope, data format, limitations |
-| source module | the implementation is reproducible |
-| tests | normal and negative behavior |
-| synthetic fixture | the example is resettable |
-| sample report | the output is explainable |
-| threat model | assumptions and residual risks |
+Apply the idea to the synthetic fixture in this lesson. The fixture is local, finite, and invented; it is not permission to inspect real systems.
 
 ## Execution trace
 
-For the second fixture line:
+Trace the three-line fixture:
 
-| Stage | Value |
-| --- | --- |
-| raw line | timestamp, source, severity, auth, message text |
-| parsed fields | dictionary of strings |
-| validated event | timestamp, source, integer severity, boolean auth |
-| policy | `severity >= 7 and not authenticated` → true |
-| derived result | `label=review` with a reason |
-| report | selected evidence plus derived decision |
+| Line | Raw severity | Source | Result | Count change |
+| ---: | --- | --- | --- | --- |
+| 1 | `8` | `training-auth` | `review` | review +1 |
+| 2 | `2` | `training-auth` | `routine` | routine +1 |
+| 3 | `high` | `training-auth` | `invalid` | invalid +1 |
 
-If parsing fails, the line must not reach the policy stage.
+After the loop, `processed` is 3 and `complete` is true because the fixture ended before the limit. If the fixture contains 150 lines and the limit is 100, `complete` must be false. Do not report that the entire source was clean when only the first 100 permitted records were processed.
 
-## Common mistakes
+## Common mistakes and repairs
 
-| Mistake | Symptom | Correction |
+| Mistake | Symptom | Repair |
 | --- | --- | --- |
-| accepting arbitrary paths | tool can read outside the fixture | resolve and enforce a base directory |
-| no line limit | large input consumes resources | stop at a documented maximum |
-| trusting every key | malformed data becomes a decision | validate required fields and types |
-| printing raw lines | private values leak into reports | redact or summarize |
-| calling `review` an attack | evidence becomes an accusation | use neutral labels and confidence |
-| no truncation notice | report looks complete | include `truncated=true` when bounded |
+| One malformed line crashes all processing | The report is incomplete without saying why. | Catch expected input errors per line. |
+| Invalid becomes routine | Bad data receives a reassuring label. | Keep `invalid` separate. |
+| No processing limit | Work grows with untrusted input. | Bound records and bytes. |
+| Print raw lines | Sensitive fields may leak. | Report line number and safe reason. |
+| Count only positive labels | Zero categories disappear. | Initialize every expected category. |
+| Classifier claims an attack | A rule becomes an accusation. | Say `review` or `needs-review`. |
+
+## Guided practice
+
+Build the project in seven checkpoints:
+
+1. Create a three-line in-memory fixture.
+2. Write a parser for space-separated `key=value` fields.
+3. Test the parser with one missing equals sign and one extra equals sign.
+4. Reuse a bounded severity parser.
+5. Write a classifier with `review`, `routine`, `invalid`, and `unknown-source` outcomes.
+6. Process the fixture with a finite record limit and count every outcome.
+7. Print a safe summary containing source label, counts, processed count, and completeness.
+
+At each checkpoint, run the smallest test possible. Keep raw lines out of the final report. If you need to debug a line, use a synthetic fixture and print only a redacted representation.
 
 ## Security application
 
-Run only against the supplied fixture. The project’s scope is local training data, the cleanup is deleting generated reports, and the residual risk is that synthetic rules can produce false positives or miss patterns not represented in the fixture. Document these limits in the project README.
-## Exercises
+This checkpoint demonstrates defensive programming habits rather than offensive capability. The input is synthetic. The work is finite. The parser and validator are explicit. Invalid data is not silently treated as safe. The report distinguishes review from routine and does not identify a person or contact a target.
 
-Complete the numbered questions in [practice/exercises.md](practice/exercises.md) in order. Use the examples from this lesson as your starting point. Use [hints](practice/hints.md) only after a genuine attempt and [solutions](practice/solutions.md) only to compare your reasoning.
+A real log-triage system would need authenticated collection, schema versioning, time handling, access control, retention, tests against realistic formats, and human review. This checkpoint teaches only the small programming foundation required before those topics.
+
+## Independent exercises
+
+Complete these in [`practice/exercises.md`](practice/exercises.md) in order:
+
+1. Run the starter and explain each printed field.
+2. Parse one valid fixture line into a dictionary.
+3. Parse a line with an extra equals sign using `split("=", 1)`.
+4. Handle a line without an equals sign as invalid.
+5. Reuse `parse_severity` and classify valid and invalid severities.
+6. Add a known-source and unknown-source fixture.
+7. Count each result category, including categories with zero results.
+8. Add a processing limit and a `complete` field.
+9. Write a safe summary that never prints a raw line.
+10. Add tests for empty input, malformed input, valid high severity, and a source mismatch.
+11. Explain why a `review` label is not an attack verdict.
+12. Explain how a bounded loop protects resources but may reduce completeness.
+13. Write a short threat model listing asset, input, trust boundary, and residual risk.
+14. Safety question: state exactly what this project is allowed to read and what it is forbidden to touch.
+
+Use [hints](practice/hints.md) before [solutions](practice/solutions.md), and write a short explanation beside every code change.
 
 ## Finish line
 
-Run the starter, pass the relevant tests, complete the numbered exercises, and explain one edge case aloud or in writing.
+Day 10 is complete when you can explain the pipeline from fixture to report, process valid and invalid lines without losing the distinction, enforce a finite limit, test edge cases, and state the safety boundary without being prompted.
 
-## Mental model
+## References
 
-> A small security tool is a chain of bounded, testable transformations; every derived conclusion must remain visibly separate from the observations that produced it.
-
-## Limitations
-
-This checkpoint is not a SIEM, an incident-response system, or a detector for real compromise. It teaches engineering boundaries and evidence discipline; real production work requires authorized data, operational ownership, monitoring, and review.
-
+[1]: https://docs.python.org/3/tutorial/datastructures.html "Python data structures"
+[2]: https://docs.python.org/3/tutorial/controlflow.html "Python control flow"
+[3]: https://docs.python.org/3/library/exceptions.html "Python exceptions"
+[4]: https://csrc.nist.gov/glossary/term/log_analysis "NIST log analysis glossary"
+[5]: https://owasp.org/www-community/attacks/Denial_of_Service "OWASP denial of service overview"
 
 [← Day 9](../day_09_functions_and_validation/day_09_functions_and_validation.md) · [Day index](../DAY_INDEX.md) · [Day 11 →](../day_11_function_contracts/day_11_function_contracts.md)

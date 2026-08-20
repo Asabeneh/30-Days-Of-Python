@@ -2,213 +2,214 @@
 
 [← Day 8](../day_08_strings_and_canonicalization/day_08_strings_and_canonicalization.md) · [Day index](../DAY_INDEX.md) · [Day 10 →](../day_10_checkpoint_log_triage/day_10_checkpoint_log_triage.md)
 
-## Table of Contents
+## Welcome
 
-- [Why this lesson exists](#why-this-lesson-exists)
-- [Prerequisites](#prerequisites)
-- [Outcomes](#outcomes)
-- [The problem](#the-problem)
-- [Security boundary](#security-boundary)
-- [Lesson](#lesson)
-- [Worked examples](#worked-examples)
-- [Execution trace](#execution-trace)
-- [Common mistakes](#common-mistakes)
-- [Security application](#security-application)
-- [Exercises](#exercises)
-- [Finish line](#finish-line)
+Your programs are now long enough that copying blocks creates mistakes. A function gives a named job a boundary: it receives inputs, performs one responsibility, and returns a result. Today you will write small functions and state what each one promises.
 
-## Why this lesson exists
-
-Functions let you name a decision, reuse it, and test it without repeating setup. In security engineering, a function contract makes assumptions visible at the boundary.
+This lesson is designed for a learner who may still need to look up how to create a file, run it, or read an error. Type the examples instead of reading them passively. Before running an experiment, write down what you expect. The difference between your prediction and Python's output is where learning happens.
 
 ## Prerequisites
 
-Complete Days 1–8. You should be comfortable with types, conditions, loops, collections, and strings.
+Complete Day 8. Use the repository's local synthetic fixtures only. Keep a terminal open at the repository root and run each file with the Python command that worked on your computer.
 
 ## Outcomes
 
-By the end of this lesson, you can:
-
-- define and call functions
-- pass arguments and return values
-- keep side effects at the boundary
-- express preconditions and postconditions
-- test normal, boundary, and invalid cases
+By the end of this lesson, you should be able to explain the new vocabulary in your own words, run and modify the examples, predict at least one boundary case, repair a deliberate mistake, and apply the idea to a bounded cybersecurity fixture.
 
 ## The problem
 
-A log-triage program becomes difficult to review when parsing, classification, printing, and file access are mixed together. Separate functions make each claim smaller and testable.
+A parser, classifier, and report formatter should be testable separately. If one giant script reads input, validates it, decides a label, and prints output, it is difficult to locate a failure or reuse one piece safely.
 
 ## Security boundary
 
-Use only the repository, synthetic examples, and local fixtures. The examples may describe security signals, but they do not identify attackers, authorize testing, or justify touching public systems. Keep real credentials, private logs, and university or employer data out of the lesson.
+This lesson is educational and local. It does not authorize public scanning, credential use, data collection, exploitation, interception, or changes to systems you do not own. The cybersecurity examples use invented names, loopback targets, or repository fixtures.
+
+## Vocabulary
+
+A **function** is a reusable named block. A **parameter** is a name in the function definition. An **argument** is the value supplied when calling it. `return` sends a result back. A **contract** describes accepted inputs, produced outputs, and failure behavior. **Scope** describes where a name exists.
 
 ## Lesson
 
-### Defining a function
+Define the smallest function:
 
 ```python
-def add(left, right):
-    return left + right
+def add_one(number):
+    return number + 1
 
 
-print(add(2, 3))
+result = add_one(4)
+print(result)
 ```
 
-`def` creates a function. `left` and `right` are parameters. `return` sends a value back to the caller. Calling `add(2, 3)` binds the arguments and runs the body.
+The `def` line creates the function. `number` is a parameter. The indented body adds one. `return` sends 5 back to the caller. The function does not print by itself; the caller decides what to do with the result.
 
-### A function can be pure
+A parameter can have a default:
 
 ```python
-def severity_label(severity):
-    if not 0 <= severity <= 10:
+def label_source(source="unknown"):
+    return source.strip().casefold()
+
+
+print(label_source())
+print(label_source(" Training-Auth "))
+```
+
+The first call uses the default. The second supplies an argument. Defaults are useful only when “missing” really has a documented meaning.
+
+Write a function that validates a range:
+
+```python
+def validate_severity(value):
+    if not isinstance(value, int):
+        raise TypeError("severity must be an integer")
+    if not 0 <= value <= 10:
         raise ValueError("severity must be between 0 and 10")
-    return "high" if severity >= 7 else "normal"
-```
-
-This function does not print, open files, or use the network. For the same valid input, it returns the same result. Pure functions are easier to test and reason about.
-
-### Contracts describe behavior
-
-A useful contract answers:
-
-- What inputs are accepted?
-- What does the function return?
-- What happens when input is invalid?
-- Does it change files, global state, or external systems?
-
-Write the contract before the implementation. It gives a reviewer something precise to check.
-
-### Arguments and defaults
-
-```python
-def summarize(events, limit=100):
-    if limit < 0:
-        raise ValueError("limit must not be negative")
-    selected = events[:limit]
-    return {"processed": len(selected), "truncated": len(events) > limit}
-```
-
-Defaults are part of the policy. A default limit of `100` is safer than an accidental unbounded read.
-
-### Keep effects at the edge
-
-```python
-def format_finding(label, reason):
-    return f"label={label} reason={reason}"
-
-
-message = format_finding("review", "high severity")
-print(message)
-```
-
-Formatting is separate from printing. A caller can save, test, or display the returned message.
-## Worked examples
-
-### Example 1: keyword arguments
-
-```python
-def connect_summary(host, port, *, timeout=3):
-    return {"host": host, "port": port, "timeout": timeout}
-
-
-print(connect_summary("127.0.0.1", 8000, timeout=1))
-```
-
-The `*` makes `timeout` keyword-only, which can make security-sensitive options harder to pass accidentally.
-
-### Example 2: validation at the function boundary
-
-```python
-def require_source(value):
-    if not isinstance(value, str):
-        raise TypeError("source must be text")
-    value = value.strip()
-    if not value:
-        raise ValueError("source must not be blank")
     return value
 ```
 
-The function checks both type and policy. The caller receives a clear failure instead of a later obscure error.
+This function has a contract. It accepts an integer in the range 0–10 and returns that integer. It raises `TypeError` when the type is wrong and `ValueError` when the type is right but the value is outside the allowed range.
 
-### Example 3: returning structured evidence
+Why distinguish those errors? Because they describe different repairs. A type error may mean the caller forgot to convert input. A value error may mean the caller supplied a number outside policy. A user-facing program may display the same safe message, but a developer needs the distinction while debugging.
 
-```python
-def inspect_event(event):
-    source = require_source(event.get("source"))
-    severity = int(event["severity"])
-    return {"source": source, "severity": severity, "observed": True}
-```
-
-This still needs a severity range check. A function can be useful while remaining incomplete; document the contract rather than pretending it is finished.
-
-### Example 4: a testable caller
+A function can call another function:
 
 ```python
-def classify_and_format(event):
-    label = severity_label(event["severity"])
-    return format_finding(label, event["reason"])
+def parse_severity(text):
+    value = int(text.strip())
+    return validate_severity(value)
 ```
 
-Because the helper functions return values, tests can exercise them without capturing terminal output.
+The parser converts representation. The validator checks the internal value. Keeping those jobs separate makes each one easier to test.
 
-### Example 5: one side effect at the edge
+Scope surprises beginners:
 
 ```python
-def write_report(path, text):
-    path.write_text(text + "
-", encoding="utf-8")
+def create_label():
+    label = "review"
+    return label
+
+
+result = create_label()
+print(result)
 ```
 
-File writing is a side effect. It belongs in a small function with an explicit path policy and test fixture, not inside a pure classifier.
+The name `label` exists inside the function. The caller can use `result` because the function returned the value. A name created inside the function is not automatically available outside it.
+
+Avoid hidden side effects when possible:
+
+```python
+def format_summary(source, severity):
+    return f"source={source} severity={severity}"
+```
+
+This function returns text and does not write a file, contact a network, or modify a global list. Pure or mostly pure functions are easier to test because the same inputs produce the same result.
+
+A function contract should state edge cases. For `parse_severity`, decide what empty text means, whether spaces are accepted, and whether a plus sign such as `+7` is allowed. Python will have behavior even when you have not written a policy; your job is to decide whether that behavior matches the program's purpose.
+
+## Worked examples
+
+Run the examples in order. Each one changes only a small part of the previous idea.
+
+### Example 1: A first runnable case
+
+Run the smallest version first and explain what each line contributes.
+
+### Example 2: A boundary case
+
+Change exactly one input to an empty, malformed, or out-of-range value. Predict the result before running it.
+
+### Example 3: A deliberate experiment
+
+Make one controlled change, record the output, and compare it with your prediction. Do not change several lines at once.
+
+### Example 4: A bounded security fixture
+
+Apply the idea to the synthetic fixture in this lesson. The fixture is local, finite, and invented; it is not permission to inspect real systems.
 
 ## Execution trace
 
-For `severity_label(8)`:
+Trace:
 
-| Step | Operation | Result |
+```python
+def parse_severity(text):
+    cleaned = text.strip()
+    value = int(cleaned)
+    if not 0 <= value <= 10:
+        raise ValueError("outside range")
+    return value
+
+
+answer = parse_severity(" 7 ")
+print(answer)
+```
+
+| Step | Event | State |
 | ---: | --- | --- |
-| 1 | bind `severity` | `8` |
-| 2 | validate range | true |
-| 3 | evaluate `severity >= 7` | true |
-| 4 | return | `"high"` |
+| 1 | Define function | Python stores the function definition. |
+| 2 | Call with `" 7 "` | `text` refers to the raw string. |
+| 3 | `strip()` | `cleaned` becomes `"7"`. |
+| 4 | `int()` | `value` becomes `7`. |
+| 5 | Range check | `7` is accepted. |
+| 6 | `return value` | caller receives `7` as `answer`. |
 
-The caller receives a value. The function does not decide that a real incident occurred.
+If the call is `parse_severity("high")`, the function stops at `int(cleaned)` and never reaches the range check. If the call is `parse_severity("99")`, conversion succeeds but the range check raises `ValueError`.
 
-## Common mistakes
+## Common mistakes and repairs
 
-| Mistake | Symptom | Correction |
+| Mistake | Symptom | Repair |
 | --- | --- | --- |
-| forgetting `return` | caller receives `None` | return the intended value |
-| mutable default argument | calls share unexpected state | use `None` or an immutable default |
-| hidden print or file write | unit tests become awkward | keep effects at the boundary |
-| vague contract | callers guess allowed input | state preconditions and failures |
-| validating only in the caller | another caller bypasses checks | validate at the function boundary |
+| Function prints instead of returning | Caller cannot reuse the value. | Return the result and print at the boundary. |
+| No contract | Different callers assume different behavior. | State types, ranges, and failures. |
+| One giant function | Errors are hard to isolate. | Separate parsing, validation, decision, and output. |
+| Hidden global state | Calls affect one another. | Pass inputs explicitly. |
+| Catching errors inside the validator | The caller cannot distinguish failure. | Raise expected exceptions or return a documented result. |
+
+## Guided practice
+
+Write three functions in order. First, `parse_severity(text)` converts text. Second, `validate_severity(value)` checks type and range. Third, `format_summary(source, severity)` returns a labelled string.
+
+Test each function independently before composing them. Use one valid value, one malformed value, one out-of-range value, and one missing or empty value. For every failure, write which function should own the failure and why.
 
 ## Security application
 
-Refactor the Day 5 classifier into pure functions for parsing, policy, explanation, and output formatting. Add tests that prove each function’s contract. Keep file access and terminal output in the CLI boundary.
-## Exercises
+Functions are useful in security engineering because they let you place controls at explicit boundaries. A parser can refuse malformed text. A validator can enforce a finite range. A formatter can avoid printing secrets. A classifier can return `unknown` instead of making a verdict.
 
-Complete the numbered questions in [practice/exercises.md](practice/exercises.md) in order. Use the examples from this lesson as your starting point. Use [hints](practice/hints.md) only after a genuine attempt and [solutions](practice/solutions.md) only to compare your reasoning.
+A function contract is not authorization. A perfectly tested function can still be used against a system without permission. Keep all examples local and synthetic.
+
+## Independent exercises
+
+Complete these in [`practice/exercises.md`](practice/exercises.md) in order:
+
+1. Write `add_one` and explain parameter, argument, and return value.
+2. Write a function with a default source label.
+3. Implement and test `validate_severity`.
+4. Separate parsing from validation.
+5. Write a formatter that returns rather than prints.
+6. Demonstrate a `TypeError` and a `ValueError` with different inputs.
+7. Explain local scope using a small function.
+8. Test empty, whitespace-only, valid, and out-of-range text.
+9. Write a function contract in a comment or docstring.
+10. Compose parser, validator, and formatter for a synthetic record.
+11. Explain why pure functions are easier to test.
+12. Safety question: explain why a safe function still needs a safe caller and authorized target.
+
+
+
+### Additional beginner checkpoint
+
+Pause before adding another feature. Read the current program aloud as a sequence of decisions: what enters, what is transformed, what is checked, and what leaves. Write down one value that is allowed, one value that must be rejected, and one value whose meaning is uncertain. This distinction matters in cybersecurity because an unknown observation should not silently become a safe conclusion. Run the allowed case, the rejected case, and the uncertain case separately. Keep the exact output in your notes and explain which line produced it.
+
+Now make the smallest useful improvement. Give one name a clearer meaning, extract one repeated operation, or add one explicit boundary check. Run the same three cases again. If the behavior changed, explain whether the change was intended. If a test now fails, treat the failure as information about the contract rather than deleting the test. Finish by writing one sentence about the lesson's limitation: a local Python rule can organize synthetic evidence, but it cannot establish authorization, authenticity, or the truth of a real-world accusation.
 
 ## Finish line
 
-Run the starter, pass the relevant tests, complete the numbered exercises, and explain one edge case aloud or in writing.
+Day 9 is complete when you can write a small function with a clear contract, explain the difference between parameters and arguments, return a result, separate conversion from validation, and test expected failures.
 
-## Mental model
+## References
 
-> A function is a named contract: explicit inputs enter, a defined result leaves, and side effects are visible at the boundary.
-
-## Limitations
-
-A pure function can still implement a bad policy, receive unauthenticated data, or be called unsafely. Contracts improve review; they do not replace threat modeling.
-
-## Optional video support
-
-Watch [CS50P Lecture 0](https://www.youtube.com/watch?v=JP7ITIXGpHk&t=306s) from `05:06` for functions, arguments, and side effects.
-
-Use the [timestamped video catalog](../VIDEO_RESOURCES.md) only after running the local examples. The written lesson and Python documentation remain authoritative.
-
+[1]: https://docs.python.org/3/tutorial/controlflow.html#defining-functions "Python function tutorial"
+[2]: https://docs.python.org/3/library/exceptions.html "Python built-in exceptions"
+[3]: https://docs.python.org/3/tutorial/classes.html#python-scopes-and-namespaces "Python scopes and namespaces"
+[4]: https://owasp.org/www-community/attacks/Improper_Input_Validation "OWASP input validation overview"
 
 [← Day 8](../day_08_strings_and_canonicalization/day_08_strings_and_canonicalization.md) · [Day index](../DAY_INDEX.md) · [Day 10 →](../day_10_checkpoint_log_triage/day_10_checkpoint_log_triage.md)
