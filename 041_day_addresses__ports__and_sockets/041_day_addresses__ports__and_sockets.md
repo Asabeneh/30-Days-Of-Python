@@ -1,6 +1,6 @@
-# Day 41: Addresses, ports, and sockets
+# Day 41: Addresses, Ports, and Sockets
 
-[Previous](../040_day_project__host_baseline_auditor/040_day_project__host_baseline_auditor.md) | [Next](../042_day_tcp_clients_and_servers/042_day_tcp_clients_and_servers.md)
+[← Day 40](../040_day_project__host_baseline_auditor/040_day_project__host_baseline_auditor.md) · [Day index](../DAY_INDEX.md) · [Day 42 →](../042_day_tcp_clients_and_servers/042_day_tcp_clients_and_servers.md)
 
 ## Table of Contents
 
@@ -9,54 +9,161 @@
 - [Outcomes](#outcomes)
 - [The problem](#the-problem)
 - [Security boundary](#security-boundary)
-- [Concept map](#concept-map)
-- [Practice](#practice)
-- [Mental model](#mental-model)
+- [Lesson](#lesson)
+- [Vocabulary](#vocabulary)
+- [Worked examples](#worked-examples)
+- [Execution trace](#execution-trace)
+- [Common mistakes](#common-mistakes)
+- [Security application](#security-application)
+- [Exercises](#exercises)
 - [Finish line](#finish-line)
 
 ## Why this lesson exists
 
-This lesson belongs to **Networking and Protocols**. It turns one engineering concept into a runnable, testable, and explainable security practice. The final lesson will be expanded with execution traces, diagrams, common-mistake tables, and worked examples before that phase is marked complete.
+Network programs begin with names and endpoints. A learner must understand what an address identifies, what a port represents, and why a socket operation is not automatically authorized.
 
 ## Prerequisites
 
-Complete the previous lesson and keep the repository setup from [SETUP.md](../SETUP.md) available. Revisit the linked previous lesson if any term is unfamiliar.
+Complete Day 40. Run the repository checks and use only the local fixtures and explicitly authorized loopback services.
 
 ## Outcomes
 
-By the end, you can explain the concept, run the starter, predict a result, write a small test, identify one failure mode, and state the security boundary of the exercise.
+By the end of this lesson, you can:
+
+- explain the protocol or security property in plain language
+- run and modify every worked example
+- test a normal, boundary, and failure case
+- identify the trust boundary and residual risk
+- connect the concept to the numbered cybersecurity exercises
 
 ## The problem
 
-Security engineering requires reliable decisions under imperfect input and failure. This day introduces **Addresses, ports, and sockets** through a bounded local fixture before asking you to generalize the pattern.
+Describe a local service endpoint and create a socket object without scanning or connecting to an unknown host.
 
 ## Security boundary
 
-Use only the supplied synthetic data or a local fixture. Do not substitute public targets, university systems, employer systems, real credentials, or private evidence. Stop if the scope changes.
+Use synthetic data, local fixtures, and loopback-only demonstrations. This lesson does not authorize scanning, interception, credential use, remote command execution, or changes to systems you do not own.
 
-## Concept map
+## Lesson
 
-Start with the smallest runnable example in `starter/main.py`. Trace the input, transformation, decision, and output. Then deliberately change one input and predict the result before running again. The full lesson expansion will add a visual data-flow diagram, a common-mistakes table, and an explanation of what the tool cannot conclude.
+### Vocabulary
+
+An IP address identifies an interface in a network context. A port identifies a transport endpoint. A socket is a program object representing communication settings.
+
+## Worked examples
+
+### Example 1: Represent an endpoint
+
+Keep host and port as separate typed values.
+
+```python
+from dataclasses import dataclass
+
+
+@dataclass(frozen=True)
+class Endpoint:
+    host: str
+    port: int
+
+
+print(Endpoint("127.0.0.1", 8000))
+```
+
+**What to observe:**
+
+`Endpoint(host='127.0.0.1', port=8000)`
+
+### Example 2: Validate a port
+
+Conversion and range policy are separate steps.
+
+```python
+def port(value: str) -> int:
+    number = int(value)
+    if not 1 <= number <= 65535:
+        raise ValueError("port outside TCP/UDP range")
+    return number
+```
+
+**What to observe:**
+
+`port('8000')` returns 8000; 0 and 65536 are rejected.
+
+### Example 3: Create a socket
+
+Creating a socket does not send traffic.
+
+```python
+import socket
+
+sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+print(sock.family, sock.type)
+sock.close()
+```
+
+**What to observe:**
+
+The object is IPv4/TCP and is closed without connecting.
+
+### Example 4: Use a context manager
+
+Cleanup should happen even when later code fails.
+
+```python
+with socket.socket() as sock:
+    sock.settimeout(1.0)
+    print(sock.gettimeout())
+```
+
+**What to observe:**
+
+`1.0` seconds.
+
+### Example 5: State scope
+
+A network operation should carry its authorization boundary.
+
+```python
+scope = {"host": "127.0.0.1", "purpose": "course fixture", "remote": False}
+print(scope)
+```
+
+**What to observe:**
+
+The scope is local and explicit.
+
+## Execution trace
+
+The endpoint is validated, the socket is created, options are set, and cleanup happens. No network operation occurs until a connect, bind, send, or receive call is made.
+
+## Common mistakes
+
+| Mistake | Symptom | Correction |
+| --- | --- | --- |
+| port as a string everywhere | comparisons behave unexpectedly | convert at the boundary |
+| socket never closed | resources remain open | use `with` |
+| localhost equals harmless | a local service may contain private data | define authorization and fixture |
+| address equals identity | IP data is overinterpreted | record source and confidence |
+| connect in a test | external side effect | use a fake or local controlled service |
+
+## Security application
+
+Use loopback or a fake socket in tests. Do not enumerate ports or connect to systems not explicitly supplied by the course.
 
 ## Exercises
 
-Complete the numbered questions in [practice/exercises.md](practice/exercises.md) in order. Run the requested commands, produce the requested artifact, and record the edge case or limitation asked for by the exercise. Use [hints](practice/hints.md) only after a real attempt and [solutions](practice/solutions.md) only to compare your reasoning.
-
-## Mental model
-
-> A security tool is a small program whose assumptions, inputs, outputs, and limits must be made visible.
+Complete the numbered questions in [practice/exercises.md](practice/exercises.md) in order. Run the requested local command, inspect its output, and record the limitation asked for by the exercise.
 
 ## Finish line
 
-Run the starter, pass the day tests when present, complete the core practice, and write one sentence naming an edge case and one sentence naming the lab boundary.
+Run `python -m course_days.day041`, pass the relevant tests, complete the numbered exercises, and explain one edge case aloud or in writing.
 
+## Mental model
 
-<!-- video-resources:start -->
-## Video support
+> An endpoint is data; a socket is a capability; authorization must exist before the capability is used.
 
-**Optional recommendation:** [Understanding the OSI Model - CompTIA Network+ N10-009 - 1.1](https://www.youtube.com/watch?v=AYgXr1dynKU).
+## Limitations
 
-- Watch [00:00–13:51: Complete focused lesson](https://www.youtube.com/watch?v=AYgXr1dynKU&t=0s) for **OSI model**. Then return to this lesson and run the local starter.
+Addresses and ports change, can be spoofed, and do not identify a person or authorize access.
 
-Written alternative: [https://www.professormesser.com/network-plus/n10-009/n10-009-video/n10-009-training-course/](https://www.professormesser.com/network-plus/n10-009/n10-009-video/n10-009-training-course/).
-<!-- video-resources:end -->
+[← Day 40](../040_day_project__host_baseline_auditor/040_day_project__host_baseline_auditor.md) · [Day index](../DAY_INDEX.md) · [Day 42 →](../042_day_tcp_clients_and_servers/042_day_tcp_clients_and_servers.md)

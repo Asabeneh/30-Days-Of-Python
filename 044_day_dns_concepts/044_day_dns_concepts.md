@@ -1,6 +1,6 @@
-# Day 44: DNS concepts
+# Day 44: DNS Concepts and Safe Resolution
 
-[Previous](../043_day_udp_and_framing/043_day_udp_and_framing.md) | [Next](../045_day_http_requests_and_responses/045_day_http_requests_and_responses.md)
+[← Day 43](../043_day_udp_and_framing/043_day_udp_and_framing.md) · [Day index](../DAY_INDEX.md) · [Day 45 →](../045_day_http_requests_and_responses/045_day_http_requests_and_responses.md)
 
 ## Table of Contents
 
@@ -9,54 +9,147 @@
 - [Outcomes](#outcomes)
 - [The problem](#the-problem)
 - [Security boundary](#security-boundary)
-- [Concept map](#concept-map)
-- [Practice](#practice)
-- [Mental model](#mental-model)
+- [Lesson](#lesson)
+- [Vocabulary](#vocabulary)
+- [Worked examples](#worked-examples)
+- [Execution trace](#execution-trace)
+- [Common mistakes](#common-mistakes)
+- [Security application](#security-application)
+- [Exercises](#exercises)
 - [Finish line](#finish-line)
 
 ## Why this lesson exists
 
-This lesson belongs to **Networking and Protocols**. It turns one engineering concept into a runnable, testable, and explainable security practice. The final lesson will be expanded with execution traces, diagrams, common-mistake tables, and worked examples before that phase is marked complete.
+Names are translated into addresses through a resolver path that can vary by cache, configuration, and time. Security tooling should distinguish lookup results from ownership or trust.
 
 ## Prerequisites
 
-Complete the previous lesson and keep the repository setup from [SETUP.md](../SETUP.md) available. Revisit the linked previous lesson if any term is unfamiliar.
+Complete Day 43. Run the repository checks and use only the local fixtures and explicitly authorized loopback services.
 
 ## Outcomes
 
-By the end, you can explain the concept, run the starter, predict a result, write a small test, identify one failure mode, and state the security boundary of the exercise.
+By the end of this lesson, you can:
+
+- explain the protocol or security property in plain language
+- run and modify every worked example
+- test a normal, boundary, and failure case
+- identify the trust boundary and residual risk
+- connect the concept to the numbered cybersecurity exercises
 
 ## The problem
 
-Security engineering requires reliable decisions under imperfect input and failure. This day introduces **DNS concepts** through a bounded local fixture before asking you to generalize the pattern.
+Resolve a documentation name or local fixture safely and record the resolver result without probing the returned host.
 
 ## Security boundary
 
-Use only the supplied synthetic data or a local fixture. Do not substitute public targets, university systems, employer systems, real credentials, or private evidence. Stop if the scope changes.
+Use synthetic data, local fixtures, and loopback-only demonstrations. This lesson does not authorize scanning, interception, credential use, remote command execution, or changes to systems you do not own.
 
-## Concept map
+## Lesson
 
-Start with the smallest runnable example in `starter/main.py`. Trace the input, transformation, decision, and output. Then deliberately change one input and predict the result before running again. The full lesson expansion will add a visual data-flow diagram, a common-mistakes table, and an explanation of what the tool cannot conclude.
+### Vocabulary
+
+DNS maps names to records. A resolver performs lookup. A cache stores results for a period. TTL expresses a caching interval.
+
+## Worked examples
+
+### Example 1: Resolve a local name
+
+Use the standard library for a single explicit lookup.
+
+```python
+import socket
+
+print(socket.gethostbyname("localhost"))
+```
+
+**What to observe:**
+
+Usually `127.0.0.1` in a local environment.
+
+### Example 2: Inspect multiple results
+
+One name can map to multiple addresses.
+
+```python
+print(socket.getaddrinfo("localhost", 0, type=socket.SOCK_STREAM))
+```
+
+**What to observe:**
+
+The result contains address families and endpoints.
+
+### Example 3: Preserve the name
+
+The original name is important provenance.
+
+```python
+record = {"name": "localhost", "resolved": ["127.0.0.1"], "observed": True}
+print(record)
+```
+
+**What to observe:**
+
+The name and result stay together.
+
+### Example 4: Bound a lookup
+
+A tool should not treat resolution as a permission to connect.
+
+```python
+policy = {"allowed_names": {"localhost"}}
+print("localhost" in policy["allowed_names"])
+```
+
+**What to observe:**
+
+Only an explicitly allowed training name passes policy.
+
+### Example 5: State time
+
+Results need an observation time because DNS can change.
+
+```python
+from datetime import datetime, timezone
+
+print(datetime.now(timezone.utc).isoformat())
+```
+
+**What to observe:**
+
+An aware UTC timestamp.
+
+## Execution trace
+
+The name is selected, policy checks it, the resolver returns records, and the tool records time and source. No connection follows automatically.
+
+## Common mistakes
+
+| Mistake | Symptom | Correction |
+| --- | --- | --- |
+| resolution equals ownership | name is treated as trusted | record it as an observation |
+| connect after lookup | lookup becomes an unapproved action | separate phases |
+| assume one address | load balancing and IPv6 are missed | handle multiple results |
+| cache forever | stale result is treated as current | record time and TTL when available |
+| log private names | internal data leaks | minimize output |
+
+## Security application
+
+Use `localhost` or documented synthetic names only. Do not enumerate DNS names, perform zone transfers, or connect to resolved endpoints.
 
 ## Exercises
 
-Complete the numbered questions in [practice/exercises.md](practice/exercises.md) in order. Run the requested commands, produce the requested artifact, and record the edge case or limitation asked for by the exercise. Use [hints](practice/hints.md) only after a real attempt and [solutions](practice/solutions.md) only to compare your reasoning.
-
-## Mental model
-
-> A security tool is a small program whose assumptions, inputs, outputs, and limits must be made visible.
+Complete the numbered questions in [practice/exercises.md](practice/exercises.md) in order. Run the requested local command, inspect its output, and record the limitation asked for by the exercise.
 
 ## Finish line
 
-Run the starter, pass the day tests when present, complete the core practice, and write one sentence naming an edge case and one sentence naming the lab boundary.
+Run `python -m course_days.day044`, pass the relevant tests, complete the numbered exercises, and explain one edge case aloud or in writing.
 
+## Mental model
 
-<!-- video-resources:start -->
-## Video support
+> DNS is a time-bound naming observation, not identity, authorization, or proof of ownership.
 
-**Inline recommendation:** [Introduction to IP - CompTIA Network+ N10-009 - 1.4](https://www.youtube.com/watch?v=ueth6WvFVMU).
+## Limitations
 
-- Watch [00:00–14:10: Complete focused lesson](https://www.youtube.com/watch?v=ueth6WvFVMU&t=0s) for **IP addressing**. Then return to this lesson and run the local starter.
+Resolvers, caches, hosts files, and network policy affect results; a Python lookup cannot prove the full DNS path.
 
-Written alternative: [https://docs.python.org/3/library/ipaddress.html](https://docs.python.org/3/library/ipaddress.html).
-<!-- video-resources:end -->
+[← Day 43](../043_day_udp_and_framing/043_day_udp_and_framing.md) · [Day index](../DAY_INDEX.md) · [Day 45 →](../045_day_http_requests_and_responses/045_day_http_requests_and_responses.md)

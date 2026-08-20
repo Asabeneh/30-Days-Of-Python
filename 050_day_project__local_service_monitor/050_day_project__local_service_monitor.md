@@ -1,6 +1,6 @@
 # Day 50: Project: Local Service Monitor
 
-[Previous](../049_day_network_baselines/049_day_network_baselines.md) | [Next](../051_day_trust_boundaries_and_threat_models/051_day_trust_boundaries_and_threat_models.md)
+[← Day 49](../049_day_network_baselines/049_day_network_baselines.md) · [Day index](../DAY_INDEX.md) · [Day 51 →](../051_day_trust_boundaries_and_threat_models/051_day_trust_boundaries_and_threat_models.md)
 
 ## Table of Contents
 
@@ -9,43 +9,146 @@
 - [Outcomes](#outcomes)
 - [The problem](#the-problem)
 - [Security boundary](#security-boundary)
-- [Concept map](#concept-map)
-- [Practice](#practice)
-- [Mental model](#mental-model)
+- [Lesson](#lesson)
+- [Vocabulary](#vocabulary)
+- [Worked examples](#worked-examples)
+- [Execution trace](#execution-trace)
+- [Common mistakes](#common-mistakes)
+- [Security application](#security-application)
+- [Exercises](#exercises)
 - [Finish line](#finish-line)
 
 ## Why this lesson exists
 
-This lesson belongs to **Networking and Protocols**. It turns one engineering concept into a runnable, testable, and explainable security practice. The final lesson will be expanded with execution traces, diagrams, common-mistake tables, and worked examples before that phase is marked complete.
+This project combines sockets, HTTP parsing, TLS reasoning, timeouts, retries, and baselines into a local monitor that reports bounded observations instead of acting like an internet scanner.
 
 ## Prerequisites
 
-Complete the previous lesson and keep the repository setup from [SETUP.md](../SETUP.md) available. Revisit the linked previous lesson if any term is unfamiliar.
+Complete Day 49. Run the repository checks and use only the local fixtures and explicitly authorized loopback services.
 
 ## Outcomes
 
-By the end, you can explain the concept, run the starter, predict a result, write a small test, identify one failure mode, and state the security boundary of the exercise.
+By the end of this lesson, you can:
+
+- explain the protocol or security property in plain language
+- run and modify every worked example
+- test a normal, boundary, and failure case
+- identify the trust boundary and residual risk
+- connect the concept to the numbered cybersecurity exercises
 
 ## The problem
 
-Security engineering requires reliable decisions under imperfect input and failure. This day introduces **Project: Local Service Monitor** through a bounded local fixture before asking you to generalize the pattern.
+Build a monitor for one supplied loopback service with explicit timeout, retry, endpoint, and cleanup rules.
 
 ## Security boundary
 
-Use only the supplied synthetic data or a local fixture. Do not substitute public targets, university systems, employer systems, real credentials, or private evidence. Stop if the scope changes.
+Use synthetic data, local fixtures, and loopback-only demonstrations. This lesson does not authorize scanning, interception, credential use, remote command execution, or changes to systems you do not own.
 
-## Concept map
+## Lesson
 
-Start with the smallest runnable example in `starter/main.py`. Trace the input, transformation, decision, and output. Then deliberately change one input and predict the result before running again. The full lesson expansion will add a visual data-flow diagram, a common-mistakes table, and an explanation of what the tool cannot conclude.
+### Vocabulary
+
+A monitor observes availability and response properties. It does not prove health, ownership, or security. An **SLO** is a documented reliability target.
+
+## Worked examples
+
+### Example 1: Define scope
+
+The monitor should carry its one approved endpoint.
+
+```python
+scope = {"host": "127.0.0.1", "port": 8000, "path": "/health", "max_attempts": 2}
+print(scope)
+```
+
+**What to observe:**
+
+The endpoint and budgets are visible.
+
+### Example 2: Record a check
+
+A result should separate transport from application outcome.
+
+```python
+result = {"connected": True, "status": 200, "latency_ms": 12}
+print(result)
+```
+
+**What to observe:**
+
+The fields describe what was observed.
+
+### Example 3: Handle timeout
+
+Timeout is incomplete evidence.
+
+```python
+print({"connected": False, "status": None, "reason": "timeout", "complete": False})
+```
+
+**What to observe:**
+
+The report avoids a false healthy/unhealthy claim.
+
+### Example 4: Compare baseline
+
+A threshold is a review policy, not proof of compromise.
+
+```python
+baseline_ms = 20
+observed_ms = 45
+print({"latency_changed": observed_ms > baseline_ms * 2})
+```
+
+**What to observe:**
+
+The difference is a local review signal.
+
+### Example 5: Reset cleanly
+
+A project must say how to stop and remove generated reports.
+
+```python
+cleanup = ["stop local server", "delete training-output"]
+print(cleanup)
+```
+
+**What to observe:**
+
+The reset plan is explicit.
+
+## Execution trace
+
+The monitor validates scope, performs a finite local check, handles timeout/retry, parses a bounded response, compares safe features, and writes a report with completeness and limitations.
+
+## Common mistakes
+
+| Mistake | Symptom | Correction |
+| --- | --- | --- |
+| scan a range | project becomes reconnaissance | one supplied endpoint only |
+| no timeout | monitor hangs | finite timeout |
+| retry forever | load amplification | finite retry budget |
+| call latency attack | timing is ambiguous | report as observation |
+| no cleanup | local service persists | document reset |
+
+## Security application
+
+The checkpoint must be loopback-only, read-only, finite, synthetic, and tested with a fake service or fixture. No public host, credential, or scanning feature is allowed.
 
 ## Exercises
 
-Complete the numbered questions in [practice/exercises.md](practice/exercises.md) in order. Run the requested commands, produce the requested artifact, and record the edge case or limitation asked for by the exercise. Use [hints](practice/hints.md) only after a real attempt and [solutions](practice/solutions.md) only to compare your reasoning.
-
-## Mental model
-
-> A security tool is a small program whose assumptions, inputs, outputs, and limits must be made visible.
+Complete the numbered questions in [practice/exercises.md](practice/exercises.md) in order. Run the requested local command, inspect its output, and record the limitation asked for by the exercise.
 
 ## Finish line
 
-Run the starter, pass the day tests when present, complete the core practice, and write one sentence naming an edge case and one sentence naming the lab boundary.
+Run `python -m course_days.day050`, pass the relevant tests, complete the numbered exercises, and explain one edge case aloud or in writing.
+
+## Mental model
+
+> A monitor is a bounded observation pipeline with a documented endpoint and uncertainty-aware report.
+
+## Limitations
+
+A local monitor cannot establish availability for all users, application correctness, or security posture.
+
+[← Day 49](../049_day_network_baselines/049_day_network_baselines.md) · [Day index](../DAY_INDEX.md) · [Day 51 →](../051_day_trust_boundaries_and_threat_models/051_day_trust_boundaries_and_threat_models.md)

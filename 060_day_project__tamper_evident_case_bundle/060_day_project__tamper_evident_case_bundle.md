@@ -1,6 +1,6 @@
 # Day 60: Project: Tamper-Evident Case Bundle
 
-[Previous](../059_day_secure_errors_and_logging/059_day_secure_errors_and_logging.md) | [Next](../061_day_local_service_architecture/061_day_local_service_architecture.md)
+[← Day 59](../059_day_secure_errors_and_logging/059_day_secure_errors_and_logging.md) · [Day index](../DAY_INDEX.md) · [Day 61 →](../061_day_local_service_architecture/061_day_local_service_architecture.md)
 
 ## Table of Contents
 
@@ -9,43 +9,159 @@
 - [Outcomes](#outcomes)
 - [The problem](#the-problem)
 - [Security boundary](#security-boundary)
-- [Concept map](#concept-map)
-- [Practice](#practice)
-- [Mental model](#mental-model)
+- [Lesson](#lesson)
+- [Vocabulary](#vocabulary)
+- [Worked examples](#worked-examples)
+- [Execution trace](#execution-trace)
+- [Common mistakes](#common-mistakes)
+- [Security application](#security-application)
+- [Exercises](#exercises)
 - [Finish line](#finish-line)
 
 ## Why this lesson exists
 
-This lesson belongs to **Secure Python and Applied Cryptography**. It turns one engineering concept into a runnable, testable, and explainable security practice. The final lesson will be expanded with execution traces, diagrams, common-mistake tables, and worked examples before that phase is marked complete.
+This project combines encoding, hashes, HMAC, serialization, error policy, and provenance into a local case bundle that can detect modification without pretending to be legal chain of custody.
 
 ## Prerequisites
 
-Complete the previous lesson and keep the repository setup from [SETUP.md](../SETUP.md) available. Revisit the linked previous lesson if any term is unfamiliar.
+Complete Day 59. Run the repository checks and use only the local fixtures and explicitly authorized loopback services.
 
 ## Outcomes
 
-By the end, you can explain the concept, run the starter, predict a result, write a small test, identify one failure mode, and state the security boundary of the exercise.
+By the end of this lesson, you can:
+
+- explain the protocol or security property in plain language
+- run and modify every worked example
+- test a normal, boundary, and failure case
+- identify the trust boundary and residual risk
+- connect the concept to the numbered cybersecurity exercises
 
 ## The problem
 
-Security engineering requires reliable decisions under imperfect input and failure. This day introduces **Project: Tamper-Evident Case Bundle** through a bounded local fixture before asking you to generalize the pattern.
+Build a bundle of synthetic JSON records with canonical bytes, a manifest digest, an HMAC tag, and a verification command.
 
 ## Security boundary
 
-Use only the supplied synthetic data or a local fixture. Do not substitute public targets, university systems, employer systems, real credentials, or private evidence. Stop if the scope changes.
+Use synthetic data, local fixtures, and loopback-only demonstrations. This lesson does not authorize scanning, interception, credential use, remote command execution, or changes to systems you do not own.
 
-## Concept map
+## Lesson
 
-Start with the smallest runnable example in `starter/main.py`. Trace the input, transformation, decision, and output. Then deliberately change one input and predict the result before running again. The full lesson expansion will add a visual data-flow diagram, a common-mistakes table, and an explanation of what the tool cannot conclude.
+### Vocabulary
+
+A manifest lists bundle members. Canonical bytes make hashing reproducible. Tamper-evident means change is detectable under a protected verification key.
+
+## Worked examples
+
+### Example 1: Create canonical JSON
+
+Stable key ordering and encoding make bytes reproducible.
+
+```python
+import json
+
+record = {"severity": 7, "case_id": "training-060"}
+canonical = json.dumps(record, sort_keys=True, separators=(",", ":")).encode("utf-8")
+print(canonical)
+```
+
+**What to observe:**
+
+The canonical bytes have no incidental spaces.
+
+### Example 2: Digest a member
+
+The manifest can store a digest for each member.
+
+```python
+import hashlib
+
+member_hash = hashlib.sha256(canonical).hexdigest()
+print(member_hash[:12])
+```
+
+**What to observe:**
+
+A stable digest prefix.
+
+### Example 3: Build a manifest
+
+The manifest names scope and members.
+
+```python
+manifest = {
+    "version": 1,
+    "members": {"record.json": member_hash},
+    "scope": "training-only",
+}
+print(manifest)
+```
+
+**What to observe:**
+
+The bundle structure is visible.
+
+### Example 4: Authenticate the manifest
+
+HMAC protects the manifest under the training key.
+
+```python
+import hmac
+
+key = b"training-bundle-key"
+manifest_bytes = json.dumps(manifest, sort_keys=True).encode()
+tag = hmac.new(key, manifest_bytes, hashlib.sha256).hexdigest()
+print(tag[:12])
+```
+
+**What to observe:**
+
+The tag is stored separately from the secret key.
+
+### Example 5: Verify before reading
+
+Verification must precede interpreting members as trusted.
+
+```python
+ok = hmac.compare_digest(tag, hmac.new(key, manifest_bytes, hashlib.sha256).hexdigest())
+print(ok)
+```
+
+**What to observe:**
+
+`True` for the unchanged training manifest.
+
+## Execution trace
+
+The project canonicalizes data, hashes each member, authenticates the manifest, writes a bounded bundle, and verifies the tag and member digests before reporting a result.
+
+## Common mistakes
+
+| Mistake | Symptom | Correction |
+| --- | --- | --- |
+| hash noncanonical JSON | equivalent data hashes differently | define canonical bytes |
+| store key with bundle | attacker gets verification key | separate key lifecycle |
+| parse before verify | tampered content controls code | verify manifest first |
+| claim legal evidence | technical check is overclaimed | state training limitations |
+| no version | future parser guesses | version the bundle schema |
+
+## Security application
+
+The bundle is local, synthetic, resettable, and verified with a disposable training key. The README must document exact bytes, key handling, tamper test, cleanup, and limitations.
 
 ## Exercises
 
-Complete the numbered questions in [practice/exercises.md](practice/exercises.md) in order. Run the requested commands, produce the requested artifact, and record the edge case or limitation asked for by the exercise. Use [hints](practice/hints.md) only after a real attempt and [solutions](practice/solutions.md) only to compare your reasoning.
-
-## Mental model
-
-> A security tool is a small program whose assumptions, inputs, outputs, and limits must be made visible.
+Complete the numbered questions in [practice/exercises.md](practice/exercises.md) in order. Run the requested local command, inspect its output, and record the limitation asked for by the exercise.
 
 ## Finish line
 
-Run the starter, pass the day tests when present, complete the core practice, and write one sentence naming an edge case and one sentence naming the lab boundary.
+Run `python -m course_days.day060`, pass the relevant tests, complete the numbered exercises, and explain one edge case aloud or in writing.
+
+## Mental model
+
+> A tamper-evident bundle makes changes detectable under a defined byte and key policy; it does not make data true.
+
+## Limitations
+
+This is not a production evidence system, secure archival service, or legal chain-of-custody implementation.
+
+[← Day 59](../059_day_secure_errors_and_logging/059_day_secure_errors_and_logging.md) · [Day index](../DAY_INDEX.md) · [Day 61 →](../061_day_local_service_architecture/061_day_local_service_architecture.md)

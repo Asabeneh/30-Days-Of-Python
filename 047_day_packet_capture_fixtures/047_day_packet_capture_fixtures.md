@@ -1,6 +1,6 @@
-# Day 47: Packet-capture fixtures
+# Day 47: Packet-Capture Fixtures and Layered Parsing
 
-[Previous](../046_day_tls_and_certificate_validation/046_day_tls_and_certificate_validation.md) | [Next](../048_day_rate_limits_and_retries/048_day_rate_limits_and_retries.md)
+[← Day 46](../046_day_tls_and_certificate_validation/046_day_tls_and_certificate_validation.md) · [Day index](../DAY_INDEX.md) · [Day 48 →](../048_day_rate_limits_and_retries/048_day_rate_limits_and_retries.md)
 
 ## Table of Contents
 
@@ -9,43 +9,148 @@
 - [Outcomes](#outcomes)
 - [The problem](#the-problem)
 - [Security boundary](#security-boundary)
-- [Concept map](#concept-map)
-- [Practice](#practice)
-- [Mental model](#mental-model)
+- [Lesson](#lesson)
+- [Vocabulary](#vocabulary)
+- [Worked examples](#worked-examples)
+- [Execution trace](#execution-trace)
+- [Common mistakes](#common-mistakes)
+- [Security application](#security-application)
+- [Exercises](#exercises)
 - [Finish line](#finish-line)
 
 ## Why this lesson exists
 
-This lesson belongs to **Networking and Protocols**. It turns one engineering concept into a runnable, testable, and explainable security practice. The final lesson will be expanded with execution traces, diagrams, common-mistake tables, and worked examples before that phase is marked complete.
+Packet captures are rich evidence, but a beginner can easily mistake a decoded field for complete context. A fixture-first parser makes layers, offsets, and truncation visible.
 
 ## Prerequisites
 
-Complete the previous lesson and keep the repository setup from [SETUP.md](../SETUP.md) available. Revisit the linked previous lesson if any term is unfamiliar.
+Complete Day 46. Run the repository checks and use only the local fixtures and explicitly authorized loopback services.
 
 ## Outcomes
 
-By the end, you can explain the concept, run the starter, predict a result, write a small test, identify one failure mode, and state the security boundary of the exercise.
+By the end of this lesson, you can:
+
+- explain the protocol or security property in plain language
+- run and modify every worked example
+- test a normal, boundary, and failure case
+- identify the trust boundary and residual risk
+- connect the concept to the numbered cybersecurity exercises
 
 ## The problem
 
-Security engineering requires reliable decisions under imperfect input and failure. This day introduces **Packet-capture fixtures** through a bounded local fixture before asking you to generalize the pattern.
+Parse a saved, synthetic packet summary rather than sniffing a live interface.
 
 ## Security boundary
 
-Use only the supplied synthetic data or a local fixture. Do not substitute public targets, university systems, employer systems, real credentials, or private evidence. Stop if the scope changes.
+Use synthetic data, local fixtures, and loopback-only demonstrations. This lesson does not authorize scanning, interception, credential use, remote command execution, or changes to systems you do not own.
 
-## Concept map
+## Lesson
 
-Start with the smallest runnable example in `starter/main.py`. Trace the input, transformation, decision, and output. Then deliberately change one input and predict the result before running again. The full lesson expansion will add a visual data-flow diagram, a common-mistakes table, and an explanation of what the tool cannot conclude.
+### Vocabulary
+
+A packet is a sequence of bytes. A protocol layer interprets part of it. A capture fixture is saved evidence with collection limits and metadata.
+
+## Worked examples
+
+### Example 1: Represent a frame
+
+A fixture can describe layers without needing live capture.
+
+```python
+frame = {"number": 1, "layers": ["ethernet", "ip", "tcp"], "captured": True}
+print(frame)
+```
+
+**What to observe:**
+
+The layer list is explicit.
+
+### Example 2: Parse a bounded header
+
+Never index bytes without checking length.
+
+```python
+data = b"GET /"
+if len(data) < 4:
+    raise ValueError("truncated")
+print(data[:4])
+```
+
+**What to observe:**
+
+`b'GET '`
+
+### Example 3: Preserve offsets
+
+Offsets let a reviewer locate a field in a fixture.
+
+```python
+field = {"name": "payload", "start": 40, "length": 5}
+print(field)
+```
+
+**What to observe:**
+
+The evidence location is retained.
+
+### Example 4: Mark truncation
+
+A capture may omit bytes by design.
+
+```python
+capture = {"captured_bytes": 64, "original_bytes": 120, "truncated": True}
+print(capture)
+```
+
+**What to observe:**
+
+The result cannot be interpreted as a complete payload.
+
+### Example 5: Separate observation
+
+A decoded flag is not automatically malicious.
+
+```python
+finding = {"flag": "SYN", "label": "observed", "confidence": "low"}
+print(finding)
+```
+
+**What to observe:**
+
+The neutral label preserves uncertainty.
+
+## Execution trace
+
+The parser validates fixture length, decodes one layer, records offsets and truncation, and returns observations with provenance rather than a story about an attacker.
+
+## Common mistakes
+
+| Mistake | Symptom | Correction |
+| --- | --- | --- |
+| sniff live interface | scope and privacy fail | use saved fixtures |
+| assume full payload | truncated data is overread | check lengths and flags |
+| decode without layer | fields are misaligned | parse in order |
+| packet equals event | context is missing | record only observation |
+| store sensitive capture | evidence leaks | use synthetic fixtures and minimize |
+
+## Security application
+
+Use only supplied packet summaries or synthetic byte strings. Do not capture other people’s traffic or build a live interception tool.
 
 ## Exercises
 
-Complete the numbered questions in [practice/exercises.md](practice/exercises.md) in order. Run the requested commands, produce the requested artifact, and record the edge case or limitation asked for by the exercise. Use [hints](practice/hints.md) only after a real attempt and [solutions](practice/solutions.md) only to compare your reasoning.
-
-## Mental model
-
-> A security tool is a small program whose assumptions, inputs, outputs, and limits must be made visible.
+Complete the numbered questions in [practice/exercises.md](practice/exercises.md) in order. Run the requested local command, inspect its output, and record the limitation asked for by the exercise.
 
 ## Finish line
 
-Run the starter, pass the day tests when present, complete the core practice, and write one sentence naming an edge case and one sentence naming the lab boundary.
+Run `python -m course_days.day047`, pass the relevant tests, complete the numbered exercises, and explain one edge case aloud or in writing.
+
+## Mental model
+
+> A packet parser transforms bounded bytes into layered observations with offsets and completeness metadata.
+
+## Limitations
+
+A capture can be truncated, malformed, encrypted, spoofed, or detached from application context.
+
+[← Day 46](../046_day_tls_and_certificate_validation/046_day_tls_and_certificate_validation.md) · [Day index](../DAY_INDEX.md) · [Day 48 →](../048_day_rate_limits_and_retries/048_day_rate_limits_and_retries.md)

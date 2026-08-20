@@ -1,6 +1,6 @@
-# Day 46: TLS and certificate validation
+# Day 46: TLS and Certificate Validation
 
-[Previous](../045_day_http_requests_and_responses/045_day_http_requests_and_responses.md) | [Next](../047_day_packet_capture_fixtures/047_day_packet_capture_fixtures.md)
+[← Day 45](../045_day_http_requests_and_responses/045_day_http_requests_and_responses.md) · [Day index](../DAY_INDEX.md) · [Day 47 →](../047_day_packet_capture_fixtures/047_day_packet_capture_fixtures.md)
 
 ## Table of Contents
 
@@ -9,43 +9,149 @@
 - [Outcomes](#outcomes)
 - [The problem](#the-problem)
 - [Security boundary](#security-boundary)
-- [Concept map](#concept-map)
-- [Practice](#practice)
-- [Mental model](#mental-model)
+- [Lesson](#lesson)
+- [Vocabulary](#vocabulary)
+- [Worked examples](#worked-examples)
+- [Execution trace](#execution-trace)
+- [Common mistakes](#common-mistakes)
+- [Security application](#security-application)
+- [Exercises](#exercises)
 - [Finish line](#finish-line)
 
 ## Why this lesson exists
 
-This lesson belongs to **Networking and Protocols**. It turns one engineering concept into a runnable, testable, and explainable security practice. The final lesson will be expanded with execution traces, diagrams, common-mistake tables, and worked examples before that phase is marked complete.
+Encryption in transit is useful only when the client validates who it is communicating with. A learner should understand certificates and hostname checks without writing a bypass.
 
 ## Prerequisites
 
-Complete the previous lesson and keep the repository setup from [SETUP.md](../SETUP.md) available. Revisit the linked previous lesson if any term is unfamiliar.
+Complete Day 45. Run the repository checks and use only the local fixtures and explicitly authorized loopback services.
 
 ## Outcomes
 
-By the end, you can explain the concept, run the starter, predict a result, write a small test, identify one failure mode, and state the security boundary of the exercise.
+By the end of this lesson, you can:
+
+- explain the protocol or security property in plain language
+- run and modify every worked example
+- test a normal, boundary, and failure case
+- identify the trust boundary and residual risk
+- connect the concept to the numbered cybersecurity exercises
 
 ## The problem
 
-Security engineering requires reliable decisions under imperfect input and failure. This day introduces **TLS and certificate validation** through a bounded local fixture before asking you to generalize the pattern.
+Inspect the standard library’s secure client defaults and explain why disabling certificate verification is not a fix.
 
 ## Security boundary
 
-Use only the supplied synthetic data or a local fixture. Do not substitute public targets, university systems, employer systems, real credentials, or private evidence. Stop if the scope changes.
+Use synthetic data, local fixtures, and loopback-only demonstrations. This lesson does not authorize scanning, interception, credential use, remote command execution, or changes to systems you do not own.
 
-## Concept map
+## Lesson
 
-Start with the smallest runnable example in `starter/main.py`. Trace the input, transformation, decision, and output. Then deliberately change one input and predict the result before running again. The full lesson expansion will add a visual data-flow diagram, a common-mistakes table, and an explanation of what the tool cannot conclude.
+### Vocabulary
+
+TLS provides confidentiality and integrity for a negotiated connection. A certificate binds a public key to an identity under a trust model. Hostname verification checks the requested name.
+
+## Worked examples
+
+### Example 1: Create a default context
+
+The standard client context enables ordinary verification defaults.
+
+```python
+import ssl
+
+context = ssl.create_default_context()
+print(context.check_hostname, context.verify_mode)
+```
+
+**What to observe:**
+
+Hostname checking is enabled and certificates are required.
+
+### Example 2: Name the target
+
+The requested hostname is part of validation.
+
+```python
+target = {"hostname": "training.local", "purpose": "loopback demo"}
+print(target)
+```
+
+**What to observe:**
+
+The identity expectation is explicit.
+
+### Example 3: Reject a mismatch conceptually
+
+A certificate for another name should not be accepted silently.
+
+```python
+expected = "training.local"
+presented = "other.local"
+print(expected == presented)
+```
+
+**What to observe:**
+
+`False`; the client should fail rather than continue.
+
+### Example 4: Separate trust stores
+
+Trust decisions depend on which CA roots the client uses.
+
+```python
+trust_policy = {"system_roots": True, "custom_roots": []}
+print(trust_policy)
+```
+
+**What to observe:**
+
+The trust source is documented.
+
+### Example 5: Do not disable verification
+
+A bypass converts an identity failure into an undetected connection.
+
+```python
+safe = {"verify_certificates": True, "verify_hostname": True}
+print(safe)
+```
+
+**What to observe:**
+
+Both checks remain enabled.
+
+## Execution trace
+
+The client chooses a trust store, negotiates TLS, validates the chain and hostname, and only then treats the connection as authenticated for the stated identity.
+
+## Common mistakes
+
+| Mistake | Symptom | Correction |
+| --- | --- | --- |
+| `CERT_NONE` in production | identity is not checked | keep verification enabled |
+| trust any hostname | wrong service can impersonate | verify hostname |
+| encryption equals authentication | endpoint identity is assumed | describe the trust model |
+| ignore expiration | stale credentials remain trusted | check validity |
+| print certificate details carelessly | internal names leak | minimize logs |
+
+## Security application
+
+Use documentation and a local controlled certificate if needed. Do not add a verification bypass or connect to arbitrary public targets.
 
 ## Exercises
 
-Complete the numbered questions in [practice/exercises.md](practice/exercises.md) in order. Run the requested commands, produce the requested artifact, and record the edge case or limitation asked for by the exercise. Use [hints](practice/hints.md) only after a real attempt and [solutions](practice/solutions.md) only to compare your reasoning.
-
-## Mental model
-
-> A security tool is a small program whose assumptions, inputs, outputs, and limits must be made visible.
+Complete the numbered questions in [practice/exercises.md](practice/exercises.md) in order. Run the requested local command, inspect its output, and record the limitation asked for by the exercise.
 
 ## Finish line
 
-Run the starter, pass the day tests when present, complete the core practice, and write one sentence naming an edge case and one sentence naming the lab boundary.
+Run `python -m course_days.day046`, pass the relevant tests, complete the numbered exercises, and explain one edge case aloud or in writing.
+
+## Mental model
+
+> TLS protects a connection only under an explicit certificate and hostname trust decision.
+
+## Limitations
+
+TLS configuration is complex, trust stores vary, and certificate validation does not authorize actions after connection.
+
+[← Day 45](../045_day_http_requests_and_responses/045_day_http_requests_and_responses.md) · [Day index](../DAY_INDEX.md) · [Day 47 →](../047_day_packet_capture_fixtures/047_day_packet_capture_fixtures.md)

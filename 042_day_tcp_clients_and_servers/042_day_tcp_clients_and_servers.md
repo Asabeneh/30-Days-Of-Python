@@ -1,6 +1,6 @@
-# Day 42: TCP clients and servers
+# Day 42: TCP Clients, Servers, and Framing
 
-[Previous](../041_day_addresses__ports__and_sockets/041_day_addresses__ports__and_sockets.md) | [Next](../043_day_udp_and_framing/043_day_udp_and_framing.md)
+[← Day 41](../041_day_addresses__ports__and_sockets/041_day_addresses__ports__and_sockets.md) · [Day index](../DAY_INDEX.md) · [Day 43 →](../043_day_udp_and_framing/043_day_udp_and_framing.md)
 
 ## Table of Contents
 
@@ -9,43 +9,152 @@
 - [Outcomes](#outcomes)
 - [The problem](#the-problem)
 - [Security boundary](#security-boundary)
-- [Concept map](#concept-map)
-- [Practice](#practice)
-- [Mental model](#mental-model)
+- [Lesson](#lesson)
+- [Vocabulary](#vocabulary)
+- [Worked examples](#worked-examples)
+- [Execution trace](#execution-trace)
+- [Common mistakes](#common-mistakes)
+- [Security application](#security-application)
+- [Exercises](#exercises)
 - [Finish line](#finish-line)
 
 ## Why this lesson exists
 
-This lesson belongs to **Networking and Protocols**. It turns one engineering concept into a runnable, testable, and explainable security practice. The final lesson will be expanded with execution traces, diagrams, common-mistake tables, and worked examples before that phase is marked complete.
+TCP provides an ordered byte stream, not messages. A security engineer must understand connection lifecycle, partial reads, framing, and timeouts before writing a client or service.
 
 ## Prerequisites
 
-Complete the previous lesson and keep the repository setup from [SETUP.md](../SETUP.md) available. Revisit the linked previous lesson if any term is unfamiliar.
+Complete Day 41. Run the repository checks and use only the local fixtures and explicitly authorized loopback services.
 
 ## Outcomes
 
-By the end, you can explain the concept, run the starter, predict a result, write a small test, identify one failure mode, and state the security boundary of the exercise.
+By the end of this lesson, you can:
+
+- explain the protocol or security property in plain language
+- run and modify every worked example
+- test a normal, boundary, and failure case
+- identify the trust boundary and residual risk
+- connect the concept to the numbered cybersecurity exercises
 
 ## The problem
 
-Security engineering requires reliable decisions under imperfect input and failure. This day introduces **TCP clients and servers** through a bounded local fixture before asking you to generalize the pattern.
+Build a local loopback echo exchange with a length or delimiter rule and a finite timeout.
 
 ## Security boundary
 
-Use only the supplied synthetic data or a local fixture. Do not substitute public targets, university systems, employer systems, real credentials, or private evidence. Stop if the scope changes.
+Use synthetic data, local fixtures, and loopback-only demonstrations. This lesson does not authorize scanning, interception, credential use, remote command execution, or changes to systems you do not own.
 
-## Concept map
+## Lesson
 
-Start with the smallest runnable example in `starter/main.py`. Trace the input, transformation, decision, and output. Then deliberately change one input and predict the result before running again. The full lesson expansion will add a visual data-flow diagram, a common-mistakes table, and an explanation of what the tool cannot conclude.
+### Vocabulary
+
+TCP is connection-oriented. A **stream** has no message boundaries. **Framing** tells the receiver where one message ends. `accept` creates a per-client socket.
+
+## Worked examples
+
+### Example 1: Bind a local server
+
+Binding reserves an endpoint for a local process.
+
+```python
+import socket
+
+server = socket.socket()
+server.bind(("127.0.0.1", 0))
+print(server.getsockname()[1])
+server.close()
+```
+
+**What to observe:**
+
+Port zero asks the OS for a temporary local port.
+
+### Example 2: Listen and accept
+
+A server creates a listening socket, then accepts a client socket.
+
+```python
+server.listen(1)
+client, address = server.accept()
+client.close()
+```
+
+**What to observe:**
+
+`client` represents one connection; this call blocks until a client arrives.
+
+### Example 3: Send bytes
+
+Sockets send bytes, so text needs an encoding.
+
+```python
+payload = "hello".encode("utf-8")
+print(payload)
+```
+
+**What to observe:**
+
+`b'hello'`
+
+### Example 4: Frame with a delimiter
+
+A newline can separate small training messages.
+
+```python
+buffer = b"one\ntwo\n"
+messages = buffer.split(b"\n")
+print(messages[:2])
+```
+
+**What to observe:**
+
+The first two frames are `one` and `two`.
+
+### Example 5: Set a timeout
+
+Blocking network calls need a finite wait.
+
+```python
+sock.settimeout(1.0)
+print(sock.gettimeout())
+```
+
+**What to observe:**
+
+The call will not wait forever.
+
+## Execution trace
+
+A TCP server binds and listens, accepts a connection, receives arbitrary-sized chunks, reconstructs frames, responds, and closes. A single `recv` is not guaranteed to return one complete message.
+
+## Common mistakes
+
+| Mistake | Symptom | Correction |
+| --- | --- | --- |
+| assume `recv` is one message | partial or combined frames | implement framing |
+| forget close | sockets accumulate | use context managers and `finally` |
+| no timeout | connection hangs | set a finite timeout |
+| bind all interfaces | service is exposed unexpectedly | use loopback for practice |
+| echo untrusted bytes | protocol confusion | define encoding and maximum frame size |
+
+## Security application
+
+Use only loopback and a disposable port. The exercise must include a maximum frame size and a test for a partial frame; it must not become a remote shell or scanner.
 
 ## Exercises
 
-Complete the numbered questions in [practice/exercises.md](practice/exercises.md) in order. Run the requested commands, produce the requested artifact, and record the edge case or limitation asked for by the exercise. Use [hints](practice/hints.md) only after a real attempt and [solutions](practice/solutions.md) only to compare your reasoning.
-
-## Mental model
-
-> A security tool is a small program whose assumptions, inputs, outputs, and limits must be made visible.
+Complete the numbered questions in [practice/exercises.md](practice/exercises.md) in order. Run the requested local command, inspect its output, and record the limitation asked for by the exercise.
 
 ## Finish line
 
-Run the starter, pass the day tests when present, complete the core practice, and write one sentence naming an edge case and one sentence naming the lab boundary.
+Run `python -m course_days.day042`, pass the relevant tests, complete the numbered exercises, and explain one edge case aloud or in writing.
+
+## Mental model
+
+> TCP is a stream with a lifecycle and no built-in message boundaries; framing and limits are application responsibilities.
+
+## Limitations
+
+TLS, authentication, access control, and operational hardening are not provided by a bare TCP socket.
+
+[← Day 41](../041_day_addresses__ports__and_sockets/041_day_addresses__ports__and_sockets.md) · [Day index](../DAY_INDEX.md) · [Day 43 →](../043_day_udp_and_framing/043_day_udp_and_framing.md)

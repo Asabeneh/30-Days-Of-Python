@@ -2,7 +2,7 @@
 
 | Days | Dense | Developing | Outline |
 | ---: | ---: | ---: | ---: |
-| 1–120 | 24 | 16 | 80 |
+| 1–120 | 24 | 36 | 60 |
 
 The report is a measurement aid, not a substitute for human review. Dense means the page has the required teaching sections, at least five worked examples, and at least 700 words.
 
@@ -48,26 +48,26 @@ The report is a measurement aid, not a substitute for human review. Dense means 
 | 38 | `038_day_async_i_o` | 654 | 5 | 5 | developing |
 | 39 | `039_day_host_inventories` | 663 | 5 | 5 | developing |
 | 40 | `040_day_project__host_baseline_auditor` | 694 | 5 | 5 | developing |
-| 41 | `041_day_addresses__ports__and_sockets` | 397 | 0 | 0 | outline |
-| 42 | `042_day_tcp_clients_and_servers` | 354 | 0 | 0 | outline |
-| 43 | `043_day_udp_and_framing` | 352 | 0 | 0 | outline |
-| 44 | `044_day_dns_concepts` | 392 | 0 | 0 | outline |
-| 45 | `045_day_http_requests_and_responses` | 354 | 0 | 0 | outline |
-| 46 | `046_day_tls_and_certificate_validation` | 354 | 0 | 0 | outline |
-| 47 | `047_day_packet_capture_fixtures` | 350 | 0 | 0 | outline |
-| 48 | `048_day_rate_limits_and_retries` | 354 | 0 | 0 | outline |
-| 49 | `049_day_network_baselines` | 393 | 0 | 0 | outline |
-| 50 | `050_day_project__local_service_monitor` | 354 | 0 | 0 | outline |
-| 51 | `051_day_trust_boundaries_and_threat_models` | 399 | 0 | 0 | outline |
-| 52 | `052_day_encoding_and_unicode` | 354 | 0 | 0 | outline |
-| 53 | `053_day_hashes_and_integrity` | 354 | 0 | 0 | outline |
-| 54 | `054_day_hmac_and_authenticity` | 354 | 0 | 0 | outline |
-| 55 | `055_day_secure_randomness` | 352 | 0 | 0 | outline |
-| 56 | `056_day_password_verification` | 352 | 0 | 0 | outline |
-| 57 | `057_day_symmetric_and_asymmetric_crypto` | 356 | 0 | 0 | outline |
-| 58 | `058_day_safe_serialization` | 352 | 0 | 0 | outline |
-| 59 | `059_day_secure_errors_and_logging` | 356 | 0 | 0 | outline |
-| 60 | `060_day_project__tamper_evident_case_bundle` | 356 | 0 | 0 | outline |
+| 41 | `041_day_addresses__ports__and_sockets` | 678 | 5 | 5 | developing |
+| 42 | `042_day_tcp_clients_and_servers` | 653 | 5 | 5 | developing |
+| 43 | `043_day_udp_and_framing` | 642 | 5 | 5 | developing |
+| 44 | `044_day_dns_concepts` | 638 | 5 | 5 | developing |
+| 45 | `045_day_http_requests_and_responses` | 643 | 5 | 5 | developing |
+| 46 | `046_day_tls_and_certificate_validation` | 650 | 5 | 5 | developing |
+| 47 | `047_day_packet_capture_fixtures` | 637 | 5 | 5 | developing |
+| 48 | `048_day_rate_limits_and_retries` | 661 | 5 | 5 | developing |
+| 49 | `049_day_network_baselines` | 621 | 5 | 5 | developing |
+| 50 | `050_day_project__local_service_monitor` | 639 | 5 | 5 | developing |
+| 51 | `051_day_trust_boundaries_and_threat_models` | 643 | 5 | 5 | developing |
+| 52 | `052_day_encoding_and_unicode` | 618 | 5 | 5 | developing |
+| 53 | `053_day_hashes_and_integrity` | 658 | 5 | 5 | developing |
+| 54 | `054_day_hmac_and_authenticity` | 658 | 5 | 5 | developing |
+| 55 | `055_day_secure_randomness` | 652 | 5 | 5 | developing |
+| 56 | `056_day_password_verification` | 677 | 5 | 5 | developing |
+| 57 | `057_day_symmetric_and_asymmetric_crypto` | 670 | 5 | 5 | developing |
+| 58 | `058_day_safe_serialization` | 633 | 5 | 5 | developing |
+| 59 | `059_day_secure_errors_and_logging` | 646 | 5 | 5 | developing |
+| 60 | `060_day_project__tamper_evident_case_bundle` | 666 | 5 | 5 | developing |
 | 61 | `061_day_local_service_architecture` | 395 | 0 | 0 | outline |
 | 62 | `062_day_request_parsing_and_validation` | 356 | 0 | 0 | outline |
 | 63 | `063_day_authentication_and_authorization` | 354 | 0 | 0 | outline |
