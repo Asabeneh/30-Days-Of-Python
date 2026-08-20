@@ -9,17 +9,17 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 
 DIRS = {
-    1: "day_1_setup_and_safe_practice",
-    2: "day_2_values_names_and_input",
-    3: "day_3_types_and_parsing",
-    4: "day_4_operators_and_decisions",
-    5: "day_5_branching_and_triage",
-    6: "day_6_loops_and_bounded_work",
-    7: "day_7_collections_and_iocs",
-    8: "day_8_strings_and_canonicalization",
-    9: "day_9_functions_and_validation",
-    10: "day_10_checkpoint_log_triage",
-    11: "day_11_function_contracts",
+    1: "day_001_setup_and_safe_practice",
+    2: "day_002_values_names_and_input",
+    3: "day_003_types_and_parsing",
+    4: "day_004_operators_and_decisions",
+    5: "day_005_branching_and_triage",
+    6: "day_006_loops_and_bounded_work",
+    7: "day_007_collections_and_iocs",
+    8: "day_008_strings_and_canonicalization",
+    9: "day_009_functions_and_validation",
+    10: "day_010_checkpoint_log_triage",
+    11: "day_011_function_contracts",
 }
 
 

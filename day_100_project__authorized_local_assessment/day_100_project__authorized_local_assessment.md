@@ -1,6 +1,6 @@
 # Day 100: Project: Authorized Local Assessment
 
-[← Day 99](../day_99_findings_and_retesting/day_99_findings_and_retesting.md) · [Day index](../DAY_INDEX.md) · [Day 101 →](../day_101_secure_sdlc/day_101_secure_sdlc.md)
+[← Day 99](../day_099_findings_and_retesting/day_099_findings_and_retesting.md) · [Day index](../DAY_INDEX.md) · [Day 101 →](../day_101_secure_sdlc/day_101_secure_sdlc.md)
 
 
 
@@ -260,4 +260,4 @@ This project cannot establish production security, legal compliance, exploitabil
 [3]: https://owasp.org/www-project-top-ten/ "OWASP Top 10"
 [4]: https://csrc.nist.gov/glossary "NIST cybersecurity glossary"
 
-[← Day 99](../day_99_findings_and_retesting/day_99_findings_and_retesting.md) · [Day index](../DAY_INDEX.md) · [Day 101 →](../day_101_secure_sdlc/day_101_secure_sdlc.md)
+[← Day 99](../day_099_findings_and_retesting/day_099_findings_and_retesting.md) · [Day index](../DAY_INDEX.md) · [Day 101 →](../day_101_secure_sdlc/day_101_secure_sdlc.md)
