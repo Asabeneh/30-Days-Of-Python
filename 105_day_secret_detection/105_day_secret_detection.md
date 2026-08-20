@@ -1,6 +1,6 @@
-# Day 105: Secret detection
+# Day 105: Secret Detection and Remediation
 
-[Previous](../104_day_sbom_and_provenance/104_day_sbom_and_provenance.md) | [Next](../106_day_containers_and_isolation/106_day_containers_and_isolation.md)
+[← Day 104](../104_day_sbom_and_provenance/104_day_sbom_and_provenance.md) · [Day index](../DAY_INDEX.md) · [Day 106 →](../106_day_containers_and_isolation/106_day_containers_and_isolation.md)
 
 ## Table of Contents
 
@@ -9,43 +9,147 @@
 - [Outcomes](#outcomes)
 - [The problem](#the-problem)
 - [Security boundary](#security-boundary)
-- [Concept map](#concept-map)
-- [Practice](#practice)
-- [Mental model](#mental-model)
+- [Lesson](#lesson)
+- [Vocabulary](#vocabulary)
+- [Worked examples](#worked-examples)
+- [Execution trace](#execution-trace)
+- [Common mistakes](#common-mistakes)
+- [Security application](#security-application)
+- [Exercises](#exercises)
 - [Finish line](#finish-line)
 
 ## Why this lesson exists
 
-This lesson belongs to **DevSecOps, Cloud Concepts, and Supply Chain**. It turns one engineering concept into a runnable, testable, and explainable security practice. The final lesson will be expanded with execution traces, diagrams, common-mistake tables, and worked examples before that phase is marked complete.
+Secrets often enter repositories through convenience. Detection is one layer; prevention, removal from history, rotation, and safe reporting complete the response.
 
 ## Prerequisites
 
-Complete the previous lesson and keep the repository setup from [SETUP.md](../SETUP.md) available. Revisit the linked previous lesson if any term is unfamiliar.
+Complete Day 104. Work from a clean virtual environment and use only local synthetic fixtures.
 
 ## Outcomes
 
-By the end, you can explain the concept, run the starter, predict a result, write a small test, identify one failure mode, and state the security boundary of the exercise.
+By the end of this lesson, you can:
+
+- explain the concept before using it
+- run and modify all worked examples
+- test normal, boundary, and failure behavior
+- state scope, evidence, and residual risk
+- complete the numbered exercises
 
 ## The problem
 
-Security engineering requires reliable decisions under imperfect input and failure. This day introduces **Secret detection** through a bounded local fixture before asking you to generalize the pattern.
+Scan synthetic files for token-like values, report locations without printing secrets, and write a remediation plan.
 
 ## Security boundary
 
-Use only the supplied synthetic data or a local fixture. Do not substitute public targets, university systems, employer systems, real credentials, or private evidence. Stop if the scope changes.
+This lesson is educational and bounded. It does not authorize public scanning, credential use, destructive actions, persistence, or processing of private data.
 
-## Concept map
+## Lesson
 
-Start with the smallest runnable example in `starter/main.py`. Trace the input, transformation, decision, and output. Then deliberately change one input and predict the result before running again. The full lesson expansion will add a visual data-flow diagram, a common-mistakes table, and an explanation of what the tool cannot conclude.
+### Vocabulary
+
+A secret is sensitive authentication material. Detection finds candidates. Rotation invalidates a credential and issues a replacement. False positives are benign matches.
+
+## Worked examples
+
+### Example 1: Use a candidate pattern
+
+Patterns identify candidates, not confirmed secrets.
+
+```python
+import re
+
+pattern = re.compile(r"token=[^\s]+")
+print(bool(pattern.search("token=training-secret")))
+```
+
+**What to observe:**
+
+A candidate is found.
+
+### Example 2: Redact the match
+
+The report should not reproduce the value.
+
+```python
+text = "token=training-secret"
+print(re.sub(r"(token=)[^\s]+", r"\1[REDACTED]", text))
+```
+
+**What to observe:**
+
+The marker replaces the value.
+
+### Example 3: Record location
+
+File and line are useful without full content.
+
+```python
+finding = {"file": "fixture.txt", "line": 1, "kind": "token-like"}
+print(finding)
+```
+
+**What to observe:**
+
+The location is safe enough for training.
+
+### Example 4: Plan rotation
+
+Removing a string from the working tree does not revoke a real credential.
+
+```python
+plan = ["revoke", "issue replacement", "remove from history if needed", "review access"]
+print(plan)
+```
+
+**What to observe:**
+
+The response steps are explicit.
+
+### Example 5: Handle false positives
+
+A pattern may match a placeholder or test value.
+
+```python
+print({"candidate": "training-secret", "confirmed": False, "review": True})
+```
+
+**What to observe:**
+
+The result is not overclaimed.
+
+## Execution trace
+
+The scanner reads bounded files, identifies candidate patterns, redacts values before reporting, records location and confidence, and directs real secret response toward revocation and access review.
+
+## Common mistakes
+
+| Mistake | Symptom | Correction |
+| --- | --- | --- |
+| print match | secret leaks in report | redact before output |
+| delete only | credential remains valid | revoke and rotate |
+| scan private tree | scope violation | use fixtures |
+| pattern equals secret | false positives | review candidates |
+| forget history | old commit retains value | assess history and access |
+
+## Security application
+
+Use placeholders only. If a real credential is ever exposed, stop, notify the owner privately, and follow the repository security policy; do not paste it into issues or reports.
 
 ## Exercises
 
-Complete the numbered questions in [practice/exercises.md](practice/exercises.md) in order. Run the requested commands, produce the requested artifact, and record the edge case or limitation asked for by the exercise. Use [hints](practice/hints.md) only after a real attempt and [solutions](practice/solutions.md) only to compare your reasoning.
-
-## Mental model
-
-> A security tool is a small program whose assumptions, inputs, outputs, and limits must be made visible.
+Complete the numbered questions in [practice/exercises.md](practice/exercises.md) in order. Record the evidence, output, edge case, and limitation requested by each question.
 
 ## Finish line
 
-Run the starter, pass the day tests when present, complete the core practice, and write one sentence naming an edge case and one sentence naming the lab boundary.
+Run `python -m course_days.day105`, pass the relevant tests, complete the numbered exercises, and explain one edge case aloud or in writing.
+
+## Mental model
+
+> Secret detection finds candidates; remediation removes utility through revocation, rotation, history handling, and access review.
+
+## Limitations
+
+Detection patterns miss formats and can create false positives; real secret response requires the credential owner.
+
+[← Day 104](../104_day_sbom_and_provenance/104_day_sbom_and_provenance.md) · [Day index](../DAY_INDEX.md) · [Day 106 →](../106_day_containers_and_isolation/106_day_containers_and_isolation.md)

@@ -1,6 +1,6 @@
-# Day 117: Capstone planning
+# Day 117: Capstone Planning
 
-[Previous](../116_day_research_and_source_evaluation/116_day_research_and_source_evaluation.md) | [Next](../118_day_capstone_implementation/118_day_capstone_implementation.md)
+[← Day 116](../116_day_research_and_source_evaluation/116_day_research_and_source_evaluation.md) · [Day index](../DAY_INDEX.md) · [Day 118 →](../118_day_capstone_implementation/118_day_capstone_implementation.md)
 
 ## Table of Contents
 
@@ -9,43 +9,154 @@
 - [Outcomes](#outcomes)
 - [The problem](#the-problem)
 - [Security boundary](#security-boundary)
-- [Concept map](#concept-map)
-- [Practice](#practice)
-- [Mental model](#mental-model)
+- [Lesson](#lesson)
+- [Vocabulary](#vocabulary)
+- [Worked examples](#worked-examples)
+- [Execution trace](#execution-trace)
+- [Common mistakes](#common-mistakes)
+- [Security application](#security-application)
+- [Exercises](#exercises)
 - [Finish line](#finish-line)
 
 ## Why this lesson exists
 
-This lesson belongs to **Advanced Integration and Capstone**. It turns one engineering concept into a runnable, testable, and explainable security practice. The final lesson will be expanded with execution traces, diagrams, common-mistake tables, and worked examples before that phase is marked complete.
+A capstone should demonstrate judgment, not become an unbounded collection of tools. Planning turns a broad security goal into a scoped problem, architecture, milestones, tests, and demonstration evidence.
 
 ## Prerequisites
 
-Complete the previous lesson and keep the repository setup from [SETUP.md](../SETUP.md) available. Revisit the linked previous lesson if any term is unfamiliar.
+Complete Day 116. Work from a clean virtual environment and use only local synthetic fixtures.
 
 ## Outcomes
 
-By the end, you can explain the concept, run the starter, predict a result, write a small test, identify one failure mode, and state the security boundary of the exercise.
+By the end of this lesson, you can:
+
+- explain the concept before using it
+- run and modify all worked examples
+- test normal, boundary, and failure behavior
+- state scope, evidence, and residual risk
+- complete the numbered exercises
 
 ## The problem
 
-Security engineering requires reliable decisions under imperfect input and failure. This day introduces **Capstone planning** through a bounded local fixture before asking you to generalize the pattern.
+Plan a defensive Python capstone that combines local telemetry, safe validation, reporting, tests, and one specialization track.
 
 ## Security boundary
 
-Use only the supplied synthetic data or a local fixture. Do not substitute public targets, university systems, employer systems, real credentials, or private evidence. Stop if the scope changes.
+This lesson is educational and bounded. It does not authorize public scanning, credential use, destructive actions, persistence, or processing of private data.
 
-## Concept map
+## Lesson
 
-Start with the smallest runnable example in `starter/main.py`. Trace the input, transformation, decision, and output. Then deliberately change one input and predict the result before running again. The full lesson expansion will add a visual data-flow diagram, a common-mistakes table, and an explanation of what the tool cannot conclude.
+### Vocabulary
+
+A capstone is an integrated project. A milestone is a bounded increment. A decision log records important trade-offs. A definition of done states evidence.
+
+## Worked examples
+
+### Example 1: Choose a problem
+
+A good problem has a user, asset, and safe boundary.
+
+```python
+problem = {
+    "user": "student analyst",
+    "asset": "synthetic events",
+    "boundary": "local fixtures",
+}
+print(problem)
+```
+
+**What to observe:**
+
+The project is bounded.
+
+### Example 2: Define milestones
+
+Milestones reduce a large project into demonstrable steps.
+
+```python
+milestones = ["schema", "parser", "policy", "tests", "report", "review"]
+print(milestones)
+```
+
+**What to observe:**
+
+The order is visible.
+
+### Example 3: Choose architecture
+
+Reuse tested modules rather than copy code.
+
+```python
+architecture = {"input": "fixture", "core": "pure policy", "output": "redacted report"}
+print(architecture)
+```
+
+**What to observe:**
+
+The design has boundaries.
+
+### Example 4: Define done
+
+Completion needs artifacts and explanation.
+
+```python
+done = ["tests pass", "README", "threat model", "sample output", "limitations"]
+print(done)
+```
+
+**What to observe:**
+
+The evidence is concrete.
+
+### Example 5: Record a trade-off
+
+A decision log explains why the project is shaped this way.
+
+```python
+decision = {
+    "choice": "fixture-only",
+    "benefit": "safe reproducibility",
+    "cost": "not production telemetry",
+}
+print(decision)
+```
+
+**What to observe:**
+
+The trade-off is honest.
+
+## Execution trace
+
+The capstone moves from user/asset/boundary to milestones, architecture, evidence, and trade-offs. Scope is reduced until the learner can finish and explain it.
+
+## Common mistakes
+
+| Mistake | Symptom | Correction |
+| --- | --- | --- |
+| build every tool | project never finishes | choose one outcome |
+| no threat model | features create risk | model before code |
+| demo only | no tests or evidence | define done |
+| copy libraries blindly | understanding is missing | explain decisions |
+| production claims | local project is overclaimed | state limits |
+
+## Security application
+
+Choose a local defensive capstone. No public data collection, exploit capability, or real credential integration.
 
 ## Exercises
 
-Complete the numbered questions in [practice/exercises.md](practice/exercises.md) in order. Run the requested commands, produce the requested artifact, and record the edge case or limitation asked for by the exercise. Use [hints](practice/hints.md) only after a real attempt and [solutions](practice/solutions.md) only to compare your reasoning.
-
-## Mental model
-
-> A security tool is a small program whose assumptions, inputs, outputs, and limits must be made visible.
+Complete the numbered questions in [practice/exercises.md](practice/exercises.md) in order. Record the evidence, output, edge case, and limitation requested by each question.
 
 ## Finish line
 
-Run the starter, pass the day tests when present, complete the core practice, and write one sentence naming an edge case and one sentence naming the lab boundary.
+Run `python -m course_days.day117`, pass the relevant tests, complete the numbered exercises, and explain one edge case aloud or in writing.
+
+## Mental model
+
+> A capstone is a bounded argument that the learner can design, build, test, review, and explain a security tool.
+
+## Limitations
+
+A plan cannot predict every implementation problem; revise scope when evidence shows it is too large.
+
+[← Day 116](../116_day_research_and_source_evaluation/116_day_research_and_source_evaluation.md) · [Day index](../DAY_INDEX.md) · [Day 118 →](../118_day_capstone_implementation/118_day_capstone_implementation.md)

@@ -1,6 +1,6 @@
-# Day 113: Advanced concurrency
+# Day 113: Advanced Concurrency and Cancellation
 
-[Previous](../112_day_performance_and_backpressure/112_day_performance_and_backpressure.md) | [Next](../114_day_failure_injection_and_recovery/114_day_failure_injection_and_recovery.md)
+[← Day 112](../112_day_performance_and_backpressure/112_day_performance_and_backpressure.md) · [Day index](../DAY_INDEX.md) · [Day 114 →](../114_day_failure_injection_and_recovery/114_day_failure_injection_and_recovery.md)
 
 ## Table of Contents
 
@@ -9,43 +9,150 @@
 - [Outcomes](#outcomes)
 - [The problem](#the-problem)
 - [Security boundary](#security-boundary)
-- [Concept map](#concept-map)
-- [Practice](#practice)
-- [Mental model](#mental-model)
+- [Lesson](#lesson)
+- [Vocabulary](#vocabulary)
+- [Worked examples](#worked-examples)
+- [Execution trace](#execution-trace)
+- [Common mistakes](#common-mistakes)
+- [Security application](#security-application)
+- [Exercises](#exercises)
 - [Finish line](#finish-line)
 
 ## Why this lesson exists
 
-This lesson belongs to **Advanced Integration and Capstone**. It turns one engineering concept into a runnable, testable, and explainable security practice. The final lesson will be expanded with execution traces, diagrams, common-mistake tables, and worked examples before that phase is marked complete.
+Concurrency at scale introduces cancellation, ordering, shared state, and cleanup problems. Reliable security tooling needs deterministic identifiers and explicit lifecycle control.
 
 ## Prerequisites
 
-Complete the previous lesson and keep the repository setup from [SETUP.md](../SETUP.md) available. Revisit the linked previous lesson if any term is unfamiliar.
+Complete Day 112. Work from a clean virtual environment and use only local synthetic fixtures.
 
 ## Outcomes
 
-By the end, you can explain the concept, run the starter, predict a result, write a small test, identify one failure mode, and state the security boundary of the exercise.
+By the end of this lesson, you can:
+
+- explain the concept before using it
+- run and modify all worked examples
+- test normal, boundary, and failure behavior
+- state scope, evidence, and residual risk
+- complete the numbered exercises
 
 ## The problem
 
-Security engineering requires reliable decisions under imperfect input and failure. This day introduces **Advanced concurrency** through a bounded local fixture before asking you to generalize the pattern.
+Coordinate bounded asynchronous tasks, cancel them cleanly, and preserve result identity.
 
 ## Security boundary
 
-Use only the supplied synthetic data or a local fixture. Do not substitute public targets, university systems, employer systems, real credentials, or private evidence. Stop if the scope changes.
+This lesson is educational and bounded. It does not authorize public scanning, credential use, destructive actions, persistence, or processing of private data.
 
-## Concept map
+## Lesson
 
-Start with the smallest runnable example in `starter/main.py`. Trace the input, transformation, decision, and output. Then deliberately change one input and predict the result before running again. The full lesson expansion will add a visual data-flow diagram, a common-mistakes table, and an explanation of what the tool cannot conclude.
+### Vocabulary
+
+Cancellation requests work to stop. A future represents pending work. Idempotence means repeating an operation has the same safe effect. A race depends on timing.
+
+## Worked examples
+
+### Example 1: Name tasks
+
+Every task needs an identifier.
+
+```python
+tasks = {"fixture-a": "pending", "fixture-b": "pending"}
+print(tasks)
+```
+
+**What to observe:**
+
+Results can be joined by id.
+
+### Example 2: Limit concurrency
+
+A semaphore caps simultaneous work.
+
+```python
+import asyncio
+
+limit = asyncio.Semaphore(2)
+print(limit)
+```
+
+**What to observe:**
+
+The limit is explicit.
+
+### Example 3: Handle cancellation
+
+Cleanup belongs in `finally`.
+
+```python
+async def work():
+    try:
+        await asyncio.sleep(0)
+    finally:
+        print("cleanup")
+```
+
+**What to observe:**
+
+Cleanup runs when the task ends or is cancelled.
+
+### Example 4: Make operation idempotent
+
+A repeated report write should not duplicate evidence.
+
+```python
+seen = {"fixture-a"}
+print("fixture-a" in seen)
+```
+
+**What to observe:**
+
+The identity check prevents duplicate handling.
+
+### Example 5: Aggregate states
+
+Mixed success needs a clear summary.
+
+```python
+print({"ok": 3, "failed": 1, "cancelled": 1})
+```
+
+**What to observe:**
+
+The summary preserves failure states.
+
+## Execution trace
+
+The coordinator creates identified tasks, limits concurrency, handles cancellation and cleanup, aggregates state, and refuses to call a partial run complete.
+
+## Common mistakes
+
+| Mistake | Symptom | Correction |
+| --- | --- | --- |
+| no cancellation | tasks keep running | propagate cancellation |
+| shared mutable list | ordering/races | return identified results |
+| duplicate retries | duplicate effects | require idempotence |
+| ignore cancelled | incomplete run looks green | count cancelled |
+| no cleanup | resources remain | use finally/context managers |
+
+## Security application
+
+Use `asyncio` with local sleeps and fixtures only. Do not create concurrent network clients for public systems.
 
 ## Exercises
 
-Complete the numbered questions in [practice/exercises.md](practice/exercises.md) in order. Run the requested commands, produce the requested artifact, and record the edge case or limitation asked for by the exercise. Use [hints](practice/hints.md) only after a real attempt and [solutions](practice/solutions.md) only to compare your reasoning.
-
-## Mental model
-
-> A security tool is a small program whose assumptions, inputs, outputs, and limits must be made visible.
+Complete the numbered questions in [practice/exercises.md](practice/exercises.md) in order. Record the evidence, output, edge case, and limitation requested by each question.
 
 ## Finish line
 
-Run the starter, pass the day tests when present, complete the core practice, and write one sentence naming an edge case and one sentence naming the lab boundary.
+Run `python -m course_days.day113`, pass the relevant tests, complete the numbered exercises, and explain one edge case aloud or in writing.
+
+## Mental model
+
+> Reliable concurrency is bounded, cancellable, and explicit about partial completion.
+
+## Limitations
+
+Concurrency correctness is difficult to prove with small tests; production systems need load, failure, and operational testing.
+
+[← Day 112](../112_day_performance_and_backpressure/112_day_performance_and_backpressure.md) · [Day index](../DAY_INDEX.md) · [Day 114 →](../114_day_failure_injection_and_recovery/114_day_failure_injection_and_recovery.md)

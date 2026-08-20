@@ -1,6 +1,6 @@
-# Day 106: Containers and isolation
+# Day 106: Containers and Isolation Concepts
 
-[Previous](../105_day_secret_detection/105_day_secret_detection.md) | [Next](../107_day_cloud_identity_concepts/107_day_cloud_identity_concepts.md)
+[← Day 105](../105_day_secret_detection/105_day_secret_detection.md) · [Day index](../DAY_INDEX.md) · [Day 107 →](../107_day_cloud_identity_concepts/107_day_cloud_identity_concepts.md)
 
 ## Table of Contents
 
@@ -9,43 +9,145 @@
 - [Outcomes](#outcomes)
 - [The problem](#the-problem)
 - [Security boundary](#security-boundary)
-- [Concept map](#concept-map)
-- [Practice](#practice)
-- [Mental model](#mental-model)
+- [Lesson](#lesson)
+- [Vocabulary](#vocabulary)
+- [Worked examples](#worked-examples)
+- [Execution trace](#execution-trace)
+- [Common mistakes](#common-mistakes)
+- [Security application](#security-application)
+- [Exercises](#exercises)
 - [Finish line](#finish-line)
 
 ## Why this lesson exists
 
-This lesson belongs to **DevSecOps, Cloud Concepts, and Supply Chain**. It turns one engineering concept into a runnable, testable, and explainable security practice. The final lesson will be expanded with execution traces, diagrams, common-mistake tables, and worked examples before that phase is marked complete.
+Containers package a process and its dependencies, but they are not magical security boundaries. Images, privileges, mounts, networks, and secrets still need explicit policy.
 
 ## Prerequisites
 
-Complete the previous lesson and keep the repository setup from [SETUP.md](../SETUP.md) available. Revisit the linked previous lesson if any term is unfamiliar.
+Complete Day 105. Work from a clean virtual environment and use only local synthetic fixtures.
 
 ## Outcomes
 
-By the end, you can explain the concept, run the starter, predict a result, write a small test, identify one failure mode, and state the security boundary of the exercise.
+By the end of this lesson, you can:
+
+- explain the concept before using it
+- run and modify all worked examples
+- test normal, boundary, and failure behavior
+- state scope, evidence, and residual risk
+- complete the numbered exercises
 
 ## The problem
 
-Security engineering requires reliable decisions under imperfect input and failure. This day introduces **Containers and isolation** through a bounded local fixture before asking you to generalize the pattern.
+Describe a least-privilege local container configuration without running untrusted images or altering the host.
 
 ## Security boundary
 
-Use only the supplied synthetic data or a local fixture. Do not substitute public targets, university systems, employer systems, real credentials, or private evidence. Stop if the scope changes.
+This lesson is educational and bounded. It does not authorize public scanning, credential use, destructive actions, persistence, or processing of private data.
 
-## Concept map
+## Lesson
 
-Start with the smallest runnable example in `starter/main.py`. Trace the input, transformation, decision, and output. Then deliberately change one input and predict the result before running again. The full lesson expansion will add a visual data-flow diagram, a common-mistakes table, and an explanation of what the tool cannot conclude.
+### Vocabulary
+
+An image is a packaged filesystem and metadata. A container is a running instance. A mount shares host data. Isolation reduces but does not eliminate risk.
+
+## Worked examples
+
+### Example 1: Name the image source
+
+Source and digest matter for reproducibility.
+
+```python
+image = {"name": "course-app", "source": "local build", "digest": "reviewed"}
+print(image)
+```
+
+**What to observe:**
+
+The image provenance is visible.
+
+### Example 2: Drop privileges
+
+A process should not run as root without a reason.
+
+```python
+runtime = {"user": "non-root", "read_only_fs": True}
+print(runtime)
+```
+
+**What to observe:**
+
+The default is restrictive.
+
+### Example 3: Limit mounts
+
+Mounts cross the container-host boundary.
+
+```python
+mounts = [{"source": "training-output", "target": "/output", "read_only": False}]
+print(mounts)
+```
+
+**What to observe:**
+
+Only the intended directory is shared.
+
+### Example 4: Disable unnecessary network
+
+A local tool may not need outbound access.
+
+```python
+network = {"mode": "none", "reason": "fixture-only"}
+print(network)
+```
+
+**What to observe:**
+
+The capability is removed.
+
+### Example 5: State residual risk
+
+Isolation is a layer, not a guarantee.
+
+```python
+print({"unknown": ["kernel", "runtime", "image dependencies"]})
+```
+
+**What to observe:**
+
+The report remains cautious.
+
+## Execution trace
+
+The deployment declares image provenance, user, filesystem, mounts, network, resources, and secrets; the runtime receives only capabilities required by the local task.
+
+## Common mistakes
+
+| Mistake | Symptom | Correction |
+| --- | --- | --- |
+| image tag as provenance | tag can move | record digest/source |
+| root by default | compromise impact grows | non-root |
+| mount home directory | host data exposed | narrow mount |
+| network by default | outbound scope expands | disable or allowlist |
+| container equals sandbox | controls are overtrusted | defense in depth |
+
+## Security application
+
+Use diagrams or configuration snippets only; do not run unreviewed images or mount private host paths.
 
 ## Exercises
 
-Complete the numbered questions in [practice/exercises.md](practice/exercises.md) in order. Run the requested commands, produce the requested artifact, and record the edge case or limitation asked for by the exercise. Use [hints](practice/hints.md) only after a real attempt and [solutions](practice/solutions.md) only to compare your reasoning.
-
-## Mental model
-
-> A security tool is a small program whose assumptions, inputs, outputs, and limits must be made visible.
+Complete the numbered questions in [practice/exercises.md](practice/exercises.md) in order. Record the evidence, output, edge case, and limitation requested by each question.
 
 ## Finish line
 
-Run the starter, pass the day tests when present, complete the core practice, and write one sentence naming an edge case and one sentence naming the lab boundary.
+Run `python -m course_days.day106`, pass the relevant tests, complete the numbered exercises, and explain one edge case aloud or in writing.
+
+## Mental model
+
+> Isolation is a capability budget around a process, not an excuse to skip source, image, host, and network review.
+
+## Limitations
+
+Container security depends on runtime, kernel, orchestrator, image, and host configuration.
+
+[← Day 105](../105_day_secret_detection/105_day_secret_detection.md) · [Day index](../DAY_INDEX.md) · [Day 107 →](../107_day_cloud_identity_concepts/107_day_cloud_identity_concepts.md)

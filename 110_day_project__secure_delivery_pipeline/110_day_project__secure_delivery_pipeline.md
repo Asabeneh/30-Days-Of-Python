@@ -1,6 +1,6 @@
 # Day 110: Project: Secure Delivery Pipeline
 
-[Previous](../109_day_security_metrics/109_day_security_metrics.md) | [Next](../111_day_security_tool_architecture/111_day_security_tool_architecture.md)
+[← Day 109](../109_day_security_metrics/109_day_security_metrics.md) · [Day index](../DAY_INDEX.md) · [Day 111 →](../111_day_security_tool_architecture/111_day_security_tool_architecture.md)
 
 ## Table of Contents
 
@@ -9,43 +9,145 @@
 - [Outcomes](#outcomes)
 - [The problem](#the-problem)
 - [Security boundary](#security-boundary)
-- [Concept map](#concept-map)
-- [Practice](#practice)
-- [Mental model](#mental-model)
+- [Lesson](#lesson)
+- [Vocabulary](#vocabulary)
+- [Worked examples](#worked-examples)
+- [Execution trace](#execution-trace)
+- [Common mistakes](#common-mistakes)
+- [Security application](#security-application)
+- [Exercises](#exercises)
 - [Finish line](#finish-line)
 
 ## Why this lesson exists
 
-This lesson belongs to **DevSecOps, Cloud Concepts, and Supply Chain**. It turns one engineering concept into a runnable, testable, and explainable security practice. The final lesson will be expanded with execution traces, diagrams, common-mistake tables, and worked examples before that phase is marked complete.
+This project composes SDLC requirements, CI gates, static analysis, provenance, secret detection, isolation, identity, drift, and metrics into a delivery decision that can be inspected and repeated.
 
 ## Prerequisites
 
-Complete the previous lesson and keep the repository setup from [SETUP.md](../SETUP.md) available. Revisit the linked previous lesson if any term is unfamiliar.
+Complete Day 109. Work from a clean virtual environment and use only local synthetic fixtures.
 
 ## Outcomes
 
-By the end, you can explain the concept, run the starter, predict a result, write a small test, identify one failure mode, and state the security boundary of the exercise.
+By the end of this lesson, you can:
+
+- explain the concept before using it
+- run and modify all worked examples
+- test normal, boundary, and failure behavior
+- state scope, evidence, and residual risk
+- complete the numbered exercises
 
 ## The problem
 
-Security engineering requires reliable decisions under imperfect input and failure. This day introduces **Project: Secure Delivery Pipeline** through a bounded local fixture before asking you to generalize the pattern.
+Design a local pipeline that either produces a reviewed artifact or stops with a clear reason.
 
 ## Security boundary
 
-Use only the supplied synthetic data or a local fixture. Do not substitute public targets, university systems, employer systems, real credentials, or private evidence. Stop if the scope changes.
+This lesson is educational and bounded. It does not authorize public scanning, credential use, destructive actions, persistence, or processing of private data.
 
-## Concept map
+## Lesson
 
-Start with the smallest runnable example in `starter/main.py`. Trace the input, transformation, decision, and output. Then deliberately change one input and predict the result before running again. The full lesson expansion will add a visual data-flow diagram, a common-mistakes table, and an explanation of what the tool cannot conclude.
+### Vocabulary
+
+A delivery pipeline is a sequence of build and verification stages. A release decision is the final policy result. Evidence artifacts support review.
+
+## Worked examples
+
+### Example 1: Define stages
+
+The pipeline should show where controls run.
+
+```python
+stages = ["requirements", "tests", "lint", "secrets", "sbom", "artifact", "review"]
+print(stages)
+```
+
+**What to observe:**
+
+The sequence is visible.
+
+### Example 2: Aggregate gates
+
+A required failure blocks release.
+
+```python
+gates = {"tests": True, "lint": True, "secrets": False}
+print(all(gates.values()))
+```
+
+**What to observe:**
+
+`False` blocks delivery.
+
+### Example 3: Create provenance
+
+The artifact needs source and component context.
+
+```python
+artifact = {"commit": "abc123", "components": ["python"], "digest": "reviewed"}
+print(artifact)
+```
+
+**What to observe:**
+
+The output is traceable.
+
+### Example 4: Review drift
+
+Effective configuration is part of delivery evidence.
+
+```python
+print({"config_baseline": "v2", "drift": False})
+```
+
+**What to observe:**
+
+The pipeline records configuration state.
+
+### Example 5: Write decision
+
+A decision must say why it passed or stopped.
+
+```python
+decision = {"release": False, "reason": "secret candidate requires review"}
+print(decision)
+```
+
+**What to observe:**
+
+The stop is explainable.
+
+## Execution trace
+
+The pipeline loads requirements, runs checks, captures artifacts, evaluates provenance/configuration/secrets, and returns a release decision with reason and owner.
+
+## Common mistakes
+
+| Mistake | Symptom | Correction |
+| --- | --- | --- |
+| gate only tests | supply chain is ignored | include provenance and secrets |
+| secrets report value | leak worsens | redact |
+| pass on unknown | blind spot becomes release | fail closed or mark blocked |
+| no owner | blocked work stalls | assign remediation |
+| artifact without source | cannot reproduce | record commit/build |
+
+## Security application
+
+Use local tools and synthetic records. Do not build a production deployment or upload private pipeline artifacts.
 
 ## Exercises
 
-Complete the numbered questions in [practice/exercises.md](practice/exercises.md) in order. Run the requested commands, produce the requested artifact, and record the edge case or limitation asked for by the exercise. Use [hints](practice/hints.md) only after a real attempt and [solutions](practice/solutions.md) only to compare your reasoning.
-
-## Mental model
-
-> A security tool is a small program whose assumptions, inputs, outputs, and limits must be made visible.
+Complete the numbered questions in [practice/exercises.md](practice/exercises.md) in order. Record the evidence, output, edge case, and limitation requested by each question.
 
 ## Finish line
 
-Run the starter, pass the day tests when present, complete the core practice, and write one sentence naming an edge case and one sentence naming the lab boundary.
+Run `python -m course_days.day110`, pass the relevant tests, complete the numbered exercises, and explain one edge case aloud or in writing.
+
+## Mental model
+
+> Secure delivery is evidence aggregation plus a policy decision; a green test suite is only one input.
+
+## Limitations
+
+A local pipeline does not prove production security, compliant provenance, or absence of malicious dependencies.
+
+[← Day 109](../109_day_security_metrics/109_day_security_metrics.md) · [Day index](../DAY_INDEX.md) · [Day 111 →](../111_day_security_tool_architecture/111_day_security_tool_architecture.md)

@@ -1,6 +1,6 @@
-# Day 109: Security metrics
+# Day 109: Security Metrics and Measurement
 
-[Previous](../108_day_configuration_drift/108_day_configuration_drift.md) | [Next](../110_day_project__secure_delivery_pipeline/110_day_project__secure_delivery_pipeline.md)
+[← Day 108](../108_day_configuration_drift/108_day_configuration_drift.md) · [Day index](../DAY_INDEX.md) · [Day 110 →](../110_day_project__secure_delivery_pipeline/110_day_project__secure_delivery_pipeline.md)
 
 ## Table of Contents
 
@@ -9,43 +9,150 @@
 - [Outcomes](#outcomes)
 - [The problem](#the-problem)
 - [Security boundary](#security-boundary)
-- [Concept map](#concept-map)
-- [Practice](#practice)
-- [Mental model](#mental-model)
+- [Lesson](#lesson)
+- [Vocabulary](#vocabulary)
+- [Worked examples](#worked-examples)
+- [Execution trace](#execution-trace)
+- [Common mistakes](#common-mistakes)
+- [Security application](#security-application)
+- [Exercises](#exercises)
 - [Finish line](#finish-line)
 
 ## Why this lesson exists
 
-This lesson belongs to **DevSecOps, Cloud Concepts, and Supply Chain**. It turns one engineering concept into a runnable, testable, and explainable security practice. The final lesson will be expanded with execution traces, diagrams, common-mistake tables, and worked examples before that phase is marked complete.
+Metrics influence decisions. A good metric defines unit, population, time window, data quality, and action; a bad metric rewards gaming or hides uncertainty.
 
 ## Prerequisites
 
-Complete the previous lesson and keep the repository setup from [SETUP.md](../SETUP.md) available. Revisit the linked previous lesson if any term is unfamiliar.
+Complete Day 108. Work from a clean virtual environment and use only local synthetic fixtures.
 
 ## Outcomes
 
-By the end, you can explain the concept, run the starter, predict a result, write a small test, identify one failure mode, and state the security boundary of the exercise.
+By the end of this lesson, you can:
+
+- explain the concept before using it
+- run and modify all worked examples
+- test normal, boundary, and failure behavior
+- state scope, evidence, and residual risk
+- complete the numbered exercises
 
 ## The problem
 
-Security engineering requires reliable decisions under imperfect input and failure. This day introduces **Security metrics** through a bounded local fixture before asking you to generalize the pattern.
+Design three synthetic metrics for test quality, detection review, and remediation without using real organizational data.
 
 ## Security boundary
 
-Use only the supplied synthetic data or a local fixture. Do not substitute public targets, university systems, employer systems, real credentials, or private evidence. Stop if the scope changes.
+This lesson is educational and bounded. It does not authorize public scanning, credential use, destructive actions, persistence, or processing of private data.
 
-## Concept map
+## Lesson
 
-Start with the smallest runnable example in `starter/main.py`. Trace the input, transformation, decision, and output. Then deliberately change one input and predict the result before running again. The full lesson expansion will add a visual data-flow diagram, a common-mistakes table, and an explanation of what the tool cannot conclude.
+### Vocabulary
+
+A metric is a defined measurement. A denominator is the population used. Coverage measures what was observed. A leading indicator predicts work; a lagging indicator records outcome.
+
+## Worked examples
+
+### Example 1: Define a ratio
+
+A metric must state numerator and denominator.
+
+```python
+passed = 18
+total = 20
+print(passed / total)
+```
+
+**What to observe:**
+
+`0.9`, or 90% if reported clearly.
+
+### Example 2: Name the population
+
+A percentage without population is misleading.
+
+```python
+metric = {
+    "name": "tests_passed",
+    "population": "required checks",
+    "window": "one commit",
+}
+print(metric)
+```
+
+**What to observe:**
+
+The context travels with the number.
+
+### Example 3: Add data quality
+
+Missing telemetry affects confidence.
+
+```python
+metric["data_quality"] = "complete"
+print(metric)
+```
+
+**What to observe:**
+
+The quality field is explicit.
+
+### Example 4: Avoid vanity metrics
+
+A high count may not mean safer behavior.
+
+```python
+print({"metric": "alerts_closed", "warning": "closure speed can hide quality"})
+```
+
+**What to observe:**
+
+The interpretation is cautious.
+
+### Example 5: Attach action
+
+Measurement should change a decision.
+
+```python
+metric["action"] = "review failed gates"
+print(metric)
+```
+
+**What to observe:**
+
+The metric has purpose.
+
+## Execution trace
+
+The metric definition identifies population, unit, time window, data quality, and decision; only then are values calculated and interpreted.
+
+## Common mistakes
+
+| Mistake | Symptom | Correction |
+| --- | --- | --- |
+| count without denominator | progress is unclear | define population |
+| optimize number | behavior is gamed | pair measures with review |
+| missing equals zero | quality looks better | report missingness |
+| no time window | trends mix periods | define window |
+| metric equals security | complexity is hidden | state limitations |
+
+## Security application
+
+Use invented values and document that they are examples. Do not claim the metrics describe a real team or organization.
 
 ## Exercises
 
-Complete the numbered questions in [practice/exercises.md](practice/exercises.md) in order. Run the requested commands, produce the requested artifact, and record the edge case or limitation asked for by the exercise. Use [hints](practice/hints.md) only after a real attempt and [solutions](practice/solutions.md) only to compare your reasoning.
-
-## Mental model
-
-> A security tool is a small program whose assumptions, inputs, outputs, and limits must be made visible.
+Complete the numbered questions in [practice/exercises.md](practice/exercises.md) in order. Record the evidence, output, edge case, and limitation requested by each question.
 
 ## Finish line
 
-Run the starter, pass the day tests when present, complete the core practice, and write one sentence naming an edge case and one sentence naming the lab boundary.
+Run `python -m course_days.day109`, pass the relevant tests, complete the numbered exercises, and explain one edge case aloud or in writing.
+
+## Mental model
+
+> A security metric is a measurement contract tied to a decision, not a badge of safety.
+
+## Limitations
+
+Metrics can be biased, incomplete, and gamed; qualitative review remains essential.
+
+[← Day 108](../108_day_configuration_drift/108_day_configuration_drift.md) · [Day index](../DAY_INDEX.md) · [Day 110 →](../110_day_project__secure_delivery_pipeline/110_day_project__secure_delivery_pipeline.md)

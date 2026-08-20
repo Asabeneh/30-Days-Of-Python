@@ -1,6 +1,6 @@
-# Day 111: Security-tool architecture
+# Day 111: Security Tool Architecture
 
-[Previous](../110_day_project__secure_delivery_pipeline/110_day_project__secure_delivery_pipeline.md) | [Next](../112_day_performance_and_backpressure/112_day_performance_and_backpressure.md)
+[← Day 110](../110_day_project__secure_delivery_pipeline/110_day_project__secure_delivery_pipeline.md) · [Day index](../DAY_INDEX.md) · [Day 112 →](../112_day_performance_and_backpressure/112_day_performance_and_backpressure.md)
 
 ## Table of Contents
 
@@ -9,43 +9,147 @@
 - [Outcomes](#outcomes)
 - [The problem](#the-problem)
 - [Security boundary](#security-boundary)
-- [Concept map](#concept-map)
-- [Practice](#practice)
-- [Mental model](#mental-model)
+- [Lesson](#lesson)
+- [Vocabulary](#vocabulary)
+- [Worked examples](#worked-examples)
+- [Execution trace](#execution-trace)
+- [Common mistakes](#common-mistakes)
+- [Security application](#security-application)
+- [Exercises](#exercises)
 - [Finish line](#finish-line)
 
 ## Why this lesson exists
 
-This lesson belongs to **Advanced Integration and Capstone**. It turns one engineering concept into a runnable, testable, and explainable security practice. The final lesson will be expanded with execution traces, diagrams, common-mistake tables, and worked examples before that phase is marked complete.
+A mature security tool needs clear modules for collection, parsing, policy, storage, reporting, and orchestration. Architecture prevents a proof-of-concept from becoming an unreviewable tool.
 
 ## Prerequisites
 
-Complete the previous lesson and keep the repository setup from [SETUP.md](../SETUP.md) available. Revisit the linked previous lesson if any term is unfamiliar.
+Complete Day 110. Work from a clean virtual environment and use only local synthetic fixtures.
 
 ## Outcomes
 
-By the end, you can explain the concept, run the starter, predict a result, write a small test, identify one failure mode, and state the security boundary of the exercise.
+By the end of this lesson, you can:
+
+- explain the concept before using it
+- run and modify all worked examples
+- test normal, boundary, and failure behavior
+- state scope, evidence, and residual risk
+- complete the numbered exercises
 
 ## The problem
 
-Security engineering requires reliable decisions under imperfect input and failure. This day introduces **Security-tool architecture** through a bounded local fixture before asking you to generalize the pattern.
+Design module boundaries and dependency directions for a local detection utility.
 
 ## Security boundary
 
-Use only the supplied synthetic data or a local fixture. Do not substitute public targets, university systems, employer systems, real credentials, or private evidence. Stop if the scope changes.
+This lesson is educational and bounded. It does not authorize public scanning, credential use, destructive actions, persistence, or processing of private data.
 
-## Concept map
+## Lesson
 
-Start with the smallest runnable example in `starter/main.py`. Trace the input, transformation, decision, and output. Then deliberately change one input and predict the result before running again. The full lesson expansion will add a visual data-flow diagram, a common-mistakes table, and an explanation of what the tool cannot conclude.
+### Vocabulary
+
+Architecture describes components and relationships. Dependency direction says which layer may call which. An adapter translates external systems into internal interfaces.
+
+## Worked examples
+
+### Example 1: Name layers
+
+Layering makes responsibility reviewable.
+
+```python
+layers = ["cli", "orchestration", "policy", "domain", "adapters"]
+print(layers)
+```
+
+**What to observe:**
+
+The layers are ordered.
+
+### Example 2: Define an interface
+
+A protocol lets tests substitute a fixture reader.
+
+```python
+class Reader:
+    def read(self, limit: int) -> list[str]:
+        raise NotImplementedError
+```
+
+**What to observe:**
+
+The caller depends on behavior.
+
+### Example 3: Keep policy pure
+
+Policy should not open files or make network calls.
+
+```python
+def decide(event):
+    return event.get("severity", 0) >= 7
+```
+
+**What to observe:**
+
+The decision is testable.
+
+### Example 4: Use an adapter
+
+The adapter owns external representation.
+
+```python
+adapter = {"source": "fixture", "target": "domain event"}
+print(adapter)
+```
+
+**What to observe:**
+
+The translation boundary is explicit.
+
+### Example 5: Document dependencies
+
+A diagram is only useful if it states direction.
+
+```python
+edges = [("cli", "orchestration"), ("orchestration", "policy"), ("adapters", "domain")]
+print(edges)
+```
+
+**What to observe:**
+
+The architecture can be reviewed.
+
+## Execution trace
+
+Input enters through adapters/CLI, becomes domain data, passes pure policy, and returns through reporting; external effects remain at edges.
+
+## Common mistakes
+
+| Mistake | Symptom | Correction |
+| --- | --- | --- |
+| policy imports network | tests have side effects | keep policy pure |
+| circular layers | changes spread | define direction |
+| adapter leaks raw fields | domain trusts source | normalize |
+| global configuration | hidden coupling | inject dependencies |
+| diagram without tests | architecture is aspirational | test boundaries |
+
+## Security application
+
+Use local fixtures and dependency injection. Do not add remote connectors or agentic execution.
 
 ## Exercises
 
-Complete the numbered questions in [practice/exercises.md](practice/exercises.md) in order. Run the requested commands, produce the requested artifact, and record the edge case or limitation asked for by the exercise. Use [hints](practice/hints.md) only after a real attempt and [solutions](practice/solutions.md) only to compare your reasoning.
-
-## Mental model
-
-> A security tool is a small program whose assumptions, inputs, outputs, and limits must be made visible.
+Complete the numbered questions in [practice/exercises.md](practice/exercises.md) in order. Record the evidence, output, edge case, and limitation requested by each question.
 
 ## Finish line
 
-Run the starter, pass the day tests when present, complete the core practice, and write one sentence naming an edge case and one sentence naming the lab boundary.
+Run `python -m course_days.day111`, pass the relevant tests, complete the numbered exercises, and explain one edge case aloud or in writing.
+
+## Mental model
+
+> Good architecture makes trust boundaries and effects visible in module relationships.
+
+## Limitations
+
+Architecture cannot guarantee correct policy, safe deployment, or team ownership.
+
+[← Day 110](../110_day_project__secure_delivery_pipeline/110_day_project__secure_delivery_pipeline.md) · [Day index](../DAY_INDEX.md) · [Day 112 →](../112_day_performance_and_backpressure/112_day_performance_and_backpressure.md)

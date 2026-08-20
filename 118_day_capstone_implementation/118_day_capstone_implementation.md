@@ -1,6 +1,6 @@
-# Day 118: Capstone implementation
+# Day 118: Capstone Implementation
 
-[Previous](../117_day_capstone_planning/117_day_capstone_planning.md) | [Next](../119_day_capstone_security_review/119_day_capstone_security_review.md)
+[← Day 117](../117_day_capstone_planning/117_day_capstone_planning.md) · [Day index](../DAY_INDEX.md) · [Day 119 →](../119_day_capstone_security_review/119_day_capstone_security_review.md)
 
 ## Table of Contents
 
@@ -9,43 +9,146 @@
 - [Outcomes](#outcomes)
 - [The problem](#the-problem)
 - [Security boundary](#security-boundary)
-- [Concept map](#concept-map)
-- [Practice](#practice)
-- [Mental model](#mental-model)
+- [Lesson](#lesson)
+- [Vocabulary](#vocabulary)
+- [Worked examples](#worked-examples)
+- [Execution trace](#execution-trace)
+- [Common mistakes](#common-mistakes)
+- [Security application](#security-application)
+- [Exercises](#exercises)
 - [Finish line](#finish-line)
 
 ## Why this lesson exists
 
-This lesson belongs to **Advanced Integration and Capstone**. It turns one engineering concept into a runnable, testable, and explainable security practice. The final lesson will be expanded with execution traces, diagrams, common-mistake tables, and worked examples before that phase is marked complete.
+Implementation is where design decisions meet real code. The learner should build incrementally, keep the core testable, and preserve the evidence needed for a final demonstration.
 
 ## Prerequisites
 
-Complete the previous lesson and keep the repository setup from [SETUP.md](../SETUP.md) available. Revisit the linked previous lesson if any term is unfamiliar.
+Complete Day 117. Work from a clean virtual environment and use only local synthetic fixtures.
 
 ## Outcomes
 
-By the end, you can explain the concept, run the starter, predict a result, write a small test, identify one failure mode, and state the security boundary of the exercise.
+By the end of this lesson, you can:
+
+- explain the concept before using it
+- run and modify all worked examples
+- test normal, boundary, and failure behavior
+- state scope, evidence, and residual risk
+- complete the numbered exercises
 
 ## The problem
 
-Security engineering requires reliable decisions under imperfect input and failure. This day introduces **Capstone implementation** through a bounded local fixture before asking you to generalize the pattern.
+Implement the capstone in small vertical slices and record testable outputs at each milestone.
 
 ## Security boundary
 
-Use only the supplied synthetic data or a local fixture. Do not substitute public targets, university systems, employer systems, real credentials, or private evidence. Stop if the scope changes.
+This lesson is educational and bounded. It does not authorize public scanning, credential use, destructive actions, persistence, or processing of private data.
 
-## Concept map
+## Lesson
 
-Start with the smallest runnable example in `starter/main.py`. Trace the input, transformation, decision, and output. Then deliberately change one input and predict the result before running again. The full lesson expansion will add a visual data-flow diagram, a common-mistakes table, and an explanation of what the tool cannot conclude.
+### Vocabulary
+
+A vertical slice crosses input, core behavior, and output. A checkpoint is evidence at a milestone. Refactoring changes structure while preserving behavior.
+
+## Worked examples
+
+### Example 1: Build the first slice
+
+A tiny end-to-end path reveals integration mistakes early.
+
+```python
+slice = {"input": "one fixture event", "decision": "review", "output": "one report row"}
+print(slice)
+```
+
+**What to observe:**
+
+The first slice is demonstrable.
+
+### Example 2: Add a failing test
+
+A test can state the next behavior before implementation.
+
+```python
+expected = {"invalid_severity": "rejected"}
+print(expected)
+```
+
+**What to observe:**
+
+The contract guides code.
+
+### Example 3: Keep a checkpoint
+
+Save outputs after each milestone.
+
+```python
+checkpoint = {"milestone": "parser", "tests": 4, "artifact": "sample-report.json"}
+print(checkpoint)
+```
+
+**What to observe:**
+
+Progress is measurable.
+
+### Example 4: Refactor safely
+
+A refactor should preserve observable contracts.
+
+```python
+before = {"status": 200, "body_fields": ["case_id"]}
+after = before.copy()
+print(before == after)
+```
+
+**What to observe:**
+
+The expected behavior remains equal.
+
+### Example 5: Document a limitation
+
+Implementation notes should prevent misuse.
+
+```python
+print({"limitation": "fixture-only", "not": "production detector"})
+```
+
+**What to observe:**
+
+The scope remains visible.
+
+## Execution trace
+
+The learner implements one slice, writes tests, records output, refactors under test protection, and documents limitations before adding the next feature.
+
+## Common mistakes
+
+| Mistake | Symptom | Correction |
+| --- | --- | --- |
+| build all layers at once | debugging is overwhelming | vertical slices |
+| no tests until end | regressions hide | test each milestone |
+| copy output as proof | behavior is not understood | explain and reproduce |
+| ignore cleanup | artifacts accumulate | reset after each run |
+| overbuild | capstone loses focus | cut scope |
+
+## Security application
+
+Use the planned local fixtures and safe modules. Do not expand the capstone into scanning, credential handling, or remote automation.
 
 ## Exercises
 
-Complete the numbered questions in [practice/exercises.md](practice/exercises.md) in order. Run the requested commands, produce the requested artifact, and record the edge case or limitation asked for by the exercise. Use [hints](practice/hints.md) only after a real attempt and [solutions](practice/solutions.md) only to compare your reasoning.
-
-## Mental model
-
-> A security tool is a small program whose assumptions, inputs, outputs, and limits must be made visible.
+Complete the numbered questions in [practice/exercises.md](practice/exercises.md) in order. Record the evidence, output, edge case, and limitation requested by each question.
 
 ## Finish line
 
-Run the starter, pass the day tests when present, complete the core practice, and write one sentence naming an edge case and one sentence naming the lab boundary.
+Run `python -m course_days.day118`, pass the relevant tests, complete the numbered exercises, and explain one edge case aloud or in writing.
+
+## Mental model
+
+> Implementation is a sequence of small, tested, explainable slices that preserve the capstone argument.
+
+## Limitations
+
+A local capstone can contain defects; review and retesting are part of the work.
+
+[← Day 117](../117_day_capstone_planning/117_day_capstone_planning.md) · [Day index](../DAY_INDEX.md) · [Day 119 →](../119_day_capstone_security_review/119_day_capstone_security_review.md)

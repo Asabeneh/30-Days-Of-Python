@@ -1,6 +1,6 @@
-# Day 115: Privacy and retention
+# Day 115: Privacy and Retention
 
-[Previous](../114_day_failure_injection_and_recovery/114_day_failure_injection_and_recovery.md) | [Next](../116_day_research_and_source_evaluation/116_day_research_and_source_evaluation.md)
+[← Day 114](../114_day_failure_injection_and_recovery/114_day_failure_injection_and_recovery.md) · [Day index](../DAY_INDEX.md) · [Day 116 →](../116_day_research_and_source_evaluation/116_day_research_and_source_evaluation.md)
 
 ## Table of Contents
 
@@ -9,43 +9,145 @@
 - [Outcomes](#outcomes)
 - [The problem](#the-problem)
 - [Security boundary](#security-boundary)
-- [Concept map](#concept-map)
-- [Practice](#practice)
-- [Mental model](#mental-model)
+- [Lesson](#lesson)
+- [Vocabulary](#vocabulary)
+- [Worked examples](#worked-examples)
+- [Execution trace](#execution-trace)
+- [Common mistakes](#common-mistakes)
+- [Security application](#security-application)
+- [Exercises](#exercises)
 - [Finish line](#finish-line)
 
 ## Why this lesson exists
 
-This lesson belongs to **Advanced Integration and Capstone**. It turns one engineering concept into a runnable, testable, and explainable security practice. The final lesson will be expanded with execution traces, diagrams, common-mistake tables, and worked examples before that phase is marked complete.
+Security tooling often collects more personal data than it needs. Privacy engineering asks what is necessary, how long it is kept, who can access it, and how it is deleted.
 
 ## Prerequisites
 
-Complete the previous lesson and keep the repository setup from [SETUP.md](../SETUP.md) available. Revisit the linked previous lesson if any term is unfamiliar.
+Complete Day 114. Work from a clean virtual environment and use only local synthetic fixtures.
 
 ## Outcomes
 
-By the end, you can explain the concept, run the starter, predict a result, write a small test, identify one failure mode, and state the security boundary of the exercise.
+By the end of this lesson, you can:
+
+- explain the concept before using it
+- run and modify all worked examples
+- test normal, boundary, and failure behavior
+- state scope, evidence, and residual risk
+- complete the numbered exercises
 
 ## The problem
 
-Security engineering requires reliable decisions under imperfect input and failure. This day introduces **Privacy and retention** through a bounded local fixture before asking you to generalize the pattern.
+Design a retention policy for synthetic case records and implement minimization and deletion metadata.
 
 ## Security boundary
 
-Use only the supplied synthetic data or a local fixture. Do not substitute public targets, university systems, employer systems, real credentials, or private evidence. Stop if the scope changes.
+This lesson is educational and bounded. It does not authorize public scanning, credential use, destructive actions, persistence, or processing of private data.
 
-## Concept map
+## Lesson
 
-Start with the smallest runnable example in `starter/main.py`. Trace the input, transformation, decision, and output. Then deliberately change one input and predict the result before running again. The full lesson expansion will add a visual data-flow diagram, a common-mistakes table, and an explanation of what the tool cannot conclude.
+### Vocabulary
+
+Data minimization collects only what is needed. Retention is how long data is kept. A deletion record proves an action without preserving the deleted content.
+
+## Worked examples
+
+### Example 1: Classify fields
+
+Not every field has the same sensitivity.
+
+```python
+fields = {"case_id": "low", "message": "medium", "token": "secret"}
+print(fields)
+```
+
+**What to observe:**
+
+Sensitivity is explicit.
+
+### Example 2: Minimize report
+
+A report can omit raw message and token.
+
+```python
+report = {"case_id": "training-115", "status": "review"}
+print(report)
+```
+
+**What to observe:**
+
+Only necessary fields remain.
+
+### Example 3: Set retention
+
+Retention needs purpose and period.
+
+```python
+policy = {"purpose": "training", "retention_days": 7, "owner": "course"}
+print(policy)
+```
+
+**What to observe:**
+
+The policy is concrete.
+
+### Example 4: Record deletion
+
+The record can prove deletion without retaining content.
+
+```python
+deletion = {"case_id": "training-115", "deleted_at": "now", "content": "not stored"}
+print(deletion)
+```
+
+**What to observe:**
+
+The audit record is minimized.
+
+### Example 5: Restrict access
+
+Access policy is part of privacy.
+
+```python
+print({"readers": ["student"], "public": False})
+```
+
+**What to observe:**
+
+The data is not public.
+
+## Execution trace
+
+The system classifies and minimizes fields, applies retention, restricts access, deletes content at the end of purpose, and keeps only a safe deletion record.
+
+## Common mistakes
+
+| Mistake | Symptom | Correction |
+| --- | --- | --- |
+| collect just in case | privacy scope grows | minimize |
+| retention forever | breach impact grows | define purpose and period |
+| deletion without proof | control is unreviewable | keep safe metadata |
+| hash equals anonymize | identifiers remain linkable | assess re-identification |
+| public sample data | private fields leak | synthetic fixtures |
+
+## Security application
+
+Use synthetic case data only. Do not process personal logs, names, messages, or credentials.
 
 ## Exercises
 
-Complete the numbered questions in [practice/exercises.md](practice/exercises.md) in order. Run the requested commands, produce the requested artifact, and record the edge case or limitation asked for by the exercise. Use [hints](practice/hints.md) only after a real attempt and [solutions](practice/solutions.md) only to compare your reasoning.
-
-## Mental model
-
-> A security tool is a small program whose assumptions, inputs, outputs, and limits must be made visible.
+Complete the numbered questions in [practice/exercises.md](practice/exercises.md) in order. Record the evidence, output, edge case, and limitation requested by each question.
 
 ## Finish line
 
-Run the starter, pass the day tests when present, complete the core practice, and write one sentence naming an edge case and one sentence naming the lab boundary.
+Run `python -m course_days.day115`, pass the relevant tests, complete the numbered exercises, and explain one edge case aloud or in writing.
+
+## Mental model
+
+> Privacy is a lifecycle of collection, purpose, access, retention, minimization, and deletion.
+
+## Limitations
+
+Privacy obligations vary by jurisdiction and organization; a short policy is not legal advice.
+
+[← Day 114](../114_day_failure_injection_and_recovery/114_day_failure_injection_and_recovery.md) · [Day index](../DAY_INDEX.md) · [Day 116 →](../116_day_research_and_source_evaluation/116_day_research_and_source_evaluation.md)

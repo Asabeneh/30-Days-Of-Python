@@ -1,6 +1,6 @@
-# Day 107: Cloud identity concepts
+# Day 107: Cloud Identity Concepts
 
-[Previous](../106_day_containers_and_isolation/106_day_containers_and_isolation.md) | [Next](../108_day_configuration_drift/108_day_configuration_drift.md)
+[← Day 106](../106_day_containers_and_isolation/106_day_containers_and_isolation.md) · [Day index](../DAY_INDEX.md) · [Day 108 →](../108_day_configuration_drift/108_day_configuration_drift.md)
 
 ## Table of Contents
 
@@ -9,43 +9,147 @@
 - [Outcomes](#outcomes)
 - [The problem](#the-problem)
 - [Security boundary](#security-boundary)
-- [Concept map](#concept-map)
-- [Practice](#practice)
-- [Mental model](#mental-model)
+- [Lesson](#lesson)
+- [Vocabulary](#vocabulary)
+- [Worked examples](#worked-examples)
+- [Execution trace](#execution-trace)
+- [Common mistakes](#common-mistakes)
+- [Security application](#security-application)
+- [Exercises](#exercises)
 - [Finish line](#finish-line)
 
 ## Why this lesson exists
 
-This lesson belongs to **DevSecOps, Cloud Concepts, and Supply Chain**. It turns one engineering concept into a runnable, testable, and explainable security practice. The final lesson will be expanded with execution traces, diagrams, common-mistake tables, and worked examples before that phase is marked complete.
+Cloud security often fails when an identity receives more permission than its task needs or when roles, resources, and trust relationships are unclear. This lesson stays conceptual and local.
 
 ## Prerequisites
 
-Complete the previous lesson and keep the repository setup from [SETUP.md](../SETUP.md) available. Revisit the linked previous lesson if any term is unfamiliar.
+Complete Day 106. Work from a clean virtual environment and use only local synthetic fixtures.
 
 ## Outcomes
 
-By the end, you can explain the concept, run the starter, predict a result, write a small test, identify one failure mode, and state the security boundary of the exercise.
+By the end of this lesson, you can:
+
+- explain the concept before using it
+- run and modify all worked examples
+- test normal, boundary, and failure behavior
+- state scope, evidence, and residual risk
+- complete the numbered exercises
 
 ## The problem
 
-Security engineering requires reliable decisions under imperfect input and failure. This day introduces **Cloud identity concepts** through a bounded local fixture before asking you to generalize the pattern.
+Model a least-privilege role for a synthetic report worker without connecting to a cloud account.
 
 ## Security boundary
 
-Use only the supplied synthetic data or a local fixture. Do not substitute public targets, university systems, employer systems, real credentials, or private evidence. Stop if the scope changes.
+This lesson is educational and bounded. It does not authorize public scanning, credential use, destructive actions, persistence, or processing of private data.
 
-## Concept map
+## Lesson
 
-Start with the smallest runnable example in `starter/main.py`. Trace the input, transformation, decision, and output. Then deliberately change one input and predict the result before running again. The full lesson expansion will add a visual data-flow diagram, a common-mistakes table, and an explanation of what the tool cannot conclude.
+### Vocabulary
+
+An identity is a principal. A role is a set of permissions. A resource is an object. Least privilege grants only required actions. A trust policy controls who may assume a role.
+
+## Worked examples
+
+### Example 1: Name a principal
+
+Use a fictional workload identity.
+
+```python
+principal = {"name": "training-report-worker", "type": "workload"}
+print(principal)
+```
+
+**What to observe:**
+
+The identity is explicit.
+
+### Example 2: List actions
+
+Permissions should be specific.
+
+```python
+policy = {
+    "actions": ["read_case_fixture", "write_report"],
+    "resources": ["training-only"],
+}
+print(policy)
+```
+
+**What to observe:**
+
+The actions and resources are bounded.
+
+### Example 3: Deny broad actions
+
+A negative permission makes the boundary visible.
+
+```python
+print({"not_allowed": ["admin", "delete_source", "public_network"]})
+```
+
+**What to observe:**
+
+The role is narrow.
+
+### Example 4: Record trust
+
+Role assumption has a caller condition.
+
+```python
+trust = {"allowed_principal": "training-runner", "environment": "test"}
+print(trust)
+```
+
+**What to observe:**
+
+The trust relationship is explicit.
+
+### Example 5: Review unused access
+
+Permissions should be reduced when no longer needed.
+
+```python
+print({"review": "remove unused actions", "cadence": "documented"})
+```
+
+**What to observe:**
+
+The lifecycle is part of least privilege.
+
+## Execution trace
+
+The designer names principal, actions, resources, trust conditions, and lifecycle review before any cloud configuration is applied.
+
+## Common mistakes
+
+| Mistake | Symptom | Correction |
+| --- | --- | --- |
+| admin role for convenience | blast radius grows | narrow actions/resources |
+| resource wildcard | access crosses cases | scope resource identifiers |
+| identity equals trust | any caller assumes role | define trust policy |
+| credentials in code | secrets leak | use platform identity mechanisms |
+| never review | stale access persists | schedule review |
+
+## Security application
+
+Use fictional policy objects only. Do not log into or modify a cloud account for this lesson.
 
 ## Exercises
 
-Complete the numbered questions in [practice/exercises.md](practice/exercises.md) in order. Run the requested commands, produce the requested artifact, and record the edge case or limitation asked for by the exercise. Use [hints](practice/hints.md) only after a real attempt and [solutions](practice/solutions.md) only to compare your reasoning.
-
-## Mental model
-
-> A security tool is a small program whose assumptions, inputs, outputs, and limits must be made visible.
+Complete the numbered questions in [practice/exercises.md](practice/exercises.md) in order. Record the evidence, output, edge case, and limitation requested by each question.
 
 ## Finish line
 
-Run the starter, pass the day tests when present, complete the core practice, and write one sentence naming an edge case and one sentence naming the lab boundary.
+Run `python -m course_days.day107`, pass the relevant tests, complete the numbered exercises, and explain one edge case aloud or in writing.
+
+## Mental model
+
+> Cloud identity is a relationship among principal, action, resource, and trust conditions.
+
+## Limitations
+
+Provider semantics vary; production identity design needs platform specialists and actual ownership.
+
+[← Day 106](../106_day_containers_and_isolation/106_day_containers_and_isolation.md) · [Day index](../DAY_INDEX.md) · [Day 108 →](../108_day_configuration_drift/108_day_configuration_drift.md)

@@ -2,7 +2,7 @@
 
 | Days | Dense | Developing | Outline |
 | ---: | ---: | ---: | ---: |
-| 1–120 | 24 | 76 | 20 |
+| 1–120 | 24 | 96 | 0 |
 
 The report is a measurement aid, not a substitute for human review. Dense means the page has the required teaching sections, at least five worked examples, and at least 700 words.
 
@@ -88,43 +88,43 @@ The report is a measurement aid, not a substitute for human review. Dense means 
 | 78 | `078_day_threat_intelligence_provenance` | 589 | 5 | 5 | developing |
 | 79 | `079_day_analyst_reporting` | 631 | 5 | 5 | developing |
 | 80 | `080_day_project__mini_detection_pipeline` | 651 | 5 | 5 | developing |
-| 81 | `081_day_response_lifecycle` | 598 | 5 | 5 | developing |
+| 81 | `081_day_response_lifecycle` | 600 | 5 | 5 | developing |
 | 82 | `082_day_evidence_integrity` | 610 | 5 | 5 | developing |
 | 83 | `083_day_filesystem_timelines` | 587 | 5 | 5 | developing |
 | 84 | `084_day_sqlite_artifacts` | 601 | 5 | 5 | developing |
-| 85 | `085_day_browser_and_document_artifacts` | 611 | 5 | 5 | developing |
+| 85 | `085_day_browser_and_document_artifacts` | 613 | 5 | 5 | developing |
 | 86 | `086_day_email_and_phishing_fixtures` | 606 | 5 | 5 | developing |
-| 87 | `087_day_network_evidence` | 570 | 5 | 5 | developing |
+| 87 | `087_day_network_evidence` | 572 | 5 | 5 | developing |
 | 88 | `088_day_volatile_evidence_concepts` | 608 | 5 | 5 | developing |
 | 89 | `089_day_incident_reporting` | 597 | 5 | 5 | developing |
-| 90 | `090_day_project__synthetic_breach_investigation` | 606 | 5 | 5 | developing |
-| 91 | `091_day_rules_of_engagement` | 606 | 5 | 5 | developing |
-| 92 | `092_day_asset_inventory` | 582 | 5 | 5 | developing |
+| 90 | `090_day_project__synthetic_breach_investigation` | 612 | 5 | 5 | developing |
+| 91 | `091_day_rules_of_engagement` | 608 | 5 | 5 | developing |
+| 92 | `092_day_asset_inventory` | 584 | 5 | 5 | developing |
 | 93 | `093_day_safe_service_discovery` | 595 | 5 | 5 | developing |
-| 94 | `094_day_cve_and_severity_reasoning` | 595 | 5 | 5 | developing |
+| 94 | `094_day_cve_and_severity_reasoning` | 597 | 5 | 5 | developing |
 | 95 | `095_day_local_web_testing` | 596 | 5 | 5 | developing |
 | 96 | `096_day_authorization_testing` | 601 | 5 | 5 | developing |
 | 97 | `097_day_input_validation_testing` | 600 | 5 | 5 | developing |
 | 98 | `098_day_bounded_fuzzing` | 614 | 5 | 5 | developing |
-| 99 | `099_day_findings_and_retesting` | 620 | 5 | 5 | developing |
-| 100 | `100_day_project__authorized_local_assessment` | 628 | 5 | 5 | developing |
-| 101 | `101_day_secure_sdlc` | 353 | 0 | 0 | outline |
-| 102 | `102_day_ci_quality_gates` | 355 | 0 | 0 | outline |
-| 103 | `103_day_static_analysis` | 353 | 0 | 0 | outline |
-| 104 | `104_day_sbom_and_provenance` | 355 | 0 | 0 | outline |
-| 105 | `105_day_secret_detection` | 353 | 0 | 0 | outline |
-| 106 | `106_day_containers_and_isolation` | 355 | 0 | 0 | outline |
-| 107 | `107_day_cloud_identity_concepts` | 355 | 0 | 0 | outline |
-| 108 | `108_day_configuration_drift` | 353 | 0 | 0 | outline |
-| 109 | `109_day_security_metrics` | 353 | 0 | 0 | outline |
-| 110 | `110_day_project__secure_delivery_pipeline` | 357 | 0 | 0 | outline |
-| 111 | `111_day_security_tool_architecture` | 351 | 0 | 0 | outline |
-| 112 | `112_day_performance_and_backpressure` | 353 | 0 | 0 | outline |
-| 113 | `113_day_advanced_concurrency` | 351 | 0 | 0 | outline |
-| 114 | `114_day_failure_injection_and_recovery` | 355 | 0 | 0 | outline |
-| 115 | `115_day_privacy_and_retention` | 353 | 0 | 0 | outline |
-| 116 | `116_day_research_and_source_evaluation` | 355 | 0 | 0 | outline |
-| 117 | `117_day_capstone_planning` | 351 | 0 | 0 | outline |
-| 118 | `118_day_capstone_implementation` | 351 | 0 | 0 | outline |
-| 119 | `119_day_capstone_security_review` | 353 | 0 | 0 | outline |
-| 120 | `120_day_final_demonstration` | 352 | 0 | 0 | outline |
+| 99 | `099_day_findings_and_retesting` | 622 | 5 | 5 | developing |
+| 100 | `100_day_project__authorized_local_assessment` | 634 | 5 | 5 | developing |
+| 101 | `101_day_secure_sdlc` | 622 | 5 | 5 | developing |
+| 102 | `102_day_ci_quality_gates` | 603 | 5 | 5 | developing |
+| 103 | `103_day_static_analysis` | 611 | 5 | 5 | developing |
+| 104 | `104_day_sbom_and_provenance` | 588 | 5 | 5 | developing |
+| 105 | `105_day_secret_detection` | 611 | 5 | 5 | developing |
+| 106 | `106_day_containers_and_isolation` | 587 | 5 | 5 | developing |
+| 107 | `107_day_cloud_identity_concepts` | 579 | 5 | 5 | developing |
+| 108 | `108_day_configuration_drift` | 577 | 5 | 5 | developing |
+| 109 | `109_day_security_metrics` | 582 | 5 | 5 | developing |
+| 110 | `110_day_project__secure_delivery_pipeline` | 586 | 5 | 5 | developing |
+| 111 | `111_day_security_tool_architecture` | 562 | 5 | 5 | developing |
+| 112 | `112_day_performance_and_backpressure` | 586 | 5 | 5 | developing |
+| 113 | `113_day_advanced_concurrency` | 561 | 5 | 5 | developing |
+| 114 | `114_day_failure_injection_and_recovery` | 581 | 5 | 5 | developing |
+| 115 | `115_day_privacy_and_retention` | 580 | 5 | 5 | developing |
+| 116 | `116_day_research_and_source_evaluation` | 603 | 5 | 5 | developing |
+| 117 | `117_day_capstone_planning` | 611 | 5 | 5 | developing |
+| 118 | `118_day_capstone_implementation` | 589 | 5 | 5 | developing |
+| 119 | `119_day_capstone_security_review` | 615 | 5 | 5 | developing |
+| 120 | `120_day_final_demonstration` | 650 | 5 | 5 | developing |
