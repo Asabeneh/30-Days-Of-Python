@@ -1,6 +1,6 @@
-# Day 76: Alert triage
+# Day 76: Alert Triage and Analyst Decisions
 
-[Previous](../075_day_mitre_att_ck_mapping/075_day_mitre_att_ck_mapping.md) | [Next](../077_day_baselines_and_anomalies/077_day_baselines_and_anomalies.md)
+[← Day 75](../075_day_mitre_att_ck_mapping/075_day_mitre_att_ck_mapping.md) · [Day index](../DAY_INDEX.md) · [Day 77 →](../077_day_baselines_and_anomalies/077_day_baselines_and_anomalies.md)
 
 ## Table of Contents
 
@@ -9,43 +9,146 @@
 - [Outcomes](#outcomes)
 - [The problem](#the-problem)
 - [Security boundary](#security-boundary)
-- [Concept map](#concept-map)
-- [Practice](#practice)
-- [Mental model](#mental-model)
+- [Lesson](#lesson)
+- [Vocabulary](#vocabulary)
+- [Worked examples](#worked-examples)
+- [Execution trace](#execution-trace)
+- [Common mistakes](#common-mistakes)
+- [Security application](#security-application)
+- [Exercises](#exercises)
 - [Finish line](#finish-line)
 
 ## Why this lesson exists
 
-This lesson belongs to **Defensive Automation and Detection**. It turns one engineering concept into a runnable, testable, and explainable security practice. The final lesson will be expanded with execution traces, diagrams, common-mistake tables, and worked examples before that phase is marked complete.
+An alert is a queue item, not a conclusion. Triage organizes evidence, severity, confidence, scope, next step, and closure reason so analysts do not confuse urgency with certainty.
 
 ## Prerequisites
 
-Complete the previous lesson and keep the repository setup from [SETUP.md](../SETUP.md) available. Revisit the linked previous lesson if any term is unfamiliar.
+Complete Day 75. Use only the local course fixtures, loopback services, and synthetic records described by the lesson.
 
 ## Outcomes
 
-By the end, you can explain the concept, run the starter, predict a result, write a small test, identify one failure mode, and state the security boundary of the exercise.
+By the end of this lesson, you can:
+
+- explain the concept before using the tool
+- run and modify every worked example
+- test normal, boundary, and failure behavior
+- state the trust boundary and residual risk
+- complete the numbered cybersecurity exercises
 
 ## The problem
 
-Security engineering requires reliable decisions under imperfect input and failure. This day introduces **Alert triage** through a bounded local fixture before asking you to generalize the pattern.
+Triage synthetic alerts into review states with an explicit evidence checklist and no automatic accusation.
 
 ## Security boundary
 
-Use only the supplied synthetic data or a local fixture. Do not substitute public targets, university systems, employer systems, real credentials, or private evidence. Stop if the scope changes.
+This lesson is educational and bounded. It does not authorize public scanning, credential use, interception, exploit delivery, real-user profiling, or changes to systems you do not own.
 
-## Concept map
+## Lesson
 
-Start with the smallest runnable example in `starter/main.py`. Trace the input, transformation, decision, and output. Then deliberately change one input and predict the result before running again. The full lesson expansion will add a visual data-flow diagram, a common-mistakes table, and an explanation of what the tool cannot conclude.
+### Vocabulary
+
+Triage prioritizes work. Severity describes impact or urgency. Confidence describes evidence quality. Disposition records what happened to the alert.
+
+## Worked examples
+
+### Example 1: Create an alert
+
+An alert needs an identifier and evidence reference.
+
+```python
+alert = {"id": "alert-76", "rule": "failed-login-threshold", "evidence": ["fixture:4"]}
+print(alert)
+```
+
+**What to observe:**
+
+The alert points to evidence.
+
+### Example 2: Score separately
+
+Severity and confidence answer different questions.
+
+```python
+alert.update({"severity": "medium", "confidence": "low"})
+print(alert)
+```
+
+**What to observe:**
+
+A medium-impact, low-confidence alert is possible.
+
+### Example 3: Choose a disposition
+
+Triage needs controlled states.
+
+```python
+allowed = {"new", "investigating", "benign", "escalated", "closed"}
+print("investigating" in allowed)
+```
+
+**What to observe:**
+
+The state is from a finite vocabulary.
+
+### Example 4: Record next step
+
+The next action should be authorized and bounded.
+
+```python
+alert["next_step"] = "review synthetic timeline"
+print(alert)
+```
+
+**What to observe:**
+
+The plan is local and specific.
+
+### Example 5: Close with reason
+
+Closure should preserve why a case ended.
+
+```python
+alert.update({"disposition": "benign_training_fixture", "closed_by": "student"})
+print(alert)
+```
+
+**What to observe:**
+
+The outcome is explainable.
+
+## Execution trace
+
+Triage reads the alert and evidence, separates severity from confidence, selects a state, records a bounded next step, and preserves a disposition and reviewer.
+
+## Common mistakes
+
+| Mistake | Symptom | Correction |
+| --- | --- | --- |
+| alert equals incident | unnecessary response | require evidence and triage |
+| severity equals confidence | urgency and certainty blur | store separately |
+| no closure reason | lessons are lost | require disposition |
+| investigate without scope | analyst overreaches | name authorized next step |
+| copy raw data everywhere | privacy expands | reference evidence minimally |
+
+## Security application
+
+Use synthetic alerts and a local queue. Do not triage real individuals or initiate response actions from this lesson.
 
 ## Exercises
 
-Complete the numbered questions in [practice/exercises.md](practice/exercises.md) in order. Run the requested commands, produce the requested artifact, and record the edge case or limitation asked for by the exercise. Use [hints](practice/hints.md) only after a real attempt and [solutions](practice/solutions.md) only to compare your reasoning.
-
-## Mental model
-
-> A security tool is a small program whose assumptions, inputs, outputs, and limits must be made visible.
+Complete the numbered questions in [practice/exercises.md](practice/exercises.md) in order. Use the examples as a starting point, then record the requested output, edge case, and limitation.
 
 ## Finish line
 
-Run the starter, pass the day tests when present, complete the core practice, and write one sentence naming an edge case and one sentence naming the lab boundary.
+Run `python -m course_days.day076`, pass the relevant tests, complete the numbered exercises, and explain one edge case aloud or in writing.
+
+## Mental model
+
+> Triage is an evidence-organizing decision process that turns a signal into a documented next step.
+
+## Limitations
+
+Triage quality depends on context, staffing, data quality, and escalation policy outside the code.
+
+[← Day 75](../075_day_mitre_att_ck_mapping/075_day_mitre_att_ck_mapping.md) · [Day index](../DAY_INDEX.md) · [Day 77 →](../077_day_baselines_and_anomalies/077_day_baselines_and_anomalies.md)

@@ -2,7 +2,7 @@
 
 | Days | Dense | Developing | Outline |
 | ---: | ---: | ---: | ---: |
-| 1–120 | 24 | 36 | 60 |
+| 1–120 | 24 | 56 | 40 |
 
 The report is a measurement aid, not a substitute for human review. Dense means the page has the required teaching sections, at least five worked examples, and at least 700 words.
 
@@ -68,26 +68,26 @@ The report is a measurement aid, not a substitute for human review. Dense means 
 | 58 | `058_day_safe_serialization` | 633 | 5 | 5 | developing |
 | 59 | `059_day_secure_errors_and_logging` | 646 | 5 | 5 | developing |
 | 60 | `060_day_project__tamper_evident_case_bundle` | 666 | 5 | 5 | developing |
-| 61 | `061_day_local_service_architecture` | 395 | 0 | 0 | outline |
-| 62 | `062_day_request_parsing_and_validation` | 356 | 0 | 0 | outline |
-| 63 | `063_day_authentication_and_authorization` | 354 | 0 | 0 | outline |
-| 64 | `064_day_injection_and_parameterized_queries` | 356 | 0 | 0 | outline |
-| 65 | `065_day_xss_and_output_encoding` | 356 | 0 | 0 | outline |
-| 66 | `066_day_csrf__cookies__and_cors` | 356 | 0 | 0 | outline |
-| 67 | `067_day_ssrf_and_outbound_controls` | 356 | 0 | 0 | outline |
-| 68 | `068_day_misconfiguration_and_defaults` | 354 | 0 | 0 | outline |
-| 69 | `069_day_supply_chain_and_exceptional_conditions` | 358 | 0 | 0 | outline |
-| 70 | `070_day_project__secure_case_api` | 356 | 0 | 0 | outline |
-| 71 | `071_day_telemetry_and_event_schemas` | 430 | 0 | 0 | outline |
-| 72 | `072_day_log_normalization` | 351 | 0 | 0 | outline |
-| 73 | `073_day_ioc_enrichment` | 351 | 0 | 0 | outline |
-| 74 | `074_day_detection_thresholds` | 351 | 0 | 0 | outline |
-| 75 | `075_day_mitre_att_ck_mapping` | 353 | 0 | 0 | outline |
-| 76 | `076_day_alert_triage` | 351 | 0 | 0 | outline |
-| 77 | `077_day_baselines_and_anomalies` | 353 | 0 | 0 | outline |
-| 78 | `078_day_threat_intelligence_provenance` | 353 | 0 | 0 | outline |
-| 79 | `079_day_analyst_reporting` | 394 | 0 | 0 | outline |
-| 80 | `080_day_project__mini_detection_pipeline` | 355 | 0 | 0 | outline |
+| 61 | `061_day_local_service_architecture` | 650 | 5 | 5 | developing |
+| 62 | `062_day_request_parsing_and_validation` | 644 | 5 | 5 | developing |
+| 63 | `063_day_authentication_and_authorization` | 632 | 5 | 5 | developing |
+| 64 | `064_day_injection_and_parameterized_queries` | 694 | 5 | 5 | developing |
+| 65 | `065_day_xss_and_output_encoding` | 683 | 5 | 5 | developing |
+| 66 | `066_day_csrf__cookies__and_cors` | 665 | 5 | 5 | developing |
+| 67 | `067_day_ssrf_and_outbound_controls` | 642 | 5 | 5 | developing |
+| 68 | `068_day_misconfiguration_and_defaults` | 607 | 5 | 5 | developing |
+| 69 | `069_day_supply_chain_and_exceptional_conditions` | 646 | 5 | 5 | developing |
+| 70 | `070_day_project__secure_case_api` | 651 | 5 | 5 | developing |
+| 71 | `071_day_telemetry_and_event_schemas` | 600 | 5 | 5 | developing |
+| 72 | `072_day_log_normalization` | 607 | 5 | 5 | developing |
+| 73 | `073_day_ioc_enrichment` | 612 | 5 | 5 | developing |
+| 74 | `074_day_detection_thresholds` | 629 | 5 | 5 | developing |
+| 75 | `075_day_mitre_att_ck_mapping` | 607 | 5 | 5 | developing |
+| 76 | `076_day_alert_triage` | 606 | 5 | 5 | developing |
+| 77 | `077_day_baselines_and_anomalies` | 609 | 5 | 5 | developing |
+| 78 | `078_day_threat_intelligence_provenance` | 587 | 5 | 5 | developing |
+| 79 | `079_day_analyst_reporting` | 627 | 5 | 5 | developing |
+| 80 | `080_day_project__mini_detection_pipeline` | 645 | 5 | 5 | developing |
 | 81 | `081_day_response_lifecycle` | 352 | 0 | 0 | outline |
 | 82 | `082_day_evidence_integrity` | 352 | 0 | 0 | outline |
 | 83 | `083_day_filesystem_timelines` | 352 | 0 | 0 | outline |

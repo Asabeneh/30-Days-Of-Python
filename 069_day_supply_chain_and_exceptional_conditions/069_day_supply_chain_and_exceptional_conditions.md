@@ -1,6 +1,6 @@
-# Day 69: Supply chain and exceptional conditions
+# Day 69: Supply Chain and Exceptional Conditions
 
-[Previous](../068_day_misconfiguration_and_defaults/068_day_misconfiguration_and_defaults.md) | [Next](../070_day_project__secure_case_api/070_day_project__secure_case_api.md)
+[← Day 68](../068_day_misconfiguration_and_defaults/068_day_misconfiguration_and_defaults.md) · [Day index](../DAY_INDEX.md) · [Day 70 →](../070_day_project__secure_case_api/070_day_project__secure_case_api.md)
 
 ## Table of Contents
 
@@ -9,43 +9,150 @@
 - [Outcomes](#outcomes)
 - [The problem](#the-problem)
 - [Security boundary](#security-boundary)
-- [Concept map](#concept-map)
-- [Practice](#practice)
-- [Mental model](#mental-model)
+- [Lesson](#lesson)
+- [Vocabulary](#vocabulary)
+- [Worked examples](#worked-examples)
+- [Execution trace](#execution-trace)
+- [Common mistakes](#common-mistakes)
+- [Security application](#security-application)
+- [Exercises](#exercises)
 - [Finish line](#finish-line)
 
 ## Why this lesson exists
 
-This lesson belongs to **Web Services and Application Security**. It turns one engineering concept into a runnable, testable, and explainable security practice. The final lesson will be expanded with execution traces, diagrams, common-mistake tables, and worked examples before that phase is marked complete.
+A secure application depends on packages, build steps, services, and assumptions outside one source file. Exceptional conditions include dependency failure, missing updates, and unexpected runtime behavior.
 
 ## Prerequisites
 
-Complete the previous lesson and keep the repository setup from [SETUP.md](../SETUP.md) available. Revisit the linked previous lesson if any term is unfamiliar.
+Complete Day 68. Use only the local course fixtures, loopback services, and synthetic records described by the lesson.
 
 ## Outcomes
 
-By the end, you can explain the concept, run the starter, predict a result, write a small test, identify one failure mode, and state the security boundary of the exercise.
+By the end of this lesson, you can:
+
+- explain the concept before using the tool
+- run and modify every worked example
+- test normal, boundary, and failure behavior
+- state the trust boundary and residual risk
+- complete the numbered cybersecurity exercises
 
 ## The problem
 
-Security engineering requires reliable decisions under imperfect input and failure. This day introduces **Supply chain and exceptional conditions** through a bounded local fixture before asking you to generalize the pattern.
+Review a synthetic dependency record and design a failure path that does not silently downgrade security.
 
 ## Security boundary
 
-Use only the supplied synthetic data or a local fixture. Do not substitute public targets, university systems, employer systems, real credentials, or private evidence. Stop if the scope changes.
+This lesson is educational and bounded. It does not authorize public scanning, credential use, interception, exploit delivery, real-user profiling, or changes to systems you do not own.
 
-## Concept map
+## Lesson
 
-Start with the smallest runnable example in `starter/main.py`. Trace the input, transformation, decision, and output. Then deliberately change one input and predict the result before running again. The full lesson expansion will add a visual data-flow diagram, a common-mistakes table, and an explanation of what the tool cannot conclude.
+### Vocabulary
+
+A supply chain includes code, packages, maintainers, build systems, and artifacts. An exceptional condition is a failure outside the ordinary happy path. Fail closed means refusing a sensitive action when a required control is unavailable.
+
+## Worked examples
+
+### Example 1: Inventory a component
+
+Record source, version, purpose, and review date.
+
+```python
+component = {
+    "name": "training-lib",
+    "version": "1.0",
+    "source": "reviewed-index",
+    "reviewed": "2026-08-20",
+}
+print(component)
+```
+
+**What to observe:**
+
+The provenance fields are visible.
+
+### Example 2: Separate required and optional
+
+Security controls should not silently become optional.
+
+```python
+dependency = {"name": "verifier", "required_for": "integrity", "optional": False}
+print(dependency)
+```
+
+**What to observe:**
+
+The requirement is explicit.
+
+### Example 3: Handle unavailable verification
+
+If verification cannot run, do not mark data trusted.
+
+```python
+verification = {"status": "unavailable", "trusted": False}
+print(verification)
+```
+
+**What to observe:**
+
+The state is incomplete.
+
+### Example 4: Pin a policy
+
+A review record should identify what was actually tested.
+
+```python
+policy = {"lockfile": True, "hashes": "reviewed", "updates": "scheduled"}
+print(policy)
+```
+
+**What to observe:**
+
+The process is documented.
+
+### Example 5: Preserve evidence
+
+An error record should identify the component without dumping environment secrets.
+
+```python
+print({"component": component["name"], "event": "verification_failed"})
+```
+
+**What to observe:**
+
+The log is minimal.
+
+## Execution trace
+
+The program identifies dependencies and their provenance, attempts a required control, records whether it was available, and refuses to mark the artifact trusted when the control failed.
+
+## Common mistakes
+
+| Mistake | Symptom | Correction |
+| --- | --- | --- |
+| install any package | unreviewed code enters | verify source and purpose |
+| latest without review | behavior changes silently | pin and test updates |
+| unavailable scanner equals pass | blind spot is reported as clean | fail closed or mark unknown |
+| log environment | tokens and paths leak | minimize component evidence |
+| no update owner | known issues persist | assign review lifecycle |
+
+## Security application
+
+Use only the repository’s declared development tools and synthetic component records. Do not install packages from arbitrary commands or execute downloaded artifacts.
 
 ## Exercises
 
-Complete the numbered questions in [practice/exercises.md](practice/exercises.md) in order. Run the requested commands, produce the requested artifact, and record the edge case or limitation asked for by the exercise. Use [hints](practice/hints.md) only after a real attempt and [solutions](practice/solutions.md) only to compare your reasoning.
-
-## Mental model
-
-> A security tool is a small program whose assumptions, inputs, outputs, and limits must be made visible.
+Complete the numbered questions in [practice/exercises.md](practice/exercises.md) in order. Use the examples as a starting point, then record the requested output, edge case, and limitation.
 
 ## Finish line
 
-Run the starter, pass the day tests when present, complete the core practice, and write one sentence naming an edge case and one sentence naming the lab boundary.
+Run `python -m course_days.day069`, pass the relevant tests, complete the numbered exercises, and explain one edge case aloud or in writing.
+
+## Mental model
+
+> A supply-chain control is trustworthy only when its source, version, availability, and failure state are visible.
+
+## Limitations
+
+No inventory eliminates maintainer compromise, build tampering, or unknown vulnerabilities; it supports informed review.
+
+[← Day 68](../068_day_misconfiguration_and_defaults/068_day_misconfiguration_and_defaults.md) · [Day index](../DAY_INDEX.md) · [Day 70 →](../070_day_project__secure_case_api/070_day_project__secure_case_api.md)

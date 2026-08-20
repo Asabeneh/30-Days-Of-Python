@@ -1,6 +1,6 @@
-# Day 74: Detection thresholds
+# Day 74: Detection Thresholds and Evaluation
 
-[Previous](../073_day_ioc_enrichment/073_day_ioc_enrichment.md) | [Next](../075_day_mitre_att_ck_mapping/075_day_mitre_att_ck_mapping.md)
+[← Day 73](../073_day_ioc_enrichment/073_day_ioc_enrichment.md) · [Day index](../DAY_INDEX.md) · [Day 75 →](../075_day_mitre_att_ck_mapping/075_day_mitre_att_ck_mapping.md)
 
 ## Table of Contents
 
@@ -9,43 +9,148 @@
 - [Outcomes](#outcomes)
 - [The problem](#the-problem)
 - [Security boundary](#security-boundary)
-- [Concept map](#concept-map)
-- [Practice](#practice)
-- [Mental model](#mental-model)
+- [Lesson](#lesson)
+- [Vocabulary](#vocabulary)
+- [Worked examples](#worked-examples)
+- [Execution trace](#execution-trace)
+- [Common mistakes](#common-mistakes)
+- [Security application](#security-application)
+- [Exercises](#exercises)
 - [Finish line](#finish-line)
 
 ## Why this lesson exists
 
-This lesson belongs to **Defensive Automation and Detection**. It turns one engineering concept into a runnable, testable, and explainable security practice. The final lesson will be expanded with execution traces, diagrams, common-mistake tables, and worked examples before that phase is marked complete.
+A detection rule is a policy over incomplete telemetry. Thresholds control false positives and false negatives, so a learner should evaluate them against labeled synthetic fixtures instead of trusting intuition.
 
 ## Prerequisites
 
-Complete the previous lesson and keep the repository setup from [SETUP.md](../SETUP.md) available. Revisit the linked previous lesson if any term is unfamiliar.
+Complete Day 73. Use only the local course fixtures, loopback services, and synthetic records described by the lesson.
 
 ## Outcomes
 
-By the end, you can explain the concept, run the starter, predict a result, write a small test, identify one failure mode, and state the security boundary of the exercise.
+By the end of this lesson, you can:
+
+- explain the concept before using the tool
+- run and modify every worked example
+- test normal, boundary, and failure behavior
+- state the trust boundary and residual risk
+- complete the numbered cybersecurity exercises
 
 ## The problem
 
-Security engineering requires reliable decisions under imperfect input and failure. This day introduces **Detection thresholds** through a bounded local fixture before asking you to generalize the pattern.
+Choose and evaluate a threshold for synthetic failed-login events, then explain what the metric does not show.
 
 ## Security boundary
 
-Use only the supplied synthetic data or a local fixture. Do not substitute public targets, university systems, employer systems, real credentials, or private evidence. Stop if the scope changes.
+This lesson is educational and bounded. It does not authorize public scanning, credential use, interception, exploit delivery, real-user profiling, or changes to systems you do not own.
 
-## Concept map
+## Lesson
 
-Start with the smallest runnable example in `starter/main.py`. Trace the input, transformation, decision, and output. Then deliberately change one input and predict the result before running again. The full lesson expansion will add a visual data-flow diagram, a common-mistakes table, and an explanation of what the tool cannot conclude.
+### Vocabulary
+
+A threshold is a rule boundary. A true positive matches a labeled condition. A false positive alerts on benign data. Recall and precision summarize different error trade-offs.
+
+## Worked examples
+
+### Example 1: Count events
+
+A simple detector starts with observable counts.
+
+```python
+events = ["failed", "failed", "ok"]
+failures = events.count("failed")
+print(failures)
+```
+
+**What to observe:**
+
+`2` failures.
+
+### Example 2: Apply a threshold
+
+The threshold turns count into an alert decision.
+
+```python
+threshold = 3
+print(failures >= threshold)
+```
+
+**What to observe:**
+
+`False` for two failures.
+
+### Example 3: Create labels
+
+Evaluation requires an expected label in synthetic data.
+
+```python
+cases = [{"alert": True, "expected": True}, {"alert": True, "expected": False}]
+print(cases)
+```
+
+**What to observe:**
+
+The two cases support error counting.
+
+### Example 4: Count errors
+
+Confusion-matrix counts make trade-offs visible.
+
+```python
+tp, fp, fn, tn = 1, 1, 0, 2
+print({"tp": tp, "fp": fp, "fn": fn, "tn": tn})
+```
+
+**What to observe:**
+
+The outcomes are explicit.
+
+### Example 5: State threshold limits
+
+A rule may miss slow or distributed behavior.
+
+```python
+print(
+    {"blind_spot": "below-threshold distributed activity", "status": "known limitation"}
+)
+```
+
+**What to observe:**
+
+The detector is not overclaimed.
+
+## Execution trace
+
+The detector aggregates bounded events, applies a threshold, compares output with synthetic labels, counts errors, and documents blind spots before deployment.
+
+## Common mistakes
+
+| Mistake | Symptom | Correction |
+| --- | --- | --- |
+| threshold from intuition | false alarms or misses | evaluate labeled fixtures |
+| precision only | misses are ignored | examine recall too |
+| label is attacker truth | synthetic label is overtrusted | document labeling assumptions |
+| no time window | counts accumulate forever | define window and reset |
+| alert equals incident | automation overreacts | require triage |
+
+## Security application
+
+Use only synthetic labeled fixtures. Do not tune a detector against real people or claim its threshold identifies attackers.
 
 ## Exercises
 
-Complete the numbered questions in [practice/exercises.md](practice/exercises.md) in order. Run the requested commands, produce the requested artifact, and record the edge case or limitation asked for by the exercise. Use [hints](practice/hints.md) only after a real attempt and [solutions](practice/solutions.md) only to compare your reasoning.
-
-## Mental model
-
-> A security tool is a small program whose assumptions, inputs, outputs, and limits must be made visible.
+Complete the numbered questions in [practice/exercises.md](practice/exercises.md) in order. Use the examples as a starting point, then record the requested output, edge case, and limitation.
 
 ## Finish line
 
-Run the starter, pass the day tests when present, complete the core practice, and write one sentence naming an edge case and one sentence naming the lab boundary.
+Run `python -m course_days.day074`, pass the relevant tests, complete the numbered exercises, and explain one edge case aloud or in writing.
+
+## Mental model
+
+> A detection threshold is a policy that trades false positives and negatives under a defined window and dataset.
+
+## Limitations
+
+Metrics depend on labels, distribution, drift, and operational cost; they are not universal quality scores.
+
+[← Day 73](../073_day_ioc_enrichment/073_day_ioc_enrichment.md) · [Day index](../DAY_INDEX.md) · [Day 75 →](../075_day_mitre_att_ck_mapping/075_day_mitre_att_ck_mapping.md)

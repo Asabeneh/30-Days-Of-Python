@@ -1,6 +1,6 @@
-# Day 75: MITRE ATT&CK mapping
+# Day 75: MITRE ATT&CK Mapping as Documentation
 
-[Previous](../074_day_detection_thresholds/074_day_detection_thresholds.md) | [Next](../076_day_alert_triage/076_day_alert_triage.md)
+[← Day 74](../074_day_detection_thresholds/074_day_detection_thresholds.md) · [Day index](../DAY_INDEX.md) · [Day 76 →](../076_day_alert_triage/076_day_alert_triage.md)
 
 ## Table of Contents
 
@@ -9,43 +9,154 @@
 - [Outcomes](#outcomes)
 - [The problem](#the-problem)
 - [Security boundary](#security-boundary)
-- [Concept map](#concept-map)
-- [Practice](#practice)
-- [Mental model](#mental-model)
+- [Lesson](#lesson)
+- [Vocabulary](#vocabulary)
+- [Worked examples](#worked-examples)
+- [Execution trace](#execution-trace)
+- [Common mistakes](#common-mistakes)
+- [Security application](#security-application)
+- [Exercises](#exercises)
 - [Finish line](#finish-line)
 
 ## Why this lesson exists
 
-This lesson belongs to **Defensive Automation and Detection**. It turns one engineering concept into a runnable, testable, and explainable security practice. The final lesson will be expanded with execution traces, diagrams, common-mistake tables, and worked examples before that phase is marked complete.
+Framework mappings can help analysts communicate behavior, but a technique label is not proof that an adversary used it. The mapping should link observable evidence to a cautious hypothesis.
 
 ## Prerequisites
 
-Complete the previous lesson and keep the repository setup from [SETUP.md](../SETUP.md) available. Revisit the linked previous lesson if any term is unfamiliar.
+Complete Day 74. Use only the local course fixtures, loopback services, and synthetic records described by the lesson.
 
 ## Outcomes
 
-By the end, you can explain the concept, run the starter, predict a result, write a small test, identify one failure mode, and state the security boundary of the exercise.
+By the end of this lesson, you can:
+
+- explain the concept before using the tool
+- run and modify every worked example
+- test normal, boundary, and failure behavior
+- state the trust boundary and residual risk
+- complete the numbered cybersecurity exercises
 
 ## The problem
 
-Security engineering requires reliable decisions under imperfect input and failure. This day introduces **MITRE ATT&CK mapping** through a bounded local fixture before asking you to generalize the pattern.
+Map synthetic behavior descriptions to a documented technique reference without claiming attribution.
 
 ## Security boundary
 
-Use only the supplied synthetic data or a local fixture. Do not substitute public targets, university systems, employer systems, real credentials, or private evidence. Stop if the scope changes.
+This lesson is educational and bounded. It does not authorize public scanning, credential use, interception, exploit delivery, real-user profiling, or changes to systems you do not own.
 
-## Concept map
+## Lesson
 
-Start with the smallest runnable example in `starter/main.py`. Trace the input, transformation, decision, and output. Then deliberately change one input and predict the result before running again. The full lesson expansion will add a visual data-flow diagram, a common-mistakes table, and an explanation of what the tool cannot conclude.
+### Vocabulary
+
+A tactic describes a goal. A technique describes a behavior. Mapping links evidence to a framework entry. Attribution claims actor identity and requires much more evidence.
+
+## Worked examples
+
+### Example 1: Describe behavior
+
+Start with what the fixture actually shows.
+
+```python
+observation = {
+    "event": "process_started",
+    "command": "python --version",
+    "source": "fixture",
+}
+print(observation)
+```
+
+**What to observe:**
+
+The observation is concrete.
+
+### Example 2: Map cautiously
+
+A mapping is a hypothesis about behavior.
+
+```python
+mapping = {
+    "observation": "process_started",
+    "technique": "training-reference",
+    "confidence": "low",
+}
+print(mapping)
+```
+
+**What to observe:**
+
+The confidence is not certainty.
+
+### Example 3: Separate tactic
+
+A broad goal and a specific behavior are different fields.
+
+```python
+mapping["tactic"] = "execution-like"
+print(mapping)
+```
+
+**What to observe:**
+
+The fields communicate different levels.
+
+### Example 4: Attach evidence
+
+A mapping without evidence is decorative.
+
+```python
+mapping["evidence_ref"] = {"case_id": "training-75", "line": 1}
+print(mapping)
+```
+
+**What to observe:**
+
+The reviewer can return to the fixture.
+
+### Example 5: Reject attribution
+
+A framework match does not identify a person or group.
+
+```python
+mapping["attribution"] = "not assessed"
+print(mapping)
+```
+
+**What to observe:**
+
+The report avoids overclaiming.
+
+## Execution trace
+
+The analyst records observation, selects a cautious framework reference, attaches evidence and confidence, and explicitly leaves attribution unassessed.
+
+## Common mistakes
+
+| Mistake | Symptom | Correction |
+| --- | --- | --- |
+| technique equals attacker | attribution is invented | label mapping as hypothesis |
+| no evidence reference | mapping cannot be reviewed | link case and line |
+| framework name only | behavior is not explained | write observation first |
+| force a mapping | every event becomes a technique | allow unmapped |
+| ignore version | framework changes | record version/date |
+
+## Security application
+
+Use fictional observations and framework documentation as a vocabulary aid. Do not publish accusations or map real people from thin evidence.
 
 ## Exercises
 
-Complete the numbered questions in [practice/exercises.md](practice/exercises.md) in order. Run the requested commands, produce the requested artifact, and record the edge case or limitation asked for by the exercise. Use [hints](practice/hints.md) only after a real attempt and [solutions](practice/solutions.md) only to compare your reasoning.
-
-## Mental model
-
-> A security tool is a small program whose assumptions, inputs, outputs, and limits must be made visible.
+Complete the numbered questions in [practice/exercises.md](practice/exercises.md) in order. Use the examples as a starting point, then record the requested output, edge case, and limitation.
 
 ## Finish line
 
-Run the starter, pass the day tests when present, complete the core practice, and write one sentence naming an edge case and one sentence naming the lab boundary.
+Run `python -m course_days.day075`, pass the relevant tests, complete the numbered exercises, and explain one edge case aloud or in writing.
+
+## Mental model
+
+> Framework mapping improves shared language; evidence and uncertainty remain the foundation.
+
+## Limitations
+
+Frameworks are descriptive and versioned; they do not replace investigation, detection engineering, or legal standards.
+
+[← Day 74](../074_day_detection_thresholds/074_day_detection_thresholds.md) · [Day index](../DAY_INDEX.md) · [Day 76 →](../076_day_alert_triage/076_day_alert_triage.md)

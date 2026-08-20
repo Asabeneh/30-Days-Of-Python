@@ -1,6 +1,6 @@
 # Day 80: Project: Mini Detection Pipeline
 
-[Previous](../079_day_analyst_reporting/079_day_analyst_reporting.md) | [Next](../081_day_response_lifecycle/081_day_response_lifecycle.md)
+[← Day 79](../079_day_analyst_reporting/079_day_analyst_reporting.md) · [Day index](../DAY_INDEX.md) · [Day 81 →](../081_day_response_lifecycle/081_day_response_lifecycle.md)
 
 ## Table of Contents
 
@@ -9,43 +9,160 @@
 - [Outcomes](#outcomes)
 - [The problem](#the-problem)
 - [Security boundary](#security-boundary)
-- [Concept map](#concept-map)
-- [Practice](#practice)
-- [Mental model](#mental-model)
+- [Lesson](#lesson)
+- [Vocabulary](#vocabulary)
+- [Worked examples](#worked-examples)
+- [Execution trace](#execution-trace)
+- [Common mistakes](#common-mistakes)
+- [Security application](#security-application)
+- [Exercises](#exercises)
 - [Finish line](#finish-line)
 
 ## Why this lesson exists
 
-This lesson belongs to **Defensive Automation and Detection**. It turns one engineering concept into a runnable, testable, and explainable security practice. The final lesson will be expanded with execution traces, diagrams, common-mistake tables, and worked examples before that phase is marked complete.
+The project composes telemetry schemas, normalization, enrichment, thresholds, mappings, triage, baselines, provenance, and reporting into a small defensive pipeline with honest limits.
 
 ## Prerequisites
 
-Complete the previous lesson and keep the repository setup from [SETUP.md](../SETUP.md) available. Revisit the linked previous lesson if any term is unfamiliar.
+Complete Day 79. Use only the local course fixtures, loopback services, and synthetic records described by the lesson.
 
 ## Outcomes
 
-By the end, you can explain the concept, run the starter, predict a result, write a small test, identify one failure mode, and state the security boundary of the exercise.
+By the end of this lesson, you can:
+
+- explain the concept before using the tool
+- run and modify every worked example
+- test normal, boundary, and failure behavior
+- state the trust boundary and residual risk
+- complete the numbered cybersecurity exercises
 
 ## The problem
 
-Security engineering requires reliable decisions under imperfect input and failure. This day introduces **Project: Mini Detection Pipeline** through a bounded local fixture before asking you to generalize the pattern.
+Build a local pipeline that ingests synthetic events, normalizes them, applies one detection rule, creates a triage item, and writes an evidence-based report.
 
 ## Security boundary
 
-Use only the supplied synthetic data or a local fixture. Do not substitute public targets, university systems, employer systems, real credentials, or private evidence. Stop if the scope changes.
+This lesson is educational and bounded. It does not authorize public scanning, credential use, interception, exploit delivery, real-user profiling, or changes to systems you do not own.
 
-## Concept map
+## Lesson
 
-Start with the smallest runnable example in `starter/main.py`. Trace the input, transformation, decision, and output. Then deliberately change one input and predict the result before running again. The full lesson expansion will add a visual data-flow diagram, a common-mistakes table, and an explanation of what the tool cannot conclude.
+### Vocabulary
+
+A pipeline is an ordered transformation. A detection rule emits a signal. Triage adds context and disposition. A report preserves evidence and limitations.
+
+## Worked examples
+
+### Example 1: Define stages
+
+A project is easier to debug when every stage has one purpose.
+
+```python
+stages = ["ingest", "normalize", "enrich", "detect", "triage", "report"]
+print(" -> ".join(stages))
+```
+
+**What to observe:**
+
+The pipeline is explicit.
+
+### Example 2: Normalize an event
+
+The event must carry provenance.
+
+```python
+event = {
+    "event_type": "auth_failure",
+    "source": "fixture",
+    "actor": "student",
+    "line": 2,
+}
+print(event)
+```
+
+**What to observe:**
+
+A normalized synthetic event.
+
+### Example 3: Apply a rule
+
+A rule produces a signal, not a conclusion.
+
+```python
+signal = {"rule": "three-failures", "matched": True, "confidence": "low"}
+print(signal)
+```
+
+**What to observe:**
+
+The signal is cautious.
+
+### Example 4: Create triage
+
+Triage records evidence and next step.
+
+```python
+alert = {
+    "signal": signal,
+    "evidence": [event],
+    "status": "new",
+    "next_step": "review fixture",
+}
+print(alert)
+```
+
+**What to observe:**
+
+The alert is actionable but bounded.
+
+### Example 5: Write limitations
+
+The report should prevent overinterpretation.
+
+```python
+report = {
+    "scope": "synthetic only",
+    "complete": True,
+    "limitations": ["no identity proof", "no production context"],
+}
+print(report)
+```
+
+**What to observe:**
+
+The report is transparent.
+
+## Execution trace
+
+The pipeline validates input, normalizes fields, enriches from local data, applies a bounded rule, creates a triage item, and writes a report with provenance, completeness, and limitations.
+
+## Common mistakes
+
+| Mistake | Symptom | Correction |
+| --- | --- | --- |
+| pipeline drops raw reference | signal cannot be checked | retain evidence ids |
+| enrichment becomes truth | context overrules observation | keep confidence |
+| alert auto-escalates | false positive causes harm | require triage |
+| no schema version | future data breaks | version events |
+| no reset | fixtures and reports accumulate | document cleanup |
+
+## Security application
+
+The pipeline must use only repository fixtures, local lookup tables, finite inputs, and neutral labels. Its README must include threat model, tests, sample report, and reset.
 
 ## Exercises
 
-Complete the numbered questions in [practice/exercises.md](practice/exercises.md) in order. Run the requested commands, produce the requested artifact, and record the edge case or limitation asked for by the exercise. Use [hints](practice/hints.md) only after a real attempt and [solutions](practice/solutions.md) only to compare your reasoning.
-
-## Mental model
-
-> A security tool is a small program whose assumptions, inputs, outputs, and limits must be made visible.
+Complete the numbered questions in [practice/exercises.md](practice/exercises.md) in order. Use the examples as a starting point, then record the requested output, edge case, and limitation.
 
 ## Finish line
 
-Run the starter, pass the day tests when present, complete the core practice, and write one sentence naming an edge case and one sentence naming the lab boundary.
+Run `python -m course_days.day080`, pass the relevant tests, complete the numbered exercises, and explain one edge case aloud or in writing.
+
+## Mental model
+
+> A detection pipeline turns bounded observations into reviewable signals while preserving provenance and uncertainty at every stage.
+
+## Limitations
+
+This is not a SIEM, threat-intelligence platform, or real-world detection service; production needs governance, access control, retention, and monitoring.
+
+[← Day 79](../079_day_analyst_reporting/079_day_analyst_reporting.md) · [Day index](../DAY_INDEX.md) · [Day 81 →](../081_day_response_lifecycle/081_day_response_lifecycle.md)

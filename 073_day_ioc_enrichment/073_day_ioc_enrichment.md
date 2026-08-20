@@ -1,6 +1,6 @@
-# Day 73: IOC enrichment
+# Day 73: IOC Enrichment and Provenance
 
-[Previous](../072_day_log_normalization/072_day_log_normalization.md) | [Next](../074_day_detection_thresholds/074_day_detection_thresholds.md)
+[← Day 72](../072_day_log_normalization/072_day_log_normalization.md) · [Day index](../DAY_INDEX.md) · [Day 74 →](../074_day_detection_thresholds/074_day_detection_thresholds.md)
 
 ## Table of Contents
 
@@ -9,43 +9,145 @@
 - [Outcomes](#outcomes)
 - [The problem](#the-problem)
 - [Security boundary](#security-boundary)
-- [Concept map](#concept-map)
-- [Practice](#practice)
-- [Mental model](#mental-model)
+- [Lesson](#lesson)
+- [Vocabulary](#vocabulary)
+- [Worked examples](#worked-examples)
+- [Execution trace](#execution-trace)
+- [Common mistakes](#common-mistakes)
+- [Security application](#security-application)
+- [Exercises](#exercises)
 - [Finish line](#finish-line)
 
 ## Why this lesson exists
 
-This lesson belongs to **Defensive Automation and Detection**. It turns one engineering concept into a runnable, testable, and explainable security practice. The final lesson will be expanded with execution traces, diagrams, common-mistake tables, and worked examples before that phase is marked complete.
+An indicator can be a domain, hash, address, or filename. Enrichment adds context, but it can also create privacy, accuracy, and false-confidence problems.
 
 ## Prerequisites
 
-Complete the previous lesson and keep the repository setup from [SETUP.md](../SETUP.md) available. Revisit the linked previous lesson if any term is unfamiliar.
+Complete Day 72. Use only the local course fixtures, loopback services, and synthetic records described by the lesson.
 
 ## Outcomes
 
-By the end, you can explain the concept, run the starter, predict a result, write a small test, identify one failure mode, and state the security boundary of the exercise.
+By the end of this lesson, you can:
+
+- explain the concept before using the tool
+- run and modify every worked example
+- test normal, boundary, and failure behavior
+- state the trust boundary and residual risk
+- complete the numbered cybersecurity exercises
 
 ## The problem
 
-Security engineering requires reliable decisions under imperfect input and failure. This day introduces **IOC enrichment** through a bounded local fixture before asking you to generalize the pattern.
+Enrich synthetic indicators from a local lookup table and keep source, time, and confidence attached to each result.
 
 ## Security boundary
 
-Use only the supplied synthetic data or a local fixture. Do not substitute public targets, university systems, employer systems, real credentials, or private evidence. Stop if the scope changes.
+This lesson is educational and bounded. It does not authorize public scanning, credential use, interception, exploit delivery, real-user profiling, or changes to systems you do not own.
 
-## Concept map
+## Lesson
 
-Start with the smallest runnable example in `starter/main.py`. Trace the input, transformation, decision, and output. Then deliberately change one input and predict the result before running again. The full lesson expansion will add a visual data-flow diagram, a common-mistakes table, and an explanation of what the tool cannot conclude.
+### Vocabulary
+
+An IOC is an observed indicator. Enrichment adds context. Provenance records source and time. Confidence describes evidence quality.
+
+## Worked examples
+
+### Example 1: Classify a candidate
+
+A candidate shape is not a verdict.
+
+```python
+candidate = {"value": "example.invalid", "kind": "domain", "status": "candidate"}
+print(candidate)
+```
+
+**What to observe:**
+
+The label remains neutral.
+
+### Example 2: Use local enrichment
+
+A local table avoids contacting external services.
+
+```python
+lookup = {"example.invalid": {"owner": "training", "confidence": "high"}}
+print(lookup.get(candidate["value"]))
+```
+
+**What to observe:**
+
+Synthetic context is returned.
+
+### Example 3: Attach provenance
+
+The result should say where the context came from.
+
+```python
+result = {**candidate, **lookup[candidate["value"]], "source": "course-fixture"}
+print(result)
+```
+
+**What to observe:**
+
+The fields explain the enrichment.
+
+### Example 4: Handle no result
+
+Absence of enrichment is not evidence of safety.
+
+```python
+print({"value": "unknown.invalid", "status": "not_found", "safe": None})
+```
+
+**What to observe:**
+
+The unknown state is explicit.
+
+### Example 5: Bound cache
+
+Repeated lookups should not grow without a policy.
+
+```python
+cache_policy = {"max_entries": 100, "ttl_seconds": 3600}
+print(cache_policy)
+```
+
+**What to observe:**
+
+Resource and staleness limits are visible.
+
+## Execution trace
+
+The indicator is parsed, looked up only in the approved local source, merged with provenance, and returned with a neutral status and confidence.
+
+## Common mistakes
+
+| Mistake | Symptom | Correction |
+| --- | --- | --- |
+| enrichment equals malicious | context becomes accusation | retain candidate and confidence |
+| external lookup by default | privacy and scope expand | use local fixtures or explicit approval |
+| no timestamp | stale context looks current | record observation time |
+| no source | result cannot be audited | preserve provenance |
+| not found equals safe | blind spot becomes reassurance | use unknown |
+
+## Security application
+
+Use local synthetic indicators and a fixture lookup table. Do not resolve, scan, or query public reputation services.
 
 ## Exercises
 
-Complete the numbered questions in [practice/exercises.md](practice/exercises.md) in order. Run the requested commands, produce the requested artifact, and record the edge case or limitation asked for by the exercise. Use [hints](practice/hints.md) only after a real attempt and [solutions](practice/solutions.md) only to compare your reasoning.
-
-## Mental model
-
-> A security tool is a small program whose assumptions, inputs, outputs, and limits must be made visible.
+Complete the numbered questions in [practice/exercises.md](practice/exercises.md) in order. Use the examples as a starting point, then record the requested output, edge case, and limitation.
 
 ## Finish line
 
-Run the starter, pass the day tests when present, complete the core practice, and write one sentence naming an edge case and one sentence naming the lab boundary.
+Run `python -m course_days.day073`, pass the relevant tests, complete the numbered exercises, and explain one edge case aloud or in writing.
+
+## Mental model
+
+> Enrichment adds context to an observation; it does not create certainty or permission to act.
+
+## Limitations
+
+External data can be stale, biased, unavailable, or wrong, and enrichment may itself expose sensitive indicators.
+
+[← Day 72](../072_day_log_normalization/072_day_log_normalization.md) · [Day index](../DAY_INDEX.md) · [Day 74 →](../074_day_detection_thresholds/074_day_detection_thresholds.md)

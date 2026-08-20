@@ -1,6 +1,6 @@
-# Day 78: Threat intelligence provenance
+# Day 78: Threat Intelligence Provenance
 
-[Previous](../077_day_baselines_and_anomalies/077_day_baselines_and_anomalies.md) | [Next](../079_day_analyst_reporting/079_day_analyst_reporting.md)
+[← Day 77](../077_day_baselines_and_anomalies/077_day_baselines_and_anomalies.md) · [Day index](../DAY_INDEX.md) · [Day 79 →](../079_day_analyst_reporting/079_day_analyst_reporting.md)
 
 ## Table of Contents
 
@@ -9,43 +9,150 @@
 - [Outcomes](#outcomes)
 - [The problem](#the-problem)
 - [Security boundary](#security-boundary)
-- [Concept map](#concept-map)
-- [Practice](#practice)
-- [Mental model](#mental-model)
+- [Lesson](#lesson)
+- [Vocabulary](#vocabulary)
+- [Worked examples](#worked-examples)
+- [Execution trace](#execution-trace)
+- [Common mistakes](#common-mistakes)
+- [Security application](#security-application)
+- [Exercises](#exercises)
 - [Finish line](#finish-line)
 
 ## Why this lesson exists
 
-This lesson belongs to **Defensive Automation and Detection**. It turns one engineering concept into a runnable, testable, and explainable security practice. The final lesson will be expanded with execution traces, diagrams, common-mistake tables, and worked examples before that phase is marked complete.
+Threat intelligence is useful only when analysts can judge source, freshness, confidence, and handling restrictions. Copying an indicator without context creates false authority.
 
 ## Prerequisites
 
-Complete the previous lesson and keep the repository setup from [SETUP.md](../SETUP.md) available. Revisit the linked previous lesson if any term is unfamiliar.
+Complete Day 77. Use only the local course fixtures, loopback services, and synthetic records described by the lesson.
 
 ## Outcomes
 
-By the end, you can explain the concept, run the starter, predict a result, write a small test, identify one failure mode, and state the security boundary of the exercise.
+By the end of this lesson, you can:
+
+- explain the concept before using the tool
+- run and modify every worked example
+- test normal, boundary, and failure behavior
+- state the trust boundary and residual risk
+- complete the numbered cybersecurity exercises
 
 ## The problem
 
-Security engineering requires reliable decisions under imperfect input and failure. This day introduces **Threat intelligence provenance** through a bounded local fixture before asking you to generalize the pattern.
+Represent a synthetic intelligence report and decide whether its indicator is suitable for a local training rule.
 
 ## Security boundary
 
-Use only the supplied synthetic data or a local fixture. Do not substitute public targets, university systems, employer systems, real credentials, or private evidence. Stop if the scope changes.
+This lesson is educational and bounded. It does not authorize public scanning, credential use, interception, exploit delivery, real-user profiling, or changes to systems you do not own.
 
-## Concept map
+## Lesson
 
-Start with the smallest runnable example in `starter/main.py`. Trace the input, transformation, decision, and output. Then deliberately change one input and predict the result before running again. The full lesson expansion will add a visual data-flow diagram, a common-mistakes table, and an explanation of what the tool cannot conclude.
+### Vocabulary
+
+Intelligence is analyzed information. Provenance records source and transformation. Freshness describes age. Confidence reflects evidence quality. Handling restrictions limit sharing.
+
+## Worked examples
+
+### Example 1: Model a report
+
+Start with source and observation time.
+
+```python
+report = {
+    "source": "training-lab",
+    "observed_at": "2026-08-20",
+    "indicator": "example.invalid",
+}
+print(report)
+```
+
+**What to observe:**
+
+The origin is explicit.
+
+### Example 2: Add confidence
+
+Confidence is not the same as severity.
+
+```python
+report.update({"confidence": "medium", "severity": "unknown"})
+print(report)
+```
+
+**What to observe:**
+
+The fields remain separate.
+
+### Example 3: Track transformation
+
+A normalized indicator should say what changed.
+
+```python
+report["transformation"] = "lowercase domain for comparison"
+print(report)
+```
+
+**What to observe:**
+
+The transformation is auditable.
+
+### Example 4: Apply freshness
+
+Old data may need review before use.
+
+```python
+report["freshness"] = {"status": "training-only", "expires": "documented"}
+print(report)
+```
+
+**What to observe:**
+
+Freshness policy is visible.
+
+### Example 5: Respect handling
+
+A source restriction is part of safe use.
+
+```python
+report["handling"] = "do not redistribute"
+print(report["handling"])
+```
+
+**What to observe:**
+
+The learner sees a sharing boundary.
+
+## Execution trace
+
+The analyst records source, time, indicator, transformation, confidence, freshness, and handling before deciding whether a local rule can use the information.
+
+## Common mistakes
+
+| Mistake | Symptom | Correction |
+| --- | --- | --- |
+| source name as proof | provenance is shallow | record method and time |
+| old indicator as current | stale detection | apply freshness |
+| confidence equals truth | uncertainty disappears | preserve confidence |
+| redistribute restricted data | handling breach | respect restrictions |
+| query indicator externally | scope and privacy expand | use local fixtures |
+
+## Security application
+
+Use only synthetic reports and indicators. Do not paste private intelligence or query public reputation services.
 
 ## Exercises
 
-Complete the numbered questions in [practice/exercises.md](practice/exercises.md) in order. Run the requested commands, produce the requested artifact, and record the edge case or limitation asked for by the exercise. Use [hints](practice/hints.md) only after a real attempt and [solutions](practice/solutions.md) only to compare your reasoning.
-
-## Mental model
-
-> A security tool is a small program whose assumptions, inputs, outputs, and limits must be made visible.
+Complete the numbered questions in [practice/exercises.md](practice/exercises.md) in order. Use the examples as a starting point, then record the requested output, edge case, and limitation.
 
 ## Finish line
 
-Run the starter, pass the day tests when present, complete the core practice, and write one sentence naming an edge case and one sentence naming the lab boundary.
+Run `python -m course_days.day078`, pass the relevant tests, complete the numbered exercises, and explain one edge case aloud or in writing.
+
+## Mental model
+
+> Intelligence is contextual evidence with provenance and handling rules, not a magic label.
+
+## Limitations
+
+Sources can be wrong, biased, stale, compromised, or unsuitable for the learner’s legal and operational context.
+
+[← Day 77](../077_day_baselines_and_anomalies/077_day_baselines_and_anomalies.md) · [Day index](../DAY_INDEX.md) · [Day 79 →](../079_day_analyst_reporting/079_day_analyst_reporting.md)

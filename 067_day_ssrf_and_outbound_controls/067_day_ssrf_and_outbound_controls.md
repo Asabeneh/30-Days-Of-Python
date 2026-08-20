@@ -1,6 +1,6 @@
-# Day 67: SSRF and outbound controls
+# Day 67: SSRF and Outbound Request Controls
 
-[Previous](../066_day_csrf__cookies__and_cors/066_day_csrf__cookies__and_cors.md) | [Next](../068_day_misconfiguration_and_defaults/068_day_misconfiguration_and_defaults.md)
+[← Day 66](../066_day_csrf__cookies__and_cors/066_day_csrf__cookies__and_cors.md) · [Day index](../DAY_INDEX.md) · [Day 68 →](../068_day_misconfiguration_and_defaults/068_day_misconfiguration_and_defaults.md)
 
 ## Table of Contents
 
@@ -9,43 +9,148 @@
 - [Outcomes](#outcomes)
 - [The problem](#the-problem)
 - [Security boundary](#security-boundary)
-- [Concept map](#concept-map)
-- [Practice](#practice)
-- [Mental model](#mental-model)
+- [Lesson](#lesson)
+- [Vocabulary](#vocabulary)
+- [Worked examples](#worked-examples)
+- [Execution trace](#execution-trace)
+- [Common mistakes](#common-mistakes)
+- [Security application](#security-application)
+- [Exercises](#exercises)
 - [Finish line](#finish-line)
 
 ## Why this lesson exists
 
-This lesson belongs to **Web Services and Application Security**. It turns one engineering concept into a runnable, testable, and explainable security practice. The final lesson will be expanded with execution traces, diagrams, common-mistake tables, and worked examples before that phase is marked complete.
+A server that fetches a URL based on user input can become a network pivot. The defense is an explicit outbound policy: allowed schemes, hosts, ports, resolution behavior, redirects, and response limits.
 
 ## Prerequisites
 
-Complete the previous lesson and keep the repository setup from [SETUP.md](../SETUP.md) available. Revisit the linked previous lesson if any term is unfamiliar.
+Complete Day 66. Use only the local course fixtures, loopback services, and synthetic records described by the lesson.
 
 ## Outcomes
 
-By the end, you can explain the concept, run the starter, predict a result, write a small test, identify one failure mode, and state the security boundary of the exercise.
+By the end of this lesson, you can:
+
+- explain the concept before using the tool
+- run and modify every worked example
+- test normal, boundary, and failure behavior
+- state the trust boundary and residual risk
+- complete the numbered cybersecurity exercises
 
 ## The problem
 
-Security engineering requires reliable decisions under imperfect input and failure. This day introduces **SSRF and outbound controls** through a bounded local fixture before asking you to generalize the pattern.
+Design a local URL fetch policy that accepts one documentation fixture and rejects loopback, private, unsupported, or unknown destinations.
 
 ## Security boundary
 
-Use only the supplied synthetic data or a local fixture. Do not substitute public targets, university systems, employer systems, real credentials, or private evidence. Stop if the scope changes.
+This lesson is educational and bounded. It does not authorize public scanning, credential use, interception, exploit delivery, real-user profiling, or changes to systems you do not own.
 
-## Concept map
+## Lesson
 
-Start with the smallest runnable example in `starter/main.py`. Trace the input, transformation, decision, and output. Then deliberately change one input and predict the result before running again. The full lesson expansion will add a visual data-flow diagram, a common-mistakes table, and an explanation of what the tool cannot conclude.
+### Vocabulary
+
+SSRF is unintended server-side access through attacker-influenced requests. An egress policy controls outbound destinations. A redirect can change the effective destination.
+
+## Worked examples
+
+### Example 1: Parse a URL
+
+A URL has components that the policy must inspect.
+
+```python
+from urllib.parse import urlparse
+
+parts = urlparse("https://training.local/docs")
+print(parts.scheme, parts.hostname, parts.path)
+```
+
+**What to observe:**
+
+Scheme, host, and path are separate values.
+
+### Example 2: Allow schemes
+
+Reject schemes that the fetcher does not need.
+
+```python
+if parts.scheme not in {"https"}:
+    raise ValueError("scheme is not allowed")
+```
+
+**What to observe:**
+
+Only HTTPS passes this policy example.
+
+### Example 3: Allow a host
+
+A host allowlist is narrower than a denylist.
+
+```python
+allowed_hosts = {"training.local"}
+print(parts.hostname in allowed_hosts)
+```
+
+**What to observe:**
+
+The documentation host is explicit.
+
+### Example 4: Bound redirects
+
+A response should not silently move to a new destination.
+
+```python
+policy = {"follow_redirects": False, "max_redirects": 0}
+print(policy)
+```
+
+**What to observe:**
+
+Redirect behavior is explicit.
+
+### Example 5: Bound response bytes
+
+Even an allowed endpoint can return excessive data.
+
+```python
+MAX_BYTES = 1_000_000
+print(MAX_BYTES)
+```
+
+**What to observe:**
+
+The response budget is finite.
+
+## Execution trace
+
+The server parses the URL, validates scheme/host/port, resolves and rechecks according to policy, uses a bounded client, and refuses unexpected redirects or destinations.
+
+## Common mistakes
+
+| Mistake | Symptom | Correction |
+| --- | --- | --- |
+| blocklist only | new private target bypasses it | allowlist destinations |
+| validate before redirect only | redirect escapes policy | revalidate every hop or disable redirects |
+| hostname string check | DNS changes or alternate forms bypass | resolve and enforce carefully |
+| allow all HTTPS | HTTPS does not define destination trust | allow known hosts |
+| no response bound | memory and time abuse | cap bytes and timeout |
+
+## Security application
+
+Use a saved local fixture or a fake HTTP client. Do not make outbound requests to cloud metadata, private networks, or public systems.
 
 ## Exercises
 
-Complete the numbered questions in [practice/exercises.md](practice/exercises.md) in order. Run the requested commands, produce the requested artifact, and record the edge case or limitation asked for by the exercise. Use [hints](practice/hints.md) only after a real attempt and [solutions](practice/solutions.md) only to compare your reasoning.
-
-## Mental model
-
-> A security tool is a small program whose assumptions, inputs, outputs, and limits must be made visible.
+Complete the numbered questions in [practice/exercises.md](practice/exercises.md) in order. Use the examples as a starting point, then record the requested output, edge case, and limitation.
 
 ## Finish line
 
-Run the starter, pass the day tests when present, complete the core practice, and write one sentence naming an edge case and one sentence naming the lab boundary.
+Run `python -m course_days.day067`, pass the relevant tests, complete the numbered exercises, and explain one edge case aloud or in writing.
+
+## Mental model
+
+> Outbound fetching is a capability; the destination policy must be narrower than user input.
+
+## Limitations
+
+SSRF defenses are deployment-sensitive and need network-layer egress controls in addition to application checks.
+
+[← Day 66](../066_day_csrf__cookies__and_cors/066_day_csrf__cookies__and_cors.md) · [Day index](../DAY_INDEX.md) · [Day 68 →](../068_day_misconfiguration_and_defaults/068_day_misconfiguration_and_defaults.md)

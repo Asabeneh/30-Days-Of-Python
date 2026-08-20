@@ -1,6 +1,6 @@
-# Day 71: Telemetry and event schemas
+# Day 71: Telemetry and Event Schemas
 
-[Previous](../070_day_project__secure_case_api/070_day_project__secure_case_api.md) | [Next](../072_day_log_normalization/072_day_log_normalization.md)
+[← Day 70](../070_day_project__secure_case_api/070_day_project__secure_case_api.md) · [Day index](../DAY_INDEX.md) · [Day 72 →](../072_day_log_normalization/072_day_log_normalization.md)
 
 ## Table of Contents
 
@@ -9,60 +9,152 @@
 - [Outcomes](#outcomes)
 - [The problem](#the-problem)
 - [Security boundary](#security-boundary)
-- [Concept map](#concept-map)
-- [Practice](#practice)
-- [Mental model](#mental-model)
+- [Lesson](#lesson)
+- [Vocabulary](#vocabulary)
+- [Worked examples](#worked-examples)
+- [Execution trace](#execution-trace)
+- [Common mistakes](#common-mistakes)
+- [Security application](#security-application)
+- [Exercises](#exercises)
 - [Finish line](#finish-line)
 
 ## Why this lesson exists
 
-This lesson belongs to **Defensive Automation and Detection**. It turns one engineering concept into a runnable, testable, and explainable security practice. The final lesson will be expanded with execution traces, diagrams, common-mistake tables, and worked examples before that phase is marked complete.
+Detection depends on events that different systems represent differently. A schema gives analysts stable fields while preserving source, time, and uncertainty.
 
 ## Prerequisites
 
-Complete the previous lesson and keep the repository setup from [SETUP.md](../SETUP.md) available. Revisit the linked previous lesson if any term is unfamiliar.
+Complete Day 70. Use only the local course fixtures, loopback services, and synthetic records described by the lesson.
 
 ## Outcomes
 
-By the end, you can explain the concept, run the starter, predict a result, write a small test, identify one failure mode, and state the security boundary of the exercise.
+By the end of this lesson, you can:
+
+- explain the concept before using the tool
+- run and modify every worked example
+- test normal, boundary, and failure behavior
+- state the trust boundary and residual risk
+- complete the numbered cybersecurity exercises
 
 ## The problem
 
-Security engineering requires reliable decisions under imperfect input and failure. This day introduces **Telemetry and event schemas** through a bounded local fixture before asking you to generalize the pattern.
+Define a normalized event schema for synthetic authentication activity and reject records that cannot support the required fields.
 
 ## Security boundary
 
-Use only the supplied synthetic data or a local fixture. Do not substitute public targets, university systems, employer systems, real credentials, or private evidence. Stop if the scope changes.
+This lesson is educational and bounded. It does not authorize public scanning, credential use, interception, exploit delivery, real-user profiling, or changes to systems you do not own.
 
-## Concept map
+## Lesson
 
-Start with the smallest runnable example in `starter/main.py`. Trace the input, transformation, decision, and output. Then deliberately change one input and predict the result before running again. The full lesson expansion will add a visual data-flow diagram, a common-mistakes table, and an explanation of what the tool cannot conclude.
+### Vocabulary
+
+Telemetry is collected operational data. A schema defines fields and types. Normalization maps source-specific fields into common fields. Provenance identifies the source.
+
+## Worked examples
+
+### Example 1: Define an event
+
+Start with fields needed for a decision.
+
+```python
+event = {
+    "event_type": "auth_failure",
+    "source": "training-auth",
+    "actor": "student",
+    "observed_at": "now",
+}
+print(event)
+```
+
+**What to observe:**
+
+The event has stable names.
+
+### Example 2: Map source fields
+
+Normalization makes source differences explicit.
+
+```python
+source_record = {"user": "student", "action": "login_failed"}
+normalized = {"actor": source_record["user"], "event_type": "auth_failure"}
+print(normalized)
+```
+
+**What to observe:**
+
+The mapping is visible.
+
+### Example 3: Validate time
+
+A detection without time cannot be placed in a sequence.
+
+```python
+if not event.get("observed_at"):
+    raise ValueError("timestamp required")
+```
+
+**What to observe:**
+
+The event is rejected when time is missing.
+
+### Example 4: Preserve source
+
+Normalized data must retain where it came from.
+
+```python
+normalized["provenance"] = {"source": "training-auth", "raw_id": "fixture-1"}
+print(normalized)
+```
+
+**What to observe:**
+
+The mapping is auditable.
+
+### Example 5: Version a schema
+
+Fields evolve; a version tells readers how to interpret them.
+
+```python
+normalized["schema_version"] = 1
+print(normalized["schema_version"])
+```
+
+**What to observe:**
+
+The version is explicit.
+
+## Execution trace
+
+The source record is mapped, required fields are checked, raw provenance is retained, and the versioned normalized event enters detection logic.
+
+## Common mistakes
+
+| Mistake | Symptom | Correction |
+| --- | --- | --- |
+| drop source | analyst cannot trace mapping | preserve provenance |
+| no schema version | fields drift silently | version and document |
+| missing time accepted | sequence rules fail | reject or mark unknown |
+| normalize away raw | audit loses context | retain safe references |
+| event equals truth | collection errors become facts | record confidence |
+
+## Security application
+
+Use synthetic authentication events and local JSON fixtures only. Do not ingest real user telemetry.
 
 ## Exercises
 
-Complete the numbered questions in [practice/exercises.md](practice/exercises.md) in order. Run the requested commands, produce the requested artifact, and record the edge case or limitation asked for by the exercise. Use [hints](practice/hints.md) only after a real attempt and [solutions](practice/solutions.md) only to compare your reasoning.
-
-## Mental model
-
-> A security tool is a small program whose assumptions, inputs, outputs, and limits must be made visible.
+Complete the numbered questions in [practice/exercises.md](practice/exercises.md) in order. Use the examples as a starting point, then record the requested output, edge case, and limitation.
 
 ## Finish line
 
-Run the starter, pass the day tests when present, complete the core practice, and write one sentence naming an edge case and one sentence naming the lab boundary.
+Run `python -m course_days.day071`, pass the relevant tests, complete the numbered exercises, and explain one edge case aloud or in writing.
 
+## Mental model
 
-<!-- video-resources:start -->
-## Video support
+> A schema creates stable analytical fields without erasing source or uncertainty.
 
-**Optional recommendation:** [Logs and Monitoring - CompTIA Network+ N10-009 - 3.2](https://www.youtube.com/watch?v=ieqSi5Aicxc).
+## Limitations
 
-- Watch [00:00–13:06: Complete focused lesson](https://www.youtube.com/watch?v=ieqSi5Aicxc&t=0s) for **logs and monitoring**. Then return to this lesson and run the local starter.
+A normalized event can still be incomplete, delayed, duplicated, or wrong.
 
-Written alternative: [https://www.nist.gov/cyberframework](https://www.nist.gov/cyberframework).
-
-**Optional recommendation:** [Security Concepts - CompTIA Network+ N10-009 - 4.1](https://www.youtube.com/watch?v=51W4Fhds7DQ).
-
-- Watch [00:00–13:06: Complete focused lesson](https://www.youtube.com/watch?v=51W4Fhds7DQ&t=0s) for **security concepts**. Then return to this lesson and run the local starter.
-
-Written alternative: [https://nvlpubs.nist.gov/nistpubs/CSWP/NIST.CSWP.29.pdf](https://nvlpubs.nist.gov/nistpubs/CSWP/NIST.CSWP.29.pdf).
-<!-- video-resources:end -->
+[← Day 70](../070_day_project__secure_case_api/070_day_project__secure_case_api.md) · [Day index](../DAY_INDEX.md) · [Day 72 →](../072_day_log_normalization/072_day_log_normalization.md)
