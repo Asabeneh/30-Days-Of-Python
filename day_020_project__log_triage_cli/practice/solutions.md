@@ -1,6 +1,6 @@
 # Solution route: Day 20
 
-Use this guide after attempting the the numbered exercises in this lesson. It gives review checkpoints rather than a secret finished submission. Compare decisions, inputs, outputs, tests, and limitations for **Day 20: Checkpoint: Build a Log-Triage CLI**.
+Use this guide after attempting the numbered exercises in this lesson. It gives review checkpoints rather than a secret finished submission. Compare decisions, inputs, outputs, tests, and limitations for **Day 20: Checkpoint: Build a Log-Triage CLI**.
 
 ## Review checkpoints
 

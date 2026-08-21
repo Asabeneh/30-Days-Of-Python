@@ -1,6 +1,6 @@
 # Solution route: Day 70
 
-Use this guide after attempting the the numbered exercises in this lesson. It gives review checkpoints rather than a secret finished submission. Compare decisions, inputs, outputs, tests, and limitations for **Day 70: Project: Secure Case API**.
+Use this guide after attempting the numbered exercises in this lesson. It gives review checkpoints rather than a secret finished submission. Compare decisions, inputs, outputs, tests, and limitations for **Day 70: Project: Secure Case API**.
 
 ## Review checkpoints
 

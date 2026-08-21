@@ -1,6 +1,6 @@
 # Solution route: Day 113
 
-Use this guide after attempting the the numbered exercises in this lesson. It gives review checkpoints rather than a secret finished submission. Compare decisions, inputs, outputs, tests, and limitations for **Day 113: Advanced Concurrency and Cancellation**.
+Use this guide after attempting the numbered exercises in this lesson. It gives review checkpoints rather than a secret finished submission. Compare decisions, inputs, outputs, tests, and limitations for **Day 113: Advanced Concurrency and Cancellation**.
 
 ## Review checkpoints
 

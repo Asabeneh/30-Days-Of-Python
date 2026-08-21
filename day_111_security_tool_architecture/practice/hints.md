@@ -1,6 +1,6 @@
 # Hints: Day 111
 
-Use these hints after a genuine attempt at the the numbered exercises in this lesson. Start with the [course README](../../README.md), [setup guide](../../SETUP.md), and [VS Code setup](../../VS_CODE_SETUP.md) when a command or environment is unclear.
+Use these hints after a genuine attempt at the numbered exercises in this lesson. Start with the [course README](../../README.md), [setup guide](../../SETUP.md), and [VS Code setup](../../VS_CODE_SETUP.md) when a command or environment is unclear.
 
 ## Progressive hint route
 

@@ -1,6 +1,6 @@
 # Solution route: Day 25
 
-Use this guide after attempting the the numbered exercises in this lesson. It gives review checkpoints rather than a secret finished submission. Compare decisions, inputs, outputs, tests, and limitations for **Day 25: Type Hints and Static Checks**.
+Use this guide after attempting the numbered exercises in this lesson. It gives review checkpoints rather than a secret finished submission. Compare decisions, inputs, outputs, tests, and limitations for **Day 25: Type Hints and Static Checks**.
 
 ## Review checkpoints
 

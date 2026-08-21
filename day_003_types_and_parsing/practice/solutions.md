@@ -1,6 +1,6 @@
 # Solution route: Day 3
 
-Use this guide after attempting the the numbered exercises in this lesson. It gives review checkpoints rather than a secret finished submission. Compare decisions, inputs, outputs, tests, and limitations for **Day 3: Types, Conversion, and Parsing Boundaries**.
+Use this guide after attempting the numbered exercises in this lesson. It gives review checkpoints rather than a secret finished submission. Compare decisions, inputs, outputs, tests, and limitations for **Day 3: Types, Conversion, and Parsing Boundaries**.
 
 ## Review checkpoints
 

@@ -1,6 +1,6 @@
 # Solution route: Day 101
 
-Use this guide after attempting the the numbered exercises in this lesson. It gives review checkpoints rather than a secret finished submission. Compare decisions, inputs, outputs, tests, and limitations for **Day 101: Secure SDLC and Security Requirements**.
+Use this guide after attempting the numbered exercises in this lesson. It gives review checkpoints rather than a secret finished submission. Compare decisions, inputs, outputs, tests, and limitations for **Day 101: Secure SDLC and Security Requirements**.
 
 ## Review checkpoints
 

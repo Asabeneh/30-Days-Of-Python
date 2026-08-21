@@ -1,6 +1,6 @@
 # Solution route: Day 109
 
-Use this guide after attempting the the numbered exercises in this lesson. It gives review checkpoints rather than a secret finished submission. Compare decisions, inputs, outputs, tests, and limitations for **Day 109: Security Metrics and Measurement**.
+Use this guide after attempting the numbered exercises in this lesson. It gives review checkpoints rather than a secret finished submission. Compare decisions, inputs, outputs, tests, and limitations for **Day 109: Security Metrics and Measurement**.
 
 ## Review checkpoints
 

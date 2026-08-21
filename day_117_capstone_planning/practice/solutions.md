@@ -1,6 +1,6 @@
 # Solution route: Day 117
 
-Use this guide after attempting the the numbered exercises in this lesson. It gives review checkpoints rather than a secret finished submission. Compare decisions, inputs, outputs, tests, and limitations for **Day 117: Capstone Planning**.
+Use this guide after attempting the numbered exercises in this lesson. It gives review checkpoints rather than a secret finished submission. Compare decisions, inputs, outputs, tests, and limitations for **Day 117: Capstone Planning**.
 
 ## Review checkpoints
 

@@ -1,6 +1,6 @@
 # Solution route: Day 111
 
-Use this guide after attempting the the numbered exercises in this lesson. It gives review checkpoints rather than a secret finished submission. Compare decisions, inputs, outputs, tests, and limitations for **Day 111: Security Tool Architecture**.
+Use this guide after attempting the numbered exercises in this lesson. It gives review checkpoints rather than a secret finished submission. Compare decisions, inputs, outputs, tests, and limitations for **Day 111: Security Tool Architecture**.
 
 ## Review checkpoints
 

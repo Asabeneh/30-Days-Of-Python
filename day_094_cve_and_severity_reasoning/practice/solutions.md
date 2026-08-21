@@ -1,6 +1,6 @@
 # Solution route: Day 94
 
-Use this guide after attempting the the numbered exercises in this lesson. It gives review checkpoints rather than a secret finished submission. Compare decisions, inputs, outputs, tests, and limitations for **Day 94: CVE and Severity Reasoning**.
+Use this guide after attempting the numbered exercises in this lesson. It gives review checkpoints rather than a secret finished submission. Compare decisions, inputs, outputs, tests, and limitations for **Day 94: CVE and Severity Reasoning**.
 
 ## Review checkpoints
 

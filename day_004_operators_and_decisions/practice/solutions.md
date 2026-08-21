@@ -1,6 +1,6 @@
 # Solution route: Day 4
 
-Use this guide after attempting the the numbered exercises in this lesson. It gives review checkpoints rather than a secret finished submission. Compare decisions, inputs, outputs, tests, and limitations for **Day 4: Python Operators, Comparisons, and Decisions**.
+Use this guide after attempting the numbered exercises in this lesson. It gives review checkpoints rather than a secret finished submission. Compare decisions, inputs, outputs, tests, and limitations for **Day 4: Python Operators, Comparisons, and Decisions**.
 
 ## Review checkpoints
 

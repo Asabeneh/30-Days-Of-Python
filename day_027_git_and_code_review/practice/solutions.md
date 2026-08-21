@@ -1,6 +1,6 @@
 # Solution route: Day 27
 
-Use this guide after attempting the the numbered exercises in this lesson. It gives review checkpoints rather than a secret finished submission. Compare decisions, inputs, outputs, tests, and limitations for **Day 27: Git and Code Review for Security Changes**.
+Use this guide after attempting the numbered exercises in this lesson. It gives review checkpoints rather than a secret finished submission. Compare decisions, inputs, outputs, tests, and limitations for **Day 27: Git and Code Review for Security Changes**.
 
 ## Review checkpoints
 

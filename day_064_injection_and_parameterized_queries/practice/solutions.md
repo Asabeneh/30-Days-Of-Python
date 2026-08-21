@@ -1,6 +1,6 @@
 # Solution route: Day 64
 
-Use this guide after attempting the the numbered exercises in this lesson. It gives review checkpoints rather than a secret finished submission. Compare decisions, inputs, outputs, tests, and limitations for **Day 64: Injection and Parameterized Queries**.
+Use this guide after attempting the numbered exercises in this lesson. It gives review checkpoints rather than a secret finished submission. Compare decisions, inputs, outputs, tests, and limitations for **Day 64: Injection and Parameterized Queries**.
 
 ## Review checkpoints
 

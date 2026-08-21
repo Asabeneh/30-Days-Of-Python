@@ -1,6 +1,6 @@
 # Solution route: Day 110
 
-Use this guide after attempting the the numbered exercises in this lesson. It gives review checkpoints rather than a secret finished submission. Compare decisions, inputs, outputs, tests, and limitations for **Day 110: Project: Secure Delivery Pipeline**.
+Use this guide after attempting the numbered exercises in this lesson. It gives review checkpoints rather than a secret finished submission. Compare decisions, inputs, outputs, tests, and limitations for **Day 110: Project: Secure Delivery Pipeline**.
 
 ## Review checkpoints
 

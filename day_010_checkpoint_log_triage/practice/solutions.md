@@ -1,6 +1,6 @@
 # Solution route: Day 10
 
-Use this guide after attempting the the numbered exercises in this lesson. It gives review checkpoints rather than a secret finished submission. Compare decisions, inputs, outputs, tests, and limitations for **Day 10: Checkpoint: Build a Safe Log-Triage Classifier**.
+Use this guide after attempting the numbered exercises in this lesson. It gives review checkpoints rather than a secret finished submission. Compare decisions, inputs, outputs, tests, and limitations for **Day 10: Checkpoint: Build a Safe Log-Triage Classifier**.
 
 ## Review checkpoints
 

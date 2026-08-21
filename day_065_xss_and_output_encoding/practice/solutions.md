@@ -1,6 +1,6 @@
 # Solution route: Day 65
 
-Use this guide after attempting the the numbered exercises in this lesson. It gives review checkpoints rather than a secret finished submission. Compare decisions, inputs, outputs, tests, and limitations for **Day 65: Cross-Site Scripting and Output Encoding**.
+Use this guide after attempting the numbered exercises in this lesson. It gives review checkpoints rather than a secret finished submission. Compare decisions, inputs, outputs, tests, and limitations for **Day 65: Cross-Site Scripting and Output Encoding**.
 
 ## Review checkpoints
 
