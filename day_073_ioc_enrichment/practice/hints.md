@@ -4,17 +4,17 @@ Use these hints after a genuine attempt at the numbered exercises in this lesson
 
 ## Progressive hint route
 
-1. Run the unchanged starter and confirm your current directory before editing.
-2. Name the input and expected output in a sentence before writing code.
-3. Work with one small synthetic fixture, not a real log, credential, host, account, or target.
-4. Change exactly one value so the cause of a different result remains visible.
-5. Trace the value from input boundary to output; identify which function or module owns the decision.
-6. For a boundary case, decide the contract first: accept, reject, return an empty result, or report a controlled failure.
-7. Read the first error line and repair the smallest assumption instead of disabling a check.
-8. Use a focused assertion or test that would fail if the lesson's main behavior disappeared.
-9. For cybersecurity tasks, preserve provenance and redact sensitive-looking values even when the fixture is synthetic.
-10. Keep file access, network access, subprocesses, and loops bounded by explicit policy.
-11. A passing test proves only the claim that test checks; state the untested cases.
-12. If blocked, compare your artifact with the lesson's expected behavior, then read the solution route only for the current exercise.
+1. Run the starter from the folder named in the lesson.
+2. Write the input and expected output before you write code.
+3. Use only the small invented fixture from the repository.
+4. Change one value at a time.
+5. Point to the function that turns the input into the output.
+6. For an empty or bad input, choose one result: accept it, reject it, or return an empty result.
+7. Read the first error line. Fix the smallest cause.
+8. Add one test for the main behavior.
+9. Keep invented names, addresses, and logs separate from real private information.
+10. Keep files, loops, subprocesses, and network work small and limited.
+11. A passing test checks one claim. Write down one claim it does not check.
+12. If you are stuck, return to the lesson’s example and copy only its next small step.
 
 The goal is to understand **Day 73: IOC Enrichment and Provenance**, not to copy a finished answer.

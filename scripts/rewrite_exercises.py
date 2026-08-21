@@ -272,18 +272,18 @@ def generic_exercises(day: int) -> str:
     title = title_for(day)
     return f"""# Exercises: Day {day}
 
-1. Run the starter for **{title}** unchanged. What does it print, return, or create? Record the command and observed result.
-2. Define the main keyword from this lesson in plain language and point to the first line where the idea appears.
-3. Write down the input, operation, output, and owner of the important value before changing any code.
-4. Apply today's concept to the supplied synthetic fixture. State the file, function, component, or report you expect to change.
-5. Add one normal case and predict its result before running it.
-6. Add one boundary case and decide whether it should return a value, reject input, or show a safe empty/failure state.
-7. Add one invalid or malformed case. Capture the visible error or rejection without hiding it with a broad catch.
-8. Reproduce the deliberate mistake from the lesson, record the error, and repair the smallest possible line.
-9. Add a focused test or evidence note that would fail if the important behavior were removed.
-10. Explain the security, reliability, accessibility, or ownership boundary that today's example demonstrates.
-11. Write one limitation: what does your successful run not prove about a real system or production readiness?
-12. Prepare a short review note naming the changed files, commands, evidence, remaining risk, and next step.
+1. Run the starter for **{title}** without changing it. Write down what it prints, returns, or creates.
+2. Answer: What is the main new word in this lesson? Explain it in one simple sentence.
+3. Find the important input in the example. What output does that input produce?
+4. Write a small example in the supplied local file. Say what you expect to see before you run it.
+5. Add one ordinary input. Predict the result, then run the code.
+6. Add one empty, zero, missing, or limit input. Decide what the program should do.
+7. Add one bad input. Let the error or rejection appear so you can read it.
+8. Make the deliberate mistake from the lesson. Write down the error, then fix the smallest line.
+9. Write one test that fails when the important result is removed.
+10. Answer: Which function or file makes the main decision? Point to its name.
+11. Write one sentence about what this small example cannot prove about a real system.
+12. Write a short note with the files you changed, the command you ran, and the result you saw.
 
 Use only the supplied fixtures or a local resettable example. Do not use real credentials, private data, public targets, or systems outside explicit authorization.
 """
@@ -294,13 +294,13 @@ def complete_exercises(text: str, day: int, title: str) -> str:
     if count >= 12:
         return text
     additions = [
-        "Apply the lesson to the supplied local synthetic fixture and state the expected artifact before running it.",
-        "Add a normal case and predict the result before executing the code.",
-        "Add a boundary case and explain the chosen behavior.",
-        "Add an invalid case and keep the failure visible and understandable.",
-        "Reproduce the deliberate mistake from the lesson and record the smallest repair.",
-        "Add a focused test or evidence note for the most important behavior.",
-        "Write one limitation and one review question for a teammate.",
+        "Use the supplied local fixture. Write what you expect to create before you run it.",
+        "Add a normal case and predict its result before running the code.",
+        "Add an empty, zero, missing, or limit case and say what should happen.",
+        "Add a bad case and read the error instead of hiding it.",
+        "Make the deliberate mistake from the lesson and fix one line.",
+        "Write one test for the main result.",
+        "Write one sentence about what a real system would still need to check.",
     ]
     lines = [text.rstrip(), ""]
     for index, prompt in enumerate(additions, count + 1):
@@ -316,18 +316,18 @@ Use these hints after a genuine attempt at the numbered exercises in this lesson
 
 ## Progressive hint route
 
-1. Run the unchanged starter and confirm your current directory before editing.
-2. Name the input and expected output in a sentence before writing code.
-3. Work with one small synthetic fixture, not a real log, credential, host, account, or target.
-4. Change exactly one value so the cause of a different result remains visible.
-5. Trace the value from input boundary to output; identify which function or module owns the decision.
-6. For a boundary case, decide the contract first: accept, reject, return an empty result, or report a controlled failure.
-7. Read the first error line and repair the smallest assumption instead of disabling a check.
-8. Use a focused assertion or test that would fail if the lesson's main behavior disappeared.
-9. For cybersecurity tasks, preserve provenance and redact sensitive-looking values even when the fixture is synthetic.
-10. Keep file access, network access, subprocesses, and loops bounded by explicit policy.
-11. A passing test proves only the claim that test checks; state the untested cases.
-12. If blocked, compare your artifact with the lesson's expected behavior, then read the solution route only for the current exercise.
+1. Run the starter from the folder named in the lesson.
+2. Write the input and expected output before you write code.
+3. Use only the small invented fixture from the repository.
+4. Change one value at a time.
+5. Point to the function that turns the input into the output.
+6. For an empty or bad input, choose one result: accept it, reject it, or return an empty result.
+7. Read the first error line. Fix the smallest cause.
+8. Add one test for the main behavior.
+9. Keep invented names, addresses, and logs separate from real private information.
+10. Keep files, loops, subprocesses, and network work small and limited.
+11. A passing test checks one claim. Write down one claim it does not check.
+12. If you are stuck, return to the lesson’s example and copy only its next small step.
 
 The goal is to understand **{title}**, not to copy a finished answer.
 """
@@ -340,18 +340,18 @@ Use this guide after attempting the numbered exercises in this lesson. It gives 
 
 ## Review checkpoints
 
-1. The unchanged starter ran from the documented directory and the observed result was recorded.
-2. The main keyword was defined in ordinary language and connected to a concrete line of code.
-3. The input, operation, output, and owner were identified before implementation.
-4. The local synthetic fixture was bounded, resettable, and appropriate to the lesson.
-5. The normal case produced the expected result without unexplained magic.
-6. The boundary case had a deliberate contract and did not silently corrupt evidence.
-7. The invalid case produced a clear rejection or controlled failure.
-8. The broken example reproduced the stated problem and was repaired with the smallest safe change.
-9. A focused test or evidence note would fail if the important behavior were removed.
-10. The solution states the relevant security, reliability, accessibility, or authorization boundary.
-11. The limitation avoids claiming that a passing test or local run proves production readiness.
-12. The review note names files, commands, evidence, remaining risk, and the next learning step.
+1. The starter ran from the correct folder and the result was written down.
+2. The new word was explained in ordinary language.
+3. The important input and output were identified.
+4. The local example used invented, limited data.
+5. The normal input produced the expected result.
+6. The empty, missing, or limit case had a clear result.
+7. The bad input produced a readable error or rejection.
+8. The learner made and fixed the lesson’s deliberate mistake.
+9. A test checks the main result.
+10. The learner can point to the function or file that makes the decision.
+11. The learner wrote one thing the local run does not prove.
+12. The note lists the changed files, command, and observed result.
 
 If a checkpoint is missing, return to the lesson's execution trace and guided practice before moving to the next day.
 """

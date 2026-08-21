@@ -14,7 +14,7 @@ A lesson is a teaching chapter, not a topic label. It must take a learner from �
 8. **Common mistakes.** Show realistic beginner mistakes, the observed error or wrong output, and the smallest repair.
 9. **Security application.** Apply the concept to synthetic logs, indicators, local files, a resettable service, or another bounded fixture. Distinguish observation from inference.
 10. **Design judgment.** Discuss a trade-off, limitation, or alternative implementation. State what the example cannot prove.
-11. **Exercises.** End with direct numbered questions and coding tasks that reuse the exact concepts and examples just taught.
+11. **Exercises.** End with direct numbered questions and coding tasks that reuse the exact concepts and examples just taught. Each item must name its starting point and expected result, and advanced security review must come after the concrete coding action.
 12. **Finish line.** State the commands, tests, artifacts, and explanation that demonstrate completion.
 
 ## Example density
@@ -24,6 +24,10 @@ A fully authored lesson normally contains at least five distinct worked demonstr
 ## Beginner-first rules
 
 Never assume that a learner knows what a terminal, variable, argument, return value, exception, file path, package, process, socket, or trust boundary means. Introduce the term, show it in context, and connect it to something the learner can observe. Do not hide essential steps in a link or say “explore” when the learner needs a concrete action.
+
+Write for a complete beginner. Use short sentences for single ideas. Show the result before asking the learner to name the technical term. Prefer “Run this file. It prints `5` because the function adds one.” over “Trace the computation across the function boundary.” Keep security vocabulary, such as trust boundary, scope, evidence, and residual risk, but explain it after the learner has completed the simple local task.
+
+Every exercise must begin with one direct verb such as **Answer**, **Run**, **Write**, **Add**, **Change**, **Fix**, **Build**, or **Explain**. Name the exact function, file, input, output, or expected behavior. Do not combine several new ideas in one item. A good beginner can tell what to type, what to look at, and what success looks like without guessing.
 
 Use one new idea at a time. Reuse familiar values before introducing a new domain. Keep code snippets small enough to run and modify. Explain error messages as information about the program’s assumptions rather than as failures of intelligence.
 
