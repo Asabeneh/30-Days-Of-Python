@@ -294,19 +294,19 @@ Do not normalize or inspect real personal identifiers, URLs, tokens, or private 
 ## Independent exercises
 
 Complete these in the numbered exercises in this lesson in order:
-
-1. Show the difference between `strip`, `lower`, and `casefold` on a sample.
-2. Use `repr` to reveal a newline and a tab.
-3. Split a key-value pair at the first colon only.
-4. Join three fields with a separator.
-5. Write `canonical_label` for a documented label policy.
-6. Preserve both raw and canonical values in a synthetic record.
-7. Encode and decode a non-ASCII string using UTF-8.
-8. Trigger and explain a missing-separator case.
-9. Explain why generic replacement is dangerous for a URL or path.
-10. Build a small text normalizer and test empty, spaced, and mixed-case input.
-11. Describe the difference between characters and bytes.
-12. Safety question: explain why retaining raw text can be a privacy concern and how fixtures reduce that risk.
+1. What is Strings, Encoding, and Canonicalization? Answer in one sentence.
+2. Show the difference between `strip`, `lower`, and `casefold` on a sample.
+3. Use `repr` to reveal a newline and a tab.
+4. Split a key-value pair at the first colon only.
+5. Join three fields with a separator.
+6. Write `canonical_label` for a documented label policy.
+7. Preserve both raw and canonical values in a synthetic record.
+8. Encode and decode a non-ASCII string using UTF-8.
+9. Trigger and explain a missing-separator case.
+10. Explain why generic replacement is dangerous for a URL or path.
+11. Build a small text normalizer and test empty, spaced, and mixed-case input.
+12. Describe the difference between characters and bytes.
+13. Safety question: explain why retaining raw text can be a privacy concern and how fixtures reduce that risk.
 
 
 

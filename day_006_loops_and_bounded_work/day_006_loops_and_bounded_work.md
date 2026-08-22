@@ -290,19 +290,19 @@ When a bound is reached, report that processing was incomplete. Do not silently 
 ## Independent exercises
 
 Complete these in the numbered exercises in this lesson in order:
-
-1. Loop over three event names and predict the output order.
-2. Use `range(5)` and write down the exact values it produces.
-3. Count a list without using `len`.
-4. Write a `while` loop with a maximum of five attempts.
-5. Deliberately remove the progress statement and explain why the loop would not end.
-6. Skip empty events and count how many were skipped.
-7. Stop after three processed events and report truncation.
-8. Estimate the work in a nested loop of 10 files and 100 lines.
-9. Build a synthetic bounded log summary.
-10. Explain why a loop limit protects availability but can reduce completeness.
-11. Write a test for an empty list and a list larger than the bound.
-12. Safety question: explain why an unbounded loop over an untrusted file can become a security problem.
+1. What is Loops, Bounds, and Resource Safety? Answer in one sentence.
+2. Loop over three event names and predict the output order.
+3. Use `range(5)` and write down the exact values it produces.
+4. Count a list without using `len`.
+5. Write a `while` loop with a maximum of five attempts.
+6. Deliberately remove the progress statement and explain why the loop would not end.
+7. Skip empty events and count how many were skipped.
+8. Stop after three processed events and report truncation.
+9. Estimate the work in a nested loop of 10 files and 100 lines.
+10. Build a synthetic bounded log summary.
+11. Explain why a loop limit protects availability but can reduce completeness.
+12. Write a test for an empty list and a list larger than the bound.
+13. Safety question: explain why an unbounded loop over an untrusted file can become a security problem.
 
 
 

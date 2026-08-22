@@ -341,21 +341,21 @@ A real log-triage system would need authenticated collection, schema versioning,
 ## Independent exercises
 
 Complete these in the numbered exercises in this lesson in order:
-
-1. Run the starter and explain each printed field.
-2. Parse one valid fixture line into a dictionary.
-3. Parse a line with an extra equals sign using `split("=", 1)`.
-4. Handle a line without an equals sign as invalid.
-5. Reuse `parse_severity` and classify valid and invalid severities.
-6. Add a known-source and unknown-source fixture.
-7. Count each result category, including categories with zero results.
-8. Add a processing limit and a `complete` field.
-9. Write a safe summary that never prints a raw line.
-10. Add tests for empty input, malformed input, valid high severity, and a source mismatch.
-11. Explain why a `review` label is not an attack verdict.
-12. Explain how a bounded loop protects resources but may reduce completeness.
-13. Write a short threat model listing asset, input, trust boundary, and residual risk.
-14. Safety question: state exactly what this project is allowed to read and what it is forbidden to touch.
+1. What is Checkpoint: Build a Safe Log-Triage Classifier? Answer in one sentence.
+2. Run the starter and explain each printed field.
+3. Parse one valid fixture line into a dictionary.
+4. Parse a line with an extra equals sign using `split("=", 1)`.
+5. Handle a line without an equals sign as invalid.
+6. Reuse `parse_severity` and classify valid and invalid severities.
+7. Add a known-source and unknown-source fixture.
+8. Count each result category, including categories with zero results.
+9. Add a processing limit and a `complete` field.
+10. Write a safe summary that never prints a raw line.
+11. Add tests for empty input, malformed input, valid high severity, and a source mismatch.
+12. Explain why a `review` label is not an attack verdict.
+13. Explain how a bounded loop protects resources but may reduce completeness.
+14. List one thing to protect, one input, one check, and one remaining problem.
+15. Safety question: state exactly what this project is allowed to read and what it is forbidden to touch.
 
 Use [hints](practice/hints.md) before [solutions](practice/solutions.md), and write a short explanation beside every code change.
 

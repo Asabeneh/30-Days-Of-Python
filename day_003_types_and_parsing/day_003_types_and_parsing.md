@@ -414,19 +414,19 @@ Use only synthetic records. Do not paste a real log line into this exercise beca
 ## Independent exercises
 
 Complete these in the numbered exercises in this lesson in order:
-
-1. Print the type name of `"7"`, `7`, `7.0`, `True`, and `None`.
-2. Convert `"42"` to an integer and `"0.5"` to a float. Print both values and types.
-3. Try to convert `"high"` to an integer. Record the exception type and explain the message.
-4. Show why `bool("false")` is `True`. Write an explicit parser that treats `false`, `no`, and `0` as false.
-5. Write a parser that accepts integer severities from 0 through 10 and rejects `-1`, `11`, empty text, and `high`.
-6. Explain the difference between raw input, cleaned text, converted value, and validated value.
-7. Write `parse_optional_limit` so empty text returns `None` and non-empty text must be an integer from 1 through 100.
-8. Create a synthetic record containing string fields for severity and authentication. Parse both fields and print their resulting types.
-9. Add a safe error report that names the invalid field but does not print the full raw record.
-10. Write a table of five inputs and classify each as missing, malformed, valid-but-out-of-range, or accepted.
-11. Explain why a valid integer can still be unsafe for a program.
-12. Safety question: name three kinds of input that must remain outside today's files and explain why parsing does not create authorization.
+1. What is Types, Conversion, and Parsing Boundaries? Answer in one sentence.
+2. Print the type name of `"7"`, `7`, `7.0`, `True`, and `None`.
+3. Convert `"42"` to an integer and `"0.5"` to a float. Print both values and types.
+4. Try to convert `"high"` to an integer. Record the exception type and explain the message.
+5. Show why `bool("false")` is `True`. Write an explicit parser that treats `false`, `no`, and `0` as false.
+6. Write a parser that accepts integer severities from 0 through 10 and rejects `-1`, `11`, empty text, and `high`.
+7. Explain the difference between raw input, cleaned text, converted value, and validated value.
+8. Write `parse_optional_limit` so empty text returns `None` and non-empty text must be an integer from 1 through 100.
+9. Create a synthetic record containing string fields for severity and authentication. Parse both fields and print their resulting types.
+10. Add a safe error report that names the invalid field but does not print the full raw record.
+11. Write a table of five inputs and classify each as missing, malformed, valid-but-out-of-range, or accepted.
+12. Explain why a valid integer can still be unsafe for a program.
+13. Safety question: name three kinds of input that must remain outside today's files and explain why parsing does not create authorization.
 
 Use [hints](practice/hints.md) only after attempting the question. Use [solutions](practice/solutions.md) to compare reasoning, not to replace it.
 

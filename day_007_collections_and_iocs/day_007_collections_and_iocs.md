@@ -297,19 +297,19 @@ Use `.invalid` domains, loopback addresses, and invented hashes in exercises. Do
 ## Independent exercises
 
 Complete these in the numbered exercises in this lesson in order:
-
-1. Create a list with three events and print the first and last item.
-2. Explain why the first list index is 0.
-3. Add a duplicate and calculate observed and unique counts.
-4. Create a set and demonstrate membership.
-5. Create a dictionary with `value`, `kind`, and `source`.
-6. Access a missing dictionary key and record the exception.
-7. Repair the missing-key behavior with a documented fallback.
-8. Build a list of dictionaries representing synthetic indicators.
-9. Add a tuple for a loopback host and port.
-10. Explain which collection preserves order and which removes duplicates.
-11. Write a report that includes source and confidence without claiming a verdict.
-12. Safety question: explain why storing an indicator in a collection does not authorize acting on it.
+1. What is Collections and an Indicator Catalog? Answer in one sentence.
+2. Create a list with three events and print the first and last item.
+3. Explain why the first list index is 0.
+4. Add a duplicate and calculate observed and unique counts.
+5. Create a set and demonstrate membership.
+6. Create a dictionary with `value`, `kind`, and `source`.
+7. Access a missing dictionary key and record the exception.
+8. Repair the missing-key behavior with a documented fallback.
+9. Build a list of dictionaries representing synthetic indicators.
+10. Add a tuple for a loopback host and port.
+11. Explain which collection preserves order and which removes duplicates.
+12. Write a report that includes source and confidence without claiming a verdict.
+13. Safety question: explain why storing an indicator in a collection does not authorize acting on it.
 
 
 

@@ -319,19 +319,19 @@ Never use this training classifier to make decisions about a real person. It has
 ## Independent exercises
 
 Complete these in the numbered exercises in this lesson in order:
-
-1. Write a two-branch classifier for a number being inside or outside 0–10.
-2. Add an explicit `unknown` path for missing source text.
-3. Create a five-row decision table before writing code.
-4. Implement urgent, review, routine, invalid, and unknown-source labels.
-5. Test every boundary and copy the observed result.
-6. Create an overlapping-rule bug and explain why the first matching branch wins.
-7. Rewrite a nested classifier as a flat chain and compare readability.
-8. Store a label before printing it.
-9. Add a safe message that reports `classification=unknown` without making an accusation.
-10. Explain why `else` should not automatically mean safe.
-11. Add a test case for a missing field and describe the desired behavior.
-12. Safety question: identify one way an automated classifier could cause harm if treated as a verdict.
+1. What is Branching and a First Triage Classifier? Answer in one sentence.
+2. Write a two-branch classifier for a number being inside or outside 0–10.
+3. Add an explicit `unknown` path for missing source text.
+4. Create a five-row decision table before writing code.
+5. Implement urgent, review, routine, invalid, and unknown-source labels.
+6. Test every boundary and copy the observed result.
+7. Create an overlapping-rule bug and explain why the first matching branch wins.
+8. Rewrite a nested classifier as a flat chain and compare readability.
+9. Store a label before printing it.
+10. Add a safe message that reports `classification=unknown` without making an accusation.
+11. Explain why `else` should not automatically mean safe.
+12. Add a test case for a missing field and describe the desired behavior.
+13. Safety question: identify one way an automated classifier could cause harm if treated as a verdict.
 
 
 

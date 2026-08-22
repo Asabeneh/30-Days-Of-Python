@@ -583,21 +583,21 @@ The program demonstrates organization and safe display. It does not authorize co
 ## Independent exercises
 
 Complete the numbered questions in the numbered exercises in this lesson in order. Use hints only after a genuine attempt and solutions only to compare your reasoning.
-
-1. Create a value inventory containing a string, integer, float, Boolean, and `None`. Print each value and its type name.
-2. Assign `count = 0`, update it twice, and explain why `count = count + 1` is valid Python.
-3. Print a case identifier as plain text and inside an f-string. Explain the difference.
-4. Repair a program that tries to add the string `"7"` to the integer `1` in two different ways.
-5. Use `input()` to read a severity and prove that the result begins as a string.
-6. Convert the input to an integer and record the useful error line produced by `high`.
-7. Add a range check for 0 through 10 and test the two boundaries plus one invalid value on each side.
-8. Demonstrate case sensitivity with `severity` and `Severity`.
-9. Write a safe summary for a synthetic record that reports `token_present` without printing the token.
-10. Ask for a maximum record count and accept only integers from 1 through 100.
-11. Create a deliberate `NameError` by printing a name before assigning it, then repair it.
-12. Define value, variable, type, assignment, input, and output in your own words.
-13. Explain why a value that looks like a number is not automatically safe or valid.
-14. Safety question: list three kinds of information that must not be entered into today's files and explain why local synthetic fixtures are used.
+1. What is Variables, Names, Values, Input, and Output? Answer in one sentence.
+2. Create a value inventory containing a string, integer, float, Boolean, and `None`. Print each value and its type name.
+3. Assign `count = 0`, update it twice, and explain why `count = count + 1` is valid Python.
+4. Print a case identifier as plain text and inside an f-string. Explain the difference.
+5. Repair a program that tries to add the string `"7"` to the integer `1` in two different ways.
+6. Use `input()` to read a severity and prove that the result begins as a string.
+7. Convert the input to an integer and record the useful error line produced by `high`.
+8. Add a range check for 0 through 10 and test the two boundaries plus one invalid value on each side.
+9. Demonstrate case sensitivity with `severity` and `Severity`.
+10. Write a safe summary for a synthetic record that reports `token_present` without printing the token.
+11. Ask for a maximum record count and accept only integers from 1 through 100.
+12. Create a deliberate `NameError` by printing a name before assigning it, then repair it.
+13. Define value, variable, type, assignment, input, and output in your own words.
+14. Explain why a value that looks like a number is not automatically safe or valid.
+15. Safety question: list three kinds of information that must not be entered into today's files and explain why local synthetic fixtures are used.
 
 ## Finish line
 
