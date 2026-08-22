@@ -340,28 +340,30 @@ A function contract is not authorization. A perfectly tested function can still 
 
 ## Independent exercises
 
-Complete these in the numbered exercises in this lesson in order:
+### Level 1 — Questions and first steps
 
-1. Write `add_one` and explain parameter, argument, and return value.
-2. Write a function with a default source label.
-3. Implement and test `validate_severity`.
-4. Separate parsing from validation.
-5. Write a formatter that returns rather than prints.
-6. Demonstrate a `TypeError` and a `ValueError` with different inputs.
-7. Explain local scope using a small function.
-8. Test empty, whitespace-only, valid, and out-of-range text.
-9. Write a function contract in a comment or docstring.
-10. Compose parser, validator, and formatter for a synthetic record.
-11. Explain why pure functions are easier to test.
-12. Safety question: explain why a safe function still needs a safe caller and authorized target.
+1. What is a function? Answer in one sentence.
+2. Write `add_one(number)` so `add_one(5)` returns `6`.
+3. In your own words, what is a parameter? What is an argument?
+4. Write `greet(name="friend")`. What do `greet()` and `greet("Ada")` return?
 
+### Level 2 — Build the validators
 
+5. Write `validate_severity(value)`. Accept integers from `0` through `10`. Reject every other value.
+6. Write `parse_severity(text)`. Convert text to an integer, then call your validator.
+7. Write `format_summary(source, severity)`. It must return text. It must not print text.
+8. Give the parser these four inputs: `"7"`, `"high"`, `"99"`, and `""`. Write what should happen for each one.
+
+### Level 3 — Put the functions together
+
+9. Make one small program that calls the parser, validator, and formatter in that order.
+10. Trigger one `TypeError` and one `ValueError` with two different inputs. Write the name of each error.
+11. Write a three-line docstring for one function: accepted input, returned output, and rejected input.
+12. Safety question: Why must a safe function still be called only by an authorized program using local, invented data?
 
 ### Additional beginner checkpoint
 
-Pause before adding another feature. Read the current program aloud as a sequence of decisions: what enters, what is transformed, what is checked, and what leaves. Write down one value that is allowed, one value that must be rejected, and one value whose meaning is uncertain. This distinction matters in cybersecurity because an unknown observation should not silently become a safe conclusion. Run the allowed case, the rejected case, and the uncertain case separately. Keep the exact output in your notes and explain which line produced it.
-
-Now make the smallest useful improvement. Give one name a clearer meaning, extract one repeated operation, or add one explicit boundary check. Run the same three cases again. If the behavior changed, explain whether the change was intended. If a test now fails, treat the failure as information about the contract rather than deleting the test. Finish by writing one sentence about the lesson's limitation: a local Python rule can organize synthetic evidence, but it cannot establish authorization, authenticity, or the truth of a real-world accusation.
+Read your program from top to bottom. Circle the value that enters, the line that changes it, and the value that leaves. Run one good value and one bad value. Write down the output or error. Then change one name to make its meaning clearer and run the same two cases again.
 
 ## Finish line
 
