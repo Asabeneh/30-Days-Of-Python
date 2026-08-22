@@ -1,0 +1,43 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "python-for-cybersecurity-engineering"
+version = "0.1.0"
+description = "A beginner-first Python course for cybersecurity engineering"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = []
+
+[project.optional-dependencies]
+dev = [
+  "pytest>=8.0,<9",
+  "ruff>=0.6,<1",
+  "mypy>=1.10,<2",
+  "bandit>=1.7,<2",
+  "pip-audit>=2.7,<3",
+]
+
+[project.scripts]
+course-doctor = "scripts.course_doctor:main"
+
+[tool.setuptools.packages.find]
+include = ["course_days*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra"
+
+[tool.ruff]
+line-length = 88
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP"]
+
+[tool.mypy]
+python_version = "3.11"
+check_untyped_defs = true
+warn_return_any = true
+warn_unused_ignores = true
