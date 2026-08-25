@@ -92,7 +92,7 @@ print(len(full_name)) # 16
 In Python and other programming languages \ followed by a character is an escape sequence. Let us see the most common escape characters:
 
 - \n: new line
-- \t: Tab means(8 spaces) 
+- \t: Tab character (horizontal tab) 
 - \\\\: Back slash
 - \\': Single quote (')
 - \\": Double quote (")
@@ -110,7 +110,7 @@ print('This is a backslash  symbol (\\)') # To write a backslash
 print('In every programming language it starts with \"Hello, World!\"') # to write a double quote inside a single quote
 
 # output
-I hope every one is enjoying the Python Challenge.
+I hope everyone is enjoying the Python Challenge.
 Are you ?
 Days  Topics  Exercises
 Day 1	5	    5
@@ -126,7 +126,7 @@ In every programming language it starts with "Hello, World!"
 #### Old Style String Formatting (% Operator)
 
 In Python there are many ways of formatting strings. In this section, we will cover some of them.
-The "%" operator is used to format a set of variables enclosed in a "tuple" (a fixed size list), together with a format string, which contains normal text together with "argument specifiers", special symbols like "%s", "%d", "%f", "%.<small>number of digits</small>f".
+The "%" operator is used to format a set of variables enclosed in a "tuple" (a fixed size list), together with a format string, which contains normal text together with "argument specifiers", special symbols like "%s", "%d", "%f", %.<number_of_digits>f.
 
 - %s - String (or any object with a string representation, like numbers)
 - %d - Integers
@@ -138,14 +138,15 @@ The "%" operator is used to format a set of variables enclosed in a "tuple" (a f
 first_name = 'Asabeneh'
 last_name = 'Yetayeh'
 language = 'Python'
-formated_string = 'I am %s %s. I teach %s' %(first_name, last_name, language)
+formatted_string = 'I am %s %s. I teach %s' %(first_name, last_name, language)
 print(formated_string)
 
 # Strings  and numbers
 radius = 10
 pi = 3.14
 area = pi * radius ** 2
-formated_string = 'The area of circle with a radius %d is %.2f.' %(radius, area) # 2 refers the 2 significant digits after the point
+formated_string = 'The area of circle with a radius %d is %.2f.' %(radius, area) # # 2 digits after the decimal point
+print(formatted_string)
 
 python_libraries = ['Django', 'Flask', 'NumPy', 'Matplotlib','Pandas']
 formated_string = 'The following are python libraries:%s' % (python_libraries)
@@ -259,7 +260,7 @@ In python we can slice strings into substrings.
 ```py
 language = 'Python'
 first_three = language[0:3] # starts at zero index and up to 3 but not include 3
-print(first_three) #Pyt
+print(first_three) # Pyt
 last_three = language[3:6]
 print(last_three) # hon
 # Another way
@@ -350,7 +351,7 @@ age = 250
 job = 'teacher'
 country = 'Finland'
 sentence = 'I am {} {}. I am a {}. I am {} years old. I live in {}.'.format(first_name, last_name, job, age, country)
-print(sentence) # I am Asabeneh Yetayeh. I am 250 years old. I am a teacher. I live in Finland.
+print(sentence) # I am Asabeneh Yetayeh. I am a teacher. I am 250 years old. I live in Finland.
 
 radius = 10
 pi = 3.14
@@ -365,7 +366,7 @@ print(result) # The area of a circle with radius 10 is 314
 challenge = 'thirty days of python'
 sub_string = 'da'
 print(challenge.index(sub_string))  # 7
-print(challenge.index(sub_string, 9)) # error
+print(challenge.index(sub_string, 9)) # # Raises ValueError because substring is not found
 ```
 
 - rindex(): Returns the highest index of a substring, additional arguments indicate starting and ending index (default 0 and string length - 1)
@@ -378,7 +379,7 @@ print(challenge.rindex(sub_string, 9)) # error
 print(challenge.rindex('on', 8)) # 19
 ```
 
-- isalnum(): Checks alphanumeric character
+- isalnum(): Checks whether all characters are alphanumeric
 
 ```py
 challenge = 'ThirtyDaysPython'
@@ -485,7 +486,7 @@ print(result) # 'HTML# CSS# JavaScript# React'
 
 ```py
 challenge = 'thirty days of pythoonnn'
-print(challenge.strip('noth')) # 'irty days of py'
+print(challenge.strip('noth')) # 'irty days of py' Actually strip() removes ANY matching characters from both ends.
 ```
 
 - replace(): Replaces substring with a given string
@@ -530,7 +531,7 @@ challenge = '30 days of python'
 print(challenge.startswith('thirty')) # False
 ```
 
-🌕 You are an extraordinary person and you have a remarkable potential. You have just completed day 4 challenges and you are four steps a head in to your way to greatness. Now do some exercises for your brain and muscles.
+🌕 You are an extraordinary person and you have a remarkable potential. You have just completed day 4 challenges and you are four steps ahead on your way to greatness. Now do some exercises for your brain and muscles.
 
 ## 💻 Exercises - Day 4
 
@@ -550,7 +551,7 @@ print(challenge.startswith('thirty')) # False
 14. "Facebook, Google, Microsoft, Apple, IBM, Oracle, Amazon" split the string at the comma.
 15. What is the character at index 0 in the string _Coding For All_.
 16. What is the last index of the string _Coding For All_.
-17. What character is at index 10 in "Coding For All" string.
+17. What character is at index 10 in the string "Coding For All"?
 18. Create an acronym or an abbreviation for the name 'Python For Everyone'.
 19. Create an acronym or an abbreviation for the name 'Coding For All'.
 20. Use index to determine the position of the first occurrence of C in Coding For All.
@@ -559,7 +560,7 @@ print(challenge.startswith('thirty')) # False
 23. Use index or find to find the position of the first occurrence of the word 'because' in the following sentence: 'You cannot end a sentence with because because because is a conjunction'
 24. Use rindex to find the position of the last occurrence of the word because in the following sentence: 'You cannot end a sentence with because because because is a conjunction'
 25. Slice out the phrase 'because because because' in the following sentence: 'You cannot end a sentence with because because because is a conjunction'
-26. Find the position of the first occurrence of the word 'because' in the following sentence: 'You cannot end a sentence with because because because is a conjunction'
+
 27. Slice out the phrase 'because because because' in the following sentence: 'You cannot end a sentence with because because because is a conjunction'
 28. Does 'Coding For All' start with a substring _Coding_?
 29. Does 'Coding For All' end with a substring _coding_?
