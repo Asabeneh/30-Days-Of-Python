@@ -98,7 +98,7 @@ print(challenge.capitalize())  # 'Thirty days of python'
 challenge = 'thirty days of python'
 print(challenge.count('y'))  # 3
 print(challenge.count('y', 7, 14))  # 1
-print(challenge.count('th'))  # 2`
+print(challenge.count('th'))  # 2
 
 # endswith(): Checks if a string ends with a specified ending
 
@@ -123,27 +123,26 @@ first_name = 'Asabeneh'
 last_name = 'Yetayeh'
 job = 'teacher'
 country = 'Finland'
-sentence = 'I am {} {}. I am a {}. I live in {}.'.format(
-    first_name, last_name, job, country)
+sentence = 'I am {} {}. I am a {}. I live in {}.'.format(first_name, last_name, job, country)
 print(sentence)  # I am Asabeneh Yetayeh. I am a teacher. I live in Finland.
 
 radius = 10
 pi = 3.14
-area = pi  # radius ## 2
-result = 'The area of circle with {} is {}'.format(str(radius), str(area))
+area = pi * radius ** 2 # Calculate area of a circle
+result = 'The area of circle with {} is {}'.format(radius, area)
 print(result)  # The area of circle with 10 is 314.0
 
-# index(): Returns the index of substring
+# index(): Returns the lowest index of the substring if found. Raises ValueError otherwise.
 challenge = 'thirty days of python'
-print(challenge.find('y'))  # 5
-print(challenge.find('th'))  # 0
+print(challenge.index('y'))  # 5
+print(challenge.index('th'))  # 0
 
 # isalnum(): Checks alphanumeric character
 
 challenge = 'ThirtyDaysPython'
 print(challenge.isalnum())  # True
 
-challenge = '30DaysPython'
+challenge = '30DaysPython2019'
 print(challenge.isalnum())  # True
 
 challenge = 'thirty days of python'
@@ -159,12 +158,6 @@ print(challenge.isalpha())  # True
 num = '123'
 print(num.isalpha())      # False
 
-# isdecimal(): Checks Decimal Characters
-
-challenge = 'thirty days of python'
-print(challenge.find('y'))  # 5
-print(challenge.find('th'))  # 0
-
 # isdigit(): Checks Digit Characters
 
 challenge = 'Thirty'
@@ -172,7 +165,7 @@ print(challenge.isdigit())  # False
 challenge = '30'
 print(challenge.isdigit())   # True
 
-# isdecimal():Checks decimal characters
+# isdecimal(): Checks if all characters in the string are decimal characters.
 
 num = '10'
 print(num.isdecimal())  # True
@@ -195,7 +188,7 @@ print(challenge.islower())  # True
 challenge = 'Thirty days of python'
 print(challenge.islower())  # False
 
-# isupper(): returns if all characters are uppercase characters
+# isupper(): Checks if all characters in the string are uppercase.
 
 challenge = 'thirty days of python'
 print(challenge.isupper())  # False
@@ -218,7 +211,7 @@ print(result)  # 'HTML# CSS# JavaScript# React'
 # strip(): Removes both leading and trailing characters
 
 challenge = ' thirty days of python '
-print(challenge.strip('y'))  # 5
+print(challenge.strip('y'))  # ' thirty days of python '
 
 # replace(): Replaces substring inside
 
@@ -235,7 +228,7 @@ print(challenge.split())  # ['thirty', 'days', 'of', 'python']
 challenge = 'thirty days of python'
 print(challenge.title())  # Thirty Days Of Python
 
-# swapcase(): Checks if String Starts with the Specified String
+# swapcase(): Converts uppercase characters to lowercase and vice versa.
 
 challenge = 'thirty days of python'
 print(challenge.swapcase())   # THIRTY DAYS OF PYTHON
