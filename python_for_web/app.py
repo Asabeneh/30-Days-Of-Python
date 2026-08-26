@@ -10,24 +10,24 @@ app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 0
 @app.route('/')  # this decorator create the home route
 def home():
     techs = ['HTML', 'CSS', 'Flask', 'Python']
-    name = '30 Days Of Python Programming'
-    return render_template('home.html', techs=techs, name=name, title='Home')
+    name = 'Python 30天学习'
+    return render_template('home.html', techs=techs, name=name, title='首页')
 
 
 @app.route('/about')
 def about():
-    name = '30 Days Of Python Programming'
-    return render_template('about.html', name=name, title='About Us')
+    name = 'Python 30天学习'
+    return render_template('about.html', name=name, title='关于')
 
 
 @app.route('/result')
 def result():
-    return render_template('result.html')
+    return render_template('result.html', title='分析结果')
 
 
 @app.route('/post', methods=['GET', 'POST'])
 def post():
-    name = 'Text Analyzer'
+    name = '文本分析'
     if request.method == 'GET':
         return render_template('post.html', name=name, title=name)
     if request.method == 'POST':

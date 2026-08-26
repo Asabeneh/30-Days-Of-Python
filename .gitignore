@@ -18,4 +18,6 @@ numpy.ipynb
 .ipynb_checkpoints
 .vscode/
 *~
-test.py
+test.py.venv/
+
+/.venv/

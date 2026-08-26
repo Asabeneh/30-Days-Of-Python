@@ -1,10 +1,10 @@
 {% extends 'layout.html' %}
 {% block content %}
 <div class="container">
-    <h1>Welcome to {{name}}</h1>
-    <p>This application clean texts and analyse the number of word, characters and most frequent words in the text.
-        Check it out by click text analyzer at the menu.
-        You need the following technologies to build this web application:</p>
+    <h1>欢迎来到 {{name}}</h1>
+    <p>这个示例应用用于清洗文本，并统计词数、字符数和高频词。
+        你可以点击上方菜单的“文本分析”进行体验。
+        构建这个 Web 应用会用到以下技术：</p>
     <ul class="tech-lists">
         {% for tech in techs %}
         <li class="tech">{{tech}}</li>
