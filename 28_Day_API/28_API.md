@@ -51,7 +51,7 @@ Using API, content that is created in one place dynamically can be posted and up
 
 For example, Twitter's REST API allows developers to access core Twitter data and the Search API provides methods for developers to interact with Twitter Search and trends data.
 
-Many applications provide API end points. Some  examples of API such as the countries [API](https://restcountries.eu/rest/v2/all), [cat's breed API](https://api.thecatapi.com/v1/breeds).
+Many applications provide API end points. Some  examples of API such as the countries [API](https://restcountries.com/v3.1/all?fields=name,capital,currencies), [cat's breed API](https://api.thecatapi.com/v1/breeds).
 
 In this section, we will cover a RESTful API that uses HTTP request methods to GET, PUT, POST and DELETE data.
 
