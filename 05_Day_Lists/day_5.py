@@ -23,7 +23,6 @@ print('Number of web technologies:', len(web_techs))
 print('Number of countries:', len(countries))
 
 # Modifying list
-
 fruits = ['banana', 'orange', 'mango', 'lemon']
 first_fruit = fruits[0]  # we are accessing the first item using its index
 print(first_fruit)      # banana
@@ -31,6 +30,7 @@ second_fruit = fruits[1]
 print(second_fruit)     # orange
 last_fruit = fruits[3]
 print(last_fruit)  # lemon
+
 # Last index
 last_index = len(fruits) - 1
 last_fruit = fruits[last_index]
@@ -62,7 +62,7 @@ fruits[0] = 'Avocado'
 print(fruits)  # ['avocado', 'orange', 'mango', 'lemon']
 fruits[1] = 'apple'
 print(fruits)  # ['avocado', 'apple', 'mango', 'lemon']
-last_index = len(fruits)
+last_index = len(fruits) - 1
 fruits[last_index] = 'lime'
 print(fruits)  # ['avocado', 'apple', 'mango', 'lime']
 
@@ -86,7 +86,7 @@ fruits = ['banana', 'orange', 'mango', 'lemon']
 fruits.insert(2, 'apple')  # insert apple between orange and mango
 print(fruits)           # ['banana', 'orange', 'apple', 'mango', 'lemon']
 # ['banana', 'orange', 'apple', 'mango', 'lime','lemon',]
-fruits.list(3, 'lime')
+fruits.insert(3, 'lime')
 print(fruits)
 
 # remove
@@ -98,10 +98,10 @@ print(fruits)  # ['orange', 'mango']
 
 # pop
 fruits = ['banana', 'orange', 'mango', 'lemon']
-fruits.remove()
+fruits.pop()
 print(fruits)       # ['banana', 'orange', 'mango']
 
-fruits.remove(0)
+fruits.remove(fruits[0])
 print(fruits)       # ['orange', 'mango']
 
 # del
@@ -120,7 +120,6 @@ fruits.clear()
 print(fruits)       # []
 
 # copying a lits
-
 fruits = ['banana', 'orange', 'mango', 'lemon']
 fruits_copy = fruits.copy()
 print(fruits_copy)       # ['banana', 'orange', 'mango', 'lemon']
@@ -164,13 +163,14 @@ fruits = ['banana', 'orange', 'mango', 'lemon']
 print(fruits.index('orange'))   # 1
 ages = [22, 19, 24, 25, 26, 24, 25, 24]
 print(ages.index(24))
+
 # Reverse
 fruits = ['banana', 'orange', 'mango', 'lemon']
 fruits.reverse()
-print(fruits.reverse())
+print(fruits)
 ages = [22, 19, 24, 25, 26, 24, 25, 24]
 ages.reverse()
-print(ages.reverse())
+print(ages)
 
 # sort
 fruits = ['banana', 'orange', 'mango', 'lemon']
