@@ -124,30 +124,6 @@ print('a // b = ', floor_division)
 print('a ** b = ', exponential)
 ```
 
-**Example:**
-
-```py
-print('== Addition, Subtraction, Multiplication, Division, Modulus ==')
-
-# Declaring values and organizing them together
-num_one = 3
-num_two = 4
-
-# Arithmetic operations
-total = num_one + num_two
-diff = num_two - num_one
-product = num_one * num_two
-div = num_two / num_one
-remainder = num_two % num_one
-
-# Printing values with label
-print('total: ', total)
-print('difference: ', diff)
-print('product: ', product)
-print('division: ', div)
-print('remainder: ', remainder)
-```
-
 Let us start connecting the dots and start making use of what we already know to calculate (area, volume,density,  weight, perimeter, distance, force).
 
 **Example:**
@@ -220,8 +196,9 @@ In addition to the above comparison operator Python uses:
 print('1 is 1', 1 is 1)                   # True - because the data values are the same
 print('1 is not 2', 1 is not 2)           # True - because 1 is not 2
 print('A in Asabeneh', 'A' in 'Asabeneh') # True - A found in the string
-print('B not in Asabeneh', 'B' in 'Asabeneh') # False - there is no uppercase B
-print('coding' in 'coding for all') # True - because coding for all has the word coding
+print('B not in Asabeneh', 'B' not in 'Asabeneh') # True - there is no uppercase B
+print('B not in Asabeneh', 'b' not in 'Asabeneh') #False - tere is b in the string
+print('coding' in 'coding for all') # True - because 'coding for all' has the word 'coding'
 print('a in an:', 'a' in 'an')      # True
 print('4 is 2 ** 2:', 4 is 2 ** 2)   # True
 ```
