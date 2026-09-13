@@ -301,7 +301,7 @@ dct_copy = dct.copy() # {'key1':'value1', 'key2':'value2', 'key3':'value3', 'key
 
 ### Getting Dictionary Keys as a List
 
-The _keys()_ method gives us all the keys of a a dictionary as a list.
+The _keys()_ method gives us all the keys of a dictionary as a list.
 
 ```py
 # syntax
@@ -312,7 +312,7 @@ print(keys)     # dict_keys(['key1', 'key2', 'key3', 'key4'])
 
 ### Getting Dictionary Values as a List
 
-The _values_ method gives us all the values of a a dictionary as a list.
+The _values_ method gives us all the values of a dictionary as a list.
 
 ```py
 # syntax
