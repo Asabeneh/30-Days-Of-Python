@@ -39,7 +39,7 @@
 
 ## Dictionaries
 
-A dictionary is a collection of unordered, modifiable(mutable) paired (key: value) data type.
+A dictionary is a collection of insertion-ordered (since Python 3.7+), modifiable(mutable) paired (key: value) data type.
 
 ### Creating a Dictionary
 
@@ -60,7 +60,7 @@ person = {
     'last_name':'Yetayeh',
     'age':250,
     'country':'Finland',
-    'is_marred':True,
+    'is_married':True,
     'skills':['JavaScript', 'React', 'Node', 'MongoDB', 'Python'],
     'address':{
         'street':'Space street',
@@ -119,7 +119,7 @@ person = {
     'last_name':'Yetayeh',
     'age':250,
     'country':'Finland',
-    'is_marred':True,
+    'is_married':True,
     'skills':['JavaScript', 'React', 'Node', 'MongoDB', 'Python'],
     'address':{
         'street':'Space street',
@@ -141,7 +141,7 @@ person = {
     'last_name':'Yetayeh',
     'age':250,
     'country':'Finland',
-    'is_marred':True,
+    'is_married':True,
     'skills':['JavaScript', 'React', 'Node', 'MongoDB', 'Python'],
     'address':{
         'street':'Space street',
@@ -172,7 +172,7 @@ person = {
     'last_name':'Yetayeh',
     'age':250,
     'country':'Finland',
-    'is_marred':True,
+    'is_married':True,
     'skills':['JavaScript', 'React', 'Node', 'MongoDB', 'Python'],
     'address':{
         'street':'Space street',
@@ -202,7 +202,7 @@ person = {
     'last_name':'Yetayeh',
     'age':250,
     'country':'Finland',
-    'is_marred':True,
+    'is_married':True,
     'skills':['JavaScript', 'React', 'Node', 'MongoDB', 'Python'],
     'address':{
         'street':'Space street',
@@ -247,7 +247,7 @@ person = {
     'last_name':'Yetayeh',
     'age':250,
     'country':'Finland',
-    'is_marred':True,
+    'is_married':True,
     'skills':['JavaScript', 'React', 'Node', 'MongoDB', 'Python'],
     'address':{
         'street':'Space street',
