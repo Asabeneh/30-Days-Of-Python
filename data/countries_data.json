@@ -1113,7 +1113,7 @@
         "currency": "Indonesian rupiah"
     },
     {
-        "name": "Côte d'Ivoire",
+        "name": "Cote d'Ivoire",
         "capital": "Yamoussoukro",
         "languages": [
             "French"
@@ -1669,7 +1669,7 @@
         "capital": "Wellington",
         "languages": [
             "English",
-            "Māori"
+            "Maori"
         ],
         "population": 4697854,
         "flag": "https://restcountries.eu/data/nzl.svg",
@@ -2035,7 +2035,7 @@
         ],
         "population": 194899,
         "flag": "https://restcountries.eu/data/wsm.svg",
-        "currency": "Samoan tālā"
+        "currency": "Samoan tala"
     },
     {
         "name": "San Marino",
