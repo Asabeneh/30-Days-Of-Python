@@ -1200,6 +1200,28 @@ print(df[df['Ages'] < 120])
   </tbody>
 </table>
 
+## Real-World Example: Crop Production Analysis
+
+```python
+import pandas as pd
+
+# Sample agricultural dataset
+data = {
+    "Crop": ["Rice", "Wheat", "Maize"],
+    "Production": [100, 80, 60],
+    "Year": [2020, 2020, 2020]
+}
+
+df = pd.DataFrame(data)
+
+print("Dataset:")
+print(df)
+
+print("\nAverage Production:", df["Production"].mean())
+print("\nMaximum Production Crop:", df.loc[df["Production"].idxmax(), "Crop"])
+
+``` 
+
 ## Exercises: Day 25
 
 1. Read the hacker_news.csv file from data directory
