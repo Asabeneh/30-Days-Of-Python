@@ -1,25 +1,30 @@
-# Introduction
-# Day 1 - 30DaysOfPython Challenge
+# =====================================
+# Day 1 - 30 Days of Python Challenge
+# Introduction to Python
+# =====================================
 
-print("Hello World!")   # print hello world
+# Printing a simple message
+print("Hello, World!")
 
-print(2 + 3)   # addition(+)
-print(3 - 1)   # subtraction(-)
-print(2 * 3)   # multiplication(*)
-print(3 + 2)   # addition(+)
-print(3 - 2)   # subtraction(-)
-print(3 * 2)   # multiplication(*)
-print(3 / 2)   # division(/)
-print(3 ** 2)  # exponential(**)
-print(3 % 2)   # modulus(%)
-print(3 // 2)  # Floor division operator(//)
+print("\n--- Basic Arithmetic Operations ---")
 
-# Checking data types
+a = 3
+b = 2
 
-print(type(10))                  # Int
-print(type(3.14))                # Float
-print(type(1 + 3j))              # Complex
-print(type('Asabeneh'))          # String
-print(type([1, 2, 3]))           # List
-print(type({'name': 'Asabeneh'}))  # Dictionary
-print(type({9.8, 3.14, 2.7}))    # Tuple
+print(f"Addition: {a} + {b} = {a + b}")
+print(f"Subtraction: {a} - {b} = {a - b}")
+print(f"Multiplication: {a} * {b} = {a * b}")
+print(f"Division: {a} / {b} = {a / b}")
+print(f"Exponentiation: {a} ** {b} = {a ** b}")
+print(f"Modulus: {a} % {b} = {a % b}")
+print(f"Floor Division: {a} // {b} = {a // b}")
+
+print("\n--- Checking Data Types ---")
+
+print(type(10))                   # Integer
+print(type(3.14))                 # Float
+print(type(1 + 3j))               # Complex
+print(type("Asabeneh"))            # String
+print(type([1, 2, 3]))            # List
+print(type({"name": "Asabeneh"}))  # Dictionary
+print(type((9.8, 3.14, 2.7)))      # Tuple
