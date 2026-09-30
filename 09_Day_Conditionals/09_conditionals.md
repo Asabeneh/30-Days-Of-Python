@@ -259,7 +259,7 @@ Enter number two: 3
    1. Here we have a person dictionary. Feel free to modify it!
 
 ```py
-        person={
+person={
     'first_name': 'Asabeneh',
     'last_name': 'Yetayeh',
     'age': 250,
@@ -270,7 +270,7 @@ Enter number two: 3
         'street': 'Space street',
         'zipcode': '02210'
     }
-    }
+}
 ```
 
      * Check if the person dictionary has skills key, if so print out the middle skill in the skills list.
