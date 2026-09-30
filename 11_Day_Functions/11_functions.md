@@ -176,8 +176,8 @@ def generate_full_name (first_name, last_name):
 print('Full Name: ', generate_full_name('Asabeneh','Yetayeh'))
 
 def sum_two_numbers (num_one, num_two):
-    sum = num_one + num_two
-    return sum
+    total = num_one + num_two
+    return total
 print('Sum of two numbers: ', sum_two_numbers(1, 9))
 
 def calculate_age (current_year, birth_year):
