@@ -18,20 +18,20 @@
 | 14     |         [高阶函数](./14_higher_order_functions.md)         |
 | 15     |             [类型错误](./15_python_type_errors.md)             |
 | 16     |            [Python 日期时间](./16_python_datetime.md)            |
-| 17     |             [异常处理](./17_exception_handling.md)             |
-| 18     |           [正则表达式](./18_regular_expressions.md)           |
-| 19     |                  [文件处理](./19_file_handling.md)                  |
-| 20     |         [包管理器](./20_python_package_manager.md)         |
-| 21     |            [类和对象](./21_classes_and_objects.md)            |
-| 22     |                   [网页抓取](./22_web_scraping.md)                   |
-| 23     |            [虚拟环境](./23_virtual_environment.md)            |
-| 24     |                       [统计](./24_statistics.md)                       |
-| 25     |                          [Pandas](./25_pandas.md)                          |
-| 26     |                   [Python 网页](./26_python_web.md)                    |
-| 27     |       [Python 与 MongoDB](./27_python_with_mongodb.md)        |
-| 28     |                              [API](./28_API.md)                               |
-| 29     |                   [构建 API](./29_building_API.md)                   |
-| 30     |                      [结论](./30_conclusions.md)                      |
+| 17     |             [异常处理](./17_exception_handling_cn.md)             |
+| 18     |           [正则表达式](./18_regular_expressions_cn.md)           |
+| 19     |                  [文件处理](./19_file_handling_cn.md)                  |
+| 20     |         [包管理器](./20_python_package_manager_cn.md)         |
+| 21     |            [类和对象](./21_classes_and_objects_cn.md)            |
+| 22     |                   [网页抓取](./22_web_scraping_cn.md)                   |
+| 23     |            [虚拟环境](./23_virtual_environment_cn.md)            |
+| 24     |                       [统计](./24_statistics_cn.md)                       |
+| 25     |                          [Pandas](./25_pandas_cn.md)                          |
+| 26     |                   [Python 网页](./26_python_web_cn.md)                    |
+| 27     |       [Python 与 MongoDB](./27_python_with_mongodb_cn.md)        |
+| 28     |                              [API](./28_API_cn.md)                               |
+| 29     |                   [构建 API](./29_building_API_cn.md)                   |
+| 30     |                      [结论](./30_conclusions_cn.md)                      |
 
 🧡🧡🧡 快乐编码 🧡🧡🧡
 
@@ -209,7 +209,7 @@ A _comment_ 是代码中未被 Python 执行的一部分，注释被 Python 解�
 
 在进入下一部分之前，让我们更多地练习 Python 交互式 Shell。通过在 Shell 中输入 _exit()_ 关闭已打开的 Shell，然后再次打开它，让我们练习如何在 Python Shell 中编写文本。
 
-![Writing String on python shell](./images/writing_string_on_shell.png)
+![Writing String on python shell](../images/writing_string_on_shell.png)
 
 ### 安装 Visual Studio Code
 

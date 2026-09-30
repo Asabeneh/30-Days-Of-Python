@@ -1,13 +1,13 @@
 {% extends 'layout.html' %}
 {% block content %}
 <div class="container">
-    <h1>Text Analyzer</h1>
-    <form action="http://localhost:5000/post" method="POST">
+    <h1>文本分析</h1>
+    <form action="{{ url_for('post') }}" method="POST">
         <div>
             <textarea rows='25' name="content" autofocus></textarea>
         </div>
         <div>
-            <input type='submit' class="btn" value="Process Text" />
+            <input type='submit' class="btn" value="开始分析" />
         </div>
 
 

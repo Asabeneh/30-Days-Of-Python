@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 
 <head>
     <meta charset="UTF-8">
@@ -8,9 +8,9 @@
         rel="stylesheet">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
     {% if title %}
-    <title>30 Days of Python - {{ title}}</title>
+    <title>Python 30天学习 - {{ title}}</title>
     {% else %}
-    <title>30 Days of Python</title>
+    <title>Python 30天学习</title>
     {% endif %}
 </head>
 
@@ -18,12 +18,12 @@
     <header>
         <div class="menu-container">
             <div>
-                <a class="brand-name nav-link" href="/">30DaysOfPython</a>
+                <a class="brand-name nav-link" href="/">Python 30天学习</a>
             </div>
             <ul class="nav-lists">
-                <li class="nav-list"><a class="nav-link active" href="{{ url_for('home') }}">Home</a></li>
-                <li class="nav-list"><a class="nav-link active" href="{{ url_for('about') }}">About</a></li>
-                <li class="nav-list"><a class="nav-link active" href="{{ url_for('post') }}">Text Analyzer</a></li>
+                <li class="nav-list"><a class="nav-link active" href="{{ url_for('home') }}">首页</a></li>
+                <li class="nav-list"><a class="nav-link active" href="{{ url_for('about') }}">关于</a></li>
+                <li class="nav-list"><a class="nav-link active" href="{{ url_for('post') }}">文本分析</a></li>
             </ul>
         </div>
 
