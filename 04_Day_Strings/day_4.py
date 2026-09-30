@@ -75,7 +75,7 @@ print(last_three)   # hon
 # Skipping character while splitting Python strings
 language = 'Python'
 pto = language[0:6:2]
-print(pto)  # pto
+print(pto)  # Pto
 
 # Escape sequence
 print('I hope every one enjoying the python challenge.\nDo you ?')  # line break
@@ -129,14 +129,15 @@ print(sentence)  # I am Asabeneh Yetayeh. I am a teacher. I live in Finland.
 
 radius = 10
 pi = 3.14
-area = pi  # radius ## 2
+area = pi * radius ** 2
 result = 'The area of circle with {} is {}'.format(str(radius), str(area))
 print(result)  # The area of circle with 10 is 314.0
 
 # index(): Returns the index of substring
+# ** if you pay attention you will realize that both index() & find() do the same. The difference is that index() raises an exception on failures but find() returns -1 .
 challenge = 'thirty days of python'
-print(challenge.find('y'))  # 5
-print(challenge.find('th'))  # 0
+print(challenge.index('y'))  # 5
+print(challenge.index('th'))  # 0
 
 # isalnum(): Checks alphanumeric character
 
@@ -155,15 +156,14 @@ print(challenge.isalnum())  # False
 # isalpha(): Checks if all characters are alphabets
 
 challenge = 'thirty days of python'
+print(challenge.isalpha())  # False, cause the string contains space.
+
+challenge = 'thirtyDaysOfPython'
 print(challenge.isalpha())  # True
+
 num = '123'
 print(num.isalpha())      # False
 
-# isdecimal(): Checks Decimal Characters
-
-challenge = 'thirty days of python'
-print(challenge.find('y'))  # 5
-print(challenge.find('th'))  # 0
 
 # isdigit(): Checks Digit Characters
 
@@ -213,12 +213,12 @@ print('ten'.isnumeric())    # False
 
 web_tech = ['HTML', 'CSS', 'JavaScript', 'React']
 result = '#, '.join(web_tech)
-print(result)  # 'HTML# CSS# JavaScript# React'
+print(result)  # 'HTML#, CSS#, JavaScript#, React'
 
-# strip(): Removes both leading and trailing characters
+# strip(): Removes both leading and trailing characters, it only removes the right and left sides, and by default the spaces.
 
 challenge = ' thirty days of python '
-print(challenge.strip('y'))  # 5
+print(challenge.strip()) #thirty days of python
 
 # replace(): Replaces substring inside
 
