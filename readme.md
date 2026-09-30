@@ -33,8 +33,6 @@
 | 29 |  [Building API](./29_Day_Building_API/29_building_API.md)|
 | 30 |  [Conclusions](./30_Day_Conclusions/30_conclusions.md)|
 
-**🇫🇷 French translation** : [French](./French/README_fr.md)
-**🇸🇦 Arabic translation** : [Arabic](./Arabic/readme.md)
 
 <small>🧡🧡🧡 HAPPY CODING 🧡🧡🧡</small>
 
@@ -71,10 +69,20 @@ Every contribution, big or small, makes a huge difference. Thank you for your su
   </sub>
 </div>
 
+🇫🇷 [French](./French/README_fr.md)
+SP [Spanish](./Spanish/readme.md)
+DE [German](./German/readme.md)
 🇧🇷 [Portuguese](./Portuguese/README.md)
-🇨🇳 [中文](./Chinese/README.md)
-🇫🇷[French](./French/README_fr.md)
-🇬🇷 [Ελληνικά](./Greek/readme.md)
+🇨🇳 [Chinese](./Chinese/README.md)
+🇬🇷 [Greek](./Greek/readme.md)
+SA [Arabic](./Arabic/readme.md)
+KO [Korean](./Korean/readme_ko.md)
+UK [Ukrainian](./Ukrainian/readme.md)
+UZ [Uzbek](./Uzbek)
+FA [Persain](./Persain/readme.md)
+RU [Russian](./Russian/readme.md)
+
+
 [Day 2 >>](./02_Day_Variables_builtin_functions/02_variables_builtin_functions.md)
 
 ![30DaysOfPython](./images/30DaysOfPython_banner3@2x.png)
