@@ -1,6 +1,7 @@
-Click==7.0
-Flask==1.1.1
-itsdangerous==1.1.0
-Jinja2==2.10.3
-MarkupSafe==1.1.1
-Werkzeug==0.16.0
+Click==8.1.7
+Flask==3.0.3
+itsdangerous==2.2.0
+Jinja2==3.1.4
+MarkupSafe==2.1.5
+Werkzeug==3.0.6
+gunicorn==22.0.0
