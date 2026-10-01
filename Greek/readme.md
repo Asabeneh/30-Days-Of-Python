@@ -3,7 +3,7 @@
 |# Ημέρα | Θέματα                                                    |
 |------|:---------------------------------------------------------:|
 | 01  |  [Εισαγωγή](./readme.md)|
-| 02  |  [Μεταβλητές, Built-in Functions](../02_Day_Variables_builtin_functions/02_variables_builtin_functions.md)|
+| 02  |  [Μεταβλητές, Built-in Functions](./02_Day_Variables_builtin_functions/02_variables_builtin_functions.md)|
 | 03  |  [Operators](../03_Day_Operators/03_operators.md)|
 | 04  |  [Strings](../04_Day_Strings/04_strings.md)|
 | 05  |  [Lists](../05_Day_Lists/05_lists.md)|
@@ -126,7 +126,7 @@
 🇨🇳 [中文](../Chinese/README.md)
 🇫🇷[French](../French/README_fr.md)
 🇬🇷 [Ελληνικά](./readme.md)
-[Ημέρα 2 >>](../02_Day_Variables_builtin_functions/02_variables_builtin_functions.md)
+[Ημέρα 2 >>](./02_Day_Variables_builtin_functions/02_variables_builtin_functions.md)
 
 ![30DaysOfPython](../images/30DaysOfPython_banner3@2x.png)
 
@@ -525,4 +525,4 @@ print(type((9.8, 3.14, 2.7)))    # Tuple
 
 🎉 ΣΥΓΧΑΡΗΤΗΡΙΑ ! 🎉
 
-[Ημέρα 2 >>](../02_Day_Variables_builtin_functions/02_variables_builtin_functions.md)
+[Ημέρα 2 >>](./02_Day_Variables_builtin_functions/02_variables_builtin_functions.md)
