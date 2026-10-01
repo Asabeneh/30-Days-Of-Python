@@ -31,12 +31,24 @@ def post():
     if request.method == 'GET':
         return render_template('post.html', name=name, title=name)
     if request.method == 'POST':
-        content = request.form['content']
+        # request.form.get() returns None instead of raising BadRequestKeyError,
+        # so a missing field yields an explicit 400 rather than a 500 traceback.
+        content = request.form.get('content')
+        if content is None:
+            return render_template('post.html', name=name, title=name), 400
         return redirect(url_for('result'))
 
 
 if __name__ == '__main__':
-    # for deployment
-    # to make it work for both production and development
+    # This is the Flask development server. It must NOT be used to serve
+    # production traffic, and the Werkzeug debugger must never be enabled on a
+    # host reachable by others: the debugger exposes a console that executes
+    # arbitrary Python.
+    #
+    # - debug is opt-in via FLASK_DEBUG=1 and defaults to off;
+    # - the default bind address is loopback (127.0.0.1); set HOST explicitly
+    #   only when you understand the exposure.
     port = int(os.environ.get("PORT", 5000))
-    app.run(debug=True, host='0.0.0.0', port=port)
+    host = os.environ.get("HOST", "127.0.0.1")
+    debug = os.environ.get("FLASK_DEBUG") == "1"
+    app.run(debug=debug, host=host, port=port)
