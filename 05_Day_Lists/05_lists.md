@@ -287,7 +287,7 @@ print(fruits)
 
 ### Removing Items from a List
 
-The remove method removes a specified item from a list
+List in python allows duplicate values, so a particular value may appear more than once in a list. The remove method removes only the first occurrence of the specified item from the list.
 
 ```py
 # syntax
