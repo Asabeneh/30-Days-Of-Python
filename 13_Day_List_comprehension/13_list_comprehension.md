@@ -70,7 +70,7 @@ print(squares)                    # [0, 1, 4, 9, 16, 25, 36, 49, 64, 81, 100]
 
 # It is also possible to make a list of tuples
 numbers = [(i, i * i) for i in range(11)]
-print(numbers)                             # [(0, 0), (1, 1), (2, 4), (3, 9), (4, 16), (5, 25)]
+print(numbers)                             # [(0, 0), (1, 1), (2, 4), (3, 9), (4, 16), (5, 25), (6, 36), (7, 49), (8, 64), (9, 81), (10, 100)]]
 
 ```
 
@@ -90,7 +90,7 @@ print(odd_numbers)                      # [1, 3, 5, 7, 9, 11, 13, 15, 17, 19]
 # Filter numbers: let's filter out positive even numbers from the list below
 numbers = [-8, -7, -3, -1, 0, 1, 3, 4, 5, 7, 6, 8, 10]
 positive_even_numbers = [i for i in numbers if i % 2 == 0 and i > 0]
-print(positive_even_numbers)                    # [2, 4, 6, 8, 10, 12, 14, 16, 18, 20]
+print(positive_even_numbers)                    #[4, 6, 8, 10]
 
 # Flattening a two dimensional array
 list_of_lists = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]

@@ -375,7 +375,7 @@ else:
 
 ### Pass
 
-In python when statement is required (after semicolon), but we don't like to execute any code there, we can write the word _pass_ to avoid errors. Also we can use it as a placeholder, for future statements.
+In python when statement is required (after a colon), but we don't like to execute any code there, we can write the word _pass_ to avoid errors. Also we can use it as a placeholder, for future statements.
 
 **Example:**
 
