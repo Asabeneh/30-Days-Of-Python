@@ -198,7 +198,7 @@ else:
     print('Access denied!')
 ```
 
-🌕 You are doing great.Never give up because great things take time. You have just completed day 9 challenges and you are 9 steps a head in to your way to greatness. Now do some exercises for your brain and muscles.
+🌕 You are doing great. Never give up because great things take time. You have just completed day 9 challenges and you are 9 steps a head in to your way to greatness. Now do some exercises for your brain and muscles.
 
 ## 💻 Exercises: Day 9
 
