@@ -44,7 +44,7 @@ Life is full of routines. In programming we also do lots of repetitive tasks. In
 
 ### While Loop
 
-We use the reserved word _while_ to make a while loop. It is used to execute a block of statements repeatedly until a given condition is satisfied. When the condition becomes false, the lines of code after the loop will be continued to be executed.
+We use the reserved word _while_ to make a while loop. It is used to execute a block of statements repeatedly while a given condition is satisfied. When the condition becomes false, the lines of code after the loop will be continued to be executed.
 
 ```py
   # syntax
