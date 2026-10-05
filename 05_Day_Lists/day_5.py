@@ -170,7 +170,20 @@ fruits.reverse()
 print(fruits.reverse())
 ages = [22, 19, 24, 25, 26, 24, 25, 24]
 ages.reverse()
-print(ages.reverse())
+print(ages.reverse()) # ages.reverse() returns None if used inside print(). Call ages.reverse() first, then print the list.
+# Reverse
+"""
+ages = [22, 19, 24, 25, 26, 24, 25, 24]
+ages.reverse()
+print(ages)
+ages.reverse()
+print(ages)
+
+#Output:
+[24, 25, 24, 26, 25, 24, 19, 22] # reversed one 
+[22, 19, 24, 25, 26, 24, 25, 24] # reversed reversed one (Orginal one)
+"""
+
 
 # sort
 fruits = ['banana', 'orange', 'mango', 'lemon']
