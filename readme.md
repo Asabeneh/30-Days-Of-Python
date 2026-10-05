@@ -81,6 +81,7 @@ UK [Ukrainian](./Ukrainian/readme.md)
 UZ [Uzbek](./Uzbek)
 FA [Persain](./Persain/readme.md)
 RU [Russian](./Russian/readme.md)
+UR [Urdu (اردو)](./Urdu/readme.md)
 
 
 [Day 2 >>](./02_Day_Variables_builtin_functions/02_variables_builtin_functions.md)
