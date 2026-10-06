@@ -21,8 +21,8 @@
 - [Day 4](#day-4)
   - [Strings](#strings)
     - [Creating a String](#creating-a-string)
-    - [String Concatenation](#string-concatenation)
     - [Escape Sequences in Strings](#escape-sequences-in-strings)
+    - [String Concatenation](#string-concatenation)
     - [String formatting](#string-formatting)
       - [Old Style String Formatting (% Operator)](#old-style-string-formatting--operator)
       - [New Style String Formatting (str.format)](#new-style-string-formatting-strformat)
@@ -70,23 +70,6 @@ That is why I created 30 days of python."""
 print(multiline_string)
 ```
 
-### String Concatenation
-
-We can connect strings together. Merging or connecting strings is called concatenation. See the example below:
-
-```py
-first_name = 'Asabeneh'
-last_name = 'Yetayeh'
-space = ' '
-full_name = first_name  +  space + last_name
-print(full_name) # Asabeneh Yetayeh
-# Checking the length of a string using len() built-in function
-print(len(first_name))  # 8
-print(len(last_name))   # 7
-print(len(first_name) > len(last_name)) # True
-print(len(full_name)) # 16
-```
-
 ### Escape Sequences in Strings
 
 In Python and other programming languages \ followed by a character is an escape sequence. Let us see the most common escape characters:
@@ -119,6 +102,24 @@ Day 3	5	    23
 Day 4	1	    35
 This is a backslash  symbol (\)
 In every programming language it starts with "Hello, World!"
+```
+
+
+### String Concatenation
+
+We can connect strings together. Merging or connecting strings is called concatenation. See the example below:
+
+```py
+first_name = 'Asabeneh'
+last_name = 'Yetayeh'
+space = ' '
+full_name = first_name  +  space + last_name
+print(full_name) # Asabeneh Yetayeh
+# Checking the length of a string using len() built-in function
+print(len(first_name))  # 8
+print(len(last_name))   # 7
+print(len(first_name) > len(last_name)) # True
+print(len(full_name)) # 16
 ```
 
 ### String formatting
