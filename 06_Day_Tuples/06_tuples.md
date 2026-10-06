@@ -221,7 +221,7 @@ fruits = ('banana', 'orange', 'mango', 'lemon')
 del fruits
 ```
 
-🌕 You are so brave, you made it to this far. You have just completed day 6 challenges and you are 6 steps a head in to your way to greatness. Now do some exercises for your brain and for your muscle.
+🌕 You are so brave, you made it to this far. You have just completed day 6 challenges and you are 6 steps ahead in to your way to greatness. Now do some exercises for your brain and for your muscle.
 
 ## 💻 Exercises: Day 6
 
