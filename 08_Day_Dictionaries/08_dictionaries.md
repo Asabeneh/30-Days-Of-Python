@@ -229,7 +229,7 @@ print('key5' in dct) # False
 - _pop(key)_: removes the item with the specified key name:
 - _popitem()_: removes the last item
 - _del_: removes an item with specified key name
-
+- _pop(key, default backup value)_: removes the item with the specified key name , if the key name dose not exist so return the default backup value.
 ```py
 # syntax
 dct = {'key1':'value1', 'key2':'value2', 'key3':'value3', 'key4':'value4'}
@@ -237,6 +237,7 @@ dct.pop('key1') # removes key1 item
 dct = {'key1':'value1', 'key2':'value2', 'key3':'value3', 'key4':'value4'}
 dct.popitem() # removes the last item
 del dct['key2'] # removes key2 item
+dct.pop(key1,'UnKnown') # Removes key1 item; if key1 does not exist, returns 'UnKnown'
 ```
 
 **Example:**
