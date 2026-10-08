@@ -1,43 +1,43 @@
-# 🐍 30 Days Of Python
+# 🐍 30 Días de Python
 
-|# Day | Topics                                                    |
-|------|:---------------------------------------------------------:|
-| 01  |  [Introducción](./readme.md)|
-| 02  |  [Variables, funciones integradas](./02_Day_Variables_builtin_functions/02_variables_builtin_functions.md)|
-| 03  |  [Operadores](./03_Day_Operators/03_operators.md)|
-| 04  |  [Strings](./04_Day_Strings/04_strings.md)|
-| 05  |  [Lists](./05_Day_Lists/05_lists.md)|
-| 06  |  [Tuplas](./06_Day_Tuples/06_tuples.md)|
-| 07  |  [Sets](./07_Day_Sets/07_sets.md)|
-| 08  |  [Diccionarios](./08_Day_Dictionaries/08_dictionaries.md)|
-| 09  |  [Condicionales](./09_Day_Conditionals/09_conditionals.md)|
-| 10  |  [Bucles](./10_Day_Loops/10_loops.md)|
-| 11  |  [Funciones](./11_Day_Functions/11_functions.md)|
-| 12  |  [Módulos](./12_Day_Modules/12_modules.md)|
-| 13  |  [Lista de comprensión](./13_Day_List_comprehension/13_list_comprehension.md)|
-| 14  |  [Funciones de orden superior](./14_Day_Higher_order_functions/14_higher_order_functions.md)|
-| 15  |  [Errores de tipo Python](./15_Day_Python_type_errors/15_python_type_errors.md)|
-| 16 |  [Fecha y hora de Python](./16_Day_Python_date_time/16_python_datetime.md) |
-| 17 |  [Manejo de excepciones](./17_Day_Exception_handling/17_exception_handling.md)|
-| 18 |  [Expresiones regulares](./18_Day_Regular_expressions/18_regular_expressions.md)|
-| 19 |  [Manejo de archivos](./19_Day_File_handling/19_file_handling.md)|
-| 20 |  [Administrador de paquetes de Python](./20_Day_Python_package_manager/20_python_package_manager.md)|
-| 21 |  [Clases y Objetos](./21_Day_Classes_and_objects/21_classes_and_objects.md)|
-| 22 |  [Raspado web](./22_Day_Web_scraping/22_web_scraping.md)|
-| 23 |  [Ambiente virtual](./23_Day_Virtual_environment/23_virtual_environment.md)|
-| 24 |  [Estadísticas](./24_Day_Statistics/24_statistics.md)|
-| 25 |  [Pandas](./25_Day_Pandas/25_pandas.md)|
-| 26 |  [Python web](./26_Day_Python_web/26_python_web.md)|
-| 27 |  [Python con MongoDB](./27_Day_Python_with_mongodb/27_python_with_mongodb.md)|
-| 28 |  [API](./28_Day_API/28_API.md)|
-| 29 |  [Building API](./29_Day_Building_API/29_building_API.md)|
-| 30 |  [Conclusiones](./30_Day_Conclusions/30_conclusions.md)|
+| # Día |                                           Tema                                           |
+| ------ | :--------------------------------------------------------------------------------------: |
+|   01   | [Introducción](./readme.md)|
+|   02   | [Variables y funciones integradas](./02_Day_Variables_builtin_functions/02_variables_builtin_functions.md)|
+|   03   | [Operadores](./03_Day_Operators/03_operators.md)|
+|   04   | [Cadenas](./04_Day_Strings/04_strings.md)|
+|   05   | [Listas](./05_Day_Lists/05_lists.md)|
+|   06   | [Tuplas](./06_Day_Tuples/06_tuples.md)|
+|   07   | [Conjuntos](./07_Day_Sets/07_sets.md)|
+|   08   | [Diccionarios](./08_Day_Dictionaries/08_dictionaries.md)|
+|   09   | [Condicionales](./09_Day_Conditionals/09_conditionals.md)|
+|   10   | [Bucles](./10_Day_Loops/10_loops.md)|
+|   11   | [Funciones](./11_Day_Functions/11_functions.md)|
+|   12   | [Módulos](./12_Day_Modules/12_modules.md)|
+|   13   | [Comprensión de listas](./13_Day_List_comprehension/13_list_comprehension.md)|
+|   14   | [Funciones de orden superior](./14_Day_Higher_order_functions/14_higher_order_functions.md)|
+|   15   |             [Errores de tipo](./15_Day_Python_type_errors/15_python_type_errors.md)             |
+|   16   |            [Fechas y horas en Python](./16_Day_Python_date_time/16_python_datetime.md)            |
+|   17   |             [Manejo de excepciones](./17_Day_Exception_handling/17_exception_handling.md)             |
+|   18   |           [Expresiones regulares](./18_Day_Regular_expressions/18_regular_expressions.md)           |
+|   19   |                  [Manejo de archivos](./19_Day_File_handling/19_file_handling.md)                  |
+|   20   |         [Gestor de paquetes](./20_Day_Python_package_manager/20_python_package_manager.md)         |
+|   21   |            [Clases y objetos](./21_Day_Classes_and_objects/21_classes_and_objects.md)            |
+|   22   |                   [Web scraping](./22_Day_Web_scraping/22_web_scraping.md)                   |
+|   23   |            [Entornos virtuales](./23_Day_Virtual_environment/23_virtual_environment.md)            |
+|   24   |                       [Estadística](./24_Day_Statistics/24_statistics.md)                       |
+|   25   |                          [Pandas](./25_Day_Pandas/25_pandas.md)                          |
+|   26   |                   [Python en la web](./26_Day_Python_web/26_python_web.md)                    |
+|   27   |       [Python y MongoDB](./27_Day_Python_with_mongodb/27_python_with_mongodb.md)        |
+|   28   |                              [API](./28_Day_API/28_API.md)                               |
+|   29   |                   [Construir API](./29_Day_Building_API/29_building_API.md)                   |
+|   30   |                      [Conclusiones](./30_Day_Conclusions/30_conclusions.md)                      |
 
-🧡🧡🧡 FELIZ CODIGO 🧡🧡🧡
+🧡🧡🧡 Feliz codificación 🧡🧡🧡
 
 <div>
-<small>Support the <strong>author</strong> to create more educational materials</small> <br />  
-<a href = "https://www.paypal.me/asabeneh"><img src='./../images/paypal_lg.png' alt='Paypal Logo' style="width:10%"/></a>
+<small>Ayuda al <strong>autor</strong> a crear más material educativo</small> <br />  
+<a href="https://www.paypal.me/asabeneh"><img src='.././images/paypal_lg.png' alt='Paypal Logo' style="width:10%"/></a>
 </div>
 
 <div align="center">
@@ -49,251 +49,250 @@
   <img alt="Twitter Follow" src="https://img.shields.io/twitter/follow/asabeneh?style=social">
   </a>
 
-  <sub>Author:
-  <a href="https://www.linkedin.com/in/asabeneh/" target="_blank">Asabeneh Yetayeh</a><br>
-  <small> Second Edition: July, 2021</small>
-  </sub>
+<sub>Autor:
+<a href="https://www.linkedin.com/in/asabeneh/" target="_blank">Asabeneh Yetayeh</a><br>
+<small> Segunda edición: julio de 2021</small>
+</sub>
+
 </div>
 
-[Dia 2 >>](./02_Day_Variables_builtin_functions/02_variables_builtin_functions.md)
+[Ir al Día 2 >>](./02_Day_Variables_builtin_functions/02_variables_builtin_functions.md)
 
-![30DaysOfPython](./../images/30DaysOfPython_banner3@2x.png)
+![30DaysOfPython](../images/30DaysOfPython_banner3@2x.png)
 
-- [🐍 30 Days Of Python](#-30-days-of-python)
-- [📘 Day 1](#-day-1)
-  - [Welcome](#welcome)
-  - [Introduction](#introduction)
-  - [Why Python ?](#why-python-)
-  - [Environment Setup](#environment-setup)
-    - [Installing Python](#installing-python)
+- [🐍 30 Días de Python](#-30-días-de-python)
+- [📘 Día 1](#-día-1)
+  - [¡Bienvenido!](#¡bienvenido!)
+  - [Introducción](#introducción)
+  - [¿Por qué elegir Python?](#¿por-qué-elegir-python?)
+  - [Configuración del entorno](#configuración-del-entorno)
+    - [Instalar Python](#instalar-python)
     - [Python Shell](#python-shell)
-    - [Installing Visual Studio Code](#installing-visual-studio-code)
-      - [How to use visual studio code](#how-to-use-visual-studio-code)
-  - [Basic Python](#basic-python)
-    - [Python Syntax](#python-syntax)
-    - [Python Indentation](#python-indentation)
-    - [Comments](#comments)
-    - [Data types](#data-types)
-      - [Number](#number)
-      - [String](#string)
-      - [Booleans](#booleans)
-      - [List](#list)
-      - [Dictionary](#dictionary)
-      - [Tuple](#tuple)
-      - [Set](#set)
-    - [Checking Data types](#checking-data-types)
-    - [Python File](#python-file)
-  - [💻 Exercises - Day 1](#-exercises---day-1)
-    - [Exercise: Level 1](#exercise-level-1)
-    - [Exercise: Level 2](#exercise-level-2)
-    - [Exercise: Level 3](#exercise-level-3)
+    - [Instalar Visual Studio Code](#instalar-visual-studio-code)
+      - [Cómo usar Visual Studio Code](#cómo-usar-visual-studio-code)
+  - [Fundamentos de Python](#fundamentos-de-python)
+    - [Sintaxis de Python](#sintaxis-de-python)
+    - [Indentación en Python](#indentación-en-python)
+    - [Comentarios](#comentarios)
+- [Ejemplo: comentario de una sola línea](#ejemplo-comentario-de-una-sola-línea)
+- [Ejemplo: comentario multilínea (docstring)](#ejemplo-comentario-multilínea-docstring)
+    - [Tipos de datos](#tipos-de-datos)
+      - [Números](#números)
+      - [Cadenas](#cadenas)
+      - [Booleanos](#booleanos)
+      - [Listas](#listas)
+      - [Diccionarios](#diccionarios)
+      - [Tuplas](#tuplas)
+      - [Conjuntos](#conjuntos)
+    - [Comprobar tipos de datos](#comprobar-tipos-de-datos)
+    - [Archivos Python](#archivos-python)
+  - [💻 Ejercicios - Día 1](#-ejercicios---día-1)
+    - [Ejercicios: Nivel 1](#ejercicios-nivel-1)
+    - [Ejercicios: Nivel 2](#ejercicios-nivel-2)
+    - [Ejercicios: Nivel 3](#ejercicios-nivel-3)
 
-# 📘 Day 1
+# 📘 Día 1
 
-## Welcome
+## ¡Bienvenido!
 
-**Congratulations** for deciding to participate in a _30 days of Python_ programming challenge . In this challenge you will learn everything you need to be a python programmer and the whole concept of programming. In the end of the challenge you will get a _30DaysOfPython_ programming challenge certificate.
+**Felicidades** por decidir participar en el desafío de programación _30 Días de Python_. En este reto aprenderás todo lo necesario para convertirte en programador Python y la mayoría de los conceptos de programación. Al finalizar el reto recibirás un certificado del desafío _30DaysOfPython_.
 
-If you would like to actively engage in the challenge, you may join the [30DaysOfPython challenge](https://t.me/ThirtyDaysOfPython) telegram group.  
+Si quieres participar activamente, únete al grupo de Telegram [30DaysOfPython challenge](https://t.me/ThirtyDaysOfPython).
 
-## Introduction
+## Introducción
 
-Python is a high-level programming language for general-purpose programming. It is an open source, interpreted, objected-oriented programming language. Python was created by a Dutch programmer, Guido van Rossum. The name of Python programming language was derived from a British sketch comedy series, _Monty Python's Flying Circus_.  The first version was released on February 20, 1991. This 30 days of Python challenge will help you learn the latest version of Python, Python 3 step by step. The topics are broken down into 30 days, where each day contains several topics with easy-to-understand explanations, real-world examples, many hands on exercises and projects.
+Python es un lenguaje de programación de alto nivel, de propósito general. Es un lenguaje de código abierto, interpretado y orientado a objetos. Python fue creado por el programador holandés Guido van Rossum. El nombre del lenguaje proviene del show cómico británico _Monty Python's Flying Circus_. La primera versión se lanzó el 20 de febrero de 1991. Este desafío de 30 días te ayudará a aprender progresivamente la versión más reciente de Python, Python 3. Cada día cubre un tema diferente con explicaciones claras, ejemplos del mundo real, y muchos ejercicios y proyectos prácticos.
 
-This challenge is designed for beginners and professionals who want to learn python programming language. It may take 30 to 100 days to complete the challenge, people who actively participate on the telegram group have a high probability of completing the challenge.
+El reto es adecuado para principiantes y profesionales que quieran aprender Python. Completar el reto puede tomar de 30 a 100 días; los miembros activos del grupo de Telegram tienen más probabilidades de terminarlo.
 
-This challenge is easy to read, written in conversational English, engaging, motivating and at the same time, it is very demanding. You need to allocate much time to finish this challenge. If you are a visual learner, you may get the video lesson on <a href="https://www.youtube.com/channel/UC7PNRuno1rzYPb1xLa4yktw"> Washera</a> YouTube channel. You may start from [Python for Absolute Beginners video](https://youtu.be/OCCWZheOesI). Subscribe the channel, comment and ask questions on YouTube vidoes and be proactive, the author will eventually notice you.
+Este reto fue escrito inicialmente en inglés sencillo, y luego traducido al chino. El reto es motivador, accesible y desafiante. Requiere dedicación para completarlo. Si aprendes mejor con vídeos, visita el canal Washera en YouTube: <a href="https://www.youtube.com/channel/UC7PNRuno1rzYPb1xLa4yktw">
+Washera YouTube channel</a>. Puedes empezar por el video [Python for absolute beginners](https://youtu.be/OCCWZheOesI). Suscríbete, deja tus preguntas en los comentarios y sé proactivo; el autor te podrá notar.
 
-The author likes to hear your opinion about the challenge, share the author by expressing your thoughts about the 30DaysOfPython challenge. You can leave your testimonial on this [link](https://testimonial-vdzd.onrender.com/)
+El autor aprecia tus comentarios, que compartas el contenido y la retroalimentación sobre el reto 30DaysOfPython. Puedes dejar feedback aquí: [link](https://www.asabeneh.com/testimonials)
 
-## Why Python ?
+## ¿Por qué elegir Python?
 
-It is a programming language which is very close to human language and because of that it is easy to learn and use.
-Python is used by various industries and companies (including Google). It has been used to develop web applications, desktop applications, system adminstration, and machine learning libraries. Python is highly embraced language in the data science and machine learning community. I hope this is enough to convince you to start learning Python. Python is eating the world and you are killing it before it eats you.
+Python es un lenguaje con sintaxis cercana al lenguaje humano, sencillo y fácil de aprender y usar.
+Python es usado en muchas industrias y empresas (incluido Google). Se usa para desarrollar aplicaciones web, de escritorio, administración de sistemas y librerías de aprendizaje automático. Python está ampliamente adoptado en la comunidad de ciencia de datos y machine learning. Si esto no te convence, ¡es hora de empezar!
 
-## Environment Setup
+## Configuración del entorno
 
-### Installing Python
+### Instalar Python
 
-To run a python script you need to install python. Let's [download](https://www.python.org/) python.
-If your are a windows user. Click the button encircled in red.
+Para ejecutar scripts escritos en Python necesitas instalar Python. Visita la página de descargas de Python: [https://www.python.org/](https://www.python.org/).
 
-[![installing on Windows](./images/installing_on_windows.png)](https://www.python.org/)
+Si usas Windows haz clic en el botón marcado en la imagen.
 
-If you are a macOS user. Click the button encircled in red.
+[![Instalar en Windows](../images/installing_on_windows.png)](https://www.python.org/)
 
-[![installing on Windows](./images/installing_on_macOS.png)](https://www.python.org/)
+Si usas macOS haz clic en el botón marcado en la imagen.
 
-To check if python is installed write the following command on your device terminal.
+[![Instalar en macOS](../images/installing_on_macOS.png)](https://www.python.org/)
+
+Para comprobar si Python está instalado, abre la terminal y ejecuta:
 
 ```shell
 python --version
 ```
 
-![Python Version](./images/python_versio.png)
+![Versión de Python](../images/python_versio.png)
 
-As you can see from the terminal, I am using _Python 3.7.5_ version at the moment. Your version of Python might be different from mine by but it should be 3.6 or above. If you mange to see the python version, well done. Python has been installed on your machine. Continue to the next section.
+En mi terminal aparece Python 3.7.5. Tu versión puede variar, pero debe ser 3.6 o superior. Si ves la versión, Python está instalado. Continúa al siguiente apartado.
 
 ### Python Shell
 
-Python is an interpreted scripting language, so it does not need to be compiled. It means it executes the code line by line. Python comes with a _Python Shell (Python Interactive Shell)_. It is used to execute a single python command and get the result.
+Python es un lenguaje interpretado, no necesita compilación. Se ejecuta línea por línea. Python incluye el Python Shell (intérprete interactivo), también llamado REPL (Read Eval Print Loop). Se usa para ejecutar comandos Python individuales y ver resultados al instante.
 
-Python Shell waits for the Python code from the user. When you enter the code, it interprets the code and shows the result in the next line.
-Open your terminal or command prompt(cmd) and write:
+El Python Shell espera código Python. Al escribir código lo interpreta y muestra el resultado.
+Abre la terminal o el símbolo del sistema (cmd) y escribe:
 
 ```shell
 python
 ```
 
-![Python Scripting Shell](./images/opening_python_shell.png)
+![Python Scripting Shell](../images/opening_python_shell.png)
 
-The Python interactive shell is opened and it is waiting for you to write Python code(Python script). You will write your Python script next to this symbol >>> and then click Enter.
-Let us write our very first script on the Python scripting shell.
+El intérprete interactivo de Python estará abierto y mostrará el prompt >>> para que escribas comandos Python. Escribe tu primer script y pulsa Enter.
+Veamos un ejemplo en el Shell interactivo.
 
-![Python script on Python shell](./images/adding_on_python_shell.png)
+![Script Python en el shell](../images/adding_on_python_shell.png)
 
-Well done, you wrote your first Python script on Python interactive shell. How do we close the Python interactive shell ?
-To close the shell, next to this symbol >> write **exit()** command and press Enter.
+Genial: escribiste tu primer script en el Shell interactivo. ¿Cómo salir del Shell?
+Para salir escribe **exit()** y pulsa Enter.
 
-![Exit from python shell](./images/exit_from_shell.png)
+![Salir del shell de Python](../images/exit_from_shell.png)
 
-Now, you know how to open the Python interactive shell and how to exit from it.
+Ahora sabes cómo abrir y cerrar el intérprete interactivo.
 
-Python will give you results if you write scripts that Python understands, if not it returns errors. Let's make a deliberate mistake and see what Python will return.
+Si escribes código inválido, Python mostrará un error. Probemos un error intencional:
 
-![Invalid Syntax Error](./images/invalid_syntax_error.png)
+![Error de sintaxis inválida](../images/invalid_syntax_error.png)
 
-As you can see from the returned error, Python is so clever that it knows the mistake we made and which was _Syntax Error: invalid syntax_. Using x as multiplication in Python is a syntax error because (x) is not a valid syntax in Python. Instead of (**x**) we use asterisk (*) for multiplication. The returned error clearly shows what to fix.
+El error indica Syntax Error: Invalid Syntax. Usar x para multiplicar no es válido en Python; el operador correcto es el asterisco (*). El error señala exactamente lo que hay que corregir.
 
-The process of identifying and removing errors from a program is called _debugging_. Let us debug it by putting * in place of **x**.
+El proceso de encontrar y corregir errores se llama depuración (debugging). Reemplazamos x por * y volvemos a ejecutar:
 
-![Fixing Syntax Error](./images/fixing_syntax_error.png)
+![Corrigiendo Error de sintaxis](../images/fixing_syntax_error.png)
 
-Our bug was fixed, the code ran and we got a result we were expecting. As a programmer you will see such kind of errors on daily basis. It is good to know how to debug. To be good at debugging you should understand what kind of errors you are facing. Some of the Python errors you may encounter are _SyntaxError_, _IndexError_, _NameError_, _ModuleNotFoundError_, _KeyError_, _ImportError_, _AttributeError_, _TypeError_, _ValueError_, _ZeroDivisionError_ etc. We will see more about different Python **_error types_** in later sections.
+El error se corrige y el código produce el resultado esperado. Verás errores así a diario; aprender a depurar es esencial. Para depurar bien debes reconocer los tipos de errores: SyntaxError, IndexError, NameError, ModuleNotFoundError, KeyError, ImportError, AttributeError, TypeError, ValueError, ZeroDivisionError, etc. Los explicaremos más adelante.
 
-Let us practice more how to use Python interactive shell. Go to your terminal or command prompt and write the word **python**.
+Practiquemos más en el Python Shell. Abre la terminal y escribe python.
 
-![Python Scripting Shell](./images/opening_python_shell.png)
+![Python Scripting Shell](../images/opening_python_shell.png)
 
-The Python interactive shell is opened. Let us do some basic mathematical operations (addition, subtraction, multiplication, division, modulus,  exponential).
+Con el Shell abierto hagamos operaciones matemáticas básicas: suma, resta, multiplicación, división, módulo y potencia.
 
-Let us do some maths first before we write any Python code:
+Antes de programar, hagamos algunos cálculos:
 
-- 2 + 3 is 5
-- 3 - 2 is 1
-- 3 \* 2 is 6
-- 3 / 2 is 1.5
-- 3 ** 2 is the same as 3 * 3
+- 2 + 3 = 5
+- 3 - 2 = 1
+- 3 * 2 = 6
+- 3 / 2 = 1.5
+- 3 ** 2 = 9
 
-In python we have the following additional operations:
+En Python también tenemos:
 
-- 3 % 2 = 1 => which means finding the remainder
-- 3 // 2 = 1 => which means removing the remainder
+- 3 % 2 = 1 => resto de la división
+- 3 // 2 = 1 => división entera (sin resto)
 
-Let us change the above mathematical expressions to Python code. The Python shell has been opened and let us write a comment at the very beginning of the shell.
+Conviértelo a código Python en el Shell. Primero escribe un comentario.
 
-A _comment_ is a part of the code which is not executed by python. So we can leave some text in our code to make our code more readable. Python does not run the comment part. A comment in python starts with hash(#) symbol.
-This is how you write a comment in python
+Un comentario es texto ignorado por Python. Sirve para documentar y mejorar la legibilidad. En Python los comentarios empiezan con #.
+Así se escribe un comentario en Python:
 
-```shell
- # comment starts with hash
- # this is a python comment, because it starts with a (#) symbol
+```python
+# Los comentarios comienzan con una almohadilla
+# Este es un comentario en Python porque empieza con (#)
 ```
 
-![Maths on python shell](./images/maths_on_python_shell.png)
+![Operaciones en el shell de Python](../images/maths_on_python_shell.png)
 
-Before we move on to the next section, let us practice more on the Python interactive shell. Close the opened shell by writing _exit()_ on the shell and open it again and let us practice how to write text on the Python shell.
+Antes de continuar, practica más: cierra el Shell con _exit()_ y vuelve a abrirlo; escribe texto en el Shell:
 
-![Writing String on python shell](./images/writing_string_on_shell.png)
+![Escribir cadena en el shell de Python](../images/writing_string_on_shell.png)
 
-### Installing Visual Studio Code
+### Instalar Visual Studio Code
 
-The Python interactive shell is good to try and test small script codes but it will not be for a big project. In real work environment, developers use different code editors to write codes. In this 30 days of Python programming challenge we will use visual studio code. Visual studio code is a very popular open source text editor. I am a fan of vscode and I would recommend to [download](https://code.visualstudio.com/) visual studio code, but if you are in favor of other editors, feel free to follow with what you have.
+El Python Shell está bien para probar fragmentos, pero para proyectos más grandes se usan editores de código. En este reto usaremos Visual Studio Code. VS Code es un editor de texto de código abierto muy popular. Recomiendo instalar Visual Studio Code, aunque puedes usar otro editor si lo prefieres.
 
-[![Visual Studio Code](./images/vscode.png)](https://code.visualstudio.com/)
+[![Visual Studio Code](../images/vscode.png)](https://code.visualstudio.com/)
 
-If you installed visual studio code, let us see how to use it.
-If you prefer a video, you can follow this Visual Studio Code for Python [Video tutorial](https://www.youtube.com/watch?v=bn7Cx4z-vSo)
+Si ya tienes Visual Studio Code, veamos cómo usarlo.
+Si prefieres vídeos, mira el tutorial de instalación y configuración de VS Code para Python: https://www.youtube.com/watch?v=bn7Cx4z-vSo
 
-#### How to use visual studio code
+#### Cómo usar Visual Studio Code
 
-Open the visual studio code by double clicking the visual studio icon. When you open it you will get this kind of interface. Try to interact with the labeled icons.
+Abre Visual Studio Code haciendo doble clic en su icono. Aparecerá la interfaz. Interactúa con los iconos marcados en la imagen.
 
-![Visual studio Code](./images/vscode_ui.png)
+![Visual Studio Code](../images/vscode_ui.png)
 
-Create a folder named 30DaysOfPython on your desktop. Then open it using visual studio code.
+Crea en el escritorio una carpeta llamada 30DaysOfPython. Ábrela con Visual Studio Code.
 
-![Opening Project on Visual studio](./images/how_to_open_project_on_vscode.png)
+![Abrir proyecto en Visual Studio](../images/how_to_open_project_on_vscode.png)
 
-![Opening a project](./images/opening_project.png)
+![Abrir un proyecto](../images/opening_project.png)
 
-After opening it you will see shortcuts for creating files and folders inside of 30DaysOfPython project's directory. As you can see below, I have created the very first file, helloworld.py. You can do the same.
+Dentro del proyecto verás accesos para crear archivos y carpetas. Yo creé el primer archivo helloworld.py; tú puedes hacer lo mismo.
 
-![Creating a python file](./images/helloworld.png)
+![Crear archivo Python](../images/helloworld.png)
 
-After a long day of coding, you want to close your code editor, right? This is how you will close the opened project.
+Cuando termines de programar puedes cerrar el proyecto desde el editor:
 
-![Closing project](./images/closing_opened_project.png)
+![Cerrar proyecto abierto](../images/closing_opened_project.png)
 
-Congratulations, you have finished setting up the development environment. Let us start coding.
+¡Enhorabuena! El entorno está listo. ¡Manos a la obra!
 
-## Basic Python
+## Fundamentos de Python
 
-### Python Syntax
+### Sintaxis de Python
 
-A Python script can be written in Python interactive shell or in the code editor. A Python file has an extension .py.
+Los scripts Python se pueden escribir en el Shell interactivo o en un editor. Los archivos Python usan la extensión .py.
 
-### Python Indentation
+### Indentación en Python
 
-An indentation is a white space in a text. Indentation in many languages is used to increase code readability, however Python uses indentation to create block of codes. In other programming languages curly brackets are used to create blocks of codes instead of indentation. One of the common bugs when writing python code is wrong indentation.
+La indentación son espacios en blanco en el código. En muchos lenguajes se usa para mejorar legibilidad; en Python se usa para definir bloques de código. En otros lenguajes se usan llaves. Un error común en Python es el error de indentación.
 
-![Indentation Error](./images/indentation.png)
+![Error de indentación](../images/indentation.png)
 
-### Comments
+### Comentarios
 
-Comments are very important to make the code more readable and to leave remarks in our code. Python does not run comment parts of our code.
-Any text starting with hash(#) in Python is a comment.
+Los comentarios son importantes para la legibilidad. Python no ejecuta el texto dentro de comentarios.
+Cualquier texto que comience con # en Python es un comentario.
 
-**Example: Single Line Comment**
+# Ejemplo: comentario de una sola línea
 
 ```shell
-    # This is the first comment
-    # This is the second comment
-    # Python is eating the world
+# Este es el primer comentario
+# Este es el segundo comentario
+# Python se está apoderando del mundo
 ```
 
-**Example: Multiline Comment**
+# Ejemplo: comentario multilínea (docstring)
 
-Triple quote can be used for multiline comment if it is not assigned to a variable
+Se pueden usar comillas triples para comentarios multilínea si no se asignan a una variable.
 
 ```shell
-"""This is multiline comment
-multiline comment takes multiple lines.
-python is eating the world
+"""Este es un comentario multilínea
+Los comentarios multilínea ocupan varias líneas.
+Python se está apoderando del mundo
 """
 ```
 
-### Data types
+### Tipos de datos
 
-In Python there are several types of data types. Let us get started with the most common ones. Different data types will be covered in detail in other sections. For the time being, let us just go through the different data types and get familiar with them. You do not have to have a clear understanding now.
+Python tiene varios tipos de datos. Empecemos por los más comunes. Veremos otros tipos más en detalle en secciones posteriores. A continuación un resumen para familiarizarte.
 
-#### Number
+#### Números
 
-- Integer: Integer(negative, zero and positive) numbers
-    Example:
-    ... -3, -2, -1, 0, 1, 2, 3 ...
-- Float: Decimal number
-    Example
-    ... -3.5, -2.25, -1.0, 0.0, 1.1, 2.2, 3.5 ...
-- Complex
-    Example
-    1 + j, 2 + 4j
+- Enteros: ... -3, -2, -1, 0, 1, 2, 3 ...
+- Flotantes: ... -3.5, -2.25, -1.0, 0.0, 1.1, 2.2, 3.5 ...
+- Complejos: 1 + j, 2 + 4j
 
-#### String
+#### Cadenas
 
-A collection of one or more characters under a single or double quote. If a string is more than one sentence then we use a triple quote.
+Texto entre comillas simples o dobles; para multilínea se usan comillas triples.
 
-**Example:**
+**Ejemplos:**
 
 ```py
 'Asabeneh'
@@ -303,155 +302,153 @@ A collection of one or more characters under a single or double quote. If a stri
 'I hope you are enjoying the first day of 30DaysOfPython Challenge'
 ```
 
-#### Booleans
+#### Booleanos
 
-A boolean data type is either a True or False value. T and F should be always uppercase.
+True o False. Deben estar en mayúscula.
 
-**Example:**
+**Ejemplo:**
 
 ```python
-    True  #  Is the light on? If it is on, then the value is True
-    False # Is the light on? If it is off, then the value is False
+True  # ¿La luz está encendida? Si sí, el valor es True
+False # ¿La luz está encendida? Si no, el valor es False
 ```
 
-#### List
+#### Listas
 
-Python list is an ordered collection which allows to store different data type items. A list is similar to an array in JavaScript.
+Lista ordenada que puede contener distintos tipos, similar a un array en JavaScript.
 
-**Example:**
+**Ejemplos:**
 
 ```py
-[0, 1, 2, 3, 4, 5]  # all are the same data types - a list of numbers
-['Banana', 'Orange', 'Mango', 'Avocado'] # all the same data types - a list of strings (fruits)
-['Finland','Estonia', 'Sweden','Norway'] # all the same data types - a list of strings (countries)
-['Banana', 10, False, 9.81] # different data types in the list - string, integer, boolean and float
+[0, 1, 2, 3, 4, 5] # todos números
+['Banana', 'Orange', 'Mango', 'Avocado'] # todos cadenas
+['Finland','Estonia', 'Sweden','Norway'] # todos cadenas (países)
+['Banana', 10, False, 9.81] # mezcla de tipos
 ```
 
-#### Dictionary
+#### Diccionarios
 
-A Python dictionary object is an unordered collection of data in a key value pair format.
+Colección no ordenada de pares clave:valor.
 
-**Example:**
+**Ejemplo:**
 
 ```py
 {
 'first_name':'Asabeneh',
 'last_name':'Yetayeh',
-'country':'Finland', 
-'age':250, 
+'country':'Finland',
+'age':250,
 'is_married':True,
 'skills':['JS', 'React', 'Node', 'Python']
 }
 ```
 
-#### Tuple
+#### Tuplas
 
-A tuple is an ordered collection of different data types like list but tuples can not be modified once they are created. They are immutable.
+Colección ordenada e inmutable.
 
-**Example:**
+**Ejemplo:**
 
 ```py
-('Asabeneh', 'Pawel', 'Brook', 'Abraham', 'Lidiya') # Names
+('Asabeneh', 'Pawel', 'Brook', 'Abraham', 'Lidiya') # nombres
 ```
 
 ```py
-('Earth', 'Jupiter', 'Neptune', 'Mars', 'Venus', 'Saturn', 'Uranus', 'Mercury') # planets
+('Earth', 'Jupiter', 'Neptune', 'Mars', 'Venus', 'Saturn', 'Uranus', 'Mercury') # planetas
 ```
 
-#### Set
+#### Conjuntos
 
-A set is a collection of data types similar to list and tuple. Unlike list and tuple, set is not an ordered collection of items. Like in Mathematics, set in Python stores only unique items.
+Colección no ordenada que almacena elementos únicos (sin duplicados).
 
-In later sections, we will go in detail about each and every Python data type.
-
-**Example:**
+**Ejemplos:**
 
 ```py
 {2, 4, 3, 5}
-{3.14, 9.81, 2.7} # order is not important in set
+{3.14, 9.81, 2.7} # el orden en un set no importa
 ```
 
-### Checking Data types
+Detallaremos cada tipo de dato en secciones posteriores.
 
-To check the data type of certain data/variable we use the **type** function. In the following terminal you will see different python data types:
+### Comprobar tipos de datos
 
-![Checking Data types](./images/checking_data_types.png)
+Usa la función built-in **type** para comprobar el tipo de una variable. En la imagen puedes ver ejemplos:
 
-### Python File
+![Comprobando tipos de datos](../images/checking_data_types.png)
 
-First open your project folder, 30DaysOfPython. If you don't have this folder, create a folder name called 30DaysOfPython. Inside this folder, create a file called helloworld.py. Now, let's do what we did on python interactive shell using visual studio code.
+### Archivos Python
 
-The Python interactive shell was printing without using **print** but on visual studio code to see our result we should use a built in function _print(). The _print()_ built-in function takes one or more arguments as follows _print('arument1', 'argument2', 'argument3')_. See the examples below.
+Abre tu carpeta de proyecto 30DaysOfPython (créala si no existe). Dentro crea helloworld.py. Repite lo que hicimos en el Shell pero usando print() para ver resultados en consola desde un archivo.
 
-**Example:**
+En el intérprete se imprime sin print, pero en VS Code debes usar la función _print()_. Ejemplo de uso: _print('argumento1', 'argumento2')_.
 
-The file name is helloworld.py
+**Ejemplo:** archivo helloworld.py
 
 ```py
-# Day 1 - 30DaysOfPython Challenge
+# Día 1 - Desafío 30DaysOfPython
 
-print(2 + 3)             # addition(+)
-print(3 - 1)             # subtraction(-)
-print(2 * 3)             # multiplication(*)
-print(3 / 2)             # division(/)
-print(3 ** 2)            # exponential(**)
-print(3 % 2)             # modulus(%)
-print(3 // 2)            # Floor division operator(//)
+print(2 + 3)             # Suma (+)
+print(3 - 1)             # Resta (-)
+print(2 * 3)             # Multiplicación (*)
+print(3 / 2)             # División (/)
+print(3 ** 2)            # Potencia (**)
+print(3 % 2)             # Módulo (%)
+print(3 // 2)            # División entera (//)
 
-# Checking data types
-print(type(10))          # Int
-print(type(3.14))        # Float
-print(type(1 + 3j))      # Complex number
-print(type('Asabeneh'))  # String
-print(type([1, 2, 3]))   # List
-print(type({'name':'Asabeneh'})) # Dictionary
-print(type({9.8, 3.14, 2.7}))    # Set
-print(type((9.8, 3.14, 2.7)))    # Tuple
+# Comprobar tipos de datos
+print(type(10))          # entero
+print(type(3.14))        # flotante
+print(type(1 + 3j))      # complejo
+print(type('Asabeneh'))  # cadena
+print(type([1, 2, 3]))   # lista
+print(type({'name':'Asabeneh'})) # diccionario
+print(type({9.8, 3.14, 2.7}))    # conjunto
+print(type((9.8, 3.14, 2.7)))    # tupla
 ```
 
-To run the python file check the image below. You can run the python file either by running the green button on Visual Studio Code or by typing _python helloworld.py_ in the terminal .
+Para ejecutar el archivo: en VS Code usa el botón verde o en la terminal escribe _python helloworld.py_.
 
-![Running python script](./images/running_python_script.png)
+![Ejecutando script Python](../images/running_python_script.png)
 
-🌕  You are amazing. You have just completed day 1 challenge and you are on your way to greatness. Now do some exercises for your brain and muscles.
+Genial. Completaste el Día 1. Practica con los ejercicios siguientes.
 
-## 💻 Exercises - Day 1
+## 💻 Ejercicios - Día 1
 
-### Exercise: Level 1
+### Ejercicios: Nivel 1
 
-1. Check the python version you are using
-2. Open the python interactive shell and do the following operations. The operands are 3 and 4.
-   - addition(+)
-   - subtraction(-)
-   - multiplication(\*)
-   - modulus(%)
-   - division(/)
-   - exponential(\*\*)
-   - floor division operator(//)
-3. Write strings on the python interactive shell. The strings are the following:
-   - Your name
-   - Your family name
-   - Your country
-   - I am enjoying 30 days of python
-4. Check the data types of the following data:
+1. Comprueba la versión de Python que usas.
+2. Abre el Python Shell e intenta con los operandos 3 y 4:
+   - Suma (+)
+   - Resta (-)
+   - Multiplicación (*)
+   - Módulo (%)
+   - División (/)
+   - Potencia (**)
+   - División entera (//)
+3. En el Python Shell escribe las siguientes cadenas:
+   - Tu nombre
+   - Tu apellido
+   - Tu país
+   - Estoy disfrutando 30 días de Python
+4. Comprueba el tipo de los siguientes datos:
    - 10
    - 9.8
    - 3.14
    - 4 - 4j
    - ['Asabeneh', 'Python', 'Finland']
-   - Your name
-   - Your family name
-   - Your country
+   - Tu nombre
+   - Tu apellido
+   - Tu país
 
-### Exercise: Level 2
+### Ejercicios: Nivel 2
 
-1. Create a folder named day_1 inside 30DaysOfPython folder. Inside day_1 folder, create a python file helloworld.py and repeat questions 1, 2, 3 and 4. Remember to use _print()_ when you are working on a python file. Navigate to the directory where you have saved your file, and run it.
+1. Crea en la carpeta 30DaysOfPython una carpeta llamada day_1. Dentro crea helloworld.py y repite las preguntas 1, 2, 3 y 4. Recuerda usar _print()_ en archivos. Navega a la carpeta donde guardaste el archivo y ejecútalo.
 
-### Exercise: Level 3
+### Ejercicios: Nivel 3
 
-1. Write an example for different Python data types such as Number(Integer, Float, Complex), String, Boolean, List, Tuple, Set and Dictionary.
-2. Find an [Euclidian distance](https://en.wikipedia.org/wiki/Euclidean_distance#:~:text=In%20mathematics%2C%20the%20Euclidean%20distance,being%20called%20the%20Pythagorean%20distance.) between (2, 3) and (10, 8)
+1. Escribe ejemplos para distintos tipos de datos en Python: números (enteros, flotantes, complejos), cadenas, booleanos, listas, tuplas, conjuntos y diccionarios.
+2. Calcula la distancia euclídea entre (2, 3) y (10, 8): [Euclidean distance](https://en.wikipedia.org/wiki/Euclidean_distance#:~:text=In%20mathematics%2C%20the%20Euclidean%20distance,being%20called%20the%20Pythagorean%20distance).
 
-🎉 CONGRATULATIONS ! 🎉
+🎉 ¡Felicidades! 🎉
 
-[Day 2 >>](./02_Day_Variables_builtin_functions/02_variables_builtin_functions.md)
+[Ir al Día 2 >>](./02_Day_Variables_builtin_functions/02_variables_builtin_functions.md)
