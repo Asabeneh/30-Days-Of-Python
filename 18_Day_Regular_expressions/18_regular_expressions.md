@@ -100,7 +100,7 @@ match = re.match('I like to teach', txt, re.I)
 print(match)  # None
 ```
 
-The string does not string with *I like to teach*, therefore there was no match and the match method returned None.
+The string does not start with *I like to teach*, therefore there was no match and the match method returned None.
 
 #### Search
 
