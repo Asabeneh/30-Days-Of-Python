@@ -284,8 +284,11 @@ It is possible to skip characters while slicing by passing step argument to slic
 
 ```py
 language = 'Python'
-pto = language[0:6:2] #
+pto = language[0:6:2] # slicing starts at index 0 (inclusive) and ends at index 6 (exclusive) with increment of 2
 print(pto) # Pto
+# Starts at `0` -> Grabs **P**
+# Jumps +2 to `2` -> Grabs **t**
+# Jumps +2 to `4` -> Grabs **o**
 ```
 
 ### String Methods
