@@ -70,11 +70,11 @@ print(squares)                    # [0, 1, 4, 9, 16, 25, 36, 49, 64, 81, 100]
 
 # It is also possible to make a list of tuples
 numbers = [(i, i * i) for i in range(11)]
-print(numbers)                             # [(0, 0), (1, 1), (2, 4), (3, 9), (4, 16), (5, 25)]
+print(numbers)                  # [(0, 0), (1, 1), (2, 4), (3, 9), (4, 16), (5, 25),(6, 36),(7, 49),(8, 64),(9,81),(10, 100)]
 
 ```
 
-**Example:2**
+**Example:3**
 
 List comprehension can be combined with if expression
 
@@ -90,12 +90,19 @@ print(odd_numbers)                      # [1, 3, 5, 7, 9, 11, 13, 15, 17, 19]
 # Filter numbers: let's filter out positive even numbers from the list below
 numbers = [-8, -7, -3, -1, 0, 1, 3, 4, 5, 7, 6, 8, 10]
 positive_even_numbers = [i for i in numbers if i % 2 == 0 and i > 0]
-print(positive_even_numbers)                    # [2, 4, 6, 8, 10, 12, 14, 16, 18, 20]
+print(positive_even_numbers)                    # [4, 6, 8, 10]
 
 # Flattening a two dimensional array
 list_of_lists = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
 flattened_list = [ number for row in list_of_lists for number in row]
 print(flattened_list)    # [1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+# List comprehension with if...else
+# Let's say we want to label numbers as 'even' or 'odd'
+numbers = [0, 1, 2, 3, 4]
+labels = ['even' if i % 2 == 0 else 'odd' for i in numbers]
+print(labels)  # ['even', 'odd', 'even', 'odd', 'even']
+
 ```
 
 ## Lambda Function
@@ -159,7 +166,7 @@ print(two_power_of_five)  # 32
    ```py
    numbers = [-4, -3, -2, -1, 0, 2, 4, 6]
    ```
-2. Flatten the following list of lists of lists to a one dimensional list :
+2. Flatten the following list of lists to a one dimensional list :
 
    ```py
    list_of_lists =[[1, 2, 3], [4, 5, 6], [7, 8, 9]]
@@ -187,6 +194,7 @@ print(two_power_of_five)  # 32
    countries = [[('Finland', 'Helsinki')], [('Sweden', 'Stockholm')], [('Norway', 'Oslo')]]
    output:
    [['FINLAND','FIN', 'HELSINKI'], ['SWEDEN', 'SWE', 'STOCKHOLM'], ['NORWAY', 'NOR', 'OSLO']]
+   (Hint: You will need to slice the country name to get the 3-letter country code).
    ```
 5. Change the following list to a list of dictionaries:
    ```py
@@ -200,7 +208,7 @@ print(two_power_of_five)  # 32
    ```py
    names = [[('Asabeneh', 'Yetayeh')], [('David', 'Smith')], [('Donald', 'Trump')], [('Bill', 'Gates')]]
    output
-   ['Asabeneh Yetaeyeh', 'David Smith', 'Donald Trump', 'Bill Gates']
+   ['Asabeneh Yetayeh', 'David Smith', 'Donald Trump', 'Bill Gates']
    ```
 7. Write a lambda function which can solve a slope or y-intercept of linear functions.
 
