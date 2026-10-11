@@ -8,7 +8,7 @@ vegetables = ['Tomato', 'Potato', 'Cabbage',
 animal_products = ['milk', 'meat', 'butter',
                    'yoghurt']             # list of animal products
 web_techs = ['HTML', 'CSS', 'JS', 'React', 'Redux',
-             'Node', 'MongDB']  # list of web technologies
+             'Node', 'MongoDB']  # list of web technologies
 countries = ['Finland', 'Estonia', 'Denmark', 'Sweden', 'Norway']
 
 # Print the lists and it length
@@ -164,13 +164,14 @@ fruits = ['banana', 'orange', 'mango', 'lemon']
 print(fruits.index('orange'))   # 1
 ages = [22, 19, 24, 25, 26, 24, 25, 24]
 print(ages.index(24))
+
 # Reverse
 fruits = ['banana', 'orange', 'mango', 'lemon']
 fruits.reverse()
-print(fruits.reverse())
+print(fruits)
 ages = [22, 19, 24, 25, 26, 24, 25, 24]
 ages.reverse()
-print(ages.reverse())
+print(ages)
 
 # sort
 fruits = ['banana', 'orange', 'mango', 'lemon']
