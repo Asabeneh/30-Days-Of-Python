@@ -275,7 +275,7 @@ Intersection returns a set of items which are in both the sets or using _&_ symb
 st1 = {'item1', 'item2', 'item3', 'item4'}
 st2 = {'item3', 'item2'}
 st1.intersection(st2) # {'item3', 'item2'}
-# or using thia : st1 & st2
+# or using this : st1 & st2
 ```
 
 **Example:**
