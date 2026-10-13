@@ -402,11 +402,11 @@ Generally avoid this unless required as it makes it harder to understand what th
 
 ```py
 #You can pass functions around as parameters
-def square_number (n):
+def self_power (n):
     return n ** n
 def do_something(f, x):
     return f(x)
-print(do_something(square_number, 3)) # 27
+print(do_something(self_power, 3)) # 27
 ```
 
 🌕 You achieved quite a lot so far.  Keep going! You have just completed day 11 challenges and you are 11 steps a head in to your way to greatness. Now do some exercises for your brain and muscles.
