@@ -69,7 +69,7 @@ To find a pattern we use different set of *re* character sets that allows to sea
 
 ```py
 # syntax
-re.match(substring, string, re.I)
+re.search(substring, string, re.I)
 # substring is a string or a pattern, string is the text we look for a pattern , re.I is case ignore
 ```
 
