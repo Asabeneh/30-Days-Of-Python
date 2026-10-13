@@ -112,11 +112,19 @@ challenge = 'thirty\tdays\tof\tpython'
 print(challenge.expandtabs())   # 'thirty  days    of      python'
 print(challenge.expandtabs(10))  # 'thirty    days      of        python'
 
-# find(): Returns the index of first occurrence of substring
+# find(): Returns the index of the first occurrence of a substring.
+#         Returns -1 if the substring is not found.
+
+# index(): Returns the index of the first occurrence of a substring.
+#          Raises a ValueError if the substring is not found.
 
 challenge = 'thirty days of python'
-print(challenge.find('y'))  # 5
-print(challenge.find('th'))  # 0
+
+print(challenge.find('y'))    # 5
+print(challenge.find('th'))   # 0
+
+print(challenge.index('y'))   # 5
+print(challenge.index('th'))  # 0
 
 # format()	formats string into nicer output
 first_name = 'Asabeneh'
@@ -132,11 +140,6 @@ pi = 3.14
 area = pi  # radius ## 2
 result = 'The area of circle with {} is {}'.format(str(radius), str(area))
 print(result)  # The area of circle with 10 is 314.0
-
-# index(): Returns the index of substring
-challenge = 'thirty days of python'
-print(challenge.find('y'))  # 5
-print(challenge.find('th'))  # 0
 
 # isalnum(): Checks alphanumeric character
 
