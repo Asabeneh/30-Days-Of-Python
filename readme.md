@@ -315,7 +315,7 @@ In Python there are several types of data types. Let us get started with the mos
     ... -3.5, -2.25, -1.0, 0.0, 1.1, 2.2, 3.5 ...
 - Complex
     Example
-    1 + j, 2 + 4j
+    1 + 1j, 2 + 4j
 
 #### String
 
