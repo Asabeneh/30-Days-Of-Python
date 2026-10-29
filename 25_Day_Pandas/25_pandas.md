@@ -152,7 +152,7 @@ print(fruits)
     1    Orange
     2    Banana
     3    Mango
-    dtype: object
+    dtype: str
 ```
 
 ### Creating Pandas Series from a Dictionary
