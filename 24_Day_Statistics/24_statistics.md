@@ -1111,7 +1111,7 @@ plt.show()
 ## Linear algebra
 ### Dot product: product of two arrays
 f = np.array([1,2,3])
-g = np.array([4,5,3])
+g = np.array([4,5,6])
 ### 1*4+2*5 + 3*6
 np.dot(f, g)  # 23
 ```
