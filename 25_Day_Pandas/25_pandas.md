@@ -170,7 +170,7 @@ print(s)
     name       Asabeneh
     country     Finland
     city       Helsinki
-    dtype: object
+    dtype: str
 ```
 
 ### Creating a Constant Pandas Series
