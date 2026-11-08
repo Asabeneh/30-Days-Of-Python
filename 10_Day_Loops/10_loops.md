@@ -455,7 +455,15 @@ The sum of all numbers is 5050.
 
 1. Go to the data folder and use the [countries.py](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/data/countries.py) file. Loop through the countries and extract all the countries containing the word _land_.
 1. This is a fruit list, ['banana', 'orange', 'mango', 'lemon'] reverse the order using loop.
-1. Go to the data folder and use the [countries_data.py](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/data/countries-data.py) file.
+1. Use [countries_data.json](../data/countries_data.json). To load it as a list of dictionaries, run this from the repository root:
+
+   ```py
+   import json
+
+   with open('data/countries_data.json', encoding='utf-8') as file:
+       countries = json.load(file)
+   ```
+
    1. What are the total number of languages in the data
    2. Find the ten most spoken languages from the data
    3. Find the 10 most populated countries in the world
