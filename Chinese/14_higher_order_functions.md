@@ -182,7 +182,7 @@ def split_string_decorator(function):
 @uppercase_decorator     # 在此情况下，装饰器的顺序很重要 - .upper()函数不适用于列表
 def greeting():
     return 'Welcome to Python'
-print(greeting())   # WELCOME TO PYTHON
+print(greeting())   # ['WELCOME', 'TO', 'PYTHON']
 ```
 
 ### 在装饰器函数中接受参数
