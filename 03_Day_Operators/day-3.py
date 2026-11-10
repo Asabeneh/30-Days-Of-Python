@@ -105,6 +105,15 @@ print('False == False:', False == False)
 print('True and True: ', True and True)
 print('True or False:', True or False)
 
+# Comparison using equality (fixed syntax warnings for literal identity comparisons)
+print("1 == 1", 1 == 1)
+print("1 != 2", 1 != 2)
+print("A in Asabeneh", "A" in "Asabeneh")  # True - A found in the string
+print("B in Asabeneh", "B" in "Asabeneh")  # False - there is no uppercase B
+print("coding" in "coding for all")
+print("a in an:", "a" in "an")  # True
+print("4 == 2 ** 2:", 4 == 2**2)  # True
+
 # Another way comparison
 # True - because the data values are the same
 print('1 is 1', 1 is 1)
