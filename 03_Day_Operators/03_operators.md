@@ -25,6 +25,7 @@
     - [Comparison Operators](#comparison-operators)
     - [Logical Operators](#logical-operators)
   - [💻 Exercises - Day 3](#-exercises---day-3)
+    - [Added activity: Decimal discount with boundary validation](#added-activity-decimal-discount-with-boundary-validation)
 
 # 📘 Day 3
 
@@ -312,6 +313,12 @@ You have lived for 3153600000 seconds.
 4 1 4 16 64
 5 1 5 25 125
 ```
+
+### Added activity: Decimal discount with boundary validation
+
+This added activity applies arithmetic and comparison operators to a currency discount. For an amount of `100.00`, a `15%` discount returns `85.00`; `0%` leaves the amount unchanged. The percentage boundary is inclusive: `0` and `100` are accepted, while values below `0` or above `100` are rejected. Empty or invalid decimal inputs are rejected, and results are rounded to two decimal places.
+
+See the [applied lab README](applied-labs/r27-t012/README.md) and [example](applied-labs/r27-t012/example.py).
 
 🎉 CONGRATULATIONS ! 🎉
 
