@@ -478,8 +478,15 @@ To run the python file check the image below. You can run the python file either
 ### Exercise: Level 3
 
 1. Write an example for different Python data types such as Number(Integer, Float, Complex), String, Boolean, List, Tuple, Set and Dictionary.
-2. Find an [Euclidean distance](https://en.wikipedia.org/wiki/Euclidean_distance#:~:text=In%20mathematics%2C%20the%20Euclidean%20distance,being%20called%20the%20Pythagorean%20distance.) between (2, 3) and (10, 8)
+2. Find an [Euclidean distance](https://en.wikipedia.org/wiki/Euclidean_distance#:~:text=In%20mathematics%2C%20the%20Euclidean%20distance,being%20called%20the%20Pythagorean%20distance.) between (2, 3) and (10, 8)<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/f3d4d31c-a940-43c7-9301-b4d50886c29c" />
+
 
 🎉 CONGRATULATIONS ! 🎉
 
 [Day 2 >>](./02_Day_Variables_builtin_functions/02_variables_builtin_functions.md)
+
+## My First Contribution
+
+Hello! I am learning Python with the 30 Days of Python project.
+
+This is my first contribution to this repository.
