@@ -1,0 +1,13 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "r27-t011-text-statistics"
+version = "0.1.0"
+description = "A small text statistics example for the Python package manager lesson"
+requires-python = ">=3.9"
+dependencies = []
+
+[tool.setuptools]
+py-modules = ["example"]

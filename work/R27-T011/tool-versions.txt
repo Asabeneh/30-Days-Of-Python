@@ -1,0 +1,6 @@
+Python 3.14.6
+pip 26.1.2 from /Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/pip (python 3.14)
+
+Fresh virtual environment versions:
+Python 3.14.6
+pip 26.1.2 from /private/tmp/r27-t011-venv.1UFV0c/lib/python3.14/site-packages/pip (python 3.14)
