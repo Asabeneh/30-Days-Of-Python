@@ -1,0 +1,14 @@
+Check: python3 -m unittest discover -s 03_Day_Operators/applied-labs/r27-t012 -p "test_*.py"
+Python: Python 3.14.6
+Git: git version 2.55.0
+
+Inputs, expected results, and actual results:
+...
+----------------------------------------------------------------------
+Ran 3 tests in 0.000s
+
+OK
+amount=100.00, percentage=15: expected=85.00, actual=85.00
+amount=100.00, percentage=0: expected=100.00, actual=100.00
+amount=100.00, percentage=100: expected=0.00, actual=0.00
+amount=10.00, percentage=33.333: expected=6.67, actual=6.67
