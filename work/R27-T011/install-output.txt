@@ -1,0 +1,19 @@
+Processing ./20_Day_Python_package_manager/applied-labs/r27-t011
+  Installing build dependencies: started
+  Installing build dependencies: still running...
+  Installing build dependencies: finished with status 'done'
+  Getting requirements to build wheel: started
+  Getting requirements to build wheel: finished with status 'done'
+  Preparing metadata (pyproject.toml): started
+  Preparing metadata (pyproject.toml): finished with status 'done'
+Building wheels for collected packages: r27-t011-text-statistics
+  Building wheel for r27-t011-text-statistics (pyproject.toml): started
+  Building wheel for r27-t011-text-statistics (pyproject.toml): finished with status 'done'
+  Created wheel for r27-t011-text-statistics: filename=r27_t011_text_statistics-0.1.0-py3-none-any.whl size=1474 sha256=b9f2629c71a4c966833f5f7108971e768c234493763bbc0144e7572c0078c235
+  Stored in directory: /Users/omupadhyay/Library/Caches/pip/wheels/63/ee/8b/61384bce3f5887da006c48542d04a31e2beb55799b9b9a6807
+Successfully built r27-t011-text-statistics
+Installing collected packages: r27-t011-text-statistics
+Successfully installed r27-t011-text-statistics-0.1.0
+
+[notice] A new release of pip is available: 26.1.2 -> 26.3
+[notice] To update, run: /private/tmp/r27-t011-venv.1UFV0c/bin/python -m pip install --upgrade pip

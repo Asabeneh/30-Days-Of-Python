@@ -441,6 +441,14 @@ The **__init__**.py exposes specified resources from its modules to be imported 
 
 🌕 You are always progressing and you are a head of 20 steps to your way to greatness. Now do some exercises for your brain and muscles.
 
+### Added activity: package a text statistics function
+
+This is an added activity, not an original numbered exercise. Follow the
+[text statistics applied lab](applied-labs/r27-t011/README.md) to package a
+small function with a declared dependency set and test it in a clean virtual
+environment. Input: `"one two two"`. Expected result: 3 words and 2 distinct
+words.
+
 ## Exercises: Day 20
 
 1. Read this url and find the 10 most frequent words. romeo_and_juliet = 'http://www.gutenberg.org/files/1112/1112.txt'
