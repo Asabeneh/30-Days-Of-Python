@@ -28,7 +28,7 @@
 Pour commencer un projet, il est préférable d'avoir un environnement virtuel. Un environnement virtuel peut nous aider à créer un environnement isolé ou séparé. Cela nous aidera à éviter les conflits de dépendances entre projets. Si vous tapez pip freeze sur votre terminal, vous verrez tous les paquets installés sur votre ordinateur. Si nous utilisons virtualenv, nous n'accéderons qu'aux paquets spécifiques à ce projet. Ouvrez votre terminal et installez virtualenv.
 
 ```sh
-asabeneh@Asabeneh:~$ pip install virtualenv
+pip install virtualenv
 ```
 
 Dans le dossier 30DaysOfPython, créez un dossier flask_project.
@@ -37,19 +37,22 @@ Après avoir installé le paquet virtualenv, allez dans votre dossier de projet 
 
 Pour Mac/Linux :
 ```sh
-asabeneh@Asabeneh:~/Desktop/30DaysOfPython/flask_project$ virtualenv venv
+virtualenv venv
 
 ```
 
 Pour Windows :
 ```sh
-C:\Users\User\Documents\30DaysOfPython\flask_project>python -m venv venv
+python -m venv venv
 ```
 
 Je préfère appeler le nouveau projet venv, mais n'hésitez pas à le nommer différemment. Vérifions si le venv a été créé en utilisant la commande ls (ou dir pour l'invite de commande Windows).
 
 ```sh
-asabeneh@Asabeneh:~/Desktop/30DaysOfPython/flask_project$ ls
+ls
+```
+Sortir:
+```Output
 venv/
 ```
 
@@ -57,18 +60,18 @@ Activons l'environnement virtuel en tapant la commande suivante dans notre dossi
 
 Pour Mac/Linux :
 ```sh
-asabeneh@Asabeneh:~/Desktop/30DaysOfPython/flask_project$ source venv/bin/activate
+source venv/bin/activate
 ```
 L'activation de l'environnement virtuel sous Windows peut varier entre Windows Power Shell et git bash.
 
 Pour Windows Power Shell :
 ```sh
-C:\Users\User\Documents\30DaysOfPython\flask_project> venv\Scripts\activate
+venv\Scripts\activate
 ```
 
 Pour Windows Git bash :
 ```sh
-C:\Users\User\Documents\30DaysOfPython\flask_project> venv\Scripts\. activate
+venv\Scripts\. activate
 ```
 
 Après avoir écrit la commande d'activation, votre dossier de projet commencera par venv. Voir l'exemple ci-dessous.
@@ -82,13 +85,16 @@ Maintenant, vérifions les paquets disponibles dans ce projet en tapant pip free
 Nous allons réaliser un petit projet flask, alors installons le paquet flask dans ce projet.
 
 ```sh
-(venv) asabeneh@Asabeneh:~/Desktop/30DaysOfPython/flask_project$ pip install Flask
+pip install Flask
 ```
 
 Maintenant, tapons pip freeze pour voir la liste des paquets installés dans le projet :
 
 ```sh
-(venv) asabeneh@Asabeneh:~/Desktop/30DaysOfPython/flask_project$ pip freeze
+pip freeze
+```
+Sortir:
+```Output
 Click==7.0
 Flask==1.1.1
 itsdangerous==1.1.0
@@ -100,7 +106,7 @@ Werkzeug==0.16.0
 Quand vous avez terminé, vous devez désactiver l'environnement actif en utilisant _deactivate_.
 
 ```sh
-(venv) asabeneh@Asabeneh:~/Desktop/30DaysOfPython$ deactivate
+deactivate
 ```
 
 Les modules nécessaires pour travailler avec flask sont installés. Maintenant, votre dossier de projet est prêt pour un projet flask. Vous devez inclure le dossier venv dans votre fichier .gitignore pour ne pas le pousser sur GitHub.
