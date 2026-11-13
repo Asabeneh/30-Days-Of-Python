@@ -51,6 +51,7 @@ Je préfère appeler le nouveau projet venv, mais n'hésitez pas à le nommer di
 ```sh
 ls
 ```
+Sortir:
 ```Output
 venv/
 ```
@@ -92,6 +93,7 @@ Maintenant, tapons pip freeze pour voir la liste des paquets installés dans le 
 ```sh
 pip freeze
 ```
+Sortir:
 ```Output
 Click==7.0
 Flask==1.1.1
