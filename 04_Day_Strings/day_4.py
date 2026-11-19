@@ -30,7 +30,7 @@ print(full_name)  # Asabeneh Yetayeh
 print(len(first_name))  # 8
 print(len(last_name))   # 7
 print(len(first_name) > len(last_name))  # True
-print(len(full_name))  # 15
+print(len(full_name))  # 16
 
 # Unpacking characters
 language = 'Python'
@@ -155,7 +155,8 @@ print(challenge.isalnum())  # False
 # isalpha(): Checks if all characters are alphabets
 
 challenge = 'thirty days of python'
-print(challenge.isalpha())  # True
+print(challenge.isalpha()) #False
+
 num = '123'
 print(num.isalpha())      # False
 
