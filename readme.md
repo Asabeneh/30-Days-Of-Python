@@ -25,7 +25,7 @@
 | 21 |  [Classes and Objects](./21_Day_Classes_and_objects/21_classes_and_objects.md)|
 | 22 |  [Web Scraping](./22_Day_Web_scraping/22_web_scraping.md)|
 | 23 |  [Virtual Environment](./23_Day_Virtual_environment/23_virtual_environment.md)|
-| 24 |  [Statistics](./24_Day_Statistics/24_statistics.md)|
+| 24 |  [Statisics](./24_Day_Statistics/24_statistics.md)|
 | 25 |  [Pandas](./25_Day_Pandas/25_pandas.md)|
 | 26 |  [Python web](./26_Day_Python_web/26_python_web.md)|
 | 27 |  [Python with MongoDB](./27_Day_Python_with_mongodb/27_python_with_mongodb.md)|
