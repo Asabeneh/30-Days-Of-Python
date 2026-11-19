@@ -1052,7 +1052,7 @@ rand2
 
 ```python
 # Random integers between [0, 10) of shape 2,5
-rand_int = np.random.randint(0, 10, size=[5,3])
+rand_int = np.random.randint(0, 10, size=[2,5])
 rand_int
 ```
 
