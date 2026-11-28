@@ -117,7 +117,7 @@ except ZeroDivisionError:
 else:
     print('I usually run with the try block')
 finally:
-    print('I alway run.')
+    print('I always run.')
 ```
 
 ```sh
@@ -125,7 +125,7 @@ Enter your name:Asabeneh
 Year you born:1920
 You are Asabeneh. And your age is 99.
 I usually run with the try block
-I alway run.
+I always run.
 ```
 
 It is also shorten the above code as follows:
